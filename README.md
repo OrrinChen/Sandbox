@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 4 sandbox and state-tracking work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, and a minimal local sandbox.
+The repository has completed Phase 5 trace logging and replay work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, and minimal trace replay from fixture state.
 
 Start by reading:
 
@@ -110,3 +110,18 @@ They provide:
 - `SandboxTimeoutError`
 
 The filesystem sandbox constrains path operations to a task workspace, supports an optional read allowlist, resets to deterministic initial files, and captures added/modified/deleted file diffs. The subprocess helper runs Python snippets in the workspace with a timeout. It is a local test harness primitive, not a production isolation boundary.
+
+## Trace Logging And Replay
+
+The first trace utilities live in `sandboxed_agent_eval_harness.tracing`.
+
+They provide:
+
+- `TraceLogger`
+- `TraceReplay`
+- `TraceReplayError`
+- `load_trace_events()`
+
+The logger appends ordered JSONL events for user messages, agent messages, tool calls, tool results, state diffs, validator results, timeout events, and error events. Each event carries pinned run metadata where available, including task, tool, prompt, model, and fixture versions.
+
+The replay helper loads persisted JSONL traces, rejects malformed or non-contiguous event sequences, preserves original event order, and carries fixture state needed to inspect a failed run. It reconstructs trace context for debugging; it does not execute tools yet.

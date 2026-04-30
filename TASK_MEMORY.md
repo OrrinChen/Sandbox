@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 4 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
+Phase 5 trace logging and replay. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-Phase 5: Trace logging and replay
+Phase 6: Deterministic Validators
 
 Main blocker:
-No implementation blocker. Phase 4 sandbox and state tracking are in place.
+No implementation blocker. Phase 5 trace logging and replay are in place.
 
 Next recommended action:
-Implement Phase 5 trace logging and replay: ordered event persistence, tool call/result events, state diff events, validator result events, and minimal replay from trace plus fixture state.
+Implement Phase 6 deterministic validators: schema, tool sequence, argument, state, numeric, and citation validators.
 
 ## Current State
 
@@ -174,8 +174,31 @@ Validation:
 Known limitations:
 - The subprocess helper provides cwd and timeout control, not OS-level sandbox isolation.
 - File access constraints are enforced through the `FileSystemSandbox` API.
-- No trace logger or replay runner exists yet.
 - Tool execution is still not wired into sandbox execution.
+
+### Phase 5: Trace Logging and Replay
+
+Commit:
+Included in the Phase 5 trace logging and replay commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/tracing/jsonl.py`.
+- Implemented `TraceLogger` for ordered JSONL trace persistence.
+- Added trace events for user messages, agent messages, tool calls, tool results, state diffs, validator results, timeout events, and error events.
+- Implemented `load_trace_events()` with malformed JSONL and schema error handling.
+- Implemented `TraceReplay` with fixture-state capture and contiguous sequence validation.
+- Exported tracing APIs from `sandboxed_agent_eval_harness.tracing`.
+- Added trace/replay tests in `tests/test_trace_replay.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `TraceLogger` was not exported.
+- `python3 -m pytest tests/test_trace_replay.py -v` passed with 5 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Replay reconstructs event order and fixture context for debugging; it does not execute tool calls.
+- Trace capture is not yet wired into an evaluation runner because the runner does not exist yet.
 
 ## Validation Log
 
@@ -290,6 +313,49 @@ Results:
 - Sandbox state-diff smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 5:
+
+```bash
+python3 -m pytest tests/test_trace_replay.py -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from sandboxed_agent_eval_harness.tracing import TraceLogger, TraceReplay
+with TemporaryDirectory() as tmp:
+    trace_path = Path(tmp) / "trace.jsonl"
+    logger = TraceLogger(
+        trace_path,
+        run_metadata={
+            "run_id": "smoke-run",
+            "task_id": "finance-smoke",
+            "agent_id": "fixture-agent",
+            "model": "fixture-model",
+            "prompt_version": "prompt-v1",
+            "tool_version": "tools-v1",
+            "task_version": "task-v1",
+            "fixture_version": "fixtures-v1",
+        },
+    )
+    logger.log_user_message("Run smoke task.")
+    logger.log_tool_call("csv.read", {"path": "fixtures/data/sales.csv"})
+    logger.log_tool_result("csv.read", {"path": "fixtures/data/sales.csv", "rows": 1})
+    replay = TraceReplay.from_jsonl(
+        trace_path,
+        fixture_state={"fixtures/data/sales.csv": "region,revenue\nwest,10\n"},
+    )
+    print([event.event_type for event in replay.events], replay.metadata["task_version"])
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 5 red run failed because `TraceLogger` was not exported.
+- Final trace/replay test run passed: 5 tests.
+- Final full pytest run passed: 40 tests.
+- Trace replay smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -314,9 +380,13 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Trace logging and replay are not implemented.
-  Impact: Tool calls, state diffs, validator results, and failures are not persisted or replayable yet.
-  Planned fix: Phase 5 creates ordered trace persistence and minimal replay from trace plus fixture state.
+- Limitation: Trace replay does not execute tools yet.
+  Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
+  Planned fix: Later evaluation-runner work wires trace capture and replay into executable task runs.
+
+- Limitation: Deterministic validators are not implemented.
+  Impact: The harness cannot yet reject plausible final answers with wrong tool use, arguments, numeric values, citations, or state mutations.
+  Planned fix: Phase 6 creates the first schema, tool sequence, argument, state, numeric, and citation validators.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
@@ -339,8 +409,8 @@ Results:
 
 ## Next Steps
 
-1. Define Phase 5 trace logging module boundaries.
-2. Add failing tests for ordered trace event logging.
-3. Implement JSONL trace persistence.
-4. Persist tool calls, tool results, state diffs, validator results, timeout events, and error events.
-5. Implement minimal replay that reconstructs trace order and metadata from persisted events.
+1. Define Phase 6 validator module boundaries.
+2. Add failing tests for schema, tool sequence, argument, state, numeric, and citation validators.
+3. Implement deterministic validator result generation.
+4. Connect validators to existing `ValidatorResult` schema.
+5. Keep validators fixture-backed and independent of live network data.

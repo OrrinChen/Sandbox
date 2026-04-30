@@ -93,6 +93,50 @@ Expected result:
 - State reset works between runs.
 - State diff capture works.
 
+## Trace Logging And Replay Validation
+
+Run after trace logging and replay work:
+
+```bash
+python3 -m pytest tests/test_trace_replay.py -v
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from sandboxed_agent_eval_harness.tracing import TraceLogger, TraceReplay
+with TemporaryDirectory() as tmp:
+    trace_path = Path(tmp) / "trace.jsonl"
+    logger = TraceLogger(
+        trace_path,
+        run_metadata={
+            "run_id": "smoke-run",
+            "task_id": "finance-smoke",
+            "agent_id": "fixture-agent",
+            "model": "fixture-model",
+            "prompt_version": "prompt-v1",
+            "tool_version": "tools-v1",
+            "task_version": "task-v1",
+            "fixture_version": "fixtures-v1",
+        },
+    )
+    logger.log_user_message("Run smoke task.")
+    logger.log_tool_call("csv.read", {"path": "fixtures/data/sales.csv"})
+    logger.log_tool_result("csv.read", {"path": "fixtures/data/sales.csv", "rows": 1})
+    replay = TraceReplay.from_jsonl(
+        trace_path,
+        fixture_state={"fixtures/data/sales.csv": "region,revenue\nwest,10\n"},
+    )
+    print([event.event_type for event in replay.events], replay.metadata["task_version"])
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Ordered JSONL trace events are persisted.
+- Tool calls and tool results preserve payloads and order.
+- State diffs, validator results, timeout events, and error events are representable.
+- Replay rejects malformed or non-contiguous traces.
+- Replay carries pinned task, tool, prompt, model, and fixture metadata where available.
+
 ## Validator Validation
 
 Run after validator work:

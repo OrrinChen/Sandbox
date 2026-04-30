@@ -8,9 +8,10 @@ Completed:
 - [x] Phase 2: Core schemas
 - [x] Phase 3: Tool registry
 - [x] Phase 4: Sandbox and state tracking
+- [x] Phase 5: Trace logging and replay
 
 Current phase:
-- [ ] Phase 5: Trace logging and replay
+- [ ] Phase 6: Deterministic Validators
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -115,14 +116,14 @@ Goal:
 Make every failure reproducible enough to debug.
 
 Tasks:
-- [ ] Log user messages
-- [ ] Log agent messages
-- [ ] Log tool calls
-- [ ] Log tool results
-- [ ] Log state diffs
-- [ ] Log validator results
-- [ ] Persist traces as JSONL or structured JSON
-- [ ] Implement minimal replay from trace and fixture state
+- [x] Log user messages
+- [x] Log agent messages
+- [x] Log tool calls
+- [x] Log tool results
+- [x] Log state diffs
+- [x] Log validator results
+- [x] Persist traces as JSONL or structured JSON
+- [x] Implement minimal replay from trace and fixture state
 
 Acceptance criteria:
 - A failed run can be opened from a trace file

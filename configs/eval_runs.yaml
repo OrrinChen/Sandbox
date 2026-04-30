@@ -1,2 +1,22 @@
-# Evaluation run presets are added once the runner exists.
-eval_runs: []
+eval_runs:
+  - id: smoke
+    suite: initial-fixture-suite
+    trials_per_task: 1
+    output_dir: artifacts/eval_runs/smoke
+    baselines:
+      - single_shot_tool_agent
+      - react_style_agent
+      - planner_executor_agent
+      - oracle_tool_selection_agent
+    metrics:
+      - task_success_rate
+      - pass_at_k
+      - tool_selection_accuracy
+      - argument_correctness
+      - state_correctness
+      - numeric_correctness
+      - citation_correctness
+      - average_turns
+      - average_latency_seconds
+      - average_cost
+      - timeout_rate

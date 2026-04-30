@@ -11,9 +11,10 @@ Completed:
 - [x] Phase 5: Trace logging and replay
 - [x] Phase 6: Deterministic Validators
 - [x] Phase 7: Initial Task Suites
+- [x] Phase 8: Agent Baselines and Evaluation Runner
 
 Current phase:
-- [ ] Phase 8: Agent Baselines and Evaluation Runner
+- [ ] Phase 9: Report and Regression View
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -181,23 +182,23 @@ Goal:
 Compare tool-use reliability across simple agent architectures.
 
 Baselines:
-- [ ] Single-shot tool-calling agent
-- [ ] ReAct-style agent
-- [ ] Planner-executor agent
-- [ ] Oracle-tool-selection baseline
+- [x] Single-shot tool-calling agent
+- [x] ReAct-style agent
+- [x] Planner-executor agent
+- [x] Oracle-tool-selection baseline
 
 Metrics:
-- Task success rate
-- pass@k
-- Tool selection accuracy
-- Argument correctness
-- State correctness
-- Numeric correctness
-- Citation correctness
-- Average turns
-- Latency
-- Cost
-- Timeout rate
+- [x] Task success rate
+- [x] pass@k
+- [x] Tool selection accuracy
+- [x] Argument correctness
+- [x] State correctness
+- [x] Numeric correctness
+- [x] Citation correctness
+- [x] Average turns
+- [x] Latency
+- [x] Cost
+- [x] Timeout rate
 
 Acceptance criteria:
 - Same task can run repeated trials

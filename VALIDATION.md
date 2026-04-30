@@ -206,22 +206,26 @@ Run after task suites and evaluation runner exist:
 
 ```bash
 python3 -m pytest tests/test_eval_runner.py -v
-PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-smoke
 git diff --check -- .
 ```
 
 Expected result:
-- Smoke suite completes.
-- Trace artifact is written.
-- Validator summary is written.
-- Failure taxonomy is present when failures occur.
+- Same task can run repeated trials.
+- Smoke suite writes JSONL trace artifacts.
+- `summary.json` includes task success rate, pass@k, per-validator metrics, and failure taxonomy.
+- CLI smoke prints run count, task success rate, and pass@k.
 
 ## Before Commit
 
 Always run:
 
 ```bash
-git status --short
+git status --short --untracked-files=all -- .
 git diff --check -- .
 ```
 

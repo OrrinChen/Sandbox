@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 7 initial task suites. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 8 agent baselines and evaluation runner. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-Phase 8: Agent Baselines and Evaluation Runner
+Phase 9: Report and Regression View
 
 Main blocker:
-No implementation blocker. Phase 7 initial task suites are in place.
+No implementation blocker. Phase 8 agent baselines and evaluation runner are in place.
 
 Next recommended action:
-Implement Phase 8 agent baselines and evaluation runner: run repeated trials, capture traces, execute validators, and aggregate per-validator metrics.
+Implement Phase 9 report and regression view: generate domain success summaries, validator-vs-final-answer comparisons, failure distribution, pass@k curves, cost/latency summaries, worst trace lists, and previous-run comparisons.
 
 ## Current State
 
@@ -248,6 +248,34 @@ Known limitations:
 - Tasks are loadable and validator-mapped, but there is not yet an evaluation runner to execute them.
 - Fixture contents are small synthetic examples intended for deterministic harness validation, not broad benchmark coverage.
 
+### Phase 8: Agent Baselines and Evaluation Runner
+
+Commit:
+Included in the Phase 8 agent baselines and evaluation runner commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/agents/baselines.py`.
+- Implemented deterministic single-shot, ReAct-style, planner-executor, and oracle-tool-selection baselines.
+- Added `src/sandboxed_agent_eval_harness/evaluation/runner.py`.
+- Implemented repeated trials over task suites and agent baselines.
+- Wrote JSONL trace artifacts for each run and `summary.json` for the aggregate run.
+- Executed deterministic validators for schema, tool sequence, arguments, state, numeric outputs, and citations.
+- Aggregated task success rate, pass@k, per-validator metrics, failure taxonomy, tool selection accuracy, argument correctness, state correctness, numeric correctness, citation correctness, turns, latency, cost, and timeout rate.
+- Ignored generated run artifacts under `artifacts/`.
+- Updated `configs/eval_runs.yaml` with the smoke run preset.
+- Added evaluation runner tests in `tests/test_eval_runner.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `default_agent_baselines` was not exported.
+- `python3 -m pytest tests/test_eval_runner.py -v` passed with 4 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Baselines are deterministic fixture-compatible simulations; they do not call external models.
+- Tool calls are planned and traced with fixture-shaped results; full tool execution is still shallow.
+- The runner writes artifacts and summaries but does not yet generate a portfolio report or regression comparison view.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -465,6 +493,22 @@ Results:
 - Task suite smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 8:
+
+```bash
+python3 -m pytest tests/test_eval_runner.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-smoke
+git diff --check -- .
+```
+
+Results:
+- The first Phase 8 red run failed because `default_agent_baselines` was not exported.
+- Final evaluation runner test run passed: 4 tests.
+- Final full pytest run passed: 57 tests.
+- CLI smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -491,19 +535,23 @@ Results:
 
 - Limitation: Trace replay does not execute tools yet.
   Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
-  Planned fix: Later evaluation-runner work wires trace capture and replay into executable task runs.
+  Planned fix: Later work can connect replay to executable fixture-backed tool calls.
 
-- Limitation: Validators and task suites are not wired into an evaluation runner yet.
-  Impact: Individual tasks and validators can be loaded and checked, but full task runs do not execute tools, capture traces, or aggregate validator results yet.
-  Planned fix: Phase 8 connects task execution, trace capture, validators, repeated trials, and per-validator metrics.
+- Limitation: Agent baselines are deterministic fixture-compatible simulations.
+  Impact: They exercise the harness, validators, traces, and metrics, but they are not evidence about real model reliability yet.
+  Planned fix: Later phases can add real local or API-backed model adapters once deterministic reporting is stable.
+
+- Limitation: Tool calls in the runner are planned and fixture-shaped.
+  Impact: The runner validates tool use and records traces, but it does not yet invoke full tool implementations through the sandbox.
+  Planned fix: Later phases can replace planned tool results with sandboxed executable tool adapters.
 
 - Limitation: Config files are stubs.
-  Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
+  Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
   Planned fix: Later phases load and validate config files once runtime contracts stabilize.
 
 - Limitation: Initial task fixtures are intentionally small and synthetic.
   Impact: They are useful for deterministic harness validation but not yet broad enough for benchmark claims.
-  Planned fix: Later task-suite expansion adds more domains, edge cases, and regression coverage after the runner exists.
+  Planned fix: Later task-suite expansion adds more domains, edge cases, and regression coverage after the report view exists.
 
 ## Failure Modes to Watch
 
@@ -518,8 +566,9 @@ Results:
 
 ## Next Steps
 
-1. Define a minimal evaluation-runner contract for a task, agent baseline, trace logger, and validator list.
-2. Add simple fixture-compatible agent baselines.
-3. Execute repeated trials for the default task suite.
-4. Persist trace artifacts and validator results.
-5. Aggregate success, pass@k, tool accuracy, argument correctness, state correctness, numeric correctness, citation correctness, latency, cost, and timeout rate.
+1. Generate success rate by domain.
+2. Compare final-answer pass against validator pass.
+3. Generate failure type distribution and pass@k curves.
+4. Summarize cost and latency.
+5. List worst traces with artifact paths.
+6. Compare the current `summary.json` against a previous run artifact.

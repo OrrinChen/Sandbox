@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 7 initial task suite work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, first deterministic validators, and local fixture-backed finance/data-analysis tasks.
+The repository has completed Phase 8 agent baseline and evaluation runner work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, and a smoke evaluation runner.
 
 Start by reading:
 
@@ -155,3 +155,20 @@ They provide:
 - `default_task_suite_path()`
 
 The default suite manifest is `fixtures/tasks/initial_suite.json`. It contains six deterministic tasks: three fixture-backed finance tasks and three local CSV/data-analysis tasks. Every task is represented as a `TaskSpec`, has non-empty hidden expected state, declares fixture paths, includes gold numeric or file outputs, and records known traps where final-answer-only scoring can look successful while validators should fail.
+
+## Agent Baselines And Evaluation Runner
+
+The first deterministic baselines live in `sandboxed_agent_eval_harness.agents`:
+
+- `single_shot_tool_agent`
+- `react_style_agent`
+- `planner_executor_agent`
+- `oracle_tool_selection_agent`
+
+The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, and report a failure taxonomy.
+
+Smoke command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --trials 1 --output-dir artifacts/eval_runs/smoke
+```

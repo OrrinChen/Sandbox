@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 5 trace logging and replay work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, and minimal trace replay from fixture state.
+The repository has completed Phase 6 deterministic validator work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, and first deterministic validators.
 
 Start by reading:
 
@@ -125,3 +125,19 @@ They provide:
 The logger appends ordered JSONL events for user messages, agent messages, tool calls, tool results, state diffs, validator results, timeout events, and error events. Each event carries pinned run metadata where available, including task, tool, prompt, model, and fixture versions.
 
 The replay helper loads persisted JSONL traces, rejects malformed or non-contiguous event sequences, preserves original event order, and carries fixture state needed to inspect a failed run. It reconstructs trace context for debugging; it does not execute tools yet.
+
+## Deterministic Validators
+
+The first validator utilities live in `sandboxed_agent_eval_harness.validators`.
+
+They provide:
+
+- `validate_schema()`
+- `validate_tool_sequence()`
+- `validate_tool_arguments()`
+- `validate_state()`
+- `validate_numeric()`
+- `validate_citations()`
+- `default_validator_names()`
+
+Each validator returns the existing `ValidatorResult` schema. The validators catch malformed schema payloads, wrong or missing tool sequences, invalid tool-call arguments, state-diff mismatches, numeric mismatches with explicit tolerance, and unsupported or missing citations. They are deterministic and fixture-friendly; they do not call live APIs or LLM judges.

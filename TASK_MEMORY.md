@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 5 trace logging and replay. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 6 deterministic validators. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-Phase 6: Deterministic Validators
+Phase 7: Initial Task Suites
 
 Main blocker:
-No implementation blocker. Phase 5 trace logging and replay are in place.
+No implementation blocker. Phase 6 deterministic validators are in place.
 
 Next recommended action:
-Implement Phase 6 deterministic validators: schema, tool sequence, argument, state, numeric, and citation validators.
+Implement Phase 7 initial task suites: 3-5 fixture-backed finance tasks and 3-5 fixture-backed data-analysis tasks with hidden expected state and validator mappings.
 
 ## Current State
 
@@ -200,6 +200,30 @@ Known limitations:
 - Replay reconstructs event order and fixture context for debugging; it does not execute tool calls.
 - Trace capture is not yet wired into an evaluation runner because the runner does not exist yet.
 
+### Phase 6: Deterministic Validators
+
+Commit:
+Included in the Phase 6 deterministic validators commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/validators/core.py`.
+- Implemented schema, tool sequence, argument, state, numeric, and citation validators.
+- Kept all validator outputs on the existing `ValidatorResult` schema.
+- Added deterministic failure types for schema mismatches, wrong tool sequences, invalid tool arguments, state mismatches, numeric mismatches, and unsupported or missing citations.
+- Exported validator APIs from `sandboxed_agent_eval_harness.validators`.
+- Updated `configs/validators.yaml` with default validator names, purposes, and failure types.
+- Added validator tests in `tests/test_validators.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `default_validator_names` was not exported.
+- `python3 -m pytest tests/test_validators.py -v` passed with 7 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Validators are standalone deterministic functions; they are not wired into an evaluation runner yet.
+- Citation parsing intentionally supports simple bracketed fixture source ids such as `[aapl-2023-10k]`.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -356,6 +380,44 @@ Results:
 - Trace replay smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 6:
+
+```bash
+python3 -m pytest tests/test_validators.py -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.schemas import TraceEvent
+from sandboxed_agent_eval_harness.tools import default_tool_registry
+from sandboxed_agent_eval_harness.validators import (
+    default_validator_names,
+    validate_tool_arguments,
+    validate_tool_sequence,
+)
+events = [
+    TraceEvent(
+        event_id="evt-001",
+        event_type="tool_call",
+        sequence=0,
+        payload={
+            "tool_name": "financial_statement.lookup",
+            "arguments": {"ticker": "AAPL", "fiscal_year": 2023, "statement": "income"},
+        },
+    )
+]
+print(default_validator_names())
+print(validate_tool_sequence(events, expected_sequence=["financial_statement.lookup"]).passed)
+print(validate_tool_arguments(events, default_tool_registry()).passed)
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 6 red run failed because `default_validator_names` was not exported.
+- Final validator test run passed: 7 tests.
+- Final full pytest run passed: 47 tests.
+- Validator smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -384,17 +446,17 @@ Results:
   Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
   Planned fix: Later evaluation-runner work wires trace capture and replay into executable task runs.
 
-- Limitation: Deterministic validators are not implemented.
-  Impact: The harness cannot yet reject plausible final answers with wrong tool use, arguments, numeric values, citations, or state mutations.
-  Planned fix: Phase 6 creates the first schema, tool sequence, argument, state, numeric, and citation validators.
+- Limitation: Validators are not wired into an evaluation runner yet.
+  Impact: Individual silent failures can be detected by validator functions, but full task runs do not aggregate validator results yet.
+  Planned fix: Phase 8 connects validators to repeated task execution and per-validator metrics.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
   Planned fix: Later phases load and validate config files once runtime contracts stabilize.
 
 - Limitation: No task fixtures exist yet.
-  Impact: The harness cannot demonstrate silent failure detection.
-  Planned fix: Phase 7 creates small finance and data analysis fixture-backed tasks after core runtime pieces exist.
+  Impact: The harness cannot demonstrate silent failure detection on realistic finance or data-analysis workflows.
+  Planned fix: Phase 7 creates small finance and data analysis fixture-backed tasks with hidden expected state.
 
 ## Failure Modes to Watch
 
@@ -409,8 +471,8 @@ Results:
 
 ## Next Steps
 
-1. Define Phase 6 validator module boundaries.
-2. Add failing tests for schema, tool sequence, argument, state, numeric, and citation validators.
-3. Implement deterministic validator result generation.
-4. Connect validators to existing `ValidatorResult` schema.
-5. Keep validators fixture-backed and independent of live network data.
+1. Define fixture-backed task suite file format.
+2. Add 3-5 finance tasks with hidden expected state and known failure traps.
+3. Add 3-5 data-analysis tasks with gold numeric or file outputs.
+4. Map each task to deterministic validators.
+5. Keep tasks local, deterministic, and independent of live network data.

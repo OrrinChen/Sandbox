@@ -143,6 +143,29 @@ Run after validator work:
 
 ```bash
 python3 -m pytest tests/test_validators.py -v
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.schemas import TraceEvent
+from sandboxed_agent_eval_harness.tools import default_tool_registry
+from sandboxed_agent_eval_harness.validators import (
+    default_validator_names,
+    validate_tool_arguments,
+    validate_tool_sequence,
+)
+events = [
+    TraceEvent(
+        event_id="evt-001",
+        event_type="tool_call",
+        sequence=0,
+        payload={
+            "tool_name": "financial_statement.lookup",
+            "arguments": {"ticker": "AAPL", "fiscal_year": 2023, "statement": "income"},
+        },
+    )
+]
+print(default_validator_names())
+print(validate_tool_sequence(events, expected_sequence=["financial_statement.lookup"]).passed)
+print(validate_tool_arguments(events, default_tool_registry()).passed)
+PY
 git diff --check -- .
 ```
 

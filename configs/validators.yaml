@@ -1,2 +1,32 @@
-# Validator implementations are added after core schemas exist.
-validators: []
+validators:
+  - name: schema
+    purpose: validate typed task, tool, trace, validator, and run-result payloads
+    failure_types:
+      - schema_mismatch
+      - unknown_schema
+  - name: tool_sequence
+    purpose: validate expected, allowed, and required tool-call ordering
+    failure_types:
+      - tool_sequence_mismatch
+      - unexpected_tool
+      - missing_required_tool
+  - name: argument
+    purpose: validate tool-call arguments against registered ToolSpec input schemas
+    failure_types:
+      - invalid_tool_call_payload
+      - invalid_tool_arguments
+  - name: state
+    purpose: validate added, modified, and deleted file state diffs
+    failure_types:
+      - state_mismatch
+  - name: numeric
+    purpose: validate numeric outputs with deterministic tolerance
+    failure_types:
+      - invalid_numeric_value
+      - invalid_numeric_tolerance
+      - numeric_mismatch
+  - name: citation
+    purpose: validate final-answer citations against supported fixture sources
+    failure_types:
+      - unsupported_citation
+      - missing_citation

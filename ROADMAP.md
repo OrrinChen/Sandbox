@@ -9,9 +9,10 @@ Completed:
 - [x] Phase 3: Tool registry
 - [x] Phase 4: Sandbox and state tracking
 - [x] Phase 5: Trace logging and replay
+- [x] Phase 6: Deterministic Validators
 
 Current phase:
-- [ ] Phase 6: Deterministic Validators
+- [ ] Phase 7: Initial Task Suites
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -136,12 +137,12 @@ Goal:
 Catch silent failures that final-answer scoring misses.
 
 Initial validators:
-- [ ] Schema validator
-- [ ] Tool sequence validator
-- [ ] Argument validator
-- [ ] State validator
-- [ ] Numeric validator
-- [ ] Citation validator
+- [x] Schema validator
+- [x] Tool sequence validator
+- [x] Argument validator
+- [x] State validator
+- [x] Numeric validator
+- [x] Citation validator
 
 Expansion validators:
 - [ ] Constraint validator

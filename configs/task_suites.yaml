@@ -1,0 +1,8 @@
+# Phase 1 pins the first two deterministic task domains.
+task_suites:
+  - id: finance
+    description: Fixture-backed finance analyst tasks.
+    status: planned
+  - id: data_analysis
+    description: Local CSV and tabular analysis tasks.
+    status: planned

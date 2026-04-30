@@ -1,0 +1,7 @@
+# Default sandbox posture for local deterministic tests.
+sandbox:
+  network: disabled
+  filesystem:
+    mode: task_workspace_only
+  timeouts:
+    default_seconds: 30

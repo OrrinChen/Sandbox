@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 6 deterministic validator work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, and first deterministic validators.
+The repository has completed Phase 7 initial task suite work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, first deterministic validators, and local fixture-backed finance/data-analysis tasks.
 
 Start by reading:
 
@@ -141,3 +141,17 @@ They provide:
 - `default_validator_names()`
 
 Each validator returns the existing `ValidatorResult` schema. The validators catch malformed schema payloads, wrong or missing tool sequences, invalid tool-call arguments, state-diff mismatches, numeric mismatches with explicit tolerance, and unsupported or missing citations. They are deterministic and fixture-friendly; they do not call live APIs or LLM judges.
+
+## Initial Task Suites
+
+The first task suite utilities live in `sandboxed_agent_eval_harness.tasks`.
+
+They provide:
+
+- `TaskSuite`
+- `TaskSuiteValidationError`
+- `load_task_suite()`
+- `default_task_suite()`
+- `default_task_suite_path()`
+
+The default suite manifest is `fixtures/tasks/initial_suite.json`. It contains six deterministic tasks: three fixture-backed finance tasks and three local CSV/data-analysis tasks. Every task is represented as a `TaskSpec`, has non-empty hidden expected state, declares fixture paths, includes gold numeric or file outputs, and records known traps where final-answer-only scoring can look successful while validators should fail.

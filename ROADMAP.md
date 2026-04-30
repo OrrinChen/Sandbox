@@ -10,9 +10,10 @@ Completed:
 - [x] Phase 4: Sandbox and state tracking
 - [x] Phase 5: Trace logging and replay
 - [x] Phase 6: Deterministic Validators
+- [x] Phase 7: Initial Task Suites
 
 Current phase:
-- [ ] Phase 7: Initial Task Suites
+- [ ] Phase 8: Agent Baselines and Evaluation Runner
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -162,11 +163,11 @@ Goal:
 Create small fixture-backed finance and data analysis suites before expanding domains.
 
 Initial scope:
-- [ ] 3-5 finance tasks
-- [ ] 3-5 data analysis tasks
-- [ ] Hidden expected state for each task
-- [ ] Gold numeric/file outputs where relevant
-- [ ] Known failure traps for each task
+- [x] 3-5 finance tasks
+- [x] 3-5 data analysis tasks
+- [x] Hidden expected state for each task
+- [x] Gold numeric/file outputs where relevant
+- [x] Known failure traps for each task
 
 Acceptance criteria:
 - Tasks are deterministic

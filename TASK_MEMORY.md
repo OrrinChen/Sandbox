@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 6 deterministic validators. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 7 initial task suites. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-Phase 7: Initial Task Suites
+Phase 8: Agent Baselines and Evaluation Runner
 
 Main blocker:
-No implementation blocker. Phase 6 deterministic validators are in place.
+No implementation blocker. Phase 7 initial task suites are in place.
 
 Next recommended action:
-Implement Phase 7 initial task suites: 3-5 fixture-backed finance tasks and 3-5 fixture-backed data-analysis tasks with hidden expected state and validator mappings.
+Implement Phase 8 agent baselines and evaluation runner: run repeated trials, capture traces, execute validators, and aggregate per-validator metrics.
 
 ## Current State
 
@@ -224,6 +224,30 @@ Known limitations:
 - Validators are standalone deterministic functions; they are not wired into an evaluation runner yet.
 - Citation parsing intentionally supports simple bracketed fixture source ids such as `[aapl-2023-10k]`.
 
+### Phase 7: Initial Task Suites
+
+Commit:
+Included in the Phase 7 initial task suites commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/tasks/suites.py`.
+- Implemented `TaskSuite`, `TaskSuiteValidationError`, `load_task_suite()`, `default_task_suite()`, and `default_task_suite_path()`.
+- Added `fixtures/tasks/initial_suite.json` with three fixture-backed finance tasks and three local CSV/data-analysis tasks.
+- Added finance fixtures for AAPL FY2023 revenue, MSFT FY2024 commercial cloud metrics, and NVDA FY2024 data center transcript evidence.
+- Added CSV fixtures for regional sales, customer churn, and inventory stockout workflows.
+- Updated `configs/task_suites.yaml` with the initial suite id, version, manifest path, domains, and task ids.
+- Added task suite tests in `tests/test_task_suites.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `TaskSuiteValidationError` was not exported.
+- `python3 -m pytest tests/test_task_suites.py -v` passed with 6 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Tasks are loadable and validator-mapped, but there is not yet an evaluation runner to execute them.
+- Fixture contents are small synthetic examples intended for deterministic harness validation, not broad benchmark coverage.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -418,6 +442,29 @@ Results:
 - Validator smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 7:
+
+```bash
+python3 -m pytest tests/test_task_suites.py -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from collections import Counter
+from sandboxed_agent_eval_harness.tasks import default_task_suite
+suite = default_task_suite()
+domain_counts = Counter(task.domain for task in suite.tasks)
+print(suite.suite_id, suite.version, len(suite.tasks), dict(domain_counts))
+print(" ".join(suite.task_ids()))
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 7 red run failed because `TaskSuiteValidationError` was not exported.
+- Final task suite test run passed: 6 tests.
+- Final full pytest run passed: 53 tests.
+- Task suite smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -446,17 +493,17 @@ Results:
   Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
   Planned fix: Later evaluation-runner work wires trace capture and replay into executable task runs.
 
-- Limitation: Validators are not wired into an evaluation runner yet.
-  Impact: Individual silent failures can be detected by validator functions, but full task runs do not aggregate validator results yet.
-  Planned fix: Phase 8 connects validators to repeated task execution and per-validator metrics.
+- Limitation: Validators and task suites are not wired into an evaluation runner yet.
+  Impact: Individual tasks and validators can be loaded and checked, but full task runs do not execute tools, capture traces, or aggregate validator results yet.
+  Planned fix: Phase 8 connects task execution, trace capture, validators, repeated trials, and per-validator metrics.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
   Planned fix: Later phases load and validate config files once runtime contracts stabilize.
 
-- Limitation: No task fixtures exist yet.
-  Impact: The harness cannot demonstrate silent failure detection on realistic finance or data-analysis workflows.
-  Planned fix: Phase 7 creates small finance and data analysis fixture-backed tasks with hidden expected state.
+- Limitation: Initial task fixtures are intentionally small and synthetic.
+  Impact: They are useful for deterministic harness validation but not yet broad enough for benchmark claims.
+  Planned fix: Later task-suite expansion adds more domains, edge cases, and regression coverage after the runner exists.
 
 ## Failure Modes to Watch
 
@@ -471,8 +518,8 @@ Results:
 
 ## Next Steps
 
-1. Define fixture-backed task suite file format.
-2. Add 3-5 finance tasks with hidden expected state and known failure traps.
-3. Add 3-5 data-analysis tasks with gold numeric or file outputs.
-4. Map each task to deterministic validators.
-5. Keep tasks local, deterministic, and independent of live network data.
+1. Define a minimal evaluation-runner contract for a task, agent baseline, trace logger, and validator list.
+2. Add simple fixture-compatible agent baselines.
+3. Execute repeated trials for the default task suite.
+4. Persist trace artifacts and validator results.
+5. Aggregate success, pass@k, tool accuracy, argument correctness, state correctness, numeric correctness, citation correctness, latency, cost, and timeout rate.

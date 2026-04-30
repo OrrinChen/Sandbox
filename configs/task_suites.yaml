@@ -1,8 +1,15 @@
-# Phase 1 pins the first two deterministic task domains.
 task_suites:
-  - id: finance
-    description: Fixture-backed finance analyst tasks.
-    status: planned
-  - id: data_analysis
-    description: Local CSV and tabular analysis tasks.
-    status: planned
+  - id: initial-fixture-suite
+    version: tasks-v1
+    manifest: fixtures/tasks/initial_suite.json
+    status: implemented
+    domains:
+      - finance
+      - data_analysis
+    tasks:
+      - finance-aapl-revenue-2023
+      - finance-msft-cloud-margin-2024
+      - finance-nvda-datacenter-citation-2024
+      - data-sales-region-summary
+      - data-churn-plan-rate
+      - data-inventory-stockout-report

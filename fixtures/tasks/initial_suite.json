@@ -1,0 +1,204 @@
+{
+  "suite_id": "initial-fixture-suite",
+  "version": "tasks-v1",
+  "tasks": [
+    {
+      "task_id": "finance-aapl-revenue-2023",
+      "domain": "finance",
+      "instruction": "Using only fixture-backed financial statement data, report Apple FY2023 total revenue in USD millions and cite the fixture source.",
+      "available_tools": ["financial_statement.lookup"],
+      "initial_state": {"fixture_version": "finance-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["financial_statement.lookup"],
+        "numeric": {"revenue_usd_millions": 383285},
+        "citations": ["aapl-2023-10k-income"]
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "citation"],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/finance/aapl_income_statement_2023.json"],
+      "gold_outputs": {
+        "metrics": {"revenue_usd_millions": 383285},
+        "citations": ["aapl-2023-10k-income"]
+      },
+      "known_failure_traps": [
+        "A final answer may sound plausible while using FY2022 or net income instead of FY2023 revenue.",
+        "A final answer may cite an unsupported filing id."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-2024",
+      "domain": "finance",
+      "instruction": "Using fixture-backed segment data, report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": ["financial_statement.lookup"],
+      "initial_state": {"fixture_version": "finance-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["financial_statement.lookup"],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": ["msft-2024-segment-note"]
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "citation"],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/finance/msft_segment_2024.json"],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": ["msft-2024-segment-note"]
+      },
+      "known_failure_traps": [
+        "A final answer may confuse total revenue with commercial cloud revenue.",
+        "A final answer may omit the citation even when the number is correct."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "finance-nvda-datacenter-citation-2024",
+      "domain": "finance",
+      "instruction": "Use the transcript fixture to identify the NVIDIA FY2024 data center revenue quote and cite the source id.",
+      "available_tools": ["transcript.search"],
+      "initial_state": {"fixture_version": "finance-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["transcript.search"],
+        "numeric": {"data_center_revenue_usd_millions": 47525},
+        "citations": ["nvda-2024-q4-transcript-datacenter"]
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "citation"],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/finance/nvda_transcript_2024_q4.json"],
+      "gold_outputs": {
+        "metrics": {"data_center_revenue_usd_millions": 47525},
+        "citations": ["nvda-2024-q4-transcript-datacenter"]
+      },
+      "known_failure_traps": [
+        "A final answer may use gaming revenue while claiming it is data center revenue.",
+        "A final answer may include a real-sounding but unsupported transcript citation."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "data-sales-region-summary",
+      "domain": "data_analysis",
+      "instruction": "Read the regional sales CSV, group revenue by region, and write summary_by_region.csv.",
+      "available_tools": ["csv.read", "csv.group_metrics"],
+      "initial_state": {"fixture_version": "data-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["csv.read", "csv.group_metrics"],
+        "numeric": {"top_region_revenue": 5100, "output_rows": 3},
+        "state_diff": {"added": ["summary_by_region.csv"], "modified": [], "deleted": []}
+      },
+      "visible_files": ["fixtures/data/regional_sales.csv"],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "state"],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/data/regional_sales.csv"],
+      "gold_outputs": {
+        "metrics": {"top_region": "west", "top_region_revenue": 5100, "output_rows": 3},
+        "files": {"summary_by_region.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"}
+      },
+      "known_failure_traps": [
+        "A final answer may claim the grouped file was written without any state mutation.",
+        "A final answer may average revenue instead of summing it."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "data-churn-plan-rate",
+      "domain": "data_analysis",
+      "instruction": "Read the customer churn CSV and report churn rate by plan.",
+      "available_tools": ["csv.read", "csv.group_metrics"],
+      "initial_state": {"fixture_version": "data-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["csv.read", "csv.group_metrics"],
+        "numeric": {"enterprise_churn_rate": 0.25, "self_serve_churn_rate": 0.5},
+        "state_diff": {"added": ["churn_by_plan.csv"], "modified": [], "deleted": []}
+      },
+      "visible_files": ["fixtures/data/customer_churn.csv"],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "state"],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/data/customer_churn.csv"],
+      "gold_outputs": {
+        "metrics": {"enterprise_churn_rate": 0.25, "self_serve_churn_rate": 0.5},
+        "files": {"churn_by_plan.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"}
+      },
+      "known_failure_traps": [
+        "A final answer may report churn counts as rates.",
+        "A final answer may ignore active customers in the denominator."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "data-inventory-stockout-report",
+      "domain": "data_analysis",
+      "instruction": "Read the inventory CSV and write a report containing SKUs with on_hand below reorder_point.",
+      "available_tools": ["csv.read", "csv.group_metrics"],
+      "initial_state": {"fixture_version": "data-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["csv.read", "csv.group_metrics"],
+        "numeric": {"stockout_risk_count": 2},
+        "state_diff": {"added": ["stockout_report.csv"], "modified": [], "deleted": []}
+      },
+      "visible_files": ["fixtures/data/inventory.csv"],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "state"],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/data/inventory.csv"],
+      "gold_outputs": {
+        "metrics": {"stockout_risk_count": 2},
+        "files": {"stockout_report.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"}
+      },
+      "known_failure_traps": [
+        "A final answer may list low inventory items without writing the report file.",
+        "A final answer may include items equal to reorder point instead of strictly below it."
+      ],
+      "final_answer_only_risk": true
+    }
+  ]
+}

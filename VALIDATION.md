@@ -176,6 +176,30 @@ Expected result:
 - Unsupported citation is caught.
 - State corruption is caught.
 
+## Task Suite Validation
+
+Run after initial task suite work:
+
+```bash
+python3 -m pytest tests/test_task_suites.py -v
+PYTHONPATH=src python3 - <<'PY'
+from collections import Counter
+from sandboxed_agent_eval_harness.tasks import default_task_suite
+suite = default_task_suite()
+domain_counts = Counter(task.domain for task in suite.tasks)
+print(suite.suite_id, suite.version, len(suite.tasks), dict(domain_counts))
+print(" ".join(suite.task_ids()))
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Default suite loads from local fixtures.
+- The suite has 3 finance tasks and 3 data-analysis tasks.
+- Each task has hidden expected state.
+- Each task maps to deterministic validators.
+- Gold numeric/file outputs and known failure traps are present.
+
 ## Evaluation Smoke Test
 
 Run after task suites and evaluation runner exist:

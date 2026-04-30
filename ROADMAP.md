@@ -5,9 +5,10 @@
 Completed:
 - [x] Phase 0: Project framing and autonomous workflow scaffold
 - [x] Phase 1: Planning and repository skeleton
+- [x] Phase 2: Core schemas
 
 Current phase:
-- [ ] Phase 2: Core schemas
+- [ ] Phase 3: Tool registry
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -54,13 +55,13 @@ Goal:
 Define the typed contracts for tasks, tools, traces, validators, and run results.
 
 Tasks:
-- [ ] Define `TaskSpec`
-- [ ] Define `ToolSpec`
-- [ ] Define `TraceEvent`
-- [ ] Define `ValidatorResult`
-- [ ] Define `RunResult`
-- [ ] Add schema serialization tests
-- [ ] Add schema validation failure tests
+- [x] Define `TaskSpec`
+- [x] Define `ToolSpec`
+- [x] Define `TraceEvent`
+- [x] Define `ValidatorResult`
+- [x] Define `RunResult`
+- [x] Add schema serialization tests
+- [x] Add schema validation failure tests
 
 Acceptance criteria:
 - Each schema has explicit required fields

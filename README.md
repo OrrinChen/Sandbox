@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 1 planning/skeleton work. It now has workflow documents, Python package metadata, initial config stubs, a `src/` package layout, and skeletal tests.
+The repository has completed Phase 2 core schema work. It now has workflow documents, Python package metadata, initial config stubs, a `src/` package layout, skeletal tests, and typed schema contracts for tasks, tools, traces, validator results, and run results.
 
 Start by reading:
 
@@ -62,3 +62,15 @@ git diff --check -- .
 ```
 
 For later phases, follow `VALIDATION.md`.
+
+## Core Schemas
+
+The first typed contracts live in `sandboxed_agent_eval_harness.schemas`:
+
+- `TaskSpec`
+- `ToolSpec`
+- `TraceEvent`
+- `ValidatorResult`
+- `RunResult`
+
+They provide plain-dict serialization and deterministic validation errors for missing fields, invalid limits, invalid tool arguments, trace sequence errors, failed validator metadata, and inconsistent run status.

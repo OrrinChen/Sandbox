@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 1 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
+Phase 2 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
 
 Current phase:
-Phase 2: Core schemas
+Phase 3: Tool registry
 
 Main blocker:
-No implementation blocker. Phase 1 package skeleton is in place.
+No implementation blocker. Phase 2 core schemas are in place.
 
 Next recommended action:
-Define the Phase 2 core schemas: `TaskSpec`, `ToolSpec`, `TraceEvent`, `ValidatorResult`, and `RunResult`, with serialization and validation tests.
+Implement the Phase 3 tool registry using `ToolSpec` for lookup, input validation, output validation, permissions, and side-effect metadata.
 
 ## Current State
 
@@ -82,6 +82,35 @@ Known limitations:
 - Sandbox execution and trace replay do not exist yet.
 - Config files are intentionally stubs.
 
+### Phase 2: Core Schemas
+
+Commit:
+Included in the Phase 2 core schemas commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/schemas.py`.
+- Implemented `TaskSpec`, `ToolSpec`, `TraceEvent`, `ValidatorResult`, and `RunResult`.
+- Added deterministic `SchemaValidationError` failures for missing fields, invalid limits, invalid tool arguments, trace sequence errors, failed validator metadata, and inconsistent run status.
+- Added plain-dict serialization for all core schemas.
+- Added JSONL-compatible serialization for `TraceEvent`.
+- Added nested run result serialization for trace events and validator results.
+- Added schema tests in `tests/test_tool_schemas.py` and `tests/test_trace_schema.py`.
+- Updated `ROADMAP.md` and `README.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.schemas` did not exist.
+- Additional red run confirmed non-object tool arguments raised `TypeError`; implementation was tightened to raise `SchemaValidationError`.
+- `python3 -m pytest tests/test_tool_schemas.py tests/test_trace_schema.py -v` passed with 13 tests.
+- `python3 -m pytest` passed with 18 tests.
+- `PYTHONPATH=src python3 - <<'PY' ... import schema classes ... PY` passed.
+- `git diff --check -- .` passed.
+
+Known limitations:
+- JSON object schema support is intentionally minimal: only `type`, `required`, and `properties` are enforced.
+- Tool registry does not exist yet.
+- Schema classes do not load YAML config files yet.
+- Sandbox execution and trace replay do not exist yet.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -121,6 +150,33 @@ Results:
 - CLI smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 2:
+
+```bash
+python3 -m pytest tests/test_tool_schemas.py tests/test_trace_schema.py -v
+python3 -m pytest tests/test_tool_schemas.py::test_tool_spec_rejects_non_object_arguments_deterministically -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.schemas import (
+    RunResult,
+    TaskSpec,
+    ToolSpec,
+    TraceEvent,
+    ValidatorResult,
+)
+print(TaskSpec.__name__, ToolSpec.__name__, TraceEvent.__name__, ValidatorResult.__name__, RunResult.__name__)
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 2 red run failed because `sandboxed_agent_eval_harness.schemas` did not exist.
+- The non-object argument red run failed with `TypeError` before validation was tightened.
+- Final schema test run passed: 13 tests.
+- Final full pytest run passed: 18 tests.
+- Core schema import smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -145,9 +201,9 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Core schemas are not implemented.
-  Impact: Tool registry, trace logging, validators, and task definitions do not have typed contracts yet.
-  Planned fix: Phase 2 creates schema dataclasses or equivalent typed models with serialization tests.
+- Limitation: Tool registry is not implemented.
+  Impact: Tool lookup, permission metadata use, and automatic input/output validation are not wired into runtime behavior.
+  Planned fix: Phase 3 creates registry lookup and validation paths backed by `ToolSpec`.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet.
@@ -170,8 +226,8 @@ Results:
 
 ## Next Steps
 
-1. Define Phase 2 schema module boundaries.
-2. Add failing schema serialization and validation tests.
-3. Implement minimal typed schemas.
-4. Add invalid-input tests for schema validation.
-5. Update validation commands once schema-specific tests exist.
+1. Define Phase 3 registry module boundaries.
+2. Add failing tests for tool registry lookup and unknown-tool rejection.
+3. Implement a minimal registry backed by `ToolSpec`.
+4. Add input and output validation paths through the registry.
+5. Add first fixture-backed tool declarations only after registry behavior is stable.

@@ -6,9 +6,10 @@ Completed:
 - [x] Phase 0: Project framing and autonomous workflow scaffold
 - [x] Phase 1: Planning and repository skeleton
 - [x] Phase 2: Core schemas
+- [x] Phase 3: Tool registry
 
 Current phase:
-- [ ] Phase 3: Tool registry
+- [ ] Phase 4: Sandbox and state tracking
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -75,12 +76,12 @@ Goal:
 Register typed tools with permissions, side-effect declarations, and input/output validation.
 
 Tasks:
-- [ ] Implement registry lookup by tool name
-- [ ] Validate tool inputs before execution
-- [ ] Validate tool outputs after execution
-- [ ] Track declared side effects and permissions
-- [ ] Add first fixture-backed finance tools
-- [ ] Add first local CSV/data tools
+- [x] Implement registry lookup by tool name
+- [x] Validate tool inputs before execution
+- [x] Validate tool outputs after execution
+- [x] Track declared side effects and permissions
+- [x] Add first fixture-backed finance tools
+- [x] Add first local CSV/data tools
 
 Acceptance criteria:
 - Unknown tools are rejected

@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 2 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
+Phase 3 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
 
 Current phase:
-Phase 3: Tool registry
+Phase 4: Sandbox and state tracking
 
 Main blocker:
-No implementation blocker. Phase 2 core schemas are in place.
+No implementation blocker. Phase 3 tool registry is in place.
 
 Next recommended action:
-Implement the Phase 3 tool registry using `ToolSpec` for lookup, input validation, output validation, permissions, and side-effect metadata.
+Implement Phase 4 filesystem sandbox and state tracking: task workspace isolation, timeout/resource hooks, state reset, and state diff capture.
 
 ## Current State
 
@@ -111,6 +111,39 @@ Known limitations:
 - Schema classes do not load YAML config files yet.
 - Sandbox execution and trace replay do not exist yet.
 
+### Phase 3: Tool Registry
+
+Commit:
+Included in the Phase 3 tool registry commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/tools/registry.py`.
+- Implemented `ToolRegistry`, `ToolRegistryError`, `UnknownToolError`, and `DuplicateToolError`.
+- Added registry lookup by tool name.
+- Added duplicate-name rejection.
+- Added input validation and output validation through `ToolSpec`.
+- Added metadata access for permissions, side effects, state mutation, and failure modes.
+- Added default fixture-backed finance tool declarations: `financial_statement.lookup` and `transcript.search`.
+- Added default local CSV/data-analysis tool declarations: `csv.read` and `csv.group_metrics`.
+- Updated `configs/tools.yaml` to mirror the default tool names and metadata.
+- Exported registry APIs from `sandboxed_agent_eval_harness.tools`.
+- Added registry tests in `tests/test_tool_registry.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.tools.registry` did not exist.
+- Config sync red run failed because `configs/tools.yaml` was still a stub.
+- `python3 -m pytest tests/test_tool_registry.py -v` passed with 9 tests.
+- `python3 -m pytest` passed with 27 tests.
+- `PYTHONPATH=src python3 - <<'PY' ... default_tool_registry ... PY` passed.
+- `git diff --check -- .` passed.
+
+Known limitations:
+- Registry stores declarations and validation paths only; it does not execute tools.
+- `configs/tools.yaml` mirrors default declarations but is not parsed into runtime objects yet.
+- No sandbox exists yet, so write permissions and state mutation metadata are declarative only.
+- No real finance or CSV fixtures exist yet.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -177,6 +210,27 @@ Results:
 - Core schema import smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 3:
+
+```bash
+python3 -m pytest tests/test_tool_registry.py -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.tools import default_tool_registry
+registry = default_tool_registry()
+print(" ".join(registry.names()))
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 3 red run failed because `sandboxed_agent_eval_harness.tools.registry` did not exist.
+- The config sync red run failed because `configs/tools.yaml` did not list default tool names.
+- Final registry test run passed: 9 tests.
+- Final full pytest run passed: 27 tests.
+- Default registry smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -201,13 +255,13 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Tool registry is not implemented.
-  Impact: Tool lookup, permission metadata use, and automatic input/output validation are not wired into runtime behavior.
-  Planned fix: Phase 3 creates registry lookup and validation paths backed by `ToolSpec`.
+- Limitation: Sandbox and state tracking are not implemented.
+  Impact: Tool permissions and state mutation metadata are declarative only; no runtime isolation or state diff exists yet.
+  Planned fix: Phase 4 creates filesystem sandbox, state reset, timeout hooks, and state diff capture.
 
 - Limitation: Config files are stubs.
-  Impact: They document intended configuration surfaces but are not consumed by runtime code yet.
-  Planned fix: Later phases load and validate config files after schemas exist.
+  Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
+  Planned fix: Later phases load and validate config files once runtime contracts stabilize.
 
 - Limitation: No task fixtures exist yet.
   Impact: The harness cannot demonstrate silent failure detection.
@@ -226,8 +280,8 @@ Results:
 
 ## Next Steps
 
-1. Define Phase 3 registry module boundaries.
-2. Add failing tests for tool registry lookup and unknown-tool rejection.
-3. Implement a minimal registry backed by `ToolSpec`.
-4. Add input and output validation paths through the registry.
-5. Add first fixture-backed tool declarations only after registry behavior is stable.
+1. Define Phase 4 sandbox module boundaries.
+2. Add failing tests for task workspace isolation.
+3. Implement a minimal filesystem sandbox.
+4. Add state reset and state diff capture.
+5. Add timeout/resource hooks without introducing paid services or live network dependencies.

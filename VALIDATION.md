@@ -47,6 +47,27 @@ Expected result:
 - Invalid schema examples fail deterministically.
 - Trace records serialize to JSONL-compatible objects.
 
+## Tool Registry Validation
+
+Run after Phase 3 tool registry work:
+
+```bash
+python3 -m pytest tests/test_tool_registry.py -v
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.tools import default_tool_registry
+registry = default_tool_registry()
+print(" ".join(registry.names()))
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Tool lookup works by name.
+- Unknown tools are rejected.
+- Duplicate tool names are rejected.
+- Inputs and outputs validate through `ToolSpec`.
+- Default finance and data-analysis tool declarations are available.
+
 ## Runtime and Sandbox Validation
 
 Run after sandbox work:

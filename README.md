@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 2 core schema work. It now has workflow documents, Python package metadata, initial config stubs, a `src/` package layout, skeletal tests, and typed schema contracts for tasks, tools, traces, validator results, and run results.
+The repository has completed Phase 3 tool registry work. It now has workflow documents, Python package metadata, initial config stubs, a `src/` package layout, skeletal tests, typed schema contracts, and a `ToolSpec`-backed registry with default finance and data-analysis tool declarations.
 
 Start by reading:
 
@@ -74,3 +74,24 @@ The first typed contracts live in `sandboxed_agent_eval_harness.schemas`:
 - `RunResult`
 
 They provide plain-dict serialization and deterministic validation errors for missing fields, invalid limits, invalid tool arguments, trace sequence errors, failed validator metadata, and inconsistent run status.
+
+## Tool Registry
+
+The first registry implementation lives in `sandboxed_agent_eval_harness.tools.registry`.
+
+It provides:
+
+- `ToolRegistry`
+- `UnknownToolError`
+- `DuplicateToolError`
+- `default_tool_specs()`
+- `default_tool_registry()`
+
+The default registry declares fixture-backed finance tools and local CSV/data-analysis tools:
+
+- `financial_statement.lookup`
+- `transcript.search`
+- `csv.read`
+- `csv.group_metrics`
+
+The registry handles lookup, unknown-tool rejection, duplicate-tool rejection, input validation before execution, output validation after execution, and metadata access for permissions, side effects, state mutation, and failure modes. It does not execute tools yet.

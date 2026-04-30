@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 3 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
+Phase 4 is being committed in the current run. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit after this run finishes.
 
 Current phase:
-Phase 4: Sandbox and state tracking
+Phase 5: Trace logging and replay
 
 Main blocker:
-No implementation blocker. Phase 3 tool registry is in place.
+No implementation blocker. Phase 4 sandbox and state tracking are in place.
 
 Next recommended action:
-Implement Phase 4 filesystem sandbox and state tracking: task workspace isolation, timeout/resource hooks, state reset, and state diff capture.
+Implement Phase 5 trace logging and replay: ordered event persistence, tool call/result events, state diff events, validator result events, and minimal replay from trace plus fixture state.
 
 ## Current State
 
@@ -144,6 +144,39 @@ Known limitations:
 - No sandbox exists yet, so write permissions and state mutation metadata are declarative only.
 - No real finance or CSV fixtures exist yet.
 
+### Phase 4: Sandbox and State Tracking
+
+Commit:
+Included in the Phase 4 sandbox commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/sandbox/filesystem.py`.
+- Added `src/sandboxed_agent_eval_harness/sandbox/subprocess.py`.
+- Implemented `FileSystemSandbox` with workspace-only path resolution.
+- Added optional read allowlist enforcement.
+- Added deterministic workspace reset from initial files.
+- Added `StateSnapshot` and `StateDiff` for added/modified/deleted file tracking.
+- Added trace-compatible state diff serialization through existing `TraceEvent` payloads.
+- Added `run_python_subprocess()` with workspace cwd and timeout enforcement.
+- Exported sandbox APIs from `sandboxed_agent_eval_harness.sandbox`.
+- Updated `configs/sandbox.yaml` to document task-workspace mode, read allowlist, state diff, and Python subprocess timeout support.
+- Added sandbox tests in `tests/test_sandbox_limits.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `FileSystemSandbox` was not exported.
+- Additional red run failed because `readable_paths` allowlist support did not exist.
+- `python3 -m pytest tests/test_sandbox_limits.py -v` passed with 8 tests.
+- `python3 -m pytest` passed with 35 tests.
+- `PYTHONPATH=src python3 - <<'PY' ... FileSystemSandbox ... PY` passed.
+- `git diff --check -- .` passed.
+
+Known limitations:
+- The subprocess helper provides cwd and timeout control, not OS-level sandbox isolation.
+- File access constraints are enforced through the `FileSystemSandbox` API.
+- No trace logger or replay runner exists yet.
+- Tool execution is still not wired into sandbox execution.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -231,6 +264,32 @@ Results:
 - Default registry smoke check passed.
 - Whitespace check passed.
 
+Commands run for Phase 4:
+
+```bash
+python3 -m pytest tests/test_sandbox_limits.py -v
+python3 -m pytest
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox
+with TemporaryDirectory() as tmp:
+    sandbox = FileSystemSandbox(Path(tmp) / "workspace", initial_files={"input.txt": "1"})
+    before = sandbox.snapshot()
+    sandbox.write_text("output.txt", "2")
+    print(before.diff(sandbox.snapshot()).to_dict())
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 4 red run failed because sandbox APIs were missing from package exports.
+- The read allowlist red run failed because `readable_paths` did not exist yet.
+- Final sandbox test run passed: 8 tests.
+- Final full pytest run passed: 35 tests.
+- Sandbox state-diff smoke check passed.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -255,9 +314,9 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Sandbox and state tracking are not implemented.
-  Impact: Tool permissions and state mutation metadata are declarative only; no runtime isolation or state diff exists yet.
-  Planned fix: Phase 4 creates filesystem sandbox, state reset, timeout hooks, and state diff capture.
+- Limitation: Trace logging and replay are not implemented.
+  Impact: Tool calls, state diffs, validator results, and failures are not persisted or replayable yet.
+  Planned fix: Phase 5 creates ordered trace persistence and minimal replay from trace plus fixture state.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except `configs/tools.yaml` mirroring default tool declarations.
@@ -280,8 +339,8 @@ Results:
 
 ## Next Steps
 
-1. Define Phase 4 sandbox module boundaries.
-2. Add failing tests for task workspace isolation.
-3. Implement a minimal filesystem sandbox.
-4. Add state reset and state diff capture.
-5. Add timeout/resource hooks without introducing paid services or live network dependencies.
+1. Define Phase 5 trace logging module boundaries.
+2. Add failing tests for ordered trace event logging.
+3. Implement JSONL trace persistence.
+4. Persist tool calls, tool results, state diffs, validator results, timeout events, and error events.
+5. Implement minimal replay that reconstructs trace order and metadata from persisted events.

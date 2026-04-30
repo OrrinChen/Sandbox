@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 3 tool registry work. It now has workflow documents, Python package metadata, initial config stubs, a `src/` package layout, skeletal tests, typed schema contracts, and a `ToolSpec`-backed registry with default finance and data-analysis tool declarations.
+The repository has completed Phase 4 sandbox and state-tracking work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, and a minimal local sandbox.
 
 Start by reading:
 
@@ -95,3 +95,18 @@ The default registry declares fixture-backed finance tools and local CSV/data-an
 - `csv.group_metrics`
 
 The registry handles lookup, unknown-tool rejection, duplicate-tool rejection, input validation before execution, output validation after execution, and metadata access for permissions, side effects, state mutation, and failure modes. It does not execute tools yet.
+
+## Sandbox
+
+The first sandbox utilities live in `sandboxed_agent_eval_harness.sandbox`.
+
+They provide:
+
+- `FileSystemSandbox`
+- `StateSnapshot`
+- `StateDiff`
+- `run_python_subprocess()`
+- `SandboxPathError`
+- `SandboxTimeoutError`
+
+The filesystem sandbox constrains path operations to a task workspace, supports an optional read allowlist, resets to deterministic initial files, and captures added/modified/deleted file diffs. The subprocess helper runs Python snippets in the workspace with a timeout. It is a local test harness primitive, not a production isolation boundary.

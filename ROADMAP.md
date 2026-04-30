@@ -7,9 +7,10 @@ Completed:
 - [x] Phase 1: Planning and repository skeleton
 - [x] Phase 2: Core schemas
 - [x] Phase 3: Tool registry
+- [x] Phase 4: Sandbox and state tracking
 
 Current phase:
-- [ ] Phase 4: Sandbox and state tracking
+- [ ] Phase 5: Trace logging and replay
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -95,12 +96,12 @@ Goal:
 Execute tools in controlled local sandboxes and track state mutations.
 
 Tasks:
-- [ ] Implement filesystem sandbox
-- [ ] Implement Python execution sandbox or safe subprocess wrapper
-- [ ] Add timeout handling
-- [ ] Add file access allowlist
-- [ ] Add state reset between runs
-- [ ] Add state diff capture
+- [x] Implement filesystem sandbox
+- [x] Implement Python execution sandbox or safe subprocess wrapper
+- [x] Add timeout handling
+- [x] Add file access allowlist
+- [x] Add state reset between runs
+- [x] Add state diff capture
 
 Acceptance criteria:
 - Runs cannot write outside the task workspace

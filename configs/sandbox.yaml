@@ -3,5 +3,8 @@ sandbox:
   network: disabled
   filesystem:
     mode: task_workspace_only
+    read_allowlist: task_visible_files
+    state_diff: enabled
   timeouts:
     default_seconds: 30
+    python_subprocess: enabled

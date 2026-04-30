@@ -73,7 +73,17 @@ Expected result:
 Run after sandbox work:
 
 ```bash
-python3 -m pytest tests/test_sandbox_limits.py tests/test_trace_replay.py -v
+python3 -m pytest tests/test_sandbox_limits.py -v
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox
+with TemporaryDirectory() as tmp:
+    sandbox = FileSystemSandbox(Path(tmp) / "workspace", initial_files={"input.txt": "1"})
+    before = sandbox.snapshot()
+    sandbox.write_text("output.txt", "2")
+    print(before.diff(sandbox.snapshot()).to_dict())
+PY
 git diff --check -- .
 ```
 
@@ -81,7 +91,7 @@ Expected result:
 - Timeouts are enforced.
 - Filesystem writes are constrained to task workspace.
 - State reset works between runs.
-- Minimal trace replay works.
+- State diff capture works.
 
 ## Validator Validation
 

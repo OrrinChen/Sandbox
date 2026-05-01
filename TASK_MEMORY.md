@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 11 trace replay execution. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 12 regression threshold gates. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Replayable executable MVP complete; next phase not selected.
+Regression-gated replayable MVP complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 11 trace replay execution is in place.
+No implementation blocker. Phase 12 regression threshold gates are in place.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: regression threshold gates that can fail a run when success rate, pass@k, failure taxonomy, or replay divergence regresses.
+Select the next phase from deferred expansions. Recommended next target: config-backed gate presets and CI wiring, or broaden the deterministic task suites before adding real model adapters.
 
 ## Current State
 
@@ -362,6 +362,33 @@ Known limitations:
 - Replay execution detects tool result and state diff divergence, but it does not yet enforce regression thresholds.
 - Replay execution is not yet integrated into the report generator as a summarized section.
 
+### Phase 12: Regression Threshold Gates
+
+Commit:
+Included in the Phase 12 regression threshold gates commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/evaluation/gates.py`.
+- Implemented `RegressionGateResult`, `RegressionGateReport`, and `evaluate_regression_gates()`.
+- Added threshold support for minimum task success rate, minimum pass@k, maximum task success drop, maximum pass@k drop, maximum configured failure taxonomy counts, and maximum replay divergence count.
+- Added a gate CLI that reads summary and threshold JSON artifacts, optionally replays trace JSONL files, prints a structured report, and exits non-zero when configured gates fail.
+- Added replay divergence summaries to evaluation reports when replay execution results are supplied.
+- Added regression gate tests in `tests/test_regression_gates.py`.
+- Added report coverage for replay divergence summaries in `tests/test_report.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.evaluation.gates` did not exist.
+- Report red run failed because `build_evaluation_report()` did not yet accept `replay_results`.
+- Final regression gate test run passed with 4 tests.
+- Final report test run passed with 4 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Gate thresholds are supplied as JSON artifacts or in-memory mappings; project config files do not load them yet.
+- The gate CLI can replay explicit trace paths, but it does not yet discover a run's trace set automatically.
+- Replay divergence gates cover deterministic replay results only; new task domains need executable adapters before replay gates are meaningful.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -672,6 +699,39 @@ Results:
 - Replay execution smoke printed a passing replay result with two re-executed tool calls and no divergences.
 - Whitespace check passed.
 
+Commands run for Phase 12:
+
+```bash
+python3 -m pytest tests/test_regression_gates.py -v
+python3 -m pytest tests/test_report.py -v
+python3 -m pytest tests/test_regression_gates.py tests/test_report.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-gates-current
+PYTHONPATH=src python3 - <<'PY'
+import json
+from pathlib import Path
+thresholds = {
+    "min_task_success_rate": 1.0,
+    "min_pass_at_k": 1.0,
+    "max_replay_divergences": 0,
+}
+Path("/tmp/sandboxed-agent-eval-gates-thresholds.json").write_text(json.dumps(thresholds) + "\n")
+PY
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates --summary /tmp/sandboxed-agent-eval-gates-current/summary.json --thresholds /tmp/sandboxed-agent-eval-gates-thresholds.json --replay-trace /tmp/sandboxed-agent-eval-gates-current/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl --replay-workspace /tmp/sandboxed-agent-eval-gates-replay
+git diff --check -- .
+```
+
+Results:
+- The first Phase 12 red run failed because `sandboxed_agent_eval_harness.evaluation.gates` did not exist.
+- The report red run failed because replay divergence summaries were not accepted yet.
+- Final regression gate test run passed: 4 tests.
+- Final report test run passed: 4 tests.
+- Final focused regression/report test run passed: 8 tests.
+- Final full pytest run passed after implementation.
+- Runner smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
+- Gate CLI smoke check passed, printed a structured passing report, and included `divergence_count: 0`.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -717,8 +777,16 @@ Results:
   Planned fix: Keep deterministic checks first; add optional controlled final-answer scoring only after executable tool adapters and regression thresholds are stable.
 
 - Limitation: Regression comparison is descriptive.
-  Impact: The report shows deltas but does not yet fail CI or enforce thresholds.
-  Planned fix: Recommended next phase adds configurable regression gates.
+  Impact: The report still shows deltas, while pass/fail enforcement now lives in the gate evaluator and CLI.
+  Planned fix: Later phases can wire gate presets into config files and CI.
+
+- Limitation: Gate thresholds are supplied as JSON artifacts or in-memory mappings.
+  Impact: Autonomous runs can enforce thresholds, but there is not yet a versioned project default under `configs/`.
+  Planned fix: Add config-backed gate presets and CI wiring.
+
+- Limitation: Gate CLI trace replay is explicit-path based.
+  Impact: Users must pass trace paths for replay divergence gating instead of asking the CLI to discover all traces in a run.
+  Planned fix: Add run artifact trace discovery after the threshold schema stabilizes.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
@@ -742,6 +810,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: implement regression threshold gates for task success, pass@k, failure taxonomy, and replay divergence.
-3. Add a validation command that exits non-zero on configured regression threshold failures.
-4. Integrate replay divergence counts into report summaries.
+2. Recommended: add config-backed regression gate presets and optional CI wiring.
+3. Add run artifact trace discovery for replay divergence gates.
+4. Broaden deterministic task-suite coverage before adding real model adapters.

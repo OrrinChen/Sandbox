@@ -307,6 +307,45 @@ Expected result:
 - Recorded and replayed state diffs match for untampered traces.
 - Tampered recorded tool results and state diffs are caught by tests.
 
+## Regression Threshold Gate Validation
+
+Run after regression threshold gates exist:
+
+```bash
+python3 -m pytest tests/test_regression_gates.py tests/test_report.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-gates-current
+PYTHONPATH=src python3 - <<'PY'
+import json
+from pathlib import Path
+
+thresholds = {
+    "min_task_success_rate": 1.0,
+    "min_pass_at_k": 1.0,
+    "max_replay_divergences": 0,
+}
+Path("/tmp/sandboxed-agent-eval-gates-thresholds.json").write_text(json.dumps(thresholds) + "\n")
+PY
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
+  --summary /tmp/sandboxed-agent-eval-gates-current/summary.json \
+  --thresholds /tmp/sandboxed-agent-eval-gates-thresholds.json \
+  --replay-trace /tmp/sandboxed-agent-eval-gates-current/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl \
+  --replay-workspace /tmp/sandboxed-agent-eval-gates-replay
+git diff --check -- .
+```
+
+Expected result:
+- Regression gate tests pass.
+- Full test suite passes.
+- Gate CLI prints a structured report.
+- Gate CLI exits status 0 when thresholds pass.
+- Gate CLI tests confirm status 1 when thresholds fail.
+- Replay divergence count is included in gate and report outputs.
+
 ## Before Commit
 
 Always run:

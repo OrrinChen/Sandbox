@@ -12,6 +12,7 @@ from typing import Any, Mapping, Optional, Sequence
 from sandboxed_agent_eval_harness.schemas import JsonDict
 from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite
 from sandboxed_agent_eval_harness.tracing import TraceReplay, TraceReplayError
+from sandboxed_agent_eval_harness.evaluation.gates import replay_divergence_summary_from_results
 
 
 VERSION_FIELDS = ("task_version", "tool_version", "prompt_version", "model", "fixture_version")
@@ -26,6 +27,7 @@ class EvaluationReport:
     failure_insights: list[JsonDict]
     pass_at_k_curve: list[JsonDict]
     cost_latency_summary: JsonDict
+    replay_divergence_summary: JsonDict
     worst_traces: list[JsonDict]
     version_matrix: JsonDict
     regression_comparison: JsonDict
@@ -39,6 +41,7 @@ class EvaluationReport:
             "failure_insights": [dict(item) for item in self.failure_insights],
             "pass_at_k_curve": [dict(item) for item in self.pass_at_k_curve],
             "cost_latency_summary": dict(self.cost_latency_summary),
+            "replay_divergence_summary": dict(self.replay_divergence_summary),
             "worst_traces": [dict(item) for item in self.worst_traces],
             "version_matrix": dict(self.version_matrix),
             "regression_comparison": dict(self.regression_comparison),
@@ -49,6 +52,7 @@ def build_evaluation_report(
     summary: Any,
     suite: Optional[TaskSuite] = None,
     previous_summary: Optional[Any] = None,
+    replay_results: Optional[Sequence[Any]] = None,
     worst_trace_limit: int = 10,
 ) -> EvaluationReport:
     summary_dict = _summary_to_dict(summary)
@@ -72,6 +76,7 @@ def build_evaluation_report(
         failure_insights=_failure_insights(runs),
         pass_at_k_curve=_pass_at_k_curve(runs),
         cost_latency_summary=_cost_latency_summary(runs),
+        replay_divergence_summary=_replay_divergence_summary(replay_results),
         worst_traces=worst_traces,
         version_matrix=version_matrix,
         regression_comparison=regression_comparison,
@@ -95,16 +100,19 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Generate an evaluation report from a summary artifact.")
     parser.add_argument("--summary", required=True, help="Path to a current summary.json artifact.")
     parser.add_argument("--previous-summary", help="Optional previous summary.json artifact for regression comparison.")
+    parser.add_argument("--replay-result", action="append", default=[], help="Optional replay execution result JSON.")
     parser.add_argument("--output-dir", default="artifacts/reports/latest")
     parser.add_argument("--worst-trace-limit", type=int, default=10)
     args = parser.parse_args(argv)
 
     summary = _load_json(args.summary)
     previous = _load_json(args.previous_summary) if args.previous_summary else None
+    replay_results = [_load_json(path) for path in args.replay_result]
     report = build_evaluation_report(
         summary,
         suite=default_task_suite(),
         previous_summary=previous,
+        replay_results=replay_results if replay_results else None,
         worst_trace_limit=args.worst_trace_limit,
     )
     paths = write_evaluation_report(report, args.output_dir)
@@ -272,6 +280,19 @@ def _cost_latency_by_baseline(runs: Sequence[Mapping[str, Any]]) -> JsonDict:
     }
 
 
+def _replay_divergence_summary(replay_results: Optional[Sequence[Any]]) -> JsonDict:
+    if replay_results is None:
+        return {
+            "available": False,
+            "replayed_traces": 0,
+            "passed_trace_count": 0,
+            "divergent_trace_count": 0,
+            "divergence_count": 0,
+            "divergence_types": {},
+        }
+    return replay_divergence_summary_from_results(replay_results)
+
+
 def _worst_traces(runs: Sequence[Mapping[str, Any]], limit: int) -> list[JsonDict]:
     failed_runs = [run for run in runs if run.get("passed") is not True]
     ranked = sorted(
@@ -387,6 +408,14 @@ def _render_markdown(report: EvaluationReport) -> str:
     lines.append(f"- Average latency seconds: {cost_latency['average_latency_seconds']:.3f}")
     lines.append(f"- Average cost: {cost_latency['average_cost']:.3f}")
     lines.append(f"- Timeout rate: {cost_latency['timeout_rate']:.3f}")
+    lines.extend(["", "## Replay Divergence"])
+    replay_summary = payload["replay_divergence_summary"]
+    if replay_summary["available"]:
+        lines.append(f"- Replayed traces: {replay_summary['replayed_traces']}")
+        lines.append(f"- Divergent traces: {replay_summary['divergent_trace_count']}")
+        lines.append(f"- Divergences: {replay_summary['divergence_count']}")
+    else:
+        lines.append("- Replay divergence data was not supplied.")
     lines.extend(["", "## Worst Traces"])
     for trace in payload["worst_traces"]:
         lines.append(

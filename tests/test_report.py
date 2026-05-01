@@ -12,6 +12,7 @@ from sandboxed_agent_eval_harness.evaluation.report import (
 )
 from sandboxed_agent_eval_harness.evaluation.runner import run_evaluation
 from sandboxed_agent_eval_harness.tasks import default_task_suite
+from sandboxed_agent_eval_harness.tracing import TraceReplayExecutor
 
 
 def test_report_summarizes_domains_failures_pass_at_k_and_worst_traces(tmp_path):
@@ -52,6 +53,30 @@ def test_report_summarizes_domains_failures_pass_at_k_and_worst_traces(tmp_path)
     assert version_matrix["model"] == ["deterministic-fixture-agent"]
     assert version_matrix["task_version"] == ["tasks-v1"]
     assert version_matrix["tool_version"] == ["tools-v1"]
+
+
+def test_report_includes_replay_divergence_summary(tmp_path):
+    suite = default_task_suite()
+    summary = run_evaluation(
+        suite=suite,
+        baselines=[OracleToolSelectionAgent()],
+        trials_per_task=1,
+        output_dir=tmp_path / "current",
+    )
+    run = next(item for item in summary.runs if item.task_id == "data-sales-region-summary")
+    replay_result = TraceReplayExecutor().replay(run.trace_path, workspace=tmp_path / "replay")
+
+    report = build_evaluation_report(summary, suite=suite, replay_results=[replay_result])
+    replay_summary = report.to_dict()["replay_divergence_summary"]
+
+    assert replay_summary == {
+        "available": True,
+        "replayed_traces": 1,
+        "passed_trace_count": 1,
+        "divergent_trace_count": 0,
+        "divergence_count": 0,
+        "divergence_types": {},
+    }
 
 
 def test_report_compares_against_previous_run_artifact(tmp_path):

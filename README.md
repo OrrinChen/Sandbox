@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 11 trace replay execution work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
+The repository has completed Phase 12 regression threshold gate work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, and configurable regression gates that can fail a run.
 
 Start by reading:
 
@@ -148,6 +148,41 @@ It provides:
 - `TraceReplayExecutionError`
 
 The replay executor reads persisted tool calls from a JSONL trace, identifies the pinned task from trace metadata, re-executes supported fixture-backed tools in a fresh workspace, compares recorded and replayed tool results, compares recorded and replayed state diffs, and returns deterministic divergence records.
+
+## Regression Threshold Gates
+
+Regression gates live in `sandboxed_agent_eval_harness.evaluation.gates`.
+
+They provide:
+
+- `RegressionGateResult`
+- `RegressionGateReport`
+- `evaluate_regression_gates()`
+
+The gate evaluator can enforce minimum task success rate, minimum pass@k, maximum task success drop against a previous summary, maximum pass@k drop, maximum failure taxonomy counts, and maximum replay divergence count. Replay divergence summaries are also included in reports when replay execution results are supplied.
+
+Smoke command:
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+thresholds = {
+    "min_task_success_rate": 1.0,
+    "min_pass_at_k": 1.0,
+    "max_replay_divergences": 0,
+}
+Path("/tmp/sandboxed-agent-eval-gates-thresholds.json").write_text(json.dumps(thresholds) + "\n")
+PY
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
+  --summary artifacts/eval_runs/smoke/summary.json \
+  --thresholds /tmp/sandboxed-agent-eval-gates-thresholds.json \
+  --replay-trace artifacts/eval_runs/smoke/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl \
+  --replay-workspace /tmp/sandboxed-agent-eval-gates-replay
+```
+
+The command prints a structured gate report and exits non-zero when any configured threshold fails.
 
 ## Deterministic Validators
 

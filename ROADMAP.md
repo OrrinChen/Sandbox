@@ -15,15 +15,17 @@ Completed:
 - [x] Phase 9: Report and Regression View
 - [x] Phase 10: Executable Fixture Tool Adapters
 - [x] Phase 11: Trace Replay Execution
+- [x] Phase 12: Regression Threshold Gates
 
 Current phase:
-- [ ] Next phase not selected; replayable executable MVP is complete
+- [ ] Next phase not selected; regression-gated replayable MVP is complete
 
 Deferred:
 - Optimization and coding suites beyond initial design
 - Cloud execution
 - Paid APIs and live financial data
 - Full regression dashboard
+- Config-backed CI gate presets
 - LLM-as-judge scoring
 - Production deployment
 
@@ -272,6 +274,36 @@ Acceptance criteria:
 - Tampered recorded state diffs are detected
 - Replay execution writes outputs in an isolated workspace
 - Existing trace, evaluation, and report tests still pass
+
+## Phase 12: Regression Threshold Gates
+
+Goal:
+Fail evaluation runs deterministically when key reliability metrics or replay reproducibility regress beyond configured thresholds.
+
+Why now:
+The harness can execute tasks, validate results, generate reports, and replay traces. The next useful step is turning descriptive regression data into explicit pass/fail gates suitable for local validation and future CI.
+
+Tasks:
+- [x] Define a typed gate result and gate report surface
+- [x] Enforce minimum task success rate
+- [x] Enforce minimum pass@k
+- [x] Compare task success and pass@k drops against a previous summary
+- [x] Cap configured failure taxonomy counts
+- [x] Cap replay divergence counts from replay execution results
+- [x] Add a CLI that exits non-zero when configured gates fail
+- [x] Add replay divergence summaries to reports
+
+Acceptance criteria:
+- Gate tests cover passing thresholds
+- Gate tests cover failing metric and failure-taxonomy thresholds
+- CLI tests cover non-zero exits on configured regressions
+- Report tests cover replay divergence summary output
+- Existing evaluation, replay, and report tests still pass
+
+Do not:
+- Depend on live APIs or paid services
+- Use LLM-as-judge for regression gates
+- Treat missing replay data as a passing replay-divergence gate when that gate is configured
 
 ## Project Positioning
 

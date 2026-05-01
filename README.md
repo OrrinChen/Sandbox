@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 8 agent baseline and evaluation runner work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, and a smoke evaluation runner.
+The repository has completed Phase 9 report and regression view work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
 
 Start by reading:
 
@@ -171,4 +171,23 @@ Smoke command:
 
 ```bash
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --trials 1 --output-dir artifacts/eval_runs/smoke
+```
+
+## Report And Regression View
+
+The report generator lives in `sandboxed_agent_eval_harness.evaluation.report`.
+
+It reads a `summary.json` artifact plus trace metadata and writes:
+
+- `report.json`
+- `report.md`
+
+The report includes domain success rates, final-answer-only vs validator pass rates, failure distributions, pass@k curves, cost and latency summaries, worst trace paths, version metadata, and optional previous-run comparisons.
+
+Smoke command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.report \
+  --summary artifacts/eval_runs/smoke/summary.json \
+  --output-dir artifacts/reports/latest
 ```

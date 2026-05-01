@@ -220,6 +220,34 @@ Expected result:
 - `summary.json` includes task success rate, pass@k, per-validator metrics, and failure taxonomy.
 - CLI smoke prints run count, task success rate, and pass@k.
 
+## Report And Regression View Validation
+
+Run after report generation exists:
+
+```bash
+python3 -m pytest tests/test_report.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --trials 2 \
+  --output-dir /tmp/sandboxed-agent-eval-report-current
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 2 \
+  --output-dir /tmp/sandboxed-agent-eval-report-previous
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.report \
+  --summary /tmp/sandboxed-agent-eval-report-current/summary.json \
+  --previous-summary /tmp/sandboxed-agent-eval-report-previous/summary.json \
+  --output-dir /tmp/sandboxed-agent-eval-report
+git diff --check -- .
+```
+
+Expected result:
+- Report JSON and Markdown artifacts are written.
+- Domain success, final-answer-vs-validator comparison, failure distribution, pass@k curve, cost/latency, and worst trace sections are present.
+- Previous-run comparison shows metric deltas and version metadata.
+- Worst trace entries point to replayable JSONL traces.
+
 ## Before Commit
 
 Always run:

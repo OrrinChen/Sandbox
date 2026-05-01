@@ -166,6 +166,7 @@ def _run_single_trial(
 
     passed = not plan.timed_out and all(result.passed for result in validator_results)
     run_metrics = {
+        "final_answer_passed": bool(plan.final_answer),
         "latency_seconds": plan.latency_seconds,
         "tool_calls": len(plan.tool_calls),
         "turns": plan.turns,

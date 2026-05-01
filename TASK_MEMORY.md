@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 8 agent baselines and evaluation runner. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 9 report and regression view. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-Phase 9: Report and Regression View
+MVP vertical slice complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 8 agent baselines and evaluation runner are in place.
+No implementation blocker. Phase 9 report and regression view are in place.
 
 Next recommended action:
-Implement Phase 9 report and regression view: generate domain success summaries, validator-vs-final-answer comparisons, failure distribution, pass@k curves, cost/latency summaries, worst trace lists, and previous-run comparisons.
+Select the next phase from deferred expansions. Recommended next target: executable fixture-backed tool adapters so trace replay and evaluation can move from planned tool calls to actual sandboxed tool execution.
 
 ## Current State
 
@@ -276,6 +276,36 @@ Known limitations:
 - Tool calls are planned and traced with fixture-shaped results; full tool execution is still shallow.
 - The runner writes artifacts and summaries but does not yet generate a portfolio report or regression comparison view.
 
+### Phase 9: Report and Regression View
+
+Commit:
+Included in the Phase 9 report and regression view commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/evaluation/report.py`.
+- Implemented report generation from `summary.json` or in-memory `EvaluationSummary` objects.
+- Generated domain success summaries.
+- Compared final-answer-only pass rate with validator pass rate.
+- Generated failure type distribution and failure insight summaries.
+- Generated pass@k curves from repeated trials.
+- Summarized cost, latency, turns, and timeout rate overall and by baseline.
+- Listed worst failed traces with failure types, replay readiness, and version metadata.
+- Compared current runs against a previous summary artifact.
+- Wrote `report.json` and `report.md` artifacts.
+- Added `final_answer_passed` to runner metrics for report comparison.
+- Added report tests in `tests/test_report.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.evaluation.report` did not exist.
+- `python3 -m pytest tests/test_report.py -v` passed with 3 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- The final-answer-only score is a deterministic harness proxy based on whether the baseline produced an answer, not semantic judging.
+- Report generation relies on existing summary and trace artifacts; it does not execute replay itself.
+- Previous-run comparison reports metric deltas and version metadata, but it does not enforce pass/fail regression thresholds yet.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -509,6 +539,28 @@ Results:
 - CLI smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
 - Whitespace check passed.
 
+### 2026-05-01
+
+Commands run for Phase 9:
+
+```bash
+python3 -m pytest tests/test_report.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --trials 2 --output-dir /tmp/sandboxed-agent-eval-report-current
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 2 --output-dir /tmp/sandboxed-agent-eval-report-previous
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.report --summary /tmp/sandboxed-agent-eval-report-current/summary.json --previous-summary /tmp/sandboxed-agent-eval-report-previous/summary.json --output-dir /tmp/sandboxed-agent-eval-report
+git diff --check -- .
+```
+
+Results:
+- The first Phase 9 red run failed because `sandboxed_agent_eval_harness.evaluation.report` did not exist.
+- Final report test run passed: 3 tests.
+- Final full pytest run passed: 60 tests.
+- Current-run smoke check passed and printed `runs=48 task_success_rate=0.625 pass_at_k=0.625`.
+- Previous-run smoke check passed and printed `runs=12 task_success_rate=1.000 pass_at_k=1.000`.
+- Report CLI smoke check passed and wrote `report.json` and `report.md`.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -535,7 +587,7 @@ Results:
 
 - Limitation: Trace replay does not execute tools yet.
   Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
-  Planned fix: Later work can connect replay to executable fixture-backed tool calls.
+  Planned fix: Recommended next phase connects replay and evaluation to executable fixture-backed tool calls.
 
 - Limitation: Agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, but they are not evidence about real model reliability yet.
@@ -543,7 +595,15 @@ Results:
 
 - Limitation: Tool calls in the runner are planned and fixture-shaped.
   Impact: The runner validates tool use and records traces, but it does not yet invoke full tool implementations through the sandbox.
-  Planned fix: Later phases can replace planned tool results with sandboxed executable tool adapters.
+  Planned fix: Replace planned tool results with sandboxed executable tool adapters.
+
+- Limitation: The report's final-answer-only score is a deterministic proxy.
+  Impact: It demonstrates silent-failure reporting but does not semantically judge answer quality.
+  Planned fix: Keep deterministic checks first; add optional controlled final-answer scoring only after executable tool adapters and regression thresholds are stable.
+
+- Limitation: Regression comparison is descriptive.
+  Impact: The report shows deltas but does not yet fail CI or enforce thresholds.
+  Planned fix: Add configurable regression gates after the report format stabilizes.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
@@ -566,9 +626,8 @@ Results:
 
 ## Next Steps
 
-1. Generate success rate by domain.
-2. Compare final-answer pass against validator pass.
-3. Generate failure type distribution and pass@k curves.
-4. Summarize cost and latency.
-5. List worst traces with artifact paths.
-6. Compare the current `summary.json` against a previous run artifact.
+1. Select the next phase scope explicitly.
+2. Recommended: implement executable fixture-backed tool adapters.
+3. Wire evaluation runs to sandboxed tool execution instead of planned fixture-shaped results.
+4. Make trace replay reproduce tool execution against pinned fixture state.
+5. Add optional regression threshold gates once executable runs are stable.

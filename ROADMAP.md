@@ -12,9 +12,10 @@ Completed:
 - [x] Phase 6: Deterministic Validators
 - [x] Phase 7: Initial Task Suites
 - [x] Phase 8: Agent Baselines and Evaluation Runner
+- [x] Phase 9: Report and Regression View
 
 Current phase:
-- [ ] Phase 9: Report and Regression View
+- [ ] Next phase not selected; MVP vertical slice is complete
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -212,13 +213,13 @@ Goal:
 Produce a portfolio-ready reliability report before building a full dashboard.
 
 Tasks:
-- [ ] Generate success rate by domain
-- [ ] Compare final-answer pass vs validator pass
-- [ ] Generate failure type distribution
-- [ ] Generate pass@k curve
-- [ ] Generate cost and latency summary
-- [ ] List worst traces
-- [ ] Compare against a previous run artifact
+- [x] Generate success rate by domain
+- [x] Compare final-answer pass vs validator pass
+- [x] Generate failure type distribution
+- [x] Generate pass@k curve
+- [x] Generate cost and latency summary
+- [x] List worst traces
+- [x] Compare against a previous run artifact
 
 Acceptance criteria:
 - Report explains where agents fail
@@ -367,6 +368,7 @@ sandboxed-agent-eval-harness/
     test_trace_replay.py
     test_validators.py
     test_eval_runner.py
+    test_report.py
 ```
 
 ## Killer Experiment

@@ -279,6 +279,34 @@ Expected result:
 - Trace tool results contain executed fixture outputs, not baseline-provided placeholders.
 - State diffs are captured from sandbox snapshots and match expected output files.
 
+## Trace Replay Execution Validation
+
+Run after replay execution exists:
+
+```bash
+python3 -m pytest tests/test_trace_replay_execution.py -v
+python3 -m pytest tests/test_trace_replay.py tests/test_trace_replay_execution.py tests/test_tool_execution.py tests/test_eval_runner.py tests/test_report.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-replay-execution
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from sandboxed_agent_eval_harness.tracing import TraceReplayExecutor
+trace = Path("/tmp/sandboxed-agent-eval-replay-execution/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl")
+result = TraceReplayExecutor().replay(trace, workspace="/tmp/sandboxed-agent-eval-replay-workspace")
+print(result.to_dict())
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Recorded tool calls are re-executed with fixture-backed adapters.
+- Recorded and replayed tool results match for untampered traces.
+- Recorded and replayed state diffs match for untampered traces.
+- Tampered recorded tool results and state diffs are caught by tests.
+
 ## Before Commit
 
 Always run:

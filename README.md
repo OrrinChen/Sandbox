@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 10 executable fixture-backed tool adapter work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
+The repository has completed Phase 11 trace replay execution work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
 
 Start by reading:
 
@@ -135,7 +135,19 @@ They provide:
 
 The logger appends ordered JSONL events for user messages, agent messages, tool calls, tool results, state diffs, validator results, timeout events, and error events. Each event carries pinned run metadata where available, including task, tool, prompt, model, and fixture versions.
 
-The replay helper loads persisted JSONL traces, rejects malformed or non-contiguous event sequences, preserves original event order, and carries fixture state needed to inspect a failed run. It reconstructs trace context for debugging; it does not execute tools yet.
+The replay helper loads persisted JSONL traces, rejects malformed or non-contiguous event sequences, preserves original event order, and carries fixture state needed to inspect a failed run. Trace execution support can re-run persisted tool calls for supported fixture-backed tasks.
+
+## Trace Replay Execution
+
+Trace replay execution lives in `sandboxed_agent_eval_harness.tracing`.
+
+It provides:
+
+- `TraceReplayExecutor`
+- `TraceReplayExecutionResult`
+- `TraceReplayExecutionError`
+
+The replay executor reads persisted tool calls from a JSONL trace, identifies the pinned task from trace metadata, re-executes supported fixture-backed tools in a fresh workspace, compares recorded and replayed tool results, compares recorded and replayed state diffs, and returns deterministic divergence records.
 
 ## Deterministic Validators
 

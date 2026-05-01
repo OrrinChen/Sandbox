@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 10 executable fixture-backed tool adapters. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 11 trace replay execution. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-MVP vertical slice plus executable fixture-backed tools complete; next phase not selected.
+Replayable executable MVP complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 10 executable fixture-backed tool adapters are in place.
+No implementation blocker. Phase 11 trace replay execution is in place.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: trace replay execution, using the fixture-backed executor to re-run persisted tool calls against pinned fixture/workspace state.
+Select the next phase from deferred expansions. Recommended next target: regression threshold gates that can fail a run when success rate, pass@k, failure taxonomy, or replay divergence regresses.
 
 ## Current State
 
@@ -335,6 +335,33 @@ Known limitations:
 - The executor covers the current default fixture tools only.
 - Trace replay can inspect persisted tool results but still does not re-execute persisted tool calls.
 
+### Phase 11: Trace Replay Execution
+
+Commit:
+Included in the Phase 11 trace replay execution commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/tracing/execution.py`.
+- Implemented `TraceReplayExecutor`, `TraceReplayExecutionResult`, and `TraceReplayExecutionError`.
+- Re-executed persisted `tool_call` events with `FixtureToolExecutor`.
+- Compared recorded `tool_result` payloads with replayed tool outputs.
+- Recomputed sandbox state diffs from replay execution.
+- Compared recorded and replayed state diffs.
+- Added deterministic divergence records for tool result and state diff mismatches.
+- Exported replay execution APIs from `sandboxed_agent_eval_harness.tracing`.
+- Added replay execution tests in `tests/test_trace_replay_execution.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `TraceReplayExecutor` was not exported.
+- `python3 -m pytest tests/test_trace_replay_execution.py -v` passed with 3 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Replay execution covers the current default task suite and fixture-backed tools.
+- Replay execution detects tool result and state diff divergence, but it does not yet enforce regression thresholds.
+- Replay execution is not yet integrated into the report generator as a summarized section.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -619,6 +646,32 @@ Results:
 - Trace inspection smoke printed executed CSV columns/row count and actual state diff.
 - Whitespace check passed.
 
+Commands run for Phase 11:
+
+```bash
+python3 -m pytest tests/test_trace_replay_execution.py -v
+python3 -m pytest tests/test_trace_replay.py tests/test_trace_replay_execution.py tests/test_tool_execution.py tests/test_eval_runner.py tests/test_report.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-replay-execution
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from sandboxed_agent_eval_harness.tracing import TraceReplayExecutor
+trace = Path("/tmp/sandboxed-agent-eval-replay-execution/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl")
+result = TraceReplayExecutor().replay(trace, workspace="/tmp/sandboxed-agent-eval-replay-workspace")
+print(result.to_dict())
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 11 red run failed because `TraceReplayExecutor` was not exported.
+- Final replay execution test run passed: 3 tests.
+- Final trace/tool/eval/report regression test run passed: 18 tests.
+- Final full pytest run passed: 66 tests.
+- Runner smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
+- Replay execution smoke printed a passing replay result with two re-executed tool calls and no divergences.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -643,9 +696,9 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Trace replay does not execute tools yet.
-  Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
-  Planned fix: Recommended next phase uses the fixture-backed executor to re-run persisted trace tool calls.
+- Limitation: Replay execution is limited to the current default fixture-backed tools and task suite.
+  Impact: New domains need executable adapters before traces can be re-executed end to end.
+  Planned fix: Add replay support alongside each new executable adapter.
 
 - Limitation: Agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, but they are not evidence about real model reliability yet.
@@ -665,7 +718,7 @@ Results:
 
 - Limitation: Regression comparison is descriptive.
   Impact: The report shows deltas but does not yet fail CI or enforce thresholds.
-  Planned fix: Add configurable regression gates after the report format stabilizes.
+  Planned fix: Recommended next phase adds configurable regression gates.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
@@ -689,6 +742,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: implement trace replay execution using persisted tool calls and fixture-backed adapters.
-3. Add replay verification that detects divergence between recorded and re-executed tool results/state diffs.
-4. Add optional regression threshold gates once replay execution is stable.
+2. Recommended: implement regression threshold gates for task success, pass@k, failure taxonomy, and replay divergence.
+3. Add a validation command that exits non-zero on configured regression threshold failures.
+4. Integrate replay divergence counts into report summaries.

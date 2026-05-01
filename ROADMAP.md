@@ -14,9 +14,10 @@ Completed:
 - [x] Phase 8: Agent Baselines and Evaluation Runner
 - [x] Phase 9: Report and Regression View
 - [x] Phase 10: Executable Fixture Tool Adapters
+- [x] Phase 11: Trace Replay Execution
 
 Current phase:
-- [ ] Next phase not selected; MVP vertical slice plus executable fixture tools is complete
+- [ ] Next phase not selected; replayable executable MVP is complete
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -249,6 +250,28 @@ Acceptance criteria:
 - State validator uses actual workspace diffs
 - Trace tool results show executed fixture outputs
 - Existing evaluation and report metrics still pass
+
+## Phase 11: Trace Replay Execution
+
+Goal:
+Make persisted traces reproducible by re-executing recorded tool calls and detecting divergence.
+
+Tasks:
+- [x] Load persisted trace metadata and identify the task
+- [x] Re-execute recorded tool calls with fixture-backed adapters
+- [x] Compare recorded tool results with replayed tool results
+- [x] Recompute sandbox state diffs
+- [x] Compare recorded state diff with replayed state diff
+- [x] Report deterministic divergence records
+- [x] Serialize replay execution results
+- [x] Keep replay execution deterministic and network-free
+
+Acceptance criteria:
+- A passing trace can be re-executed without divergence
+- Tampered recorded tool results are detected
+- Tampered recorded state diffs are detected
+- Replay execution writes outputs in an isolated workspace
+- Existing trace, evaluation, and report tests still pass
 
 ## Project Positioning
 

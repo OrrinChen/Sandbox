@@ -26,6 +26,7 @@ class AgentRunPlan:
     latency_seconds: float
     cost: float
     timed_out: bool = False
+    final_answer_passed: bool = True
 
 
 class AgentBaseline:
@@ -118,6 +119,7 @@ def _make_plan(
         turns=max(1, len(tool_calls) + 1 + turns_extra),
         latency_seconds=latency_seconds,
         cost=0.0,
+        final_answer_passed=bool(final_answer),
     )
 
 

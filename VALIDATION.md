@@ -412,6 +412,26 @@ Expected result:
 - Gate preset CLI replays all discovered traces with zero divergences.
 - Report CLI writes a four-domain report with zero worst traces for the oracle smoke run.
 
+## Model Adapter And Silent Failure Study Validation
+
+Run after recorded model adapters and silent-failure study output exist:
+
+```bash
+python3 -m pytest tests/test_model_adapters.py tests/test_model_study.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-model-study
+git diff --check -- .
+```
+
+Expected result:
+- Recorded model output fixtures load without live API access.
+- OpenAI Responses adapter request construction is tested through injected transport only.
+- `ModelAdapterAgent` runs through the existing evaluation runner.
+- Study output writes `summary.json`, report artifacts, and `silent_failure_study.json`.
+- CLI prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=4`.
+
 ## Before Commit
 
 Always run:

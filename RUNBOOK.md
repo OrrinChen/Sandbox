@@ -61,6 +61,14 @@ After an evaluation runner exists:
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke
 ```
 
+Recorded model silent-failure study:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-model-study
+```
+
 ## Data and Network Policy
 
 Default tests should be local and deterministic.

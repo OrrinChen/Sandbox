@@ -1,2 +1,14 @@
-# Model definitions are filled in once agent baselines exist.
-models: []
+models:
+  - id: recorded_gpt_style_agent
+    type: recorded
+    model: recorded-gpt-style-v1
+    prompt_version: recorded-model-study-v1
+    fixture: fixtures/model_outputs/silent_failure_study.json
+    default_enabled: true
+    network_required: false
+  - id: openai_responses
+    type: live_optional
+    endpoint: https://api.openai.com/v1/responses
+    auth_env: OPENAI_API_KEY
+    default_enabled: false
+    network_required: true

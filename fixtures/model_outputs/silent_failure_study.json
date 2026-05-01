@@ -1,0 +1,163 @@
+{
+  "study_id": "phase15-silent-failure-study",
+  "adapters": [
+    {
+      "name": "recorded_gpt_style_agent",
+      "model": "recorded-gpt-style-v1",
+      "prompt_version": "recorded-model-study-v1",
+      "records": [
+        {
+          "task_id": "finance-aapl-revenue-2023",
+          "final_answer": "revenue_usd_millions=383285 [aapl-2023-10k-income]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {"ticker": "AAPL", "fiscal_year": 2023, "statement": "income"}
+            }
+          ],
+          "reported_metrics": {"revenue_usd_millions": 383285},
+          "turns": 2,
+          "latency_seconds": 0.42,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-2024",
+          "final_answer": "commercial_cloud_revenue_usd_millions=135000, cloud_operating_margin=0.45 [msft-2024-segment-note]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {"ticker": "MSFT", "fiscal_year": 2024, "statement": "segment"}
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-nvda-datacenter-citation-2024",
+          "final_answer": "data_center_revenue_usd_millions=47525 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {"data_center_revenue_usd_millions": 47525},
+          "turns": 2,
+          "latency_seconds": 0.51,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-sales-region-summary",
+          "final_answer": "top_region_revenue=5100, output_rows=3",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/regional_sales.csv"}},
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv",
+                "group_by": "region",
+                "metric": "revenue",
+                "output_path": "summary_by_region.csv"
+              }
+            }
+          ],
+          "reported_metrics": {"top_region_revenue": 5100, "output_rows": 3},
+          "turns": 3,
+          "latency_seconds": 0.56,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-churn-plan-rate",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/customer_churn.csv"}},
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv",
+                "group_by": "plan",
+                "metric": "churn_rate",
+                "output_path": "churn_by_plan.csv"
+              }
+            }
+          ],
+          "reported_metrics": {"enterprise_churn_rate": 0.25, "self_serve_churn_rate": 0.5},
+          "turns": 3,
+          "latency_seconds": 0.58,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-inventory-stockout-report",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/inventory.csv"}}
+          ],
+          "reported_metrics": {"stockout_risk_count": 2},
+          "turns": 2,
+          "latency_seconds": 0.39,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order",
+          "final_answer": "order_quantity=100, service_level=0.666667, expected_cost=33.333333",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.62,
+          "cost": 0.0
+        }
+      ]
+    }
+  ]
+}

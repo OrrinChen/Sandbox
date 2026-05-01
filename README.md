@@ -23,7 +23,18 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 14 portfolio-grade deterministic suite expansion. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
+The repository has completed Phase 15 real model adapter and silent failure study work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
+
+Current evidence snapshot:
+
+```text
+Domains: finance, data_analysis, coding, optimization
+Default deterministic tasks: 8
+Validators: schema, tool_sequence, argument, state, numeric, citation, constraint, unit_test, policy, cost_latency
+Recorded model study: final-answer pass rate 1.000 vs validator pass rate 0.500
+Recorded silent failures caught: 4
+Strict oracle replay: 8 traces, 0 divergences
+```
 
 Start by reading:
 
@@ -58,6 +69,9 @@ PYTHONPATH=src python3 - <<'PY'
 import sandboxed_agent_eval_harness
 print(sandboxed_agent_eval_harness.__name__)
 PY
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-model-study
 git diff --check -- .
 ```
 
@@ -223,14 +237,38 @@ The first deterministic baselines live in `sandboxed_agent_eval_harness.agents`:
 - `react_style_agent`
 - `planner_executor_agent`
 - `oracle_tool_selection_agent`
+- `ModelAdapterAgent`
 
-The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, report a failure taxonomy, and track correctness for constraints, unit tests, deterministic policy terms, and cost/latency limits.
+The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, report a failure taxonomy, track correctness for constraints, unit tests, deterministic policy terms, and cost/latency limits, and preserve a separate final-answer-only pass signal for silent-failure studies.
 
 Smoke command:
 
 ```bash
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --trials 1 --output-dir artifacts/eval_runs/smoke
 ```
+
+## Model Adapters And Silent Failure Study
+
+Model adapter primitives live in `sandboxed_agent_eval_harness.models`.
+
+They provide:
+
+- `RecordedModelAdapter`
+- `OpenAIResponsesAdapter`
+- `load_recorded_model_adapters()`
+- `ModelAdapterAgent`
+
+The recorded adapter replays fixture-safe model plans from `fixtures/model_outputs/silent_failure_study.json`, so local validation can show model-style silent failures without network access, credentials, or paid APIs. The optional OpenAI Responses adapter builds a live request through an injectable transport; tests use the injected transport path and never call the network by default.
+
+Silent failure study command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir artifacts/eval_runs/silent_failure_study
+```
+
+The fixture-backed study currently records a `recorded-gpt-style-v1` model trace set where final-answer-only scoring passes 8/8 tasks, while deterministic validators pass 4/8 and catch four silent failures across unsupported citation, missing unit tests, missing state mutation, tool sequence mismatch, numeric mismatch, and constraint violation.
 
 ## Report And Regression View
 

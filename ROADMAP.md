@@ -18,12 +18,14 @@ Completed:
 - [x] Phase 12: Regression Threshold Gates
 - [x] Phase 13: Config-backed Gate Presets and Trace Discovery
 - [x] Phase 14: Portfolio-grade Deterministic Suite Expansion
+- [x] Phase 15: Real Model Adapter and Silent Failure Study
 
 Current phase:
-- [ ] Next phase not selected; portfolio-grade deterministic MVP is complete
+- [ ] Next phase not selected; recorded model-output study MVP is complete
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
+- Live multi-provider model experiments with credentials supplied outside default tests
 - Cloud execution
 - Paid APIs and live financial data
 - Full regression dashboard
@@ -369,6 +371,39 @@ Do not:
 - Add live APIs, paid services, or external benchmark downloads
 - Add heavy dependencies
 - Treat a written final answer as enough when state, unit-test, or constraint validators fail
+
+## Phase 15: Real Model Adapter and Silent Failure Study
+
+Goal:
+Add model adapter interfaces and a recorded model-output study that compares final-answer-only scoring against deterministic validation.
+
+Why now:
+The harness is now structurally complete, but resume-grade evidence needs model-style failure data instead of only deterministic baseline simulations.
+
+Tasks:
+- [x] Add a recorded model-output adapter
+- [x] Add an optional OpenAI Responses API adapter with injectable transport
+- [x] Add `ModelAdapterAgent` so adapter outputs can run through the existing evaluation runner
+- [x] Preserve final-answer-only pass as a separate run metric
+- [x] Add recorded model output fixtures with intentional silent failures
+- [x] Add a silent failure study CLI
+- [x] Generate model comparison output with final-answer pass rate, validator pass rate, overstatement rate, failure taxonomy, cost, and latency
+- [x] Keep default tests fixture-safe and network-free
+- [x] Update configs and docs
+
+Acceptance criteria:
+- Recorded model adapter can replay fixture-safe model plans
+- OpenAI adapter request construction is testable without network access
+- The study command writes `summary.json`, report artifacts, and `silent_failure_study.json`
+- The recorded study demonstrates final-answer-only pass rate above validator pass rate
+- Full pytest passes
+- `git diff --check -- .` passes
+
+Do not:
+- Require API keys or live network calls for default tests
+- Commit secrets or provider credentials
+- Claim broad benchmark results from one recorded fixture study
+- Use LLM-as-judge in place of deterministic validators
 
 ## Project Positioning
 

@@ -221,7 +221,7 @@ def _run_single_trial(
     passed = not plan.timed_out and all(result.passed for result in validator_results)
     run_metrics = {
         "executed_tool_calls": len(plan.tool_calls) - len(execution_errors),
-        "final_answer_passed": bool(plan.final_answer),
+        "final_answer_passed": bool(plan.final_answer_passed),
         "latency_seconds": plan.latency_seconds,
         "tool_calls": len(plan.tool_calls),
         "tool_execution_mode": "fixture_adapter",

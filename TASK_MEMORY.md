@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 14 portfolio-grade deterministic suite expansion. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 15 real model adapter and silent failure study. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Portfolio-grade deterministic MVP complete; next phase not selected.
+Recorded model-output study MVP complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 14 coding and optimization suite expansion is in place.
+No implementation blocker. Phase 15 adapter and silent-failure study path is in place without live API requirements.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: add real model adapter interfaces and a fixture-safe local transcript of model outputs, or add project-bound CI scripts for the expanded strict smoke command.
+Select the next phase from deferred expansions. Recommended next target: add project-bound CI scripts for strict smoke plus model study, or add a credentials-gated live provider experiment outside default tests.
 
 ## Current State
 
@@ -447,6 +447,31 @@ Known limitations:
 - The sandboxed Python test runner executes local fixture tests only; it is not a general secure code execution product.
 - Optimization coverage currently includes one small newsvendor instance; broader OR task families remain deferred.
 
+### Phase 15: Real Model Adapter and Silent Failure Study
+
+Commit:
+Included in the Phase 15 real model adapter and silent failure study commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.models` with `RecordedModelAdapter`, `OpenAIResponsesAdapter`, and recorded adapter loading.
+- Added `ModelAdapterAgent` so recorded model plans can run through the existing evaluation runner.
+- Added `final_answer_passed` to `AgentRunPlan` and runner metrics so final-answer-only scoring can be compared against validator pass rate.
+- Added `fixtures/model_outputs/silent_failure_study.json` with eight recorded model-style outputs across the default suite.
+- Added `sandboxed_agent_eval_harness.evaluation.model_study` CLI.
+- The recorded study writes `summary.json`, report artifacts, and `silent_failure_study.json`.
+- The current fixture demonstrates final-answer-only pass rate 1.000 versus validator pass rate 0.500, with four silent failures caught by deterministic validators.
+- Updated `README.md`, `ROADMAP.md`, `VALIDATION.md`, `RUNBOOK.md`, and `configs/models.yaml`.
+
+Validation:
+- Initial TDD red run failed because `ModelAdapterAgent`, `sandboxed_agent_eval_harness.models`, and `evaluation.model_study` did not exist.
+- Focused model adapter and model study tests passed before commit and are recorded in the validation log.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- `OpenAIResponsesAdapter` is opt-in and tested with injected transport only; default validation does not call live APIs.
+- The recorded model fixture is evidence that the harness can expose model-style silent failures, not a benchmark-scale real provider result.
+- Live provider cost accounting still needs credentials-gated experiments and provider-specific usage normalization.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -831,6 +856,22 @@ Results:
 - Report CLI smoke check passed and wrote a four-domain report with zero worst traces for the oracle run.
 - Whitespace check passed.
 
+Commands run for Phase 15:
+
+```bash
+python3 -m pytest tests/test_model_adapters.py tests/test_model_study.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study --recorded-output fixtures/model_outputs/silent_failure_study.json --output-dir /tmp/sandboxed-agent-eval-model-study
+python3 -m pytest
+git diff --check -- .
+```
+
+Results:
+- The first Phase 15 red run failed because `ModelAdapterAgent`, `sandboxed_agent_eval_harness.models`, and `evaluation.model_study` did not exist.
+- Focused model adapter and model study tests passed after implementation.
+- Model study smoke printed `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=4`.
+- Final full pytest run passed after implementation.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -853,19 +894,23 @@ Results:
   Reason: Live APIs and changing market/financial data would make deterministic validation noisy.
   Date: 2026-04-30
 
+- Decision: Live model providers must be opt-in and tested through injected or recorded transports by default.
+  Reason: Default validation should stay credential-free, network-free, and reproducible.
+  Date: 2026-05-01
+
 ## Known Limitations
 
 - Limitation: Replay execution is limited to the default fixture-backed tools and suite.
   Impact: New domains beyond finance, data analysis, coding, and the current optimization slice need executable adapters before traces can be re-executed end to end.
   Planned fix: Add replay support alongside each new executable adapter.
 
-- Limitation: Agent baselines are deterministic fixture-compatible simulations.
-  Impact: They exercise the harness, validators, traces, and metrics, but they are not evidence about real model reliability yet.
-  Planned fix: Later phases can add real local or API-backed model adapters once deterministic reporting is stable.
+- Limitation: Default agent baselines are deterministic fixture-compatible simulations.
+  Impact: They exercise the harness, validators, traces, and metrics, while the recorded model fixture demonstrates model-style failures without being a live provider benchmark.
+  Planned fix: Add credentials-gated live provider experiments and keep recorded transcripts for reproducible replay.
 
-- Limitation: Baselines still plan tool choices and arguments deterministically.
-  Impact: Tool execution is real for current fixtures, but agent behavior is still simulated.
-  Planned fix: Add real local or API-backed model adapters only after replay execution and regression gates are stable.
+- Limitation: The recorded model study is a small fixture.
+  Impact: It proves the final-answer-only vs deterministic-validator reporting path, but it is not yet broad enough for benchmark-scale claims.
+  Planned fix: Add more recorded provider runs and model families after the adapter surface stabilizes.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
   Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
@@ -913,6 +958,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: add real model adapter interfaces and fixture-safe recorded model-output experiments.
-3. Add project-bound local CI scripts for the expanded strict smoke command if automation is needed.
+2. Recommended: add project-bound local CI scripts for `pytest`, oracle smoke, strict gate, and model study.
+3. Add credentials-gated live provider runs and persist them as recorded model-output fixtures.
 4. Add more deterministic coding and optimization tasks before making benchmark-scale claims.

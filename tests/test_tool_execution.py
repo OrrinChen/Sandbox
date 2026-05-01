@@ -51,6 +51,63 @@ def test_fixture_tool_executor_writes_csv_output_and_state_diff(tmp_path):
     assert sandbox.read_text("summary_by_region.csv") == "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
 
 
+def test_fixture_tool_executor_patches_code_and_runs_unit_tests(tmp_path):
+    task = _task("coding-discount-total-fix")
+    executor = FixtureToolExecutor(default_tool_registry())
+    sandbox = executor.create_sandbox(task, tmp_path / "workspace")
+
+    before = sandbox.snapshot()
+    patch_result = executor.execute(
+        "code.patch",
+        {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+                {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)",
+                }
+            ],
+        },
+        sandbox,
+    )
+    unit_result = executor.execute(
+        "python.unit_tests",
+        {"test_path": "fixtures/code/test_discount.py"},
+        sandbox,
+    )
+    diff = before.diff(sandbox.snapshot()).to_dict()
+
+    assert patch_result == {"path": "fixtures/code/discount.py", "replacements_applied": 1}
+    assert unit_result == {"passed": True, "tests_run": 2, "failures": 0}
+    assert diff == {"added": [], "modified": ["fixtures/code/discount.py"], "deleted": []}
+
+
+def test_fixture_tool_executor_solves_newsvendor_and_writes_solution(tmp_path):
+    task = _task("optimization-newsvendor-order")
+    executor = FixtureToolExecutor(default_tool_registry())
+    sandbox = executor.create_sandbox(task, tmp_path / "workspace")
+
+    before = sandbox.snapshot()
+    result = executor.execute(
+        "optimization.solve_newsvendor",
+        {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution.json",
+        },
+        sandbox,
+    )
+    diff = before.diff(sandbox.snapshot()).to_dict()
+
+    assert result == {
+        "output_path": "newsvendor_solution.json",
+        "order_quantity": 120,
+        "service_level": 1.0,
+        "expected_cost": 20.0,
+        "source": "newsvendor-fixture-v1",
+    }
+    assert diff == {"added": ["newsvendor_solution.json"], "modified": [], "deleted": []}
+
+
 def test_evaluation_runner_uses_executable_fixture_tool_results(tmp_path):
     suite = default_task_suite()
     task = _task("data-sales-region-summary")

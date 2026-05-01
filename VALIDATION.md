@@ -373,6 +373,45 @@ Expected result:
 - Gate CLI exits status 0 for the strict smoke preset.
 - Full test suite remains green.
 
+## Portfolio Suite Expansion Validation
+
+Run after coding and optimization deterministic suites exist:
+
+```bash
+python3 -m pytest \
+  tests/test_task_suites.py \
+  tests/test_tool_registry.py \
+  tests/test_tool_execution.py \
+  tests/test_validators.py \
+  tests/test_eval_runner.py \
+  tests/test_trace_replay_execution.py \
+  -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-portfolio-suite
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
+  --summary /tmp/sandboxed-agent-eval-portfolio-suite/summary.json \
+  --threshold-preset strict_smoke \
+  --discover-traces \
+  --replay-workspace /tmp/sandboxed-agent-eval-portfolio-suite-replay
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.report \
+  --summary /tmp/sandboxed-agent-eval-portfolio-suite/summary.json \
+  --output-dir /tmp/sandboxed-agent-eval-portfolio-report
+git diff --check -- .
+```
+
+Expected result:
+- Default suite includes finance, data analysis, coding, and optimization tasks.
+- Coding fixture task patches a file and passes sandboxed unit tests.
+- Optimization fixture task writes a deterministic solution artifact.
+- Constraint, unit-test, policy, and cost/latency validators are available.
+- Oracle smoke prints `runs=8 task_success_rate=1.000 pass_at_k=1.000`.
+- Gate preset CLI replays all discovered traces with zero divergences.
+- Report CLI writes a four-domain report with zero worst traces for the oracle smoke run.
+
 ## Before Commit
 
 Always run:

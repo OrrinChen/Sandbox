@@ -1,4 +1,4 @@
-# Phase 3 default tool declarations mirror default_tool_specs().
+# Default tool declarations mirror default_tool_specs().
 tools:
   - tool_name: financial_statement.lookup
     domain: finance
@@ -48,4 +48,48 @@ tools:
       - missing_column
       - invalid_metric
       - invalid_csv
+      - write_denied
+  - tool_name: code.patch
+    domain: coding
+    backing: local_file
+    permissions:
+      - read_visible_files
+      - write_task_workspace
+    side_effects:
+      - modifies_file
+    state_mutation:
+      modifies:
+        - source_file
+    failure_modes:
+      - missing_file
+      - replacement_not_found
+      - invalid_patch
+      - write_denied
+  - tool_name: python.unit_tests
+    domain: coding
+    backing: sandboxed_python
+    permissions:
+      - read_visible_files
+      - execute_sandboxed_python
+    side_effects: []
+    failure_modes:
+      - missing_file
+      - test_failure
+      - timeout
+      - invalid_test_fixture
+  - tool_name: optimization.solve_newsvendor
+    domain: optimization
+    backing: local_file
+    permissions:
+      - read_visible_files
+      - write_task_workspace
+    side_effects:
+      - writes_file
+    state_mutation:
+      writes:
+        - optimization_solution
+    failure_modes:
+      - missing_file
+      - invalid_fixture
+      - infeasible_instance
       - write_denied

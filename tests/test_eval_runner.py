@@ -94,6 +94,6 @@ def test_evaluation_cli_smoke_writes_summary(tmp_path, capsys):
     output = capsys.readouterr().out
 
     assert exit_code == 0
-    assert "runs=6" in output
+    assert "runs=8" in output
     assert "task_success_rate=1.000" in output
     assert (tmp_path / "summary.json").is_file()

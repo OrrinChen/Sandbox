@@ -16,6 +16,10 @@ eval_runs:
       - state_correctness
       - numeric_correctness
       - citation_correctness
+      - constraint_correctness
+      - unit_test_correctness
+      - policy_correctness
+      - cost_latency_correctness
       - average_turns
       - average_latency_seconds
       - average_cost

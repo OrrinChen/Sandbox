@@ -17,12 +17,13 @@ Completed:
 - [x] Phase 11: Trace Replay Execution
 - [x] Phase 12: Regression Threshold Gates
 - [x] Phase 13: Config-backed Gate Presets and Trace Discovery
+- [x] Phase 14: Portfolio-grade Deterministic Suite Expansion
 
 Current phase:
-- [ ] Next phase not selected; config-backed regression-gated MVP is complete
+- [ ] Next phase not selected; portfolio-grade deterministic MVP is complete
 
 Deferred:
-- Optimization and coding suites beyond initial design
+- Broader optimization and coding suites beyond initial deterministic slices
 - Cloud execution
 - Paid APIs and live financial data
 - Full regression dashboard
@@ -153,10 +154,10 @@ Initial validators:
 - [x] Citation validator
 
 Expansion validators:
-- [ ] Constraint validator
-- [ ] Unit test validator
-- [ ] Policy validator
-- [ ] Cost and latency validator
+- [x] Constraint validator
+- [x] Unit test validator
+- [x] Policy validator
+- [x] Cost and latency validator
 
 Acceptance criteria:
 - A plausible final answer with wrong tool use fails
@@ -336,6 +337,39 @@ Do not:
 - Add repository-root CI workflow files while the project boundary is `sandboxed-agent-eval-harness/`
 - Depend on live APIs or external services
 
+## Phase 14: Portfolio-grade Deterministic Suite Expansion
+
+Goal:
+Expand the MVP beyond finance/data examples into deterministic coding and optimization tasks with executable tools, replayable traces, and stricter validators.
+
+Why now:
+The project is strong as an eval harness MVP, but a resume-grade AI infra project benefits from showing multiple task domains and validators that catch failures beyond numbers and citations.
+
+Tasks:
+- [x] Add a sandboxed coding fixture task
+- [x] Add a small optimization fixture task
+- [x] Add executable `code.patch` and `python.unit_tests` tools
+- [x] Add executable `optimization.solve_newsvendor` tool
+- [x] Add constraint, unit-test, policy, and cost/latency validators
+- [x] Wire new validators into the evaluation runner
+- [x] Update baseline planning for coding and optimization tasks
+- [x] Keep trace replay execution deterministic for new tools
+- [x] Update configs and docs for the expanded suite
+
+Acceptance criteria:
+- Default suite covers finance, data analysis, coding, and optimization
+- New coding and optimization tasks use local fixtures only
+- New tools validate inputs and outputs through `ToolSpec`
+- Oracle baseline passes the expanded suite
+- Non-oracle baselines still produce deterministic failure taxonomy
+- Trace replay can re-execute new task traces without divergence
+- Full pytest passes
+
+Do not:
+- Add live APIs, paid services, or external benchmark downloads
+- Add heavy dependencies
+- Treat a written final answer as enough when state, unit-test, or constraint validators fail
+
 ## Project Positioning
 
 Project name:
@@ -423,7 +457,7 @@ Validators:
 
 ### Optimization Tasks
 
-Deferred until the first vertical slice works.
+Initial deterministic slice implemented in Phase 14. Broader optimization families remain deferred.
 
 Examples:
 - Solve a newsvendor order quantity problem
@@ -433,7 +467,7 @@ Examples:
 
 ### Software / Terminal Tasks
 
-Deferred until the first vertical slice works.
+Initial deterministic coding slice implemented in Phase 14. Broader terminal/software tasks remain deferred.
 
 Examples:
 - Fix a small failing function

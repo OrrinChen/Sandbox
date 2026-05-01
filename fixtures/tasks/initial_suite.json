@@ -199,6 +199,92 @@
         "A final answer may include items equal to reorder point instead of strictly below it."
       ],
       "final_answer_only_risk": true
+    },
+    {
+      "task_id": "coding-discount-total-fix",
+      "domain": "coding",
+      "instruction": "Patch the discount helper so percentage discounts apply to the full cart total, then run the fixture unit tests.",
+      "available_tools": ["code.patch", "python.unit_tests"],
+      "initial_state": {"fixture_version": "code-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["code.patch", "python.unit_tests"],
+        "state_diff": {"added": [], "modified": ["fixtures/code/discount.py"], "deleted": []},
+        "unit_tests": {"passed": true, "tests_run": 2, "failures": 0}
+      },
+      "visible_files": ["fixtures/code/discount.py", "fixtures/code/test_discount.py"],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "unit_test", "cost_latency"],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/code/discount.py", "fixtures/code/test_discount.py"],
+      "gold_outputs": {
+        "unit_tests": {"passed": true, "tests_run": 2, "failures": 0},
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "A final answer may claim the bug is fixed without modifying the source file.",
+        "A final answer may patch the file but skip running tests."
+      ],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "optimization-newsvendor-order",
+      "domain": "optimization",
+      "instruction": "Solve the fixture-backed newsvendor instance and write newsvendor_solution.json with the selected order quantity.",
+      "available_tools": ["optimization.solve_newsvendor"],
+      "initial_state": {"fixture_version": "optimization-fixtures-v1"},
+      "hidden_expected_state": {
+        "expected_tool_sequence": ["optimization.solve_newsvendor"],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {"metric": "order_quantity", "operator": ">=", "value": 0},
+          {"metric": "order_quantity", "operator": "<=", "value": 120},
+          {"metric": "service_level", "operator": ">=", "value": 0.8},
+          {"metric": "service_level", "operator": "<=", "value": 1.0}
+        ],
+        "policy": {
+          "required_terms": ["order_quantity", "service_level"],
+          "forbidden_terms": ["guaranteed"]
+        },
+        "state_diff": {"added": ["newsvendor_solution.json"], "modified": [], "deleted": []}
+      },
+      "visible_files": ["fixtures/optimization/newsvendor.json"],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": ["schema", "tool_sequence", "argument", "numeric", "constraint", "state", "policy", "cost_latency"],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/optimization/newsvendor.json"],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "A final answer may pick the mean demand instead of the critical fractile quantity.",
+        "A final answer may report a feasible quantity but fail to write the solution artifact."
+      ],
+      "final_answer_only_risk": true
     }
   ]
 }

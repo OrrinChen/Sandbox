@@ -8,9 +8,14 @@
         "min_task_success_rate": 1.0,
         "min_pass_at_k": 1.0,
         "max_failure_taxonomy": {
+          "constraint_violation": 0,
+          "cost_latency_violation": 0,
           "numeric_mismatch": 0,
+          "policy_violation": 0,
           "state_mismatch": 0,
           "tool_sequence_mismatch": 0,
+          "unit_tests_failed": 0,
+          "unit_tests_missing": 0,
           "unsupported_citation": 0
         },
         "max_replay_divergences": 0

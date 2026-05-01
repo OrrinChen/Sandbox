@@ -20,7 +20,7 @@ def test_pyproject_declares_phase1_package_metadata():
     assert 'testpaths = ["tests"]' in pyproject
 
 
-def test_initial_config_stubs_exist_and_pin_first_domains():
+def test_config_stubs_exist_and_include_current_domains():
     config_dir = ROOT / "configs"
     expected_files = {
         "models.yaml",
@@ -36,8 +36,8 @@ def test_initial_config_stubs_exist_and_pin_first_domains():
     task_suites = (config_dir / "task_suites.yaml").read_text()
     assert "finance" in task_suites
     assert "data_analysis" in task_suites
-    assert "optimization" not in task_suites
-    assert "coding" not in task_suites
+    assert "optimization" in task_suites
+    assert "coding" in task_suites
 
 
 def test_phase1_package_layout_exists():

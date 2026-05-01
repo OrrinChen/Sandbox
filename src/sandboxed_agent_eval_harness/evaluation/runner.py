@@ -16,11 +16,15 @@ from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutio
 from sandboxed_agent_eval_harness.tracing import TraceLogger
 from sandboxed_agent_eval_harness.validators import (
     validate_citations,
+    validate_constraints,
+    validate_cost_latency,
     validate_numeric,
+    validate_policy,
     validate_schema,
     validate_state,
     validate_tool_arguments,
     validate_tool_sequence,
+    validate_unit_tests,
 )
 
 
@@ -186,7 +190,21 @@ def _run_single_trial(
     if plan.timed_out:
         trace_events.append(logger.log_timeout("agent_run", timeout_seconds=task.timeout_seconds))
 
-    validator_results = _validate_plan(task, plan.final_answer, plan.reported_metrics, state_diff, trace_events, registry)
+    plan_metrics = {
+        "cost": plan.cost,
+        "latency_seconds": plan.latency_seconds,
+        "turns": plan.turns,
+        "timed_out": plan.timed_out,
+    }
+    validator_results = _validate_plan(
+        task,
+        plan.final_answer,
+        plan.reported_metrics,
+        plan_metrics,
+        state_diff,
+        trace_events,
+        registry,
+    )
     if execution_errors:
         validator_results.append(
             ValidatorResult(
@@ -238,6 +256,7 @@ def _validate_plan(
     task: TaskSpec,
     final_answer: str,
     reported_metrics: JsonDict,
+    plan_metrics: JsonDict,
     state_diff: JsonDict,
     trace_events: Sequence[TraceEvent],
     registry: ToolRegistry,
@@ -266,6 +285,28 @@ def _validate_plan(
                     final_answer,
                     supported_citations=expected_citations,
                     required_citations=expected_citations,
+                )
+            )
+        elif validator_name == "constraint":
+            results.append(validate_constraints(reported_metrics, task.hidden_expected_state.get("constraints", [])))
+        elif validator_name == "unit_test":
+            results.append(validate_unit_tests(trace_events, expected=task.hidden_expected_state.get("unit_tests", {})))
+        elif validator_name == "policy":
+            policy = task.hidden_expected_state.get("policy", {})
+            results.append(
+                validate_policy(
+                    final_answer,
+                    required_terms=policy.get("required_terms", []),
+                    forbidden_terms=policy.get("forbidden_terms", []),
+                )
+            )
+        elif validator_name == "cost_latency":
+            results.append(
+                validate_cost_latency(
+                    plan_metrics,
+                    max_cost=task.max_cost,
+                    max_latency_seconds=task.timeout_seconds,
+                    max_turns=task.max_turns,
                 )
             )
     return results
@@ -317,6 +358,10 @@ def _aggregate_metrics(runs: Sequence[EvaluationRunRecord], trials_per_task: int
         "state_correctness": _validator_pass_rate(validator_metrics, "state"),
         "numeric_correctness": _validator_pass_rate(validator_metrics, "numeric"),
         "citation_correctness": _validator_pass_rate(validator_metrics, "citation"),
+        "constraint_correctness": _validator_pass_rate(validator_metrics, "constraint"),
+        "unit_test_correctness": _validator_pass_rate(validator_metrics, "unit_test"),
+        "policy_correctness": _validator_pass_rate(validator_metrics, "policy"),
+        "cost_latency_correctness": _validator_pass_rate(validator_metrics, "cost_latency"),
         "average_turns": sum(run.metrics["turns"] for run in runs) / len(runs),
         "average_latency_seconds": sum(run.metrics["latency_seconds"] for run in runs) / len(runs),
         "average_cost": sum(run.metrics["cost"] for run in runs) / len(runs),

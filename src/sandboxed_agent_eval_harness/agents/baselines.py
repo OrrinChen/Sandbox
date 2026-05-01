@@ -145,6 +145,23 @@ def _arguments_for_tool(task: TaskSpec, tool_name: str) -> JsonDict:
         return {"path": task.visible_files[0]}
     if tool_name == "csv.group_metrics":
         return _csv_group_arguments(task)
+    if tool_name == "code.patch":
+        return {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+                {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)",
+                }
+            ],
+        }
+    if tool_name == "python.unit_tests":
+        return {"test_path": "fixtures/code/test_discount.py"}
+    if tool_name == "optimization.solve_newsvendor":
+        return {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution.json",
+        }
     return {}
 
 
@@ -193,6 +210,19 @@ def _result_for_tool(task: TaskSpec, tool_name: str, arguments: Mapping[str, obj
         return {
             "rows": int(task.hidden_expected_state.get("numeric", {}).get("output_rows", 1)),
             "output_path": arguments["output_path"],
+        }
+    if tool_name == "code.patch":
+        return {"path": arguments["path"], "replacements_applied": len(arguments["replacements"])}
+    if tool_name == "python.unit_tests":
+        return dict(task.hidden_expected_state.get("unit_tests", {"passed": True, "tests_run": 0, "failures": 0}))
+    if tool_name == "optimization.solve_newsvendor":
+        metrics = dict(task.hidden_expected_state.get("numeric", {}))
+        return {
+            "output_path": arguments["output_path"],
+            "order_quantity": int(metrics.get("order_quantity", 0)),
+            "service_level": float(metrics.get("service_level", 0.0)),
+            "expected_cost": float(metrics.get("expected_cost", 0.0)),
+            "source": "newsvendor-fixture-v1",
         }
     return {}
 

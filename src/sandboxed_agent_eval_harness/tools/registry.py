@@ -179,6 +179,79 @@ def default_tool_specs() -> List[ToolSpec]:
                 "write_denied",
             ],
         ),
+        ToolSpec(
+            tool_name="code.patch",
+            input_schema={
+                "type": "object",
+                "required": ["path", "replacements"],
+                "properties": {
+                    "path": {"type": "string"},
+                    "replacements": {"type": "array"},
+                },
+            },
+            output_schema={
+                "type": "object",
+                "required": ["path", "replacements_applied"],
+                "properties": {
+                    "path": {"type": "string"},
+                    "replacements_applied": {"type": "integer"},
+                },
+            },
+            side_effects=["modifies_file"],
+            permissions=["read_visible_files", "write_task_workspace"],
+            state_mutation={"modifies": ["source_file"]},
+            failure_modes=["missing_file", "replacement_not_found", "invalid_patch", "write_denied"],
+        ),
+        ToolSpec(
+            tool_name="python.unit_tests",
+            input_schema={
+                "type": "object",
+                "required": ["test_path"],
+                "properties": {
+                    "test_path": {"type": "string"},
+                    "timeout_seconds": {"type": "integer"},
+                },
+            },
+            output_schema={
+                "type": "object",
+                "required": ["passed", "tests_run", "failures"],
+                "properties": {
+                    "passed": {"type": "boolean"},
+                    "tests_run": {"type": "integer"},
+                    "failures": {"type": "integer"},
+                },
+            },
+            side_effects=[],
+            permissions=["read_visible_files", "execute_sandboxed_python"],
+            state_mutation={},
+            failure_modes=["missing_file", "test_failure", "timeout", "invalid_test_fixture"],
+        ),
+        ToolSpec(
+            tool_name="optimization.solve_newsvendor",
+            input_schema={
+                "type": "object",
+                "required": ["path", "output_path"],
+                "properties": {
+                    "path": {"type": "string"},
+                    "output_path": {"type": "string"},
+                },
+            },
+            output_schema={
+                "type": "object",
+                "required": ["output_path", "order_quantity", "service_level", "expected_cost", "source"],
+                "properties": {
+                    "output_path": {"type": "string"},
+                    "order_quantity": {"type": "integer"},
+                    "service_level": {"type": "number"},
+                    "expected_cost": {"type": "number"},
+                    "source": {"type": "string"},
+                },
+            },
+            side_effects=["writes_file"],
+            permissions=["read_visible_files", "write_task_workspace"],
+            state_mutation={"writes": ["optimization_solution"]},
+            failure_modes=["missing_file", "invalid_fixture", "infeasible_instance", "write_denied"],
+        ),
     ]
 
 

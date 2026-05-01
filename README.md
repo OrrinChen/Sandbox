@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 13 config-backed regression gate preset work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
+The repository has completed Phase 14 portfolio-grade deterministic suite expansion. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
 
 Start by reading:
 
@@ -93,6 +93,9 @@ The default registry declares fixture-backed finance tools and local CSV/data-an
 - `transcript.search`
 - `csv.read`
 - `csv.group_metrics`
+- `code.patch`
+- `python.unit_tests`
+- `optimization.solve_newsvendor`
 
 The registry handles lookup, unknown-tool rejection, duplicate-tool rejection, input validation before execution, output validation after execution, and metadata access for permissions, side effects, state mutation, and failure modes. Runtime execution is provided by the fixture-backed executor.
 
@@ -105,7 +108,7 @@ It provides:
 - `FixtureToolExecutor`
 - `ToolExecutionError`
 
-The executor runs the default fixture-backed finance, transcript, and CSV tools without network access. It copies visible CSV fixture files into a per-run `FileSystemSandbox`, validates tool inputs and outputs through the registry, writes CSV outputs into the run workspace, and lets the runner capture state diffs from real workspace snapshots.
+The executor runs the default fixture-backed finance, transcript, CSV, coding, and optimization tools without network access. It copies visible fixture files into a per-run `FileSystemSandbox`, validates tool inputs and outputs through the registry, applies code patches, runs sandboxed fixture unit tests, writes CSV/optimization outputs into the run workspace, and lets the runner capture state diffs from real workspace snapshots.
 
 ## Sandbox
 
@@ -190,9 +193,13 @@ They provide:
 - `validate_state()`
 - `validate_numeric()`
 - `validate_citations()`
+- `validate_constraints()`
+- `validate_unit_tests()`
+- `validate_policy()`
+- `validate_cost_latency()`
 - `default_validator_names()`
 
-Each validator returns the existing `ValidatorResult` schema. The validators catch malformed schema payloads, wrong or missing tool sequences, invalid tool-call arguments, state-diff mismatches, numeric mismatches with explicit tolerance, and unsupported or missing citations. They are deterministic and fixture-friendly; they do not call live APIs or LLM judges.
+Each validator returns the existing `ValidatorResult` schema. The validators catch malformed schema payloads, wrong or missing tool sequences, invalid tool-call arguments, state-diff mismatches, numeric mismatches with explicit tolerance, unsupported or missing citations, optimization constraint violations, missing or failing sandboxed unit tests, deterministic policy-term violations, and cost/latency/turn/timeout limit regressions. They are deterministic and fixture-friendly; they do not call live APIs or LLM judges.
 
 ## Initial Task Suites
 
@@ -206,7 +213,7 @@ They provide:
 - `default_task_suite()`
 - `default_task_suite_path()`
 
-The default suite manifest is `fixtures/tasks/initial_suite.json`. It contains six deterministic tasks: three fixture-backed finance tasks and three local CSV/data-analysis tasks. Every task is represented as a `TaskSpec`, has non-empty hidden expected state, declares fixture paths, includes gold numeric or file outputs, and records known traps where final-answer-only scoring can look successful while validators should fail.
+The default suite manifest is `fixtures/tasks/initial_suite.json`. It contains eight deterministic tasks: three fixture-backed finance tasks, three local CSV/data-analysis tasks, one sandboxed coding task, and one small optimization task. Every task is represented as a `TaskSpec`, has non-empty hidden expected state, declares fixture paths, includes gold numeric/file/unit-test outputs, and records known traps where final-answer-only scoring can look successful while validators should fail.
 
 ## Agent Baselines And Evaluation Runner
 
@@ -217,7 +224,7 @@ The first deterministic baselines live in `sandboxed_agent_eval_harness.agents`:
 - `planner_executor_agent`
 - `oracle_tool_selection_agent`
 
-The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, and report a failure taxonomy.
+The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, report a failure taxonomy, and track correctness for constraints, unit tests, deterministic policy terms, and cost/latency limits.
 
 Smoke command:
 

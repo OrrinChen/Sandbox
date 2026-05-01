@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import operator
 from typing import Any, Callable, Iterable, Mapping, Optional, Sequence
 
 from sandboxed_agent_eval_harness.sandbox import StateDiff
@@ -18,8 +19,27 @@ from sandboxed_agent_eval_harness.schemas import (
 from sandboxed_agent_eval_harness.tools import ToolRegistry, ToolRegistryError
 
 
-DEFAULT_VALIDATOR_NAMES = ["schema", "tool_sequence", "argument", "state", "numeric", "citation"]
+DEFAULT_VALIDATOR_NAMES = [
+    "schema",
+    "tool_sequence",
+    "argument",
+    "state",
+    "numeric",
+    "citation",
+    "constraint",
+    "unit_test",
+    "policy",
+    "cost_latency",
+]
 _CITATION_PATTERN = re.compile(r"\[([A-Za-z0-9_.:/-]+)\]")
+_OPERATORS = {
+    "==": operator.eq,
+    "!=": operator.ne,
+    ">": operator.gt,
+    ">=": operator.ge,
+    "<": operator.lt,
+    "<=": operator.le,
+}
 _SCHEMA_FACTORIES: dict[str, Callable[[Mapping[str, Any]], Any]] = {
     "task": TaskSpec.from_dict,
     "tool": ToolSpec.from_dict,
@@ -175,12 +195,137 @@ def validate_citations(
     return _passed("citation", "Final answer citations are supported.", details)
 
 
+def validate_constraints(metrics: Mapping[str, Any], constraints: Sequence[Mapping[str, Any]]) -> ValidatorResult:
+    violations: list[JsonDict] = []
+    invalid_constraints: list[JsonDict] = []
+    for constraint in constraints:
+        metric = constraint.get("metric")
+        operator_name = constraint.get("operator")
+        expected_value = constraint.get("value")
+        if not isinstance(metric, str) or operator_name not in _OPERATORS or not _is_number(expected_value):
+            invalid_constraints.append(dict(constraint))
+            continue
+        actual_value = metrics.get(metric)
+        if not _is_number(actual_value) or not _OPERATORS[str(operator_name)](actual_value, expected_value):
+            violations.append(
+                {
+                    "metric": metric,
+                    "operator": operator_name,
+                    "value": expected_value,
+                    "actual": actual_value,
+                }
+            )
+    details = {
+        "constraints": [dict(constraint) for constraint in constraints],
+        "violations": violations,
+        "invalid_constraints": invalid_constraints,
+    }
+    if invalid_constraints:
+        return _failed("constraint", "invalid_constraint", "Constraint validator received malformed constraints.", details)
+    if violations:
+        return _failed("constraint", "constraint_violation", "One or more constraints were violated.", details)
+    return _passed("constraint", "All constraints were satisfied.", details)
+
+
+def validate_unit_tests(
+    events: Sequence[TraceEvent],
+    expected: Optional[Mapping[str, Any]] = None,
+) -> ValidatorResult:
+    expected_result = dict(expected or {})
+    result = _latest_tool_result(events, "python.unit_tests")
+    if result is None:
+        return _failed(
+            "unit_test",
+            "unit_tests_missing",
+            "No python.unit_tests tool result was found in the trace.",
+            {"expected": expected_result},
+        )
+
+    mismatches = {}
+    for key, expected_value in expected_result.items():
+        if result.get(key) != expected_value:
+            mismatches[key] = {"expected": expected_value, "actual": result.get(key)}
+    details = {"expected": expected_result, "actual": result, "mismatches": mismatches}
+    if result.get("passed") is not True or mismatches:
+        return _failed("unit_test", "unit_tests_failed", "Unit test results did not match expected outcome.", details)
+    return _passed("unit_test", "Unit test results matched expected outcome.", details)
+
+
+def validate_policy(
+    final_answer: str,
+    required_terms: Optional[Iterable[str]] = None,
+    forbidden_terms: Optional[Iterable[str]] = None,
+) -> ValidatorResult:
+    answer = final_answer.lower()
+    required = list(required_terms or [])
+    forbidden = list(forbidden_terms or [])
+    missing_required = [term for term in required if term.lower() not in answer]
+    forbidden_present = [term for term in forbidden if term.lower() in answer]
+    details = {
+        "required_terms": required,
+        "forbidden_terms": forbidden,
+        "missing_required_terms": missing_required,
+        "forbidden_terms_present": forbidden_present,
+    }
+    if missing_required or forbidden_present:
+        return _failed("policy", "policy_violation", "Final answer violated deterministic policy terms.", details)
+    return _passed("policy", "Final answer satisfied deterministic policy terms.", details)
+
+
+def validate_cost_latency(
+    metrics: Mapping[str, Any],
+    *,
+    max_cost: float,
+    max_latency_seconds: float,
+    max_turns: int,
+) -> ValidatorResult:
+    violations: list[str] = []
+    cost = metrics.get("cost")
+    latency_seconds = metrics.get("latency_seconds")
+    turns = metrics.get("turns")
+    timed_out = metrics.get("timed_out")
+    if not _is_number(cost) or cost > max_cost:
+        violations.append("cost")
+    if not _is_number(latency_seconds) or latency_seconds > max_latency_seconds:
+        violations.append("latency_seconds")
+    if not isinstance(turns, int) or isinstance(turns, bool) or turns > max_turns:
+        violations.append("turns")
+    if timed_out is True:
+        violations.append("timed_out")
+    details = {
+        "metrics": dict(metrics),
+        "max_cost": max_cost,
+        "max_latency_seconds": max_latency_seconds,
+        "max_turns": max_turns,
+        "violations": violations,
+    }
+    if violations:
+        return _failed(
+            "cost_latency",
+            "cost_latency_violation",
+            "Cost, latency, turn, or timeout limits were violated.",
+            details,
+        )
+    return _passed("cost_latency", "Cost, latency, turn, and timeout limits were satisfied.", details)
+
+
 def _tool_call_names(events: Sequence[TraceEvent]) -> list[str]:
     return [
         str(event.payload.get("tool_name"))
         for event in events
         if event.event_type == "tool_call" and "tool_name" in event.payload
     ]
+
+
+def _latest_tool_result(events: Sequence[TraceEvent], tool_name: str) -> Optional[JsonDict]:
+    for event in reversed(events):
+        if event.event_type != "tool_result":
+            continue
+        if event.payload.get("tool_name") != tool_name:
+            continue
+        result = event.payload.get("result")
+        return dict(result) if isinstance(result, Mapping) else None
+    return None
 
 
 def _normalize_state_diff(diff: StateDiff | Mapping[str, Any]) -> JsonDict:

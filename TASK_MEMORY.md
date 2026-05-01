@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 13 config-backed regression gate presets. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 14 portfolio-grade deterministic suite expansion. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Config-backed regression-gated replayable MVP complete; next phase not selected.
+Portfolio-grade deterministic MVP complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 13 config-backed gate presets and trace discovery are in place.
+No implementation blocker. Phase 14 coding and optimization suite expansion is in place.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: broaden deterministic task suites before adding real model adapters, or add project-bound local CI scripts for the existing preset command.
+Select the next phase from deferred expansions. Recommended next target: add real model adapter interfaces and a fixture-safe local transcript of model outputs, or add project-bound CI scripts for the expanded strict smoke command.
 
 ## Current State
 
@@ -418,6 +418,35 @@ Known limitations:
 - The CLI can discover traces from summary run records, but it does not yet filter trace discovery by task, baseline, or domain.
 - Repository-root CI workflow files are still deferred because this project is scoped to `sandboxed-agent-eval-harness/` inside a larger git root.
 
+### Phase 14: Portfolio-grade Deterministic Suite Expansion
+
+Commit:
+Included in the Phase 14 portfolio-grade deterministic suite expansion commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added a sandboxed coding fixture task: `coding-discount-total-fix`.
+- Added a deterministic optimization fixture task: `optimization-newsvendor-order`.
+- Added code fixtures under `fixtures/code/`.
+- Added an optimization fixture under `fixtures/optimization/`.
+- Added default tool specs for `code.patch`, `python.unit_tests`, and `optimization.solve_newsvendor`.
+- Implemented executable adapters for code patching, sandboxed Python unit test execution, and a small newsvendor solver.
+- Added deterministic validators for constraints, unit tests, policy terms, and cost/latency/turn/timeout limits; policy validation is exercised by the optimization fixture task.
+- Wired the new validators into the evaluation runner and aggregate metrics.
+- Updated deterministic baselines to plan coding and optimization tool calls.
+- Updated task, tool, validator, and eval-run configs.
+- Added tests for expanded domains, tools, validators, execution, runner behavior, and replay execution.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because the new validator APIs did not exist.
+- Final focused portfolio-suite test run passed before commit and is recorded in the validation log.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Coding and optimization fixtures are intentionally small deterministic slices, not broad benchmarks.
+- The sandboxed Python test runner executes local fixture tests only; it is not a general secure code execution product.
+- Optimization coverage currently includes one small newsvendor instance; broader OR task families remain deferred.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -782,6 +811,26 @@ Results:
 - Gate preset CLI smoke check passed, discovered all oracle run traces, replayed them, and reported zero divergences.
 - Whitespace check passed.
 
+Commands run for Phase 14:
+
+```bash
+python3 -m pytest tests/test_task_suites.py tests/test_tool_registry.py tests/test_tool_execution.py tests/test_validators.py tests/test_eval_runner.py tests/test_trace_replay_execution.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-portfolio-suite
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates --summary /tmp/sandboxed-agent-eval-portfolio-suite/summary.json --threshold-preset strict_smoke --discover-traces --replay-workspace /tmp/sandboxed-agent-eval-portfolio-suite-replay
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.report --summary /tmp/sandboxed-agent-eval-portfolio-suite/summary.json --output-dir /tmp/sandboxed-agent-eval-portfolio-report
+git diff --check -- .
+```
+
+Results:
+- The first Phase 14 red run failed because new validators and fixtures were not implemented yet.
+- Final focused portfolio-suite test run passed after implementation.
+- Final full pytest run passed after implementation.
+- Runner smoke check passed and printed `runs=8 task_success_rate=1.000 pass_at_k=1.000`.
+- Gate preset CLI smoke check passed, discovered and replayed all eight oracle traces, and reported zero divergences.
+- Report CLI smoke check passed and wrote a four-domain report with zero worst traces for the oracle run.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -806,8 +855,8 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Replay execution is limited to the current default fixture-backed tools and task suite.
-  Impact: New domains need executable adapters before traces can be re-executed end to end.
+- Limitation: Replay execution is limited to the default fixture-backed tools and suite.
+  Impact: New domains beyond finance, data analysis, coding, and the current optimization slice need executable adapters before traces can be re-executed end to end.
   Planned fix: Add replay support alongside each new executable adapter.
 
 - Limitation: Agent baselines are deterministic fixture-compatible simulations.
@@ -819,16 +868,20 @@ Results:
   Planned fix: Add real local or API-backed model adapters only after replay execution and regression gates are stable.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
-  Impact: New domains still need executable adapters before they can be evaluated end to end.
+  Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
   Planned fix: Add adapters as new task suites are introduced.
+
+- Limitation: Coding and optimization suites are intentionally small.
+  Impact: They demonstrate cross-domain harness mechanics but are not yet broad enough for benchmark claims.
+  Planned fix: Add more deterministic task families and edge cases before making broad benchmark statements.
 
 - Limitation: The report's final-answer-only score is a deterministic proxy.
   Impact: It demonstrates silent-failure reporting but does not semantically judge answer quality.
   Planned fix: Keep deterministic checks first; add optional controlled final-answer scoring only after executable tool adapters and regression thresholds are stable.
 
-- Limitation: Regression comparison is descriptive.
-  Impact: The report still shows deltas, while pass/fail enforcement now lives in the gate evaluator and CLI.
-  Planned fix: Later phases can wire gate presets into config files and CI.
+- Limitation: Regression comparison in the report is descriptive.
+  Impact: Pass/fail enforcement lives in the gate evaluator and CLI, while the report itself does not yet embed gate outcomes.
+  Planned fix: Later phases can surface gate outcomes in report artifacts and wire the strict smoke command into project-bound CI scripts.
 
 - Limitation: Gate presets are JSON-backed.
   Impact: They are versioned and dependency-free, but they do not share the `.yaml` format used by the earlier config stubs.
@@ -838,9 +891,9 @@ Results:
   Impact: It cannot yet filter by task, domain, or baseline for narrower gate runs.
   Planned fix: Add trace discovery filters when broader suites make that useful.
 
-- Limitation: Config files are stubs.
-  Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
-  Planned fix: Later phases load and validate config files once runtime contracts stabilize.
+- Limitation: Most config files are still declarative mirrors.
+  Impact: Tool, task-suite, validator, and eval-run configs document intended surfaces, while regression gate presets are the first config consumed by runtime code.
+  Planned fix: Later phases can load and validate more config files once runtime contracts stabilize.
 
 - Limitation: Initial task fixtures are intentionally small and synthetic.
   Impact: They are useful for deterministic harness validation but not yet broad enough for benchmark claims.
@@ -860,6 +913,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: broaden deterministic task-suite coverage before adding real model adapters.
-3. Add project-bound local CI scripts for the existing preset command if automation is needed.
-4. Add trace discovery filters only once broader suites make filtering necessary.
+2. Recommended: add real model adapter interfaces and fixture-safe recorded model-output experiments.
+3. Add project-bound local CI scripts for the expanded strict smoke command if automation is needed.
+4. Add more deterministic coding and optimization tasks before making benchmark-scale claims.

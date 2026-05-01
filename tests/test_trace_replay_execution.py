@@ -30,6 +30,24 @@ def test_trace_replay_executor_reexecutes_tool_calls_and_matches_state(tmp_path)
     )
 
 
+def test_trace_replay_executor_reexecutes_coding_trace(tmp_path):
+    summary = run_evaluation(
+        suite=default_task_suite(),
+        baselines=[OracleToolSelectionAgent()],
+        trials_per_task=1,
+        output_dir=tmp_path / "run",
+    )
+    run = next(item for item in summary.runs if item.task_id == "coding-discount-total-fix")
+
+    result = TraceReplayExecutor().replay(run.trace_path, workspace=tmp_path / "replay-coding")
+
+    assert result.passed is True
+    assert result.replayed_tool_calls == 2
+    assert result.state_diff_matches is True
+    assert result.recorded_state_diff == {"added": [], "modified": ["fixtures/code/discount.py"], "deleted": []}
+    assert [comparison["matches"] for comparison in result.tool_result_comparisons] == [True, True]
+
+
 def test_trace_replay_executor_reports_tool_result_divergence(tmp_path):
     summary = run_evaluation(
         suite=default_task_suite(),

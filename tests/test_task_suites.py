@@ -21,9 +21,11 @@ def test_default_task_suite_has_initial_finance_and_data_tasks():
 
     assert suite.suite_id == "initial-fixture-suite"
     assert suite.version == "tasks-v1"
-    assert len(suite.tasks) == 6
+    assert len(suite.tasks) == 8
     assert len(suite.tasks_by_domain("finance")) == 3
     assert len(suite.tasks_by_domain("data_analysis")) == 3
+    assert len(suite.tasks_by_domain("coding")) == 1
+    assert len(suite.tasks_by_domain("optimization")) == 1
     assert len(suite.task_ids()) == len(set(suite.task_ids()))
     assert all(isinstance(task, TaskSpec) for task in suite.tasks)
 
@@ -73,6 +75,32 @@ def test_data_analysis_tasks_include_visible_csv_inputs_and_gold_files_or_metric
         assert any(tool.startswith("csv.") for tool in task.available_tools)
         assert "state" in task.validator_list or "numeric" in task.validator_list
         assert metadata["gold_outputs"].get("files") or metadata["gold_outputs"].get("metrics")
+
+
+def test_coding_and_optimization_tasks_expand_portfolio_domains():
+    suite = default_task_suite()
+    coding_task = suite.tasks_by_domain("coding")[0]
+    optimization_task = suite.tasks_by_domain("optimization")[0]
+
+    assert coding_task.available_tools == ["code.patch", "python.unit_tests"]
+    assert coding_task.validator_list == [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency",
+    ]
+    assert coding_task.hidden_expected_state["unit_tests"] == {
+        "passed": True,
+        "tests_run": 2,
+        "failures": 0,
+    }
+
+    assert optimization_task.available_tools == ["optimization.solve_newsvendor"]
+    assert "constraint" in optimization_task.validator_list
+    assert "cost_latency" in optimization_task.validator_list
+    assert optimization_task.hidden_expected_state["constraints"]
 
 
 def test_load_task_suite_rejects_missing_hidden_expected_state(tmp_path):

@@ -94,9 +94,15 @@ def test_default_registry_includes_fixture_backed_finance_and_data_tools():
     assert "transcript.search" in registry.names()
     assert "csv.read" in registry.names()
     assert "csv.group_metrics" in registry.names()
+    assert "code.patch" in registry.names()
+    assert "python.unit_tests" in registry.names()
+    assert "optimization.solve_newsvendor" in registry.names()
 
     finance = registry.get("financial_statement.lookup")
     data = registry.get("csv.group_metrics")
+    code_patch = registry.get("code.patch")
+    unit_tests = registry.get("python.unit_tests")
+    optimization = registry.get("optimization.solve_newsvendor")
 
     assert finance.permissions == ["read_fixture"]
     assert finance.side_effects == []
@@ -104,6 +110,10 @@ def test_default_registry_includes_fixture_backed_finance_and_data_tools():
     assert data.permissions == ["read_visible_files", "write_task_workspace"]
     assert data.side_effects == ["writes_file"]
     assert data.state_mutation == {"writes": ["summary_table"]}
+    assert code_patch.permissions == ["read_visible_files", "write_task_workspace"]
+    assert code_patch.side_effects == ["modifies_file"]
+    assert unit_tests.permissions == ["read_visible_files", "execute_sandboxed_python"]
+    assert optimization.permissions == ["read_visible_files", "write_task_workspace"]
 
 
 def test_default_tool_specs_are_unique_and_validatable():
@@ -132,6 +142,20 @@ def test_default_tool_specs_are_unique_and_validatable():
             "group_by": "region",
             "metric": "revenue",
             "output_path": "summary.csv",
+        },
+    )
+    registry.validate_input(
+        "code.patch",
+        {
+            "path": "fixtures/code/discount.py",
+            "replacements": [{"old": "bad", "new": "good"}],
+        },
+    )
+    registry.validate_input(
+        "optimization.solve_newsvendor",
+        {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution.json",
         },
     )
 

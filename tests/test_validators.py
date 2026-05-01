@@ -6,11 +6,15 @@ from sandboxed_agent_eval_harness.tools import default_tool_registry
 from sandboxed_agent_eval_harness.validators import (
     default_validator_names,
     validate_citations,
+    validate_constraints,
+    validate_cost_latency,
     validate_numeric,
+    validate_policy,
     validate_schema,
     validate_state,
     validate_tool_arguments,
     validate_tool_sequence,
+    validate_unit_tests,
 )
 
 
@@ -150,6 +154,77 @@ def test_citation_validator_detects_unsupported_citations():
     assert failed.details["unsupported_citations"] == ["made-up-source"]
 
 
+def test_constraint_validator_catches_infeasible_metrics():
+    constraints = [
+        {"metric": "order_quantity", "operator": ">=", "value": 0},
+        {"metric": "service_level", "operator": ">=", "value": 0.8},
+    ]
+
+    passed = validate_constraints({"order_quantity": 120, "service_level": 1.0}, constraints)
+    failed = validate_constraints({"order_quantity": 120, "service_level": 0.5}, constraints)
+
+    assert passed.passed is True
+    assert failed.passed is False
+    assert failed.failure_type == "constraint_violation"
+    assert failed.details["violations"][0]["metric"] == "service_level"
+
+
+def test_unit_test_validator_reads_python_unit_test_tool_results():
+    events = [
+        TraceEvent(
+            event_id="evt-000",
+            event_type="tool_result",
+            sequence=0,
+            payload={
+                "tool_name": "python.unit_tests",
+                "result": {"passed": True, "tests_run": 2, "failures": 0},
+            },
+        )
+    ]
+
+    passed = validate_unit_tests(events, expected={"passed": True, "tests_run": 2, "failures": 0})
+    failed = validate_unit_tests([], expected={"passed": True, "tests_run": 2, "failures": 0})
+
+    assert passed.passed is True
+    assert failed.passed is False
+    assert failed.failure_type == "unit_tests_missing"
+
+
+def test_policy_validator_checks_required_and_forbidden_terms():
+    passed = validate_policy("Used fixture-backed data only.", required_terms=["fixture-backed"])
+    failed = validate_policy(
+        "This result is guaranteed.",
+        required_terms=["fixture-backed"],
+        forbidden_terms=["guaranteed"],
+    )
+
+    assert passed.passed is True
+    assert failed.passed is False
+    assert failed.failure_type == "policy_violation"
+    assert failed.details["missing_required_terms"] == ["fixture-backed"]
+    assert failed.details["forbidden_terms_present"] == ["guaranteed"]
+
+
+def test_cost_latency_validator_catches_budget_regressions():
+    passed = validate_cost_latency(
+        {"cost": 0.0, "latency_seconds": 0.02, "turns": 3, "timed_out": False},
+        max_cost=0.0,
+        max_latency_seconds=1.0,
+        max_turns=5,
+    )
+    failed = validate_cost_latency(
+        {"cost": 0.1, "latency_seconds": 2.0, "turns": 7, "timed_out": True},
+        max_cost=0.0,
+        max_latency_seconds=1.0,
+        max_turns=5,
+    )
+
+    assert passed.passed is True
+    assert failed.passed is False
+    assert failed.failure_type == "cost_latency_violation"
+    assert set(failed.details["violations"]) == {"cost", "latency_seconds", "turns", "timed_out"}
+
+
 def test_validators_config_declares_default_validator_names():
     validators_config = (ROOT / "configs" / "validators.yaml").read_text()
 
@@ -160,6 +235,10 @@ def test_validators_config_declares_default_validator_names():
         "state",
         "numeric",
         "citation",
+        "constraint",
+        "unit_test",
+        "policy",
+        "cost_latency",
     ]
     for validator_name in default_validator_names():
         assert validator_name in validators_config

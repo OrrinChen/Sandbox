@@ -9,7 +9,7 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Mapping, Optional
 
-from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox
+from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox, SandboxTimeoutError, run_python_subprocess
 from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
 from sandboxed_agent_eval_harness.tools.registry import ToolRegistry, default_tool_registry
 
@@ -54,6 +54,12 @@ class FixtureToolExecutor:
             result = self._csv_read(validated_arguments, sandbox)
         elif tool_name == "csv.group_metrics":
             result = self._csv_group_metrics(validated_arguments, sandbox)
+        elif tool_name == "code.patch":
+            result = self._code_patch(validated_arguments, sandbox)
+        elif tool_name == "python.unit_tests":
+            result = self._python_unit_tests(validated_arguments, sandbox)
+        elif tool_name == "optimization.solve_newsvendor":
+            result = self._optimization_solve_newsvendor(validated_arguments, sandbox)
         else:
             raise ToolExecutionError(f"no executable fixture adapter for tool: {tool_name}")
         return self.registry.validate_output(tool_name, result)
@@ -120,6 +126,101 @@ class FixtureToolExecutor:
             "rows": max(0, len(output.splitlines()) - 1),
             "output_path": output_path,
         }
+
+    def _code_patch(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        replacements = arguments["replacements"]
+        if not isinstance(replacements, list):
+            raise ToolExecutionError("code.patch replacements must be a list")
+        contents = sandbox.read_text(arguments["path"])
+        applied = 0
+        for replacement in replacements:
+            if not isinstance(replacement, Mapping):
+                raise ToolExecutionError("code.patch replacement entries must be objects")
+            old = replacement.get("old")
+            new = replacement.get("new")
+            if not isinstance(old, str) or not isinstance(new, str):
+                raise ToolExecutionError("code.patch replacement old/new values must be strings")
+            if old not in contents:
+                raise ToolExecutionError(f"replacement text not found in {arguments['path']}: {old}")
+            contents = contents.replace(old, new, 1)
+            applied += 1
+        sandbox.write_text(arguments["path"], contents)
+        return {
+            "path": arguments["path"],
+            "replacements_applied": applied,
+        }
+
+    def _python_unit_tests(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        test_path = str(arguments["test_path"])
+        sandbox.read_text(test_path)
+        timeout_seconds = int(arguments.get("timeout_seconds", 5))
+        code = f"""
+import json
+import pathlib
+import sys
+import traceback
+
+test_path = pathlib.Path({test_path!r})
+sys.path.insert(0, str(pathlib.Path.cwd() / test_path.parent))
+namespace = {{}}
+exec(test_path.read_text(), namespace)
+tests = [
+    (name, value)
+    for name, value in sorted(namespace.items())
+    if name.startswith("test_") and callable(value)
+]
+failures = []
+for name, test in tests:
+    try:
+        test()
+    except Exception:
+        failures.append({{"name": name, "traceback": traceback.format_exc()}})
+print(json.dumps({{"passed": not failures, "tests_run": len(tests), "failures": len(failures)}}))
+"""
+        try:
+            completed = run_python_subprocess(code, workspace=sandbox.workspace, timeout_seconds=timeout_seconds)
+        except SandboxTimeoutError as exc:
+            raise ToolExecutionError(str(exc)) from exc
+        if completed.returncode != 0:
+            return {"passed": False, "tests_run": 0, "failures": 1}
+        try:
+            payload = json.loads(completed.stdout.strip().splitlines()[-1])
+        except (IndexError, json.JSONDecodeError) as exc:
+            raise ToolExecutionError(f"unit test runner did not emit JSON: {completed.stdout}") from exc
+        if not isinstance(payload, dict):
+            raise ToolExecutionError("unit test runner JSON payload must be an object")
+        return {
+            "passed": bool(payload.get("passed")),
+            "tests_run": int(payload.get("tests_run", 0)),
+            "failures": int(payload.get("failures", 0)),
+        }
+
+    def _optimization_solve_newsvendor(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        fixture = json.loads(sandbox.read_text(arguments["path"]))
+        if not isinstance(fixture, dict):
+            raise ToolExecutionError("newsvendor fixture must be a JSON object")
+        demand = sorted(int(value) for value in fixture["demand_scenarios"])
+        underage_cost = float(fixture["underage_cost"])
+        overage_cost = float(fixture["overage_cost"])
+        critical_fractile = underage_cost / (underage_cost + overage_cost)
+        order_quantity = demand[-1]
+        for index, candidate in enumerate(demand, start=1):
+            if index / len(demand) >= critical_fractile:
+                order_quantity = candidate
+                break
+        expected_overage = sum(max(order_quantity - value, 0) for value in demand) / len(demand)
+        expected_shortage = sum(max(value - order_quantity, 0) for value in demand) / len(demand)
+        expected_cost = round(overage_cost * expected_overage + underage_cost * expected_shortage, 6)
+        service_level = sum(1 for value in demand if value <= order_quantity) / len(demand)
+        result = {
+            "output_path": arguments["output_path"],
+            "order_quantity": int(order_quantity),
+            "service_level": float(service_level),
+            "expected_cost": float(expected_cost),
+            "source": str(fixture.get("source_id", "newsvendor-fixture")),
+        }
+        sandbox.write_text(arguments["output_path"], json.dumps(result, indent=2, sort_keys=True) + "\n")
+        return result
 
 
 class _CsvRows:

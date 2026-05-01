@@ -30,3 +30,21 @@ validators:
     failure_types:
       - unsupported_citation
       - missing_citation
+  - name: constraint
+    purpose: validate reported metrics against deterministic feasibility constraints
+    failure_types:
+      - invalid_constraint
+      - constraint_violation
+  - name: unit_test
+    purpose: validate sandboxed Python unit test execution results
+    failure_types:
+      - unit_tests_missing
+      - unit_tests_failed
+  - name: policy
+    purpose: validate deterministic required and forbidden final-answer terms
+    failure_types:
+      - policy_violation
+  - name: cost_latency
+    purpose: validate task-local cost, latency, turn, and timeout limits
+    failure_types:
+      - cost_latency_violation

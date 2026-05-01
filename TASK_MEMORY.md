@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 9 report and regression view. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
+Phase 10 executable fixture-backed tool adapters. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash.
 
 Current phase:
-MVP vertical slice complete; next phase not selected.
+MVP vertical slice plus executable fixture-backed tools complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 9 report and regression view are in place.
+No implementation blocker. Phase 10 executable fixture-backed tool adapters are in place.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: executable fixture-backed tool adapters so trace replay and evaluation can move from planned tool calls to actual sandboxed tool execution.
+Select the next phase from deferred expansions. Recommended next target: trace replay execution, using the fixture-backed executor to re-run persisted tool calls against pinned fixture/workspace state.
 
 ## Current State
 
@@ -306,6 +306,35 @@ Known limitations:
 - Report generation relies on existing summary and trace artifacts; it does not execute replay itself.
 - Previous-run comparison reports metric deltas and version metadata, but it does not enforce pass/fail regression thresholds yet.
 
+### Phase 10: Executable Fixture Tool Adapters
+
+Commit:
+Included in the Phase 10 executable fixture-backed tool adapters commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `src/sandboxed_agent_eval_harness/tools/execution.py`.
+- Implemented `FixtureToolExecutor` and `ToolExecutionError`.
+- Executed `financial_statement.lookup` from local JSON finance fixtures.
+- Executed `transcript.search` from local transcript fixtures.
+- Executed `csv.read` against visible CSV fixtures copied into a sandbox workspace.
+- Executed `csv.group_metrics` by writing deterministic output CSV files in the sandbox workspace.
+- Wired the evaluation runner to execute fixture-backed tool calls instead of trusting baseline-provided placeholder results.
+- Captured state diffs from real sandbox snapshots.
+- Added execution metadata and workspace paths to run metrics.
+- Added executable tool adapter tests in `tests/test_tool_execution.py`.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `FixtureToolExecutor` was not exported.
+- First implementation run exposed an output-read allowlist issue; executor sandbox setup was adjusted to rely on workspace isolation while allowing generated outputs to be read.
+- `python3 -m pytest tests/test_tool_execution.py -v` passed with 3 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Baselines still plan tool choices and arguments deterministically; only tool execution results now come from executable adapters.
+- The executor covers the current default fixture tools only.
+- Trace replay can inspect persisted tool results but still does not re-execute persisted tool calls.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -561,6 +590,35 @@ Results:
 - Report CLI smoke check passed and wrote `report.json` and `report.md`.
 - Whitespace check passed.
 
+Commands run for Phase 10:
+
+```bash
+python3 -m pytest tests/test_tool_execution.py -v
+python3 -m pytest tests/test_eval_runner.py tests/test_report.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-tool-execution
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from sandboxed_agent_eval_harness.tracing import load_trace_events
+trace = Path("/tmp/sandboxed-agent-eval-tool-execution/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl")
+events = load_trace_events(trace)
+csv_read = next(event.payload["result"] for event in events if event.event_type == "tool_result" and event.payload["tool_name"] == "csv.read")
+state_diff = next(event.payload for event in events if event.event_type == "state_diff")
+print(csv_read)
+print(state_diff)
+PY
+git diff --check -- .
+```
+
+Results:
+- The first Phase 10 red run failed because `FixtureToolExecutor` was not exported.
+- Final executable tool adapter test run passed: 3 tests.
+- Final evaluation/report regression test run passed: 7 tests.
+- Final full pytest run passed: 63 tests.
+- Runner smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
+- Trace inspection smoke printed executed CSV columns/row count and actual state diff.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -587,15 +645,19 @@ Results:
 
 - Limitation: Trace replay does not execute tools yet.
   Impact: Failed runs can be opened and inspected from ordered trace events, but not re-run end to end.
-  Planned fix: Recommended next phase connects replay and evaluation to executable fixture-backed tool calls.
+  Planned fix: Recommended next phase uses the fixture-backed executor to re-run persisted trace tool calls.
 
 - Limitation: Agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, but they are not evidence about real model reliability yet.
   Planned fix: Later phases can add real local or API-backed model adapters once deterministic reporting is stable.
 
-- Limitation: Tool calls in the runner are planned and fixture-shaped.
-  Impact: The runner validates tool use and records traces, but it does not yet invoke full tool implementations through the sandbox.
-  Planned fix: Replace planned tool results with sandboxed executable tool adapters.
+- Limitation: Baselines still plan tool choices and arguments deterministically.
+  Impact: Tool execution is real for current fixtures, but agent behavior is still simulated.
+  Planned fix: Add real local or API-backed model adapters only after replay execution and regression gates are stable.
+
+- Limitation: Fixture-backed executor covers only the current default tools.
+  Impact: New domains still need executable adapters before they can be evaluated end to end.
+  Planned fix: Add adapters as new task suites are introduced.
 
 - Limitation: The report's final-answer-only score is a deterministic proxy.
   Impact: It demonstrates silent-failure reporting but does not semantically judge answer quality.
@@ -627,7 +689,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: implement executable fixture-backed tool adapters.
-3. Wire evaluation runs to sandboxed tool execution instead of planned fixture-shaped results.
-4. Make trace replay reproduce tool execution against pinned fixture state.
-5. Add optional regression threshold gates once executable runs are stable.
+2. Recommended: implement trace replay execution using persisted tool calls and fixture-backed adapters.
+3. Add replay verification that detects divergence between recorded and re-executed tool results/state diffs.
+4. Add optional regression threshold gates once replay execution is stable.

@@ -1,0 +1,180 @@
+"""Executable fixture-backed tool adapters."""
+
+from __future__ import annotations
+
+import csv
+import io
+import json
+from collections import OrderedDict
+from pathlib import Path
+from typing import Any, Mapping, Optional
+
+from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox
+from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
+from sandboxed_agent_eval_harness.tools.registry import ToolRegistry, default_tool_registry
+
+
+class ToolExecutionError(RuntimeError):
+    """Raised when a fixture-backed tool cannot execute deterministically."""
+
+
+class FixtureToolExecutor:
+    """Execute default fixture-backed tools against local fixtures and a workspace sandbox."""
+
+    def __init__(
+        self,
+        registry: Optional[ToolRegistry] = None,
+        fixture_root: Optional[Path | str] = None,
+    ) -> None:
+        self.registry = registry or default_tool_registry()
+        self.fixture_root = Path(fixture_root) if fixture_root is not None else Path(__file__).resolve().parents[3]
+
+    def create_sandbox(self, task: TaskSpec, workspace: Path | str) -> FileSystemSandbox:
+        initial_files = {
+            visible_path: (self.fixture_root / visible_path).read_text()
+            for visible_path in task.visible_files
+        }
+        return FileSystemSandbox(
+            Path(workspace),
+            initial_files=initial_files,
+        )
+
+    def execute(
+        self,
+        tool_name: str,
+        arguments: Mapping[str, Any],
+        sandbox: FileSystemSandbox,
+    ) -> JsonDict:
+        validated_arguments = self.registry.validate_input(tool_name, arguments)
+        if tool_name == "financial_statement.lookup":
+            result = self._financial_statement_lookup(validated_arguments)
+        elif tool_name == "transcript.search":
+            result = self._transcript_search(validated_arguments)
+        elif tool_name == "csv.read":
+            result = self._csv_read(validated_arguments, sandbox)
+        elif tool_name == "csv.group_metrics":
+            result = self._csv_group_metrics(validated_arguments, sandbox)
+        else:
+            raise ToolExecutionError(f"no executable fixture adapter for tool: {tool_name}")
+        return self.registry.validate_output(tool_name, result)
+
+    def _financial_statement_lookup(self, arguments: Mapping[str, Any]) -> JsonDict:
+        for fixture_path in sorted((self.fixture_root / "fixtures" / "finance").glob("*.json")):
+            fixture = _load_json(fixture_path)
+            if (
+                fixture.get("ticker") == arguments["ticker"]
+                and fixture.get("fiscal_year") == arguments["fiscal_year"]
+                and fixture.get("statement") == arguments["statement"]
+            ):
+                return {
+                    "ticker": fixture["ticker"],
+                    "fiscal_year": fixture["fiscal_year"],
+                    "statement": fixture["statement"],
+                    "source": fixture["source_id"],
+                    "values": dict(fixture["values"]),
+                }
+        raise ToolExecutionError(f"no financial statement fixture matched arguments: {dict(arguments)}")
+
+    def _transcript_search(self, arguments: Mapping[str, Any]) -> JsonDict:
+        query_terms = str(arguments["query"]).lower().split()
+        for fixture_path in sorted((self.fixture_root / "fixtures" / "finance").glob("*.json")):
+            fixture = _load_json(fixture_path)
+            if fixture.get("ticker") != arguments["ticker"] or fixture.get("fiscal_period") != arguments["fiscal_period"]:
+                continue
+            matches = [
+                dict(match)
+                for match in fixture.get("matches", [])
+                if all(term in match.get("text", "").lower() for term in query_terms)
+            ]
+            if matches:
+                return {
+                    "ticker": fixture["ticker"],
+                    "fiscal_period": fixture["fiscal_period"],
+                    "source": fixture["source_id"],
+                    "matches": matches,
+                }
+        raise ToolExecutionError(f"no transcript fixture matched arguments: {dict(arguments)}")
+
+    def _csv_read(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        rows = _read_csv_rows(sandbox.read_text(arguments["path"]))
+        return {
+            "path": arguments["path"],
+            "columns": list(rows.fieldnames),
+            "rows": len(rows.records),
+        }
+
+    def _csv_group_metrics(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        rows = _read_csv_rows(sandbox.read_text(arguments["path"]))
+        metric = arguments["metric"]
+        output_path = arguments["output_path"]
+        if metric == "revenue":
+            output = _revenue_summary(rows.records, arguments["group_by"])
+        elif metric == "churn_rate":
+            output = _churn_rate_summary(rows.records, arguments["group_by"])
+        elif metric == "stockout_risk":
+            output = _stockout_report(rows.records)
+        else:
+            raise ToolExecutionError(f"unsupported csv metric: {metric}")
+        sandbox.write_text(output_path, output)
+        return {
+            "rows": max(0, len(output.splitlines()) - 1),
+            "output_path": output_path,
+        }
+
+
+class _CsvRows:
+    def __init__(self, fieldnames: list[str], records: list[dict[str, str]]) -> None:
+        self.fieldnames = fieldnames
+        self.records = records
+
+
+def _load_json(path: Path) -> JsonDict:
+    try:
+        payload = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ToolExecutionError(f"could not load fixture: {path}") from exc
+    if not isinstance(payload, dict):
+        raise ToolExecutionError(f"fixture must contain a JSON object: {path}")
+    return payload
+
+
+def _read_csv_rows(contents: str) -> _CsvRows:
+    reader = csv.DictReader(io.StringIO(contents))
+    fieldnames = list(reader.fieldnames or [])
+    records = [dict(row) for row in reader]
+    if not fieldnames:
+        raise ToolExecutionError("CSV fixture has no header")
+    return _CsvRows(fieldnames=fieldnames, records=records)
+
+
+def _revenue_summary(records: list[dict[str, str]], group_by: str) -> str:
+    totals: OrderedDict[str, int] = OrderedDict()
+    for row in records:
+        group_value = row[group_by]
+        totals[group_value] = totals.get(group_value, 0) + int(row["revenue"])
+    lines = [f"{group_by},revenue"]
+    lines.extend(f"{group_value},{total}" for group_value, total in totals.items())
+    return "\n".join(lines) + "\n"
+
+
+def _churn_rate_summary(records: list[dict[str, str]], group_by: str) -> str:
+    totals: OrderedDict[str, int] = OrderedDict()
+    churned: OrderedDict[str, int] = OrderedDict()
+    for row in records:
+        group_value = row[group_by]
+        totals[group_value] = totals.get(group_value, 0) + 1
+        churned[group_value] = churned.get(group_value, 0) + (1 if row["status"] == "churned" else 0)
+    lines = [f"{group_by},churn_rate"]
+    lines.extend(f"{group_value},{churned[group_value] / total:g}" for group_value, total in totals.items())
+    return "\n".join(lines) + "\n"
+
+
+def _stockout_report(records: list[dict[str, str]]) -> str:
+    at_risk = [
+        row
+        for row in records
+        if int(row["on_hand"]) < int(row["reorder_point"])
+    ]
+    lines = ["sku,on_hand,reorder_point"]
+    lines.extend(f"{row['sku']},{row['on_hand']},{row['reorder_point']}" for row in at_risk)
+    return "\n".join(lines) + "\n"

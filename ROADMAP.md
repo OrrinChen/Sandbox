@@ -13,9 +13,10 @@ Completed:
 - [x] Phase 7: Initial Task Suites
 - [x] Phase 8: Agent Baselines and Evaluation Runner
 - [x] Phase 9: Report and Regression View
+- [x] Phase 10: Executable Fixture Tool Adapters
 
 Current phase:
-- [ ] Next phase not selected; MVP vertical slice is complete
+- [ ] Next phase not selected; MVP vertical slice plus executable fixture tools is complete
 
 Deferred:
 - Optimization and coding suites beyond initial design
@@ -225,6 +226,29 @@ Acceptance criteria:
 - Report explains where agents fail
 - Regressions can be seen across task/tool/prompt/model versions
 - Failed traces can be opened and replayed
+
+## Phase 10: Executable Fixture Tool Adapters
+
+Goal:
+Move the runner from planned fixture-shaped tool results to executable local fixture-backed tools.
+
+Tasks:
+- [x] Implement fixture-backed tool executor
+- [x] Execute finance statement fixtures
+- [x] Execute transcript search fixtures
+- [x] Execute CSV read fixtures
+- [x] Execute CSV grouped metric outputs inside a sandbox workspace
+- [x] Capture state diffs from sandbox snapshots
+- [x] Write actual tool execution results into traces
+- [x] Keep registry input/output validation in the execution path
+- [x] Keep smoke runner deterministic and network-free
+
+Acceptance criteria:
+- Tool calls are executed through local adapters rather than trusting baseline-provided results
+- CSV output files are written inside a per-run sandbox workspace
+- State validator uses actual workspace diffs
+- Trace tool results show executed fixture outputs
+- Existing evaluation and report metrics still pass
 
 ## Project Positioning
 

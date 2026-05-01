@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 9 report and regression view work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
+The repository has completed Phase 10 executable fixture-backed tool adapter work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, minimal trace replay from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, and report generation from evaluation artifacts.
 
 Start by reading:
 
@@ -94,7 +94,18 @@ The default registry declares fixture-backed finance tools and local CSV/data-an
 - `csv.read`
 - `csv.group_metrics`
 
-The registry handles lookup, unknown-tool rejection, duplicate-tool rejection, input validation before execution, output validation after execution, and metadata access for permissions, side effects, state mutation, and failure modes. It does not execute tools yet.
+The registry handles lookup, unknown-tool rejection, duplicate-tool rejection, input validation before execution, output validation after execution, and metadata access for permissions, side effects, state mutation, and failure modes. Runtime execution is provided by the fixture-backed executor.
+
+## Executable Fixture Tool Adapters
+
+The local executor lives in `sandboxed_agent_eval_harness.tools`.
+
+It provides:
+
+- `FixtureToolExecutor`
+- `ToolExecutionError`
+
+The executor runs the default fixture-backed finance, transcript, and CSV tools without network access. It copies visible CSV fixture files into a per-run `FileSystemSandbox`, validates tool inputs and outputs through the registry, writes CSV outputs into the run workspace, and lets the runner capture state diffs from real workspace snapshots.
 
 ## Sandbox
 
@@ -165,7 +176,7 @@ The first deterministic baselines live in `sandboxed_agent_eval_harness.agents`:
 - `planner_executor_agent`
 - `oracle_tool_selection_agent`
 
-The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, and report a failure taxonomy.
+The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, and report a failure taxonomy.
 
 Smoke command:
 

@@ -12,7 +12,7 @@ from typing import Iterable, Optional, Sequence
 from sandboxed_agent_eval_harness.agents import AgentBaseline, agent_baseline_by_name, default_agent_baselines
 from sandboxed_agent_eval_harness.schemas import JsonDict, RunResult, TaskSpec, TraceEvent, ValidatorResult
 from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite
-from sandboxed_agent_eval_harness.tools import ToolRegistry, default_tool_registry
+from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError, ToolRegistry, default_tool_registry
 from sandboxed_agent_eval_harness.tracing import TraceLogger
 from sandboxed_agent_eval_harness.validators import (
     validate_citations,
@@ -70,6 +70,7 @@ def run_evaluation(
     trials_per_task: int = 1,
     output_dir: Path | str = "artifacts/eval_runs/smoke",
     registry: Optional[ToolRegistry] = None,
+    executor: Optional[FixtureToolExecutor] = None,
 ) -> EvaluationSummary:
     if trials_per_task <= 0:
         raise ValueError("trials_per_task must be positive")
@@ -77,15 +78,28 @@ def run_evaluation(
     task_suite = suite or default_task_suite()
     agent_baselines = list(baselines or default_agent_baselines())
     tool_registry = registry or default_tool_registry()
+    tool_executor = executor or FixtureToolExecutor(tool_registry)
     output_path = Path(output_dir)
     traces_path = output_path / "traces"
+    workspaces_path = output_path / "workspaces"
     traces_path.mkdir(parents=True, exist_ok=True)
+    workspaces_path.mkdir(parents=True, exist_ok=True)
 
     runs: list[EvaluationRunRecord] = []
     for baseline in agent_baselines:
         for task in task_suite.tasks:
             for trial_index in range(trials_per_task):
-                runs.append(_run_single_trial(task, baseline, trial_index, traces_path, tool_registry))
+                runs.append(
+                    _run_single_trial(
+                        task,
+                        baseline,
+                        trial_index,
+                        traces_path,
+                        workspaces_path,
+                        tool_registry,
+                        tool_executor,
+                    )
+                )
 
     metrics = _aggregate_metrics(runs, trials_per_task)
     baseline_metrics = {
@@ -128,7 +142,9 @@ def _run_single_trial(
     baseline: AgentBaseline,
     trial_index: int,
     traces_path: Path,
+    workspaces_path: Path,
     registry: ToolRegistry,
+    executor: FixtureToolExecutor,
 ) -> EvaluationRunRecord:
     run_id = f"{baseline.name}-{task.task_id}-{trial_index:03d}"
     trace_path = traces_path / f"{run_id}.jsonl"
@@ -143,35 +159,58 @@ def _run_single_trial(
             "model": baseline.model,
             "prompt_version": baseline.prompt_version,
             "tool_version": "tools-v1",
+            "tool_execution_mode": "fixture_adapter",
             "task_version": "tasks-v1",
             "fixture_version": str(task.initial_state.get("fixture_version", "fixtures-v1")),
         },
     )
 
     plan = baseline.run(task, attempt_index=trial_index)
+    sandbox = executor.create_sandbox(task, workspaces_path / run_id)
+    before_state = sandbox.snapshot()
+    execution_errors: list[str] = []
     trace_events: list[TraceEvent] = [
         logger.log_user_message(task.instruction),
         logger.log_agent_message(f"{baseline.name} started task {task.task_id}."),
     ]
     for tool_call in plan.tool_calls:
         trace_events.append(logger.log_tool_call(tool_call.tool_name, tool_call.arguments))
-        trace_events.append(logger.log_tool_result(tool_call.tool_name, tool_call.result))
-    trace_events.append(logger.log_state_diff(plan.state_diff))
+        try:
+            tool_result = executor.execute(tool_call.tool_name, tool_call.arguments, sandbox)
+            trace_events.append(logger.log_tool_result(tool_call.tool_name, tool_result))
+        except ToolExecutionError as exc:
+            execution_errors.append(str(exc))
+            trace_events.append(logger.log_error("tool_execution_error", str(exc)))
+    state_diff = before_state.diff(sandbox.snapshot()).to_dict()
+    trace_events.append(logger.log_state_diff(state_diff))
     if plan.timed_out:
         trace_events.append(logger.log_timeout("agent_run", timeout_seconds=task.timeout_seconds))
 
-    validator_results = _validate_plan(task, plan.final_answer, plan.reported_metrics, plan.state_diff, trace_events, registry)
+    validator_results = _validate_plan(task, plan.final_answer, plan.reported_metrics, state_diff, trace_events, registry)
+    if execution_errors:
+        validator_results.append(
+            ValidatorResult(
+                validator_name="tool_execution",
+                passed=False,
+                failure_type="tool_execution_error",
+                message="One or more fixture-backed tool calls failed.",
+                details={"errors": execution_errors},
+            )
+        )
     for result in validator_results:
         trace_events.append(logger.log_validator_result(result))
 
     passed = not plan.timed_out and all(result.passed for result in validator_results)
     run_metrics = {
+        "executed_tool_calls": len(plan.tool_calls) - len(execution_errors),
         "final_answer_passed": bool(plan.final_answer),
         "latency_seconds": plan.latency_seconds,
         "tool_calls": len(plan.tool_calls),
+        "tool_execution_mode": "fixture_adapter",
         "turns": plan.turns,
         "cost": plan.cost,
         "timed_out": plan.timed_out,
+        "workspace_path": str(workspaces_path / run_id),
     }
     RunResult(
         run_id=run_id,

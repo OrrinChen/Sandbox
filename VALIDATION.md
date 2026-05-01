@@ -248,6 +248,37 @@ Expected result:
 - Previous-run comparison shows metric deltas and version metadata.
 - Worst trace entries point to replayable JSONL traces.
 
+## Executable Fixture Tool Adapter Validation
+
+Run after fixture-backed tool adapters exist:
+
+```bash
+python3 -m pytest tests/test_tool_execution.py -v
+python3 -m pytest tests/test_eval_runner.py tests/test_report.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-tool-execution
+PYTHONPATH=src python3 - <<'PY'
+from pathlib import Path
+from sandboxed_agent_eval_harness.tracing import load_trace_events
+trace = Path("/tmp/sandboxed-agent-eval-tool-execution/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl")
+events = load_trace_events(trace)
+csv_read = next(event.payload["result"] for event in events if event.event_type == "tool_result" and event.payload["tool_name"] == "csv.read")
+state_diff = next(event.payload for event in events if event.event_type == "state_diff")
+print(csv_read)
+print(state_diff)
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Finance, transcript, and CSV fixture tools execute without network access.
+- CSV grouped metric tools write output files inside the run workspace.
+- Trace tool results contain executed fixture outputs, not baseline-provided placeholders.
+- State diffs are captured from sandbox snapshots and match expected output files.
+
 ## Before Commit
 
 Always run:

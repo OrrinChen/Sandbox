@@ -16,16 +16,17 @@ Completed:
 - [x] Phase 10: Executable Fixture Tool Adapters
 - [x] Phase 11: Trace Replay Execution
 - [x] Phase 12: Regression Threshold Gates
+- [x] Phase 13: Config-backed Gate Presets and Trace Discovery
 
 Current phase:
-- [ ] Next phase not selected; regression-gated replayable MVP is complete
+- [ ] Next phase not selected; config-backed regression-gated MVP is complete
 
 Deferred:
 - Optimization and coding suites beyond initial design
 - Cloud execution
 - Paid APIs and live financial data
 - Full regression dashboard
-- Config-backed CI gate presets
+- CI provider workflow files
 - LLM-as-judge scoring
 - Production deployment
 
@@ -304,6 +305,36 @@ Do not:
 - Depend on live APIs or paid services
 - Use LLM-as-judge for regression gates
 - Treat missing replay data as a passing replay-divergence gate when that gate is configured
+
+## Phase 13: Config-backed Gate Presets and Trace Discovery
+
+Goal:
+Make regression gates usable as a stable local or CI command without hand-writing temporary threshold files or trace path lists.
+
+Why now:
+Phase 12 introduced gate evaluation and a CLI. The next bottleneck is operational: the thresholds should be versioned in the project, and replay gates should discover traces from the evaluation summary artifact.
+
+Tasks:
+- [x] Add a project-level regression gate preset config
+- [x] Load named threshold presets from config
+- [x] Keep direct `--thresholds` JSON path support
+- [x] Discover unique trace paths from `summary.json`
+- [x] Let gate CLI replay discovered traces
+- [x] Include preset metadata in gate reports
+- [x] Add tests for preset loading, trace discovery, and preset CLI smoke
+
+Acceptance criteria:
+- Preset loading is covered by tests
+- Trace discovery is deterministic and de-duplicates paths
+- Gate CLI can run from `summary.json` plus `--threshold-preset strict_smoke`
+- Gate CLI replays discovered traces and enforces `max_replay_divergences`
+- Existing regression gate tests still pass
+- Full pytest still passes
+
+Do not:
+- Add a YAML parser or heavy dependency just to read gate presets
+- Add repository-root CI workflow files while the project boundary is `sandboxed-agent-eval-harness/`
+- Depend on live APIs or external services
 
 ## Project Positioning
 

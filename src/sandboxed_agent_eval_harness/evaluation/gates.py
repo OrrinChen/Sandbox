@@ -14,6 +14,22 @@ from sandboxed_agent_eval_harness.tracing import TraceReplayExecutor
 
 
 @dataclass(frozen=True)
+class RegressionGatePreset:
+    preset_id: str
+    description: str
+    thresholds: JsonDict
+    replay: JsonDict
+
+    def to_dict(self) -> JsonDict:
+        return {
+            "id": self.preset_id,
+            "description": self.description,
+            "thresholds": dict(self.thresholds),
+            "replay": dict(self.replay),
+        }
+
+
+@dataclass(frozen=True)
 class RegressionGateResult:
     name: str
     passed: bool
@@ -33,6 +49,7 @@ class RegressionGateResult:
 class RegressionGateReport:
     results: list[RegressionGateResult]
     replay_divergence_summary: JsonDict
+    preset: Optional[RegressionGatePreset] = None
 
     @property
     def passed(self) -> bool:
@@ -44,6 +61,7 @@ class RegressionGateReport:
             "results": [result.to_dict() for result in self.results],
             "failed_results": [result.to_dict() for result in self.results if not result.passed],
             "replay_divergence_summary": dict(self.replay_divergence_summary),
+            "preset": self.preset.to_dict() if self.preset else None,
         }
 
 
@@ -52,6 +70,7 @@ def evaluate_regression_gates(
     thresholds: Mapping[str, Any],
     previous_summary: Optional[Any] = None,
     replay_results: Optional[Sequence[Any]] = None,
+    preset: Optional[RegressionGatePreset] = None,
 ) -> RegressionGateReport:
     """Evaluate configured pass/fail gates against an evaluation summary."""
 
@@ -161,31 +180,98 @@ def evaluate_regression_gates(
                 )
             )
 
-    return RegressionGateReport(results=results, replay_divergence_summary=replay_summary)
+    return RegressionGateReport(results=results, replay_divergence_summary=replay_summary, preset=preset)
+
+
+def default_threshold_config_path() -> Path:
+    return Path(__file__).resolve().parents[3] / "configs" / "regression_gates.json"
+
+
+def load_threshold_preset(
+    preset_id: str,
+    config_path: Optional[Path | str] = None,
+) -> RegressionGatePreset:
+    config = _load_json(config_path or default_threshold_config_path())
+    presets = config.get("presets", [])
+    if not isinstance(presets, list):
+        raise ValueError("threshold config presets must be a list")
+    for preset in presets:
+        if not isinstance(preset, Mapping):
+            raise ValueError("threshold config presets must be objects")
+        if preset.get("id") != preset_id:
+            continue
+        thresholds = preset.get("thresholds", {})
+        replay = preset.get("replay", {})
+        if not isinstance(thresholds, Mapping):
+            raise ValueError(f"threshold preset {preset_id} thresholds must be an object")
+        if not isinstance(replay, Mapping):
+            raise ValueError(f"threshold preset {preset_id} replay must be an object")
+        description = preset.get("description", "")
+        return RegressionGatePreset(
+            preset_id=preset_id,
+            description=description if isinstance(description, str) else "",
+            thresholds=dict(thresholds),
+            replay=dict(replay),
+        )
+    raise ValueError(f"unknown threshold preset: {preset_id}")
+
+
+def discover_trace_paths(summary: Any) -> list[str]:
+    summary_dict = _summary_to_dict(summary)
+    raw_runs = summary_dict.get("runs", [])
+    if not isinstance(raw_runs, list):
+        raise ValueError("summary runs must be a list")
+    trace_paths: set[str] = set()
+    for run in raw_runs:
+        if not isinstance(run, Mapping):
+            continue
+        trace_path = run.get("trace_path")
+        if isinstance(trace_path, str) and trace_path.strip():
+            trace_paths.add(trace_path)
+    return sorted(trace_paths)
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Evaluate regression threshold gates.")
     parser.add_argument("--summary", required=True, help="Path to the current summary.json artifact.")
-    parser.add_argument("--thresholds", required=True, help="Path to a JSON threshold configuration.")
+    parser.add_argument("--thresholds", help="Path to a JSON threshold configuration.")
+    parser.add_argument(
+        "--threshold-config",
+        default=str(default_threshold_config_path()),
+        help="Path to a JSON threshold preset configuration.",
+    )
+    parser.add_argument("--threshold-preset", help="Preset id to load from the threshold config.")
     parser.add_argument("--previous-summary", help="Optional previous summary.json artifact.")
     parser.add_argument("--replay-trace", action="append", default=[], help="Trace JSONL path to replay before gating.")
+    parser.add_argument("--discover-traces", action="store_true", help="Replay traces listed in summary run records.")
     parser.add_argument(
         "--replay-workspace",
         default="/tmp/sandboxed-agent-eval-gates-replay",
         help="Base workspace directory for replayed traces.",
     )
     args = parser.parse_args(argv)
+    if args.thresholds and args.threshold_preset:
+        parser.error("--thresholds and --threshold-preset are mutually exclusive")
 
     summary = _load_json(args.summary)
-    thresholds = _load_json(args.thresholds)
+    preset = load_threshold_preset(args.threshold_preset, args.threshold_config) if args.threshold_preset else None
+    if args.thresholds:
+        thresholds = _load_json(args.thresholds)
+    elif preset is not None:
+        thresholds = preset.thresholds
+    else:
+        parser.error("one of --thresholds or --threshold-preset is required")
     previous = _load_json(args.previous_summary) if args.previous_summary else None
-    replay_results = _execute_replay_traces(args.replay_trace, Path(args.replay_workspace))
+    replay_traces = list(args.replay_trace)
+    if args.discover_traces or (preset is not None and preset.replay.get("discover_from_summary") is True):
+        replay_traces.extend(discover_trace_paths(summary))
+    replay_results = _execute_replay_traces(_unique_sorted(replay_traces), Path(args.replay_workspace))
     report = evaluate_regression_gates(
         summary,
         thresholds=thresholds,
         previous_summary=previous,
-        replay_results=replay_results if args.replay_trace else None,
+        replay_results=replay_results if replay_traces else None,
+        preset=preset,
     )
     print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
     return 0 if report.passed else 1
@@ -227,6 +313,10 @@ def _execute_replay_traces(trace_paths: Sequence[str], workspace: Path) -> list[
                 }
             )
     return replay_results
+
+
+def _unique_sorted(values: Sequence[str]) -> list[str]:
+    return sorted({value for value in values if value})
 
 
 def _metrics(summary: Mapping[str, Any]) -> JsonDict:

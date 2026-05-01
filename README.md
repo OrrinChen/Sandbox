@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 12 regression threshold gate work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, and configurable regression gates that can fail a run.
+The repository has completed Phase 13 config-backed regression gate preset work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis tasks, deterministic agent baselines, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
 
 Start by reading:
 
@@ -157,28 +157,22 @@ They provide:
 
 - `RegressionGateResult`
 - `RegressionGateReport`
+- `RegressionGatePreset`
 - `evaluate_regression_gates()`
+- `load_threshold_preset()`
+- `discover_trace_paths()`
 
 The gate evaluator can enforce minimum task success rate, minimum pass@k, maximum task success drop against a previous summary, maximum pass@k drop, maximum failure taxonomy counts, and maximum replay divergence count. Replay divergence summaries are also included in reports when replay execution results are supplied.
+
+Project presets live in `configs/regression_gates.json`. The `strict_smoke` preset is intended for deterministic oracle smoke runs and can discover trace paths from `summary.json`.
 
 Smoke command:
 
 ```bash
-python3 - <<'PY'
-import json
-from pathlib import Path
-
-thresholds = {
-    "min_task_success_rate": 1.0,
-    "min_pass_at_k": 1.0,
-    "max_replay_divergences": 0,
-}
-Path("/tmp/sandboxed-agent-eval-gates-thresholds.json").write_text(json.dumps(thresholds) + "\n")
-PY
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
   --summary artifacts/eval_runs/smoke/summary.json \
-  --thresholds /tmp/sandboxed-agent-eval-gates-thresholds.json \
-  --replay-trace artifacts/eval_runs/smoke/traces/oracle_tool_selection_agent-data-sales-region-summary-000.jsonl \
+  --threshold-preset strict_smoke \
+  --discover-traces \
   --replay-workspace /tmp/sandboxed-agent-eval-gates-replay
 ```
 

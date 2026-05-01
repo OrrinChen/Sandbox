@@ -1,11 +1,16 @@
 import json
 
+import pytest
+
 from sandboxed_agent_eval_harness.agents import (
     OracleToolSelectionAgent,
     default_agent_baselines,
 )
 from sandboxed_agent_eval_harness.evaluation.gates import (
+    default_threshold_config_path,
+    discover_trace_paths,
     evaluate_regression_gates,
+    load_threshold_preset,
     main,
 )
 from sandboxed_agent_eval_harness.evaluation.runner import run_evaluation
@@ -152,3 +157,89 @@ def test_regression_gate_cli_returns_zero_for_passing_replay_thresholds(tmp_path
     assert exit_code == 0
     assert '"passed": true' in output
     assert '"divergence_count": 0' in output
+
+
+def test_default_threshold_config_declares_strict_smoke_preset():
+    preset = load_threshold_preset("strict_smoke")
+
+    assert default_threshold_config_path().name == "regression_gates.json"
+    assert preset.preset_id == "strict_smoke"
+    assert preset.thresholds["min_task_success_rate"] == 1.0
+    assert preset.thresholds["min_pass_at_k"] == 1.0
+    assert preset.thresholds["max_replay_divergences"] == 0
+    assert preset.replay["discover_from_summary"] is True
+
+
+def test_discover_trace_paths_uses_unique_summary_run_traces(tmp_path):
+    suite = default_task_suite()
+    summary = run_evaluation(
+        suite=suite,
+        baselines=[OracleToolSelectionAgent()],
+        trials_per_task=1,
+        output_dir=tmp_path / "summary",
+    )
+    first_trace = str(summary.runs[0].trace_path)
+    summary_dict = summary.to_dict()
+    summary_dict["runs"].append(dict(summary_dict["runs"][0]))
+
+    trace_paths = discover_trace_paths(summary_dict)
+
+    assert len(trace_paths) == len(summary.runs)
+    assert first_trace in trace_paths
+    assert all(path.endswith(".jsonl") for path in trace_paths)
+
+
+def test_regression_gate_cli_loads_preset_and_discovers_summary_traces(tmp_path, capsys):
+    suite = default_task_suite()
+    summary = run_evaluation(
+        suite=suite,
+        baselines=[OracleToolSelectionAgent()],
+        trials_per_task=1,
+        output_dir=tmp_path / "summary",
+    )
+
+    exit_code = main(
+        [
+            "--summary",
+            str(summary.output_dir / "summary.json"),
+            "--threshold-preset",
+            "strict_smoke",
+            "--discover-traces",
+            "--replay-workspace",
+            str(tmp_path / "replay"),
+        ]
+    )
+
+    payload = json.loads(capsys.readouterr().out)
+
+    assert exit_code == 0
+    assert payload["passed"] is True
+    assert payload["preset"]["id"] == "strict_smoke"
+    assert payload["replay_divergence_summary"]["replayed_traces"] == len(summary.runs)
+    assert payload["replay_divergence_summary"]["divergence_count"] == 0
+
+
+def test_regression_gate_cli_rejects_threshold_file_and_preset_together(tmp_path):
+    suite = default_task_suite()
+    summary = run_evaluation(
+        suite=suite,
+        baselines=[OracleToolSelectionAgent()],
+        trials_per_task=1,
+        output_dir=tmp_path / "summary",
+    )
+    thresholds_path = tmp_path / "thresholds.json"
+    thresholds_path.write_text(json.dumps({"min_task_success_rate": 1.0}) + "\n")
+
+    with pytest.raises(SystemExit) as exc:
+        main(
+            [
+                "--summary",
+                str(summary.output_dir / "summary.json"),
+                "--thresholds",
+                str(thresholds_path),
+                "--threshold-preset",
+                "strict_smoke",
+            ]
+        )
+
+    assert exc.value.code == 2

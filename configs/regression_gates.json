@@ -1,0 +1,37 @@
+{
+  "version": "regression-gates-v1",
+  "presets": [
+    {
+      "id": "strict_smoke",
+      "description": "Strict deterministic smoke gate for oracle fixture runs and replayable traces.",
+      "thresholds": {
+        "min_task_success_rate": 1.0,
+        "min_pass_at_k": 1.0,
+        "max_failure_taxonomy": {
+          "numeric_mismatch": 0,
+          "state_mismatch": 0,
+          "tool_sequence_mismatch": 0,
+          "unsupported_citation": 0
+        },
+        "max_replay_divergences": 0
+      },
+      "replay": {
+        "discover_from_summary": true
+      }
+    },
+    {
+      "id": "portfolio_regression",
+      "description": "Default local regression gate for comparing broad deterministic smoke runs.",
+      "thresholds": {
+        "min_task_success_rate": 0.6,
+        "min_pass_at_k": 0.6,
+        "max_task_success_rate_drop": 0.05,
+        "max_pass_at_k_drop": 0.05,
+        "max_replay_divergences": 0
+      },
+      "replay": {
+        "discover_from_summary": true
+      }
+    }
+  ]
+}

@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 12 regression threshold gates. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 13 config-backed regression gate presets. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Regression-gated replayable MVP complete; next phase not selected.
+Config-backed regression-gated replayable MVP complete; next phase not selected.
 
 Main blocker:
-No implementation blocker. Phase 12 regression threshold gates are in place.
+No implementation blocker. Phase 13 config-backed gate presets and trace discovery are in place.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: config-backed gate presets and CI wiring, or broaden the deterministic task suites before adding real model adapters.
+Select the next phase from deferred expansions. Recommended next target: broaden deterministic task suites before adding real model adapters, or add project-bound local CI scripts for the existing preset command.
 
 ## Current State
 
@@ -389,6 +389,35 @@ Known limitations:
 - The gate CLI can replay explicit trace paths, but it does not yet discover a run's trace set automatically.
 - Replay divergence gates cover deterministic replay results only; new task domains need executable adapters before replay gates are meaningful.
 
+### Phase 13: Config-backed Gate Presets and Trace Discovery
+
+Commit:
+Included in the Phase 13 config-backed gate presets commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `configs/regression_gates.json` with `strict_smoke` and `portfolio_regression` presets.
+- Added `RegressionGatePreset`.
+- Added `default_threshold_config_path()`.
+- Added `load_threshold_preset()`.
+- Added `discover_trace_paths()`.
+- Extended the gate CLI with `--threshold-preset`, `--threshold-config`, and `--discover-traces`.
+- Kept backward-compatible `--thresholds` JSON artifact support.
+- Rejected ambiguous CLI calls that pass both `--thresholds` and `--threshold-preset`.
+- Included preset metadata in structured gate reports.
+- Added tests for config-backed presets, summary trace discovery, and preset CLI smoke.
+- Updated `ROADMAP.md`, `README.md`, and `VALIDATION.md` for the completed phase.
+
+Validation:
+- Initial TDD red run failed because `default_threshold_config_path`, `load_threshold_preset`, and `discover_trace_paths` did not exist.
+- Additional red run failed because the CLI allowed both direct threshold files and presets, which could make report metadata misleading.
+- Final regression gate test run passed with 8 tests.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Gate presets are JSON-backed to avoid adding a YAML parser dependency.
+- The CLI can discover traces from summary run records, but it does not yet filter trace discovery by task, baseline, or domain.
+- Repository-root CI workflow files are still deferred because this project is scoped to `sandboxed-agent-eval-harness/` inside a larger git root.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -732,6 +761,27 @@ Results:
 - Gate CLI smoke check passed, printed a structured passing report, and included `divergence_count: 0`.
 - Whitespace check passed.
 
+Commands run for Phase 13:
+
+```bash
+python3 -m pytest tests/test_regression_gates.py -v
+python3 -m pytest tests/test_phase1_skeleton.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-gate-preset-current
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates --summary /tmp/sandboxed-agent-eval-gate-preset-current/summary.json --threshold-preset strict_smoke --discover-traces --replay-workspace /tmp/sandboxed-agent-eval-gate-preset-replay
+git diff --check -- .
+```
+
+Results:
+- The first Phase 13 red run failed because preset and trace discovery APIs were missing.
+- The CLI mutual-exclusion red run failed before `--thresholds` and `--threshold-preset` were made mutually exclusive.
+- Final regression gate test run passed: 8 tests.
+- Phase 1 config-layout test still passed with the added JSON gate config.
+- Final full pytest run passed: 75 tests.
+- Runner smoke check passed and printed `runs=6 task_success_rate=1.000 pass_at_k=1.000`.
+- Gate preset CLI smoke check passed, discovered all oracle run traces, replayed them, and reported zero divergences.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -780,13 +830,13 @@ Results:
   Impact: The report still shows deltas, while pass/fail enforcement now lives in the gate evaluator and CLI.
   Planned fix: Later phases can wire gate presets into config files and CI.
 
-- Limitation: Gate thresholds are supplied as JSON artifacts or in-memory mappings.
-  Impact: Autonomous runs can enforce thresholds, but there is not yet a versioned project default under `configs/`.
-  Planned fix: Add config-backed gate presets and CI wiring.
+- Limitation: Gate presets are JSON-backed.
+  Impact: They are versioned and dependency-free, but they do not share the `.yaml` format used by the earlier config stubs.
+  Planned fix: Keep JSON until there is a real need for a YAML parser or broader config loader.
 
-- Limitation: Gate CLI trace replay is explicit-path based.
-  Impact: Users must pass trace paths for replay divergence gating instead of asking the CLI to discover all traces in a run.
-  Planned fix: Add run artifact trace discovery after the threshold schema stabilizes.
+- Limitation: Gate CLI trace discovery replays all traces listed in `summary.json`.
+  Impact: It cannot yet filter by task, domain, or baseline for narrower gate runs.
+  Planned fix: Add trace discovery filters when broader suites make that useful.
 
 - Limitation: Config files are stubs.
   Impact: They document intended configuration surfaces but are not consumed by runtime code yet, except config mirrors for current tool, task-suite, validator, and eval-run defaults.
@@ -810,6 +860,6 @@ Results:
 ## Next Steps
 
 1. Select the next phase scope explicitly.
-2. Recommended: add config-backed regression gate presets and optional CI wiring.
-3. Add run artifact trace discovery for replay divergence gates.
-4. Broaden deterministic task-suite coverage before adding real model adapters.
+2. Recommended: broaden deterministic task-suite coverage before adding real model adapters.
+3. Add project-bound local CI scripts for the existing preset command if automation is needed.
+4. Add trace discovery filters only once broader suites make filtering necessary.

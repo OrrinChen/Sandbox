@@ -346,6 +346,33 @@ Expected result:
 - Gate CLI tests confirm status 1 when thresholds fail.
 - Replay divergence count is included in gate and report outputs.
 
+## Config-backed Regression Gate Preset Validation
+
+Run after config-backed gate presets and trace discovery exist:
+
+```bash
+python3 -m pytest tests/test_regression_gates.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-gate-preset-current
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
+  --summary /tmp/sandboxed-agent-eval-gate-preset-current/summary.json \
+  --threshold-preset strict_smoke \
+  --discover-traces \
+  --replay-workspace /tmp/sandboxed-agent-eval-gate-preset-replay
+git diff --check -- .
+```
+
+Expected result:
+- Project gate preset config loads.
+- Gate CLI discovers trace paths from `summary.json`.
+- Discovered traces replay without divergence for the oracle smoke run.
+- Gate CLI exits status 0 for the strict smoke preset.
+- Full test suite remains green.
+
 ## Before Commit
 
 Always run:

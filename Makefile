@@ -6,7 +6,7 @@ MODEL_STUDY_DIR ?= $(ARTIFACT_DIR)/eval_runs/silent_failure_study
 REPORT_DIR ?= $(ARTIFACT_DIR)/reports/smoke
 REPLAY_WORKSPACE ?= /tmp/sandboxed-agent-eval-gates-replay
 
-.PHONY: test smoke gate model-study report ci
+.PHONY: test smoke gate model-study report validate-config ci
 
 test:
 	$(PYTHON) -m pytest
@@ -35,4 +35,7 @@ report: smoke
 		--summary $(SMOKE_DIR)/summary.json \
 		--output-dir $(REPORT_DIR)
 
-ci: test smoke gate model-study report
+validate-config:
+	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.config.validate
+
+ci: test validate-config smoke gate model-study report

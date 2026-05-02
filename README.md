@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 21 sandbox backend hardening. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, a manual live workflow that fails closed unless `--live` and credentials are supplied, and workspace/Docker sandbox backend selection for evaluation isolation.
+The repository has completed Phase 22 config loader and suite registry cleanup. It now has workflow documents, Python package metadata, runtime-validated config files, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, a manual live workflow that fails closed unless `--live` and credentials are supplied, workspace/Docker sandbox backend selection for evaluation isolation, and a dependency-free config validation command wired into reproducibility checks.
 
 Current evidence snapshot:
 
@@ -43,6 +43,7 @@ Recorded model matrix: 5 offline profiles, 320 benchmark runs, 5 distinct failur
 Matrix key finding: final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures
 Live workflow: opt-in only, fails closed without --live, skips without credentials, converts live outputs into recorded fixture candidates
 Sandbox backends: default workspace backend plus optional Docker command envelope with network disabled, read-only fixture mount, resource limits, and deterministic artifact export
+Runtime config validation: tools=7, validators=10, task_suites=2, eval_runs=1
 ```
 
 Start by reading:
@@ -87,8 +88,30 @@ make smoke
 make gate
 make model-study
 make report
+make validate-config
 make ci
 ```
+
+## Runtime Config Validation
+
+Runtime config utilities live in `sandboxed_agent_eval_harness.config`.
+
+They provide:
+
+- `load_tools_config()`
+- `load_validators_config()`
+- `load_task_suites_config()`
+- `load_eval_runs_config()`
+- `validate_project_config()`
+
+The validation command checks the versioned config files against runtime surfaces: default tool names, validator names, task-suite manifests and task ids, eval-run baselines, and required metrics. It uses a project-specific dependency-free parser for the current controlled config format; it is not a general YAML parser.
+
+```bash
+make validate-config
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate --json
+```
+
+Bad config fails deterministically, and `make ci` runs config validation before the smoke, gate, model-study, and report steps.
 
 ## Core Schemas
 

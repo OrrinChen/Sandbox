@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 21 sandbox backend hardening. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 22 config loader and suite registry cleanup. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 22 config loader and suite registry cleanup is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
+Phase 23 public portfolio report is next.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Choose whether to continue with optional Phase 22 runtime config loading or jump to Phase 23 public portfolio report. Keep sandbox language precise: evaluation isolation, not a security product.
+Generate the static portfolio evidence report in Phase 23. Keep all benchmark and model-matrix claims tied to fixture-backed deterministic or recorded-offline evidence.
 
 ## Current State
 
@@ -636,6 +636,31 @@ Known limitations:
 - Docker command execution is optional and depends on a local Docker daemon when used manually.
 - The Docker backend is an evaluation isolation backend, not a general security sandbox.
 
+### Phase 22: Config Loader and Suite Registry Cleanup
+
+Commit:
+Included in the Phase 22 runtime config loading and validation commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.config`.
+- Added `load_tools_config()`, `load_validators_config()`, `load_task_suites_config()`, and `load_eval_runs_config()`.
+- Added `validate_project_config()` with a machine-readable report.
+- Added `python3 -m sandboxed_agent_eval_harness.config.validate`.
+- Added `make validate-config` and wired it into `make ci`.
+- Added deterministic validation that config tool names, validator names, task-suite manifests, task ids, eval-run baselines, and required metrics match runtime surfaces.
+- Added Phase 22 tests for loader/runtime alignment, bad-config failure behavior, CLI output, and Makefile integration.
+- Updated `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.config` did not exist.
+- Focused Phase 22 tests passed before commit and are recorded in the validation log.
+- Config validation CLI and `make validate-config` were run before commit.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- The YAML loader is intentionally project-specific and supports the current controlled config subset; it is not a general YAML parser.
+- Regression gate presets remain JSON-backed and continue to use the existing gate loader.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -1166,6 +1191,26 @@ Results:
 - `make ci` passed on the default smoke reproducibility path.
 - Whitespace check passed.
 
+Commands run for Phase 22:
+
+```bash
+python3 -m pytest tests/test_phase22_config_loader.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate --json
+make validate-config
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 22 red run failed because `sandboxed_agent_eval_harness.config` did not exist.
+- Focused Phase 22 config loader tests passed after implementation.
+- Runtime config validation printed `config_validation=passed tools=7 validators=10 task_suites=2 eval_runs=1`.
+- `make validate-config` passed and is part of `make ci`.
+- Final full pytest passed: 119 tests.
+- `make ci` passed with config validation, oracle smoke, strict gate, recorded model study, and report generation.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1232,15 +1277,15 @@ Results:
 
 - Limitation: Gate presets are JSON-backed.
   Impact: They are versioned and dependency-free, but they do not share the `.yaml` format used by the earlier config stubs.
-  Planned fix: Keep JSON until there is a real need for a YAML parser or broader config loader.
+  Planned fix: Keep JSON until there is a real need to migrate gate presets into the Phase 22 config loader format.
 
 - Limitation: Gate CLI trace discovery replays all traces listed in `summary.json`.
   Impact: It cannot yet filter by task, domain, or baseline for narrower gate runs.
   Planned fix: Add trace discovery filters when broader suites make that useful.
 
-- Limitation: Most config files are still declarative mirrors.
-  Impact: Tool, task-suite, validator, and eval-run configs document intended surfaces, while regression gate presets are the first config consumed by runtime code.
-  Planned fix: Later phases can load and validate more config files once runtime contracts stabilize.
+- Limitation: The Phase 22 YAML loader is project-specific.
+  Impact: Tool, task-suite, validator, and eval-run configs are now runtime-validated, but the parser intentionally supports only the current controlled config subset and is not a general YAML parser.
+  Planned fix: Keep configs simple and dependency-free unless future config shapes justify a parser dependency.
 
 - Limitation: Root-cause categories are deterministic mappings from validator failures and trace metadata.
   Impact: They make reports auditable and reproducible, but they do not claim subjective causal explanation beyond what validators and traces show.
@@ -1263,7 +1308,7 @@ Results:
 
 ## Next Steps
 
-1. Decide whether to run optional Phase 22 config loader cleanup next or jump to required Phase 23 portfolio report.
-2. Keep sandbox claims limited to evaluation isolation, not a security product.
-3. Package recorded model matrix evidence into recruiter-readable artifacts in Phase 23.
+1. Generate the Phase 23 public portfolio report artifacts.
+2. Package recorded model matrix evidence into recruiter-readable tables and replayable case studies.
+3. Keep sandbox claims limited to evaluation isolation, not a security product.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

@@ -25,9 +25,10 @@ Completed:
 - [x] Phase 19: Recorded Model Matrix
 - [x] Phase 20: Credentials-Gated Live Provider Workflow
 - [x] Phase 21: Sandbox Backend Hardening
+- [x] Phase 22: Config Loader and Suite Registry Cleanup
 
 Current phase:
-- [ ] Phase 22: Config Loader and Suite Registry Cleanup
+- [ ] Phase 23: Public Portfolio Report
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -45,7 +46,7 @@ Main line:
 This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
 
 Current facts:
-- Phases 0-21 are complete.
+- Phases 0-22 are complete.
 - The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
 - The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
@@ -57,6 +58,7 @@ Current facts:
 - Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
 - The sandbox has a default workspace backend plus an optional Docker command envelope with network disabled, resource limits, read-only fixture mount, and deterministic artifact export. It is evaluation isolation, not a security product.
+- Runtime config validation now checks tool names, validator names, task-suite manifests and task ids, eval-run baselines, and required metrics against runtime surfaces.
 
 Principal contradiction:
 The harness architecture now has benchmark-scale fixture coverage, root-cause reporting, and model-profile comparison, but it still needs recruiter-readable portfolio evidence before it can be treated as an S-level AI infra project.
@@ -66,14 +68,9 @@ Required path to portfolio readiness:
 Phase 23 -> Phase 24
 ```
 
-Optional hardening path:
-```text
-Phase 20 -> Phase 21 -> Phase 22
-```
-
 Full path if time allows:
 ```text
-Phase 19 -> Phase 20 -> Phase 21 -> Phase 22 -> Phase 23 -> Phase 24
+Phase 23 -> Phase 24
 ```
 
 Hard stop:
@@ -85,7 +82,7 @@ Truthfulness rules:
 - Model matrix comparison is recorded and offline; do not describe it as a live-provider benchmark.
 - Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
 - Do not call sandboxing secure; describe Phase 21 as optional evaluation isolation, not a security product.
-- Do not claim runtime configs are authoritative until Phase 22 passes.
+- Runtime config claims are limited to project config validation for tools, validators, task suites, eval runs, and regression gate presets.
 - Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
 
 Minimum resume-ready path:
@@ -630,12 +627,12 @@ Goal:
 Turn declarative config mirrors into runtime-consumed and validated configs.
 
 Tasks:
-- [ ] Add `load_tools_config()`
-- [ ] Add `load_validators_config()`
-- [ ] Add `load_task_suites_config()`
-- [ ] Add `load_eval_runs_config()`
-- [ ] Add `validate_project_config`
-- [ ] Add `make validate-config`
+- [x] Add `load_tools_config()`
+- [x] Add `load_validators_config()`
+- [x] Add `load_task_suites_config()`
+- [x] Add `load_eval_runs_config()`
+- [x] Add `validate_project_config`
+- [x] Add `make validate-config`
 
 Acceptance criteria:
 - Bad config fails deterministically

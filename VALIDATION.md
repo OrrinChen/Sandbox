@@ -566,6 +566,27 @@ Expected result:
 - Runner CLI accepts `--sandbox-backend workspace|docker`.
 - Docs describe Docker as evaluation isolation, not a security product.
 
+## Config Loader And Suite Registry Validation
+
+Run after runtime config loaders exist:
+
+```bash
+python3 -m pytest tests/test_phase22_config_loader.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate --json
+make validate-config
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- `load_tools_config()`, `load_validators_config()`, `load_task_suites_config()`, and `load_eval_runs_config()` parse the versioned project configs.
+- `validate_project_config()` fails bad config deterministically.
+- Runtime tool, validator, task-suite, and eval-run surfaces match the config files.
+- `make validate-config` runs the CLI.
+- `make ci` includes config validation before smoke, gate, model-study, and report generation.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

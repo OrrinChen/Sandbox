@@ -39,6 +39,7 @@ sed -n '1,220p' VALIDATION.md
 Full reproducibility validation:
 
 ```bash
+make validate-config
 make ci
 git diff --check -- .
 ```
@@ -195,6 +196,21 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
 ```
 
 The Docker backend is evaluation isolation, not a security product. Default CI does not require Docker.
+
+Runtime config validation:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate --json
+```
+
+Expected output includes:
+
+```text
+config_validation=passed tools=7 validators=10 task_suites=2 eval_runs=1
+```
+
+This checks the project-owned tool, validator, task-suite, and eval-run configs against runtime defaults and manifests. It uses the current controlled config format; treat failures as real drift until proven otherwise.
 
 GitHub Actions:
 

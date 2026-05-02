@@ -23,9 +23,10 @@ Completed:
 - [x] Phase 17: Benchmark-Scale Deterministic Suite Expansion
 - [x] Phase 18: Failure Taxonomy v2 and Root-Cause Report
 - [x] Phase 19: Recorded Model Matrix
+- [x] Phase 20: Credentials-Gated Live Provider Workflow
 
 Current phase:
-- [ ] Phase 20: Credentials-Gated Live Provider Workflow
+- [ ] Phase 21: Sandbox Backend Hardening
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -50,6 +51,7 @@ Current facts:
 - The recorded benchmark model study shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 32 silent failures caught.
 - The recorded model matrix has 5 offline profiles over the 64-task benchmark suite, 320 total runs, and 5 distinct failure signatures.
 - The matrix key finding is that final-answer-only grading overestimated validated correctness by 56.2 percentage points and deterministic validators caught 180 silent failures.
+- The live provider workflow is credentials-gated, fails closed without `--live`, skips cleanly without credentials, and can convert live outputs into recorded fixture candidates.
 - Oracle benchmark replay currently covers 64 traces with 0 divergences.
 - Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
@@ -80,7 +82,7 @@ Truthfulness rules:
 - Benchmark-scale claims must be described as fixture-backed deterministic results, not live-provider benchmark results.
 - Root-cause reporting claims must remain tied to deterministic validator and trace data, not LLM-as-judge explanations.
 - Model matrix comparison is recorded and offline; do not describe it as a live-provider benchmark.
-- Do not run or claim live provider results until Phase 20 passes with explicit credentials and `--live`.
+- Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
 - Do not call sandboxing "secure" until Phase 21 adds optional container isolation; even then, describe it as evaluation isolation, not a security product.
 - Do not claim runtime configs are authoritative until Phase 22 passes.
 - Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
@@ -577,12 +579,12 @@ Goal:
 Add manual live provider experiments while keeping default CI deterministic and offline.
 
 Tasks:
-- [ ] Add `--model-provider openai`
-- [ ] Add generic HTTP or second-provider adapter
-- [ ] Add `--live`, `--max-cost-usd`, `--max-tasks`, and `--record-output`
-- [ ] Fail closed without `--live`
-- [ ] Skip live tests without credentials
-- [ ] Convert live outputs into recorded fixture candidates
+- [x] Add `--model-provider openai`
+- [x] Add generic HTTP or second-provider adapter
+- [x] Add `--live`, `--max-cost-usd`, `--max-tasks`, and `--record-output`
+- [x] Fail closed without `--live`
+- [x] Skip live tests without credentials
+- [x] Convert live outputs into recorded fixture candidates
 
 Acceptance criteria:
 - Live smoke can run manually with credentials

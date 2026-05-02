@@ -119,6 +119,53 @@ Expected output includes:
 models=5 run_count=320 distinct_signatures=5 max_validator_gap=1.000
 ```
 
+Credentials-gated live provider workflow:
+
+Fail-closed check:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --model-provider openai \
+  --output-dir /tmp/sandboxed-agent-eval-live-fail-closed
+```
+
+Expected output includes:
+
+```text
+status=failed_closed reason=live_flag_required
+```
+
+Missing-credential skip check:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --live \
+  --model-provider openai \
+  --api-key-env SANDBOXED_AGENT_EVAL_MISSING_OPENAI_KEY \
+  --output-dir /tmp/sandboxed-agent-eval-live-skip
+```
+
+Expected output includes:
+
+```text
+status=skipped reason=missing_credentials
+```
+
+Manual live run with intentional credentials:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --live \
+  --model-provider openai \
+  --model "$OPENAI_MODEL" \
+  --max-tasks 1 \
+  --max-cost-usd 0.25 \
+  --record-output \
+  --output-dir artifacts/live_runs/manual
+```
+
+Do not run live commands in CI, and do not commit generated live artifacts.
+
 GitHub Actions:
 
 ```text

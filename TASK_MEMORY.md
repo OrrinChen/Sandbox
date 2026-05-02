@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 19 recorded model matrix. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 20 credentials-gated live provider workflow. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 20 credentials-gated live provider workflow is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
+Phase 21 sandbox backend hardening is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Choose whether to continue with optional Phase 20 live-provider workflow or jump to Phase 23 public portfolio report. Do not add live-provider behavior unless it is credentials-gated and skipped by default.
+Choose whether to continue with optional Phase 21 sandbox backend hardening or jump to Phase 23 public portfolio report. Do not run or claim live provider results unless explicit credentials and `--live` are supplied.
 
 ## Current State
 
@@ -579,6 +579,34 @@ Known limitations:
 - The profiles are designed to exercise failure signatures and should not be described as claims about specific public model providers.
 - Portfolio-ready narrative and case-study packaging remain deferred to Phase 23 and Phase 24.
 
+### Phase 20: Credentials-Gated Live Provider Workflow
+
+Commit:
+Included in the Phase 20 credentials-gated live provider workflow commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.evaluation.live_provider`.
+- Added `GenericHTTPModelAdapter` alongside the existing `OpenAIResponsesAdapter`.
+- Added CLI flags for `--model-provider`, `--live`, `--max-cost-usd`, `--max-tasks`, and `--record-output`.
+- Made live workflow fail closed without `--live`.
+- Made live workflow skip cleanly without credentials and write a skipped `summary.json`.
+- Added recorded fixture candidate conversion through `recorded_fixture_candidate.json`.
+- Added `raw_outputs.jsonl` generation only when `--record-output` is used and records exist.
+- Added tests that exercise OpenAI and generic HTTP paths through injected transports only.
+- Updated `configs/models.yaml`, `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.evaluation.live_provider` did not exist.
+- Focused Phase 20 tests passed before commit and are recorded in the validation log.
+- Fail-closed CLI smoke returned exit code 2 without writing a summary artifact.
+- Missing-credential CLI smoke skipped without a network call and wrote `summary.json`.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- No real live provider call was run in default validation because credentials are intentionally not required.
+- Live artifacts are candidates for later recorded fixtures; they should be reviewed before committing any converted fixture.
+- The default model name is only a convenience and should be overridden explicitly for manual live runs when provider model names change.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -1069,6 +1097,27 @@ Results:
 - `make ci` passed on the default smoke reproducibility path.
 - Whitespace check passed.
 
+Commands run for Phase 20:
+
+```bash
+PYTHONPATH=src python3 -m pytest tests/test_phase20_live_provider_workflow.py -v
+python3 -m pytest tests/test_phase20_live_provider_workflow.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider --model-provider openai --output-dir /tmp/sandboxed-agent-eval-live-fail-closed
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider --live --model-provider openai --api-key-env SANDBOXED_AGENT_EVAL_MISSING_OPENAI_KEY --output-dir /tmp/sandboxed-agent-eval-live-skip
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 20 red run failed because `sandboxed_agent_eval_harness.evaluation.live_provider` did not exist.
+- Focused Phase 20 live provider workflow tests passed: 4 tests.
+- Fail-closed CLI smoke printed `status=failed_closed reason=live_flag_required` and returned exit code 2.
+- Missing-credential CLI smoke printed `status=skipped reason=missing_credentials ... records=0` and wrote skipped summary output without credentials.
+- Final full pytest run passed after implementation.
+- `make ci` passed on the default smoke reproducibility path.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1107,11 +1156,11 @@ Results:
 
 - Limitation: Default agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, while the recorded model fixture demonstrates model-style failures without being a live provider benchmark.
-  Planned fix: Add credentials-gated live provider experiments and keep recorded transcripts for reproducible replay.
+  Planned fix: Use the Phase 20 credentials-gated live workflow manually when credentials are intentionally supplied, then keep recorded transcripts for reproducible replay.
 
 - Limitation: The recorded model matrix uses controlled behavior profiles rather than live provider transcripts.
   Impact: It demonstrates that the harness can distinguish failure signatures across model-like outputs, but it is not a live-provider benchmark.
-  Planned fix: Add credentials-gated live provider workflow only in Phase 20, then convert live runs into recorded fixtures for reproducible replay.
+  Planned fix: Convert reviewed Phase 20 live runs into recorded fixtures for reproducible replay.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
   Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
@@ -1119,7 +1168,7 @@ Results:
 
 - Limitation: Benchmark tasks are synthetic and fixture-backed.
   Impact: They support deterministic benchmark claims for harness behavior, but not live-provider or real-world production benchmark claims.
-  Planned fix: Keep claims precise; add optional credentials-gated live provider workflow only in Phase 20.
+  Planned fix: Keep claims precise; treat Phase 20 live outputs as manual evidence until they are converted into reviewed recorded fixtures.
 
 - Limitation: The report's final-answer-only score is a deterministic proxy.
   Impact: It demonstrates silent-failure and root-cause reporting but does not semantically judge answer quality.
@@ -1162,7 +1211,7 @@ Results:
 
 ## Next Steps
 
-1. Decide whether to run optional Phase 20 live-provider workflow next or jump to required Phase 23 portfolio report.
-2. Keep any live workflow credentials-gated, skipped by default, and convertible into recorded fixtures.
+1. Decide whether to run optional Phase 21 sandbox backend hardening next or jump to required Phase 23 portfolio report.
+2. Keep any manual live workflow credentials-gated, skipped by default, and convertible into recorded fixtures.
 3. Package recorded model matrix evidence into recruiter-readable artifacts in Phase 23.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

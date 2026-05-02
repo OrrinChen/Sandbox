@@ -94,6 +94,47 @@ class OpenAIResponsesAdapter:
         return _normalize_record(record)
 
 
+class GenericHTTPModelAdapter:
+    """Generic JSON-over-HTTP adapter for credentials-gated live experiments."""
+
+    def __init__(
+        self,
+        endpoint: str,
+        api_key: str,
+        model: str,
+        timeout_seconds: int = 30,
+        auth_header: str = "Authorization",
+        auth_prefix: str = "Bearer ",
+        transport: Optional[Transport] = None,
+    ) -> None:
+        self.endpoint = _non_empty_string(endpoint, "endpoint")
+        self.api_key = _non_empty_string(api_key, "api_key")
+        self.model = _non_empty_string(model, "model")
+        self.timeout_seconds = timeout_seconds
+        self.auth_header = _non_empty_string(auth_header, "auth_header")
+        self.auth_prefix = auth_prefix
+        self.transport = transport or _urllib_transport
+
+    def generate(self, task: TaskSpec) -> JsonDict:
+        payload = {
+            "model": self.model,
+            "prompt": _model_plan_prompt(task),
+            "task": task.to_dict(),
+        }
+        response = self.transport(
+            self.endpoint,
+            {
+                self.auth_header: f"{self.auth_prefix}{self.api_key}",
+                "Content-Type": "application/json",
+            },
+            payload,
+            self.timeout_seconds,
+        )
+        record = _parse_model_record(response)
+        record.setdefault("task_id", task.task_id)
+        return _normalize_record(record)
+
+
 def load_recorded_model_adapters(path: Path | str) -> list[RecordedModelAdapter]:
     payload = json.loads(Path(path).read_text())
     if not isinstance(payload, dict):

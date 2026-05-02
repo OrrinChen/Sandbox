@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 19 recorded model matrix comparison. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, and an offline recorded model matrix that compares distinct failure signatures.
+The repository has completed Phase 20 credentials-gated live provider workflow. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, and a manual live workflow that fails closed unless `--live` and credentials are supplied.
 
 Current evidence snapshot:
 
@@ -41,6 +41,7 @@ Strict oracle benchmark replay: 64 traces, 0 divergences
 Root-cause report: validator gap, silent failure rate, answer overclaim rate, and breakdowns by domain/tool/model/validator
 Recorded model matrix: 5 offline profiles, 320 benchmark runs, 5 distinct failure signatures
 Matrix key finding: final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures
+Live workflow: opt-in only, fails closed without --live, skips without credentials, converts live outputs into recorded fixture candidates
 ```
 
 Start by reading:
@@ -281,10 +282,11 @@ They provide:
 
 - `RecordedModelAdapter`
 - `OpenAIResponsesAdapter`
+- `GenericHTTPModelAdapter`
 - `load_recorded_model_adapters()`
 - `ModelAdapterAgent`
 
-The recorded adapter replays fixture-safe model plans from `fixtures/model_outputs/silent_failure_study.json`, so local validation can show model-style silent failures without network access, credentials, or paid APIs. The optional OpenAI Responses adapter builds a live request through an injectable transport; tests use the injected transport path and never call the network by default.
+The recorded adapter replays fixture-safe model plans from `fixtures/model_outputs/silent_failure_study.json`, so local validation can show model-style silent failures without network access, credentials, or paid APIs. The optional OpenAI Responses and generic HTTP adapters build live requests through injectable transports; tests use injected transports and missing-credential skip paths, so default validation never calls the network.
 
 Silent failure study command:
 
@@ -329,6 +331,42 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_matrix \
 ```
 
 The command writes `model_matrix_summary.json`, `model_comparison_report.md`, `silent_failure_by_model.csv`, the raw runner `summary.json`, and standard report artifacts. The default matrix is recorded and offline; it makes no live provider calls and should not be described as a public live-model benchmark.
+
+## Credentials-Gated Live Provider Workflow
+
+The live workflow CLI lives in `sandboxed_agent_eval_harness.evaluation.live_provider`.
+
+It is intentionally opt-in:
+
+- Running without `--live` fails closed.
+- Running with `--live` but without credentials writes a skipped `summary.json` and exits successfully.
+- Default tests and CI do not set credentials and do not run live provider calls.
+- `--record-output` converts generated records into `recorded_fixture_candidate.json` for later deterministic replay.
+
+Missing-credential skip smoke:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --live \
+  --model-provider openai \
+  --api-key-env SANDBOXED_AGENT_EVAL_MISSING_OPENAI_KEY \
+  --output-dir /tmp/sandboxed-agent-eval-live-skip
+```
+
+Manual OpenAI live smoke, only when credentials are intentionally supplied:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --live \
+  --model-provider openai \
+  --model "$OPENAI_MODEL" \
+  --max-tasks 1 \
+  --max-cost-usd 0.25 \
+  --record-output \
+  --output-dir artifacts/live_runs/manual
+```
+
+Do not commit generated live artifacts, credentials, raw private prompts, or provider secrets.
 
 ## Report And Regression View
 

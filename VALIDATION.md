@@ -515,6 +515,33 @@ Expected result:
 - The CLI prints at least `models=4`, `distinct_signatures=4`, and `max_validator_gap=...`.
 - No network calls, API keys, or live provider credentials are required.
 
+## Credentials-Gated Live Provider Workflow Validation
+
+Run after the live provider workflow exists:
+
+```bash
+python3 -m pytest tests/test_phase20_live_provider_workflow.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --model-provider openai \
+  --output-dir /tmp/sandboxed-agent-eval-live-fail-closed
+test "$?" -eq 2
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider \
+  --live \
+  --model-provider openai \
+  --api-key-env SANDBOXED_AGENT_EVAL_MISSING_OPENAI_KEY \
+  --output-dir /tmp/sandboxed-agent-eval-live-skip
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- Live CLI fails closed without `--live`.
+- Live CLI skips cleanly without credentials and writes `summary.json` with `status=skipped`.
+- OpenAI and generic HTTP live adapters are tested through injected transports only.
+- `--record-output` writes `raw_outputs.jsonl` and `recorded_fixture_candidate.json` in injected-transport tests.
+- Default pytest and `make ci` do not require credentials and do not run live provider calls.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

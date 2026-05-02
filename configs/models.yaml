@@ -21,5 +21,15 @@ models:
     type: live_optional
     endpoint: https://api.openai.com/v1/responses
     auth_env: OPENAI_API_KEY
+    model_env: OPENAI_MODEL
     default_enabled: false
     network_required: true
+    requires_live_flag: true
+  - id: generic_http_live
+    type: live_optional
+    endpoint_env: GENERIC_HTTP_MODEL_ENDPOINT
+    auth_env: GENERIC_HTTP_API_KEY
+    model_env: GENERIC_HTTP_MODEL
+    default_enabled: false
+    network_required: true
+    requires_live_flag: true

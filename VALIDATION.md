@@ -613,6 +613,29 @@ Expected result:
 - Case studies under `reports/examples/` point to replayable JSONL traces.
 - Default validation remains key-free and network-free.
 
+## README / Resume / Interview Polish Freeze Validation
+
+Run after Phase 24 portfolio polish is complete:
+
+```bash
+python3 -m pytest tests/test_phase24_portfolio_freeze.py -v
+test -s docs/interview_notes.md
+test -s docs/architecture.md
+test -s docs/limitations.md
+test -s docs/failure_case_studies.md
+make portfolio-report
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- README has Problem, Architecture, Quickstart, Key Result, Reproducibility, and Limitations.
+- README is short enough for a 3-minute reviewer pass.
+- `docs/interview_notes.md` includes the final resume bullet with numbers.
+- `docs/architecture.md`, `docs/limitations.md`, and `docs/failure_case_studies.md` are present.
+- Roadmap status is frozen after Phase 24.
+- Claims avoid security and live-benchmark overstatement.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

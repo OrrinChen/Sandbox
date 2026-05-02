@@ -27,9 +27,12 @@ Completed:
 - [x] Phase 21: Sandbox Backend Hardening
 - [x] Phase 22: Config Loader and Suite Registry Cleanup
 - [x] Phase 23: Public Portfolio Report
+- [x] Phase 24: README, Resume, and Interview Polish Freeze
 
 Current phase:
-- [ ] Phase 24: README, Resume, and Interview Polish Freeze
+- Maintenance only
+
+Roadmap status: frozen after Phase 24.
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -47,7 +50,7 @@ Main line:
 This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
 
 Current facts:
-- Phases 0-23 are complete.
+- Phases 0-24 are complete.
 - The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
 - The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
@@ -85,7 +88,7 @@ Truthfulness rules:
 - Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
 - Do not call sandboxing secure; describe Phase 21 as optional evaluation isolation, not a security product.
 - Runtime config claims are limited to project config validation for tools, validators, task suites, eval runs, and regression gate presets.
-- Do not present this as portfolio-final until Phase 24 passes.
+- The project is portfolio-final after Phase 24; future work should be maintenance, bug fixes, refreshed recorded evidence, or documentation updates only.
 
 Minimum resume-ready path:
 If time is constrained, complete Phases 23 and 24 after Phase 19. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
@@ -676,13 +679,13 @@ Goal:
 Freeze the project into a portfolio-ready artifact and stop feature expansion.
 
 Tasks:
-- [ ] Rewrite README for 3-minute reviewer comprehension
-- [ ] Add `docs/interview_notes.md`
-- [ ] Add `docs/architecture.md`
-- [ ] Add `docs/limitations.md`
-- [ ] Add `docs/failure_case_studies.md`
-- [ ] Add final resume bullet with numbers
-- [ ] Mark roadmap frozen after Phase 24
+- [x] Rewrite README for 3-minute reviewer comprehension
+- [x] Add `docs/interview_notes.md`
+- [x] Add `docs/architecture.md`
+- [x] Add `docs/limitations.md`
+- [x] Add `docs/failure_case_studies.md`
+- [x] Add final resume bullet with numbers
+- [x] Mark roadmap frozen after Phase 24
 
 Acceptance criteria:
 - README has Problem, Architecture, Quickstart, Key Result, Reproducibility, and Limitations

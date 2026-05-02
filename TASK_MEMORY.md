@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 23 public portfolio report. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 24 README, resume, and interview polish freeze. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 24 README, resume, and interview polish freeze is next.
+Maintenance only. Roadmap is frozen after Phase 24.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Polish the README and interview docs for the Phase 24 final freeze. Keep all benchmark and model-matrix claims tied to fixture-backed deterministic or recorded-offline evidence.
+Maintain, fix bugs, refresh recorded evidence when needed, and keep claims tied to fixture-backed deterministic or recorded-offline evidence.
 
 ## Current State
 
@@ -689,6 +689,30 @@ Known limitations:
 - The portfolio report uses recorded offline model profiles and fixture-backed benchmark tasks, not live-provider benchmark evidence.
 - Case studies point to generated artifact traces under `artifacts/eval_runs/portfolio_model_matrix`; rerun `make portfolio-report` to regenerate those traces.
 
+### Phase 24: README, Resume, and Interview Polish Freeze
+
+Commit:
+Included in the Phase 24 portfolio polish and roadmap freeze commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Rewrote `README.md` into a concise reviewer-facing portfolio page.
+- Added `docs/interview_notes.md` with the final resume bullet and interview talking points.
+- Added `docs/architecture.md`.
+- Added `docs/limitations.md`.
+- Added `docs/failure_case_studies.md`.
+- Marked Phase 24 complete and the roadmap frozen.
+- Added Phase 24 validation instructions to `VALIDATION.md` and `RUNBOOK.md`.
+- Added Phase 24 tests for README shape, docs coverage, roadmap freeze state, and validation/runbook coverage.
+
+Validation:
+- Initial TDD red run failed because README was too long, Phase 24 docs were missing, the roadmap was not frozen, and validation/runbook docs did not include Phase 24 checks.
+- Focused Phase 24 tests passed before commit and are recorded in the validation log.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- The project is frozen as a portfolio artifact; future work should be maintenance, bug fixes, refreshed recorded evidence, or documentation polish.
+- The benchmark and portfolio evidence remain recorded/offline and fixture-backed, not live-provider benchmark claims.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -1263,6 +1287,27 @@ Results:
 - Final full pytest passed: 122 tests.
 - `make ci` passed with config validation, oracle smoke, strict gate, recorded model study, and report generation.
 
+Commands run for Phase 24:
+
+```bash
+python3 -m pytest tests/test_phase24_portfolio_freeze.py -v
+test -s docs/interview_notes.md
+test -s docs/architecture.md
+test -s docs/limitations.md
+test -s docs/failure_case_studies.md
+make portfolio-report
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 24 red run failed because README was too long, docs were missing, roadmap was not frozen, and validation/runbook checks were absent.
+- Focused Phase 24 freeze tests passed after implementation.
+- `make portfolio-report` regenerated the portfolio report and replayable case-study artifacts.
+- Final full pytest passed: 126 tests.
+- `make ci` passed with config validation, oracle smoke, strict gate, recorded model study, and report generation.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1360,7 +1405,7 @@ Results:
 
 ## Next Steps
 
-1. Complete Phase 24 README, resume, and interview polish freeze.
-2. Add architecture, limitations, failure case-study, and interview notes docs.
-3. Keep sandbox claims limited to evaluation isolation, not a security product.
-4. Do not build dashboard or web app features after the Phase 24 portfolio freeze.
+1. Maintenance only: fix bugs, refresh recorded evidence, and polish documentation when needed.
+2. Keep sandbox claims limited to evaluation isolation, not a security product.
+3. Keep recorded model matrix claims offline and fixture-backed unless a live run is explicitly executed and documented.
+4. Do not add new roadmap phases, dashboard product work, generic agent runtime features, or unrelated finance ingestion work.

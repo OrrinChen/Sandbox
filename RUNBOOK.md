@@ -237,6 +237,17 @@ reports/examples/replayable_failure_*.md
 
 The report uses recorded offline model profiles and fixture-backed benchmark tasks. It is not a live-provider benchmark and does not require API keys.
 
+Phase 24 freeze check:
+
+```bash
+python3 -m pytest tests/test_phase24_portfolio_freeze.py -v
+make portfolio-report
+make ci
+git diff --check -- .
+```
+
+After Phase 24, do not add new roadmap phases, dashboard products, generic agent runtime features, or unrelated finance ingestion work. Future changes should be maintenance, bug fixes, refreshed recorded evidence, or documentation polish.
+
 GitHub Actions:
 
 ```text

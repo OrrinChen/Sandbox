@@ -36,10 +36,10 @@ sed -n '1,220p' VALIDATION.md
 
 ## Current Stage Commands
 
-Documentation-only validation:
+Full reproducibility validation:
 
 ```bash
-for f in README.md AGENTS.md ROADMAP.md TASK_MEMORY.md VALIDATION.md RUNBOOK.md; do test -s "$f" || exit 1; done
+make ci
 git diff --check -- .
 ```
 
@@ -67,6 +67,18 @@ Recorded model silent-failure study:
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
   --recorded-output fixtures/model_outputs/silent_failure_study.json \
   --output-dir /tmp/sandboxed-agent-eval-model-study
+```
+
+GitHub Actions:
+
+```text
+.github/workflows/sandboxed-agent-eval-harness-ci.yml
+```
+
+The workflow lives at the git repository root so GitHub can discover it, but every run step uses:
+
+```text
+working-directory: sandboxed-agent-eval-harness
 ```
 
 ## Data and Network Policy

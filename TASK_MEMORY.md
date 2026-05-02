@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 15 real model adapter and silent failure study. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 16 reproducibility and CI. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Recorded model-output study MVP complete; next phase not selected.
+Phase 17 benchmark-scale deterministic suite expansion is next.
 
 Main blocker:
-No implementation blocker. Phase 15 adapter and silent-failure study path is in place without live API requirements.
+No implementation blocker. Phase 16 Makefile and GitHub Actions CI are in place without live API requirements.
 
 Next recommended action:
-Select the next phase from deferred expansions. Recommended next target: add project-bound CI scripts for strict smoke plus model study, or add a credentials-gated live provider experiment outside default tests.
+Start Phase 17 by designing `benchmark_suite.json` and adding deterministic task families without changing the project into an agent product.
 
 ## Current State
 
@@ -472,6 +472,31 @@ Known limitations:
 - The recorded model fixture is evidence that the harness can expose model-style silent failures, not a benchmark-scale real provider result.
 - Live provider cost accounting still needs credentials-gated experiments and provider-specific usage normalization.
 
+### Phase 16: Reproducibility and CI
+
+Commit:
+Included in the Phase 16 reproducibility and CI commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added project `Makefile` targets: `test`, `smoke`, `gate`, `model-study`, `report`, and `ci`.
+- Added GitHub Actions workflow at `.github/workflows/sandboxed-agent-eval-harness-ci.yml`.
+- Scoped all workflow run steps to `working-directory: sandboxed-agent-eval-harness`.
+- Kept CI default path credential-free and free of live model flags.
+- Uploaded generated `artifacts/` from CI.
+- Added tests that assert reproducibility targets, workflow working-directory, no live credential references, and ignored artifact outputs.
+- Updated `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `Makefile` and GitHub Actions workflow did not exist.
+- Focused Phase 16 CI tests passed before commit and are recorded in the validation log.
+- `make ci` passed before commit and is recorded in the validation log.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Local validation can verify workflow file contents, but actual GitHub Actions execution still requires pushing to GitHub.
+- The workflow uses GitHub-hosted actions and package installation infrastructure, but project tests and smoke runs do not call live model/data APIs.
+- CI currently runs the default 8-task suite; benchmark-scale CI comes after Phase 17.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -872,6 +897,24 @@ Results:
 - Final full pytest run passed after implementation.
 - Whitespace check passed.
 
+Commands run for Phase 16:
+
+```bash
+python3 -m pytest tests/test_phase16_ci.py -v
+make -n ci
+make ci
+python3 -m pytest
+git diff --check -- .
+```
+
+Results:
+- The first Phase 16 red run failed because `Makefile` and `.github/workflows/sandboxed-agent-eval-harness-ci.yml` did not exist.
+- Focused Phase 16 CI tests passed after implementation.
+- `make -n ci` showed pytest, oracle smoke, strict gate, recorded model study, and report generation.
+- `make ci` passed after implementation.
+- Final full pytest run passed after implementation.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -897,6 +940,10 @@ Results:
 - Decision: Live model providers must be opt-in and tested through injected or recorded transports by default.
   Reason: Default validation should stay credential-free, network-free, and reproducible.
   Date: 2026-05-01
+
+- Decision: The final roadmap freezes at Phase 24.
+  Reason: The project should converge into an eval infrastructure portfolio artifact instead of growing into a dashboard or general agent product.
+  Date: 2026-05-02
 
 ## Known Limitations
 
@@ -957,7 +1004,7 @@ Results:
 
 ## Next Steps
 
-1. Select the next phase scope explicitly.
-2. Recommended: add project-bound local CI scripts for `pytest`, oracle smoke, strict gate, and model study.
-3. Add credentials-gated live provider runs and persist them as recorded model-output fixtures.
-4. Add more deterministic coding and optimization tasks before making benchmark-scale claims.
+1. Start Phase 17: benchmark-scale deterministic suite expansion.
+2. Keep the suite fixture-backed and failure-taxonomy-driven.
+3. Do not add live provider workflow until Phase 20.
+4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

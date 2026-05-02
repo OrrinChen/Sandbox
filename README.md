@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 15 real model adapter and silent failure study work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, and summary-driven trace discovery for replay gates.
+The repository has completed Phase 16 reproducibility and CI work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
 
 Current evidence snapshot:
 
@@ -61,21 +61,25 @@ Live network APIs, paid services, and full dashboards are deferred until determi
 
 ## Quick Validation
 
-For the current package skeleton:
+For the current package:
 
 ```bash
-python3 -m pytest
-PYTHONPATH=src python3 - <<'PY'
-import sandboxed_agent_eval_harness
-print(sandboxed_agent_eval_harness.__name__)
-PY
-PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
-  --recorded-output fixtures/model_outputs/silent_failure_study.json \
-  --output-dir /tmp/sandboxed-agent-eval-model-study
+make ci
 git diff --check -- .
 ```
 
 For later phases, follow `VALIDATION.md`.
+
+Reproducibility commands:
+
+```bash
+make test
+make smoke
+make gate
+make model-study
+make report
+make ci
+```
 
 ## Core Schemas
 

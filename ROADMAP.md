@@ -19,17 +19,16 @@ Completed:
 - [x] Phase 13: Config-backed Gate Presets and Trace Discovery
 - [x] Phase 14: Portfolio-grade Deterministic Suite Expansion
 - [x] Phase 15: Real Model Adapter and Silent Failure Study
+- [x] Phase 16: Reproducibility and CI
 
 Current phase:
-- [ ] Next phase not selected; recorded model-output study MVP is complete
+- [ ] Phase 17: Benchmark-Scale Deterministic Suite Expansion
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
 - Live multi-provider model experiments with credentials supplied outside default tests
 - Cloud execution
 - Paid APIs and live financial data
-- Full regression dashboard
-- CI provider workflow files
 - LLM-as-judge scoring
 - Production deployment
 
@@ -404,6 +403,189 @@ Do not:
 - Commit secrets or provider credentials
 - Claim broad benchmark results from one recorded fixture study
 - Use LLM-as-judge in place of deterministic validators
+
+## Phase 16: Reproducibility and CI
+
+Goal:
+Make the project reproducible through one local command and one GitHub Actions workflow.
+
+Why now:
+The harness can run deterministic oracle smoke, strict gates, recorded model study, and report generation. The next useful step is making those checks hard to skip.
+
+Tasks:
+- [x] Add `make test`
+- [x] Add `make smoke`
+- [x] Add `make gate`
+- [x] Add `make model-study`
+- [x] Add `make report`
+- [x] Add `make ci`
+- [x] Add GitHub Actions CI
+- [x] Set workflow `working-directory: sandboxed-agent-eval-harness`
+- [x] Upload generated artifacts from CI
+- [x] Keep default CI credential-free and network-free except for package installation/actions infrastructure
+
+Acceptance criteria:
+- `make ci` runs full pytest, oracle smoke, strict regression gate, recorded model study, and report generation
+- GitHub Actions uses the project subdirectory as working directory
+- GitHub Actions does not reference live API credentials or `--live`
+- Generated `artifacts/` remain ignored by git
+- Full pytest passes
+- `git diff --check -- .` passes
+
+Do not:
+- Add live API credentials
+- Add network-dependent tests
+- Expand task suites
+- Build dashboard features
+
+## Phase 17: Benchmark-Scale Deterministic Suite Expansion
+
+Goal:
+Expand from 8 deterministic tasks toward a structured 48-64 task benchmark without making broad live benchmark claims.
+
+Tasks:
+- [ ] Add `fixtures/tasks/benchmark_suite.json`
+- [ ] Add `--suite benchmark`
+- [ ] Cover finance/evidence, data analysis, coding, optimization/OR, state mutation/file workflows, and citation/evidence traps
+- [ ] Map every task to explicit failure taxonomy traps
+- [ ] Keep oracle benchmark pass rate at 1.000
+- [ ] Keep replay divergence at 0 for oracle benchmark traces
+- [ ] Update recorded model fixtures to produce non-trivial silent failures on the benchmark suite
+
+Acceptance criteria:
+- Benchmark suite is deterministic and fixture-backed
+- Default tests remain network-free
+- Oracle benchmark pass rate is 1.000
+- Replay divergence is 0
+- Recorded model benchmark produces non-trivial silent failures
+
+## Phase 18: Failure Taxonomy v2 and Root-Cause Report
+
+Goal:
+Move reports from failure counts to root-cause explanations.
+
+Tasks:
+- [ ] Add normalized root-cause categories
+- [ ] Add silent failure rate, answer overclaim rate, and validator gap
+- [ ] Add failure breakdowns by domain, tool, model, and validator
+- [ ] Add top replayable failure traces
+- [ ] Emit an executive summary sentence with final-answer overstatement
+
+Acceptance criteria:
+- `silent_failure_study.json` contains root-cause breakdowns
+- `report.md` has an executive summary
+- `report.json` exposes machine-readable root-cause fields
+- Tests cover each failure taxonomy category
+
+## Phase 19: Recorded Model Matrix
+
+Goal:
+Compare several recorded model behavior profiles without live network calls.
+
+Tasks:
+- [ ] Add at least four recorded model profiles
+- [ ] Generate `model_matrix_summary.json`
+- [ ] Generate `model_comparison_report.md`
+- [ ] Generate `silent_failure_by_model.csv`
+- [ ] Sort and compare models by failure signature
+
+Acceptance criteria:
+- At least four recorded model profiles run on the benchmark suite
+- Each profile has a distinct failure signature
+- No network calls are required
+
+## Phase 20: Credentials-Gated Live Provider Workflow
+
+Goal:
+Add manual live provider experiments while keeping default CI deterministic and offline.
+
+Tasks:
+- [ ] Add `--model-provider openai`
+- [ ] Add generic HTTP or second-provider adapter
+- [ ] Add `--live`, `--max-cost-usd`, `--max-tasks`, and `--record-output`
+- [ ] Fail closed without `--live`
+- [ ] Skip live tests without credentials
+- [ ] Convert live outputs into recorded fixture candidates
+
+Acceptance criteria:
+- Live smoke can run manually with credentials
+- Default pytest does not require keys
+- CI does not run live workflows
+- Recorded fixture conversion is reproducible
+
+## Phase 21: Sandbox Backend Hardening
+
+Goal:
+Add optional container isolation while keeping the project honest about sandbox limits.
+
+Tasks:
+- [ ] Add `LocalWorkspaceBackend`
+- [ ] Add optional `DockerSandboxBackend`
+- [ ] Disable network in Docker backend
+- [ ] Mount fixtures read-only
+- [ ] Export workspace artifacts deterministically
+- [ ] Add `--sandbox-backend workspace|docker`
+
+Acceptance criteria:
+- Workspace backend remains compatible
+- Docker backend can run coding and data tasks
+- Timeout and memory-limit behavior has deterministic tests
+- Docs do not overclaim security
+
+## Phase 22: Config Loader and Suite Registry Cleanup
+
+Goal:
+Turn declarative config mirrors into runtime-consumed and validated configs.
+
+Tasks:
+- [ ] Add `load_tools_config()`
+- [ ] Add `load_validators_config()`
+- [ ] Add `load_task_suites_config()`
+- [ ] Add `load_eval_runs_config()`
+- [ ] Add `validate_project_config`
+- [ ] Add `make validate-config`
+
+Acceptance criteria:
+- Bad config fails deterministically
+- Runtime suite/tool/validator surfaces match README and configs
+- Config validation is part of local reproducibility checks
+
+## Phase 23: Public Portfolio Report
+
+Goal:
+Generate a static report suitable for recruiters and interviewers.
+
+Tasks:
+- [ ] Generate `reports/portfolio_report.md`
+- [ ] Generate `reports/portfolio_report.json`
+- [ ] Generate model matrix, failure taxonomy, and domain breakdown tables
+- [ ] Generate 2-3 replayable failure case studies
+- [ ] Keep report generation key-free
+
+Acceptance criteria:
+- One command generates the portfolio report
+- Report includes problem, system, evidence, benchmark, failure taxonomy, reproducibility, and limitations
+- Case studies point to replayable traces
+
+## Phase 24: README, Resume, and Interview Polish Freeze
+
+Goal:
+Freeze the project into a portfolio-ready artifact and stop feature expansion.
+
+Tasks:
+- [ ] Rewrite README for 3-minute reviewer comprehension
+- [ ] Add `docs/interview_notes.md`
+- [ ] Add `docs/architecture.md`
+- [ ] Add `docs/limitations.md`
+- [ ] Add `docs/failure_case_studies.md`
+- [ ] Add final resume bullet with numbers
+- [ ] Mark roadmap frozen after Phase 24
+
+Acceptance criteria:
+- README has Problem, Architecture, Quickstart, Key Result, Reproducibility, and Limitations
+- `make ci` passes
+- Portfolio report is present and reproducible
+- Claims avoid security or benchmark overstatement
 
 ## Project Positioning
 

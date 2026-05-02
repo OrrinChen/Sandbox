@@ -432,6 +432,25 @@ Expected result:
 - Study output writes `summary.json`, report artifacts, and `silent_failure_study.json`.
 - CLI prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=4`.
 
+## Reproducibility And CI Validation
+
+Run after Makefile commands and GitHub Actions are added:
+
+```bash
+python3 -m pytest tests/test_phase16_ci.py -v
+make -n ci
+make ci
+python3 -m pytest
+git diff --check -- .
+```
+
+Expected result:
+- Makefile declares `test`, `smoke`, `gate`, `model-study`, `report`, and `ci`.
+- `make ci` runs full pytest, oracle smoke, strict gate, recorded model study, and report generation.
+- GitHub Actions workflow uses `working-directory: sandboxed-agent-eval-harness`.
+- GitHub Actions workflow does not reference live API credentials or `--live`.
+- Artifacts are generated under ignored `artifacts/`.
+
 ## Before Commit
 
 Always run:

@@ -23,17 +23,21 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 16 reproducibility and CI work. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, a smoke evaluation runner, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
+The repository has completed Phase 17 benchmark-scale deterministic suite expansion. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
 
 Current evidence snapshot:
 
 ```text
-Domains: finance, data_analysis, coding, optimization
+Domains: finance, data_analysis, coding, optimization, file_workflow, citation
 Default deterministic tasks: 8
+Benchmark deterministic tasks: 64
 Validators: schema, tool_sequence, argument, state, numeric, citation, constraint, unit_test, policy, cost_latency
-Recorded model study: final-answer pass rate 1.000 vs validator pass rate 0.500
-Recorded silent failures caught: 4
-Strict oracle replay: 8 traces, 0 divergences
+Recorded smoke study: final-answer pass rate 1.000 vs validator pass rate 0.500
+Recorded smoke silent failures caught: 4
+Recorded benchmark study: final-answer pass rate 1.000 vs validator pass rate 0.500
+Recorded benchmark silent failures caught: 32
+Strict oracle smoke replay: 8 traces, 0 divergences
+Strict oracle benchmark replay: 64 traces, 0 divergences
 ```
 
 Start by reading:
@@ -230,8 +234,13 @@ They provide:
 - `load_task_suite()`
 - `default_task_suite()`
 - `default_task_suite_path()`
+- `benchmark_task_suite()`
+- `benchmark_task_suite_path()`
+- `task_suite_by_name()`
 
 The default suite manifest is `fixtures/tasks/initial_suite.json`. It contains eight deterministic tasks: three fixture-backed finance tasks, three local CSV/data-analysis tasks, one sandboxed coding task, and one small optimization task. Every task is represented as a `TaskSpec`, has non-empty hidden expected state, declares fixture paths, includes gold numeric/file/unit-test outputs, and records known traps where final-answer-only scoring can look successful while validators should fail.
+
+The benchmark suite manifest is `fixtures/tasks/benchmark_suite.json`. It contains 64 deterministic fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains. Each task declares explicit failure-taxonomy traps while reusing local fixtures and executable tool adapters, so benchmark runs stay network-free and replayable.
 
 ## Agent Baselines And Evaluation Runner
 
@@ -243,12 +252,22 @@ The first deterministic baselines live in `sandboxed_agent_eval_harness.agents`:
 - `oracle_tool_selection_agent`
 - `ModelAdapterAgent`
 
-The smoke runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, report a failure taxonomy, track correctness for constraints, unit tests, deterministic policy terms, and cost/latency limits, and preserve a separate final-answer-only pass signal for silent-failure studies.
+The smoke and benchmark runner lives in `sandboxed_agent_eval_harness.evaluation.runner`. It can run repeated trials over the default or benchmark task suite, execute fixture-backed tool adapters, write JSONL traces and a `summary.json`, execute deterministic validators, aggregate per-validator metrics, calculate pass@k, report a failure taxonomy, track correctness for constraints, unit tests, deterministic policy terms, and cost/latency limits, and preserve a separate final-answer-only pass signal for silent-failure studies.
 
 Smoke command:
 
 ```bash
 PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --trials 1 --output-dir artifacts/eval_runs/smoke
+```
+
+Benchmark command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite benchmark \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir artifacts/eval_runs/benchmark
 ```
 
 ## Model Adapters And Silent Failure Study
@@ -273,6 +292,17 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
 ```
 
 The fixture-backed study currently records a `recorded-gpt-style-v1` model trace set where final-answer-only scoring passes 8/8 tasks, while deterministic validators pass 4/8 and catch four silent failures across unsupported citation, missing unit tests, missing state mutation, tool sequence mismatch, numeric mismatch, and constraint violation.
+
+Benchmark recorded study command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir artifacts/eval_runs/benchmark_model_study
+```
+
+On the benchmark fixture suite, the recorded model trace set passes final-answer-only scoring on 64/64 tasks while deterministic validators pass 32/64 and catch 32 silent failures. This is fixture-backed evidence, not a live-provider benchmark.
 
 ## Report And Regression View
 

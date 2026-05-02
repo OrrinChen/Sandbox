@@ -13,10 +13,16 @@
           "tool_calls": [
             {
               "tool_name": "financial_statement.lookup",
-              "arguments": {"ticker": "AAPL", "fiscal_year": 2023, "statement": "income"}
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
             }
           ],
-          "reported_metrics": {"revenue_usd_millions": 383285},
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
           "turns": 2,
           "latency_seconds": 0.42,
           "cost": 0.0
@@ -28,7 +34,11 @@
           "tool_calls": [
             {
               "tool_name": "financial_statement.lookup",
-              "arguments": {"ticker": "MSFT", "fiscal_year": 2024, "statement": "segment"}
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
             }
           ],
           "reported_metrics": {
@@ -53,7 +63,9 @@
               }
             }
           ],
-          "reported_metrics": {"data_center_revenue_usd_millions": 47525},
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
           "turns": 2,
           "latency_seconds": 0.51,
           "cost": 0.0
@@ -63,7 +75,12 @@
           "final_answer": "top_region_revenue=5100, output_rows=3",
           "final_answer_passed": true,
           "tool_calls": [
-            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/regional_sales.csv"}},
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            },
             {
               "tool_name": "csv.group_metrics",
               "arguments": {
@@ -74,7 +91,10 @@
               }
             }
           ],
-          "reported_metrics": {"top_region_revenue": 5100, "output_rows": 3},
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
           "turns": 3,
           "latency_seconds": 0.56,
           "cost": 0.0
@@ -84,7 +104,12 @@
           "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
           "final_answer_passed": true,
           "tool_calls": [
-            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/customer_churn.csv"}},
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            },
             {
               "tool_name": "csv.group_metrics",
               "arguments": {
@@ -95,7 +120,10 @@
               }
             }
           ],
-          "reported_metrics": {"enterprise_churn_rate": 0.25, "self_serve_churn_rate": 0.5},
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
           "turns": 3,
           "latency_seconds": 0.58,
           "cost": 0.0
@@ -105,9 +133,16 @@
           "final_answer": "stockout_risk_count=2",
           "final_answer_passed": true,
           "tool_calls": [
-            {"tool_name": "csv.read", "arguments": {"path": "fixtures/data/inventory.csv"}}
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            }
           ],
-          "reported_metrics": {"stockout_risk_count": 2},
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
           "turns": 2,
           "latency_seconds": 0.39,
           "cost": 0.0
@@ -155,6 +190,1492 @@
           },
           "turns": 2,
           "latency_seconds": 0.62,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-01",
+          "final_answer": "revenue_usd_millions=383285 [aapl-2023-10k-income]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-02",
+          "final_answer": "revenue_usd_millions=383285 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-03",
+          "final_answer": "revenue_usd_millions=383285 [aapl-2023-10k-income]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-04",
+          "final_answer": "revenue_usd_millions=383285 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-05",
+          "final_answer": "revenue_usd_millions=383285 [aapl-2023-10k-income]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-aapl-revenue-benchmark-06",
+          "final_answer": "revenue_usd_millions=383285 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "AAPL",
+                "fiscal_year": 2023,
+                "statement": "income"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "revenue_usd_millions": 383285
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-01",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [msft-2024-segment-note]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-02",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-03",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [msft-2024-segment-note]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-04",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-05",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [msft-2024-segment-note]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "finance-msft-cloud-margin-benchmark-06",
+          "final_answer": "cloud_operating_margin=0.45, commercial_cloud_revenue_usd_millions=135000 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "financial_statement.lookup",
+              "arguments": {
+                "ticker": "MSFT",
+                "fiscal_year": 2024,
+                "statement": "segment"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "commercial_cloud_revenue_usd_millions": 135000,
+            "cloud_operating_margin": 0.45
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-01",
+          "final_answer": "data_center_revenue_usd_millions=47525 [nvda-2024-q4-transcript-datacenter]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-02",
+          "final_answer": "data_center_revenue_usd_millions=47525 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-03",
+          "final_answer": "data_center_revenue_usd_millions=47525 [nvda-2024-q4-transcript-datacenter]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-04",
+          "final_answer": "data_center_revenue_usd_millions=47525 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-05",
+          "final_answer": "data_center_revenue_usd_millions=47525 [nvda-2024-q4-transcript-datacenter]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-06",
+          "final_answer": "data_center_revenue_usd_millions=47525 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-07",
+          "final_answer": "data_center_revenue_usd_millions=47525 [nvda-2024-q4-transcript-datacenter]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "citation-nvda-datacenter-evidence-08",
+          "final_answer": "data_center_revenue_usd_millions=47525 [unsupported-source]",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "transcript.search",
+              "arguments": {
+                "ticker": "NVDA",
+                "fiscal_period": "FY2024 Q4",
+                "query": "data center revenue"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "data_center_revenue_usd_millions": 47525
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-sales-region-summary-benchmark-01",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv",
+                "group_by": "region",
+                "metric": "revenue",
+                "output_path": "summary_by_region_benchmark_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 3,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-sales-region-summary-benchmark-02",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-sales-region-summary-benchmark-03",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv",
+                "group_by": "region",
+                "metric": "revenue",
+                "output_path": "summary_by_region_benchmark_03.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 3,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-sales-region-summary-benchmark-04",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-churn-plan-rate-benchmark-01",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv",
+                "group_by": "plan",
+                "metric": "churn_rate",
+                "output_path": "churn_by_plan_benchmark_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 3,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-churn-plan-rate-benchmark-02",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-churn-plan-rate-benchmark-03",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv",
+                "group_by": "plan",
+                "metric": "churn_rate",
+                "output_path": "churn_by_plan_benchmark_03.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 3,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-churn-plan-rate-benchmark-04",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-inventory-stockout-report-benchmark-01",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv",
+                "group_by": "sku",
+                "metric": "stockout_risk",
+                "output_path": "stockout_report_benchmark_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 3,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-inventory-stockout-report-benchmark-02",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-inventory-stockout-report-benchmark-03",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv",
+                "group_by": "sku",
+                "metric": "stockout_risk",
+                "output_path": "stockout_report_benchmark_03.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 3,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "data-inventory-stockout-report-benchmark-04",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-sales-output-01",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv",
+                "group_by": "region",
+                "metric": "revenue",
+                "output_path": "file_workflow_sales_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 3,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-sales-output-02",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-sales-output-03",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv",
+                "group_by": "region",
+                "metric": "revenue",
+                "output_path": "file_workflow_sales_03.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 3,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-sales-output-04",
+          "final_answer": "output_rows=3, top_region_revenue=5100",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/regional_sales.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "top_region_revenue": 5100,
+            "output_rows": 3
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-churn-output-01",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv",
+                "group_by": "plan",
+                "metric": "churn_rate",
+                "output_path": "file_workflow_churn_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 3,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-churn-output-02",
+          "final_answer": "enterprise_churn_rate=0.25, self_serve_churn_rate=0.5",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/customer_churn.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "enterprise_churn_rate": 0.25,
+            "self_serve_churn_rate": 0.5
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-inventory-output-01",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            },
+            {
+              "tool_name": "csv.group_metrics",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv",
+                "group_by": "sku",
+                "metric": "stockout_risk",
+                "output_path": "file_workflow_inventory_01.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 3,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "file-workflow-inventory-output-02",
+          "final_answer": "stockout_risk_count=2",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "csv.read",
+              "arguments": {
+                "path": "fixtures/data/inventory.csv"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "stockout_risk_count": 2
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-01",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-02",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-03",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-04",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-05",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-06",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-07",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-08",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-09",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-10",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-11",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            },
+            {
+              "tool_name": "python.unit_tests",
+              "arguments": {
+                "test_path": "fixtures/code/test_discount.py"
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 3,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "coding-discount-total-fix-benchmark-12",
+          "final_answer": "The discount helper was patched and tests pass.",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "code.patch",
+              "arguments": {
+                "path": "fixtures/code/discount.py",
+                "replacements": [
+                  {
+                    "old": "return sum(prices) - discount",
+                    "new": "return sum(prices) * (1 - discount)"
+                  }
+                ]
+              }
+            }
+          ],
+          "reported_metrics": {},
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-01",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_01.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-02",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_02.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-03",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_03.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-04",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_04.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-05",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_05.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-06",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_06.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.41,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-07",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_07.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.44,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-08",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_08.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.47,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-09",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_09.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.5,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-10",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_10.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.53,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-11",
+          "final_answer": "expected_cost=20.0, order_quantity=120, service_level=1.0",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_11.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 120,
+            "service_level": 1.0,
+            "expected_cost": 20.0
+          },
+          "turns": 2,
+          "latency_seconds": 0.35,
+          "cost": 0.0
+        },
+        {
+          "task_id": "optimization-newsvendor-order-benchmark-12",
+          "final_answer": "expected_cost=33.333333, order_quantity=100, service_level=0.666667",
+          "final_answer_passed": true,
+          "tool_calls": [
+            {
+              "tool_name": "optimization.solve_newsvendor",
+              "arguments": {
+                "path": "fixtures/optimization/newsvendor.json",
+                "output_path": "newsvendor_solution_benchmark_12.json"
+              }
+            }
+          ],
+          "reported_metrics": {
+            "order_quantity": 100,
+            "service_level": 0.666667,
+            "expected_cost": 33.333333
+          },
+          "turns": 2,
+          "latency_seconds": 0.38,
           "cost": 0.0
         }
       ]

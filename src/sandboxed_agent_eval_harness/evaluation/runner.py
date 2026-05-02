@@ -11,7 +11,7 @@ from typing import Iterable, Optional, Sequence
 
 from sandboxed_agent_eval_harness.agents import AgentBaseline, agent_baseline_by_name, default_agent_baselines
 from sandboxed_agent_eval_harness.schemas import JsonDict, RunResult, TaskSpec, TraceEvent, ValidatorResult
-from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite
+from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite, task_suite_by_name
 from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError, ToolRegistry, default_tool_registry
 from sandboxed_agent_eval_harness.tracing import TraceLogger
 from sandboxed_agent_eval_harness.validators import (
@@ -102,6 +102,7 @@ def run_evaluation(
                         workspaces_path,
                         tool_registry,
                         tool_executor,
+                        task_suite.version,
                     )
                 )
 
@@ -120,7 +121,7 @@ def run_evaluation(
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Run fixture-backed agent baseline evaluations.")
-    parser.add_argument("--suite", default="smoke", choices=["smoke"])
+    parser.add_argument("--suite", default="smoke", choices=["smoke", "benchmark"])
     parser.add_argument("--baseline", action="append", help="Baseline name. Defaults to all baselines.")
     parser.add_argument("--trials", type=int, default=1)
     parser.add_argument("--output-dir", default="artifacts/eval_runs/smoke")
@@ -128,7 +129,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     baselines = [agent_baseline_by_name(name) for name in args.baseline] if args.baseline else default_agent_baselines()
     summary = run_evaluation(
-        suite=default_task_suite(),
+        suite=task_suite_by_name(args.suite),
         baselines=baselines,
         trials_per_task=args.trials,
         output_dir=args.output_dir,
@@ -149,6 +150,7 @@ def _run_single_trial(
     workspaces_path: Path,
     registry: ToolRegistry,
     executor: FixtureToolExecutor,
+    task_version: str = "tasks-v1",
 ) -> EvaluationRunRecord:
     run_id = f"{baseline.name}-{task.task_id}-{trial_index:03d}"
     trace_path = traces_path / f"{run_id}.jsonl"
@@ -164,7 +166,7 @@ def _run_single_trial(
             "prompt_version": baseline.prompt_version,
             "tool_version": "tools-v1",
             "tool_execution_mode": "fixture_adapter",
-            "task_version": "tasks-v1",
+            "task_version": task_version,
             "fixture_version": str(task.initial_state.get("fixture_version", "fixtures-v1")),
         },
     )

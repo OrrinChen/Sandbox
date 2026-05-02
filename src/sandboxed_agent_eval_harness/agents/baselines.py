@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping
+from typing import Mapping, Optional
 
 from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
 
@@ -136,6 +136,9 @@ def _planned_tool_call(task: TaskSpec, tool_name: str) -> PlannedToolCall:
 
 
 def _arguments_for_tool(task: TaskSpec, tool_name: str) -> JsonDict:
+    configured_arguments = _configured_tool_arguments(task, tool_name)
+    if configured_arguments is not None:
+        return configured_arguments
     if tool_name == "financial_statement.lookup":
         if "aapl" in task.task_id:
             return {"ticker": "AAPL", "fiscal_year": 2023, "statement": "income"}
@@ -165,6 +168,16 @@ def _arguments_for_tool(task: TaskSpec, tool_name: str) -> JsonDict:
             "output_path": "newsvendor_solution.json",
         }
     return {}
+
+
+def _configured_tool_arguments(task: TaskSpec, tool_name: str) -> Optional[JsonDict]:
+    configured = task.hidden_expected_state.get("tool_arguments", {})
+    if not isinstance(configured, Mapping):
+        return None
+    arguments = configured.get(tool_name)
+    if isinstance(arguments, Mapping):
+        return dict(arguments)
+    return None
 
 
 def _csv_group_arguments(task: TaskSpec) -> JsonDict:

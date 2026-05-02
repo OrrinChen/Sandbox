@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 16 reproducibility and CI. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 17 benchmark-scale deterministic suite expansion. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 17 benchmark-scale deterministic suite expansion is next.
+Phase 18 failure taxonomy v2 and root-cause report is next.
 
 Main blocker:
-No implementation blocker. Phase 16 Makefile and GitHub Actions CI are in place without live API requirements.
+No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Start Phase 17 by designing `benchmark_suite.json` and adding deterministic task families without changing the project into an agent product.
+Start Phase 18 by mapping validator failure types into normalized root-cause categories and surfacing silent-failure/root-cause breakdowns in report artifacts.
 
 ## Current State
 
@@ -495,7 +495,36 @@ Validation:
 Known limitations:
 - Local validation can verify workflow file contents, but actual GitHub Actions execution still requires pushing to GitHub.
 - The workflow uses GitHub-hosted actions and package installation infrastructure, but project tests and smoke runs do not call live model/data APIs.
-- CI currently runs the default 8-task suite; benchmark-scale CI comes after Phase 17.
+- CI currently runs the default 8-task smoke suite; benchmark validation is available as a phase-specific command and is not part of default CI runtime.
+
+### Phase 17: Benchmark-Scale Deterministic Suite Expansion
+
+Commit:
+Included in the Phase 17 benchmark-scale deterministic suite expansion commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `fixtures/tasks/benchmark_suite.json` with 64 deterministic fixture-backed tasks.
+- Added named suite loading for `smoke` and `benchmark`.
+- Added `benchmark_task_suite()`, `benchmark_task_suite_path()`, `task_suite_by_name()`, and `known_task_suites()`.
+- Added `--suite benchmark` to the evaluation runner.
+- Added `--suite benchmark` to the recorded model study CLI.
+- Updated deterministic baselines to read explicit per-task tool arguments from hidden expected state instead of relying only on task-id heuristics.
+- Updated trace replay execution to resolve traces against all known fixture-backed suites by default.
+- Expanded `fixtures/model_outputs/silent_failure_study.json` so the recorded model fixture can run on the 64-task benchmark suite.
+- Updated `configs/task_suites.yaml`, `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `benchmark_task_suite` was not exported.
+- Focused Phase 17 tests passed before commit and are recorded in the validation log.
+- Full pytest passed before commit and is recorded in the validation log.
+- Oracle benchmark run passed with task success rate 1.000 and pass@k 1.000.
+- Benchmark gate replay discovered and replayed all 64 oracle traces with zero divergences.
+- Recorded benchmark model study produced 32 silent failures with final-answer pass rate 1.000 and validator pass rate 0.500.
+
+Known limitations:
+- The benchmark suite is deterministic and fixture-backed; it is not a live-provider or third-party public benchmark.
+- The recorded benchmark study still uses one recorded model profile; Phase 19 is needed for model-matrix comparison.
+- The expanded suite reuses current executable fixture tools instead of adding new tool families.
 
 ## Validation Log
 
@@ -915,6 +944,30 @@ Results:
 - Final full pytest run passed after implementation.
 - Whitespace check passed.
 
+Commands run for Phase 17:
+
+```bash
+python3 -m pytest tests/test_phase17_benchmark_suite.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite benchmark --baseline oracle_tool_selection_agent --trials 1 --output-dir /tmp/sandboxed-agent-eval-benchmark
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates --summary /tmp/sandboxed-agent-eval-benchmark/summary.json --threshold-preset strict_smoke --discover-traces --replay-workspace /tmp/sandboxed-agent-eval-benchmark-replay
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study --suite benchmark --recorded-output fixtures/model_outputs/silent_failure_study.json --output-dir /tmp/sandboxed-agent-eval-benchmark-model-study
+make ci
+python3 -m pytest
+git diff --check -- .
+```
+
+Results:
+- The first Phase 17 red run failed because `benchmark_task_suite` was not exported.
+- Focused Phase 17 benchmark tests passed after implementation.
+- Final full pytest run passed: 95 tests.
+- Benchmark oracle smoke passed and printed `runs=64 task_success_rate=1.000 pass_at_k=1.000`.
+- Benchmark gate replay discovered and replayed all 64 oracle traces with zero divergences.
+- Benchmark recorded model study passed and printed `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
+- `make ci` passed on the default smoke reproducibility path.
+- Final full pytest run passed: 95 tests.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -947,25 +1000,25 @@ Results:
 
 ## Known Limitations
 
-- Limitation: Replay execution is limited to the default fixture-backed tools and suite.
-  Impact: New domains beyond finance, data analysis, coding, and the current optimization slice need executable adapters before traces can be re-executed end to end.
+- Limitation: Replay execution is limited to the current fixture-backed tools.
+  Impact: The benchmark suite can replay the current finance, data, coding, optimization, file-workflow, and citation tasks, but new tool families still need executable adapters before traces can be re-executed end to end.
   Planned fix: Add replay support alongside each new executable adapter.
 
 - Limitation: Default agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, while the recorded model fixture demonstrates model-style failures without being a live provider benchmark.
   Planned fix: Add credentials-gated live provider experiments and keep recorded transcripts for reproducible replay.
 
-- Limitation: The recorded model study is a small fixture.
-  Impact: It proves the final-answer-only vs deterministic-validator reporting path, but it is not yet broad enough for benchmark-scale claims.
-  Planned fix: Add more recorded provider runs and model families after the adapter surface stabilizes.
+- Limitation: The recorded model study still has one model profile.
+  Impact: The benchmark fixture demonstrates silent failures at 64-task scale, but it does not yet distinguish multiple model behavior signatures.
+  Planned fix: Add the Phase 19 recorded model matrix after root-cause reporting stabilizes.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
   Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
   Planned fix: Add adapters as new task suites are introduced.
 
-- Limitation: Coding and optimization suites are intentionally small.
-  Impact: They demonstrate cross-domain harness mechanics but are not yet broad enough for benchmark claims.
-  Planned fix: Add more deterministic task families and edge cases before making broad benchmark statements.
+- Limitation: Benchmark tasks are synthetic and fixture-backed.
+  Impact: They support deterministic benchmark claims for harness behavior, but not live-provider or real-world production benchmark claims.
+  Planned fix: Keep claims precise; add optional credentials-gated live provider workflow only in Phase 20.
 
 - Limitation: The report's final-answer-only score is a deterministic proxy.
   Impact: It demonstrates silent-failure reporting but does not semantically judge answer quality.
@@ -987,9 +1040,9 @@ Results:
   Impact: Tool, task-suite, validator, and eval-run configs document intended surfaces, while regression gate presets are the first config consumed by runtime code.
   Planned fix: Later phases can load and validate more config files once runtime contracts stabilize.
 
-- Limitation: Initial task fixtures are intentionally small and synthetic.
-  Impact: They are useful for deterministic harness validation but not yet broad enough for benchmark claims.
-  Planned fix: Later task-suite expansion adds more domains, edge cases, and regression coverage after the report view exists.
+- Limitation: The benchmark suite reuses a compact set of local fixture files.
+  Impact: It broadens failure-taxonomy and replay coverage without adding external data complexity, but it is not a replacement for live or third-party benchmark datasets.
+  Planned fix: Keep Phase 18-19 focused on root-cause reporting and model-profile comparison before considering optional live runs.
 
 ## Failure Modes to Watch
 
@@ -1004,7 +1057,7 @@ Results:
 
 ## Next Steps
 
-1. Start Phase 17: benchmark-scale deterministic suite expansion.
-2. Keep the suite fixture-backed and failure-taxonomy-driven.
+1. Start Phase 18: failure taxonomy v2 and root-cause report.
+2. Keep reports deterministic and machine-readable before adding model matrix views.
 3. Do not add live provider workflow until Phase 20.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

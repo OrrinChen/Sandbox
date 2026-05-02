@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any, Mapping, Optional
 
 from sandboxed_agent_eval_harness.schemas import JsonDict, TraceEvent
-from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite
+from sandboxed_agent_eval_harness.tasks import TaskSuite, known_task_suites
 from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError
 from sandboxed_agent_eval_harness.tracing.jsonl import TraceReplay
 
@@ -55,7 +55,7 @@ class TraceReplayExecutor:
         suite: Optional[TaskSuite] = None,
         executor: Optional[FixtureToolExecutor] = None,
     ) -> None:
-        self.suite = suite or default_task_suite()
+        self.suites = [suite] if suite is not None else known_task_suites()
         self.executor = executor or FixtureToolExecutor()
 
     def replay(self, trace_path: Path | str, workspace: Path | str) -> TraceReplayExecutionResult:
@@ -153,9 +153,10 @@ class TraceReplayExecutor:
         }
 
     def _task_for(self, task_id: str) -> Any:
-        for task in self.suite.tasks:
-            if task.task_id == task_id:
-                return task
+        for suite in self.suites:
+            for task in suite.tasks:
+                if task.task_id == task_id:
+                    return task
         raise TraceReplayExecutionError(f"trace references unknown task_id: {task_id}")
 
 

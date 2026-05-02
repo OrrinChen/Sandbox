@@ -69,6 +69,25 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
   --output-dir /tmp/sandboxed-agent-eval-model-study
 ```
 
+Benchmark oracle run:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite benchmark \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-benchmark
+```
+
+Benchmark recorded model study:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-benchmark-model-study
+```
+
 GitHub Actions:
 
 ```text

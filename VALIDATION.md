@@ -432,6 +432,38 @@ Expected result:
 - Study output writes `summary.json`, report artifacts, and `silent_failure_study.json`.
 - CLI prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=4`.
 
+## Benchmark-Scale Deterministic Suite Validation
+
+Run after the benchmark suite exists:
+
+```bash
+python3 -m pytest tests/test_phase17_benchmark_suite.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite benchmark \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir /tmp/sandboxed-agent-eval-benchmark
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.gates \
+  --summary /tmp/sandboxed-agent-eval-benchmark/summary.json \
+  --threshold-preset strict_smoke \
+  --discover-traces \
+  --replay-workspace /tmp/sandboxed-agent-eval-benchmark-replay
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-benchmark-model-study
+git diff --check -- .
+```
+
+Expected result:
+- Benchmark suite loads 64 deterministic fixture-backed tasks.
+- Benchmark domains include finance, data analysis, coding, optimization, file workflow, and citation.
+- Every benchmark task includes explicit failure-taxonomy traps.
+- Oracle benchmark smoke prints `runs=64 task_success_rate=1.000 pass_at_k=1.000`.
+- Gate preset CLI replays all benchmark oracle traces with zero divergences.
+- Recorded benchmark model study prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

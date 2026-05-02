@@ -1,0 +1,5382 @@
+{
+  "suite_id": "benchmark-fixture-suite",
+  "version": "tasks-benchmark-v1",
+  "tasks": [
+    {
+      "task_id": "finance-aapl-revenue-benchmark-01",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 1: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-aapl-revenue-benchmark-02",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 2: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-aapl-revenue-benchmark-03",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 3: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-aapl-revenue-benchmark-04",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 4: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-aapl-revenue-benchmark-05",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 5: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-aapl-revenue-benchmark-06",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 6: report Apple FY2023 revenue in USD millions and cite the fixture source.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "AAPL",
+            "fiscal_year": 2023,
+            "statement": "income"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use the financial_statement.lookup fixture for AAPL FY2023 income data.",
+        "Report revenue as 383285 USD millions.",
+        "Cite aapl-2023-10k-income."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/aapl_income_statement_2023.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "revenue_usd_millions": 383285
+        },
+        "citations": [
+          "aapl-2023-10k-income"
+        ]
+      },
+      "known_failure_traps": [
+        "May use a plausible Apple revenue number from the wrong fiscal period.",
+        "May cite a source id that is not in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-01",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 7: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-02",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 8: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-03",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 9: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-04",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 10: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-05",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 11: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "finance-msft-cloud-margin-benchmark-06",
+      "domain": "finance",
+      "instruction": "Benchmark finance task 12: report Microsoft FY2024 commercial cloud revenue and operating margin.",
+      "available_tools": [
+        "financial_statement.lookup"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "financial_statement.lookup"
+        ],
+        "numeric": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ],
+        "tool_arguments": {
+          "financial_statement.lookup": {
+            "ticker": "MSFT",
+            "fiscal_year": 2024,
+            "statement": "segment"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use fixture-backed MSFT FY2024 segment data.",
+        "Report commercial cloud revenue as 135000 USD millions.",
+        "Report operating margin as 0.45."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/msft_segment_2024.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "commercial_cloud_revenue_usd_millions": 135000,
+          "cloud_operating_margin": 0.45
+        },
+        "citations": [
+          "msft-2024-segment-note"
+        ]
+      },
+      "known_failure_traps": [
+        "May confuse commercial cloud revenue with total Microsoft revenue.",
+        "May report the margin without fixture evidence."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "CITATION_UNSUPPORTED",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-01",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 1: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-02",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 2: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-03",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 3: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-04",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 4: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-05",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 5: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-06",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 6: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-07",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 7: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "citation-nvda-datacenter-evidence-08",
+      "domain": "citation",
+      "instruction": "Benchmark citation task 8: identify NVIDIA FY2024 data center revenue and cite the transcript source id.",
+      "available_tools": [
+        "transcript.search"
+      ],
+      "initial_state": {
+        "fixture_version": "finance-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "transcript.search"
+        ],
+        "numeric": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ],
+        "tool_arguments": {
+          "transcript.search": {
+            "ticker": "NVDA",
+            "fiscal_period": "FY2024 Q4",
+            "query": "data center revenue"
+          }
+        }
+      },
+      "visible_files": [],
+      "success_criteria": [
+        "Use transcript.search for the NVDA FY2024 Q4 transcript fixture.",
+        "Report data center revenue as 47525 USD millions.",
+        "Cite nvda-2024-q4-transcript-datacenter."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "citation"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/finance/nvda_transcript_2024_q4.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "data_center_revenue_usd_millions": 47525
+        },
+        "citations": [
+          "nvda-2024-q4-transcript-datacenter"
+        ]
+      },
+      "known_failure_traps": [
+        "May report the correct number with an unsupported transcript citation.",
+        "May cite a real-looking source not present in the fixture."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CITATION_UNSUPPORTED",
+        "NUMERIC_MISMATCH",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-sales-region-summary-benchmark-01",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 1: group regional sales revenue and write a deterministic summary CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "summary_by_region_benchmark_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "summary_by_region_benchmark_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "summary_by_region_benchmark_01.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report grouped revenue without writing the output file.",
+        "May average revenue instead of summing revenue."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-sales-region-summary-benchmark-02",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 2: group regional sales revenue and write a deterministic summary CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "summary_by_region_benchmark_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "summary_by_region_benchmark_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "summary_by_region_benchmark_02.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report grouped revenue without writing the output file.",
+        "May average revenue instead of summing revenue."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-sales-region-summary-benchmark-03",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 3: group regional sales revenue and write a deterministic summary CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "summary_by_region_benchmark_03.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "summary_by_region_benchmark_03.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "summary_by_region_benchmark_03.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report grouped revenue without writing the output file.",
+        "May average revenue instead of summing revenue."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-sales-region-summary-benchmark-04",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 4: group regional sales revenue and write a deterministic summary CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "summary_by_region_benchmark_04.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "summary_by_region_benchmark_04.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "summary_by_region_benchmark_04.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report grouped revenue without writing the output file.",
+        "May average revenue instead of summing revenue."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-churn-plan-rate-benchmark-01",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 5: compute churn rate by plan and write a deterministic CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "churn_by_plan_benchmark_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "churn_by_plan_benchmark_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "churn_by_plan_benchmark_01.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report churn counts as rates.",
+        "May omit the output artifact while answering correctly in text."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-churn-plan-rate-benchmark-02",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 6: compute churn rate by plan and write a deterministic CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "churn_by_plan_benchmark_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "churn_by_plan_benchmark_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "churn_by_plan_benchmark_02.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report churn counts as rates.",
+        "May omit the output artifact while answering correctly in text."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-churn-plan-rate-benchmark-03",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 7: compute churn rate by plan and write a deterministic CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "churn_by_plan_benchmark_03.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "churn_by_plan_benchmark_03.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "churn_by_plan_benchmark_03.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report churn counts as rates.",
+        "May omit the output artifact while answering correctly in text."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-churn-plan-rate-benchmark-04",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 8: compute churn rate by plan and write a deterministic CSV.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "churn_by_plan_benchmark_04.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "churn_by_plan_benchmark_04.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "churn_by_plan_benchmark_04.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May report churn counts as rates.",
+        "May omit the output artifact while answering correctly in text."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-inventory-stockout-report-benchmark-01",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 9: identify stockout-risk SKUs and write a deterministic report.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "stockout_report_benchmark_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "stockout_report_benchmark_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "stockout_report_benchmark_01.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May include SKUs equal to reorder point.",
+        "May skip the required report file."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-inventory-stockout-report-benchmark-02",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 10: identify stockout-risk SKUs and write a deterministic report.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "stockout_report_benchmark_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "stockout_report_benchmark_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "stockout_report_benchmark_02.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May include SKUs equal to reorder point.",
+        "May skip the required report file."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-inventory-stockout-report-benchmark-03",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 11: identify stockout-risk SKUs and write a deterministic report.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "stockout_report_benchmark_03.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "stockout_report_benchmark_03.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "stockout_report_benchmark_03.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May include SKUs equal to reorder point.",
+        "May skip the required report file."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "data-inventory-stockout-report-benchmark-04",
+      "domain": "data_analysis",
+      "instruction": "Benchmark data task 12: identify stockout-risk SKUs and write a deterministic report.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "stockout_report_benchmark_04.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "stockout_report_benchmark_04.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "stockout_report_benchmark_04.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May include SKUs equal to reorder point.",
+        "May skip the required report file."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-sales-output-01",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 1: produce the regional sales artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_sales_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "file_workflow_sales_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "file_workflow_sales_01.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim an artifact exists without mutating workspace state.",
+        "May write a file with the wrong output path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-sales-output-02",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 2: produce the regional sales artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_sales_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "file_workflow_sales_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "file_workflow_sales_02.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim an artifact exists without mutating workspace state.",
+        "May write a file with the wrong output path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-sales-output-03",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 3: produce the regional sales artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_sales_03.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "file_workflow_sales_03.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "file_workflow_sales_03.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim an artifact exists without mutating workspace state.",
+        "May write a file with the wrong output path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-sales-output-04",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 4: produce the regional sales artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_sales_04.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/regional_sales.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/regional_sales.csv",
+            "group_by": "region",
+            "metric": "revenue",
+            "output_path": "file_workflow_sales_04.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/regional_sales.csv.",
+        "Group revenue by region.",
+        "Write summary_by_region.csv with 3 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/regional_sales.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "top_region": "west",
+          "top_region_revenue": 5100,
+          "output_rows": 3
+        },
+        "files": {
+          "file_workflow_sales_04.csv": "region,revenue\nwest,5100\neast,3300\ncentral,2350\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim an artifact exists without mutating workspace state.",
+        "May write a file with the wrong output path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_SELECTION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-churn-output-01",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 5: produce the churn artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_churn_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "file_workflow_churn_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "file_workflow_churn_01.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May answer with rates but not write the required artifact.",
+        "May write to an unexpected workspace path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-churn-output-02",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 6: produce the churn artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_churn_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/customer_churn.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/customer_churn.csv",
+            "group_by": "plan",
+            "metric": "churn_rate",
+            "output_path": "file_workflow_churn_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/customer_churn.csv.",
+        "Calculate churn rate by plan.",
+        "Write churn_by_plan.csv."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/customer_churn.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "enterprise_churn_rate": 0.25,
+          "self_serve_churn_rate": 0.5
+        },
+        "files": {
+          "file_workflow_churn_02.csv": "plan,churn_rate\nenterprise,0.25\nself_serve,0.5\n"
+        }
+      },
+      "known_failure_traps": [
+        "May answer with rates but not write the required artifact.",
+        "May write to an unexpected workspace path."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_ARGUMENT_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-inventory-output-01",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 7: produce the stockout artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_inventory_01.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "file_workflow_inventory_01.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "file_workflow_inventory_01.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May identify the correct SKUs but skip file creation.",
+        "May include an extra SKU and still sound plausible."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "NUMERIC_MISMATCH",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "file-workflow-inventory-output-02",
+      "domain": "file_workflow",
+      "instruction": "Benchmark file workflow task 8: produce the stockout artifact and preserve state diff evidence.",
+      "available_tools": [
+        "csv.read",
+        "csv.group_metrics"
+      ],
+      "initial_state": {
+        "fixture_version": "data-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "csv.read",
+          "csv.group_metrics"
+        ],
+        "numeric": {
+          "stockout_risk_count": 2
+        },
+        "state_diff": {
+          "added": [
+            "file_workflow_inventory_02.csv"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "csv.read": {
+            "path": "fixtures/data/inventory.csv"
+          },
+          "csv.group_metrics": {
+            "path": "fixtures/data/inventory.csv",
+            "group_by": "sku",
+            "metric": "stockout_risk",
+            "output_path": "file_workflow_inventory_02.csv"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/data/inventory.csv"
+      ],
+      "success_criteria": [
+        "Read fixtures/data/inventory.csv.",
+        "Identify SKUs where on_hand is below reorder_point.",
+        "Write stockout_report.csv with 2 rows."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "state"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/data/inventory.csv"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "stockout_risk_count": 2
+        },
+        "files": {
+          "file_workflow_inventory_02.csv": "sku,on_hand,reorder_point\nSKU-002,4,10\nSKU-004,1,6\n"
+        }
+      },
+      "known_failure_traps": [
+        "May identify the correct SKUs but skip file creation.",
+        "May include an extra SKU and still sound plausible."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "NUMERIC_MISMATCH",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-01",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 1: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-02",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 2: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-03",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 3: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-04",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 4: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-05",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 5: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-06",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 6: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-07",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 7: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-08",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 8: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-09",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 9: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-10",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 10: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-11",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 11: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "coding-discount-total-fix-benchmark-12",
+      "domain": "coding",
+      "instruction": "Benchmark coding task 12: patch the discount helper and run the fixture unit tests.",
+      "available_tools": [
+        "code.patch",
+        "python.unit_tests"
+      ],
+      "initial_state": {
+        "fixture_version": "code-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "code.patch",
+          "python.unit_tests"
+        ],
+        "state_diff": {
+          "added": [],
+          "modified": [
+            "fixtures/code/discount.py"
+          ],
+          "deleted": []
+        },
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "tool_arguments": {
+          "code.patch": {
+            "path": "fixtures/code/discount.py",
+            "replacements": [
+              {
+                "old": "return sum(prices) - discount",
+                "new": "return sum(prices) * (1 - discount)"
+              }
+            ]
+          },
+          "python.unit_tests": {
+            "test_path": "fixtures/code/test_discount.py"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "success_criteria": [
+        "Patch fixtures/code/discount.py in the task workspace.",
+        "Run fixtures/code/test_discount.py after patching.",
+        "Both fixture tests must pass."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "state",
+        "unit_test",
+        "cost_latency"
+      ],
+      "max_turns": 5,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/code/discount.py",
+        "fixtures/code/test_discount.py"
+      ],
+      "gold_outputs": {
+        "unit_tests": {
+          "passed": true,
+          "tests_run": 2,
+          "failures": 0
+        },
+        "files": {
+          "fixtures/code/discount.py": "def total_after_discount(prices, discount):\n    return sum(prices) * (1 - discount)\n"
+        }
+      },
+      "known_failure_traps": [
+        "May claim the patch is complete without running tests.",
+        "May patch the wrong expression and leave hidden tests failing."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "STATE_MUTATION_ERROR",
+        "TOOL_RESULT_MISUSE",
+        "TOOL_SELECTION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-01",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 1: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_01.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_01.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_01.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-02",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 2: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_02.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_02.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_02.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-03",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 3: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_03.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_03.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_03.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-04",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 4: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_04.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_04.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_04.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-05",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 5: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_05.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_05.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_05.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-06",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 6: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_06.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_06.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_06.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-07",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 7: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_07.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_07.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_07.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-08",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 8: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_08.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_08.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_08.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-09",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 9: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_09.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_09.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_09.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-10",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 10: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_10.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_10.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_10.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-11",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 11: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_11.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_11.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_11.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    },
+    {
+      "task_id": "optimization-newsvendor-order-benchmark-12",
+      "domain": "optimization",
+      "instruction": "Benchmark optimization task 12: solve the newsvendor fixture and write the selected order quantity artifact.",
+      "available_tools": [
+        "optimization.solve_newsvendor"
+      ],
+      "initial_state": {
+        "fixture_version": "optimization-fixtures-v1"
+      },
+      "hidden_expected_state": {
+        "expected_tool_sequence": [
+          "optimization.solve_newsvendor"
+        ],
+        "numeric": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "constraints": [
+          {
+            "metric": "order_quantity",
+            "operator": ">=",
+            "value": 0
+          },
+          {
+            "metric": "order_quantity",
+            "operator": "<=",
+            "value": 120
+          },
+          {
+            "metric": "service_level",
+            "operator": ">=",
+            "value": 0.8
+          },
+          {
+            "metric": "service_level",
+            "operator": "<=",
+            "value": 1.0
+          }
+        ],
+        "policy": {
+          "required_terms": [
+            "order_quantity",
+            "service_level"
+          ],
+          "forbidden_terms": [
+            "guaranteed"
+          ]
+        },
+        "state_diff": {
+          "added": [
+            "newsvendor_solution_benchmark_12.json"
+          ],
+          "modified": [],
+          "deleted": []
+        },
+        "tool_arguments": {
+          "optimization.solve_newsvendor": {
+            "path": "fixtures/optimization/newsvendor.json",
+            "output_path": "newsvendor_solution_benchmark_12.json"
+          }
+        }
+      },
+      "visible_files": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "success_criteria": [
+        "Read fixtures/optimization/newsvendor.json.",
+        "Select the order quantity using the critical fractile.",
+        "Write newsvendor_solution.json with order_quantity 120 and service_level 1.0."
+      ],
+      "validator_list": [
+        "schema",
+        "tool_sequence",
+        "argument",
+        "numeric",
+        "constraint",
+        "state",
+        "policy",
+        "cost_latency"
+      ],
+      "max_turns": 4,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": [
+        "fixtures/optimization/newsvendor.json"
+      ],
+      "gold_outputs": {
+        "metrics": {
+          "order_quantity": 120,
+          "service_level": 1.0,
+          "expected_cost": 20.0
+        },
+        "files": {
+          "newsvendor_solution_benchmark_12.json": "{\n  \"expected_cost\": 20.0,\n  \"order_quantity\": 120,\n  \"output_path\": \"newsvendor_solution.json\",\n  \"service_level\": 1.0,\n  \"source\": \"newsvendor-fixture-v1\"\n}\n"
+        }
+      },
+      "known_failure_traps": [
+        "May choose mean demand instead of the critical-fractile quantity.",
+        "May report a feasible-looking quantity but violate service-level constraints."
+      ],
+      "final_answer_only_risk": true,
+      "failure_taxonomy_traps": [
+        "CONSTRAINT_VIOLATION",
+        "NUMERIC_MISMATCH",
+        "STATE_MUTATION_ERROR",
+        "FINAL_ANSWER_OVERCLAIM"
+      ]
+    }
+  ]
+}

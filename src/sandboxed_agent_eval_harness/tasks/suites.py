@@ -27,6 +27,9 @@ TASK_FIELDS = (
 DEFAULT_TASK_SUITE_PATH = (
     Path(__file__).resolve().parents[3] / "fixtures" / "tasks" / "initial_suite.json"
 )
+BENCHMARK_TASK_SUITE_PATH = (
+    Path(__file__).resolve().parents[3] / "fixtures" / "tasks" / "benchmark_suite.json"
+)
 
 
 class TaskSuiteValidationError(ValueError):
@@ -112,6 +115,26 @@ def default_task_suite_path() -> Path:
     return DEFAULT_TASK_SUITE_PATH
 
 
+def benchmark_task_suite() -> TaskSuite:
+    return load_task_suite(BENCHMARK_TASK_SUITE_PATH)
+
+
+def benchmark_task_suite_path() -> Path:
+    return BENCHMARK_TASK_SUITE_PATH
+
+
+def task_suite_by_name(name: str) -> TaskSuite:
+    if name in {"smoke", "initial", "default"}:
+        return default_task_suite()
+    if name == "benchmark":
+        return benchmark_task_suite()
+    raise TaskSuiteValidationError(f"unknown task suite: {name}")
+
+
+def known_task_suites() -> list[TaskSuite]:
+    return [default_task_suite(), benchmark_task_suite()]
+
+
 def _metadata_from_raw_task(raw_task: Mapping[str, Any], task_id: str) -> JsonDict:
     fixture_paths = raw_task.get("fixture_paths")
     gold_outputs = raw_task.get("gold_outputs")
@@ -133,6 +156,7 @@ def _metadata_from_raw_task(raw_task: Mapping[str, Any], task_id: str) -> JsonDi
         "fixture_paths": list(fixture_paths),
         "gold_outputs": dict(gold_outputs),
         "known_failure_traps": list(known_failure_traps),
+        "failure_taxonomy_traps": _optional_string_list(raw_task, "failure_taxonomy_traps"),
         "final_answer_only_risk": final_answer_only_risk,
     }
 
@@ -142,3 +166,11 @@ def _require_non_empty_string(payload: Mapping[str, Any], field_name: str) -> st
     if not isinstance(value, str) or not value.strip():
         raise TaskSuiteValidationError(f"{field_name} must be a non-empty string")
     return value
+
+
+def _optional_string_list(payload: Mapping[str, Any], field_name: str) -> list[str]:
+    value = payload.get(field_name, [])
+    if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
+        task_id = payload.get("task_id", "unknown-task")
+        raise TaskSuiteValidationError(f"{task_id}: {field_name} must be a list of strings")
+    return list(value)

@@ -20,9 +20,10 @@ Completed:
 - [x] Phase 14: Portfolio-grade Deterministic Suite Expansion
 - [x] Phase 15: Real Model Adapter and Silent Failure Study
 - [x] Phase 16: Reproducibility and CI
+- [x] Phase 17: Benchmark-Scale Deterministic Suite Expansion
 
 Current phase:
-- [ ] Phase 17: Benchmark-Scale Deterministic Suite Expansion
+- [ ] Phase 18: Failure Taxonomy v2 and Root-Cause Report
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -31,6 +32,56 @@ Deferred:
 - Paid APIs and live financial data
 - LLM-as-judge scoring
 - Production deployment
+
+## Qiushi Roadmap Discipline
+
+This roadmap is written from current facts, not aspiration. Do not mark a capability complete until the command, artifact, or test named in the acceptance criteria exists and has passed locally.
+
+Main line:
+This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
+
+Current facts:
+- Phases 0-17 are complete.
+- The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
+- The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
+- The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
+- The recorded benchmark model study shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 32 silent failures caught.
+- Oracle benchmark replay currently covers 64 traces with 0 divergences.
+- `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
+- The sandbox is workspace-isolated with path validation and subprocess timeouts; it is not yet an OS-level or container security boundary.
+
+Principal contradiction:
+The harness architecture now has benchmark-scale fixture coverage, but it still needs clearer root-cause reporting, model profile comparison, and recruiter-readable evidence before it can be treated as an S-level AI infra project.
+
+Required path to portfolio readiness:
+```text
+Phase 18 -> Phase 19 -> Phase 23 -> Phase 24
+```
+
+Optional hardening path:
+```text
+Phase 20 -> Phase 21 -> Phase 22
+```
+
+Full path if time allows:
+```text
+Phase 18 -> Phase 19 -> Phase 20 -> Phase 21 -> Phase 22 -> Phase 23 -> Phase 24
+```
+
+Hard stop:
+Stop feature expansion after Phase 24. After that, only maintain, fix bugs, refresh recorded evidence, and polish documentation. Do not add a web app, dashboard product, generic agent runtime, or unrelated finance ingestion work.
+
+Truthfulness rules:
+- Benchmark-scale claims must be described as fixture-backed deterministic results, not live-provider benchmark results.
+- Do not claim root-cause reporting until Phase 18 passes.
+- Do not claim model matrix comparison until Phase 19 passes.
+- Do not run or claim live provider results until Phase 20 passes with explicit credentials and `--live`.
+- Do not call sandboxing "secure" until Phase 21 adds optional container isolation; even then, describe it as evaluation isolation, not a security product.
+- Do not claim runtime configs are authoritative until Phase 22 passes.
+- Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
+
+Minimum resume-ready path:
+If time is constrained, complete Phases 18, 23, and 24 after Phase 17. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
 
 ## Phase 1: Planning and Repository Skeleton
 
@@ -440,17 +491,20 @@ Do not:
 
 ## Phase 17: Benchmark-Scale Deterministic Suite Expansion
 
+Priority:
+Required for portfolio readiness.
+
 Goal:
 Expand from 8 deterministic tasks toward a structured 48-64 task benchmark without making broad live benchmark claims.
 
 Tasks:
-- [ ] Add `fixtures/tasks/benchmark_suite.json`
-- [ ] Add `--suite benchmark`
-- [ ] Cover finance/evidence, data analysis, coding, optimization/OR, state mutation/file workflows, and citation/evidence traps
-- [ ] Map every task to explicit failure taxonomy traps
-- [ ] Keep oracle benchmark pass rate at 1.000
-- [ ] Keep replay divergence at 0 for oracle benchmark traces
-- [ ] Update recorded model fixtures to produce non-trivial silent failures on the benchmark suite
+- [x] Add `fixtures/tasks/benchmark_suite.json`
+- [x] Add `--suite benchmark`
+- [x] Cover finance/evidence, data analysis, coding, optimization/OR, state mutation/file workflows, and citation/evidence traps
+- [x] Map every task to explicit failure taxonomy traps
+- [x] Keep oracle benchmark pass rate at 1.000
+- [x] Keep replay divergence at 0 for oracle benchmark traces
+- [x] Update recorded model fixtures to produce non-trivial silent failures on the benchmark suite
 
 Acceptance criteria:
 - Benchmark suite is deterministic and fixture-backed
@@ -459,7 +513,13 @@ Acceptance criteria:
 - Replay divergence is 0
 - Recorded model benchmark produces non-trivial silent failures
 
+Commit target:
+`feat: expand deterministic benchmark suite`
+
 ## Phase 18: Failure Taxonomy v2 and Root-Cause Report
+
+Priority:
+Required for portfolio readiness.
 
 Goal:
 Move reports from failure counts to root-cause explanations.
@@ -477,7 +537,13 @@ Acceptance criteria:
 - `report.json` exposes machine-readable root-cause fields
 - Tests cover each failure taxonomy category
 
+Commit target:
+`feat: add root-cause failure taxonomy reports`
+
 ## Phase 19: Recorded Model Matrix
+
+Priority:
+Required for portfolio readiness.
 
 Goal:
 Compare several recorded model behavior profiles without live network calls.
@@ -494,7 +560,13 @@ Acceptance criteria:
 - Each profile has a distinct failure signature
 - No network calls are required
 
+Commit target:
+`feat: add recorded model matrix study`
+
 ## Phase 20: Credentials-Gated Live Provider Workflow
+
+Priority:
+Optional hardening.
 
 Goal:
 Add manual live provider experiments while keeping default CI deterministic and offline.
@@ -513,7 +585,13 @@ Acceptance criteria:
 - CI does not run live workflows
 - Recorded fixture conversion is reproducible
 
+Commit target:
+`feat: add credentials-gated live model workflow`
+
 ## Phase 21: Sandbox Backend Hardening
+
+Priority:
+Optional hardening.
 
 Goal:
 Add optional container isolation while keeping the project honest about sandbox limits.
@@ -532,7 +610,13 @@ Acceptance criteria:
 - Timeout and memory-limit behavior has deterministic tests
 - Docs do not overclaim security
 
+Commit target:
+`feat: add optional container sandbox backend`
+
 ## Phase 22: Config Loader and Suite Registry Cleanup
+
+Priority:
+Optional hardening.
 
 Goal:
 Turn declarative config mirrors into runtime-consumed and validated configs.
@@ -550,7 +634,13 @@ Acceptance criteria:
 - Runtime suite/tool/validator surfaces match README and configs
 - Config validation is part of local reproducibility checks
 
+Commit target:
+`feat: add runtime config loading and validation`
+
 ## Phase 23: Public Portfolio Report
+
+Priority:
+Required for portfolio readiness.
 
 Goal:
 Generate a static report suitable for recruiters and interviewers.
@@ -567,7 +657,13 @@ Acceptance criteria:
 - Report includes problem, system, evidence, benchmark, failure taxonomy, reproducibility, and limitations
 - Case studies point to replayable traces
 
+Commit target:
+`feat: generate portfolio evidence report`
+
 ## Phase 24: README, Resume, and Interview Polish Freeze
+
+Priority:
+Required final freeze.
 
 Goal:
 Freeze the project into a portfolio-ready artifact and stop feature expansion.
@@ -586,6 +682,9 @@ Acceptance criteria:
 - `make ci` passes
 - Portfolio report is present and reproducible
 - Claims avoid security or benchmark overstatement
+
+Commit target:
+`docs: polish portfolio narrative and freeze roadmap`
 
 ## Project Positioning
 

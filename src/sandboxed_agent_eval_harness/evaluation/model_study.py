@@ -12,29 +12,32 @@ from sandboxed_agent_eval_harness.evaluation.report import build_evaluation_repo
 from sandboxed_agent_eval_harness.evaluation.runner import EvaluationSummary, run_evaluation
 from sandboxed_agent_eval_harness.models import load_recorded_model_adapters
 from sandboxed_agent_eval_harness.schemas import JsonDict
-from sandboxed_agent_eval_harness.tasks import default_task_suite
+from sandboxed_agent_eval_harness.tasks import task_suite_by_name
 
 
 def run_silent_failure_study(
     recorded_output_path: Path | str = "fixtures/model_outputs/silent_failure_study.json",
     output_dir: Path | str = "artifacts/eval_runs/silent_failure_study",
+    suite_name: str = "smoke",
 ) -> JsonDict:
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
+    suite = task_suite_by_name(suite_name)
     adapters = load_recorded_model_adapters(recorded_output_path)
     baselines = [ModelAdapterAgent(adapter) for adapter in adapters]
     summary = run_evaluation(
-        suite=default_task_suite(),
+        suite=suite,
         baselines=baselines,
         trials_per_task=1,
         output_dir=output_path,
     )
-    report = build_evaluation_report(summary, suite=default_task_suite())
+    report = build_evaluation_report(summary, suite=suite)
     report_paths = write_evaluation_report(report, output_path / "report")
     model_comparison = _model_comparison(summary)
     study = {
         "study_id": "phase15-silent-failure-study",
         "recorded_output_path": str(recorded_output_path),
+        "suite": suite_name,
         "summary_path": str(output_path / "summary.json"),
         "report_path": report_paths["json_path"],
         "model_comparison": model_comparison,
@@ -54,9 +57,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Run a recorded model silent-failure study.")
     parser.add_argument("--recorded-output", default="fixtures/model_outputs/silent_failure_study.json")
     parser.add_argument("--output-dir", default="artifacts/eval_runs/silent_failure_study")
+    parser.add_argument("--suite", default="smoke", choices=["smoke", "benchmark"])
     args = parser.parse_args(argv)
 
-    result = run_silent_failure_study(args.recorded_output, args.output_dir)
+    result = run_silent_failure_study(args.recorded_output, args.output_dir, suite_name=args.suite)
     comparison = result["model_comparison"]
     aggregate = _aggregate_comparison(comparison)
     print(

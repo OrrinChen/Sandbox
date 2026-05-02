@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 20 credentials-gated live provider workflow. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, and a manual live workflow that fails closed unless `--live` and credentials are supplied.
+The repository has completed Phase 21 sandbox backend hardening. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, a manual live workflow that fails closed unless `--live` and credentials are supplied, and workspace/Docker sandbox backend selection for evaluation isolation.
 
 Current evidence snapshot:
 
@@ -42,6 +42,7 @@ Root-cause report: validator gap, silent failure rate, answer overclaim rate, an
 Recorded model matrix: 5 offline profiles, 320 benchmark runs, 5 distinct failure signatures
 Matrix key finding: final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures
 Live workflow: opt-in only, fails closed without --live, skips without credentials, converts live outputs into recorded fixture candidates
+Sandbox backends: default workspace backend plus optional Docker command envelope with network disabled, read-only fixture mount, resource limits, and deterministic artifact export
 ```
 
 Start by reading:
@@ -138,18 +139,43 @@ The executor runs the default fixture-backed finance, transcript, CSV, coding, a
 
 ## Sandbox
 
-The first sandbox utilities live in `sandboxed_agent_eval_harness.sandbox`.
+The sandbox utilities live in `sandboxed_agent_eval_harness.sandbox`.
 
 They provide:
 
 - `FileSystemSandbox`
+- `LocalWorkspaceBackend`
+- `DockerSandboxBackend`
+- `SandboxBackendConfig`
 - `StateSnapshot`
 - `StateDiff`
 - `run_python_subprocess()`
 - `SandboxPathError`
 - `SandboxTimeoutError`
 
-The filesystem sandbox constrains path operations to a task workspace, supports an optional read allowlist, resets to deterministic initial files, and captures added/modified/deleted file diffs. The subprocess helper runs Python snippets in the workspace with a timeout. It is a local test harness primitive, not a production isolation boundary.
+The workspace backend constrains path operations to a task workspace, supports an optional read allowlist, resets to deterministic initial files, exports artifacts deterministically, and captures added/modified/deleted file diffs. The subprocess helper runs Python snippets in the workspace with a timeout.
+
+The optional Docker backend builds a container command envelope with network disabled, memory/CPU/PID limits, a read-only fixture mount, a writable workspace mount, a read-only container root, and tmpfs for `/tmp`. It is for evaluation isolation and reproducibility, not a security product.
+
+Runner command with explicit workspace backend:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --sandbox-backend workspace \
+  --output-dir artifacts/eval_runs/smoke
+```
+
+Optional Docker backend command, only when Docker is intentionally available:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --sandbox-backend docker \
+  --output-dir /tmp/sandboxed-agent-eval-docker-smoke
+```
 
 ## Trace Logging And Replay
 

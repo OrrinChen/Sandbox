@@ -542,6 +542,30 @@ Expected result:
 - `--record-output` writes `raw_outputs.jsonl` and `recorded_fixture_candidate.json` in injected-transport tests.
 - Default pytest and `make ci` do not require credentials and do not run live provider calls.
 
+## Sandbox Backend Hardening Validation
+
+Run after workspace and Docker sandbox backends exist:
+
+```bash
+python3 -m pytest tests/test_phase21_sandbox_backends.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --sandbox-backend workspace \
+  --output-dir /tmp/sandboxed-agent-eval-workspace-backend-smoke
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- Workspace backend preserves existing fixture-backed tool behavior.
+- Docker backend command surface disables network, applies memory/CPU/PID limits, mounts fixtures read-only, and uses a writable workspace mount.
+- Docker unit-test execution path is covered through an injected deterministic command runner, so default tests do not require a local Docker daemon.
+- Runner CLI accepts `--sandbox-backend workspace|docker`.
+- Docs describe Docker as evaluation isolation, not a security product.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

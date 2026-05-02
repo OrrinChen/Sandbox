@@ -24,9 +24,10 @@ Completed:
 - [x] Phase 18: Failure Taxonomy v2 and Root-Cause Report
 - [x] Phase 19: Recorded Model Matrix
 - [x] Phase 20: Credentials-Gated Live Provider Workflow
+- [x] Phase 21: Sandbox Backend Hardening
 
 Current phase:
-- [ ] Phase 21: Sandbox Backend Hardening
+- [ ] Phase 22: Config Loader and Suite Registry Cleanup
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -44,7 +45,7 @@ Main line:
 This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
 
 Current facts:
-- Phases 0-19 are complete.
+- Phases 0-21 are complete.
 - The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
 - The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
@@ -55,7 +56,7 @@ Current facts:
 - Oracle benchmark replay currently covers 64 traces with 0 divergences.
 - Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
-- The sandbox is workspace-isolated with path validation and subprocess timeouts; it is not yet an OS-level or container security boundary.
+- The sandbox has a default workspace backend plus an optional Docker command envelope with network disabled, resource limits, read-only fixture mount, and deterministic artifact export. It is evaluation isolation, not a security product.
 
 Principal contradiction:
 The harness architecture now has benchmark-scale fixture coverage, root-cause reporting, and model-profile comparison, but it still needs recruiter-readable portfolio evidence before it can be treated as an S-level AI infra project.
@@ -83,7 +84,7 @@ Truthfulness rules:
 - Root-cause reporting claims must remain tied to deterministic validator and trace data, not LLM-as-judge explanations.
 - Model matrix comparison is recorded and offline; do not describe it as a live-provider benchmark.
 - Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
-- Do not call sandboxing "secure" until Phase 21 adds optional container isolation; even then, describe it as evaluation isolation, not a security product.
+- Do not call sandboxing secure; describe Phase 21 as optional evaluation isolation, not a security product.
 - Do not claim runtime configs are authoritative until Phase 22 passes.
 - Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
 
@@ -604,12 +605,12 @@ Goal:
 Add optional container isolation while keeping the project honest about sandbox limits.
 
 Tasks:
-- [ ] Add `LocalWorkspaceBackend`
-- [ ] Add optional `DockerSandboxBackend`
-- [ ] Disable network in Docker backend
-- [ ] Mount fixtures read-only
-- [ ] Export workspace artifacts deterministically
-- [ ] Add `--sandbox-backend workspace|docker`
+- [x] Add `LocalWorkspaceBackend`
+- [x] Add optional `DockerSandboxBackend`
+- [x] Disable network in Docker backend
+- [x] Mount fixtures read-only
+- [x] Export workspace artifacts deterministically
+- [x] Add `--sandbox-backend workspace|docker`
 
 Acceptance criteria:
 - Workspace backend remains compatible

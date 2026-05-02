@@ -9,7 +9,7 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Mapping, Optional
 
-from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox, SandboxTimeoutError, run_python_subprocess
+from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox, LocalWorkspaceBackend, SandboxBackendError, SandboxTimeoutError
 from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
 from sandboxed_agent_eval_harness.tools.registry import ToolRegistry, default_tool_registry
 
@@ -25,19 +25,18 @@ class FixtureToolExecutor:
         self,
         registry: Optional[ToolRegistry] = None,
         fixture_root: Optional[Path | str] = None,
+        backend: Optional[LocalWorkspaceBackend] = None,
     ) -> None:
         self.registry = registry or default_tool_registry()
         self.fixture_root = Path(fixture_root) if fixture_root is not None else Path(__file__).resolve().parents[3]
+        self.backend = backend or LocalWorkspaceBackend()
+
+    @property
+    def sandbox_backend_name(self) -> str:
+        return self.backend.name
 
     def create_sandbox(self, task: TaskSpec, workspace: Path | str) -> FileSystemSandbox:
-        initial_files = {
-            visible_path: (self.fixture_root / visible_path).read_text()
-            for visible_path in task.visible_files
-        }
-        return FileSystemSandbox(
-            Path(workspace),
-            initial_files=initial_files,
-        )
+        return self.backend.create_sandbox(task, Path(workspace), fixture_root=self.fixture_root)
 
     def execute(
         self,
@@ -178,8 +177,8 @@ for name, test in tests:
 print(json.dumps({{"passed": not failures, "tests_run": len(tests), "failures": len(failures)}}))
 """
         try:
-            completed = run_python_subprocess(code, workspace=sandbox.workspace, timeout_seconds=timeout_seconds)
-        except SandboxTimeoutError as exc:
+            completed = self.backend.run_python(code, workspace=sandbox.workspace, timeout_seconds=timeout_seconds)
+        except (SandboxBackendError, SandboxTimeoutError) as exc:
             raise ToolExecutionError(str(exc)) from exc
         if completed.returncode != 0:
             return {"passed": False, "tests_run": 0, "failures": 1}

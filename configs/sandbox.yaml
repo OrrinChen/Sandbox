@@ -1,10 +1,26 @@
 # Default sandbox posture for local deterministic tests.
 sandbox:
-  network: disabled
-  filesystem:
-    mode: task_workspace_only
-    read_allowlist: task_visible_files
-    state_diff: enabled
-  timeouts:
-    default_seconds: 30
-    python_subprocess: enabled
+  default_backend: workspace
+  backends:
+    workspace:
+      type: local_workspace
+      network: disabled_by_policy
+      filesystem:
+        mode: task_workspace_only
+        read_allowlist: task_visible_files
+        state_diff: enabled
+      timeouts:
+        default_seconds: 30
+        python_subprocess: enabled
+    docker:
+      type: optional_container_command_envelope
+      default_enabled: false
+      network: disabled
+      image: python:3.11-slim
+      memory_limit: 512m
+      cpus: "1.0"
+      pids_limit: 128
+      read_only_fixture_mount: true
+      writable_workspace_mount: true
+      tmpfs: /tmp
+      note: "Evaluation isolation only; not a security product."

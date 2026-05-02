@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 20 credentials-gated live provider workflow. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 21 sandbox backend hardening. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 21 sandbox backend hardening is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
+Phase 22 config loader and suite registry cleanup is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Choose whether to continue with optional Phase 21 sandbox backend hardening or jump to Phase 23 public portfolio report. Do not run or claim live provider results unless explicit credentials and `--live` are supplied.
+Choose whether to continue with optional Phase 22 runtime config loading or jump to Phase 23 public portfolio report. Keep sandbox language precise: evaluation isolation, not a security product.
 
 ## Current State
 
@@ -607,6 +607,35 @@ Known limitations:
 - Live artifacts are candidates for later recorded fixtures; they should be reviewed before committing any converted fixture.
 - The default model name is only a convenience and should be overridden explicitly for manual live runs when provider model names change.
 
+### Phase 21: Sandbox Backend Hardening
+
+Commit:
+Included in the Phase 21 sandbox backend hardening commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.sandbox.backends`.
+- Added `LocalWorkspaceBackend`, `DockerSandboxBackend`, `SandboxBackendConfig`, and backend factory loading.
+- Kept the workspace backend as the default behavior.
+- Added Docker command construction with `--network none`, memory/CPU/PID limits, read-only fixture mount, writable workspace mount, read-only root filesystem, and tmpfs for `/tmp`.
+- Routed sandboxed Python unit-test execution through the selected backend.
+- Added deterministic artifact export for workspace outputs.
+- Added `--sandbox-backend workspace|docker` to the evaluation runner.
+- Added run metadata for the selected sandbox backend.
+- Added Phase 21 tests for workspace compatibility, Docker command policy, injected Docker unit-test execution, CLI backend selection, and documentation anti-overclaim wording.
+- Updated `configs/sandbox.yaml`, `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `DockerSandboxBackend` was not exported.
+- Documentation anti-overclaim test failed until README explicitly described Docker as evaluation isolation and not a security product.
+- Focused Phase 21 tests passed before commit and are recorded in the validation log.
+- Workspace backend smoke passed with the oracle smoke suite.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- Default validation does not require Docker and does not start real containers.
+- Docker command execution is optional and depends on a local Docker daemon when used manually.
+- The Docker backend is an evaluation isolation backend, not a general security sandbox.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -1118,6 +1147,25 @@ Results:
 - `make ci` passed on the default smoke reproducibility path.
 - Whitespace check passed.
 
+Commands run for Phase 21:
+
+```bash
+PYTHONPATH=src python3 -m pytest tests/test_phase21_sandbox_backends.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner --suite smoke --baseline oracle_tool_selection_agent --trials 1 --sandbox-backend workspace --output-dir /tmp/sandboxed-agent-eval-workspace-backend-smoke
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 21 red run failed because `DockerSandboxBackend` was not exported from `sandboxed_agent_eval_harness.sandbox`.
+- The documentation anti-overclaim test failed until README described Docker as evaluation isolation and not a security product.
+- Focused Phase 21 sandbox backend tests passed after implementation.
+- Workspace backend smoke printed `sandbox_backend=workspace` and passed oracle smoke.
+- Final full pytest run passed after implementation.
+- `make ci` passed on the default smoke reproducibility path.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1153,6 +1201,10 @@ Results:
 - Limitation: Replay execution is limited to the current fixture-backed tools.
   Impact: The benchmark suite can replay the current finance, data, coding, optimization, file-workflow, and citation tasks, but new tool families still need executable adapters before traces can be re-executed end to end.
   Planned fix: Add replay support alongside each new executable adapter.
+
+- Limitation: Docker backend execution is optional and not part of default CI.
+  Impact: Default validation proves command policy, injected Docker command behavior, and workspace compatibility, while actual container execution still depends on a local Docker daemon.
+  Planned fix: Keep Docker as an optional smoke path and avoid presenting it as a security boundary.
 
 - Limitation: Default agent baselines are deterministic fixture-compatible simulations.
   Impact: They exercise the harness, validators, traces, and metrics, while the recorded model fixture demonstrates model-style failures without being a live provider benchmark.
@@ -1211,7 +1263,7 @@ Results:
 
 ## Next Steps
 
-1. Decide whether to run optional Phase 21 sandbox backend hardening next or jump to required Phase 23 portfolio report.
-2. Keep any manual live workflow credentials-gated, skipped by default, and convertible into recorded fixtures.
+1. Decide whether to run optional Phase 22 config loader cleanup next or jump to required Phase 23 portfolio report.
+2. Keep sandbox claims limited to evaluation isolation, not a security product.
 3. Package recorded model matrix evidence into recruiter-readable artifacts in Phase 23.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

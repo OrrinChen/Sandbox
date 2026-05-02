@@ -166,6 +166,36 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.live_provider 
 
 Do not run live commands in CI, and do not commit generated live artifacts.
 
+Sandbox backend smoke:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --sandbox-backend workspace \
+  --output-dir /tmp/sandboxed-agent-eval-workspace-backend-smoke
+```
+
+Expected output includes:
+
+```text
+sandbox_backend=workspace
+```
+
+Optional Docker backend smoke, only when Docker is intentionally available:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite smoke \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --sandbox-backend docker \
+  --output-dir /tmp/sandboxed-agent-eval-docker-backend-smoke
+```
+
+The Docker backend is evaluation isolation, not a security product. Default CI does not require Docker.
+
 GitHub Actions:
 
 ```text

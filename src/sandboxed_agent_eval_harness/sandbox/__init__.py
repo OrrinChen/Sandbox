@@ -1,5 +1,13 @@
 """Sandbox execution utilities."""
 
+from sandboxed_agent_eval_harness.sandbox.backends import (
+    DockerSandboxBackend,
+    DockerUnavailableError,
+    LocalWorkspaceBackend,
+    SandboxBackendConfig,
+    SandboxBackendError,
+    sandbox_backend_by_name,
+)
 from sandboxed_agent_eval_harness.sandbox.filesystem import (
     FileSystemSandbox,
     SandboxError,
@@ -14,7 +22,12 @@ from sandboxed_agent_eval_harness.sandbox.subprocess import (
 )
 
 __all__ = [
+    "DockerSandboxBackend",
+    "DockerUnavailableError",
     "FileSystemSandbox",
+    "LocalWorkspaceBackend",
+    "SandboxBackendConfig",
+    "SandboxBackendError",
     "SandboxCommandResult",
     "SandboxError",
     "SandboxPathError",
@@ -22,4 +35,5 @@ __all__ = [
     "StateDiff",
     "StateSnapshot",
     "run_python_subprocess",
+    "sandbox_backend_by_name",
 ]

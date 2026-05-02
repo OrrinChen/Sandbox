@@ -21,9 +21,10 @@ Completed:
 - [x] Phase 15: Real Model Adapter and Silent Failure Study
 - [x] Phase 16: Reproducibility and CI
 - [x] Phase 17: Benchmark-Scale Deterministic Suite Expansion
+- [x] Phase 18: Failure Taxonomy v2 and Root-Cause Report
 
 Current phase:
-- [ ] Phase 18: Failure Taxonomy v2 and Root-Cause Report
+- [ ] Phase 19: Recorded Model Matrix
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -47,15 +48,16 @@ Current facts:
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
 - The recorded benchmark model study shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 32 silent failures caught.
 - Oracle benchmark replay currently covers 64 traces with 0 divergences.
+- Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
 - The sandbox is workspace-isolated with path validation and subprocess timeouts; it is not yet an OS-level or container security boundary.
 
 Principal contradiction:
-The harness architecture now has benchmark-scale fixture coverage, but it still needs clearer root-cause reporting, model profile comparison, and recruiter-readable evidence before it can be treated as an S-level AI infra project.
+The harness architecture now has benchmark-scale fixture coverage and root-cause reporting, but it still needs model profile comparison and recruiter-readable evidence before it can be treated as an S-level AI infra project.
 
 Required path to portfolio readiness:
 ```text
-Phase 18 -> Phase 19 -> Phase 23 -> Phase 24
+Phase 19 -> Phase 23 -> Phase 24
 ```
 
 Optional hardening path:
@@ -65,7 +67,7 @@ Phase 20 -> Phase 21 -> Phase 22
 
 Full path if time allows:
 ```text
-Phase 18 -> Phase 19 -> Phase 20 -> Phase 21 -> Phase 22 -> Phase 23 -> Phase 24
+Phase 19 -> Phase 20 -> Phase 21 -> Phase 22 -> Phase 23 -> Phase 24
 ```
 
 Hard stop:
@@ -73,7 +75,7 @@ Stop feature expansion after Phase 24. After that, only maintain, fix bugs, refr
 
 Truthfulness rules:
 - Benchmark-scale claims must be described as fixture-backed deterministic results, not live-provider benchmark results.
-- Do not claim root-cause reporting until Phase 18 passes.
+- Root-cause reporting claims must remain tied to deterministic validator and trace data, not LLM-as-judge explanations.
 - Do not claim model matrix comparison until Phase 19 passes.
 - Do not run or claim live provider results until Phase 20 passes with explicit credentials and `--live`.
 - Do not call sandboxing "secure" until Phase 21 adds optional container isolation; even then, describe it as evaluation isolation, not a security product.
@@ -81,7 +83,7 @@ Truthfulness rules:
 - Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
 
 Minimum resume-ready path:
-If time is constrained, complete Phases 18, 23, and 24 after Phase 17. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
+If time is constrained, complete Phases 23 and 24 after Phase 18. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
 
 ## Phase 1: Planning and Repository Skeleton
 
@@ -525,11 +527,11 @@ Goal:
 Move reports from failure counts to root-cause explanations.
 
 Tasks:
-- [ ] Add normalized root-cause categories
-- [ ] Add silent failure rate, answer overclaim rate, and validator gap
-- [ ] Add failure breakdowns by domain, tool, model, and validator
-- [ ] Add top replayable failure traces
-- [ ] Emit an executive summary sentence with final-answer overstatement
+- [x] Add normalized root-cause categories
+- [x] Add silent failure rate, answer overclaim rate, and validator gap
+- [x] Add failure breakdowns by domain, tool, model, and validator
+- [x] Add top replayable failure traces
+- [x] Emit an executive summary sentence with final-answer overstatement
 
 Acceptance criteria:
 - `silent_failure_study.json` contains root-cause breakdowns

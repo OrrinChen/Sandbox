@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 17 benchmark-scale deterministic suite expansion. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
+The repository has completed Phase 18 root-cause failure reporting. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
 
 Current evidence snapshot:
 
@@ -38,6 +38,7 @@ Recorded benchmark study: final-answer pass rate 1.000 vs validator pass rate 0.
 Recorded benchmark silent failures caught: 32
 Strict oracle smoke replay: 8 traces, 0 divergences
 Strict oracle benchmark replay: 64 traces, 0 divergences
+Root-cause report: validator gap, silent failure rate, answer overclaim rate, and breakdowns by domain/tool/model/validator
 ```
 
 Start by reading:
@@ -313,7 +314,7 @@ It reads a `summary.json` artifact plus trace metadata and writes:
 - `report.json`
 - `report.md`
 
-The report includes domain success rates, final-answer-only vs validator pass rates, failure distributions, pass@k curves, cost and latency summaries, worst trace paths, version metadata, and optional previous-run comparisons.
+The report includes an executive summary, domain success rates, final-answer-only vs validator pass rates, validator gap, silent failure rate, answer overclaim rate, normalized root-cause categories, failure breakdowns by domain/tool/model/validator, top replayable failure traces, pass@k curves, cost and latency summaries, worst trace paths, version metadata, and optional previous-run comparisons.
 
 Smoke command:
 

@@ -88,6 +88,22 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
   --output-dir /tmp/sandboxed-agent-eval-benchmark-model-study
 ```
 
+Root-cause report inspection:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-root-cause-study
+python3 - <<'PY'
+import json
+from pathlib import Path
+study = json.loads(Path("/tmp/sandboxed-agent-eval-root-cause-study/silent_failure_study.json").read_text())
+print(study["root_cause_breakdown"]["validator_gap"])
+print(study["root_cause_breakdown"]["executive_summary"])
+PY
+```
+
 GitHub Actions:
 
 ```text

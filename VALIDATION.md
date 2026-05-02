@@ -464,6 +464,36 @@ Expected result:
 - Gate preset CLI replays all benchmark oracle traces with zero divergences.
 - Recorded benchmark model study prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
 
+## Failure Taxonomy v2 And Root-Cause Report Validation
+
+Run after normalized root-cause reporting exists:
+
+```bash
+python3 -m pytest tests/test_phase18_root_cause.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/silent_failure_study.json \
+  --output-dir /tmp/sandboxed-agent-eval-root-cause-study
+PYTHONPATH=src python3 - <<'PY'
+import json
+from pathlib import Path
+study = json.loads(Path("/tmp/sandboxed-agent-eval-root-cause-study/silent_failure_study.json").read_text())
+report = json.loads(Path("/tmp/sandboxed-agent-eval-root-cause-study/report/report.json").read_text())
+print(study["root_cause_breakdown"]["validator_gap"])
+print(report["executive_summary"])
+print(sorted(report["root_cause_summary"]["categories"]))
+PY
+git diff --check -- .
+```
+
+Expected result:
+- Root-cause tests cover every Phase 18 category.
+- `report.json` includes `executive_summary` and `root_cause_summary`.
+- `report.md` includes an executive summary section.
+- `silent_failure_study.json` includes `root_cause_breakdown`.
+- The benchmark study prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

@@ -16,14 +16,56 @@ from sandboxed_agent_eval_harness.evaluation.gates import replay_divergence_summ
 
 
 VERSION_FIELDS = ("task_version", "tool_version", "prompt_version", "model", "fixture_version")
+ROOT_CAUSE_CATEGORIES = [
+    "TOOL_SELECTION_ERROR",
+    "TOOL_ARGUMENT_ERROR",
+    "TOOL_RESULT_MISUSE",
+    "STATE_MUTATION_ERROR",
+    "NUMERIC_MISMATCH",
+    "CITATION_UNSUPPORTED",
+    "CONSTRAINT_VIOLATION",
+    "TRACE_REPLAY_DIVERGENCE",
+    "TIMEOUT",
+    "COST_LIMIT_EXCEEDED",
+    "FINAL_ANSWER_OVERCLAIM",
+]
+_ROOT_CAUSE_BY_FAILURE_TYPE = {
+    "tool_sequence_mismatch": "TOOL_SELECTION_ERROR",
+    "unexpected_tool": "TOOL_SELECTION_ERROR",
+    "missing_required_tool": "TOOL_SELECTION_ERROR",
+    "invalid_tool_arguments": "TOOL_ARGUMENT_ERROR",
+    "invalid_tool_call_payload": "TOOL_ARGUMENT_ERROR",
+    "schema_mismatch": "TOOL_ARGUMENT_ERROR",
+    "tool_execution_error": "TOOL_RESULT_MISUSE",
+    "unit_tests_missing": "TOOL_RESULT_MISUSE",
+    "unit_tests_failed": "TOOL_RESULT_MISUSE",
+    "state_mismatch": "STATE_MUTATION_ERROR",
+    "numeric_mismatch": "NUMERIC_MISMATCH",
+    "invalid_numeric_value": "NUMERIC_MISMATCH",
+    "invalid_numeric_tolerance": "NUMERIC_MISMATCH",
+    "unsupported_citation": "CITATION_UNSUPPORTED",
+    "missing_citation": "CITATION_UNSUPPORTED",
+    "constraint_violation": "CONSTRAINT_VIOLATION",
+    "invalid_constraint": "CONSTRAINT_VIOLATION",
+    "policy_violation": "CONSTRAINT_VIOLATION",
+    "tool_result_mismatch": "TRACE_REPLAY_DIVERGENCE",
+    "state_diff_mismatch": "TRACE_REPLAY_DIVERGENCE",
+    "missing_recorded_tool_result": "TRACE_REPLAY_DIVERGENCE",
+    "replay_execution_error": "TRACE_REPLAY_DIVERGENCE",
+    "timeout": "TIMEOUT",
+    "cost_limit_exceeded": "COST_LIMIT_EXCEEDED",
+    "final_answer_overclaim": "FINAL_ANSWER_OVERCLAIM",
+}
 
 
 @dataclass(frozen=True)
 class EvaluationReport:
     summary: JsonDict
+    executive_summary: str
     domain_success: JsonDict
     final_answer_vs_validator: JsonDict
     failure_type_distribution: JsonDict
+    root_cause_summary: JsonDict
     failure_insights: list[JsonDict]
     pass_at_k_curve: list[JsonDict]
     cost_latency_summary: JsonDict
@@ -35,9 +77,11 @@ class EvaluationReport:
     def to_dict(self) -> JsonDict:
         return {
             "summary": dict(self.summary),
+            "executive_summary": self.executive_summary,
             "domain_success": dict(self.domain_success),
             "final_answer_vs_validator": dict(self.final_answer_vs_validator),
             "failure_type_distribution": dict(self.failure_type_distribution),
+            "root_cause_summary": dict(self.root_cause_summary),
             "failure_insights": [dict(item) for item in self.failure_insights],
             "pass_at_k_curve": [dict(item) for item in self.pass_at_k_curve],
             "cost_latency_summary": dict(self.cost_latency_summary),
@@ -65,14 +109,23 @@ def build_evaluation_report(
     final_answer_vs_validator = _final_answer_vs_validator(runs)
     failure_type_distribution = _failure_type_distribution(runs)
     worst_traces = _worst_traces(runs, worst_trace_limit)
+    root_cause_summary = _root_cause_summary(
+        runs,
+        task_domains=task_domains,
+        final_answer_vs_validator=final_answer_vs_validator,
+        replay_results=replay_results,
+        trace_limit=worst_trace_limit,
+    )
     version_matrix = _version_matrix(runs)
     regression_comparison = _regression_comparison(summary_dict, previous_dict)
 
     return EvaluationReport(
         summary=_report_summary(summary_dict),
+        executive_summary=root_cause_summary["executive_summary"],
         domain_success=domain_success,
         final_answer_vs_validator=final_answer_vs_validator,
         failure_type_distribution=failure_type_distribution,
+        root_cause_summary=root_cause_summary,
         failure_insights=_failure_insights(runs),
         pass_at_k_curve=_pass_at_k_curve(runs),
         cost_latency_summary=_cost_latency_summary(runs),
@@ -178,13 +231,18 @@ def _final_answer_vs_validator(runs: Sequence[Mapping[str, Any]]) -> JsonDict:
     final_answer_passed = sum(1 for run in runs if _final_answer_passed(run))
     validator_passed = sum(1 for run in runs if run.get("passed") is True)
     silent_failures = sum(1 for run in runs if _final_answer_passed(run) and run.get("passed") is not True)
+    final_answer_pass_rate = _safe_rate(final_answer_passed, run_count)
+    validator_pass_rate = _safe_rate(validator_passed, run_count)
     return {
         "run_count": run_count,
         "final_answer_passed": final_answer_passed,
         "validator_passed": validator_passed,
         "silent_failure_count": silent_failures,
-        "final_answer_pass_rate": _safe_rate(final_answer_passed, run_count),
-        "validator_pass_rate": _safe_rate(validator_passed, run_count),
+        "silent_failure_rate": _safe_rate(silent_failures, run_count),
+        "answer_overclaim_rate": _safe_rate(silent_failures, final_answer_passed),
+        "final_answer_pass_rate": final_answer_pass_rate,
+        "validator_pass_rate": validator_pass_rate,
+        "validator_gap": final_answer_pass_rate - validator_pass_rate,
     }
 
 
@@ -232,6 +290,189 @@ def _failure_insights(runs: Sequence[Mapping[str, Any]]) -> list[JsonDict]:
         }
         for item in sorted(by_failure.values(), key=lambda item: (-item["count"], item["failure_type"]))
     ]
+
+
+def _root_cause_summary(
+    runs: Sequence[Mapping[str, Any]],
+    *,
+    task_domains: Mapping[str, str],
+    final_answer_vs_validator: Mapping[str, Any],
+    replay_results: Optional[Sequence[Any]],
+    trace_limit: int,
+) -> JsonDict:
+    categories: dict[str, JsonDict] = {
+        category: {"count": 0, "failure_types": {}}
+        for category in ROOT_CAUSE_CATEGORIES
+    }
+    by_domain: dict[str, Counter] = defaultdict(Counter)
+    by_tool: dict[str, Counter] = defaultdict(Counter)
+    by_model: dict[str, Counter] = defaultdict(Counter)
+    by_validator: dict[str, Counter] = defaultdict(Counter)
+
+    for run in runs:
+        domain = task_domains.get(str(run.get("task_id")), "unknown")
+        model = _model_for_run(run)
+        tools = _trace_tool_names(str(run.get("trace_path"))) or ["unknown"]
+
+        if _final_answer_passed(run) and run.get("passed") is not True:
+            _record_root_cause(
+                category="FINAL_ANSWER_OVERCLAIM",
+                failure_type="final_answer_overclaim",
+                domain=domain,
+                model=model,
+                validator_name="final_answer",
+                tools=tools,
+                categories=categories,
+                by_domain=by_domain,
+                by_tool=by_tool,
+                by_model=by_model,
+                by_validator=by_validator,
+            )
+
+        for result in _validator_results(run):
+            if result.get("passed") is True or not result.get("failure_type"):
+                continue
+            category = root_cause_category_for_validator_result(result)
+            _record_root_cause(
+                category=category,
+                failure_type=str(result.get("failure_type")),
+                domain=domain,
+                model=model,
+                validator_name=str(result.get("validator_name", "unknown")),
+                tools=tools,
+                categories=categories,
+                by_domain=by_domain,
+                by_tool=by_tool,
+                by_model=by_model,
+                by_validator=by_validator,
+            )
+
+    for replay_result in replay_results or []:
+        result = replay_result.to_dict() if hasattr(replay_result, "to_dict") else dict(replay_result)
+        task_id = str(result.get("task_id", "unknown"))
+        domain = task_domains.get(task_id, "unknown")
+        for divergence in result.get("divergences", []):
+            if not isinstance(divergence, Mapping):
+                continue
+            _record_root_cause(
+                category="TRACE_REPLAY_DIVERGENCE",
+                failure_type=str(divergence.get("type", "trace_replay_divergence")),
+                domain=domain,
+                model="unknown",
+                validator_name="replay",
+                tools=[str(divergence.get("tool_name", "unknown"))],
+                categories=categories,
+                by_domain=by_domain,
+                by_tool=by_tool,
+                by_model=by_model,
+                by_validator=by_validator,
+            )
+
+    silent_failure_count = int(final_answer_vs_validator.get("silent_failure_count", 0))
+    run_count = int(final_answer_vs_validator.get("run_count", len(runs)))
+    validator_gap = float(final_answer_vs_validator.get("validator_gap", 0.0))
+    return {
+        "executive_summary": _executive_summary(final_answer_vs_validator),
+        "run_count": run_count,
+        "silent_failure_count": silent_failure_count,
+        "silent_failure_rate": float(final_answer_vs_validator.get("silent_failure_rate", 0.0)),
+        "answer_overclaim_rate": float(final_answer_vs_validator.get("answer_overclaim_rate", 0.0)),
+        "validator_gap": validator_gap,
+        "categories": _json_counter_table(categories),
+        "failure_by_domain": _nested_counter_dict(by_domain),
+        "failure_by_tool": _nested_counter_dict(by_tool),
+        "failure_by_model": _nested_counter_dict(by_model),
+        "failure_by_validator": _nested_counter_dict(by_validator),
+        "top_replayable_failure_traces": _top_replayable_failure_traces(runs, trace_limit),
+    }
+
+
+def root_cause_category_for_validator_result(result: Mapping[str, Any]) -> str:
+    failure_type = str(result.get("failure_type", ""))
+    if failure_type == "cost_latency_violation":
+        details = result.get("details", {})
+        violations = details.get("violations", []) if isinstance(details, Mapping) else []
+        if "cost" in violations:
+            return "COST_LIMIT_EXCEEDED"
+        if "timed_out" in violations or "latency_seconds" in violations:
+            return "TIMEOUT"
+        return "TIMEOUT"
+    return _ROOT_CAUSE_BY_FAILURE_TYPE.get(failure_type, "TOOL_RESULT_MISUSE")
+
+
+def _record_root_cause(
+    *,
+    category: str,
+    failure_type: str,
+    domain: str,
+    model: str,
+    validator_name: str,
+    tools: Sequence[str],
+    categories: dict[str, JsonDict],
+    by_domain: dict[str, Counter],
+    by_tool: dict[str, Counter],
+    by_model: dict[str, Counter],
+    by_validator: dict[str, Counter],
+) -> None:
+    category_record = categories.setdefault(category, {"count": 0, "failure_types": {}})
+    category_record["count"] += 1
+    failure_types = category_record.setdefault("failure_types", {})
+    failure_types[failure_type] = int(failure_types.get(failure_type, 0)) + 1
+    by_domain[domain][category] += 1
+    for tool_name in tools:
+        by_tool[tool_name][category] += 1
+    by_model[model][category] += 1
+    by_validator[validator_name][category] += 1
+
+
+def _executive_summary(final_answer_vs_validator: Mapping[str, Any]) -> str:
+    gap_points = float(final_answer_vs_validator.get("validator_gap", 0.0)) * 100
+    silent_failure_count = int(final_answer_vs_validator.get("silent_failure_count", 0))
+    run_count = int(final_answer_vs_validator.get("run_count", 0))
+    return (
+        "Final-answer-only grading overestimated validated correctness by "
+        f"{gap_points:.1f} percentage points; deterministic validators caught "
+        f"{silent_failure_count}/{run_count} silent failures."
+    )
+
+
+def _json_counter_table(categories: Mapping[str, JsonDict]) -> JsonDict:
+    return {
+        category: {
+            "count": int(payload.get("count", 0)),
+            "failure_types": dict(sorted(dict(payload.get("failure_types", {})).items())),
+        }
+        for category, payload in sorted(categories.items())
+    }
+
+
+def _nested_counter_dict(counters: Mapping[str, Counter]) -> JsonDict:
+    return {
+        key: {category: int(counter.get(category, 0)) for category in ROOT_CAUSE_CATEGORIES if counter.get(category, 0)}
+        for key, counter in sorted(counters.items())
+        if counter
+    }
+
+
+def _top_replayable_failure_traces(runs: Sequence[Mapping[str, Any]], limit: int) -> list[JsonDict]:
+    run_by_id = {run.get("run_id"): run for run in runs}
+    traces = []
+    for trace in _worst_traces(runs, limit):
+        if not trace["replay_ready"]:
+            continue
+        source_run = run_by_id.get(trace.get("run_id"), {})
+        categories = sorted(
+            {
+                root_cause_category_for_validator_result({"failure_type": failure_type})
+                for failure_type in trace["failure_types"]
+            }
+        )
+        if _final_answer_passed(source_run) and "FINAL_ANSWER_OVERCLAIM" not in categories:
+            categories.append("FINAL_ANSWER_OVERCLAIM")
+        trace_with_causes = dict(trace)
+        trace_with_causes["root_cause_categories"] = sorted(categories)
+        traces.append(trace_with_causes)
+    return traces
 
 
 def _pass_at_k_curve(runs: Sequence[Mapping[str, Any]]) -> list[JsonDict]:
@@ -380,6 +621,9 @@ def _render_markdown(report: EvaluationReport) -> str:
     lines = [
         "# Sandboxed Agent Evaluation Report",
         "",
+        "## Executive Summary",
+        payload["executive_summary"],
+        "",
         "## Summary",
         f"- Runs: {payload['summary']['run_count']}",
         f"- Task success rate: {payload['summary']['task_success_rate']:.3f}",
@@ -396,7 +640,13 @@ def _render_markdown(report: EvaluationReport) -> str:
     final_metrics = payload["final_answer_vs_validator"]
     lines.append(f"- Final-answer pass rate: {final_metrics['final_answer_pass_rate']:.3f}")
     lines.append(f"- Validator pass rate: {final_metrics['validator_pass_rate']:.3f}")
+    lines.append(f"- Validator gap: {final_metrics['validator_gap']:.3f}")
+    lines.append(f"- Silent failure rate: {final_metrics['silent_failure_rate']:.3f}")
     lines.append(f"- Silent failures: {final_metrics['silent_failure_count']}")
+    lines.extend(["", "## Root Cause Summary"])
+    for category, metrics in payload["root_cause_summary"]["categories"].items():
+        if metrics["count"]:
+            lines.append(f"- {category}: {metrics['count']}")
     lines.extend(["", "## Failure Distribution"])
     for failure_type, count in payload["failure_type_distribution"].items():
         lines.append(f"- {failure_type}: {count}")
@@ -455,6 +705,29 @@ def _trace_versions(path: str) -> JsonDict:
     except (OSError, TraceReplayError, ValueError):
         return {}
     return {field: replay.metadata.get(field) for field in VERSION_FIELDS if replay.metadata.get(field)}
+
+
+def _model_for_run(run: Mapping[str, Any]) -> str:
+    versions = _trace_versions(str(run.get("trace_path")))
+    model = versions.get("model")
+    return str(model or run.get("baseline_name") or "unknown")
+
+
+def _trace_tool_names(path: str) -> list[str]:
+    if not path:
+        return []
+    try:
+        replay = TraceReplay.from_jsonl(path)
+    except (OSError, TraceReplayError, ValueError):
+        return []
+    names = []
+    for event in replay.events:
+        if event.event_type != "tool_call":
+            continue
+        tool_name = event.payload.get("tool_name")
+        if isinstance(tool_name, str) and tool_name not in names:
+            names.append(tool_name)
+    return names
 
 
 def _metric(run: Mapping[str, Any], name: str) -> Any:

@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 17 benchmark-scale deterministic suite expansion. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 18 failure taxonomy v2 and root-cause report. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 18 failure taxonomy v2 and root-cause report is next.
+Phase 19 recorded model matrix is next.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Start Phase 18 by mapping validator failure types into normalized root-cause categories and surfacing silent-failure/root-cause breakdowns in report artifacts.
+Start Phase 19 by adding recorded model behavior profiles and comparing their failure signatures without live network calls.
 
 ## Current State
 
@@ -526,6 +526,34 @@ Known limitations:
 - The recorded benchmark study still uses one recorded model profile; Phase 19 is needed for model-matrix comparison.
 - The expanded suite reuses current executable fixture tools instead of adding new tool families.
 
+### Phase 18: Failure Taxonomy v2 and Root-Cause Report
+
+Commit:
+Included in the Phase 18 failure taxonomy v2 and root-cause report commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added normalized Phase 18 root-cause categories in `evaluation.report`.
+- Added deterministic mapping from validator failure types to root-cause categories.
+- Added final-answer validator gap, silent failure rate, and answer overclaim rate to report output.
+- Added root-cause breakdowns by domain, tool, model, and validator.
+- Added top replayable failure traces to root-cause summaries.
+- Added machine-readable `root_cause_summary` and `executive_summary` to `report.json`.
+- Added an executive summary section to `report.md`.
+- Added `root_cause_breakdown` to `silent_failure_study.json`.
+- Updated README, roadmap, validation, and runbook documentation for the new report surface.
+
+Validation:
+- Initial TDD red run failed because `ROOT_CAUSE_CATEGORIES` and root-cause report APIs did not exist.
+- Focused Phase 18 tests passed before commit and are recorded in the validation log.
+- Full pytest passed before commit and is recorded in the validation log.
+- Benchmark root-cause model study wrote `silent_failure_study.json`, `report.json`, and `report.md` with root-cause fields.
+- Default `make ci` passed before commit.
+
+Known limitations:
+- Root-cause categories are deterministic mappings from validators and traces; they are not subjective natural-language explanations.
+- Tool-level breakdowns attribute a failed run to tools present in the trace, which is useful for debugging but not a causal proof for every tool in a multi-tool trace.
+- Model-profile comparison is still deferred to Phase 19.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -968,6 +996,34 @@ Results:
 - Final full pytest run passed: 95 tests.
 - Whitespace check passed.
 
+Commands run for Phase 18:
+
+```bash
+python3 -m pytest tests/test_phase18_root_cause.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study --suite benchmark --recorded-output fixtures/model_outputs/silent_failure_study.json --output-dir /tmp/sandboxed-agent-eval-root-cause-study
+PYTHONPATH=src python3 - <<'PY'
+import json
+from pathlib import Path
+study = json.loads(Path("/tmp/sandboxed-agent-eval-root-cause-study/silent_failure_study.json").read_text())
+report = json.loads(Path("/tmp/sandboxed-agent-eval-root-cause-study/report/report.json").read_text())
+print(study["root_cause_breakdown"]["validator_gap"])
+print(report["executive_summary"])
+print(sorted(report["root_cause_summary"]["categories"]))
+PY
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 18 red run failed because `ROOT_CAUSE_CATEGORIES` was not exported from `evaluation.report`.
+- Focused Phase 18 root-cause tests passed after implementation.
+- Final full pytest run passed: 99 tests.
+- Benchmark root-cause model study passed and printed `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
+- Root-cause artifact inspection printed validator gap `0.5`, the executive summary sentence, and all normalized root-cause categories.
+- `make ci` passed on the default smoke reproducibility path.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1009,8 +1065,8 @@ Results:
   Planned fix: Add credentials-gated live provider experiments and keep recorded transcripts for reproducible replay.
 
 - Limitation: The recorded model study still has one model profile.
-  Impact: The benchmark fixture demonstrates silent failures at 64-task scale, but it does not yet distinguish multiple model behavior signatures.
-  Planned fix: Add the Phase 19 recorded model matrix after root-cause reporting stabilizes.
+  Impact: The benchmark fixture and root-cause report demonstrate silent failures at 64-task scale, but they do not yet distinguish multiple model behavior signatures.
+  Planned fix: Add the Phase 19 recorded model matrix.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
   Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
@@ -1021,7 +1077,7 @@ Results:
   Planned fix: Keep claims precise; add optional credentials-gated live provider workflow only in Phase 20.
 
 - Limitation: The report's final-answer-only score is a deterministic proxy.
-  Impact: It demonstrates silent-failure reporting but does not semantically judge answer quality.
+  Impact: It demonstrates silent-failure and root-cause reporting but does not semantically judge answer quality.
   Planned fix: Keep deterministic checks first; add optional controlled final-answer scoring only after executable tool adapters and regression thresholds are stable.
 
 - Limitation: Regression comparison in the report is descriptive.
@@ -1040,9 +1096,13 @@ Results:
   Impact: Tool, task-suite, validator, and eval-run configs document intended surfaces, while regression gate presets are the first config consumed by runtime code.
   Planned fix: Later phases can load and validate more config files once runtime contracts stabilize.
 
+- Limitation: Root-cause categories are deterministic mappings from validator failures and trace metadata.
+  Impact: They make reports auditable and reproducible, but they do not claim subjective causal explanation beyond what validators and traces show.
+  Planned fix: Keep explanations deterministic; add richer model-profile comparisons in Phase 19.
+
 - Limitation: The benchmark suite reuses a compact set of local fixture files.
   Impact: It broadens failure-taxonomy and replay coverage without adding external data complexity, but it is not a replacement for live or third-party benchmark datasets.
-  Planned fix: Keep Phase 18-19 focused on root-cause reporting and model-profile comparison before considering optional live runs.
+  Planned fix: Keep Phase 19 focused on model-profile comparison before considering optional live runs.
 
 ## Failure Modes to Watch
 
@@ -1057,7 +1117,7 @@ Results:
 
 ## Next Steps
 
-1. Start Phase 18: failure taxonomy v2 and root-cause report.
-2. Keep reports deterministic and machine-readable before adding model matrix views.
+1. Start Phase 19: recorded model matrix.
+2. Keep model profiles fixture-backed and network-free.
 3. Do not add live provider workflow until Phase 20.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

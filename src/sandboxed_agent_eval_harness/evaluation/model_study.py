@@ -41,6 +41,7 @@ def run_silent_failure_study(
         "summary_path": str(output_path / "summary.json"),
         "report_path": report_paths["json_path"],
         "model_comparison": model_comparison,
+        "root_cause_breakdown": report.root_cause_summary,
         "key_finding": _key_finding(model_comparison),
     }
     study_path = output_path / "silent_failure_study.json"
@@ -50,6 +51,7 @@ def run_silent_failure_study(
         "summary_path": str(output_path / "summary.json"),
         "report_path": report_paths["json_path"],
         "model_comparison": model_comparison,
+        "root_cause_breakdown": report.root_cause_summary,
     }
 
 
@@ -123,9 +125,10 @@ def _aggregate_comparison(rows: Sequence[Mapping[str, Any]]) -> JsonDict:
 
 def _key_finding(rows: Sequence[Mapping[str, Any]]) -> str:
     aggregate = _aggregate_comparison(rows)
+    gap_points = (aggregate["final_answer_pass_rate"] - aggregate["validator_pass_rate"]) * 100
     return (
-        "Final-answer-only scoring overstated validated correctness by "
-        f"{aggregate['final_answer_pass_rate'] - aggregate['validator_pass_rate']:.3f}; "
+        "Final-answer-only grading overestimated validated correctness by "
+        f"{gap_points:.1f} percentage points; "
         f"deterministic validators caught {aggregate['silent_failure_count']} silent failures."
     )
 

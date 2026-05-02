@@ -1,0 +1,12 @@
+category,count,failure_types
+CITATION_UNSUPPORTED,40,"{""unsupported_citation"": 40}"
+CONSTRAINT_VIOLATION,12,"{""constraint_violation"": 12}"
+COST_LIMIT_EXCEEDED,0,{}
+FINAL_ANSWER_OVERCLAIM,180,"{""final_answer_overclaim"": 180}"
+NUMERIC_MISMATCH,52,"{""numeric_mismatch"": 52}"
+STATE_MUTATION_ERROR,76,"{""state_mismatch"": 76}"
+TIMEOUT,0,{}
+TOOL_ARGUMENT_ERROR,0,{}
+TOOL_RESULT_MISUSE,24,"{""unit_tests_failed"": 12, ""unit_tests_missing"": 12}"
+TOOL_SELECTION_ERROR,64,"{""tool_sequence_mismatch"": 64}"
+TRACE_REPLAY_DIVERGENCE,0,{}

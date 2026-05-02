@@ -587,6 +587,32 @@ Expected result:
 - `make validate-config` runs the CLI.
 - `make ci` includes config validation before smoke, gate, model-study, and report generation.
 
+## Public Portfolio Report Validation
+
+Run after the static portfolio report generator exists:
+
+```bash
+python3 -m pytest tests/test_phase23_portfolio_report.py -v
+make portfolio-report
+test -s reports/portfolio_report.md
+test -s reports/portfolio_report.json
+test -s reports/tables/model_matrix.csv
+test -s reports/tables/failure_taxonomy.csv
+test -s reports/tables/domain_breakdown.csv
+test "$(find reports/examples -name 'replayable_failure_*.md' | wc -l)" -ge 3
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- One command generates the public portfolio report.
+- `portfolio_report.md` includes problem, system, evidence, benchmark, failure taxonomy, reproducibility, and limitations.
+- `portfolio_report.json` is machine-readable and marks the evidence as recorded/offline, not a live-provider benchmark.
+- Model matrix, failure taxonomy, and domain breakdown tables are written under `reports/tables/`.
+- Case studies under `reports/examples/` point to replayable JSONL traces.
+- Default validation remains key-free and network-free.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

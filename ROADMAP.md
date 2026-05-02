@@ -26,9 +26,10 @@ Completed:
 - [x] Phase 20: Credentials-Gated Live Provider Workflow
 - [x] Phase 21: Sandbox Backend Hardening
 - [x] Phase 22: Config Loader and Suite Registry Cleanup
+- [x] Phase 23: Public Portfolio Report
 
 Current phase:
-- [ ] Phase 23: Public Portfolio Report
+- [ ] Phase 24: README, Resume, and Interview Polish Freeze
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -46,7 +47,7 @@ Main line:
 This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
 
 Current facts:
-- Phases 0-22 are complete.
+- Phases 0-23 are complete.
 - The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
 - The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
@@ -59,18 +60,19 @@ Current facts:
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
 - The sandbox has a default workspace backend plus an optional Docker command envelope with network disabled, resource limits, read-only fixture mount, and deterministic artifact export. It is evaluation isolation, not a security product.
 - Runtime config validation now checks tool names, validator names, task-suite manifests and task ids, eval-run baselines, and required metrics against runtime surfaces.
+- `make portfolio-report` generates `reports/portfolio_report.md`, `reports/portfolio_report.json`, model/failure/domain CSV tables, and three replayable failure case studies from recorded offline benchmark evidence.
 
 Principal contradiction:
 The harness architecture now has benchmark-scale fixture coverage, root-cause reporting, and model-profile comparison, but it still needs recruiter-readable portfolio evidence before it can be treated as an S-level AI infra project.
 
 Required path to portfolio readiness:
 ```text
-Phase 23 -> Phase 24
+Phase 24
 ```
 
 Full path if time allows:
 ```text
-Phase 23 -> Phase 24
+Phase 24
 ```
 
 Hard stop:
@@ -83,7 +85,7 @@ Truthfulness rules:
 - Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
 - Do not call sandboxing secure; describe Phase 21 as optional evaluation isolation, not a security product.
 - Runtime config claims are limited to project config validation for tools, validators, task suites, eval runs, and regression gate presets.
-- Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
+- Do not present this as portfolio-final until Phase 24 passes.
 
 Minimum resume-ready path:
 If time is constrained, complete Phases 23 and 24 after Phase 19. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
@@ -651,11 +653,11 @@ Goal:
 Generate a static report suitable for recruiters and interviewers.
 
 Tasks:
-- [ ] Generate `reports/portfolio_report.md`
-- [ ] Generate `reports/portfolio_report.json`
-- [ ] Generate model matrix, failure taxonomy, and domain breakdown tables
-- [ ] Generate 2-3 replayable failure case studies
-- [ ] Keep report generation key-free
+- [x] Generate `reports/portfolio_report.md`
+- [x] Generate `reports/portfolio_report.json`
+- [x] Generate model matrix, failure taxonomy, and domain breakdown tables
+- [x] Generate 2-3 replayable failure case studies
+- [x] Keep report generation key-free
 
 Acceptance criteria:
 - One command generates the portfolio report

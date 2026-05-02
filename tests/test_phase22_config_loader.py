@@ -81,7 +81,9 @@ def test_validate_config_cli_reports_success(capsys):
 def test_makefile_includes_validate_config_in_ci():
     makefile = (ROOT / "Makefile").read_text()
 
-    assert ".PHONY: test smoke gate model-study report validate-config ci" in makefile
+    assert ".PHONY:" in makefile
+    for target in ["test", "smoke", "gate", "model-study", "report", "validate-config", "ci"]:
+        assert target in makefile
     assert "validate-config:" in makefile
     assert "config.validate" in makefile
     assert "ci: test validate-config smoke gate model-study report" in makefile

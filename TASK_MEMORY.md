@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 22 config loader and suite registry cleanup. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 23 public portfolio report. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 23 public portfolio report is next.
+Phase 24 README, resume, and interview polish freeze is next.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Generate the static portfolio evidence report in Phase 23. Keep all benchmark and model-matrix claims tied to fixture-backed deterministic or recorded-offline evidence.
+Polish the README and interview docs for the Phase 24 final freeze. Keep all benchmark and model-matrix claims tied to fixture-backed deterministic or recorded-offline evidence.
 
 ## Current State
 
@@ -661,6 +661,34 @@ Known limitations:
 - The YAML loader is intentionally project-specific and supports the current controlled config subset; it is not a general YAML parser.
 - Regression gate presets remain JSON-backed and continue to use the existing gate loader.
 
+### Phase 23: Public Portfolio Report
+
+Commit:
+Included in the Phase 23 portfolio evidence report commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.evaluation.portfolio`.
+- Added `make portfolio-report`.
+- Generated `reports/portfolio_report.md`.
+- Generated `reports/portfolio_report.json`.
+- Generated `reports/tables/model_matrix.csv`.
+- Generated `reports/tables/failure_taxonomy.csv`.
+- Generated `reports/tables/domain_breakdown.csv`.
+- Generated three replayable failure case studies under `reports/examples/`.
+- Reused the recorded offline model matrix and deterministic root-cause report outputs.
+- Added tests for public artifacts, case-study trace pointers, CLI output, and Makefile integration.
+- Updated `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.evaluation.portfolio` did not exist.
+- Focused Phase 23 tests passed before commit and are recorded in the validation log.
+- `make portfolio-report` generated the public report, CSV tables, and case studies without API keys.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- The portfolio report uses recorded offline model profiles and fixture-backed benchmark tasks, not live-provider benchmark evidence.
+- Case studies point to generated artifact traces under `artifacts/eval_runs/portfolio_model_matrix`; rerun `make portfolio-report` to regenerate those traces.
+
 ## Validation Log
 
 ### 2026-04-30
@@ -1211,6 +1239,30 @@ Results:
 - Final full pytest passed: 119 tests.
 - `make ci` passed with config validation, oracle smoke, strict gate, recorded model study, and report generation.
 
+Commands run for Phase 23:
+
+```bash
+python3 -m pytest tests/test_phase23_portfolio_report.py -v
+make portfolio-report
+test -s reports/portfolio_report.md
+test -s reports/portfolio_report.json
+test -s reports/tables/model_matrix.csv
+test -s reports/tables/failure_taxonomy.csv
+test -s reports/tables/domain_breakdown.csv
+test "$(find reports/examples -name 'replayable_failure_*.md' | wc -l)" -ge 3
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 23 red run failed because `sandboxed_agent_eval_harness.evaluation.portfolio` did not exist.
+- Focused Phase 23 tests passed after implementation.
+- `make portfolio-report` printed `portfolio_report=reports/portfolio_report.md case_studies=3 models=5`.
+- Portfolio artifacts include Markdown, JSON, model matrix CSV, failure taxonomy CSV, domain breakdown CSV, and three replayable failure case studies.
+- Final full pytest passed: 122 tests.
+- `make ci` passed with config validation, oracle smoke, strict gate, recorded model study, and report generation.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1289,7 +1341,7 @@ Results:
 
 - Limitation: Root-cause categories are deterministic mappings from validator failures and trace metadata.
   Impact: They make reports auditable and reproducible, but they do not claim subjective causal explanation beyond what validators and traces show.
-  Planned fix: Keep explanations deterministic; package the most useful model-matrix failures into portfolio case studies in Phase 23.
+  Planned fix: Keep explanations deterministic and use Phase 24 docs to make the evidence narrative easier to review.
 
 - Limitation: The benchmark suite reuses a compact set of local fixture files.
   Impact: It broadens failure-taxonomy and replay coverage without adding external data complexity, but it is not a replacement for live or third-party benchmark datasets.
@@ -1308,7 +1360,7 @@ Results:
 
 ## Next Steps
 
-1. Generate the Phase 23 public portfolio report artifacts.
-2. Package recorded model matrix evidence into recruiter-readable tables and replayable case studies.
+1. Complete Phase 24 README, resume, and interview polish freeze.
+2. Add architecture, limitations, failure case-study, and interview notes docs.
 3. Keep sandbox claims limited to evaluation isolation, not a security product.
-4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.
+4. Do not build dashboard or web app features after the Phase 24 portfolio freeze.

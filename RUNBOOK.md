@@ -212,6 +212,31 @@ config_validation=passed tools=7 validators=10 task_suites=2 eval_runs=1
 
 This checks the project-owned tool, validator, task-suite, and eval-run configs against runtime defaults and manifests. It uses the current controlled config format; treat failures as real drift until proven otherwise.
 
+Public portfolio report:
+
+```bash
+make portfolio-report
+```
+
+Expected output includes:
+
+```text
+portfolio_report=reports/portfolio_report.md case_studies=3 models=5
+```
+
+Generated files:
+
+```text
+reports/portfolio_report.md
+reports/portfolio_report.json
+reports/tables/model_matrix.csv
+reports/tables/failure_taxonomy.csv
+reports/tables/domain_breakdown.csv
+reports/examples/replayable_failure_*.md
+```
+
+The report uses recorded offline model profiles and fixture-backed benchmark tasks. It is not a live-provider benchmark and does not require API keys.
+
 GitHub Actions:
 
 ```text

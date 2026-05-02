@@ -1,0 +1,6 @@
+model,run_count,final_answer_pass_rate,validator_pass_rate,silent_failure_count,validator_gap,top_root_cause
+recorded-tool-sloppy-fixture-v1,64,1.000000,0.000000,64,1.000000,TOOL_SELECTION_ERROR
+recorded-overconfident-fixture-v1,64,1.000000,0.187500,52,0.812500,NUMERIC_MISMATCH
+recorded-state-sloppy-fixture-v1,64,1.000000,0.312500,44,0.687500,STATE_MUTATION_ERROR
+recorded-citation-sloppy-fixture-v1,64,1.000000,0.687500,20,0.312500,CITATION_UNSUPPORTED
+recorded-good-fixture-v1,64,1.000000,1.000000,0,0.000000,NONE

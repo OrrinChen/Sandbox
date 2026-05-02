@@ -5,8 +5,10 @@ SMOKE_DIR ?= $(ARTIFACT_DIR)/eval_runs/smoke
 MODEL_STUDY_DIR ?= $(ARTIFACT_DIR)/eval_runs/silent_failure_study
 REPORT_DIR ?= $(ARTIFACT_DIR)/reports/smoke
 REPLAY_WORKSPACE ?= /tmp/sandboxed-agent-eval-gates-replay
+PORTFOLIO_REPORT_DIR ?= reports
+PORTFOLIO_EVIDENCE_DIR ?= $(ARTIFACT_DIR)/eval_runs/portfolio_model_matrix
 
-.PHONY: test smoke gate model-study report validate-config ci
+.PHONY: test smoke gate model-study report validate-config portfolio-report ci
 
 test:
 	$(PYTHON) -m pytest
@@ -37,5 +39,10 @@ report: smoke
 
 validate-config:
 	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.config.validate
+
+portfolio-report:
+	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.evaluation.portfolio \
+		--output-dir $(PORTFOLIO_REPORT_DIR) \
+		--evidence-dir $(PORTFOLIO_EVIDENCE_DIR)
 
 ci: test validate-config smoke gate model-study report

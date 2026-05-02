@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 22 config loader and suite registry cleanup. It now has workflow documents, Python package metadata, runtime-validated config files, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, a manual live workflow that fails closed unless `--live` and credentials are supplied, workspace/Docker sandbox backend selection for evaluation isolation, and a dependency-free config validation command wired into reproducibility checks.
+The repository has completed Phase 23 public portfolio report generation. It now has workflow documents, Python package metadata, runtime-validated config files, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, optional OpenAI Responses and generic HTTP live adapters, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, an offline recorded model matrix that compares distinct failure signatures, a manual live workflow that fails closed unless `--live` and credentials are supplied, workspace/Docker sandbox backend selection for evaluation isolation, a dependency-free config validation command wired into reproducibility checks, and a static portfolio report with CSV tables and replayable failure case studies.
 
 Current evidence snapshot:
 
@@ -44,6 +44,7 @@ Matrix key finding: final-answer-only grading overestimated validated correctnes
 Live workflow: opt-in only, fails closed without --live, skips without credentials, converts live outputs into recorded fixture candidates
 Sandbox backends: default workspace backend plus optional Docker command envelope with network disabled, read-only fixture mount, resource limits, and deterministic artifact export
 Runtime config validation: tools=7, validators=10, task_suites=2, eval_runs=1
+Portfolio report: reports/portfolio_report.md with model matrix, failure taxonomy, domain breakdown, and 3 replayable failure case studies
 ```
 
 Start by reading:
@@ -89,8 +90,28 @@ make gate
 make model-study
 make report
 make validate-config
+make portfolio-report
 make ci
 ```
+
+## Public Portfolio Report
+
+Generate the recruiter/interviewer-facing static report with:
+
+```bash
+make portfolio-report
+```
+
+The command writes:
+
+- `reports/portfolio_report.md`
+- `reports/portfolio_report.json`
+- `reports/tables/model_matrix.csv`
+- `reports/tables/failure_taxonomy.csv`
+- `reports/tables/domain_breakdown.csv`
+- `reports/examples/replayable_failure_*.md`
+
+The report is generated from recorded offline model profiles and fixture-backed benchmark tasks. It is key-free and network-free by default; it is not a live-provider benchmark.
 
 ## Runtime Config Validation
 

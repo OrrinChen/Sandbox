@@ -494,6 +494,27 @@ Expected result:
 - `silent_failure_study.json` includes `root_cause_breakdown`.
 - The benchmark study prints `models=1 final_answer_pass_rate=1.000 validator_pass_rate=0.500 silent_failures=32`.
 
+## Recorded Model Matrix Validation
+
+Run after the recorded model matrix exists:
+
+```bash
+python3 -m pytest tests/test_phase19_model_matrix.py -v
+python3 -m pytest
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_matrix \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/model_matrix.json \
+  --output-dir /tmp/sandboxed-agent-eval-model-matrix
+git diff --check -- .
+```
+
+Expected result:
+- `fixtures/model_outputs/model_matrix.json` defines at least four recorded profiles.
+- Every profile covers all 64 benchmark task ids.
+- The matrix CLI writes `model_matrix_summary.json`, `model_comparison_report.md`, `silent_failure_by_model.csv`, `summary.json`, and report artifacts.
+- The CLI prints at least `models=4`, `distinct_signatures=4`, and `max_validator_gap=...`.
+- No network calls, API keys, or live provider credentials are required.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

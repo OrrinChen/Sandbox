@@ -22,9 +22,10 @@ Completed:
 - [x] Phase 16: Reproducibility and CI
 - [x] Phase 17: Benchmark-Scale Deterministic Suite Expansion
 - [x] Phase 18: Failure Taxonomy v2 and Root-Cause Report
+- [x] Phase 19: Recorded Model Matrix
 
 Current phase:
-- [ ] Phase 19: Recorded Model Matrix
+- [ ] Phase 20: Credentials-Gated Live Provider Workflow
 
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
@@ -42,22 +43,24 @@ Main line:
 This is eval infrastructure, not an agent product. The core value is exposing silent tool-use failures that final-answer-only grading misses: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, violated constraints, non-replayable traces, timeouts, and cost regressions.
 
 Current facts:
-- Phases 0-17 are complete.
+- Phases 0-19 are complete.
 - The default deterministic suite has 8 fixture-backed tasks across finance, data analysis, coding, and optimization.
 - The benchmark deterministic suite has 64 fixture-backed tasks across finance, data analysis, coding, optimization, file workflow, and citation domains.
 - The recorded model study currently shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 4 silent failures caught.
 - The recorded benchmark model study shows final-answer pass rate 1.000 versus validator pass rate 0.500, with 32 silent failures caught.
+- The recorded model matrix has 5 offline profiles over the 64-task benchmark suite, 320 total runs, and 5 distinct failure signatures.
+- The matrix key finding is that final-answer-only grading overestimated validated correctness by 56.2 percentage points and deterministic validators caught 180 silent failures.
 - Oracle benchmark replay currently covers 64 traces with 0 divergences.
 - Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
 - The sandbox is workspace-isolated with path validation and subprocess timeouts; it is not yet an OS-level or container security boundary.
 
 Principal contradiction:
-The harness architecture now has benchmark-scale fixture coverage and root-cause reporting, but it still needs model profile comparison and recruiter-readable evidence before it can be treated as an S-level AI infra project.
+The harness architecture now has benchmark-scale fixture coverage, root-cause reporting, and model-profile comparison, but it still needs recruiter-readable portfolio evidence before it can be treated as an S-level AI infra project.
 
 Required path to portfolio readiness:
 ```text
-Phase 19 -> Phase 23 -> Phase 24
+Phase 23 -> Phase 24
 ```
 
 Optional hardening path:
@@ -76,14 +79,14 @@ Stop feature expansion after Phase 24. After that, only maintain, fix bugs, refr
 Truthfulness rules:
 - Benchmark-scale claims must be described as fixture-backed deterministic results, not live-provider benchmark results.
 - Root-cause reporting claims must remain tied to deterministic validator and trace data, not LLM-as-judge explanations.
-- Do not claim model matrix comparison until Phase 19 passes.
+- Model matrix comparison is recorded and offline; do not describe it as a live-provider benchmark.
 - Do not run or claim live provider results until Phase 20 passes with explicit credentials and `--live`.
 - Do not call sandboxing "secure" until Phase 21 adds optional container isolation; even then, describe it as evaluation isolation, not a security product.
 - Do not claim runtime configs are authoritative until Phase 22 passes.
 - Do not present this as portfolio-final until Phase 23 and Phase 24 pass.
 
 Minimum resume-ready path:
-If time is constrained, complete Phases 23 and 24 after Phase 18. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
+If time is constrained, complete Phases 23 and 24 after Phase 19. That is sufficient for a strong big-tech AI infra / LLM eval portfolio project.
 
 ## Phase 1: Planning and Repository Skeleton
 
@@ -551,11 +554,11 @@ Goal:
 Compare several recorded model behavior profiles without live network calls.
 
 Tasks:
-- [ ] Add at least four recorded model profiles
-- [ ] Generate `model_matrix_summary.json`
-- [ ] Generate `model_comparison_report.md`
-- [ ] Generate `silent_failure_by_model.csv`
-- [ ] Sort and compare models by failure signature
+- [x] Add at least four recorded model profiles
+- [x] Generate `model_matrix_summary.json`
+- [x] Generate `model_comparison_report.md`
+- [x] Generate `silent_failure_by_model.csv`
+- [x] Sort and compare models by failure signature
 
 Acceptance criteria:
 - At least four recorded model profiles run on the benchmark suite

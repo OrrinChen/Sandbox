@@ -23,7 +23,7 @@ task definition
 
 ## Current Status
 
-The repository has completed Phase 18 root-cause failure reporting. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, and a GitHub Actions CI workflow scoped to this project subdirectory.
+The repository has completed Phase 19 recorded model matrix comparison. It now has workflow documents, Python package metadata, config stubs, a `src/` package layout, skeletal tests, typed schema contracts, a `ToolSpec`-backed registry, a minimal local sandbox, executable local fixture tools, JSONL trace logging, trace replay execution from fixture state, deterministic validators, local fixture-backed finance/data-analysis/coding/optimization/file-workflow/citation tasks, deterministic agent baselines, recorded model-output adapters, an optional OpenAI Responses API adapter, smoke and benchmark evaluation runner presets, report generation from evaluation artifacts, normalized root-cause taxonomy, replay divergence summaries, configurable regression gates that can fail a run, project-level gate presets, summary-driven trace discovery for replay gates, local `make` reproducibility commands, a GitHub Actions CI workflow scoped to this project subdirectory, and an offline recorded model matrix that compares distinct failure signatures.
 
 Current evidence snapshot:
 
@@ -39,6 +39,8 @@ Recorded benchmark silent failures caught: 32
 Strict oracle smoke replay: 8 traces, 0 divergences
 Strict oracle benchmark replay: 64 traces, 0 divergences
 Root-cause report: validator gap, silent failure rate, answer overclaim rate, and breakdowns by domain/tool/model/validator
+Recorded model matrix: 5 offline profiles, 320 benchmark runs, 5 distinct failure signatures
+Matrix key finding: final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures
 ```
 
 Start by reading:
@@ -304,6 +306,29 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_study \
 ```
 
 On the benchmark fixture suite, the recorded model trace set passes final-answer-only scoring on 64/64 tasks while deterministic validators pass 32/64 and catch 32 silent failures. This is fixture-backed evidence, not a live-provider benchmark.
+
+## Recorded Model Matrix
+
+The recorded model matrix runner lives in `sandboxed_agent_eval_harness.evaluation.model_matrix`.
+
+It compares fixture-safe behavior profiles from `fixtures/model_outputs/model_matrix.json`:
+
+- `recorded-good-fixture-v1`
+- `recorded-overconfident-fixture-v1`
+- `recorded-tool-sloppy-fixture-v1`
+- `recorded-citation-sloppy-fixture-v1`
+- `recorded-state-sloppy-fixture-v1`
+
+Model matrix command:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_matrix \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/model_matrix.json \
+  --output-dir artifacts/eval_runs/model_matrix
+```
+
+The command writes `model_matrix_summary.json`, `model_comparison_report.md`, `silent_failure_by_model.csv`, the raw runner `summary.json`, and standard report artifacts. The default matrix is recorded and offline; it makes no live provider calls and should not be described as a public live-model benchmark.
 
 ## Report And Regression View
 

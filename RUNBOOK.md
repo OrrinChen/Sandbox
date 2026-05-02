@@ -104,6 +104,21 @@ print(study["root_cause_breakdown"]["executive_summary"])
 PY
 ```
 
+Recorded model matrix:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_matrix \
+  --suite benchmark \
+  --recorded-output fixtures/model_outputs/model_matrix.json \
+  --output-dir /tmp/sandboxed-agent-eval-model-matrix
+```
+
+Expected output includes:
+
+```text
+models=5 run_count=320 distinct_signatures=5 max_validator_gap=1.000
+```
+
 GitHub Actions:
 
 ```text

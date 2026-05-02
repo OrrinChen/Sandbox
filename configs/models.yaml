@@ -6,6 +6,17 @@ models:
     fixture: fixtures/model_outputs/silent_failure_study.json
     default_enabled: true
     network_required: false
+  - id: recorded_model_matrix
+    type: recorded_matrix
+    fixture: fixtures/model_outputs/model_matrix.json
+    default_enabled: true
+    network_required: false
+    profiles:
+      - recorded-good-fixture-v1
+      - recorded-overconfident-fixture-v1
+      - recorded-tool-sloppy-fixture-v1
+      - recorded-citation-sloppy-fixture-v1
+      - recorded-state-sloppy-fixture-v1
   - id: openai_responses
     type: live_optional
     endpoint: https://api.openai.com/v1/responses

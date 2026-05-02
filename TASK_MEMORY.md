@@ -6,16 +6,16 @@ Current branch:
 `codex/ashare-radar-phase1a`
 
 Latest commit:
-Phase 18 failure taxonomy v2 and root-cause report. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Phase 19 recorded model matrix. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
 
 Current phase:
-Phase 19 recorded model matrix is next.
+Phase 20 credentials-gated live provider workflow is next if following the full optional hardening path. Phase 23 portfolio report is the next required portfolio-readiness phase if skipping optional hardening.
 
 Main blocker:
 No implementation blocker. The benchmark suite is fixture-backed and default validation remains credential-free.
 
 Next recommended action:
-Start Phase 19 by adding recorded model behavior profiles and comparing their failure signatures without live network calls.
+Choose whether to continue with optional Phase 20 live-provider workflow or jump to Phase 23 public portfolio report. Do not add live-provider behavior unless it is credentials-gated and skipped by default.
 
 ## Current State
 
@@ -523,7 +523,7 @@ Validation:
 
 Known limitations:
 - The benchmark suite is deterministic and fixture-backed; it is not a live-provider or third-party public benchmark.
-- The recorded benchmark study still uses one recorded model profile; Phase 19 is needed for model-matrix comparison.
+- The original recorded benchmark study uses one recorded model profile; Phase 19 adds a separate recorded model matrix for multiple behavior signatures.
 - The expanded suite reuses current executable fixture tools instead of adding new tool families.
 
 ### Phase 18: Failure Taxonomy v2 and Root-Cause Report
@@ -552,7 +552,32 @@ Validation:
 Known limitations:
 - Root-cause categories are deterministic mappings from validators and traces; they are not subjective natural-language explanations.
 - Tool-level breakdowns attribute a failed run to tools present in the trace, which is useful for debugging but not a causal proof for every tool in a multi-tool trace.
-- Model-profile comparison is still deferred to Phase 19.
+- Model-profile comparison is handled by the Phase 19 recorded matrix; portfolio packaging remains deferred to Phase 23.
+
+### Phase 19: Recorded Model Matrix
+
+Commit:
+Included in the Phase 19 recorded model matrix commit. The exact commit hash is reported by git after commit; it is not embedded here because this file participates in that commit.
+
+What changed:
+- Added `sandboxed_agent_eval_harness.evaluation.model_matrix`.
+- Added offline recorded matrix fixture `fixtures/model_outputs/model_matrix.json`.
+- Added five fixture-safe model behavior profiles: good, overconfident, tool sloppy, citation sloppy, and state sloppy.
+- Added matrix artifact generation for `model_matrix_summary.json`, `model_comparison_report.md`, and `silent_failure_by_model.csv`.
+- Reused the existing evaluation runner, deterministic validators, and root-cause report surface.
+- Added model-matrix tests that verify profile coverage, artifact generation, CSV fields, markdown output, sorting, and distinct failure signatures.
+- Updated `configs/models.yaml`, `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
+
+Validation:
+- Initial TDD red run failed because `sandboxed_agent_eval_harness.evaluation.model_matrix` did not exist.
+- Focused Phase 19 tests passed before commit and are recorded in the validation log.
+- The benchmark recorded model matrix produced 5 models, 320 runs, 5 distinct failure signatures, and max validator gap 1.000.
+- Full validation was run before commit and recorded in the validation log.
+
+Known limitations:
+- The model matrix uses controlled recorded behavior profiles, not live provider outputs.
+- The profiles are designed to exercise failure signatures and should not be described as claims about specific public model providers.
+- Portfolio-ready narrative and case-study packaging remain deferred to Phase 23 and Phase 24.
 
 ## Validation Log
 
@@ -1024,6 +1049,26 @@ Results:
 - `make ci` passed on the default smoke reproducibility path.
 - Whitespace check passed.
 
+Commands run for Phase 19:
+
+```bash
+PYTHONPATH=src python3 -m pytest tests/test_phase19_model_matrix.py -v
+python3 -m pytest tests/test_phase19_model_matrix.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.model_matrix --suite benchmark --recorded-output fixtures/model_outputs/model_matrix.json --output-dir /tmp/sandboxed-agent-eval-model-matrix
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Results:
+- The first Phase 19 red run failed because `sandboxed_agent_eval_harness.evaluation.model_matrix` did not exist.
+- Focused Phase 19 model matrix tests passed: 3 tests.
+- Benchmark model matrix CLI passed and printed `models=5 run_count=320 distinct_signatures=5 max_validator_gap=1.000`.
+- The generated matrix summary reported final-answer-only grading overestimated validated correctness by 56.2 percentage points and deterministic validators caught 180 silent failures.
+- Final full pytest run passed: 102 tests.
+- `make ci` passed on the default smoke reproducibility path.
+- Whitespace check passed.
+
 ## Important Decisions
 
 - Decision: This project is eval infrastructure, not an agent product.
@@ -1064,9 +1109,9 @@ Results:
   Impact: They exercise the harness, validators, traces, and metrics, while the recorded model fixture demonstrates model-style failures without being a live provider benchmark.
   Planned fix: Add credentials-gated live provider experiments and keep recorded transcripts for reproducible replay.
 
-- Limitation: The recorded model study still has one model profile.
-  Impact: The benchmark fixture and root-cause report demonstrate silent failures at 64-task scale, but they do not yet distinguish multiple model behavior signatures.
-  Planned fix: Add the Phase 19 recorded model matrix.
+- Limitation: The recorded model matrix uses controlled behavior profiles rather than live provider transcripts.
+  Impact: It demonstrates that the harness can distinguish failure signatures across model-like outputs, but it is not a live-provider benchmark.
+  Planned fix: Add credentials-gated live provider workflow only in Phase 20, then convert live runs into recorded fixtures for reproducible replay.
 
 - Limitation: Fixture-backed executor covers only the current default tools.
   Impact: New domains beyond the current finance, data, coding, and optimization fixtures still need executable adapters before they can be evaluated end to end.
@@ -1098,11 +1143,11 @@ Results:
 
 - Limitation: Root-cause categories are deterministic mappings from validator failures and trace metadata.
   Impact: They make reports auditable and reproducible, but they do not claim subjective causal explanation beyond what validators and traces show.
-  Planned fix: Keep explanations deterministic; add richer model-profile comparisons in Phase 19.
+  Planned fix: Keep explanations deterministic; package the most useful model-matrix failures into portfolio case studies in Phase 23.
 
 - Limitation: The benchmark suite reuses a compact set of local fixture files.
   Impact: It broadens failure-taxonomy and replay coverage without adding external data complexity, but it is not a replacement for live or third-party benchmark datasets.
-  Planned fix: Keep Phase 19 focused on model-profile comparison before considering optional live runs.
+  Planned fix: Keep claims precise; optional live runs remain credentials-gated and outside default validation.
 
 ## Failure Modes to Watch
 
@@ -1117,7 +1162,7 @@ Results:
 
 ## Next Steps
 
-1. Start Phase 19: recorded model matrix.
-2. Keep model profiles fixture-backed and network-free.
-3. Do not add live provider workflow until Phase 20.
+1. Decide whether to run optional Phase 20 live-provider workflow next or jump to required Phase 23 portfolio report.
+2. Keep any live workflow credentials-gated, skipped by default, and convertible into recorded fixtures.
+3. Package recorded model matrix evidence into recruiter-readable artifacts in Phase 23.
 4. Do not build dashboard or web app features before the Phase 24 portfolio freeze.

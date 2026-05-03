@@ -1,5 +1,15 @@
 # Sandboxed Tool-Use Agent Evaluation Harness
 
+Final-answer-only grading can report a clean pass while deterministic validators expose hidden tool-use failures.
+
+```text
+64 deterministic tasks
+5 recorded model behavior profiles
+320 recorded model runs
+5 distinct failure signatures
+CI-backed replay and regression gates
+```
+
 Evaluation infrastructure for tool-using agents. The project is not an agent product; it measures whether a tool-use run is actually correct when the final answer looks plausible.
 
 ## Problem
@@ -104,7 +114,7 @@ Default validation is credential-free and network-free. Live provider runs are o
 
 Resume bullet:
 
-> Built a replayable LLM tool-use evaluation harness with typed tools, workspace/container evaluation isolation, deterministic validators, JSONL trace replay, regression gates, and CI-backed reports; recorded offline studies over 64 fixture-backed tasks and 5 model profiles showed final-answer-only grading overstated validated correctness by 56.2 points, exposing 180 silent failures in tool choice, arguments, state mutation, numeric outputs, citations, and constraints.
+> Built a replayable LLM tool-use evaluation harness with typed tool specs, workspace/container-backed evaluation isolation, deterministic validators, JSONL trace replay, root-cause failure reports, and CI regression gates; offline recorded model-matrix studies over 64 deterministic tasks exposed distinct silent-failure signatures hidden by final-answer-only grading.
 
 ## Limitations
 

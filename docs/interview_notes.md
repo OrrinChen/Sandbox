@@ -20,7 +20,7 @@ The evidence uses 64 fixture-backed benchmark tasks and 5 recorded offline model
 
 ## Resume bullet
 
-Built a replayable LLM tool-use evaluation harness with typed tools, workspace/container evaluation isolation, deterministic validators, JSONL trace replay, regression gates, and CI-backed reports; recorded offline studies over 64 fixture-backed tasks and 5 model profiles showed Final-answer-only grading overstated validated correctness by 56.2 percentage points, exposing 180 silent failures in tool choice, arguments, state mutation, numeric outputs, citations, and constraints.
+Built a replayable LLM tool-use evaluation harness with typed tool specs, workspace/container-backed evaluation isolation, deterministic validators, JSONL trace replay, root-cause failure reports, and CI regression gates; offline recorded model-matrix studies over 64 deterministic tasks exposed distinct silent-failure signatures hidden by final-answer-only grading.
 
 ## Interview Risks And Answers
 

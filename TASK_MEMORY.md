@@ -3,10 +3,10 @@
 ## Latest Status
 
 Current branch:
-`codex/ashare-radar-phase1a`
+`codex/sandboxed-agent-eval-freeze`
 
-Latest commit:
-Phase 24 README, resume, and interview polish freeze. Use `git log -1 -- sandboxed-agent-eval-harness` for the exact commit hash after the phase commit is created.
+Latest frozen phase commit:
+`158ced7 docs: polish portfolio narrative and freeze roadmap`
 
 Current phase:
 Maintenance only. Roadmap is frozen after Phase 24.

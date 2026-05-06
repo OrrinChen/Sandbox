@@ -29,8 +29,11 @@ def test_readme_is_reviewer_friendly_and_claims_are_precise():
     assert "180 silent failures" in first_screen
     assert "64 tasks" in first_screen
     assert "6 domains" in first_screen
+    assert "10 deterministic validators" in first_screen
+    assert "7 failure categories" in first_screen
     assert "320 runs" in first_screen
     assert "5 recorded profiles" in first_screen
+    assert "recorded behavior profiles, not a real-time model benchmark" in first_screen
     assert "## Final-answer Grading vs Deterministic Tool-use Validation" in readme
     assert "Plausible final answer" in readme
     assert "tool choice, arguments, state, numbers, citations, constraints, replay" in readme

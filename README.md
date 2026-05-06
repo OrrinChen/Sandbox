@@ -3,7 +3,7 @@
 [![CI](https://github.com/OrrinChen/Sandbox/actions/workflows/sandboxed-agent-eval-harness-ci.yml/badge.svg)](https://github.com/OrrinChen/Sandbox/actions/workflows/sandboxed-agent-eval-harness-ci.yml)
 ![Evidence](https://img.shields.io/badge/evidence-offline_recorded%20%7C%20fixture--backed%20%7C%20no_live_API_by_default-blue)
 
-Final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures.
+**Final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures.**
 
 Evidence: offline recorded, fixture-backed, no live API by default.
 
@@ -13,8 +13,12 @@ Evidence: offline recorded, fixture-backed, no live API by default.
 | Silent failures | 180 silent failures |
 | Benchmark size | 64 tasks |
 | Domains | 6 domains |
+| Validators | 10 deterministic validators |
+| Failure taxonomy | 7 failure categories |
 | Recorded runs | 320 runs |
 | Model profiles | 5 recorded profiles |
+
+The model profiles are recorded behavior profiles, not a real-time model benchmark.
 
 Evaluation infrastructure for tool-using agents. The project is not an agent product; it measures whether a tool-use run is actually correct when the final answer looks plausible.
 

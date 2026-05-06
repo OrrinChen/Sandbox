@@ -25,6 +25,9 @@ Verification:
 - `make reproduce-report` passed and printed the expected 56.2 percentage point validator gap, 180 silent failures, and 320 recorded offline runs.
 - `make ci` passed with 126 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
 
+Follow-up maintenance update:
+The README first-screen benchmark card now includes validators and failure categories, keeps the 56.2 percentage point overestimate and 180 silent failures as the top result, and states that recorded model profiles are offline behavior profiles rather than a real-time model benchmark.
+
 ## Current State
 
 Project folder:

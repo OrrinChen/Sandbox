@@ -20,7 +20,7 @@ The evidence uses 64 fixture-backed benchmark tasks and 5 recorded offline model
 
 ## Resume bullet
 
-Built a replayable LLM tool-use evaluation harness with typed tool specs, workspace/container-backed evaluation isolation, deterministic validators, JSONL trace replay, root-cause failure reports, and CI regression gates; offline recorded model-matrix studies over 64 deterministic tasks exposed distinct silent-failure signatures hidden by final-answer-only grading.
+Built a deterministic LLM tool-use eval harness exposing 180 silent failures missed by final-answer grading, with typed tool specs, workspace/container-backed evaluation isolation, JSONL trace replay, root-cause failure reports, and CI regression gates over 64 fixture-backed tasks and 320 recorded offline runs.
 
 ## Interview Risks And Answers
 

@@ -17,6 +17,14 @@ No implementation blocker. The benchmark suite is fixture-backed and default val
 Next recommended action:
 Maintain, fix bugs, refresh recorded evidence when needed, and keep claims tied to fixture-backed deterministic or recorded-offline evidence.
 
+Latest maintenance update:
+Phase 24 remains frozen. The S-level packaging polish improves the README first screen, adds a replayable failure walkthrough, and adds `make reproduce-report` without adding a new roadmap phase or changing the project from eval infrastructure into an agent product.
+
+Verification:
+- `python3 -m pytest tests/test_phase24_portfolio_freeze.py -v` passed with 4 tests.
+- `make reproduce-report` passed and printed the expected 56.2 percentage point validator gap, 180 silent failures, and 320 recorded offline runs.
+- `make ci` passed with 126 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
+
 ## Current State
 
 Project folder:

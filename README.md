@@ -1,14 +1,20 @@
 # Sandboxed Tool-Use Agent Evaluation Harness
 
-Final-answer-only grading can report a clean pass while deterministic validators expose hidden tool-use failures.
+[![CI](https://github.com/OrrinChen/Sandbox/actions/workflows/sandboxed-agent-eval-harness-ci.yml/badge.svg)](https://github.com/OrrinChen/Sandbox/actions/workflows/sandboxed-agent-eval-harness-ci.yml)
+![Evidence](https://img.shields.io/badge/evidence-offline_recorded%20%7C%20fixture--backed%20%7C%20no_live_API_by_default-blue)
 
-```text
-64 deterministic tasks
-5 recorded model behavior profiles
-320 recorded model runs
-5 distinct failure signatures
-CI-backed replay and regression gates
-```
+Final-answer-only grading overestimated validated correctness by 56.2 percentage points; deterministic validators caught 180 silent failures.
+
+Evidence: offline recorded, fixture-backed, no live API by default.
+
+| Signal | Value |
+| --- | ---: |
+| Validator gap | 56.2pp validator gap |
+| Silent failures | 180 silent failures |
+| Benchmark size | 64 tasks |
+| Domains | 6 domains |
+| Recorded runs | 320 runs |
+| Model profiles | 5 recorded profiles |
 
 Evaluation infrastructure for tool-using agents. The project is not an agent product; it measures whether a tool-use run is actually correct when the final answer looks plausible.
 
@@ -17,6 +23,13 @@ Evaluation infrastructure for tool-using agents. The project is not an agent pro
 Final-answer-only grading misses silent failures: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, constraint violations, non-replayable traces, timeouts, and cost regressions.
 
 This harness makes those failures visible with typed tools, isolated fixture execution, JSONL traces, deterministic validators, replay, regression gates, and static evidence reports.
+
+## Final-answer Grading vs Deterministic Tool-use Validation
+
+| Evaluation mode | What it can see | What it misses |
+| --- | --- | --- |
+| Final-answer grading | Plausible final answer | tool choice, arguments, state, numbers, citations, constraints, replay |
+| Deterministic tool-use validation | tool choice, arguments, state, numbers, citations, constraints, replay | Broader semantic judgment outside the fixture-backed task oracle |
 
 ## Architecture
 
@@ -45,9 +58,8 @@ Docker support is evaluation isolation and reproducibility support, not a securi
 ## Quickstart
 
 ```bash
-python3 -m pytest
+make reproduce-report
 make ci
-make portfolio-report
 ```
 
 Useful outputs:
@@ -107,6 +119,7 @@ Default validation is credential-free and network-free. Live provider runs are o
 ## Portfolio Materials
 
 - Public report: `reports/portfolio_report.md`
+- Replay walkthrough: `docs/replayable_failure_walkthrough.md`
 - Architecture notes: `docs/architecture.md`
 - Interview notes: `docs/interview_notes.md`
 - Limitations: `docs/limitations.md`

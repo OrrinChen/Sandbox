@@ -623,6 +623,8 @@ test -s docs/interview_notes.md
 test -s docs/architecture.md
 test -s docs/limitations.md
 test -s docs/failure_case_studies.md
+test -s docs/replayable_failure_walkthrough.md
+make reproduce-report
 make portfolio-report
 make ci
 git diff --check -- .
@@ -632,7 +634,8 @@ Expected result:
 - README has Problem, Architecture, Quickstart, Key Result, Reproducibility, and Limitations.
 - README is short enough for a 3-minute reviewer pass.
 - `docs/interview_notes.md` includes the final resume bullet with numbers.
-- `docs/architecture.md`, `docs/limitations.md`, and `docs/failure_case_studies.md` are present.
+- `docs/architecture.md`, `docs/limitations.md`, `docs/failure_case_studies.md`, and `docs/replayable_failure_walkthrough.md` are present.
+- `make reproduce-report` regenerates the recorded offline portfolio evidence and prints the expected 56.2 percentage point validator gap, 180 silent failures, and 320 recorded offline runs.
 - Roadmap status is frozen after Phase 24.
 - Claims avoid security and live-benchmark overstatement.
 

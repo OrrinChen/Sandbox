@@ -40,6 +40,7 @@ Full reproducibility validation:
 
 ```bash
 make validate-config
+make reproduce-report
 make ci
 git diff --check -- .
 ```
@@ -215,12 +216,16 @@ This checks the project-owned tool, validator, task-suite, and eval-run configs 
 Public portfolio report:
 
 ```bash
+make reproduce-report
 make portfolio-report
 ```
 
 Expected output includes:
 
 ```text
+Final-answer-only grading overestimated validated correctness by 56.2 percentage points
+180 silent failures
+320 recorded offline runs
 portfolio_report=reports/portfolio_report.md case_studies=3 models=5
 ```
 
@@ -241,6 +246,7 @@ Phase 24 freeze check:
 
 ```bash
 python3 -m pytest tests/test_phase24_portfolio_freeze.py -v
+make reproduce-report
 make portfolio-report
 make ci
 git diff --check -- .

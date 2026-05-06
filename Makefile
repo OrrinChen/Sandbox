@@ -8,7 +8,7 @@ REPLAY_WORKSPACE ?= /tmp/sandboxed-agent-eval-gates-replay
 PORTFOLIO_REPORT_DIR ?= reports
 PORTFOLIO_EVIDENCE_DIR ?= $(ARTIFACT_DIR)/eval_runs/portfolio_model_matrix
 
-.PHONY: test smoke gate model-study report validate-config portfolio-report ci
+.PHONY: test smoke gate model-study report validate-config portfolio-report reproduce-report ci
 
 test:
 	$(PYTHON) -m pytest
@@ -44,5 +44,12 @@ portfolio-report:
 	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.evaluation.portfolio \
 		--output-dir $(PORTFOLIO_REPORT_DIR) \
 		--evidence-dir $(PORTFOLIO_EVIDENCE_DIR)
+
+reproduce-report: validate-config portfolio-report
+	@echo "Expected output:"
+	@echo "Final-answer-only grading overestimated validated correctness by 56.2 percentage points"
+	@echo "180 silent failures"
+	@echo "320 recorded offline runs"
+	@echo "reports/portfolio_report.md"
 
 ci: test validate-config smoke gate model-study report

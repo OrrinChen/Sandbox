@@ -28,6 +28,15 @@ Verification:
 Follow-up maintenance update:
 The README first-screen benchmark card now includes validators and failure categories, keeps the 56.2 percentage point overestimate and 180 silent failures as the top result, and states that recorded model profiles are offline behavior profiles rather than a real-time model benchmark.
 
+Optional integration update:
+Added a LangChain/LangGraph/LangSmith adapter layer as optional AI infra integration, not a new roadmap phase. The layer keeps default validation credential-free and network-free: LangChain wraps fixture-backed tools, LangGraph-style runs emit graph node trace events and local checkpoints, and LangSmith writes local exports unless upload is explicitly requested with credentials.
+
+Optional integration verification:
+- `python3 -m pytest tests/test_optional_integrations.py -v` passed with 5 tests.
+- `make optional-integrations-smoke` passed and wrote local LangChain descriptors, LangGraph trace/checkpoint artifacts, and a LangSmith local export with `upload=disabled`.
+- `python3 -m pytest` passed with 131 tests.
+- `make ci` passed with 131 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
+
 ## Current State
 
 Project folder:

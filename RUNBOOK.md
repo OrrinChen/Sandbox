@@ -41,6 +41,7 @@ Full reproducibility validation:
 ```bash
 make validate-config
 make reproduce-report
+make optional-integrations-smoke
 make ci
 git diff --check -- .
 ```
@@ -241,6 +242,24 @@ reports/examples/replayable_failure_*.md
 ```
 
 The report uses recorded offline model profiles and fixture-backed benchmark tasks. It is not a live-provider benchmark and does not require API keys.
+
+Optional integration smoke:
+
+```bash
+pip install -e ".[ai-integrations]"
+make optional-integrations-smoke
+```
+
+Expected output includes:
+
+```text
+langchain_tools=7
+langgraph_trace=artifacts/integrations/langgraph/traces/...
+langsmith_export=artifacts/integrations/langsmith/local_trace_export.jsonl
+upload=disabled
+```
+
+The target is credential-free and network-free by default. LangSmith upload must remain explicit and must not be added to `make ci`.
 
 Phase 24 freeze check:
 

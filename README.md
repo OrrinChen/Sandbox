@@ -105,6 +105,7 @@ Failure categories caught include tool selection errors, state mutation errors, 
 
 ```bash
 make validate-config
+make optional-integrations-smoke
 make ci
 make portfolio-report
 ```
@@ -119,6 +120,19 @@ make portfolio-report
 - report generation
 
 Default validation is credential-free and network-free. Live provider runs are opt-in only and require explicit `--live` plus credentials.
+
+## Optional Integrations
+
+The LangChain, LangGraph, and LangSmith layer is optional adapter infrastructure. It does not replace the harness runner, recorded benchmark evidence, replay gates, or deterministic validators.
+
+```bash
+pip install -e ".[ai-integrations]"
+make optional-integrations-smoke
+```
+
+- LangChain: wraps fixture-backed harness tools as adapter tools while preserving JSONL trace events.
+- LangGraph: maps `plan -> tool_call -> tool_result -> validate -> retry_or_finish` transitions into trace events and local checkpoints.
+- LangSmith: writes a local export by default; upload requires explicit opt-in credentials and is excluded from default CI.
 
 ## Portfolio Materials
 

@@ -94,6 +94,17 @@ class TraceLogger:
     def log_error(self, error_type: str, message: str, metadata: Optional[Mapping[str, Any]] = None) -> TraceEvent:
         return self._append("error_event", {"error_type": error_type, "message": message}, metadata=metadata)
 
+    def log_graph_node(
+        self,
+        node: str,
+        payload: Optional[Mapping[str, Any]] = None,
+        metadata: Optional[Mapping[str, Any]] = None,
+    ) -> TraceEvent:
+        event_payload = {"node": node}
+        if payload:
+            event_payload.update(dict(payload))
+        return self._append("graph_node", event_payload, metadata=metadata)
+
     def _append(
         self,
         event_type: str,

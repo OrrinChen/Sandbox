@@ -7,8 +7,9 @@ REPORT_DIR ?= $(ARTIFACT_DIR)/reports/smoke
 REPLAY_WORKSPACE ?= /tmp/sandboxed-agent-eval-gates-replay
 PORTFOLIO_REPORT_DIR ?= reports
 PORTFOLIO_EVIDENCE_DIR ?= $(ARTIFACT_DIR)/eval_runs/portfolio_model_matrix
+INTEGRATIONS_DIR ?= $(ARTIFACT_DIR)/integrations
 
-.PHONY: test smoke gate model-study report validate-config portfolio-report reproduce-report ci
+.PHONY: test smoke gate model-study report validate-config portfolio-report reproduce-report optional-integrations-smoke ci
 
 test:
 	$(PYTHON) -m pytest
@@ -51,5 +52,9 @@ reproduce-report: validate-config portfolio-report
 	@echo "180 silent failures"
 	@echo "320 recorded offline runs"
 	@echo "reports/portfolio_report.md"
+
+optional-integrations-smoke:
+	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.integrations.smoke \
+		--output-dir $(INTEGRATIONS_DIR)
 
 ci: test validate-config smoke gate model-study report

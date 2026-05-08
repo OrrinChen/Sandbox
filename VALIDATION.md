@@ -658,6 +658,25 @@ Expected result:
 - GitHub Actions workflow does not reference live API credentials or `--live`.
 - Artifacts are generated under ignored `artifacts/`.
 
+## Optional Integration Validation
+
+Run after changing LangChain, LangGraph, or LangSmith adapters:
+
+```bash
+python3 -m pytest tests/test_optional_integrations.py -v
+make optional-integrations-smoke
+python3 -m pytest
+make ci
+git diff --check -- .
+```
+
+Expected result:
+- Optional dependency guards fail with a clear `.[ai-integrations]` install hint.
+- LangChain adapter maps fixture-backed harness tools into tool descriptors and JSONL tool traces.
+- LangGraph runner emits graph node transitions and deterministic validator results.
+- LangSmith exporter writes local JSONL export by default and does not upload without explicit opt-in credentials.
+- `make optional-integrations-smoke` remains outside `make ci`.
+
 ## Before Commit
 
 Always run:

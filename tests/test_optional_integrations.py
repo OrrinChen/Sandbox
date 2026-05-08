@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import sys
+from types import ModuleType
 
 import pytest
 
@@ -66,6 +68,7 @@ def test_langgraph_runner_emits_node_transition_trace_and_validators(tmp_path):
 
     assert result.passed is True
     assert result.backend == "local"
+    assert result.metrics["stategraph_compiled"] is False
     assert result.checkpoint_path.is_file()
     events = load_trace_events(result.trace_path)
     graph_nodes = [
@@ -75,7 +78,71 @@ def test_langgraph_runner_emits_node_transition_trace_and_validators(tmp_path):
     ]
     assert graph_nodes == ["plan", "tool_call", "tool_result", "validate", "retry_or_finish"]
     assert any(event.event_type == "validator_result" for event in events)
-    assert all(event.metadata.get("integration") == "langgraph" for event in events)
+    assert all(event.metadata.get("integration") == "langgraph_style" for event in events)
+
+
+def test_langgraph_backend_requires_optional_dependency_when_missing(tmp_path):
+    from sandboxed_agent_eval_harness.integrations.common import IntegrationUnavailableError
+    from sandboxed_agent_eval_harness.integrations.langgraph_runner import LangGraphRunner
+
+    task = default_task_suite().tasks[0]
+    with pytest.raises(IntegrationUnavailableError) as exc_info:
+        LangGraphRunner(backend="langgraph").run(
+            task=task,
+            baseline=OracleToolSelectionAgent(),
+            output_dir=tmp_path / "langgraph",
+        )
+
+    assert "langgraph.graph" in str(exc_info.value)
+    assert ".[ai-integrations]" in str(exc_info.value)
+
+
+def test_langgraph_backend_builds_compiled_stategraph_with_thread_checkpoint(tmp_path, monkeypatch):
+    from sandboxed_agent_eval_harness.integrations.langgraph_runner import LangGraphRunner
+
+    fake_graph = _FakeLangGraphModule()
+    fake_memory = _FakeLangGraphMemoryModule()
+    monkeypatch.setitem(sys.modules, "langgraph", ModuleType("langgraph"))
+    monkeypatch.setitem(sys.modules, "langgraph.graph", fake_graph)
+    monkeypatch.setitem(sys.modules, "langgraph.checkpoint", ModuleType("langgraph.checkpoint"))
+    monkeypatch.setitem(sys.modules, "langgraph.checkpoint.memory", fake_memory)
+
+    task = default_task_suite().tasks[0]
+    result = LangGraphRunner(backend="langgraph").run(
+        task=task,
+        baseline=OracleToolSelectionAgent(),
+        output_dir=tmp_path / "compiled-langgraph",
+    )
+
+    assert result.passed is True
+    assert result.backend == "langgraph"
+    assert result.metrics["stategraph_compiled"] is True
+    assert result.metrics["thread_id"] == result.run_id
+    assert result.metrics["state_history_count"] == 5
+    assert fake_graph.created_graphs
+    builder = fake_graph.created_graphs[0]
+    assert builder.state_schema_name == "HarnessGraphState"
+    assert set(builder.nodes) == {"plan", "tool_call", "tool_result", "validate", "retry_or_finish"}
+    assert ("START", "plan") in builder.edges
+    assert ("plan", "tool_call") in builder.edges
+    assert ("tool_call", "tool_result") in builder.edges
+    assert ("tool_result", "validate") in builder.edges
+    assert ("validate", "retry_or_finish") in builder.edges
+    assert builder.conditional_edges["retry_or_finish"]["path_map"] == {"finish": "END"}
+    assert builder.compiled_with_checkpointer is fake_memory.created_savers[0]
+    assert builder.compiled_graph.invoke_config == {"configurable": {"thread_id": result.run_id}}
+    checkpoint = json.loads(result.checkpoint_path.read_text())
+    assert checkpoint["stategraph_compiled"] is True
+    assert checkpoint["state_history_count"] == 5
+    events = load_trace_events(result.trace_path)
+    assert any(event.metadata.get("stategraph_compiled") is True for event in events)
+    assert [event.payload["node"] for event in events if event.event_type == "graph_node"] == [
+        "plan",
+        "tool_call",
+        "tool_result",
+        "validate",
+        "retry_or_finish",
+    ]
 
 
 def test_langsmith_exporter_writes_local_export_and_does_not_upload_by_default(tmp_path, monkeypatch):
@@ -117,3 +184,68 @@ def test_optional_integration_makefile_and_extras_are_not_default_ci():
     assert "langchain" in pyproject
     assert "langgraph" in pyproject
     assert "langsmith" in pyproject
+
+
+class _FakeLangGraphModule(ModuleType):
+    START = "START"
+    END = "END"
+
+    def __init__(self) -> None:
+        super().__init__("langgraph.graph")
+        self.created_graphs = []
+
+    def StateGraph(self, state_schema):
+        graph = _FakeStateGraph(state_schema)
+        self.created_graphs.append(graph)
+        return graph
+
+
+class _FakeStateGraph:
+    def __init__(self, state_schema) -> None:
+        self.state_schema_name = state_schema.__name__
+        self.nodes = {}
+        self.edges = []
+        self.conditional_edges = {}
+        self.compiled_with_checkpointer = None
+        self.compiled_graph = None
+
+    def add_node(self, name, func):
+        self.nodes[name] = func
+
+    def add_edge(self, source, target):
+        self.edges.append((source, target))
+
+    def add_conditional_edges(self, source, path, path_map):
+        self.conditional_edges[source] = {"path": path, "path_map": dict(path_map)}
+
+    def compile(self, checkpointer=None):
+        self.compiled_with_checkpointer = checkpointer
+        self.compiled_graph = _FakeCompiledGraph(self)
+        return self.compiled_graph
+
+
+class _FakeCompiledGraph:
+    def __init__(self, builder) -> None:
+        self.builder = builder
+        self.invoke_config = None
+
+    def invoke(self, state, config=None):
+        self.invoke_config = config
+        current = dict(state)
+        for node in ["plan", "tool_call", "tool_result", "validate", "retry_or_finish"]:
+            current.update(self.builder.nodes[node](current))
+        return current
+
+    def get_state_history(self, config):
+        return list(range(5))
+
+
+class _FakeLangGraphMemoryModule(ModuleType):
+    def __init__(self) -> None:
+        super().__init__("langgraph.checkpoint.memory")
+        self.created_savers = []
+
+    def InMemorySaver(self):
+        saver = object()
+        self.created_savers.append(saver)
+        return saver

@@ -261,6 +261,24 @@ upload=disabled
 
 The target is credential-free and network-free by default. LangSmith upload must remain explicit and must not be added to `make ci`.
 
+Manual compiled LangGraph workflow check after installing optional dependencies:
+
+```bash
+PYTHONPATH=src python3 - <<'PY'
+from sandboxed_agent_eval_harness.agents import OracleToolSelectionAgent
+from sandboxed_agent_eval_harness.integrations import LangGraphRunner
+from sandboxed_agent_eval_harness.tasks import default_task_suite
+
+task = default_task_suite().tasks[0]
+result = LangGraphRunner(backend="langgraph").run(
+    task=task,
+    baseline=OracleToolSelectionAgent(),
+    output_dir="artifacts/integrations/langgraph-compiled",
+)
+print(result.metrics["stategraph_compiled"], result.metrics["state_history_count"])
+PY
+```
+
 Phase 24 freeze check:
 
 ```bash

@@ -131,7 +131,7 @@ make optional-integrations-smoke
 ```
 
 - LangChain: wraps fixture-backed harness tools as adapter tools while preserving JSONL trace events.
-- LangGraph: maps `plan -> tool_call -> tool_result -> validate -> retry_or_finish` transitions into trace events and local checkpoints.
+- LangGraph: `backend="local"` maps `plan -> tool_call -> tool_result -> validate -> retry_or_finish` transitions into trace events; `backend="langgraph"` compiles a real optional `StateGraph` workflow with `InMemorySaver` checkpointing when LangGraph is installed.
 - LangSmith: writes a local export by default; upload requires explicit opt-in credentials and is excluded from default CI.
 
 ## Portfolio Materials

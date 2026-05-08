@@ -37,6 +37,15 @@ Optional integration verification:
 - `python3 -m pytest` passed with 131 tests.
 - `make ci` passed with 131 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
 
+Compiled LangGraph workflow update:
+`LangGraphRunner(backend="langgraph")` now builds a real compiled `StateGraph` with `InMemorySaver` checkpointing when optional LangGraph dependencies are installed. The default `local` backend remains dependency-free and `make ci` still avoids optional framework imports.
+
+Compiled LangGraph workflow verification:
+- `python3 -m pytest tests/test_optional_integrations.py -v` passed with 7 tests, including a fake LangGraph module check proving `StateGraph`, `compile(checkpointer=...)`, and `invoke(config={"configurable": {"thread_id": ...}})` are used.
+- `make optional-integrations-smoke` passed with the default local backend and `upload=disabled`.
+- `python3 -m pytest` passed with 133 tests.
+- `make ci` passed with 133 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
+
 ## Current State
 
 Project folder:

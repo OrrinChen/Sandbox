@@ -291,6 +291,19 @@ git diff --check -- .
 
 After Phase 24, do not add new roadmap phases, dashboard products, generic agent runtime features, or unrelated finance ingestion work. Future changes should be maintenance, bug fixes, refreshed recorded evidence, or documentation polish.
 
+Optional MCP adapter smoke:
+
+```bash
+python3 -m pytest tests/test_mcp_integration.py -v
+make optional-integrations-smoke
+```
+
+Expected output includes:
+
+```text
+mcp_fixture_trace=artifacts/integrations/mcp/fixture_tool_trace.jsonl
+```
+
 GitHub Actions:
 
 ```text

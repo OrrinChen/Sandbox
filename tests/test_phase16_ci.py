@@ -2,7 +2,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO_ROOT = ROOT.parent
 
 
 def test_makefile_declares_reproducibility_targets():
@@ -21,13 +20,14 @@ def test_makefile_declares_reproducibility_targets():
 
 
 def test_github_actions_ci_uses_project_working_directory_and_no_live_credentials():
-    workflow = (REPO_ROOT / ".github" / "workflows" / "sandboxed-agent-eval-harness-ci.yml").read_text()
+    workflow = (ROOT / ".github" / "workflows" / "sandboxed-agent-eval-harness-ci.yml").read_text()
 
-    assert "working-directory: sandboxed-agent-eval-harness" in workflow
+    assert "working-directory: sandboxed-agent-eval-harness" not in workflow
     assert "make ci" in workflow
     assert "actions/checkout@" in workflow
     assert "actions/setup-python@" in workflow
     assert "upload-artifact" in workflow
+    assert "path: artifacts/" in workflow
     assert "OPENAI_API_KEY" not in workflow
     assert "--live" not in workflow
 

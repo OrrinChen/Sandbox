@@ -123,7 +123,7 @@ Default validation is credential-free and network-free. Live provider runs are o
 
 ## Optional Integrations
 
-The LangChain, LangGraph, and LangSmith layer is optional adapter infrastructure. It does not replace the harness runner, recorded benchmark evidence, replay gates, or deterministic validators.
+The LangChain, LangGraph, LangSmith, and MCP layer is optional adapter infrastructure. It does not replace the harness runner, recorded benchmark evidence, replay gates, or deterministic validators.
 
 ```bash
 pip install -e ".[ai-integrations]"
@@ -133,6 +133,7 @@ make optional-integrations-smoke
 - LangChain: wraps fixture-backed harness tools as adapter tools while preserving JSONL trace events.
 - LangGraph: `backend="local"` maps `plan -> tool_call -> tool_result -> validate -> retry_or_finish` transitions into trace events; `backend="langgraph"` compiles a real optional `StateGraph` workflow with `InMemorySaver` checkpointing when LangGraph is installed.
 - LangSmith: writes a local export by default; upload requires explicit opt-in credentials and is excluded from default CI.
+- MCP: exposes a fixture-backed MCP `tools/list` and `tools/call` JSON-RPC adapter, maps MCP tool calls into the same harness JSONL traces, requires no MCP SDK for local smoke checks, and keeps no live MCP server by default.
 
 ## Portfolio Materials
 

@@ -17,6 +17,7 @@ The evidence uses 64 fixture-backed benchmark tasks and 5 recorded offline model
 - The report separates final-answer pass rate from validator pass rate.
 - Root-cause categories expose whether failures came from tools, arguments, state, numbers, citations, constraints, replay divergence, timeout, cost, or final-answer overclaim.
 - CI regression gates fail runs on task success drops, pass@k drops, failure taxonomy caps, and replay divergences.
+- Optional MCP support shows the harness can evaluate a standard tool-use protocol by mapping fixture-backed `tools/list` and `tools/call` JSON-RPC events into the same deterministic traces and validators.
 
 ## Resume bullet
 
@@ -41,3 +42,9 @@ Why not use LLM-as-judge?
 
 Answer:
 The project is about silent tool-use failures. Deterministic validators and replayable traces make the failure mode inspectable and reproducible.
+
+Question:
+Is MCP now the main architecture?
+
+Answer:
+No. MCP is an optional evaluation input layer. The core remains typed harness tools, fixture-backed execution, deterministic validators, JSONL replay, and regression gates.

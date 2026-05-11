@@ -58,6 +58,7 @@ Current facts:
 - The recorded model matrix has 5 offline profiles over the 64-task benchmark suite, 320 total runs, and 5 distinct failure signatures.
 - The matrix key finding is that final-answer-only grading overestimated validated correctness by 56.2 percentage points and deterministic validators caught 180 silent failures.
 - The live provider workflow is credentials-gated, fails closed without `--live`, skips cleanly without credentials, and can convert live outputs into recorded fixture candidates.
+- Optional MCP support is fixture-backed protocol evaluation support: local `tools/list` descriptors, local `tools/call` JSON-RPC execution, and MCP exchange conversion into harness JSONL traces. It is not a live MCP server.
 - Oracle benchmark replay currently covers 64 traces with 0 divergences.
 - Reports now emit normalized root-cause breakdowns, validator gap, silent failure rate, answer overclaim rate, top replayable failure traces, and an executive summary sentence.
 - `make ci` exists and locally runs pytest, oracle smoke, strict gate, recorded model study, and report generation.
@@ -86,6 +87,7 @@ Truthfulness rules:
 - Root-cause reporting claims must remain tied to deterministic validator and trace data, not LLM-as-judge explanations.
 - Model matrix comparison is recorded and offline; do not describe it as a live-provider benchmark.
 - Do not claim live provider results unless a run used explicit credentials and `--live`; default validation still does not run live providers.
+- Do not describe MCP support as a hosted MCP service, external MCP marketplace integration, or live MCP benchmark; the default path is local, fixture-backed JSON-RPC adaptation only.
 - Do not call sandboxing secure; describe Phase 21 as optional evaluation isolation, not a security product.
 - Runtime config claims are limited to project config validation for tools, validators, task suites, eval runs, and regression gate presets.
 - The project is portfolio-final after Phase 24; future work should be maintenance, bug fixes, refreshed recorded evidence, or documentation updates only.

@@ -15,6 +15,22 @@ Expected result:
 - Every required workflow file exists and is non-empty.
 - `git diff --check -- .` exits with status 0.
 
+## MCP optional integration smoke
+
+Run after changing the optional MCP adapter:
+
+```bash
+python3 -m pytest tests/test_mcp_integration.py -v
+make optional-integrations-smoke
+git diff --check -- .
+```
+
+Expected result:
+- Fixture-backed MCP `tools/list` returns harness tool descriptors with input schemas.
+- Fixture-backed MCP `tools/call` executes local fixture tools and emits harness JSONL trace events.
+- MCP JSON-RPC exchanges can be converted back into deterministic harness traces.
+- Default validation does not start a live MCP server, require credentials, or make network calls.
+
 ## Phase 1 Validation
 
 Run after `pyproject.toml`, package directories, and skeletal tests exist:

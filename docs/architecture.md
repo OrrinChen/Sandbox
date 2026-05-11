@@ -25,9 +25,12 @@ typed task schema
 - `deterministic validators`: check schema, tool sequence, arguments, state, numeric values, citations, constraints, unit tests, policy terms, and cost/latency.
 - `TraceReplayExecutor`: replays supported fixture-backed tool calls and detects result or state divergence.
 - `regression gates`: enforce success rate, pass@k, failure taxonomy caps, and replay divergence thresholds.
+- Optional MCP adapter: maps fixture-backed MCP `tools/list` and `tools/call` JSON-RPC records into typed harness tool descriptors, tool-call traces, tool-result traces, and deterministic replay inputs.
 
 ## Evidence Flow
 
 `make portfolio-report` runs the recorded model matrix, writes a portfolio JSON/Markdown report, exports model/failure/domain CSV tables, and generates replayable case studies from trace artifacts.
 
 The system intentionally avoids LLM-as-judge in the default path. Claims are tied to deterministic validators and replayable trace data.
+
+Optional MCP support is an evaluation input layer, not a live agent server. The default smoke path uses local fixtures, does not require credentials, and does not open a network transport.

@@ -1,4 +1,4 @@
-"""Optional LangChain, LangGraph, and LangSmith integration surfaces."""
+"""Optional LangChain, LangGraph, LangSmith, and MCP integration surfaces."""
 
 from sandboxed_agent_eval_harness.integrations.common import (
     IntegrationUnavailableError,
@@ -15,6 +15,12 @@ from sandboxed_agent_eval_harness.integrations.langsmith_exporter import (
     LangSmithExportResult,
     LangSmithTraceExporter,
 )
+from sandboxed_agent_eval_harness.integrations.mcp import (
+    MCPFixtureServer,
+    MCPToolAdapter,
+    MCPTraceReplay,
+    mcp_tool_result,
+)
 
 __all__ = [
     "IntegrationUnavailableError",
@@ -24,6 +30,10 @@ __all__ = [
     "LangGraphRunner",
     "LangSmithExportResult",
     "LangSmithTraceExporter",
+    "MCPFixtureServer",
+    "MCPToolAdapter",
+    "MCPTraceReplay",
     "build_langgraph_workflow",
+    "mcp_tool_result",
     "require_optional_dependency",
 ]

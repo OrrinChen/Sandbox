@@ -46,6 +46,18 @@ Compiled LangGraph workflow verification:
 - `python3 -m pytest` passed with 133 tests.
 - `make ci` passed with 133 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
 
+MCP maintenance integration update:
+Added an optional fixture-backed MCP evaluation adapter after the Phase 24 freeze without adding a new roadmap phase. The adapter exposes harness tools through MCP-shaped `tools/list` descriptors and `tools/call` JSON-RPC requests, maps MCP calls/results into the existing JSONL trace format, and converts recorded MCP JSON-RPC exchanges back into deterministic harness trace events. It does not start a live MCP server, require credentials, or replace deterministic validators.
+
+MCP maintenance verification:
+- Initial TDD red run for `tests/test_mcp_integration.py -v` failed because `sandboxed_agent_eval_harness.integrations.mcp` and MCP documentation did not exist.
+- `python3 -m pytest tests/test_mcp_integration.py -v` passed with 5 tests.
+- `python3 -m pytest tests/test_optional_integrations.py tests/test_mcp_integration.py -v` passed with 12 tests.
+- `make optional-integrations-smoke` passed and printed `mcp_fixture_trace=artifacts/integrations/mcp/fixture_tool_trace.jsonl` with `upload=disabled`.
+- `python3 -m pytest` passed with 138 tests.
+- `make ci` passed with 138 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, and recorded model study 4 silent failures.
+- The GitHub Actions workflow is now included at the sandbox-only repo root `.github/workflows/sandboxed-agent-eval-harness-ci.yml`; it no longer assumes a parent monorepo working directory.
+
 ## Current State
 
 Project folder:

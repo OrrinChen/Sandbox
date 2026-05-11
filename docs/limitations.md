@@ -25,3 +25,9 @@ Final-answer pass is a deterministic harness proxy. It is used to show the gap b
 The live provider workflow is credentials-gated and fail-closed without `--live`. Default tests, CI, and portfolio report generation do not call external APIs.
 
 Manual live outputs should be reviewed and converted into recorded fixtures before they are used as reproducible evidence.
+
+## MCP Boundary
+
+The MCP adapter is fixture-backed protocol evaluation support. It maps local `tools/list` and `tools/call` JSON-RPC records into harness traces and validators.
+
+It is not a hosted MCP service, does not start a live MCP server by default, and should not be described as an external MCP marketplace or production agent integration.

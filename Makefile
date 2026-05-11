@@ -54,6 +54,7 @@ reproduce-report: validate-config portfolio-report
 	@echo "reports/portfolio_report.md"
 
 optional-integrations-smoke:
+	@# Expected output includes mcp_fixture_trace=... from the fixture-backed MCP adapter.
 	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.integrations.smoke \
 		--output-dir $(INTEGRATIONS_DIR)
 

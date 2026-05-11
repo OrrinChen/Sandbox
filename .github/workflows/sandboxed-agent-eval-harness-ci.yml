@@ -1,0 +1,38 @@
+name: sandboxed-agent-eval-harness-ci
+
+on:
+  push:
+    paths:
+      - "**"
+      - ".github/workflows/sandboxed-agent-eval-harness-ci.yml"
+  pull_request:
+    paths:
+      - "**"
+      - ".github/workflows/sandboxed-agent-eval-harness-ci.yml"
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Run reproducibility checks
+        run: make ci
+
+      - name: Upload evaluation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sandboxed-agent-eval-harness-artifacts
+          path: artifacts/

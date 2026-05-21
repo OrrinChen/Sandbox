@@ -655,6 +655,28 @@ Expected result:
 - Roadmap status is frozen after Phase 24.
 - Claims avoid security and live-benchmark overstatement.
 
+## Trading-Agent Eval Domain Validation
+
+Run after changing trading tools, task fixtures, validators, or suite manifests:
+
+```bash
+python3 -m pytest tests/test_trading_agent_eval.py -v
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite trading \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir artifacts/eval_runs/trading_smoke
+python3 -m pytest tests/test_phase22_config_loader.py tests/test_validators.py -v
+git diff --check -- .
+```
+
+Expected result:
+- Trading suite loads 6 fixture-backed `trading_agent_eval` tasks.
+- Trading tools are runtime-registered: `load_market_data`, `run_backtest`, `read_strategy_report`, `risk_check`, and `compare_artifacts`.
+- Trading validators catch lookahead leakage, PnL inconsistency, omitted costs, risk-limit violations, and missing artifact grounding.
+- Oracle trading smoke prints `runs=6 task_success_rate=1.000 pass_at_k=1.000 sandbox_backend=workspace`.
+- Default paths remain credential-free, network-free, and fixture-backed; this is not a live trading benchmark or trading agent product.
+
 ## Reproducibility And CI Validation
 
 Run after Makefile commands and GitHub Actions are added:

@@ -13,14 +13,16 @@ Evidence: offline recorded, fixture-backed, no live API by default.
 | Silent failures | 180 silent failures |
 | Benchmark size | 64 tasks |
 | Domains | 6 domains |
-| Validators | 10 deterministic validators |
+| Validators | 10 deterministic validators (+5 trading-specific validators) |
 | Failure taxonomy | 7 failure categories |
 | Recorded runs | 320 runs |
 | Model profiles | 5 recorded profiles |
 
 The model profiles are recorded behavior profiles, not a real-time model benchmark.
 
-Evaluation infrastructure for tool-using agents. The project is not an agent product; it measures whether a tool-use run is actually correct when the final answer looks plausible.
+Evaluation infrastructure for tool-using agents, now with a trading-agent eval domain. The project is not an agent product; it measures whether a tool-use run is actually correct when the final answer looks plausible.
+
+Trading extension: 6 fixture-backed trading tasks use LOB/backtest/risk artifacts and validators for lookahead, PnL consistency, cost inclusion, risk limits, artifact grounding, and tool sequence.
 
 ## Problem
 
@@ -54,7 +56,7 @@ Core runtime surfaces:
 - Typed schemas: tasks, tools, traces, validators, run results
 - Tool registry: input/output validation, permissions, side effects
 - Sandbox backends: local workspace by default; optional Docker command envelope
-- Validators: schema, tool sequence, arguments, state, numeric, citation, constraint, unit tests, policy, cost/latency
+- Validators: schema, tool sequence, arguments, state, numeric, citation, constraint, unit tests, policy, cost/latency, plus trading-specific lookahead, PnL consistency, cost inclusion, risk limit, and artifact grounding checks
 - Reports: root-cause taxonomy, model matrix, domain breakdown, replayable failure case studies
 
 Docker support is evaluation isolation and reproducibility support, not a security product.
@@ -101,6 +103,8 @@ Evidence snapshot:
 
 Failure categories caught include tool selection errors, state mutation errors, numeric mismatches, unsupported citations, constraint violations, and final-answer overclaims.
 
+Trading-agent eval adds LOB/backtest artifact tasks that catch trading-specific silent failures: strategies that look profitable because fees were omitted, future returns leaked into backtests, Sharpe or max drawdown was misread, risk limits were skipped, or the answer was not grounded in the backtest/report artifacts.
+
 ## Reproducibility
 
 ```bash
@@ -143,10 +147,11 @@ make optional-integrations-smoke
 - Interview notes: `docs/interview_notes.md`
 - Limitations: `docs/limitations.md`
 - Failure case studies: `docs/failure_case_studies.md`
+- Trading-agent eval notes: `docs/trading_agent_eval.md`
 
 Resume bullet:
 
-> Built a replayable LLM tool-use evaluation harness with typed tool specs, workspace/container-backed evaluation isolation, deterministic validators, JSONL trace replay, root-cause failure reports, CI regression gates, and an optional fixture-backed MCP `tools/list`/`tools/call` adapter; offline recorded model-matrix studies over 64 deterministic tasks exposed distinct silent-failure signatures hidden by final-answer-only grading.
+> Extended a deterministic LLM tool-use eval harness with a trading-agent evaluation domain over LOB/backtest/risk artifacts; validators catch answer-only grading failures from lookahead leakage, omitted costs, PnL inconsistency, risk-limit violations, artifact grounding gaps, tool misuse, and state mutation errors while preserving fixture-backed replay, CI gates, and offline recorded evidence.
 
 ## Limitations
 

@@ -16,7 +16,7 @@ from sandboxed_agent_eval_harness.config import (
     validate_project_config,
 )
 from sandboxed_agent_eval_harness.config.validate import main as validate_config_main
-from sandboxed_agent_eval_harness.tasks import benchmark_task_suite, default_task_suite
+from sandboxed_agent_eval_harness.tasks import benchmark_task_suite, default_task_suite, trading_task_suite
 from sandboxed_agent_eval_harness.tools import default_tool_registry
 from sandboxed_agent_eval_harness.validators import default_validator_names
 
@@ -35,9 +35,11 @@ def test_config_loaders_match_runtime_surfaces():
     assert task_suites_config.manifest_paths() == [
         Path("fixtures/tasks/initial_suite.json"),
         Path("fixtures/tasks/benchmark_suite.json"),
+        Path("fixtures/tasks/trading_suite.json"),
     ]
     assert task_suites_config.task_ids_for("initial-fixture-suite") == default_task_suite().task_ids()
     assert task_suites_config.task_ids_for("benchmark-fixture-suite") == benchmark_task_suite().task_ids()
+    assert task_suites_config.task_ids_for("trading-agent-eval-suite") == trading_task_suite().task_ids()
 
     smoke = eval_runs_config.get("smoke")
     assert smoke.suite == "initial-fixture-suite"
@@ -54,7 +56,7 @@ def test_validate_project_config_returns_machine_readable_summary():
     assert report.config_dir == default_config_dir()
     assert report.to_dict()["tool_count"] == len(default_tool_registry().names())
     assert report.to_dict()["validator_count"] == len(default_validator_names())
-    assert report.to_dict()["task_suite_count"] == 2
+    assert report.to_dict()["task_suite_count"] == 3
     assert report.to_dict()["eval_run_count"] == 1
 
 
@@ -74,8 +76,9 @@ def test_validate_config_cli_reports_success(capsys):
     captured = capsys.readouterr()
     assert exit_code == 0
     assert "config_validation=passed" in captured.out
-    assert "tools=7" in captured.out
-    assert "task_suites=2" in captured.out
+    assert "tools=12" in captured.out
+    assert "validators=15" in captured.out
+    assert "task_suites=3" in captured.out
 
 
 def test_makefile_includes_validate_config_in_ci():

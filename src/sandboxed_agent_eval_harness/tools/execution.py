@@ -59,6 +59,16 @@ class FixtureToolExecutor:
             result = self._python_unit_tests(validated_arguments, sandbox)
         elif tool_name == "optimization.solve_newsvendor":
             result = self._optimization_solve_newsvendor(validated_arguments, sandbox)
+        elif tool_name == "load_market_data":
+            result = self._load_market_data(validated_arguments, sandbox)
+        elif tool_name == "run_backtest":
+            result = self._run_backtest(validated_arguments, sandbox)
+        elif tool_name == "read_strategy_report":
+            result = self._read_strategy_report(validated_arguments, sandbox)
+        elif tool_name == "risk_check":
+            result = self._risk_check(validated_arguments, sandbox)
+        elif tool_name == "compare_artifacts":
+            result = self._compare_artifacts(validated_arguments, sandbox)
         else:
             raise ToolExecutionError(f"no executable fixture adapter for tool: {tool_name}")
         return self.registry.validate_output(tool_name, result)
@@ -221,6 +231,89 @@ print(json.dumps({{"passed": not failures, "tests_run": len(tests), "failures": 
         sandbox.write_text(arguments["output_path"], json.dumps(result, indent=2, sort_keys=True) + "\n")
         return result
 
+    def _load_market_data(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        artifact = _load_sandbox_json(sandbox, arguments["artifact_path"])
+        rows = artifact.get("rows", [])
+        columns = artifact.get("columns", [])
+        if not isinstance(rows, list) or not isinstance(columns, list):
+            raise ToolExecutionError("LOB artifact rows and columns must be lists")
+        return {
+            "artifact_id": str(artifact["artifact_id"]),
+            "symbol": str(artifact["symbol"]),
+            "rows": len(rows),
+            "start_ts": str(artifact["start_ts"]),
+            "end_ts": str(artifact["end_ts"]),
+            "has_future_return_column": "future_return" in columns,
+        }
+
+    def _run_backtest(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        market_data = _load_sandbox_json(sandbox, arguments["market_data_path"])
+        config = _load_sandbox_json(sandbox, arguments["config_path"])
+        include_costs = bool(config.get("include_costs"))
+        use_future_returns = bool(config.get("use_future_returns"))
+        has_future_return = "future_return" in market_data.get("columns", [])
+        lookahead_detected = use_future_returns or has_future_return
+        gross_pnl = 1050.0 + (200.0 if lookahead_detected else 0.0)
+        fees = 230.0 if include_costs else 0.0
+        result = {
+            "strategy_id": str(arguments["strategy_id"]),
+            "config_id": str(config.get("config_id", "trading-config")),
+            "gross_pnl": float(gross_pnl),
+            "net_pnl": float(gross_pnl - fees),
+            "fees": float(fees),
+            "sharpe": 2.1 if lookahead_detected else 1.42,
+            "max_drawdown": 0.12 if lookahead_detected else 0.071,
+            "costs_included": include_costs,
+            "lookahead_detected": bool(lookahead_detected),
+            "output_path": str(arguments["output_path"]),
+            "source": f"backtest-{config.get('config_id', 'trading-config')}",
+        }
+        sandbox.write_text(arguments["output_path"], json.dumps(result, indent=2, sort_keys=True) + "\n")
+        return result
+
+    def _read_strategy_report(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        report = _load_sandbox_json(sandbox, arguments["report_path"])
+        metrics = report.get("metrics", {})
+        warnings = report.get("warnings", [])
+        if not isinstance(metrics, dict) or not isinstance(warnings, list):
+            raise ToolExecutionError("strategy report metrics must be an object and warnings must be a list")
+        return {
+            "source": str(report["source"]),
+            "strategy_id": str(report["strategy_id"]),
+            "recommended_strategy": str(report["recommended_strategy"]),
+            "metrics": dict(metrics),
+            "warnings": list(warnings),
+        }
+
+    def _risk_check(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        backtest = _load_sandbox_json(sandbox, arguments["backtest_path"])
+        limits = _load_sandbox_json(sandbox, arguments["limits_path"])
+        max_drawdown = float(backtest["max_drawdown"])
+        limit_max_drawdown = float(limits["max_drawdown"])
+        violations = []
+        if max_drawdown > limit_max_drawdown:
+            violations.append({"metric": "max_drawdown", "actual": max_drawdown, "limit": limit_max_drawdown})
+        return {
+            "passed": not violations,
+            "violations": violations,
+            "max_drawdown": max_drawdown,
+            "limit_max_drawdown": limit_max_drawdown,
+            "source": str(limits.get("source", "risk-limits-fixture")),
+        }
+
+    def _compare_artifacts(self, arguments: Mapping[str, Any], sandbox: FileSystemSandbox) -> JsonDict:
+        gross = _load_sandbox_json(sandbox, arguments["gross_path"])
+        cost_aware = _load_sandbox_json(sandbox, arguments["cost_aware_path"])
+        gross_pnl = float(gross["gross_pnl"])
+        cost_aware_pnl = float(cost_aware["net_pnl"])
+        return {
+            "gross_pnl": gross_pnl,
+            "cost_aware_pnl": cost_aware_pnl,
+            "fee_drag": round(gross_pnl - cost_aware_pnl, 6),
+            "winner": "cost_aware" if cost_aware.get("costs_included") else "gross",
+            "sources": [str(gross.get("source", "gross-artifact")), str(cost_aware.get("source", "cost-aware-artifact"))],
+        }
+
 
 class _CsvRows:
     def __init__(self, fieldnames: list[str], records: list[dict[str, str]]) -> None:
@@ -235,6 +328,16 @@ def _load_json(path: Path) -> JsonDict:
         raise ToolExecutionError(f"could not load fixture: {path}") from exc
     if not isinstance(payload, dict):
         raise ToolExecutionError(f"fixture must contain a JSON object: {path}")
+    return payload
+
+
+def _load_sandbox_json(sandbox: FileSystemSandbox, path: str) -> JsonDict:
+    try:
+        payload = json.loads(sandbox.read_text(path))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ToolExecutionError(f"could not load sandbox JSON: {path}") from exc
+    if not isinstance(payload, dict):
+        raise ToolExecutionError(f"sandbox JSON must contain an object: {path}")
     return payload
 
 

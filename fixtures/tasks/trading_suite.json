@@ -1,0 +1,198 @@
+{
+  "suite_id": "trading-agent-eval-suite",
+  "version": "trading-tasks-v1",
+  "tasks": [
+    {
+      "task_id": "trading-lob-artifact-read",
+      "domain": "trading_agent_eval",
+      "instruction": "Read the LOB artifact, run the cost-aware backtest, and explain whether the strategy evidence is grounded in the artifacts.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Load market data.", "Run the cost-aware backtest.", "Read the strategy report.", "Run risk checks.", "Compare gross and cost-aware artifacts."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+      "known_failure_traps": ["Use gross PnL as if it were net PnL.", "Ignore trading costs.", "Use future_return columns.", "Cite a strategy report without reading it."],
+      "failure_taxonomy_traps": ["TOOL_SELECTION_ERROR", "TOOL_ARGUMENT_ERROR", "TOOL_RESULT_MISUSE", "STATE_MUTATION_ERROR", "NUMERIC_MISMATCH", "CONSTRAINT_VIOLATION", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "trading-backtest-cost-aware-interpretation",
+      "domain": "trading_agent_eval",
+      "instruction": "Interpret the cost-aware backtest result and report net PnL, fees, Sharpe, and max drawdown.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Use the cost-aware config.", "Report net PnL after fees.", "Ground risk metrics in artifacts."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+      "known_failure_traps": ["Report gross PnL instead of net PnL.", "Drop fees from the summary.", "Read the wrong backtest config.", "Ignore max drawdown."],
+      "failure_taxonomy_traps": ["TOOL_ARGUMENT_ERROR", "NUMERIC_MISMATCH", "CONSTRAINT_VIOLATION", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "trading-strategy-selection-report",
+      "domain": "trading_agent_eval",
+      "instruction": "Choose between gross-only and cost-aware strategy evidence, then justify the selected strategy with the report artifact.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Prefer cost-aware evidence.", "Use artifact comparison.", "Cite the strategy report."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+      "known_failure_traps": ["Choose the gross-only strategy because gross PnL is higher.", "Ignore the report warning about costs.", "Cite a report source that was not read."],
+      "failure_taxonomy_traps": ["TOOL_RESULT_MISUSE", "CITATION_UNSUPPORTED", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "trading-lookahead-risk-silent-failure",
+      "domain": "trading_agent_eval",
+      "instruction": "Check whether the backtest evidence has lookahead leakage and risk-limit issues before accepting the strategy.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/lob_snapshot_with_future_return.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/backtest_config_gross_lookahead.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Reject lookahead-enabled artifacts.", "Report cost-aware metrics.", "Run risk checks before recommending the strategy."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/lob_snapshot_with_future_return.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/backtest_config_gross_lookahead.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+      "known_failure_traps": ["Use future_return as an input feature.", "Run the lookahead-enabled gross config.", "Accept Sharpe 2.1 without checking leakage.", "Ignore max drawdown above the risk limit."],
+      "failure_taxonomy_traps": ["TOOL_ARGUMENT_ERROR", "NUMERIC_MISMATCH", "CONSTRAINT_VIOLATION", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "trading-cost-aware-vs-gross-pnl",
+      "domain": "trading_agent_eval",
+      "instruction": "Compare cost-aware versus gross PnL and decide which artifact should drive the evaluation conclusion.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Compare gross and cost-aware outputs.", "Report fee drag.", "Use net PnL as the decision metric."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"fee_drag": 230.0, "gross_pnl": 1050.0, "net_pnl": 820.0, "winner": "cost_aware"},
+      "known_failure_traps": ["Treat gross PnL as realized PnL.", "Miss the 230.0 fee drag.", "Select the higher gross-only artifact.", "Ignore the comparison tool."],
+      "failure_taxonomy_traps": ["TOOL_RESULT_MISUSE", "NUMERIC_MISMATCH", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    },
+    {
+      "task_id": "trading-risk-check-drawdown",
+      "domain": "trading_agent_eval",
+      "instruction": "Run the risk check and state whether the strategy is within max drawdown limits.",
+      "available_tools": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+      "initial_state": {"fixture_version": "trading-fixtures-v1"},
+      "hidden_expected_state": {
+        "citations": ["strategy-report-mean-reversion-v1"],
+        "expected_tool_sequence": ["load_market_data", "run_backtest", "read_strategy_report", "risk_check", "compare_artifacts"],
+        "numeric": {"fees": 230.0, "gross_pnl": 1050.0, "max_drawdown": 0.071, "net_pnl": 820.0, "sharpe": 1.42},
+        "required_sources": ["strategy-report-mean-reversion-v1"],
+        "state_diff": {"added": ["cost_aware_backtest.json"], "deleted": [], "modified": []},
+        "tool_arguments": {
+          "compare_artifacts": {"cost_aware_path": "cost_aware_backtest.json", "gross_path": "fixtures/trading/backtest_gross_report.json"},
+          "load_market_data": {"artifact_path": "fixtures/trading/lob_snapshot.json"},
+          "read_strategy_report": {"report_path": "fixtures/trading/strategy_report.json"},
+          "risk_check": {"backtest_path": "cost_aware_backtest.json", "limits_path": "fixtures/trading/risk_limits.json"},
+          "run_backtest": {"config_path": "fixtures/trading/backtest_config_cost_aware.json", "market_data_path": "fixtures/trading/lob_snapshot.json", "output_path": "cost_aware_backtest.json", "strategy_id": "mean_reversion_v1"}
+        }
+      },
+      "visible_files": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "success_criteria": ["Run risk_check.", "Confirm max drawdown is below 0.08.", "Keep risk conclusion grounded in artifacts."],
+      "validator_list": ["schema", "tool_sequence", "argument", "state", "numeric", "citation", "lookahead_validator", "pnl_consistency_validator", "cost_inclusion_validator", "risk_limit_validator", "artifact_grounding_validator", "cost_latency"],
+      "max_turns": 8,
+      "max_cost": 0.0,
+      "timeout_seconds": 30,
+      "fixture_paths": ["fixtures/trading/lob_snapshot.json", "fixtures/trading/backtest_config_cost_aware.json", "fixtures/trading/strategy_report.json", "fixtures/trading/risk_limits.json", "fixtures/trading/backtest_gross_report.json"],
+      "gold_outputs": {"limit_max_drawdown": 0.08, "max_drawdown": 0.071, "risk_passed": true},
+      "known_failure_traps": ["Skip the risk_check tool.", "Compare drawdown to the wrong limit.", "Ignore max drawdown when PnL is positive.", "Mistake Sharpe for a risk-limit check."],
+      "failure_taxonomy_traps": ["CONSTRAINT_VIOLATION", "TOOL_SELECTION_ERROR", "FINAL_ANSWER_OVERCLAIM"],
+      "final_answer_only_risk": true
+    }
+  ]
+}

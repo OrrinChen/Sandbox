@@ -30,6 +30,9 @@ DEFAULT_TASK_SUITE_PATH = (
 BENCHMARK_TASK_SUITE_PATH = (
     Path(__file__).resolve().parents[3] / "fixtures" / "tasks" / "benchmark_suite.json"
 )
+TRADING_TASK_SUITE_PATH = (
+    Path(__file__).resolve().parents[3] / "fixtures" / "tasks" / "trading_suite.json"
+)
 
 
 class TaskSuiteValidationError(ValueError):
@@ -123,16 +126,26 @@ def benchmark_task_suite_path() -> Path:
     return BENCHMARK_TASK_SUITE_PATH
 
 
+def trading_task_suite() -> TaskSuite:
+    return load_task_suite(TRADING_TASK_SUITE_PATH)
+
+
+def trading_task_suite_path() -> Path:
+    return TRADING_TASK_SUITE_PATH
+
+
 def task_suite_by_name(name: str) -> TaskSuite:
     if name in {"smoke", "initial", "default"}:
         return default_task_suite()
     if name == "benchmark":
         return benchmark_task_suite()
+    if name in {"trading", "trading_agent_eval"}:
+        return trading_task_suite()
     raise TaskSuiteValidationError(f"unknown task suite: {name}")
 
 
 def known_task_suites() -> list[TaskSuite]:
-    return [default_task_suite(), benchmark_task_suite()]
+    return [default_task_suite(), benchmark_task_suite(), trading_task_suite()]
 
 
 def _metadata_from_raw_task(raw_task: Mapping[str, Any], task_id: str) -> JsonDict:

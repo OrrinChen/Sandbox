@@ -10,6 +10,8 @@ from sandboxed_agent_eval_harness.tasks.suites import (
     known_task_suites,
     load_task_suite,
     task_suite_by_name,
+    trading_task_suite,
+    trading_task_suite_path,
 )
 
 __all__ = [
@@ -22,4 +24,6 @@ __all__ = [
     "known_task_suites",
     "load_task_suite",
     "task_suite_by_name",
+    "trading_task_suite",
+    "trading_task_suite_path",
 ]

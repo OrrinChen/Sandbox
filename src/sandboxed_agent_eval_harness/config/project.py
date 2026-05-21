@@ -7,7 +7,12 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, Optional
 
 from sandboxed_agent_eval_harness.agents import default_agent_baselines
-from sandboxed_agent_eval_harness.tasks import benchmark_task_suite, default_task_suite, load_task_suite
+from sandboxed_agent_eval_harness.tasks import (
+    benchmark_task_suite,
+    default_task_suite,
+    load_task_suite,
+    trading_task_suite,
+)
 from sandboxed_agent_eval_harness.tools import default_tool_registry
 from sandboxed_agent_eval_harness.validators import default_validator_names
 
@@ -221,6 +226,7 @@ def validate_project_config(config_dir: Optional[Path | str] = None) -> ProjectC
     expected_suites = {
         default_task_suite().suite_id: default_task_suite(),
         benchmark_task_suite().suite_id: benchmark_task_suite(),
+        trading_task_suite().suite_id: trading_task_suite(),
     }
     if set(task_suites.ids()) != set(expected_suites):
         raise ProjectConfigValidationError(
@@ -295,6 +301,11 @@ def _validate_eval_run_metrics(eval_run: ConfiguredEvalRun) -> None:
         "unit_test_correctness",
         "policy_correctness",
         "cost_latency_correctness",
+        "lookahead_correctness",
+        "pnl_consistency_correctness",
+        "cost_inclusion_correctness",
+        "risk_limit_correctness",
+        "artifact_grounding_correctness",
         "average_turns",
         "average_latency_seconds",
         "average_cost",

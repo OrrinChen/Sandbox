@@ -30,6 +30,11 @@ DEFAULT_VALIDATOR_NAMES = [
     "unit_test",
     "policy",
     "cost_latency",
+    "lookahead_validator",
+    "pnl_consistency_validator",
+    "cost_inclusion_validator",
+    "risk_limit_validator",
+    "artifact_grounding_validator",
 ]
 _CITATION_PATTERN = re.compile(r"\[([A-Za-z0-9_.:/-]+)\]")
 _OPERATORS = {
@@ -309,6 +314,126 @@ def validate_cost_latency(
     return _passed("cost_latency", "Cost, latency, turn, and timeout limits were satisfied.", details)
 
 
+def validate_lookahead(events: Sequence[TraceEvent]) -> ValidatorResult:
+    backtest = _latest_tool_result(events, "run_backtest")
+    market_data = _latest_tool_result(events, "load_market_data")
+    details = {"run_backtest": backtest, "load_market_data": market_data}
+    if backtest is None:
+        return _failed(
+            "lookahead_validator",
+            "backtest_missing",
+            "No run_backtest result was found for lookahead validation.",
+            details,
+        )
+    if backtest.get("lookahead_detected") is True or (market_data or {}).get("has_future_return_column") is True:
+        return _failed(
+            "lookahead_validator",
+            "lookahead_detected",
+            "Backtest used future-return columns or a lookahead-enabled config.",
+            details,
+        )
+    return _passed("lookahead_validator", "No lookahead was detected.", details)
+
+
+def validate_pnl_consistency(
+    events: Sequence[TraceEvent],
+    reported_metrics: Mapping[str, Any],
+    *,
+    tolerance: float = 0.0,
+) -> ValidatorResult:
+    backtest = _latest_tool_result(events, "run_backtest")
+    if backtest is None:
+        return _failed(
+            "pnl_consistency_validator",
+            "backtest_missing",
+            "No run_backtest result was found for PnL consistency validation.",
+            {"reported_metrics": dict(reported_metrics)},
+        )
+    mismatches = {}
+    for metric in ["gross_pnl", "net_pnl", "fees", "sharpe", "max_drawdown"]:
+        if metric not in reported_metrics:
+            continue
+        actual = reported_metrics.get(metric)
+        expected = backtest.get(metric)
+        if not _is_number(actual) or not _is_number(expected) or abs(actual - expected) > tolerance:
+            mismatches[metric] = {"reported": actual, "artifact": expected}
+    details = {"reported_metrics": dict(reported_metrics), "backtest": backtest, "mismatches": mismatches}
+    if mismatches:
+        return _failed(
+            "pnl_consistency_validator",
+            "pnl_consistency_mismatch",
+            "Reported PnL or risk metrics did not match the backtest artifact.",
+            details,
+        )
+    return _passed("pnl_consistency_validator", "Reported metrics matched the backtest artifact.", details)
+
+
+def validate_cost_inclusion(events: Sequence[TraceEvent]) -> ValidatorResult:
+    backtest = _latest_tool_result(events, "run_backtest")
+    details = {"run_backtest": backtest}
+    if backtest is None:
+        return _failed(
+            "cost_inclusion_validator",
+            "backtest_missing",
+            "No run_backtest result was found for cost inclusion validation.",
+            details,
+        )
+    if backtest.get("costs_included") is not True or not _is_number(backtest.get("fees")) or backtest.get("fees") <= 0:
+        return _failed(
+            "cost_inclusion_validator",
+            "costs_not_included",
+            "Backtest artifact did not include trading costs.",
+            details,
+        )
+    return _passed("cost_inclusion_validator", "Trading costs were included in backtest results.", details)
+
+
+def validate_risk_limits(events: Sequence[TraceEvent]) -> ValidatorResult:
+    risk = _latest_tool_result(events, "risk_check")
+    details = {"risk_check": risk}
+    if risk is None:
+        return _failed(
+            "risk_limit_validator",
+            "risk_check_missing",
+            "No risk_check result was found.",
+            details,
+        )
+    if risk.get("passed") is not True or risk.get("violations"):
+        return _failed(
+            "risk_limit_validator",
+            "risk_limit_violation",
+            "Risk check reported one or more limit violations.",
+            details,
+        )
+    return _passed("risk_limit_validator", "Risk limits were satisfied.", details)
+
+
+def validate_artifact_grounding(
+    final_answer: str,
+    events: Sequence[TraceEvent],
+    *,
+    required_sources: Optional[Iterable[str]] = None,
+) -> ValidatorResult:
+    required = list(required_sources or [])
+    observed = _observed_sources(events)
+    missing_sources = [source for source in required if source not in observed]
+    missing_citations = [source for source in required if f"[{source}]" not in final_answer]
+    details = {
+        "required_sources": required,
+        "observed_sources": observed,
+        "missing_sources": missing_sources,
+        "missing_citations": missing_citations,
+    }
+    if missing_sources or missing_citations:
+        return _failed(
+            "artifact_grounding_validator",
+            "artifact_grounding_missing",
+            "Final answer was not grounded in required trading artifacts.",
+            details,
+        )
+    return _passed("artifact_grounding_validator", "Final answer was grounded in required artifacts.", details)
+
+
 def _tool_call_names(events: Sequence[TraceEvent]) -> list[str]:
     return [
         str(event.payload.get("tool_name"))
@@ -326,6 +451,23 @@ def _latest_tool_result(events: Sequence[TraceEvent], tool_name: str) -> Optiona
         result = event.payload.get("result")
         return dict(result) if isinstance(result, Mapping) else None
     return None
+
+
+def _observed_sources(events: Sequence[TraceEvent]) -> list[str]:
+    sources: list[str] = []
+    for event in events:
+        if event.event_type != "tool_result":
+            continue
+        result = event.payload.get("result", {})
+        if not isinstance(result, Mapping):
+            continue
+        source = result.get("source")
+        if isinstance(source, str):
+            sources.append(source)
+        raw_sources = result.get("sources")
+        if isinstance(raw_sources, list):
+            sources.extend(source for source in raw_sources if isinstance(source, str))
+    return _unique(sources)
 
 
 def _normalize_state_diff(diff: StateDiff | Mapping[str, Any]) -> JsonDict:

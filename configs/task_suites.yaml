@@ -93,3 +93,16 @@ task_suites:
       - optimization-newsvendor-order-benchmark-10
       - optimization-newsvendor-order-benchmark-11
       - optimization-newsvendor-order-benchmark-12
+  - id: trading-agent-eval-suite
+    version: trading-tasks-v1
+    manifest: fixtures/tasks/trading_suite.json
+    status: implemented
+    domains:
+      - trading_agent_eval
+    tasks:
+      - trading-lob-artifact-read
+      - trading-backtest-cost-aware-interpretation
+      - trading-strategy-selection-report
+      - trading-lookahead-risk-silent-failure
+      - trading-cost-aware-vs-gross-pnl
+      - trading-risk-check-drawdown

@@ -5,11 +5,16 @@ from sandboxed_agent_eval_harness.schemas import TraceEvent
 from sandboxed_agent_eval_harness.tools import default_tool_registry
 from sandboxed_agent_eval_harness.validators import (
     default_validator_names,
+    validate_artifact_grounding,
     validate_citations,
     validate_constraints,
     validate_cost_latency,
+    validate_cost_inclusion,
+    validate_lookahead,
     validate_numeric,
     validate_policy,
+    validate_pnl_consistency,
+    validate_risk_limits,
     validate_schema,
     validate_state,
     validate_tool_arguments,
@@ -239,6 +244,52 @@ def test_validators_config_declares_default_validator_names():
         "unit_test",
         "policy",
         "cost_latency",
+        "lookahead_validator",
+        "pnl_consistency_validator",
+        "cost_inclusion_validator",
+        "risk_limit_validator",
+        "artifact_grounding_validator",
     ]
     for validator_name in default_validator_names():
         assert validator_name in validators_config
+
+
+def test_trading_validators_catch_backtest_silent_failures():
+    events = [
+        TraceEvent(
+            event_id="evt-000",
+            event_type="tool_result",
+            sequence=0,
+            payload={
+                "tool_name": "run_backtest",
+                "result": {
+                    "gross_pnl": 1250.0,
+                    "net_pnl": 1250.0,
+                    "fees": 0.0,
+                    "sharpe": 2.1,
+                    "max_drawdown": 0.12,
+                    "costs_included": False,
+                    "lookahead_detected": True,
+                },
+            },
+        ),
+        TraceEvent(
+            event_id="evt-001",
+            event_type="tool_result",
+            sequence=1,
+            payload={"tool_name": "risk_check", "result": {"passed": False, "violations": [{"metric": "max_drawdown"}]}},
+        ),
+    ]
+
+    assert validate_lookahead(events).failure_type == "lookahead_detected"
+    assert validate_cost_inclusion(events).failure_type == "costs_not_included"
+    assert validate_pnl_consistency(events, {"net_pnl": 820.0}).failure_type == "pnl_consistency_mismatch"
+    assert validate_risk_limits(events).failure_type == "risk_limit_violation"
+    assert (
+        validate_artifact_grounding(
+            "Strategy is profitable.",
+            events,
+            required_sources=["strategy-report-mean-reversion-v1"],
+        ).failure_type
+        == "artifact_grounding_missing"
+    )

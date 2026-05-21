@@ -93,3 +93,56 @@ tools:
       - invalid_fixture
       - infeasible_instance
       - write_denied
+  - tool_name: load_market_data
+    domain: trading_agent_eval
+    backing: local_file
+    permissions:
+      - read_visible_files
+    side_effects: []
+    failure_modes:
+      - missing_artifact
+      - invalid_lob_artifact
+      - lookahead_column_present
+  - tool_name: run_backtest
+    domain: trading_agent_eval
+    backing: fixture
+    permissions:
+      - read_visible_files
+      - write_task_workspace
+    side_effects:
+      - writes_file
+    failure_modes:
+      - missing_market_data
+      - invalid_config
+      - lookahead_detected
+      - costs_not_included
+  - tool_name: read_strategy_report
+    domain: trading_agent_eval
+    backing: local_file
+    permissions:
+      - read_visible_files
+    side_effects: []
+    failure_modes:
+      - missing_report
+      - invalid_report
+      - ungrounded_claim
+  - tool_name: risk_check
+    domain: trading_agent_eval
+    backing: fixture
+    permissions:
+      - read_visible_files
+    side_effects: []
+    failure_modes:
+      - missing_backtest
+      - invalid_limits
+      - risk_limit_violation
+  - tool_name: compare_artifacts
+    domain: trading_agent_eval
+    backing: fixture
+    permissions:
+      - read_visible_files
+    side_effects: []
+    failure_modes:
+      - missing_artifact
+      - cost_omission
+      - inconsistent_artifacts

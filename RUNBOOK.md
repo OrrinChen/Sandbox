@@ -209,10 +209,28 @@ PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate --json
 Expected output includes:
 
 ```text
-config_validation=passed tools=7 validators=10 task_suites=2 eval_runs=1
+config_validation=passed tools=12 validators=15 task_suites=3 eval_runs=1
 ```
 
 This checks the project-owned tool, validator, task-suite, and eval-run configs against runtime defaults and manifests. It uses the current controlled config format; treat failures as real drift until proven otherwise.
+
+Trading-agent eval smoke:
+
+```bash
+PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.evaluation.runner \
+  --suite trading \
+  --baseline oracle_tool_selection_agent \
+  --trials 1 \
+  --output-dir artifacts/eval_runs/trading_smoke
+```
+
+Expected output:
+
+```text
+runs=6 task_success_rate=1.000 pass_at_k=1.000 sandbox_backend=workspace
+```
+
+The trading suite is fixture-backed and does not run live market data, brokers, or live model providers.
 
 Public portfolio report:
 

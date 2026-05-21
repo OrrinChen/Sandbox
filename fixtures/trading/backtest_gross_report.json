@@ -1,0 +1,13 @@
+{
+  "config_id": "mean-reversion-gross-v1",
+  "costs_included": false,
+  "fees": 0.0,
+  "gross_pnl": 1050.0,
+  "lookahead_detected": false,
+  "max_drawdown": 0.071,
+  "net_pnl": 1050.0,
+  "output_path": "fixtures/trading/backtest_gross_report.json",
+  "sharpe": 1.42,
+  "source": "backtest-mean-reversion-gross-v1",
+  "strategy_id": "mean_reversion_v1"
+}

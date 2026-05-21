@@ -48,3 +48,27 @@ validators:
     purpose: validate task-local cost, latency, turn, and timeout limits
     failure_types:
       - cost_latency_violation
+  - name: lookahead_validator
+    purpose: validate that trading backtests do not use future-return columns or lookahead-enabled configs
+    failure_types:
+      - backtest_missing
+      - lookahead_detected
+  - name: pnl_consistency_validator
+    purpose: validate reported trading PnL and risk metrics against the executed backtest artifact
+    failure_types:
+      - backtest_missing
+      - pnl_consistency_mismatch
+  - name: cost_inclusion_validator
+    purpose: validate that trading backtests include fees and cost-aware execution assumptions
+    failure_types:
+      - backtest_missing
+      - costs_not_included
+  - name: risk_limit_validator
+    purpose: validate risk-check artifacts and max-drawdown limits before accepting a strategy
+    failure_types:
+      - risk_check_missing
+      - risk_limit_violation
+  - name: artifact_grounding_validator
+    purpose: validate that trading conclusions cite required artifacts observed in the trace
+    failure_types:
+      - artifact_grounding_missing

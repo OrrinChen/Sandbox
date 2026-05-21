@@ -16,11 +16,16 @@ from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite, ta
 from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError, ToolRegistry, default_tool_registry
 from sandboxed_agent_eval_harness.tracing import TraceLogger
 from sandboxed_agent_eval_harness.validators import (
+    validate_artifact_grounding,
     validate_citations,
     validate_constraints,
     validate_cost_latency,
+    validate_cost_inclusion,
+    validate_lookahead,
     validate_numeric,
     validate_policy,
+    validate_pnl_consistency,
+    validate_risk_limits,
     validate_schema,
     validate_state,
     validate_tool_arguments,
@@ -126,7 +131,7 @@ def run_evaluation(
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Run fixture-backed agent baseline evaluations.")
-    parser.add_argument("--suite", default="smoke", choices=["smoke", "benchmark"])
+    parser.add_argument("--suite", default="smoke", choices=["smoke", "benchmark", "trading"])
     parser.add_argument("--baseline", action="append", help="Baseline name. Defaults to all baselines.")
     parser.add_argument("--trials", type=int, default=1)
     parser.add_argument("--output-dir", default="artifacts/eval_runs/smoke")
@@ -321,6 +326,22 @@ def _validate_plan(
                     max_turns=task.max_turns,
                 )
             )
+        elif validator_name == "lookahead_validator":
+            results.append(validate_lookahead(trace_events))
+        elif validator_name == "pnl_consistency_validator":
+            results.append(validate_pnl_consistency(trace_events, reported_metrics))
+        elif validator_name == "cost_inclusion_validator":
+            results.append(validate_cost_inclusion(trace_events))
+        elif validator_name == "risk_limit_validator":
+            results.append(validate_risk_limits(trace_events))
+        elif validator_name == "artifact_grounding_validator":
+            results.append(
+                validate_artifact_grounding(
+                    final_answer,
+                    trace_events,
+                    required_sources=task.hidden_expected_state.get("required_sources", []),
+                )
+            )
     return results
 
 
@@ -374,6 +395,11 @@ def _aggregate_metrics(runs: Sequence[EvaluationRunRecord], trials_per_task: int
         "unit_test_correctness": _validator_pass_rate(validator_metrics, "unit_test"),
         "policy_correctness": _validator_pass_rate(validator_metrics, "policy"),
         "cost_latency_correctness": _validator_pass_rate(validator_metrics, "cost_latency"),
+        "lookahead_correctness": _validator_pass_rate(validator_metrics, "lookahead_validator"),
+        "pnl_consistency_correctness": _validator_pass_rate(validator_metrics, "pnl_consistency_validator"),
+        "cost_inclusion_correctness": _validator_pass_rate(validator_metrics, "cost_inclusion_validator"),
+        "risk_limit_correctness": _validator_pass_rate(validator_metrics, "risk_limit_validator"),
+        "artifact_grounding_correctness": _validator_pass_rate(validator_metrics, "artifact_grounding_validator"),
         "average_turns": sum(run.metrics["turns"] for run in runs) / len(runs),
         "average_latency_seconds": sum(run.metrics["latency_seconds"] for run in runs) / len(runs),
         "average_cost": sum(run.metrics["cost"] for run in runs) / len(runs),

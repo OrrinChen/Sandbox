@@ -3,7 +3,7 @@
 ## Latest Status
 
 Current branch:
-`codex/sandboxed-agent-eval-freeze`
+`codex/trading-agent-eval-domain`
 
 Latest frozen phase commit:
 `158ced7 docs: polish portfolio narrative and freeze roadmap`
@@ -16,6 +16,17 @@ No implementation blocker. The benchmark suite is fixture-backed and default val
 
 Next recommended action:
 Maintain, fix bugs, refresh recorded evidence when needed, and keep claims tied to fixture-backed deterministic or recorded-offline evidence.
+
+Trading-agent eval maintenance update:
+Added a user-directed trading-agent evaluation domain after the Phase 24 freeze without adding a new roadmap phase. The extension keeps the project as eval infrastructure, not a trading agent product: it adds a 6-task `trading-agent-eval-suite`, fixture-backed LOB/backtest/strategy-report/risk artifacts, five trading tools, and deterministic validators for lookahead, PnL consistency, cost inclusion, risk limits, and artifact grounding.
+
+Trading-agent eval verification:
+- `python3 -m pytest tests/test_trading_agent_eval.py -v` passed with 5 tests.
+- `python3 -m pytest tests/test_phase22_config_loader.py tests/test_validators.py -v` passed with 17 tests.
+- `PYTHONPATH=src python3 -m sandboxed_agent_eval_harness.config.validate` printed `config_validation=passed tools=12 validators=15 task_suites=3 eval_runs=1`.
+- Trading oracle smoke printed `runs=6 task_success_rate=1.000 pass_at_k=1.000 sandbox_backend=workspace`.
+- `python3 -m pytest` passed with 144 tests.
+- `make ci` passed with 144 tests, config validation, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, recorded model study 4 silent failures, and smoke report generation.
 
 Latest maintenance update:
 Phase 24 remains frozen. The S-level packaging polish improves the README first screen, adds a replayable failure walkthrough, and adds `make reproduce-report` without adding a new roadmap phase or changing the project from eval infrastructure into an agent product.

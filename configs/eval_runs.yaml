@@ -20,6 +20,11 @@ eval_runs:
       - unit_test_correctness
       - policy_correctness
       - cost_latency_correctness
+      - lookahead_correctness
+      - pnl_consistency_correctness
+      - cost_inclusion_correctness
+      - risk_limit_correctness
+      - artifact_grounding_correctness
       - average_turns
       - average_latency_seconds
       - average_cost

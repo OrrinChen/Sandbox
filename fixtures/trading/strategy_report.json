@@ -1,0 +1,16 @@
+{
+  "metrics": {
+    "fees": 230.0,
+    "gross_pnl": 1050.0,
+    "max_drawdown": 0.071,
+    "net_pnl": 820.0,
+    "sharpe": 1.42
+  },
+  "recommended_strategy": "cost_aware",
+  "source": "strategy-report-mean-reversion-v1",
+  "strategy_id": "mean_reversion_v1",
+  "warnings": [
+    "Gross PnL overstates performance when costs are excluded.",
+    "Lookahead columns must be excluded from strategy inputs."
+  ]
+}

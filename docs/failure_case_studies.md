@@ -9,6 +9,9 @@ make portfolio-report
 Start with the narrative walkthrough:
 `docs/replayable_failure_walkthrough.md`
 
+Trading-agent silent failure notes:
+`docs/trading_agent_eval.md`
+
 ## replayable_failure_01
 
 Source:

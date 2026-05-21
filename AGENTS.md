@@ -107,10 +107,10 @@ When stopping, report:
 
 ## Repository Boundary
 
-The git root may contain sibling projects. Unless the user explicitly says otherwise, treat this directory as the project boundary:
+This repository is the standalone `Sandbox` / sandboxed-agent-eval-harness project. The tracked project boundary is the repository root:
 
 ```text
-sandboxed-agent-eval-harness/
+.
 ```
 
-Do not modify sibling project directories while working on this project.
+Local sibling project directories may still appear as untracked folders in this working copy. Do not modify or stage them while working on this project.

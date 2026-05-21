@@ -692,7 +692,7 @@ git diff --check -- .
 Expected result:
 - Makefile declares `test`, `smoke`, `gate`, `model-study`, `report`, and `ci`.
 - `make ci` runs full pytest, oracle smoke, strict gate, recorded model study, and report generation.
-- GitHub Actions workflow uses `working-directory: sandboxed-agent-eval-harness`.
+- GitHub Actions workflow runs from the repository root and does not use the old parent-workspace subdirectory path.
 - GitHub Actions workflow does not reference live API credentials or `--live`.
 - Artifacts are generated under ignored `artifacts/`.
 

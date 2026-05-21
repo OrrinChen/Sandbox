@@ -7,7 +7,7 @@ Operational notes for local and autonomous Codex runs.
 Start every session from the project directory:
 
 ```bash
-cd "/Users/orynwilder/Documents/New project 2/sandboxed-agent-eval-harness"
+cd "/Users/orynwilder/Documents/New project 2"
 git status --short
 ```
 
@@ -328,10 +328,10 @@ GitHub Actions:
 .github/workflows/sandboxed-agent-eval-harness-ci.yml
 ```
 
-The workflow lives at the git repository root so GitHub can discover it, but every run step uses:
+The workflow lives at the git repository root and runs from the repository root:
 
 ```text
-working-directory: sandboxed-agent-eval-harness
+make ci
 ```
 
 ## Data and Network Policy

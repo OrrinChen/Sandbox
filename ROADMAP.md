@@ -402,7 +402,7 @@ Acceptance criteria:
 
 Do not:
 - Add a YAML parser or heavy dependency just to read gate presets
-- Add repository-root CI workflow files while the project boundary is `sandboxed-agent-eval-harness/`
+- Add CI workflow files outside the standalone repository root
 - Depend on live APIs or external services
 
 ## Phase 14: Portfolio-grade Deterministic Suite Expansion
@@ -487,13 +487,13 @@ Tasks:
 - [x] Add `make report`
 - [x] Add `make ci`
 - [x] Add GitHub Actions CI
-- [x] Set workflow `working-directory: sandboxed-agent-eval-harness`
+- [x] Keep workflow commands running from the standalone repository root
 - [x] Upload generated artifacts from CI
 - [x] Keep default CI credential-free and network-free except for package installation/actions infrastructure
 
 Acceptance criteria:
 - `make ci` runs full pytest, oracle smoke, strict regression gate, recorded model study, and report generation
-- GitHub Actions uses the project subdirectory as working directory
+- GitHub Actions runs from the standalone repository root
 - GitHub Actions does not reference live API credentials or `--live`
 - Generated `artifacts/` remain ignored by git
 - Full pytest passes
@@ -810,7 +810,7 @@ Examples:
 ## Target Repository Structure
 
 ```text
-sandboxed-agent-eval-harness/
+.
   README.md
   AGENTS.md
   ROADMAP.md

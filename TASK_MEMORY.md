@@ -3,7 +3,7 @@
 ## Latest Status
 
 Current branch:
-`codex/trading-agent-eval-domain`
+`main`
 
 Latest frozen phase commit:
 `158ced7 docs: polish portfolio narrative and freeze roadmap`
@@ -16,6 +16,17 @@ No implementation blocker. The benchmark suite is fixture-backed and default val
 
 Next recommended action:
 Maintain, fix bugs, refresh recorded evidence when needed, and keep claims tied to fixture-backed deterministic or recorded-offline evidence.
+
+Repo-root documentation maintenance update:
+The project now uses the standalone `Sandbox` repo-root layout. Updated the agent instructions, runbook, validation notes, roadmap CI wording, and Phase 16 CI tests so they no longer describe the old parent-workspace subdirectory workflow. This is maintenance-only documentation alignment; it does not add a roadmap phase or change benchmark evidence.
+
+Repo-root documentation maintenance verification:
+- `python3 -m pytest tests/test_phase16_ci.py -v` passed with 4 tests.
+- `make validate-config` passed with `config_validation=passed tools=12 validators=15 task_suites=3 eval_runs=1`.
+- `make reproduce-report` passed and regenerated the recorded-offline portfolio report surface.
+- `make optional-integrations-smoke` passed with local LangChain, LangGraph, LangSmith, and MCP fixture outputs.
+- `make ci` passed with 145 tests, oracle smoke 8/8, strict replay gate 8 traces replayed with 0 divergences, recorded model study 4 silent failures, and smoke report generation.
+- `git diff --check -- .` passed.
 
 Trading-agent eval maintenance update:
 Added a user-directed trading-agent evaluation domain after the Phase 24 freeze without adding a new roadmap phase. The extension keeps the project as eval infrastructure, not a trading agent product: it adds a 6-task `trading-agent-eval-suite`, fixture-backed LOB/backtest/strategy-report/risk artifacts, five trading tools, and deterministic validators for lookahead, PnL consistency, cost inclusion, risk limits, and artifact grounding.
@@ -74,7 +85,7 @@ MCP maintenance verification:
 Project folder:
 
 ```text
-/Users/orynwilder/Documents/New project 2/sandboxed-agent-eval-harness
+/Users/orynwilder/Documents/New project 2
 ```
 
 Git root:
@@ -84,7 +95,7 @@ Git root:
 ```
 
 Important note:
-The git repository root contains multiple sibling projects. Treat `sandboxed-agent-eval-harness/` as the working project scope unless the user explicitly asks to touch other folders.
+This is now the standalone `Sandbox` / sandboxed-agent-eval-harness repo-root layout. Local sibling project directories may appear as untracked folders in the working copy; ignore them unless the user explicitly asks to touch those folders.
 
 ## Completed Phases
 
@@ -468,7 +479,7 @@ Validation:
 Known limitations:
 - Gate presets are JSON-backed to avoid adding a YAML parser dependency.
 - The CLI can discover traces from summary run records, but it does not yet filter trace discovery by task, baseline, or domain.
-- Repository-root CI workflow files are still deferred because this project is scoped to `sandboxed-agent-eval-harness/` inside a larger git root.
+- Repository-root CI workflow files are present because the project is maintained as the standalone `Sandbox` repo-root layout.
 
 ### Phase 14: Portfolio-grade Deterministic Suite Expansion
 
@@ -532,10 +543,10 @@ Included in the Phase 16 reproducibility and CI commit. The exact commit hash is
 What changed:
 - Added project `Makefile` targets: `test`, `smoke`, `gate`, `model-study`, `report`, and `ci`.
 - Added GitHub Actions workflow at `.github/workflows/sandboxed-agent-eval-harness-ci.yml`.
-- Scoped all workflow run steps to `working-directory: sandboxed-agent-eval-harness`.
+- Kept workflow run steps at the standalone repository root.
 - Kept CI default path credential-free and free of live model flags.
 - Uploaded generated `artifacts/` from CI.
-- Added tests that assert reproducibility targets, workflow working-directory, no live credential references, and ignored artifact outputs.
+- Added tests that assert reproducibility targets, repository-root workflow behavior, no live credential references, and ignored artifact outputs.
 - Updated `README.md`, `ROADMAP.md`, `VALIDATION.md`, and `RUNBOOK.md`.
 
 Validation:

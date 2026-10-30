@@ -136,5 +136,5 @@ def test_mcp_integration_is_documented_as_optional_fixture_backed_and_not_defaul
     assert "fixture-backed MCP" in readme
     assert "no live MCP server by default" in readme
     assert "mcp_fixture_trace" in makefile
-    assert "ci: test validate-config smoke gate model-study report" in makefile
+    assert "ci: test validate-config smoke gate model-study report rl-smoke" in makefile
     assert "MCP optional integration smoke" in validation

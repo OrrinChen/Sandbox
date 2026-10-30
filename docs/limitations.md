@@ -26,6 +26,12 @@ The live provider workflow is credentials-gated and fail-closed without `--live`
 
 Manual live outputs should be reviewed and converted into recorded fixtures before they are used as reproducible evidence.
 
+## Agentic RL Boundary
+
+The Agentic RL extension uses this harness as an environment and a reward. GPU post-training of Qwen2.5-1.5B-Instruct, the prompting-only baseline, and the SFT baseline are not yet run. A CPU smoke with a mocked policy checks the loop only. It is not a model result.
+
+The train/held-out split is by task family inside the 64-task benchmark. It is still fixture-backed. It is not a public benchmark such as τ-bench or BFCL, and it is not a live-provider comparison.
+
 ## MCP Boundary
 
 The MCP adapter is fixture-backed protocol evaluation support. It maps local `tools/list` and `tools/call` JSON-RPC records into harness traces and validators.

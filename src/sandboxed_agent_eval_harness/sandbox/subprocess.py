@@ -28,7 +28,7 @@ def run_python_subprocess(
     Path(workspace).mkdir(parents=True, exist_ok=True)
     try:
         completed = subprocess.run(
-            [sys.executable, "-c", code],
+            [sys.executable, "-B", "-c", code],
             cwd=workspace,
             capture_output=True,
             text=True,

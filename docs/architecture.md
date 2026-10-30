@@ -34,3 +34,7 @@ typed task schema
 The system intentionally avoids LLM-as-judge in the default path. Claims are tied to deterministic validators and replayable trace data.
 
 Optional MCP support is an evaluation input layer, not a live agent server. The default smoke path uses local fixtures, does not require credentials, and does not open a network transport.
+
+## Agentic RL loop
+
+The same validators are the terminal reward for `SandboxToolEnv`. A policy sees the instruction, tool input schemas, and tool results. It does not see hidden expected state. GRPO updates the policy from group-relative advantages on that reward. The design and the unrun GPU command are in `docs/agentic_rl_design.md`. Recorded portfolio numbers are unchanged.

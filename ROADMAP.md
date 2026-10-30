@@ -34,6 +34,8 @@ Current phase:
 
 Roadmap status: frozen after Phase 24.
 
+The Agentic RL extension (environment, reward, and GRPO loop) is documented in `docs/agentic_rl_design.md`. It does not change the frozen recorded-evidence numbers. GPU post-training results are not yet run.
+
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
 - Live multi-provider model experiments with credentials supplied outside default tests

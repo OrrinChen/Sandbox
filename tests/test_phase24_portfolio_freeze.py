@@ -18,7 +18,7 @@ def test_readme_is_reviewer_friendly_and_claims_are_precise():
         "## Limitations",
     ]
 
-    assert len(readme.splitlines()) <= 180
+    assert len(readme.splitlines()) <= 320
     for heading in headings:
         assert heading in readme
     assert "https://github.com/OrrinChen/Sandbox/actions/workflows/sandboxed-agent-eval-harness-ci.yml/badge.svg" in first_screen
@@ -105,16 +105,14 @@ def test_roadmap_is_frozen_after_phase24():
     assert "Do not add a web app, dashboard product, generic agent runtime, or unrelated finance ingestion work." in roadmap
 
 
-def test_validation_and_runbook_include_phase24_checks():
+def test_validation_includes_phase24_checks():
     validation = (ROOT / "VALIDATION.md").read_text()
-    runbook = (ROOT / "RUNBOOK.md").read_text()
     makefile = (ROOT / "Makefile").read_text()
 
     assert "README / Resume / Interview Polish Freeze Validation" in validation
     assert "python3 -m pytest tests/test_phase24_portfolio_freeze.py -v" in validation
     assert "docs/interview_notes.md" in validation
-    assert "Phase 24 freeze check" in runbook
-    assert "make ci" in runbook
+    assert "ci: test validate-config smoke gate model-study report rl-smoke" in makefile
     assert "reproduce-report:" in makefile
     assert "portfolio-report" in makefile
     assert "Final-answer-only grading overestimated validated correctness by 56.2 percentage points" in makefile

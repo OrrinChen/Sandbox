@@ -7,7 +7,8 @@ This file defines the commands an autonomous Codex run should use to verify work
 Use these commands while the repository has no Python package yet:
 
 ```bash
-for f in README.md AGENTS.md ROADMAP.md TASK_MEMORY.md VALIDATION.md RUNBOOK.md; do test -s "$f" || exit 1; done
+for f in README.md ROADMAP.md VALIDATION.md LICENSE docs/agentic_rl_design.md; do test -s "$f" || exit 1; done
+test ! -e AGENTS.md && test ! -e TASK_MEMORY.md && test ! -e RUNBOOK.md
 git diff --check -- .
 ```
 
@@ -714,6 +715,31 @@ Expected result:
 - LangGraph local backend emits graph node transitions and deterministic validator results; LangGraph backend builds a compiled `StateGraph`, invokes it with a `thread_id`, and records checkpoint history when optional dependencies are installed or faked in tests.
 - LangSmith exporter writes local JSONL export by default and does not upload without explicit opt-in credentials.
 - `make optional-integrations-smoke` remains outside `make ci`.
+
+## Agentic RL Validation
+
+Run after changing the environment, reward, split, or GRPO smoke path:
+
+```bash
+python3 -m pytest tests/test_agentic_rl.py -v
+make rl-smoke
+git diff --check -- .
+```
+
+Expected result:
+- Initial observations do not contain hidden expected state, gold outputs, or success criteria.
+- A passing episode scores strictly above a silent failure, and format compliance alone is not a positive reward.
+- The benchmark split is by task family with seed 7. Held-out families are `coding-discount-total-fix`, `data-inventory-stockout-report`, and `optimization-newsvendor-order`.
+- `make rl-smoke` finishes on CPU with a mocked policy and writes `artifacts/agentic_rl/smoke/report.json` labeled `cpu_smoke_mocked_policy`.
+- The smoke report says model post-training is `not yet run`.
+- GPU backends dry-run without downloading weights.
+
+The GPU command, which is not part of CI:
+
+```bash
+pip install -e ".[agentic-rl]"
+python -m sandboxed_agent_eval_harness.rl.train --config configs/agentic_rl.json --backend hf --output-dir artifacts/agentic_rl/qwen25_1p5b_grpo
+```
 
 ## Before Commit
 

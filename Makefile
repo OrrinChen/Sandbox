@@ -9,7 +9,9 @@ PORTFOLIO_REPORT_DIR ?= reports
 PORTFOLIO_EVIDENCE_DIR ?= $(ARTIFACT_DIR)/eval_runs/portfolio_model_matrix
 INTEGRATIONS_DIR ?= $(ARTIFACT_DIR)/integrations
 
-.PHONY: test smoke gate model-study report validate-config portfolio-report reproduce-report optional-integrations-smoke ci
+RL_SMOKE_DIR ?= $(ARTIFACT_DIR)/agentic_rl/smoke
+
+.PHONY: test smoke gate model-study report validate-config portfolio-report reproduce-report optional-integrations-smoke rl-smoke ci
 
 test:
 	$(PYTHON) -m pytest
@@ -58,4 +60,16 @@ optional-integrations-smoke:
 	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.integrations.smoke \
 		--output-dir $(INTEGRATIONS_DIR)
 
-ci: test validate-config smoke gate model-study report
+rl-smoke:
+	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.rl.train \
+		--config configs/agentic_rl.json \
+		--backend mocked \
+		--smoke \
+		--output-dir $(RL_SMOKE_DIR)
+	PYTHONPATH=$(PYTHONPATH_VALUE) $(PYTHON) -m sandboxed_agent_eval_harness.rl.train \
+		--config configs/agentic_rl.json \
+		--backend hf \
+		--dry-run \
+		--output-dir $(RL_SMOKE_DIR)/hf-dry-run
+
+ci: test validate-config smoke gate model-study report rl-smoke

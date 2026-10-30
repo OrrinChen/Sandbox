@@ -177,7 +177,7 @@ class DockerSandboxBackend(LocalWorkspaceBackend):
         timeout_seconds: float,
     ) -> SandboxCommandResult:
         timeout = min(float(timeout_seconds), self.config.timeout_seconds)
-        command = self.command_for_workspace(workspace, ["python", "-c", code])
+        command = self.command_for_workspace(workspace, ["python", "-B", "-c", code])
         runner = self.command_runner or _run_docker_command
         return runner(command, timeout)
 

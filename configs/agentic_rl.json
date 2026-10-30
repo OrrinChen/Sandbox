@@ -1,0 +1,35 @@
+{
+  "seed": 7,
+  "suite": "benchmark",
+  "held_out_fraction": 0.25,
+  "group_size": 4,
+  "clip_eps": 0.2,
+  "kl_beta": 0.04,
+  "learning_rate": 1e-6,
+  "sft_learning_rate": 2e-5,
+  "max_steps": 0,
+  "epochs": 1,
+  "tasks_per_step": 1,
+  "advantage_normalization": "std",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "max_new_tokens": 256,
+  "temperature": 0.8,
+  "gradient_checkpointing": true,
+  "reward": {
+    "outcome": 1.0,
+    "silent_failure": 0.2,
+    "format_error": 0.05,
+    "invalid_tool": 0.05,
+    "incomplete": 0.05
+  },
+  "smoke": {
+    "group_size": 3,
+    "max_steps": 2,
+    "tasks_per_step": 1,
+    "learning_rate": 0.5,
+    "kl_beta": 0.04,
+    "eval_tasks": 1
+  }
+}

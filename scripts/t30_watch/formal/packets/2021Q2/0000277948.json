@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "transportation-2",
+  "sector": "transportation",
+  "cik": "0000277948",
+  "issuer": "CSX CORP",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "complete",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-02-10",
+  "text": {
+    "sector": "transportation",
+    "cik": "0000277948",
+    "issuer": "CSX CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-02-10",
+        "text": "Total revenue decreased $1.4 billion, in 2020 or 11%, when compared to the previous year due to declines in coal, lower merchandise volumes, decreases in fuel recovery and lower other revenue."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-02-10",
+        "text": "The COVID-19 pandemic significantly impacted overall volume in 2020."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-02-10",
+        "text": "Increases in both domestic and international shipments resulted from tightening truck capacity and inventory replenishments in the second half of the year and growth in rail volumes from east coast ports."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-02-10",
+        "text": "• Expenses of $6.2 billion decreased $751 million or 11% year over year."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-02-10",
+        "text": "• Operating income of $4.4 billion decreased $603 million or 12% year over year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-10-22",
+        "reported_sales_usd": 2648000000,
+        "year_ago_reported_sales_usd": 2978000000,
+        "yoy_percent": "-11.0813"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-02-10",
+        "reported_sales_usd": 2825000000,
+        "year_ago_reported_sales_usd": 2885000000,
+        "yoy_percent": "-2.0797"
+      }
+    ],
+    "status": "complete"
+  }
+}

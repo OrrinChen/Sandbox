@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-002",
+    "stage": "inspect-1",
+    "prompt_sha256": "8ff9e6a747893559d070ca73c86df8dd416c0c59db754b9c23ea99f85e60d395",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21229-a966-72d3-8c48-db750ae4e3eb"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to resolve the parts the excerpts leave ambiguous: the source rows for the occurrence counts, the activity date matching, the date interval boundaries and conditions, and the fallback sums."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-32562\":[],\"sheet-33157\":[],\"sheet-34033\":[],\"sheet-3413\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 73089,
+          "cached_input_tokens": 35328,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 356,
+          "reasoning_output_tokens": 103
+        }
+      ],
+      "cli_final": "{\"sheet-32562\":[],\"sheet-33157\":[],\"sheet-34033\":[],\"sheet-3413\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21229-a966-72d3-8c48-db750ae4e3eb",
+    "raw": "{\"sheet-32562\":[],\"sheet-33157\":[],\"sheet-34033\":[],\"sheet-3413\":[]}",
+    "usage": {
+      "input_tokens": 73089,
+      "cached_input_tokens": 35328,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 356,
+      "reasoning_output_tokens": 103
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

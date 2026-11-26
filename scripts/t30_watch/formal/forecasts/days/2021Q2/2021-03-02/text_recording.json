@@ -1,0 +1,102 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 52050,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 578,
+    "reasoning_output_tokens": 16
+  },
+  "thread": "01a20d8a-8deb-7391-8b15-a80ab24ca1a3",
+  "packet_sha256": "97171328c0bcc3bd4030a6dc3668b21a5c1aa97a94513ec49da1e7336bbe9863",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0000946581\",\"reason\":\"Take-Two’s December-quarter net bookings fell $73.9 million year over year as several titles sold less after their launch periods (B). Restrictions boosted player engagement (C), and Grand Theft Auto supplied 28.9% of nine-month net revenue (A). I expect online demand to keep the March-quarter revenue change above -5%, then the comparison with a full quarter of elevated engagement to push June-quarter net revenue down at least 5% year over year.\"}]},\n    {\"sector\":\"2021Q2/retail-1\",\"alerts\":[{\"cik\":\"0000815556\",\"reason\":\"Pandemic-related PPE unit sales drove most of Fastenal’s 5.9% net sales growth in 2020, with little contribution from higher prices (A, B, D). Some PPE products were already oversupplied in the second half (C). I expect net sales growth to stay above -5% in the March quarter, then fall to -5% or lower in April–June as Fastenal compares against a full quarter of pandemic PPE demand.\"}]},\n    {\"sector\":\"2021Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0000946581",
+            "reason": "Take-Two’s December-quarter net bookings fell $73.9 million year over year as several titles sold less after their launch periods (B). Restrictions boosted player engagement (C), and Grand Theft Auto supplied 28.9% of nine-month net revenue (A). I expect online demand to keep the March-quarter revenue change above -5%, then the comparison with a full quarter of elevated engagement to push June-quarter net revenue down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000815556",
+            "reason": "Pandemic-related PPE unit sales drove most of Fastenal’s 5.9% net sales growth in 2020, with little contribution from higher prices (A, B, D). Some PPE products were already oversupplied in the second half (C). I expect net sales growth to stay above -5% in the March quarter, then fall to -5% or lower in April–June as Fastenal compares against a full quarter of pandemic PPE demand."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

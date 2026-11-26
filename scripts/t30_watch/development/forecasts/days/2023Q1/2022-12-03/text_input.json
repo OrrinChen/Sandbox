@@ -1,0 +1,49 @@
+{
+  "cutoff": "2022-12-03",
+  "sectors": {
+    "2023Q1/retail-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000829224",
+          "issuer": "STARBUCKS CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2023-01-02",
+          "latest_filed_period_end": "2022-10-02",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2022-11-18",
+              "text": "Consolidated revenues increased 11% to $32.3 billion in fiscal 2022 compared to $29.1 billion in fiscal 2021, primarily driven by strength in our U.S. business and growth in our International segment excluding China, partially offset by the impact of the extra week in fiscal 2021 ($496 million) and unfavorable foreign currency translation."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2022-11-18",
+              "text": "For both the North America segment and U.S. market, comparable store sales increased 12% for fiscal 2022 compared to an increase of 22% and 21% for the North America segment and the U.S. market, respectively, in fiscal 2021."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2022-11-18",
+              "text": "The change was primarily due to lower net earnings and an increase in inventory purchases and timing of income tax payments."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2022-11-18",
+              "text": "Average ticket for the North America segment and the U.S. market grew 7% and 8%, respectively, primarily driven by strategic pricing and increased demand for food items in our U.S. market."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2022-11-18",
+              "text": "•Consolidated operating income decreased to $4.6 billion in fiscal 2022 compared to $4.9 billion in fiscal 2021."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

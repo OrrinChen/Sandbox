@@ -1,0 +1,816 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "3db1dd7eb639afd23a6a06896c914ac5ab5bda38a4c3bc12a724534266cd025d",
+    "920b195bbaaf677332fc147bb6a2692172f5f6db5c0a8a8a39782f4b90bff83e",
+    "8e19ccc3f1ecd15a78a363daa5aaff3af2d675e3b16707b0e8fbd061de0ee992"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-14240",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "U4:U75",
+            "formula": "=SUMPRODUCT(($A$4:$A$75=R4)*($B$4:$B$75=S4)*($C$3:$M$3=T4)*$C$4:$M$75)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "R60:U75"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "R60:U75",
+            "range_size": 64,
+            "cells": [
+              [
+                "R60",
+                "Individual"
+              ],
+              [
+                "S60",
+                "1000000"
+              ],
+              [
+                "T60",
+                "41-45yrs"
+              ],
+              [
+                "U60",
+                "0"
+              ],
+              [
+                "R61",
+                "Individual"
+              ],
+              [
+                "S61",
+                "1000000"
+              ],
+              [
+                "T61",
+                "46-55yrs"
+              ],
+              [
+                "U61",
+                "0"
+              ],
+              [
+                "R62",
+                "Individual"
+              ],
+              [
+                "S62",
+                "1000000"
+              ],
+              [
+                "T62",
+                "56-60yrs"
+              ],
+              [
+                "U62",
+                "0"
+              ],
+              [
+                "R63",
+                "Individual"
+              ],
+              [
+                "S63",
+                "1000000"
+              ],
+              [
+                "T63",
+                "61-65yrs"
+              ],
+              [
+                "U63",
+                "0"
+              ],
+              [
+                "R64",
+                "Individual"
+              ],
+              [
+                "S64",
+                "1000000"
+              ],
+              [
+                "T64",
+                "66-70yrs"
+              ],
+              [
+                "U64",
+                "0"
+              ],
+              [
+                "R65",
+                "Individual"
+              ],
+              [
+                "S65",
+                "1000000"
+              ],
+              [
+                "T65",
+                "71-75yrs"
+              ],
+              [
+                "U65",
+                "0"
+              ],
+              [
+                "R66",
+                "Individual"
+              ],
+              [
+                "S66",
+                "1000000"
+              ],
+              [
+                "T66",
+                "76yrs And Above"
+              ],
+              [
+                "U66",
+                "0"
+              ],
+              [
+                "R67",
+                "Individual"
+              ],
+              [
+                "S67",
+                "400000"
+              ],
+              [
+                "T67",
+                "3M-25yrs"
+              ],
+              [
+                "U67",
+                "0"
+              ],
+              [
+                "R68",
+                "Individual"
+              ],
+              [
+                "S68",
+                "400000"
+              ],
+              [
+                "T68",
+                "26-40yrs"
+              ],
+              [
+                "U68",
+                "0"
+              ],
+              [
+                "R69",
+                "Individual"
+              ],
+              [
+                "S69",
+                "400000"
+              ],
+              [
+                "T69",
+                "41-45yrs"
+              ],
+              [
+                "U69",
+                "0"
+              ],
+              [
+                "R70",
+                "Individual"
+              ],
+              [
+                "S70",
+                "400000"
+              ],
+              [
+                "T70",
+                "46-55yrs"
+              ],
+              [
+                "U70",
+                "0"
+              ],
+              [
+                "R71",
+                "Individual"
+              ],
+              [
+                "S71",
+                "400000"
+              ],
+              [
+                "T71",
+                "56-60yrs"
+              ],
+              [
+                "U71",
+                "0"
+              ],
+              [
+                "R72",
+                "Individual"
+              ],
+              [
+                "S72",
+                "400000"
+              ],
+              [
+                "T72",
+                "61-65yrs"
+              ],
+              [
+                "U72",
+                "0"
+              ],
+              [
+                "R73",
+                "Individual"
+              ],
+              [
+                "S73",
+                "400000"
+              ],
+              [
+                "T73",
+                "66-70yrs"
+              ],
+              [
+                "U73",
+                "0"
+              ],
+              [
+                "R74",
+                "Individual"
+              ],
+              [
+                "S74",
+                "400000"
+              ],
+              [
+                "T74",
+                "71-75yrs"
+              ],
+              [
+                "U74",
+                "0"
+              ],
+              [
+                "R75",
+                "Individual"
+              ],
+              [
+                "S75",
+                "400000"
+              ],
+              [
+                "T75",
+                "76yrs And Above"
+              ],
+              [
+                "U75",
+                "0"
+              ]
+            ],
+            "total": 64,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "Sheet1",
+          "R60"
+        ],
+        [
+          "Sheet1",
+          "R61"
+        ],
+        [
+          "Sheet1",
+          "R62"
+        ],
+        [
+          "Sheet1",
+          "R63"
+        ],
+        [
+          "Sheet1",
+          "R64"
+        ],
+        [
+          "Sheet1",
+          "R65"
+        ],
+        [
+          "Sheet1",
+          "R66"
+        ],
+        [
+          "Sheet1",
+          "R67"
+        ],
+        [
+          "Sheet1",
+          "R68"
+        ],
+        [
+          "Sheet1",
+          "R69"
+        ],
+        [
+          "Sheet1",
+          "R70"
+        ],
+        [
+          "Sheet1",
+          "R71"
+        ],
+        [
+          "Sheet1",
+          "R72"
+        ],
+        [
+          "Sheet1",
+          "R73"
+        ],
+        [
+          "Sheet1",
+          "S60"
+        ],
+        [
+          "Sheet1",
+          "S61"
+        ],
+        [
+          "Sheet1",
+          "S62"
+        ],
+        [
+          "Sheet1",
+          "S63"
+        ],
+        [
+          "Sheet1",
+          "S64"
+        ],
+        [
+          "Sheet1",
+          "S65"
+        ],
+        [
+          "Sheet1",
+          "S66"
+        ],
+        [
+          "Sheet1",
+          "S67"
+        ],
+        [
+          "Sheet1",
+          "S68"
+        ],
+        [
+          "Sheet1",
+          "S69"
+        ],
+        [
+          "Sheet1",
+          "S70"
+        ],
+        [
+          "Sheet1",
+          "S71"
+        ],
+        [
+          "Sheet1",
+          "S72"
+        ],
+        [
+          "Sheet1",
+          "S73"
+        ],
+        [
+          "Sheet1",
+          "T60"
+        ],
+        [
+          "Sheet1",
+          "T61"
+        ],
+        [
+          "Sheet1",
+          "T62"
+        ],
+        [
+          "Sheet1",
+          "T63"
+        ],
+        [
+          "Sheet1",
+          "T64"
+        ],
+        [
+          "Sheet1",
+          "T65"
+        ],
+        [
+          "Sheet1",
+          "T66"
+        ],
+        [
+          "Sheet1",
+          "T67"
+        ],
+        [
+          "Sheet1",
+          "T68"
+        ],
+        [
+          "Sheet1",
+          "T69"
+        ],
+        [
+          "Sheet1",
+          "T70"
+        ],
+        [
+          "Sheet1",
+          "T71"
+        ],
+        [
+          "Sheet1",
+          "T72"
+        ],
+        [
+          "Sheet1",
+          "T73"
+        ],
+        [
+          "Sheet1",
+          "U60"
+        ],
+        [
+          "Sheet1",
+          "U61"
+        ],
+        [
+          "Sheet1",
+          "U62"
+        ],
+        [
+          "Sheet1",
+          "U63"
+        ],
+        [
+          "Sheet1",
+          "U64"
+        ],
+        [
+          "Sheet1",
+          "U65"
+        ],
+        [
+          "Sheet1",
+          "U66"
+        ],
+        [
+          "Sheet1",
+          "U67"
+        ],
+        [
+          "Sheet1",
+          "U68"
+        ],
+        [
+          "Sheet1",
+          "U69"
+        ],
+        [
+          "Sheet1",
+          "U70"
+        ],
+        [
+          "Sheet1",
+          "U71"
+        ],
+        [
+          "Sheet1",
+          "U72"
+        ],
+        [
+          "Sheet1",
+          "U73"
+        ]
+      ],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59319,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 482,
+        "reasoning_output_tokens": 140
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-1563",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "B3:B30",
+            "formula": "=IF(A3=\"\",B2,A3)"
+          }
+        ],
+        "formulas": {
+          "B2": "=IF(A2=\"\",\"\",A2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A14:B30"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A14:B30",
+            "range_size": 34,
+            "cells": [
+              [
+                "A14",
+                "Green"
+              ],
+              [
+                "B14",
+                "Green"
+              ],
+              [
+                "A18",
+                "4"
+              ],
+              [
+                "A21",
+                "5"
+              ],
+              [
+                "A22",
+                "6"
+              ],
+              [
+                "A23",
+                "25"
+              ],
+              [
+                "A26",
+                "35"
+              ],
+              [
+                "A27",
+                "Orange7"
+              ],
+              [
+                "A30",
+                "Purple8"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 25
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59319,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 482,
+        "reasoning_output_tokens": 140
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-15829",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "formulas": {
+          "B3": "=SUMIFS(I2:I22,F2:F22,B2,G2:G22,\"<=\"&B1,H2:H22,\">=\"&B1)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59319,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 482,
+        "reasoning_output_tokens": 140
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-17251",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=COUNTIFS($A$2:$A$11,A2,$B$2:$B$11,\"<\"&B2)+1"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:C11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:C11",
+            "range_size": 30,
+            "cells": [
+              [
+                "A2",
+                "abc"
+              ],
+              [
+                "B2",
+                "1.1"
+              ],
+              [
+                "C2",
+                "1"
+              ],
+              [
+                "A3",
+                "abc"
+              ],
+              [
+                "B3",
+                "1.23"
+              ],
+              [
+                "C3",
+                "3"
+              ],
+              [
+                "A4",
+                "abc"
+              ],
+              [
+                "B4",
+                "1.15"
+              ],
+              [
+                "C4",
+                "2"
+              ],
+              [
+                "A5",
+                "abc"
+              ],
+              [
+                "B5",
+                "1.58"
+              ],
+              [
+                "C5",
+                "4"
+              ],
+              [
+                "A6",
+                "abc"
+              ],
+              [
+                "B6",
+                "1.98"
+              ],
+              [
+                "C6",
+                "5"
+              ],
+              [
+                "A7",
+                "efg"
+              ],
+              [
+                "B7",
+                "3.26"
+              ],
+              [
+                "C7",
+                "2"
+              ],
+              [
+                "A8",
+                "efg"
+              ],
+              [
+                "B8",
+                "3.68"
+              ],
+              [
+                "A9",
+                "efg"
+              ],
+              [
+                "B9",
+                "3.47"
+              ],
+              [
+                "A10",
+                "efg"
+              ],
+              [
+                "B10",
+                "3.19"
+              ],
+              [
+                "A11",
+                "efg"
+              ],
+              [
+                "B11",
+                "3.78"
+              ]
+            ],
+            "total": 26,
+            "truncated": false,
+            "blank_count": 4
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59319,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 482,
+        "reasoning_output_tokens": 140
+      },
+      "model_calls": 3
+    }
+  ]
+}

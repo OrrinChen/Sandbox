@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-020",
+    "stage": "submit",
+    "prompt_sha256": "29c5eeb98df58d5cf0c46f5865758caa573af07e640bcc1013469d32ef5e1204",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-3ca1-7b31-b3ee-e63775e6ae3c",
+    "raw": "{\n  \"sheet-56451\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:F7\",\n        \"formula\": \"=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A$1:$A$7,0),MATCH(B$1,'Sheet 2'!$A$1:$F$1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56599\": {\n    \"formulas\": {\n      \"B2\": \"=IFERROR(IF(OR(M5=\\\"\\\",MOD(--M5,1)<>0),\\\"not found - please re-enter\\\",INDEX($J$6:$J$30,MATCH(1,(--M5>=--$G$6:$G$30)*(--M5<=--$H$6:$H$30),0))),\\\"not found - please re-enter\\\")\"\n    }\n  },\n  \"sheet-56915\": {\n    \"fills\": [\n      {\n        \"range\": \"B18:B23\",\n        \"formula\": \"=IFNA(IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",0,\\\"YTD\\\",2,NA()))=\\\"\\\",\\\"\\\",ROUND(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",0,\\\"YTD\\\",2,NA())),2)),\\\"\\\")\"\n      },\n      {\n        \"range\": \"C18:C23\",\n        \"formula\": \"=IFNA(IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))=\\\"\\\",\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))<0,\\\"(\\\"&TEXT(ABS(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))),\\\"0.00\\\")&\\\")\\\",TEXT(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(B$13,\\\"January\\\",1,\\\"YTD\\\",3,NA())),\\\"0.00\\\"))),\\\"\\\")\"\n      },\n      {\n        \"range\": \"D18:D23\",\n        \"formula\": \"=IFNA(IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",0,\\\"YTD\\\",2,NA()))=\\\"\\\",\\\"\\\",ROUND(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",0,\\\"YTD\\\",2,NA())),2)),\\\"\\\")\"\n      },\n      {\n        \"range\": \"E18:E23\",\n        \"formula\": \"=IFNA(IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))=\\\"\\\",\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))<0,\\\"(\\\"&TEXT(ABS(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",1,\\\"YTD\\\",3,NA()))),\\\"0.00\\\")&\\\")\\\",TEXT(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+SWITCH(D$13,\\\"January\\\",1,\\\"YTD\\\",3,NA())),\\\"0.00\\\"))),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56995\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D5\",\n        \"formula\": \"=IF(OR(B2=\\\"\\\",B2=0),\\\"Not Attempt\\\",(B2-C2)/B2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 21673,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2239,
+      "reasoning_output_tokens": 960
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

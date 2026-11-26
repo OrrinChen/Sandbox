@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-015",
+    "stage": "inspect-2",
+    "prompt_sha256": "80d577bedc42237408d18f013e8536dc29af716b4a30345434573790c8bf9f8e",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-0840-7cb0-94d9-56e0c3f639e6"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-49801\":[],\"sheet-49857\":[],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C18:Q23\"}],\"sheet-50630\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18828,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 490,
+          "reasoning_output_tokens": 442
+        }
+      ],
+      "cli_final": "{\"sheet-49801\":[],\"sheet-49857\":[],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C18:Q23\"}],\"sheet-50630\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-0840-7cb0-94d9-56e0c3f639e6",
+    "raw": "{\"sheet-49801\":[],\"sheet-49857\":[],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C18:Q23\"}],\"sheet-50630\":[]}",
+    "usage": {
+      "input_tokens": 18828,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 490,
+      "reasoning_output_tokens": 442
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

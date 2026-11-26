@@ -1,0 +1,154 @@
+[
+  {
+    "task_id": "decision-acoustic-recording-channel-witness-set",
+    "tool": "sqlite.query",
+    "instruction": "A published acoustic recording has three channels: left, centre and right. Each archived take has a unique single uppercase ASCII letter as its ID. Its channel_mask records which published channels it can explain, with left worth 1, centre worth 2 and right worth 4. Combine masks by bitwise OR. A witness set must explain all three channels and be irredundant: removing any one selected take must leave at least one channel unexplained. Sort each qualifying set's IDs ascending and concatenate them without separators. Choose the lexicographically smallest resulting string under binary text ordering, with a proper prefix sorting first. Compare strings directly regardless of take count. Return exactly one row with witness_ids and take_count, the number of selected takes. At least one witness set exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "takes": {
+        "columns": [
+          "take_id TEXT",
+          "channel_mask INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            2
+          ],
+          [
+            "C",
+            4
+          ],
+          [
+            "D",
+            7
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "witness_ids",
+      "take_count"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-chilled-crates-to-buyers",
+    "tool": "sqlite.query",
+    "instruction": "Allocate up to five identical whole crates between buyers A and B. Either buyer may take any integer quantity from zero through its stated crate cap, and crates may stay at the depot. The contribution per crate is in cents after variable costs. Each buyer receiving at least one crate incurs its own fixed refrigerated delivery fee once, in cents. Maximize total contribution less delivery fees. Break ties by fewer total crates dispatched, then by fewer crates for A. There is one non-null bid per buyer, and each cap is between zero and five inclusive. Return one row with columns crates_a, crates_b, net_cents in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "buyer_bid": {
+        "columns": [
+          "buyer_code TEXT",
+          "crate_cap INTEGER",
+          "unit_cents INTEGER",
+          "drop_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            4,
+            100,
+            100
+          ],
+          [
+            "B",
+            3,
+            85,
+            20
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "crates_a",
+      "crates_b",
+      "net_cents"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-export-short-names",
+    "tool": "csv.export",
+    "instruction": "Assign one short filename to each export file, processing files by ascending file_id. The source stem and extension are supplied separately and contain only uppercase ASCII letters. Extensions are one to three letters. All names in reserved_short are occupied before allocation starts. A stem of at most eight letters gets its literal STEM.EXT if that full name is free. Otherwise, including for every stem longer than eight letters, try the first six letters of the stem followed by ~1, ~2, and so on, keeping the extension. Use the lowest free suffix and immediately occupy the full name for later files. A short stem contributes all its letters if it has fewer than six. A suffix from 1 through 9 always suffices. Return file_id and short_name in ascending file_id order. IDs are unique and have no units. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "export_file": {
+        "columns": [
+          "file_id INTEGER",
+          "stem TEXT",
+          "ext TEXT"
+        ],
+        "rows": [
+          [
+            3,
+            "GARDENING",
+            "MAP"
+          ],
+          [
+            1,
+            "GARDEN",
+            "MAP"
+          ],
+          [
+            4,
+            "GARDENING",
+            "TXT"
+          ],
+          [
+            2,
+            "GARDENERS",
+            "MAP"
+          ]
+        ]
+      },
+      "reserved_short": {
+        "columns": [
+          "short_name TEXT"
+        ],
+        "rows": [
+          [
+            "GARDEN.MAP"
+          ],
+          [
+            "GARDEN~2.MAP"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "file_id",
+      "short_name"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-fee-at-fixed-effective-yield",
+    "tool": "sqlite.query",
+    "instruction": "A lender holds one two-period note. Its opening carrying amount equals face value minus the deferred fee. For each period, calculate effective interest on that period's opening carrying amount at the fixed periodic rate in basis points (10000 basis points equals 100%). Round interest to the nearest whole cent, with half a cent rounded up. Recognize fee income equal to rounded interest minus the cash coupon, and add that fee income to the carrying amount before starting the next period. The same coupon is paid at each period end. Report the second closing amount immediately before principal repayment. Return period_no, opening_cents, interest_cents, fee_income_cents, and closing_cents ordered by increasing period_no, one row per period. All monetary inputs and outputs are whole cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "note": {
+        "columns": [
+          "face_cents INTEGER",
+          "fee_cents INTEGER",
+          "rate_bps INTEGER",
+          "coupon_cents INTEGER"
+        ],
+        "rows": [
+          [
+            9859,
+            359,
+            500,
+            300
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "period_no",
+      "opening_cents",
+      "interest_cents",
+      "fee_income_cents",
+      "closing_cents"
+    ]
+  }
+]

@@ -1,0 +1,289 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "69f7d76851c7cd3cf095ecb6fbea27f974ef49ef49836eaa60e98cd3a22fe5f4",
+    "e8d0f3698d6a7021e0b133ed0425094a9415712bcfb2f9265eadc1185db0fe03",
+    "acd69dccda755571294ef4bca1e70ecfa02542b7b3d217fd946e69332e16bef4"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-14240",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "U4:U75",
+            "formula": "=IFNA(SUMPRODUCT(--($A$4:$A$75=R4),--($B$4:$B$75=S4),INDEX($C$4:$M$75,0,MATCH(T4,$C$3:$M$3,0))),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A68:M75"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A68:M75",
+            "range_size": 104,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 104
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62122,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 715,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-1563",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "B3:B30",
+            "formula": "=IF(A3=\"\",B2,A3)"
+          }
+        ],
+        "formulas": {
+          "B2": "=IF(A2=\"\",\"\",A2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 62122,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 715,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-15829",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "formulas": {
+          "B3": "=SUMIFS($I$2:$I$22,$F$2:$F$22,B2,$G$2:$G$22,\"<=\"&B1,$H$2:$H$22,\">=\"&B1)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 62122,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 715,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-17251",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=1+COUNTIFS($A$2:$A$11,A2,$B$2:$B$11,\"<\"&B2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C11",
+            "range_size": 33,
+            "cells": [
+              [
+                "A1",
+                "part"
+              ],
+              [
+                "B1",
+                "price"
+              ],
+              [
+                "C1",
+                "Desired result by formula (sort in ascending order)"
+              ],
+              [
+                "A2",
+                "abc"
+              ],
+              [
+                "B2",
+                "1.1"
+              ],
+              [
+                "C2",
+                "1"
+              ],
+              [
+                "A3",
+                "abc"
+              ],
+              [
+                "B3",
+                "1.23"
+              ],
+              [
+                "C3",
+                "3"
+              ],
+              [
+                "A4",
+                "abc"
+              ],
+              [
+                "B4",
+                "1.15"
+              ],
+              [
+                "C4",
+                "2"
+              ],
+              [
+                "A5",
+                "abc"
+              ],
+              [
+                "B5",
+                "1.58"
+              ],
+              [
+                "C5",
+                "4"
+              ],
+              [
+                "A6",
+                "abc"
+              ],
+              [
+                "B6",
+                "1.98"
+              ],
+              [
+                "C6",
+                "5"
+              ],
+              [
+                "A7",
+                "efg"
+              ],
+              [
+                "B7",
+                "3.26"
+              ],
+              [
+                "C7",
+                "2"
+              ],
+              [
+                "A8",
+                "efg"
+              ],
+              [
+                "B8",
+                "3.68"
+              ],
+              [
+                "A9",
+                "efg"
+              ],
+              [
+                "B9",
+                "3.47"
+              ],
+              [
+                "A10",
+                "efg"
+              ],
+              [
+                "B10",
+                "3.19"
+              ],
+              [
+                "A11",
+                "efg"
+              ],
+              [
+                "B11",
+                "3.78"
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 4
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62122,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 715,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    }
+  ]
+}

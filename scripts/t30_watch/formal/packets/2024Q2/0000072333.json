@@ -1,0 +1,68 @@
+{
+  "wave": "2024Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000072333",
+  "issuer": "NORDSTROM INC",
+  "cutoff": "2024-03-29",
+  "projected_target_start": "2024-04-28",
+  "status": "complete",
+  "period_end": "2024-02-03",
+  "filing_date": "2024-03-19",
+  "text": {
+    "sector": "retail",
+    "cik": "0000072333",
+    "issuer": "NORDSTROM INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-K",
+        "date": "2024-03-19",
+        "text": "In 2023, we reported net earnings of $134, or 0.9% of net sales, $0.82 per diluted share and EBIT of $251, or 1.8% of net sales."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-K",
+        "date": "2024-03-19",
+        "text": "Adjusted EBIT1 was $567, or 4.0% of net sales, and Adjusted EPS1 was $2.12, which exclude the impacts of charges related to the wind-down of Canadian operations and a supply chain asset impairment and related charge."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-K",
+        "date": "2024-03-19",
+        "text": "We continued to manage with leaner inventories and exited 2023 with overall ending inventory levels 3% lower than the fourth quarter of 2022 and a positive sales-to-inventory spread."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-K",
+        "date": "2024-03-19",
+        "text": "Nordstrom net sales and GMV decreased compared with 2022, which reflected a decrease in the number of items sold, partially offset by an increase in the average selling price per item sold."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-K",
+        "date": "2024-03-19",
+        "text": "Net cash used in financing activities decreased $77 between 2023 and 2022 primarily due to decreased share repurchases in 2023 compared with 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-10-28",
+        "filed": "2023-12-01",
+        "reported_sales_usd": 3320000000,
+        "year_ago_reported_sales_usd": 3546000000,
+        "yoy_percent": "-6.3734"
+      },
+      {
+        "quarter_end": "2024-02-03",
+        "filed": "2024-03-19",
+        "reported_sales_usd": 4420000000,
+        "year_ago_reported_sales_usd": 4319000000,
+        "yoy_percent": "2.3385"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,204 @@
+[
+  {
+    "task_id": "decision-railway-junction-removal",
+    "tool": "sqlite.query",
+    "instruction": "The tracks table lists each undirected track once. Its endpoints are the complete set of junctions, and the original network is connected. Test each junction independently by removing it and all incident tracks. Return one row for every removal that leaves at least two connected components. Count a surviving isolated junction as one component. Return junction, then components (an integer count), ordered by junction in ascending binary text order. Include all qualifying junctions, even when their counts tie. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "tracks": {
+        "columns": [
+          "end_a TEXT",
+          "end_b TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "C",
+            "A"
+          ],
+          [
+            "C",
+            "D"
+          ],
+          [
+            "D",
+            "E"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "junction",
+      "components"
+    ]
+  },
+  {
+    "task_id": "decision-ration-sealed-refill-packs",
+    "tool": "sqlite.query",
+    "instruction": "Allocate units of a common item from one stock release to bays A and B. Each bay's order slip gives its positive demand in units and the size of a sealed refill pack acceptable there. Send a nonnegative whole number of those packs, at most six packs per bay. Never exceed either bay's demand or the released units in total. Unused units may stay behind. First maximize the smaller of the two fractions of demand filled, comparing fractions exactly. Among ties maximize total units shipped, then maximize units sent to A. Return one row with columns units_a, units_b, release_note, slip_a, slip_b, citing the stock release and both order slips. There is one release and one slip per bay. All fields are non-null. Demands and pack sizes are at most 100 units. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bay_slip": {
+        "columns": [
+          "bay_id TEXT",
+          "slip_id TEXT",
+          "need_units INTEGER",
+          "pack_units INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "A3",
+            4,
+            2,
+            "Refill four spaces with sealed pairs."
+          ],
+          [
+            "B",
+            "B5",
+            12,
+            6,
+            "Refill twelve spaces with sealed packs of six."
+          ]
+        ]
+      },
+      "stock_release": {
+        "columns": [
+          "note_id TEXT",
+          "free_units INTEGER",
+          "release_text TEXT"
+        ],
+        "rows": [
+          [
+            "R1",
+            12,
+            "Twelve counted units are available for this run."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "units_a",
+      "units_b",
+      "release_note",
+      "slip_a",
+      "slip_b"
+    ]
+  },
+  {
+    "task_id": "decision-ration-swap-pack-charging",
+    "tool": "sqlite.query",
+    "instruction": "Select a subset of the listed packs to finish before morning. Each pack is an indivisible job requiring need_kwh kWh and enabling trip_count shuttle trips only if finished. The single shift_notice is the dispatch evidence for the shared energy allotment in kWh. Any subset using at most that allotment is feasible. Maximize total trips, then minimize total energy used, then minimize the sum of the selected pack_bit values. Each pack_bit is a unique member of {1,2,4,8} identifying a pack for the tie rule. All fields are non-NULL. Report one row per selected pack with columns source_id, pack_name, need_kwh, trip_count, ordered by pack_bit ascending. Cite the shift_notice used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pack_job": {
+        "columns": [
+          "pack_bit INTEGER",
+          "pack_name TEXT",
+          "need_kwh INTEGER",
+          "trip_count INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "Amber",
+            7,
+            10
+          ],
+          [
+            2,
+            "Birch",
+            5,
+            7
+          ],
+          [
+            4,
+            "Clay",
+            5,
+            7
+          ],
+          [
+            8,
+            "Dune",
+            3,
+            3
+          ]
+        ]
+      },
+      "shift_notice": {
+        "columns": [
+          "source_id TEXT",
+          "notice_text TEXT",
+          "allot_kwh INTEGER"
+        ],
+        "rows": [
+          [
+            "N7",
+            "The swap rack has 10 kWh available before dispatch.",
+            10
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "source_id",
+      "pack_name",
+      "need_kwh",
+      "trip_count"
+    ]
+  },
+  {
+    "task_id": "decision-rebalance-chilled-trailer-bays",
+    "tool": "sqlite.query",
+    "instruction": "Both bays hold the required temperature. Every lot must travel intact, and its pallets must all occupy one bay. The manifest has exactly three lots with distinct bit values 1, 2 and 4. An assignment's blue_mask is the sum of the bit values of lots placed in blue. All remaining lots go in gold. Each bay's final pallet count must respect its own capacity. Moving a lot from its initial bay requires handling every pallet in that lot once. Minimize pallets handled, breaking ties by smaller blue_mask. Inputs contain no nulls and at least one assignment fits. Return one row with columns blue_mask, blue_pallets, gold_pallets, handled_pallets in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bay_limits": {
+        "columns": [
+          "blue_cap INTEGER",
+          "gold_cap INTEGER"
+        ],
+        "rows": [
+          [
+            5,
+            5
+          ]
+        ]
+      },
+      "lot_manifest": {
+        "columns": [
+          "lot_bit INTEGER",
+          "pallets INTEGER",
+          "initial_bay TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            4,
+            "blue"
+          ],
+          [
+            2,
+            3,
+            "blue"
+          ],
+          [
+            4,
+            2,
+            "gold"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "blue_mask",
+      "blue_pallets",
+      "gold_pallets",
+      "handled_pallets"
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22554,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 194,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d91-c319-7a13-85cd-537a0054ad66",
+  "packet_sha256": "cede9b11b415e20232628ebbc410d02c70a9c7f49232a3d6e6ae91ae2c136241",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2025Q2/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000016918\",\n          \"reason\": \"Fiscal 2025 net sales rose 2% as beer growth outweighed falling branded wine and spirits shipments (A). I forecast that beer will keep the March–May decline, if any, under 5%. Wine assets were held for sale at year-end (E). If the divestiture closes near the June 1 quarter start, more sales would drop out of the June–August comparison, pushing the reported consolidated decline to 5% or more. The closing date and sales impact are uncertain.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q2/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000016918",
+            "reason": "Fiscal 2025 net sales rose 2% as beer growth outweighed falling branded wine and spirits shipments (A). I forecast that beer will keep the March–May decline, if any, under 5%. Wine assets were held for sale at year-end (E). If the divestiture closes near the June 1 quarter start, more sales would drop out of the June–August comparison, pushing the reported consolidated decline to 5% or more. The closing date and sales impact are uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

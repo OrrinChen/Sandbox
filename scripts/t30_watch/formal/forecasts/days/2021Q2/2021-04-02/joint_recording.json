@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25572,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 240,
+    "reasoning_output_tokens": 19
+  },
+  "thread": "01a20d8b-7fc1-75e2-9685-1f91bda57bb3",
+  "packet_sha256": "4494e052e81584722b1827c0ea9204b6362c658ad7efa16b6f38d3c6cb98601c",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2021Q2/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000768835\",\n          \"reason\": \"Big Lots’ consolidated net sales growth slowed from 17.97% YoY in October to 8.15% in January. If that 9.83-point quarterly slowdown repeats, growth would be about -1.7% in the intervening quarter and -11.5% in the target quarter beginning May 2, crossing -5% for the first time in that sequence. Fiscal 2020 comparable sales rose 16.1% (B), supporting the risk of a difficult year-over-year comparison.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2021Q2/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-2",
+        "alerts": [
+          {
+            "cik": "0000768835",
+            "reason": "Big Lots’ consolidated net sales growth slowed from 17.97% YoY in October to 8.15% in January. If that 9.83-point quarterly slowdown repeats, growth would be about -1.7% in the intervening quarter and -11.5% in the target quarter beginning May 2, crossing -5% for the first time in that sequence. Fiscal 2020 comparable sales rose 16.1% (B), supporting the risk of a difficult year-over-year comparison."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

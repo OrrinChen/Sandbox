@@ -61,7 +61,7 @@ def test_phase1_package_layout_exists():
 def test_phase1_cli_stub_reports_package_version(capsys):
     from sandboxed_agent_eval_harness.cli import main
 
-    exit_code = main()
+    exit_code = main([])
 
     assert exit_code == 0
     assert capsys.readouterr().out.strip() == "sandboxed-agent-eval-harness 0.1.0"

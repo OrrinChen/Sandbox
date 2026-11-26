@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-024",
+    "stage": "submit",
+    "prompt_sha256": "c1b08b774ac57af979886aa53300fc56349c3aedbddc0d0f93f725e0d62e65bc",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21232-6d0e-7870-8be5-5a8ee436f09b"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-59639\":{\"fills\":[{\"range\":\"D5:K7\",\"formula\":\"=IFERROR(MID($A5,COLUMN()-3,1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-59794\":{\"fills\":[{\"range\":\"C3:M5\",\"formula\":\"=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))+1,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))-1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-7902\":{\"fills\":[{\"range\":\"D3:J6\",\"formula\":\"=IFERROR(VLOOKUP($B3,Grouping!$B$2:$I$7,COLUMN()-1,FALSE),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))\"}],\"formulas\":{}},\"sheet-9111\":{\"fills\":[{\"range\":\"D2:D7\",\"formula\":\"=IF(B2=\\\"\\\",IF(C2=\\\"\\\",\\\"\\\",IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)),IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IF(C2=\\\"\\\",2500,IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500))))\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 19189,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 342,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-59639\":{\"fills\":[{\"range\":\"D5:K7\",\"formula\":\"=IFERROR(MID($A5,COLUMN()-3,1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-59794\":{\"fills\":[{\"range\":\"C3:M5\",\"formula\":\"=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))+1,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))-1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-7902\":{\"fills\":[{\"range\":\"D3:J6\",\"formula\":\"=IFERROR(VLOOKUP($B3,Grouping!$B$2:$I$7,COLUMN()-1,FALSE),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))\"}],\"formulas\":{}},\"sheet-9111\":{\"fills\":[{\"range\":\"D2:D7\",\"formula\":\"=IF(B2=\\\"\\\",IF(C2=\\\"\\\",\\\"\\\",IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)),IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IF(C2=\\\"\\\",2500,IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500))))\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21232-6d0e-7870-8be5-5a8ee436f09b",
+    "raw": "{\"sheet-59639\":{\"fills\":[{\"range\":\"D5:K7\",\"formula\":\"=IFERROR(MID($A5,COLUMN()-3,1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-59794\":{\"fills\":[{\"range\":\"C3:M5\",\"formula\":\"=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))+1,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2))-1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-7902\":{\"fills\":[{\"range\":\"D3:J6\",\"formula\":\"=IFERROR(VLOOKUP($B3,Grouping!$B$2:$I$7,COLUMN()-1,FALSE),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))\"}],\"formulas\":{}},\"sheet-9111\":{\"fills\":[{\"range\":\"D2:D7\",\"formula\":\"=IF(B2=\\\"\\\",IF(C2=\\\"\\\",\\\"\\\",IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)),IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IF(C2=\\\"\\\",2500,IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500))))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19189,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 342,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

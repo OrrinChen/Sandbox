@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-017",
+    "stage": "inspect-1",
+    "prompt_sha256": "29c05d48ce1296046b3a452f22a7e869f9e157c054a777d8c06845863e1be07c",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-0d3a-7152-a902-ad838bb3b967"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first read round to inspect the ambiguous target areas and existing formulas, then return only the requested JSON mapping."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-52220\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C3\"}],\"sheet-52233\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:E10\"}],\"sheet-52532\":[],\"sheet-52917\":[{\"op\":\"range\",\"sheet\":\"whole date\",\"range\":\"A1:C9\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 51706,
+          "cached_input_tokens": 45056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 347,
+          "reasoning_output_tokens": 181
+        }
+      ],
+      "cli_final": "{\"sheet-52220\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C3\"}],\"sheet-52233\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:E10\"}],\"sheet-52532\":[],\"sheet-52917\":[{\"op\":\"range\",\"sheet\":\"whole date\",\"range\":\"A1:C9\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-0d3a-7152-a902-ad838bb3b967",
+    "raw": "{\"sheet-52220\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C3\"}],\"sheet-52233\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:E10\"}],\"sheet-52532\":[],\"sheet-52917\":[{\"op\":\"range\",\"sheet\":\"whole date\",\"range\":\"A1:C9\"}]}",
+    "usage": {
+      "input_tokens": 51706,
+      "cached_input_tokens": 45056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 347,
+      "reasoning_output_tokens": 181
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

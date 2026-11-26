@@ -1,0 +1,436 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "cf31e9c2b304b1b2eb3e0f7da73f29c0f5b174e7eb69f35669854126b7acd8d6",
+    "a02486eac05efe2ad21f996ae5375fd8cd575435fd9c82b4c2280f1882648bdd",
+    "920276402e9c371180d98393e887ab3499fe63c5e3310c1f65319e14f76cb061"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-32562",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B21",
+            "formula": "=IF(A2=\"\",\"\",COUNTIF($A$2:A2,A2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "Item"
+              ],
+              [
+                "B1",
+                "Count Of Item"
+              ],
+              [
+                "A2",
+                "86"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "A3",
+                "503"
+              ],
+              [
+                "B3",
+                "0"
+              ],
+              [
+                "A4",
+                "142"
+              ],
+              [
+                "B4",
+                "0"
+              ],
+              [
+                "A5",
+                "216"
+              ],
+              [
+                "B5",
+                "0"
+              ],
+              [
+                "A6",
+                "125"
+              ],
+              [
+                "B6",
+                "0"
+              ],
+              [
+                "A7",
+                "173"
+              ],
+              [
+                "B7",
+                "0"
+              ],
+              [
+                "A8",
+                "35"
+              ],
+              [
+                "B8",
+                "0"
+              ],
+              [
+                "A9",
+                "434"
+              ],
+              [
+                "B9",
+                "0"
+              ],
+              [
+                "A10",
+                "627"
+              ],
+              [
+                "B10",
+                "0"
+              ],
+              [
+                "A11",
+                "377"
+              ],
+              [
+                "B11",
+                "0"
+              ],
+              [
+                "A12",
+                "508"
+              ],
+              [
+                "B12",
+                "0"
+              ],
+              [
+                "A13",
+                "374"
+              ],
+              [
+                "B13",
+                "0"
+              ],
+              [
+                "A14",
+                "374"
+              ],
+              [
+                "B14",
+                "0"
+              ],
+              [
+                "A15",
+                "374"
+              ],
+              [
+                "B15",
+                "0"
+              ],
+              [
+                "A16",
+                "321"
+              ],
+              [
+                "B16",
+                "0"
+              ],
+              [
+                "A17",
+                "321"
+              ],
+              [
+                "B17",
+                "0"
+              ],
+              [
+                "A18",
+                "321"
+              ],
+              [
+                "B18",
+                "0"
+              ],
+              [
+                "A19",
+                "9"
+              ],
+              [
+                "B19",
+                "0"
+              ],
+              [
+                "A20",
+                "141"
+              ],
+              [
+                "B20",
+                "0"
+              ],
+              [
+                "A21",
+                "109"
+              ],
+              [
+                "B21",
+                "0"
+              ]
+            ],
+            "total": 42,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60620,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 263
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-33157",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "K2:K6",
+            "formula": "=IF(J2=\"\",\"\",IFS(J2=C2,$B$1,J2=E2,$D$1,J2=G2,$F$1,J2=I2,$H$1,TRUE,\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60620,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 263
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-34033",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "K6:K10",
+            "formula": "=IFERROR(INDEX($C$3:$E$13,MATCH(1,INDEX(($B$3:$B$13=H6)*($A$3:$A$13<>\"\")*($A$3:$A$13=MAXIFS($A$3:$A$13,$B$3:$B$13,H6,$A$3:$A$13,\"<=\"&J6)),0),0),MATCH(I6,$C$1:$E$1,0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "ExcelForum help",
+            "range": "F3:K13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "ExcelForum help",
+            "range": "F3:K13",
+            "range_size": 66,
+            "cells": [
+              [
+                "H3",
+                "Example"
+              ],
+              [
+                "H4",
+                "Item"
+              ],
+              [
+                "I4",
+                "Parameter"
+              ],
+              [
+                "J4",
+                "Date recall"
+              ],
+              [
+                "K4",
+                "Results needed"
+              ],
+              [
+                "H6",
+                "A"
+              ],
+              [
+                "I6",
+                "Parameter 1"
+              ],
+              [
+                "J6",
+                "2023-02-11 00:00:00"
+              ],
+              [
+                "K6",
+                "26"
+              ],
+              [
+                "H7",
+                "B"
+              ],
+              [
+                "I7",
+                "Parameter 3"
+              ],
+              [
+                "J7",
+                "2023-01-12 00:00:00"
+              ],
+              [
+                "K7",
+                "250"
+              ],
+              [
+                "H8",
+                "C"
+              ],
+              [
+                "I8",
+                "Parameter 2"
+              ],
+              [
+                "J8",
+                "2023-03-25 00:00:00"
+              ],
+              [
+                "K8",
+                "5"
+              ],
+              [
+                "H9",
+                "C"
+              ],
+              [
+                "I9",
+                "Parameter 3"
+              ],
+              [
+                "J9",
+                "2023-02-25 00:00:00"
+              ],
+              [
+                "H10",
+                "A"
+              ],
+              [
+                "I10",
+                "Parameter 3"
+              ],
+              [
+                "J10",
+                "2023-07-05 00:00:00"
+              ]
+            ],
+            "total": 23,
+            "truncated": false,
+            "blank_count": 43
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60620,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 263
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-3413",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "G3:G6",
+            "formula": "=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60620,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 806,
+        "reasoning_output_tokens": 263
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-009",
+    "stage": "submit",
+    "prompt_sha256": "d60c5e4eed99b4bcdbed1207609b1165ca199c4bc779284ec771b416c2f5fdef",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122c-5b26-7aa0-b299-6f6ac55f551c"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-43406\":{\"formulas\":{\"C7\":\"=COUNTIF($D$7:D7,\\\"H\\\")\",\"C8\":\"=IF(D8=\\\"H\\\",COUNTIF($D$7:D8,\\\"H\\\"),COUNTIF($D$7:D8,\\\"H\\\")+(COUNTIF($D$7:D8,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C9\":\"=IF(D9=\\\"H\\\",COUNTIF($D$7:D9,\\\"H\\\"),COUNTIF($D$7:D9,\\\"H\\\")+(COUNTIF($D$7:D9,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D8=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C10\":\"=COUNTIF($D$7:D10,\\\"H\\\")\",\"C11\":\"=IF(D11=\\\"H\\\",COUNTIF($D$7:D11,\\\"H\\\"),COUNTIF($D$7:D11,\\\"H\\\")+(COUNTIF($D$7:D11,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D10=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C12\":\"=COUNTIF($D$7:D12,\\\"H\\\")\",\"C13\":\"=IF(D13=\\\"H\\\",COUNTIF($D$7:D13,\\\"H\\\"),COUNTIF($D$7:D13,\\\"H\\\")+(COUNTIF($D$7:D13,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D12=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C14\":\"=IF(D14=\\\"H\\\",COUNTIF($D$7:D14,\\\"H\\\"),COUNTIF($D$7:D14,\\\"H\\\")+(COUNTIF($D$7:D14,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D13=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C15\":\"=IF(D15=\\\"H\\\",COUNTIF($D$7:D15,\\\"H\\\"),COUNTIF($D$7:D15,\\\"H\\\")+(COUNTIF($D$7:D15,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D14=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C16\":\"=IF(D16=\\\"H\\\",COUNTIF($D$7:D16,\\\"H\\\"),COUNTIF($D$7:D16,\\\"H\\\")+(COUNTIF($D$7:D16,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D15=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C17\":\"=IF(D17=\\\"H\\\",COUNTIF($D$7:D17,\\\"H\\\"),COUNTIF($D$7:D17,\\\"H\\\")+(COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D16=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C18\":\"=COUNTIF($D$7:D18,\\\"H\\\")\",\"C19\":\"=IF(D19=\\\"H\\\",COUNTIF($D$7:D19,\\\"H\\\"),COUNTIF($D$7:D19,\\\"H\\\")+(COUNTIF($D$7:D19,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D18=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C20\":\"=COUNTIF($D$7:D20,\\\"H\\\")\"}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:K6\",\"formula\":\"=COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\"\\\")+COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\">=\\\"&DATE(2022,COLUMN()-6,1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(RIGHT(A2,LEN(A2)-FIND(\\\"to\\\",A2)-2))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-2))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18265,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1086,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-43406\":{\"formulas\":{\"C7\":\"=COUNTIF($D$7:D7,\\\"H\\\")\",\"C8\":\"=IF(D8=\\\"H\\\",COUNTIF($D$7:D8,\\\"H\\\"),COUNTIF($D$7:D8,\\\"H\\\")+(COUNTIF($D$7:D8,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C9\":\"=IF(D9=\\\"H\\\",COUNTIF($D$7:D9,\\\"H\\\"),COUNTIF($D$7:D9,\\\"H\\\")+(COUNTIF($D$7:D9,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D8=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C10\":\"=COUNTIF($D$7:D10,\\\"H\\\")\",\"C11\":\"=IF(D11=\\\"H\\\",COUNTIF($D$7:D11,\\\"H\\\"),COUNTIF($D$7:D11,\\\"H\\\")+(COUNTIF($D$7:D11,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D10=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C12\":\"=COUNTIF($D$7:D12,\\\"H\\\")\",\"C13\":\"=IF(D13=\\\"H\\\",COUNTIF($D$7:D13,\\\"H\\\"),COUNTIF($D$7:D13,\\\"H\\\")+(COUNTIF($D$7:D13,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D12=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C14\":\"=IF(D14=\\\"H\\\",COUNTIF($D$7:D14,\\\"H\\\"),COUNTIF($D$7:D14,\\\"H\\\")+(COUNTIF($D$7:D14,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D13=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C15\":\"=IF(D15=\\\"H\\\",COUNTIF($D$7:D15,\\\"H\\\"),COUNTIF($D$7:D15,\\\"H\\\")+(COUNTIF($D$7:D15,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D14=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C16\":\"=IF(D16=\\\"H\\\",COUNTIF($D$7:D16,\\\"H\\\"),COUNTIF($D$7:D16,\\\"H\\\")+(COUNTIF($D$7:D16,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D15=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C17\":\"=IF(D17=\\\"H\\\",COUNTIF($D$7:D17,\\\"H\\\"),COUNTIF($D$7:D17,\\\"H\\\")+(COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D16=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C18\":\"=COUNTIF($D$7:D18,\\\"H\\\")\",\"C19\":\"=IF(D19=\\\"H\\\",COUNTIF($D$7:D19,\\\"H\\\"),COUNTIF($D$7:D19,\\\"H\\\")+(COUNTIF($D$7:D19,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D18=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C20\":\"=COUNTIF($D$7:D20,\\\"H\\\")\"}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:K6\",\"formula\":\"=COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\"\\\")+COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\">=\\\"&DATE(2022,COLUMN()-6,1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(RIGHT(A2,LEN(A2)-FIND(\\\"to\\\",A2)-2))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-2))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122c-5b26-7aa0-b299-6f6ac55f551c",
+    "raw": "{\"sheet-43406\":{\"formulas\":{\"C7\":\"=COUNTIF($D$7:D7,\\\"H\\\")\",\"C8\":\"=IF(D8=\\\"H\\\",COUNTIF($D$7:D8,\\\"H\\\"),COUNTIF($D$7:D8,\\\"H\\\")+(COUNTIF($D$7:D8,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C9\":\"=IF(D9=\\\"H\\\",COUNTIF($D$7:D9,\\\"H\\\"),COUNTIF($D$7:D9,\\\"H\\\")+(COUNTIF($D$7:D9,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D8=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C10\":\"=COUNTIF($D$7:D10,\\\"H\\\")\",\"C11\":\"=IF(D11=\\\"H\\\",COUNTIF($D$7:D11,\\\"H\\\"),COUNTIF($D$7:D11,\\\"H\\\")+(COUNTIF($D$7:D11,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D10=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C12\":\"=COUNTIF($D$7:D12,\\\"H\\\")\",\"C13\":\"=IF(D13=\\\"H\\\",COUNTIF($D$7:D13,\\\"H\\\"),COUNTIF($D$7:D13,\\\"H\\\")+(COUNTIF($D$7:D13,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D12=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C14\":\"=IF(D14=\\\"H\\\",COUNTIF($D$7:D14,\\\"H\\\"),COUNTIF($D$7:D14,\\\"H\\\")+(COUNTIF($D$7:D14,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D13=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C15\":\"=IF(D15=\\\"H\\\",COUNTIF($D$7:D15,\\\"H\\\"),COUNTIF($D$7:D15,\\\"H\\\")+(COUNTIF($D$7:D15,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D14=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C16\":\"=IF(D16=\\\"H\\\",COUNTIF($D$7:D16,\\\"H\\\"),COUNTIF($D$7:D16,\\\"H\\\")+(COUNTIF($D$7:D16,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D15=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C17\":\"=IF(D17=\\\"H\\\",COUNTIF($D$7:D17,\\\"H\\\"),COUNTIF($D$7:D17,\\\"H\\\")+(COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D16=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C18\":\"=COUNTIF($D$7:D18,\\\"H\\\")\",\"C19\":\"=IF(D19=\\\"H\\\",COUNTIF($D$7:D19,\\\"H\\\"),COUNTIF($D$7:D19,\\\"H\\\")+(COUNTIF($D$7:D19,\\\"S\\\")-COUNTIF($D$7:INDEX($D:$D,MATCH(2,1/($D$7:D18=\\\"H\\\")),1),\\\"S\\\"))/10)\",\"C20\":\"=COUNTIF($D$7:D20,\\\"H\\\")\"}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:K6\",\"formula\":\"=COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\"\\\")+COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,COLUMN()-6,1),0),$D$2:$D$12,\\\">=\\\"&DATE(2022,COLUMN()-6,1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(RIGHT(A2,LEN(A2)-FIND(\\\"to\\\",A2)-2))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-2))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18265,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1086,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

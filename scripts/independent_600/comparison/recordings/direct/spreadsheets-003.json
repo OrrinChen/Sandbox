@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "input_sha256": "2595ef85b81a95d5b7b36c6da24a2c8cd7b0fa45b7324aee702c09b528989588",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-34210\": {\n    \"formulas\": {\"C1\": \"=IF(A1=\\\"\\\",\\\"\\\",A1)\"},\n    \"fills\": [{\"range\": \"C2:C55\", \"formula\": \"=IF(A2=\\\"\\\",C1,A2)\"}]\n  },\n  \"sheet-35739\": {\n    \"formulas\": {},\n    \"fills\": [{\"range\": \"C2:C100\", \"formula\": \"=IF(B2=\\\"\\\",\\\"\\\",MOD(B2-TIME(0,30,0),1))\"}]\n  },\n  \"sheet-35747\": {\n    \"formulas\": {\"M2\": \"=SUMPRODUCT((B2:J11>100)*(B1:J1>=M1)*(B1:J1<N1)*(A2:A11=L2))\"}\n  },\n  \"sheet-36236\": {\n    \"formulas\": {},\n    \"fills\": [{\"range\": \"F2:F6\", \"formula\": \"=TEXTJOIN(\\\", \\\",TRUE,A2,IF(B2=A2,\\\"\\\",B2))\"}]\n  }\n}",
+  "submissions": {
+    "sheet-34210": {
+      "formulas": {
+        "C1": "=IF(A1=\"\",\"\",A1)"
+      },
+      "fills": [
+        {
+          "range": "C2:C55",
+          "formula": "=IF(A2=\"\",C1,A2)"
+        }
+      ]
+    },
+    "sheet-35739": {
+      "formulas": {},
+      "fills": [
+        {
+          "range": "C2:C100",
+          "formula": "=IF(B2=\"\",\"\",MOD(B2-TIME(0,30,0),1))"
+        }
+      ]
+    },
+    "sheet-35747": {
+      "formulas": {
+        "M2": "=SUMPRODUCT((B2:J11>100)*(B1:J1>=M1)*(B1:J1<N1)*(A2:A11=L2))"
+      }
+    },
+    "sheet-36236": {
+      "formulas": {},
+      "fills": [
+        {
+          "range": "F2:F6",
+          "formula": "=TEXTJOIN(\", \",TRUE,A2,IF(B2=A2,\"\",B2))"
+        }
+      ]
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-e423-70a0-b6ba-95f171f9f35d",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26932,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 228,
+    "reasoning_output_tokens": 0
+  }
+}

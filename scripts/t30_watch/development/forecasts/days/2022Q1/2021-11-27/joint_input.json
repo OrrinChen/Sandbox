@@ -1,0 +1,67 @@
+{
+  "cutoff": "2021-11-27",
+  "sectors": {
+    "2022Q1/retail-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000829224",
+          "issuer": "STARBUCKS CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2021-12-27",
+          "latest_filed_period_end": "2021-10-03",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2021-11-19",
+              "text": "Consolidated revenues increased 24% to $29.1 billion in fiscal 2021 compared to $23.5 billion in fiscal 2020, primarily due to business recovery from the COVID-19 pandemic."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2021-11-19",
+              "text": "For fiscal 2021, comparable store sales percentages were calculated excluding the extra week in the fourth quarter of fiscal 2021."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2021-11-19",
+              "text": "Also contributing to the increase was $576 million of incremental revenue attributable to the extra week in fiscal 2021."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2021-11-19",
+              "text": "The fiscal 2021 Latin America and Caribbean licensed store market resegmentation did not have a material impact to prior year North America and International operating segment business trends and operating margins."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2021-11-19",
+              "text": "•Consolidated operating income increased to $4.9 billion in fiscal 2021 compared to $1.6 billion in fiscal 2020."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-06-27",
+                "filed": "2021-07-27",
+                "reported_sales_usd": 7496500000,
+                "year_ago_reported_sales_usd": 4222100000,
+                "yoy_percent": "77.5538"
+              },
+              {
+                "quarter_end": "2021-10-03",
+                "filed": "2021-11-19",
+                "reported_sales_usd": 8146700000,
+                "year_ago_reported_sales_usd": 6203100000,
+                "yoy_percent": "31.3327"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

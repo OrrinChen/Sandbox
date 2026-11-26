@@ -1,0 +1,13 @@
+{
+  "prediction_lock_sha256": "dde5e9b53e42baf44b7afef753695920ddc1702aba814fd708cdd416ef93be8d",
+  "responses": {
+    "2022Q1/metadata/response.json": "{\"origin\":\"2022Q1\",\"alerts\":[]}\n",
+    "2022Q1/text/response.json": "{\n  \"origin\": \"2022Q1\",\n  \"alerts\": [\n    {\n      \"ticker\": \"LOW\",\n      \"reason\": \"Net sales fell about 3.1% year over year and comparable sales fell 4.0%. I would monitor Lowe's because a further two percentage points of net sales deterioration would cross the threshold.\"\n    }\n  ]\n}\n",
+    "2022Q2/metadata/response.json": "{\"origin\":\"2022Q2\",\"alerts\":[]}\n",
+    "2022Q2/text/response.json": "{\n  \"origin\": \"2022Q2\",\n  \"alerts\": [\n    {\n      \"ticker\": \"M\",\n      \"reason\": \"Net sales slipped to $5.60 billion from $5.65 billion while inventory rose to $4.61 billion from $4.30 billion. I would monitor whether discounting to clear stock deepens the sales decline.\"\n    }\n  ]\n}\n",
+    "2022Q3/metadata/response.json": "{\"origin\":\"2022Q3\",\"alerts\":[]}\n",
+    "2022Q3/text/response.json": "{\n  \"origin\": \"2022Q3\",\n  \"alerts\": [\n    {\n      \"ticker\": \"M\",\n      \"reason\": \"Quarterly net sales fell from $5.44 billion to $5.23 billion, about 3.9% year over year. A little further weakening would take the decline past 5%.\"\n    },\n    {\n      \"ticker\": \"LOW\",\n      \"reason\": \"Inventory rose about 19% year over year while net sales grew about 2.4%. That gap makes me watch for discounting that could push reported sales lower.\"\n    }\n  ]\n}\n",
+    "2022Q4/metadata/response.json": "{\"origin\":\"2022Q4\",\"alerts\":[]}\n",
+    "2022Q4/text/response.json": "{\n  \"origin\": \"2022Q4\",\n  \"alerts\": [\n    {\"ticker\": \"M\", \"reason\": \"Net sales fell from $8.665 billion to $8.264 billion, about 4.6%. Even a slightly steeper year-over-year decline would cross the threshold.\"},\n    {\"ticker\": \"LOW\", \"reason\": \"The quarter had 14 weeks against 13 a year earlier, and comparable sales fell 1.5%. I would monitor whether the weakness becomes more visible in reported sales once the extra week drops out.\"}\n  ]\n}\n"
+  }
+}

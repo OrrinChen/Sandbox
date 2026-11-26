@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-019",
+    "stage": "inspect-2",
+    "prompt_sha256": "e7f713fee59539a8fb1f735995a35467019be61dc4fda0a9c25f18ea63eefd9d",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-769a-7511-a362-6e57e9d3b5e1"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the remaining inspection requests to check the rounding formulas’ edge case, the source and destination layout for the reorder task, and the existing transposed output at the bottom of its sheet."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-55260\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"},{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"}],\"sheet-55535\":[],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 39142,
+          "cached_input_tokens": 23808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 262,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-55260\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"},{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"}],\"sheet-55535\":[],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-769a-7511-a362-6e57e9d3b5e1",
+    "raw": "{\"sheet-55260\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"},{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"A1:B2\"}],\"sheet-55535\":[],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D3:M8\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"H2:S28\"}]}",
+    "usage": {
+      "input_tokens": 39142,
+      "cached_input_tokens": 23808,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 262,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23034,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 207,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-78cd-7723-946e-d54641722285",
+  "packet_sha256": "1fc60439b8bbcf46a245836e6d6f61e0de94fae55fb6f76957ef546c8a85ddb0",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/transportation-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001048911\",\n          \"reason\": \"FedEx’s reported revenue rose 6% year over year in the August quarter as pricing and fuel surcharges outweighed lower volumes across all transportation segments (A, E). Volume weakness accelerated in the final weeks (B). I forecast that pricing support will keep revenue growth above -5% in the November quarter, but that a full quarter of deeper volume losses will push growth to -5% or below in the quarter starting December 1.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/transportation-3",
+        "alerts": [
+          {
+            "cik": "0001048911",
+            "reason": "FedEx’s reported revenue rose 6% year over year in the August quarter as pricing and fuel surcharges outweighed lower volumes across all transportation segments (A, E). Volume weakness accelerated in the final weeks (B). I forecast that pricing support will keep revenue growth above -5% in the November quarter, but that a full quarter of deeper volume losses will push growth to -5% or below in the quarter starting December 1."
+          }
+        ]
+      }
+    ]
+  }
+}

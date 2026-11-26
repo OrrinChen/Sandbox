@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-019",
+    "stage": "submit",
+    "prompt_sha256": "27c377374eac0bb81d44068f4558b0d50b7f6e1b3a5da3025da8d085736eb8ba",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f4-713a-70a2-8d40-91524df35cd8",
+    "raw": "{\"sheet-55260\":{\"fills\":[{\"range\":\"C1:C2\",\"formula\":\"=CEILING(B1/5-0.5,1)*5\"}],\"formulas\":{}},\"sheet-55535\":{\"fills\":[{\"range\":\"A1:A17\",\"formula\":\"=IF(B1=\\\"\\\",\\\"\\\",\\\"KC-GPGY-\\\"&LEFT(B1,2)&TEXT(COUNTA($B$1:B1),\\\"0000\\\"))\"}],\"formulas\":{}},\"sheet-55609\":{\"fills\":[{\"range\":\"D3:M8\",\"formula\":\"=INDEX($D12:$M12,1,MATCH(D$2,$D$11:$M$11,0))\"}],\"formulas\":{}},\"sheet-56427\":{\"fills\":[{\"range\":\"H2:S28\",\"formula\":\"=IF(AND($B2=1,COLUMNS($H2:H2)<=$C2),IF(INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)=\\\"\\\",\\\"\\\",INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18639,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 416,
+      "reasoning_output_tokens": 168
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

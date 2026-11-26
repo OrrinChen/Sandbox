@@ -1,0 +1,418 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "a8bd8766431c8f33e4b5875679e332302f919aa8d32ed0db97dc0c2d388e5be7",
+    "05cb96ebb1a3680d0609221050fc8de844f31227abbc5411118a0097add89620",
+    "04e0d09d4f97a7b0aeaa17ce4e0cb13271ed1bf882647c006188c363856dca17"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-57354",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "B3": "=SUMIF($B$2:$U$2,B$2,$B3:$U3)",
+          "C3": "=SUMIF($B$2:$U$2,C$2,$B3:$U3)",
+          "D3": "=SUMIF($B$2:$U$2,D$2,$B3:$U3)",
+          "E3": "=SUMIF($B$2:$U$2,E$2,$B3:$U3)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:U3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:U3",
+            "range_size": 60,
+            "cells": [
+              [
+                "B1",
+                "TOTAL"
+              ],
+              [
+                "F1",
+                "2020-05-01 00:00:00"
+              ],
+              [
+                "J1",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "N1",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "R1",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "B2",
+                "SPEND"
+              ],
+              [
+                "C2",
+                "SALES"
+              ],
+              [
+                "D2",
+                "REVENUE"
+              ],
+              [
+                "E2",
+                "GP"
+              ],
+              [
+                "F2",
+                "SPEND"
+              ],
+              [
+                "G2",
+                "SALES"
+              ],
+              [
+                "H2",
+                "REVENUE"
+              ],
+              [
+                "I2",
+                "GP"
+              ],
+              [
+                "J2",
+                "SPEND"
+              ],
+              [
+                "K2",
+                "SALES"
+              ],
+              [
+                "L2",
+                "REVENUE"
+              ],
+              [
+                "M2",
+                "GP"
+              ],
+              [
+                "N2",
+                "SPEND"
+              ],
+              [
+                "O2",
+                "SALES"
+              ],
+              [
+                "P2",
+                "REVENUE"
+              ],
+              [
+                "Q2",
+                "GP"
+              ],
+              [
+                "R2",
+                "SPEND"
+              ],
+              [
+                "S2",
+                "SALES"
+              ],
+              [
+                "T2",
+                "REVENUE"
+              ],
+              [
+                "U2",
+                "GP"
+              ],
+              [
+                "B3",
+                "90816.43"
+              ],
+              [
+                "C3",
+                "2145"
+              ],
+              [
+                "F3",
+                "17505.51"
+              ],
+              [
+                "G3",
+                "500"
+              ],
+              [
+                "H3",
+                "28568"
+              ],
+              [
+                "I3",
+                "11062.49"
+              ],
+              [
+                "J3",
+                "23225.96"
+              ],
+              [
+                "K3",
+                "528"
+              ],
+              [
+                "L3",
+                "29868"
+              ],
+              [
+                "M3",
+                "6642.04"
+              ],
+              [
+                "N3",
+                "26859"
+              ],
+              [
+                "O3",
+                "589"
+              ],
+              [
+                "P3",
+                "33265"
+              ],
+              [
+                "Q3",
+                "6406"
+              ],
+              [
+                "R3",
+                "23225.96"
+              ],
+              [
+                "S3",
+                "528"
+              ],
+              [
+                "T3",
+                "29868"
+              ],
+              [
+                "U3",
+                "6642.040000000001"
+              ]
+            ],
+            "total": 43,
+            "truncated": false,
+            "blank_count": 17
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "missing_or_invalid_plan"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 108973,
+        "cached_input_tokens": 89088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2057,
+        "reasoning_output_tokens": 1421
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58047",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:H30",
+            "formula": "=IF(G2=\"\",0,G2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "G1:H30"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "G1:H30",
+            "range_size": 60,
+            "cells": [
+              [
+                "G1",
+                "Discount Code"
+              ],
+              [
+                "H1",
+                "Discount Code"
+              ],
+              [
+                "H2",
+                "0"
+              ],
+              [
+                "H3",
+                "0"
+              ],
+              [
+                "H4",
+                "0"
+              ],
+              [
+                "H5",
+                "0"
+              ],
+              [
+                "G6",
+                "OOJHK"
+              ],
+              [
+                "H6",
+                "OOJHK"
+              ],
+              [
+                "H7",
+                "OOJHK"
+              ],
+              [
+                "H8",
+                "OOJHK"
+              ],
+              [
+                "H9",
+                "OOJHK"
+              ],
+              [
+                "H10",
+                "0"
+              ],
+              [
+                "H11",
+                "0"
+              ],
+              [
+                "H12",
+                "0"
+              ],
+              [
+                "H13",
+                "0"
+              ],
+              [
+                "H14",
+                "0"
+              ],
+              [
+                "H15",
+                "0"
+              ],
+              [
+                "G22",
+                "OOJHK"
+              ]
+            ],
+            "total": 18,
+            "truncated": false,
+            "blank_count": 42
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "missing_or_invalid_plan"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 108973,
+        "cached_input_tokens": 89088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2057,
+        "reasoning_output_tokens": 1421
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58701",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "fills": [
+          {
+            "range": "E2:E3",
+            "formula": "=VLOOKUP(B2,'Table Tab'!$A$2:$B$3,2,FALSE)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "missing_or_invalid_plan"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 108973,
+        "cached_input_tokens": 89088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2057,
+        "reasoning_output_tokens": 1421
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59160",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "D3": "=COUNTIFS($A$2:$A$11,D$1,$B$2:$B$11,D$2)",
+          "E3": "=COUNTIFS($A$2:$A$11,D$1,$B$2:$B$11,E$2)",
+          "F3": "=COUNTIFS($A$2:$A$11,F$1,$B$2:$B$11,F$2)",
+          "G3": "=COUNTIFS($A$2:$A$11,F$1,$B$2:$B$11,G$2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "missing_or_invalid_plan"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 108973,
+        "cached_input_tokens": 89088,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2057,
+        "reasoning_output_tokens": 1421
+      },
+      "model_calls": 3
+    }
+  ]
+}

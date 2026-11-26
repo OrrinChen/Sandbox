@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-013",
+    "stage": "inspect-2",
+    "prompt_sha256": "f2b232e50212e22b2ac713f8dcd26a4e4bce9a53255efcae6de7fdf531566e35",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-274c-77b0-b090-6ca7334ac772"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I have one inspection request left for each workbook. I’ll use it to resolve the ambiguous formula ranges and input layout, then return only the requested JSON."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-48588\":[],\"sheet-48608\":[],\"sheet-48643\":[],\"sheet-48969\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 39885,
+          "cached_input_tokens": 19712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1051,
+          "reasoning_output_tokens": 957
+        }
+      ],
+      "cli_final": "{\"sheet-48588\":[],\"sheet-48608\":[],\"sheet-48643\":[],\"sheet-48969\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-274c-77b0-b090-6ca7334ac772",
+    "raw": "{\"sheet-48588\":[],\"sheet-48608\":[],\"sheet-48643\":[],\"sheet-48969\":[]}",
+    "usage": {
+      "input_tokens": 39885,
+      "cached_input_tokens": 19712,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1051,
+      "reasoning_output_tokens": 957
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

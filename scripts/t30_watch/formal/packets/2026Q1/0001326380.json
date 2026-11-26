@@ -1,0 +1,68 @@
+{
+  "wave": "2026Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2026-01-02",
+  "projected_target_start": "2026-02-01",
+  "status": "complete",
+  "period_end": "2025-11-01",
+  "filing_date": "2025-12-09",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2025-12-09",
+        "text": "Net sales decreased $39.3 million, or 4.6%, for the three months ended November 1, 2025, compared to the prior year."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2025-12-09",
+        "text": "During the three months ended November 1, 2025, net sales in our Europe and Canada segments decreased by 45.7% and 100.0%, respectively, compared to the prior year while the net sales in the Australia and the United States segments increased by 23.3% and 11.8%, respectively, compared to the prior year."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2025-12-09",
+        "text": "Cash flows provided by operating activities during the nine months ended November 1, 2025 were primarily due to the impact of our net income, as well as an increase in accounts payable and accrued liabilities, partially offset by an increase in merchandise inventories."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2025-12-09",
+        "text": "During the three months ended November 1, 2025, SG&A expenses decreased $60.6 million, or 21.5%, compared to the prior year."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2025-12-09",
+        "text": "Cash flows provided by operating activities were $421.2 million during the nine months ended November 1, 2025, compared to cash flows used in operating activities of $16.6 million during the nine months ended November 2, 2024."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2025-08-02",
+        "filed": "2025-09-09",
+        "reported_sales_usd": 972200000,
+        "year_ago_reported_sales_usd": 798300000,
+        "yoy_percent": "21.7838"
+      },
+      {
+        "quarter_end": "2025-11-01",
+        "filed": "2025-12-09",
+        "reported_sales_usd": 821000000,
+        "year_ago_reported_sales_usd": 860300000,
+        "yoy_percent": "-4.5682"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "origin": "2023Q2",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000023217",
+          "reason": "Slot A reports Q3 net sales growth, but slot B says volumes fell 10% year on year in Q3 and 9% over the first three quarters. If that volume weakness persists and price or mix offsets less of it, reported net sales could fall at least 5% in either of the next two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000878927",
+          "reason": "Slot A reports Q1 revenue down 3.7% year on year and LTL tons down 11.9%. With revenue just 1.3 percentage points above the threshold, a modest further loss of tonnage or a smaller offset from revenue per ton could push the decline to 5% in Q2 or Q3."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001701758",
+          "reason": "Reported sales YoY 21.74% then 9.13%; linear projections -3.48% and -16.08%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001038074",
+          "reason": "Reported sales YoY 23.31% then 5.55%; linear projections -12.21% and -29.98%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000878927",
+          "reason": "Reported sales YoY 5.76% then -3.68%; linear projections -13.13% and -22.58%."
+        }
+      ]
+    }
+  ]
+}

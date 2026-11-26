@@ -249,6 +249,9 @@ def test_validators_config_declares_default_validator_names():
         "cost_inclusion_validator",
         "risk_limit_validator",
         "artifact_grounding_validator",
+        "rag_grounding",
+        "a1_rag",
+        "financial_benchmark",
     ]
     for validator_name in default_validator_names():
         assert validator_name in validators_config

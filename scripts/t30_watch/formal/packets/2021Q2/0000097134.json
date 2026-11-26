@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "industrial_machinery-3",
+  "sector": "industrial_machinery",
+  "cik": "0000097134",
+  "issuer": "TENNANT CO",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "incomplete_trend",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-02-25",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000097134",
+    "issuer": "TENNANT CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-K FILED FEBRUARY 25, 2021",
+        "date": "2021-02-25",
+        "text": "Net Sales in 2020 totaled $1,001.0 million, a 12.0% decrease as compared to Net Sales of $1,137.6 million in 2019."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-K FILED FEBRUARY 25, 2021",
+        "date": "2021-02-25",
+        "text": "Governments across the world have taken numerous actions to limit the spread of COVID-19, including stay-at-home orders, which have reduced operating activities across global businesses."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-K FILED FEBRUARY 25, 2021",
+        "date": "2021-02-25",
+        "text": "During 2020, we experienced an organic sales decline of 11.8%."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-K FILED FEBRUARY 25, 2021",
+        "date": "2021-02-25",
+        "text": "Gross Profit margin was 40.7%, or 10 basis points higher in 2020 compared to 2019."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-K FILED FEBRUARY 25, 2021",
+        "date": "2021-02-25",
+        "text": "In the second quarter of 2020, we repaid the entire $125 million borrowed in March 2020 as we determined our existing cash and cash flows were sufficient for our business needs."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-10-29",
+        "reported_sales_usd": 261900000,
+        "year_ago_reported_sales_usd": 280700000,
+        "yoy_percent": "-6.6975"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-02-25",
+        "reported_sales_usd": null,
+        "year_ago_reported_sales_usd": null,
+        "yoy_percent": null
+      }
+    ],
+    "status": "incomplete"
+  }
+}

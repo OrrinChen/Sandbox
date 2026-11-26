@@ -1,0 +1,467 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "94b9f8471ab93c0cd620da00beaf3fabe656f869159af3ecce4c2157420a418e",
+    "e8f7cd730c06a9e5ffcb8aba28ba8ca3ca9ea5e3509b44c7a443d7f17995e3b8",
+    "176ad945285e94b147e3fa2a47e4ea0a2d8f18203018f9c5b834b729ba1434fe"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-39604",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "before",
+            "range": "A1:D4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "before",
+            "range": "A1:D4",
+            "range_size": 16,
+            "cells": [
+              [
+                "A1",
+                "Akola"
+              ],
+              [
+                "A2",
+                "despatch weight"
+              ],
+              [
+                "B2",
+                "18.12"
+              ],
+              [
+                "C2",
+                "RATE"
+              ],
+              [
+                "A3",
+                "received weight"
+              ],
+              [
+                "B3",
+                "18.11"
+              ],
+              [
+                "C3",
+                "330"
+              ],
+              [
+                "D3",
+                "5976.3"
+              ],
+              [
+                "B4",
+                "10"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 67211,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1344,
+        "reasoning_output_tokens": 737
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40478",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B1:B3",
+            "formula": "=MID(A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1,FIND(\"-\",A1)-FIND(\" \",A1,FIND(\" \",A1)+1)-1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B3",
+            "range_size": 6,
+            "cells": [
+              [
+                "A1",
+                "PO 99171 Dell Vostro - Mark"
+              ],
+              [
+                "B1",
+                "Dell Vostro"
+              ],
+              [
+                "A2",
+                "PO 94421 System - Peter"
+              ],
+              [
+                "B2",
+                "System"
+              ],
+              [
+                "A3",
+                "PO 94431 Camera Server - BR1"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 67211,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1344,
+        "reasoning_output_tokens": 737
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40757",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "B10": "=SUMIFS(B$3:B$6,A$3:A$6,\">=\"&DATE(2022,7,1),A$3:A$6,\"<\"&DATE(2022,8,1))",
+          "B11": "=SUMIFS(B$3:B$6,A$3:A$6,\">=\"&DATE(2022,8,1),A$3:A$6,\"<\"&DATE(2022,9,1))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B11",
+            "range_size": 22,
+            "cells": [
+              [
+                "A2",
+                "Date"
+              ],
+              [
+                "B2",
+                "Amount"
+              ],
+              [
+                "A3",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "B3",
+                "2"
+              ],
+              [
+                "A4",
+                "2022-07-22 00:00:00"
+              ],
+              [
+                "B4",
+                "2"
+              ],
+              [
+                "A5",
+                "2022-08-15 00:00:00"
+              ],
+              [
+                "B5",
+                "3"
+              ],
+              [
+                "A6",
+                "2022-08-19 00:00:00"
+              ],
+              [
+                "B6",
+                "3"
+              ],
+              [
+                "B9",
+                "Result"
+              ],
+              [
+                "A10",
+                "July"
+              ],
+              [
+                "A11",
+                "August"
+              ]
+            ],
+            "total": 13,
+            "truncated": false,
+            "blank_count": 9
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A7:B11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A7:B11",
+            "range_size": 10,
+            "cells": [
+              [
+                "B9",
+                "Result"
+              ],
+              [
+                "A10",
+                "July"
+              ],
+              [
+                "A11",
+                "August"
+              ]
+            ],
+            "total": 3,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 67211,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1344,
+        "reasoning_output_tokens": 737
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40892",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B17",
+            "formula": "=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,ISNUMBER(SEARCH($D$3:$D$8,A2)),0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17",
+            "range_size": 68,
+            "cells": [
+              [
+                "A1",
+                "Product Name"
+              ],
+              [
+                "B1",
+                "Needs to return value from list when A2 etc matches "
+              ],
+              [
+                "D1",
+                "List"
+              ],
+              [
+                "A2",
+                "Dress with red details"
+              ],
+              [
+                "B2",
+                "Red"
+              ],
+              [
+                "D2",
+                "Colour"
+              ],
+              [
+                "A3",
+                "Jumper Gold"
+              ],
+              [
+                "B3",
+                "Gold"
+              ],
+              [
+                "D3",
+                "Red"
+              ],
+              [
+                "A4",
+                "Red Jumper"
+              ],
+              [
+                "B4",
+                "Red"
+              ],
+              [
+                "D4",
+                "Gold"
+              ],
+              [
+                "A5",
+                "Blue Jumper"
+              ],
+              [
+                "D5",
+                "Red"
+              ],
+              [
+                "A6",
+                "Black Trousers"
+              ],
+              [
+                "D6",
+                "Blue"
+              ],
+              [
+                "A7",
+                "Dress with Red detail"
+              ],
+              [
+                "D7",
+                "Black"
+              ],
+              [
+                "A8",
+                "Orange Jumpsuits"
+              ],
+              [
+                "D8",
+                "Red"
+              ],
+              [
+                "A9",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A10",
+                "Purple Scarf"
+              ],
+              [
+                "A11",
+                "Top Red"
+              ],
+              [
+                "A12",
+                "Trousers Black "
+              ],
+              [
+                "A13",
+                "Orange Jumpsuits"
+              ],
+              [
+                "A14",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A15",
+                "Purple Scarf"
+              ],
+              [
+                "A16",
+                "Top Red"
+              ],
+              [
+                "A17",
+                "Trousers Black "
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 39
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 67211,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1344,
+        "reasoning_output_tokens": 737
+      },
+      "model_calls": 3
+    }
+  ]
+}

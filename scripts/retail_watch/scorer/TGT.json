@@ -1,0 +1,73 @@
+{
+  "ticker": "TGT",
+  "quarters": [
+    {
+      "id": "2022Q1",
+      "quarter_end": "2022-04-30",
+      "report_date": "2022-05-18",
+      "sales": "24830",
+      "prior_year_sales": "23879",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2022/05/target-corporation-reports-first-quarter-earnings",
+      "locator": "Consolidated Statements of Operations, Sales, USD millions, quarters ended 2022-04-30 and 2021-05-01, respectively"
+    },
+    {
+      "id": "2022Q2",
+      "quarter_end": "2022-07-30",
+      "report_date": "2022-08-17",
+      "sales": "25653",
+      "prior_year_sales": "24826",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2022/08/target-corporation-reports-second-quarter-earnings",
+      "locator": "Consolidated Statements of Operations, Sales, USD millions, quarters ended 2022-07-30 and 2021-07-31, respectively"
+    },
+    {
+      "id": "2022Q3",
+      "quarter_end": "2022-10-29",
+      "report_date": "2022-11-16",
+      "sales": "26122",
+      "prior_year_sales": "25290",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2022/11/target-corporation-reports-third-quarter-earnings",
+      "locator": "Consolidated Statements of Operations, Sales, USD millions, quarters ended 2022-10-29 and 2021-10-30, respectively"
+    },
+    {
+      "id": "2022Q4",
+      "quarter_end": "2023-01-28",
+      "report_date": "2023-02-28",
+      "sales": "30983",
+      "prior_year_sales": "30616",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2023/02/target-corporation-reports-fourth-quarter-and-full",
+      "locator": "Consolidated Statements of Operations, Sales, USD millions, three months ended 2023-01-28 and 2022-01-29, respectively"
+    },
+    {
+      "id": "2023Q1",
+      "quarter_end": "2023-04-29",
+      "report_date": "2023-05-17",
+      "sales": "24948",
+      "prior_year_sales": "24830",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2023/05/target-corporation-reports-first-quarter-earnings",
+      "locator": "Consolidated Statements of Operations, Sales row, current and corresponding prior-year fiscal quarter columns"
+    },
+    {
+      "id": "2023Q2",
+      "quarter_end": "2023-07-29",
+      "report_date": "2023-08-16",
+      "sales": "24384",
+      "prior_year_sales": "25653",
+      "metric": "Consolidated Sales",
+      "unit": "USD millions",
+      "url": "https://corporate.target.com/press/release/2023/08/target-corporation-reports-second-quarter-earnings",
+      "locator": "Consolidated Statements of Operations, Sales row, current and corresponding prior-year fiscal quarter columns"
+    }
+  ],
+  "disclosures": [],
+  "coverage_note": "Six routine earnings releases show no quarter reaching the 5.00 percent decline. For 2023Q2 the original consolidated Sales row gives 24,384 versus 25,653; the unrounded ratio stays above 95 percent. The distinct comparable-sales measure is outside the registered outcome definition."
+}

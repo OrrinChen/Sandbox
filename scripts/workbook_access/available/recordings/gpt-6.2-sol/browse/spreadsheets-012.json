@@ -1,0 +1,379 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "8ffeda8f8cfe0ea9ace82e5d870e2344b8c2963a2c38bee5b86a66200194a8b9",
+    "4277f50d98c40ae26215f0d404ba7ac9c3941b03c2f7c93769c4ccadd4d48266",
+    "79342c9f7587f16bca112e548b09923475287a0807df7399ff41b836e451195a"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-46897",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "I3": "=COUNTIF(INDEX($A$2:$D$15,0,MATCH(I1,$A$1:$D$1,0)),I2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60099,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 824,
+        "reasoning_output_tokens": 327
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-47699",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "D1": "=SUMIF(A5:A1048576,FALSE,D5:D1048576)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Prev working day Quote (2)",
+            "range": "A1:D17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Prev working day Quote (2)",
+            "range": "A1:D17",
+            "range_size": 68,
+            "cells": [
+              [
+                "A2",
+                "Total for the day:    "
+              ],
+              [
+                "D2",
+                "356022"
+              ],
+              [
+                "D3",
+                "Quote value"
+              ],
+              [
+                "A4",
+                "M"
+              ],
+              [
+                "B4",
+                "Inside sales"
+              ],
+              [
+                "C4",
+                "Quote info"
+              ],
+              [
+                "D4",
+                "USD"
+              ],
+              [
+                "A5",
+                "True"
+              ],
+              [
+                "B5",
+                "Harald"
+              ],
+              [
+                "C5",
+                "Don’t know"
+              ],
+              [
+                "D5",
+                "265888"
+              ],
+              [
+                "A6",
+                "True"
+              ],
+              [
+                "B6",
+                "Oscar"
+              ],
+              [
+                "C6",
+                "1"
+              ],
+              [
+                "D6",
+                "7975"
+              ],
+              [
+                "A7",
+                "True"
+              ],
+              [
+                "B7",
+                "Felix"
+              ],
+              [
+                "C7",
+                "2"
+              ],
+              [
+                "D7",
+                "2268"
+              ],
+              [
+                "A8",
+                "True"
+              ],
+              [
+                "B8",
+                "Harald"
+              ],
+              [
+                "C8",
+                "3"
+              ],
+              [
+                "D8",
+                "2303"
+              ],
+              [
+                "A9",
+                "True"
+              ],
+              [
+                "B9",
+                "Harald"
+              ],
+              [
+                "C9",
+                "3"
+              ],
+              [
+                "D9",
+                "4261"
+              ],
+              [
+                "A10",
+                "True"
+              ],
+              [
+                "B10",
+                "Harald"
+              ],
+              [
+                "C10",
+                "3"
+              ],
+              [
+                "D10",
+                "6069"
+              ],
+              [
+                "A11",
+                "False"
+              ],
+              [
+                "B11",
+                "Harald"
+              ],
+              [
+                "C11",
+                "3"
+              ],
+              [
+                "D11",
+                "2452"
+              ],
+              [
+                "A12",
+                "True"
+              ],
+              [
+                "B12",
+                "Harald"
+              ],
+              [
+                "C12",
+                "3"
+              ],
+              [
+                "D12",
+                "1826"
+              ],
+              [
+                "A13",
+                "True"
+              ],
+              [
+                "B13",
+                "Harald"
+              ],
+              [
+                "C13",
+                "3"
+              ],
+              [
+                "D13",
+                "4958"
+              ],
+              [
+                "A14",
+                "True"
+              ],
+              [
+                "B14",
+                "Felix"
+              ],
+              [
+                "C14",
+                "4"
+              ],
+              [
+                "D14",
+                "10950"
+              ],
+              [
+                "A15",
+                "True"
+              ],
+              [
+                "B15",
+                "Felix"
+              ],
+              [
+                "C15",
+                "4"
+              ],
+              [
+                "D15",
+                "1032"
+              ],
+              [
+                "A16",
+                "False"
+              ],
+              [
+                "B16",
+                "Felix"
+              ],
+              [
+                "C16",
+                "4"
+              ],
+              [
+                "D16",
+                "10094"
+              ],
+              [
+                "A17",
+                "True"
+              ],
+              [
+                "B17",
+                "Felix"
+              ],
+              [
+                "C17",
+                "4"
+              ],
+              [
+                "D17",
+                "1517"
+              ]
+            ],
+            "total": 59,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60099,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 824,
+        "reasoning_output_tokens": 327
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48354",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D6",
+            "formula": "=IF(ISNUMBER(SEARCH(\"domestic\",B2)),\"D\",IF(ISNUMBER(SEARCH(\"international\",B2)),\"I\",\"N/A\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60099,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 824,
+        "reasoning_output_tokens": 327
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48365",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(COUNTIF($C$11:$C$13,\"All\")>0,SUMIF(Data!$A:$A,$C$2,Data!$C:$C),IF($C$11=\"\",0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$11))+IF(OR($C$12=\"\",$C$12=$C$11),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$12))+IF(OR($C$13=\"\",$C$13=$C$11,$C$13=$C$12),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$13)))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60099,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 824,
+        "reasoning_output_tokens": 327
+      },
+      "model_calls": 3
+    }
+  ]
+}

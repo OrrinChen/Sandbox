@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-024",
+    "stage": "submit",
+    "prompt_sha256": "63207f94b90f4e0fda3ceaf65527b1e4a46fe0b578bccbf89e71b116bea28206",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211db-8a41-7510-8a00-8cf7c64ce56c",
+    "raw": "{\n  \"sheet-59639\": {\n    \"fills\": [\n      {\n        \"range\": \"D5:K7\",\n        \"formula\": \"=MID($A5,COLUMNS($D5:D5),1)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-59794\": {\n    \"fills\": [\n      {\n        \"range\": \"C3:M5\",\n        \"formula\": \"=IFERROR(MID(\\\"/\\\"&$A3&\\\"/\\\",FIND(REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",COLUMNS($C3:C3)))+1,FIND(REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",COLUMNS($C3:C3)+1))-FIND(REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",REPT(\\\"/\\\",LEN($A3)+3)&\\\"!\\\",COLUMNS($C3:C3)))-1),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-7902\": {\n    \"fills\": [\n      {\n        \"range\": \"D3:J6\",\n        \"formula\": \"=IFNA(IF($B3=\\\"\\\",NA(),INDEX(Grouping!C$2:C$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0))),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMNS($D3:D3)+2,FALSE))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-9111\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D7\",\n        \"formula\": \"=IF(AND(B2=\\\"\\\",C2=\\\"\\\"),\\\"\\\",IFNA(IF(B2=\\\"\\\",NA(),XLOOKUP(B2,$G$2:$G$13,$H$2:$H$13)),IF(C2=\\\"\\\",2500,XLOOKUP(C2,$J$2:$J$6,$K$2:$K$6,2500))))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 21628,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1124,
+      "reasoning_output_tokens": 576
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

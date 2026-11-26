@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "e77cbc2d17dc5cb892c7c1f2bebc952c3a6735360f8228a6bf8524a2c88b8bd8",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-48588\": {\n    \"fills\": [\n      {\"range\": \"B2:B43\", \"formula\": \"=XMATCH(A2,UNIQUE($A$2:$A$43),0)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-48608\": {\n    \"fills\": [\n      {\"range\": \"F2:F5\", \"formula\": \"=IF(G2=\\\"\\\",\\\"\\\",XLOOKUP(1,($B$2:$B$8&\\\"\\\"=G2&\\\"\\\")*($C$2:$C$8=\\\"Pass\\\"),$A$2:$A$8,\\\"\\\"))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-48643\": {\n    \"fills\": [\n      {\"range\": \"H2:H40\", \"formula\": \"=(N(H1)+B2)*(1+C2)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-48969\": {\n    \"fills\": [\n      {\"range\": \"J3:N5\", \"formula\": \"=IFERROR(INDEX($C$3:$G$5,MATCH($I3,$B$3:$B$5,0),MATCH(J$2,$C$2:$G$2,0))=INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE())\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-48588": {
+      "fills": [
+        {
+          "range": "B2:B43",
+          "formula": "=XMATCH(A2,UNIQUE($A$2:$A$43),0)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-48608": {
+      "fills": [
+        {
+          "range": "F2:F5",
+          "formula": "=IF(G2=\"\",\"\",XLOOKUP(1,($B$2:$B$8&\"\"=G2&\"\")*($C$2:$C$8=\"Pass\"),$A$2:$A$8,\"\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-48643": {
+      "fills": [
+        {
+          "range": "H2:H40",
+          "formula": "=(N(H1)+B2)*(1+C2)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-48969": {
+      "fills": [
+        {
+          "range": "J3:N5",
+          "formula": "=IFERROR(INDEX($C$3:$G$5,MATCH($I3,$B$3:$B$5,0),MATCH(J$2,$C$2:$G$2,0))=INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE())"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-4aac-72d2-98b5-c5b2c20869c3",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27063,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 327,
+    "reasoning_output_tokens": 0
+  }
+}

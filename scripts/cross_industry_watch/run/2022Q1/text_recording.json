@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34021,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 491,
+    "reasoning_output_tokens": 24
+  },
+  "thread": "01a2036a-9bcf-7ab2-b24c-fb14960968b0",
+  "packet_sha256": "2c52f86cf55977c4049f00087c101bc236323b13293dc634db63184e6f235e25",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000018255\",\n          \"reason\": \"Cato attributed its 34.2% annual sales rebound partly to stimulus and reopening (A, B). As those purchases enter the year-earlier comparison, inflation pressure on customers’ disposable incomes (D) could push quarterly sales down 5% or more in the next two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001005286\",\n          \"reason\": \"Landec’s planned reduction of its vegetable and tray business was already cutting Curation Foods revenue (A), while Lifecore revenue grew (B). Further planned cuts could outweigh that offset and push consolidated quarterly sales down at least 5% within two quarters. The packet gives no consolidated quarterly rate.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"nLIGHT reported annual growth across all end markets (A), but industrial unit sales in China and average selling prices had already fallen (D). Customers delaying capital spending (B) could weaken the unit gains outside China that sustained industrial revenue, putting a 5% companywide quarterly decline in reach within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000718877\",\n          \"reason\": \"Activision segment net bookings fell $464 million, with Vanguard trailing Black Ops Cold War (B), even as annual consolidated revenue grew 9% (A). Because some online-product revenue is deferred (C, D), weaker bookings could pull consolidated revenue down at least 5% year on year in either of the next two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Cato attributed its 34.2% annual sales rebound partly to stimulus and reopening (A, B). As those purchases enter the year-earlier comparison, inflation pressure on customers’ disposable incomes (D) could push quarterly sales down 5% or more in the next two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0001005286",
+            "reason": "Landec’s planned reduction of its vegetable and tray business was already cutting Curation Foods revenue (A), while Lifecore revenue grew (B). Further planned cuts could outweigh that offset and push consolidated quarterly sales down at least 5% within two quarters. The packet gives no consolidated quarterly rate."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "nLIGHT reported annual growth across all end markets (A), but industrial unit sales in China and average selling prices had already fallen (D). Customers delaying capital spending (B) could weaken the unit gains outside China that sustained industrial revenue, putting a 5% companywide quarterly decline in reach within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Activision segment net bookings fell $464 million, with Vanguard trailing Black Ops Cold War (B), even as annual consolidated revenue grew 9% (A). Because some online-product revenue is deferred (C, D), weaker bookings could pull consolidated revenue down at least 5% year on year in either of the next two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

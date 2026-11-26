@@ -1,0 +1,45 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24320,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 289,
+    "reasoning_output_tokens": 20
+  },
+  "thread": "01a20d8d-fdc1-7f93-9f5f-3bb1fe11403b",
+  "packet_sha256": "91c65aaacba96b9c70c4a124f3268a615b5d206d3519fff4c858ceb959c65342",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q3/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000100493\",\n          \"reason\": \"Tyson’s reported sales growth slowed from 2.53% to 0.12% year over year despite a $434 million lift from volume (A, B). I forecast growth stays above -5.00% in the intervening quarter but falls to -5.00% or below in the quarter starting July 2. Inventory sell-through supported volume and may taper, while tighter cattle supply limits beef volume and protein prices are leveling off (B–D).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q3/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q3/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q3/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q3/semiconductors-2\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000100493",
+            "reason": "Tyson’s reported sales growth slowed from 2.53% to 0.12% year over year despite a $434 million lift from volume (A, B). I forecast growth stays above -5.00% in the intervening quarter but falls to -5.00% or below in the quarter starting July 2. Inventory sell-through supported volume and may taper, while tighter cattle supply limits beef volume and protein prices are leveling off (B–D)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

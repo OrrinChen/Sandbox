@@ -1,0 +1,67 @@
+{
+  "cutoff": "2022-07-30",
+  "sectors": {
+    "2022Q3/retail-3": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000909832",
+          "issuer": "COSTCO WHOLESALE CORP /NEW",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2022-08-29",
+          "latest_filed_period_end": "2022-05-08",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2022-06-02",
+              "text": "When combined with the operating efficiencies achieved by volume purchasing, efficient distribution and reduced handling of merchandise in no-frills, self-service warehouse facilities, these volumes and turnover enable us to operate profitably at significantly lower gross margins (net sales less merchandise costs) than most other retailers."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2022-06-02",
+              "text": "•Net sales increased 16% to $51,612, driven by an increase in comparable sales of 15% and sales at 20 net new warehouses opened since the end of the third quarter of 2021;"
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2022-06-02",
+              "text": "It also has lower SG&A expenses as a percent of net sales compared to our non-gasoline business."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2022-06-02",
+              "text": "Net sales growth and gross margins are also impacted by our competition, which is vigorous and widespread, across a wide range of global, national and regional wholesalers and retailers, including those with e-commerce operations."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2022-06-02",
+              "text": "The negative aspects of such growth, however, including lower initial operating profitability relative to existing warehouses and cannibalization of sales at existing warehouses when openings occur in existing markets, are continuing to decline in significance as they"
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-02-13",
+                "filed": "2022-03-10",
+                "reported_sales_usd": 51904000000,
+                "year_ago_reported_sales_usd": 44769000000,
+                "yoy_percent": "15.9374"
+              },
+              {
+                "quarter_end": "2022-05-08",
+                "filed": "2022-06-02",
+                "reported_sales_usd": 52596000000,
+                "year_ago_reported_sales_usd": 45277000000,
+                "yoy_percent": "16.1649"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

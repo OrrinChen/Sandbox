@@ -1,0 +1,11 @@
+{
+  "registered_at": "2026-11-25T08:47:10.020119+00:00",
+  "predecessor_registration_sha256": "5f3cae21310af4df04a15fa97e18ccf2be7c157092b366f9f1e98b83291db985",
+  "sol_complete_batches": 50,
+  "current_professional_turns": 3,
+  "current_professional_batches": 0,
+  "score_opened": false,
+  "trigger": "If eight minutes have elapsed since the replacement-tier registration and no complete three-turn professional batch is available, apply the same eight-minute no-complete-batch rule and use the available efficient tier. Do not open any model scores when deciding. Retain Sol intact; collect the efficient tier on all tasks in both conditions.",
+  "eligible_alternate": "gpt-6.1-terra",
+  "development_probe": "The efficient catalog tier completed both three-turn development batches on the same two development workbooks with no transport retries; 24.65 s and 27.78 s."
+}

@@ -1,0 +1,185 @@
+{
+  "origin": "2024Q3",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000885245",
+          "reason": "Buckle's Q2 net sales fell 3.4% (A) even as its average price per piece rose 2.2% (D), implying roughly 5.5% fewer pieces sold. If that unit decline persists and the price gain fades, net sales could fall at least 5% in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000949870",
+          "reason": "Boston Beer's Q2 net revenue fell 4.0% (A). Shipments fell 6.4% across several declining brands (B), while pricing and lower returns lifted revenue per barrel 2.6% (D). With similar shipment weakness, a one-point smaller gain per barrel would put the quarterly revenue decline near 5%."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000050863",
+          "reason": "Intel's Q2 revenue fell about 0.9% despite 9% growth in client computing, helped by comparison with elevated customer inventories a year earlier (A, B). Lower server demand and Altera customers cutting purchases (C, E) could take the consolidated decline to 5% in Q3 or Q4 if the client growth slows."
+        },
+        {
+          "cik": "0001047127",
+          "reason": "Amkor's Q2 net sales were flat because communications growth offset declines elsewhere (A). Elevated customer inventories and weak demand drove first-half declines of 19% in automotive and industrial and 12% in consumer (B). If those pressures persist, slower communications growth could tip quarterly net sales down 5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000894405",
+          "reason": "ArcBest's Q2 consolidated revenue fell 2.3% (A). Lower Asset-Light freight rates and lower Asset-Based daily tonnage weighed on both businesses (B). Further weakness in rates or tonnage could widen the decline by the 2.7 percentage points needed to cross in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000885245",
+          "reason": "Buckle’s net sales fell 3.43% in Q2 (A) even as average price per piece rose 2.2% (D). That implies roughly 5.5% fewer pieces sold. If unit weakness persists, a smaller price increase could take sales growth back to -5% or lower in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000949870",
+          "reason": "Boston Beer’s Q2 net revenue fell 4.01% (A). Shipments fell 6.4% across several brands (B), while pricing and lower returns lifted revenue per barrel 2.6% (D). With similar shipment weakness, just one percentage point less revenue growth would cross -5% in Q3 or Q4."
+        },
+        {
+          "cik": "0000024545",
+          "reason": "Molson Coors’ net sales growth fell from +10.66% in Q1 to -0.44% in Q2. Lower volume and unfavorable currency outweighed favorable pricing and mix (B). A further 4.56-point deterioration would take reported sales growth to -5% in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000059527",
+          "reason": "Lincoln Electric’s net sales improved from -5.59% in Q1 to -3.67% in Q2, but it still reported “softer demand across segments” (A) and lower volumes (C). Only another 1.34 points of deterioration would produce a fresh crossing in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000050863",
+          "reason": "Intel’s total revenue growth fell from +8.61% in Q1 to -0.90% in Q2 despite 9% client computing growth as customer inventories improved (A, B). Lower server demand, weaker external foundry sales and Altera customers cutting purchases (C–E) could pull total growth to -5% in Q3 or Q4 if the client rebound fades."
+        },
+        {
+          "cik": "0001047127",
+          "reason": "Amkor’s Q2 net sales recovered to +0.24% from -7.21% in Q1 because communications growth offset declines elsewhere (A). Elevated customer inventories and weaker demand drove first-half declines of 19% in automotive and industrial and 12% in consumer (B). A smaller communications offset could put Q3 or Q4 back at or below -5%."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000894405",
+          "reason": "ArcBest’s consolidated revenue improved from -6.30% in Q1 to -2.32% in Q2 (A). It still faced lower Asset-Light freight rates and lower Asset-Based daily tonnage (B). Further weakness in rates or tonnage could erase the 2.68-point cushion in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000940944",
+          "reason": "Reported sales YoY 6.80% then 0.97%; linear projections -4.87% and -10.70%."
+        },
+        {
+          "cik": "0000935703",
+          "reason": "Reported sales YoY 4.19% then 0.72%; linear projections -2.76% and -6.23%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000024545",
+          "reason": "Reported sales YoY 10.66% then -0.44%; linear projections -11.53% and -22.63%."
+        },
+        {
+          "cik": "0000949870",
+          "reason": "Reported sales YoY 3.92% then -4.01%; linear projections -11.94% and -19.87%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001680062",
+          "reason": "Reported sales YoY 104.95% then 40.05%; linear projections -24.85% and -89.76%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000050863",
+          "reason": "Reported sales YoY 8.61% then -0.90%; linear projections -10.40% and -19.91%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000092380",
+          "reason": "Reported sales YoY 10.92% then 4.50%; linear projections -1.91% and -8.32%."
+        }
+      ]
+    }
+  ]
+}

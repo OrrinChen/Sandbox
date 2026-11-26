@@ -1,0 +1,262 @@
+[
+  {
+    "task_id": "decision-route-a-balancing-rig-between-press-bays",
+    "tool": "sqlite.query",
+    "instruction": "Book exactly two distinct press-balancing appointments for one portable rig. The rig can begin at any bay. Each appointment occupies its entire fixed interval, in hours from shift start. Between the end of the first appointment and the start of the second, allow zero hours within a bay or the listed travel hours for that direction between different bays. An unlisted inter-bay direction is unavailable. Arrival exactly at the start is allowed. Maximize the sum of the forecast press-hours recovered by the two jobs. Break ties by earliest finish of the second appointment, then by first and second ticket IDs in ascending binary text order. Return one row ordered as first_ticket, second_ticket, recovered_hours, citing the two booking tickets in execution order. Ticket IDs and ordered inter-bay routes are unique, all durations are positive, no fields are null, and a feasible pair exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "press_ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "bay_code TEXT",
+          "begin_hour INTEGER",
+          "end_hour INTEGER",
+          "gain_hours INTEGER",
+          "ticket_text TEXT"
+        ],
+        "rows": [
+          [
+            "PA",
+            "east",
+            0,
+            3,
+            11,
+            "Balance the east feeder to recover 11 press-hours."
+          ],
+          [
+            "PB",
+            "west",
+            4,
+            6,
+            12,
+            "Balance the west platen to recover 12 press-hours."
+          ],
+          [
+            "PC",
+            "east",
+            5,
+            8,
+            8,
+            "Trim the east flywheel to recover 8 press-hours."
+          ],
+          [
+            "PD",
+            "west",
+            8,
+            10,
+            8,
+            "Align the west drive to recover 8 press-hours."
+          ]
+        ]
+      },
+      "rig_transfer": {
+        "columns": [
+          "from_bay TEXT",
+          "to_bay TEXT",
+          "travel_hours INTEGER"
+        ],
+        "rows": [
+          [
+            "east",
+            "west",
+            3
+          ],
+          [
+            "west",
+            "east",
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_ticket",
+      "second_ticket",
+      "recovered_hours"
+    ]
+  },
+  {
+    "task_id": "decision-schedule-a-two-slot-patch-panel-move",
+    "tool": "sqlite.query",
+    "instruction": "Choose two consecutive half-hour slots on one day for a patch-panel move. Slot numbers are unique integers in chronological order. Both numbers must exist and both slots must permit work (work_ok = 1, with 0 meaning closed). A booking means that a booth uses the panel in that slot. Count each affected booth once over the entire move, even if it is booked in both slots. Slots without bookings affect zero booths. Minimize the count of affected booths, breaking ties by earliest start. All fields are non-null, each slot and booth pair occurs at most once in the bookings, and a feasible window exists. Return one row with ordered columns start_slot, end_slot, affected_booths, start_notice, end_notice. The last two columns must cite the actual notice IDs authorizing work in the selected slots, in chronological order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "booth_booking": {
+        "columns": [
+          "slot_no INTEGER",
+          "booth_code TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "X"
+          ],
+          [
+            2,
+            "X"
+          ],
+          [
+            3,
+            "B"
+          ],
+          [
+            3,
+            "C"
+          ],
+          [
+            4,
+            "D"
+          ]
+        ]
+      },
+      "slot_notice": {
+        "columns": [
+          "slot_no INTEGER",
+          "work_ok INTEGER",
+          "notice_id TEXT",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            1,
+            "H1",
+            "Panel work permitted during setup."
+          ],
+          [
+            2,
+            1,
+            "H2",
+            "Panel work permitted during staging."
+          ],
+          [
+            3,
+            1,
+            "H3",
+            "Panel work permitted during booth checks."
+          ],
+          [
+            4,
+            1,
+            "H4",
+            "Panel work permitted during cleanup."
+          ],
+          [
+            5,
+            0,
+            "H5",
+            "Keep the panel live for hall handover."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "start_slot",
+      "end_slot",
+      "affected_booths",
+      "start_notice",
+      "end_notice"
+    ]
+  },
+  {
+    "task_id": "decision-schedule-after-business-day-lag",
+    "tool": "sqlite.query",
+    "instruction": "For each job, find its earliest eligible processing date after the required business-day lag. Start counting on the calendar day after release_date, even when release_date falls on a weekend. Monday through Friday count as business days except for dates in closures. The lag_business_days value is positive, and the job becomes eligible on the business day that completes the count. Dates are local calendar dates in YYYY-MM-DD format. planning_dates contains one row for every calendar date from the earliest release through a horizon sufficient for all jobs. Jobs can share a processing date. Return job and scheduled_date in that column order, one row per job, sorted by scheduled_date ascending and then by unique job code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "closures": {
+        "columns": [
+          "closed_date TEXT"
+        ],
+        "rows": [
+          [
+            "2025-03-10"
+          ]
+        ]
+      },
+      "jobs": {
+        "columns": [
+          "job TEXT",
+          "release_date TEXT",
+          "lag_business_days INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            "2025-03-07",
+            2
+          ],
+          [
+            "Q",
+            "2025-03-08",
+            1
+          ]
+        ]
+      },
+      "planning_dates": {
+        "columns": [
+          "day TEXT"
+        ],
+        "rows": [
+          [
+            "2025-03-07"
+          ],
+          [
+            "2025-03-08"
+          ],
+          [
+            "2025-03-09"
+          ],
+          [
+            "2025-03-10"
+          ],
+          [
+            "2025-03-11"
+          ],
+          [
+            "2025-03-12"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "job",
+      "scheduled_date"
+    ]
+  },
+  {
+    "task_id": "decision-schedule-fixed-volume-pump-runs",
+    "tool": "sqlite.query",
+    "instruction": "Schedule one pump over the three consecutive hours in pump_hour, numbered 1 through 3. The tank starts with 2 kL. In each hour the pump can run once, adding 4 kL for the listed run_cents, or stay off at zero cost. Draw occurs during pumping. The operating limits apply to the closing inventory after subtracting draw_kl in each hour. Every closing inventory must be between 0 and 5 kL inclusive, and the third closing inventory must be at least 2 kL. Minimize total cost. Break ties by preferring the lexicographically smallest sequence of run flags in hour order, with 0 before 1. Return one row with columns run_one, run_two, run_three, cost_cents, closing_kl. Run flags are integers and closing_kl is the third closing inventory. Each hour occurs once, all inputs are non-null integers, and a feasible schedule exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pump_hour": {
+        "columns": [
+          "hour_no INTEGER",
+          "draw_kl INTEGER",
+          "run_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            3,
+            9
+          ],
+          [
+            2,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_one",
+      "run_two",
+      "run_three",
+      "cost_cents",
+      "closing_kl"
+    ]
+  }
+]

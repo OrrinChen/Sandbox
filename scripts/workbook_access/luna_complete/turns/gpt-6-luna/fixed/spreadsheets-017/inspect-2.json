@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-017",
+    "stage": "inspect-2",
+    "prompt_sha256": "1ab60bcdc471ae17eb36734daed11b5abd3156f224d6d83937e64775fe2505b2",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-444a-7ce3-9350-0058b768d6fd"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the remaining inspection requests only where the visible excerpts leave a meaningful ambiguity; the other tasks have enough structure to determine their formulas."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-52220\":[],\"sheet-52233\":[],\"sheet-52532\":[],\"sheet-52917\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 34816,
+          "cached_input_tokens": 29056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1137,
+          "reasoning_output_tokens": 1034
+        }
+      ],
+      "cli_final": "{\"sheet-52220\":[],\"sheet-52233\":[],\"sheet-52532\":[],\"sheet-52917\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-444a-7ce3-9350-0058b768d6fd",
+    "raw": "{\"sheet-52220\":[],\"sheet-52233\":[],\"sheet-52532\":[],\"sheet-52917\":[]}",
+    "usage": {
+      "input_tokens": 34816,
+      "cached_input_tokens": 29056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1137,
+      "reasoning_output_tokens": 1034
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

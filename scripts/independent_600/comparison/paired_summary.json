@@ -1,0 +1,79 @@
+{
+  "score_sha256": "fa76aa14697109b0f89e6403d2968fbbb4c1f196955ec3d260c3daae48cb61bc",
+  "paired_by_domain": {
+    "optimization": {
+      "both": 111
+    },
+    "file_workflow": {
+      "both": 107,
+      "direct_only": 5,
+      "neither": 30
+    },
+    "finance": {
+      "both": 53
+    },
+    "citation": {
+      "both": 53
+    },
+    "data_analysis": {
+      "both": 58,
+      "self_check_only": 1
+    },
+    "coding": {
+      "both": 82
+    }
+  },
+  "paired_by_origin": {
+    "Sandbox original": {
+      "both": 346,
+      "self_check_only": 1,
+      "direct_only": 3
+    },
+    "Exercism": {
+      "both": 50
+    },
+    "SpreadsheetBench": {
+      "both": 68,
+      "neither": 30,
+      "direct_only": 2
+    }
+  },
+  "source_cluster_bootstrap": {
+    "groups": 284,
+    "draws": 10000,
+    "seed": 20261124,
+    "unit": "percentage points, self-check minus direct",
+    "delta": -0.8,
+    "percentile_95": [
+      -1.8108651911468814,
+      0.0
+    ]
+  },
+  "usage": {
+    "direct": {
+      "accepted_sessions": 126,
+      "accepted_without_retry": 126,
+      "tokens_for_accepted_sessions": {
+        "input_tokens": 2955994,
+        "cached_input_tokens": 2346368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 82919,
+        "reasoning_output_tokens": 388
+      },
+      "median_output_tokens_per_accepted_session": 672.5
+    },
+    "self_check": {
+      "accepted_sessions": 126,
+      "accepted_without_retry": 126,
+      "tokens_for_accepted_sessions": {
+        "input_tokens": 2949846,
+        "cached_input_tokens": 2342528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 84165,
+        "reasoning_output_tokens": 1282
+      },
+      "median_output_tokens_per_accepted_session": 690.0
+    }
+  },
+  "failed_submissions_replayed": 66
+}

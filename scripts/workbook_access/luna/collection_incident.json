@@ -1,0 +1,658 @@
+{
+  "version": "workbook-access-luna-spent-slots-v1",
+  "registered_at": "2026-11-25T09:59:33.531229+00:00",
+  "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49",
+  "score_opened": false,
+  "source_log_sha256": "b05b2bf642aca321c7b4ba02792e5146864782d9bef356b2d36c50404e863dd7",
+  "first_observed_exception": "amended_workbook_model.PolicyTurnError: Expected one completed message in one isolated thread",
+  "first_rejected_job": {
+    "batch": "spreadsheets-000",
+    "arm": "fixed",
+    "stage": "inspect-1"
+  },
+  "source_explanation": "All 50 futures had been submitted. The original ThreadPoolExecutor waited for all of them on exit. Each uncompleted batch stopped on its first unsealed stage. The process log retains the first raised exception only. Rejected stdout was ephemeral. Individual thread IDs, tokens, provider completion status and other reasons for these stages are unavailable.",
+  "rule": "Every first unresolved slot consumes its budget and is never requested again. Continue later previously unattempted stages only, at the original per-batch budget and with the same strict response parser. Interpret rejected inspections as absent plans and any invalid submission as missing.",
+  "prior_accepted_turns_sha256": {
+    "turns/gpt-6-luna/fixed/spreadsheets-001/inspect-1.json": "c4f3c26e27599f1682e074bd7639196f9621e7906356bf0e58eb0d5d73aa6e76",
+    "turns/gpt-6-luna/fixed/spreadsheets-001/inspect-2.json": "f7a579bdaa59f9e8f742a4aec639b4d3f0f00916011da04a9fab69b79adfb0d2",
+    "turns/gpt-6-luna/fixed/spreadsheets-001/submit.json": "90e35a2f013bf86b2c4a42cc4989c05c9a417491aa3d7607891ba904cf007c13",
+    "turns/gpt-6-luna/browse/spreadsheets-001/inspect-1.json": "d1959f29245970d0766a61683baf5c9ecc8675c3115541e75867f31f38ae2e32",
+    "turns/gpt-6-luna/browse/spreadsheets-001/inspect-2.json": "4e922a4f21051a24d5bb91aae585c3785e68f7b89865d3d34802d966195a28af",
+    "turns/gpt-6-luna/browse/spreadsheets-001/submit.json": "d4d2aba4dee649f670239875c28cf4c3bb61dcb3f75dcf145a008f7c6b113fe5",
+    "turns/gpt-6-luna/fixed/spreadsheets-004/inspect-1.json": "6fa92745cb361699a630b340afc60fa6d622acf132587f7a76c0b71196449dbb",
+    "turns/gpt-6-luna/fixed/spreadsheets-004/inspect-2.json": "34b0518f007df372b0ba684c3e1d68575e5194ec8c1530984f1b2824e76442c3",
+    "turns/gpt-6-luna/fixed/spreadsheets-004/submit.json": "1fbc939bf1c9a47b472b73fe962349ebd3eb547f4ef8fd804a47a50ba5058ace",
+    "turns/gpt-6-luna/browse/spreadsheets-004/inspect-1.json": "99d1c590174b863f1702db3125b60851b42e98bf04dea4740494558007d2e092",
+    "turns/gpt-6-luna/fixed/spreadsheets-005/inspect-1.json": "a04bacf780c0e0b45160fc15c593af4b354d0843464bf5050fe5ed63585cc8bb",
+    "turns/gpt-6-luna/fixed/spreadsheets-005/inspect-2.json": "fcd806f8f2dd3b1e3a9e80dfc2477f6e93d27abe64710bb80b14fea48f90f07a",
+    "turns/gpt-6-luna/fixed/spreadsheets-005/submit.json": "69144418c93dc4811e0fe010c5ca06a706249c741e4b9c315588e236a6be8d26",
+    "turns/gpt-6-luna/fixed/spreadsheets-007/inspect-1.json": "a4c1bde2fd828c0c157853211110d0fcd6c979a7061405c9582642a0da349701",
+    "turns/gpt-6-luna/fixed/spreadsheets-007/inspect-2.json": "32563ba9dc25a32220e328d57f83ae911e62f56963caf8814b033797193d1cf1",
+    "turns/gpt-6-luna/fixed/spreadsheets-007/submit.json": "cf3beb17f6d0a024acc79acd4bd75e1183a259443490135e17f15f314330c758",
+    "turns/gpt-6-luna/browse/spreadsheets-008/inspect-1.json": "d2682f63a9f22bd2bf25b3dcdd9ffaeb1d89dc5346241b306d95c34949d10c63",
+    "turns/gpt-6-luna/browse/spreadsheets-008/inspect-2.json": "83f33d3623352a73a6d13f69369441f0ff886bda5c53d5f46ad7f7c3586ad556",
+    "turns/gpt-6-luna/browse/spreadsheets-008/submit.json": "6b02791bc3493375746a6039681562054f33bb7a8933abc9633685e389a45eb1",
+    "turns/gpt-6-luna/browse/spreadsheets-009/inspect-1.json": "9021b8c159955c6bb10e981f29572d1897c289d8d9eaaf16e42098a15dc72d34",
+    "turns/gpt-6-luna/browse/spreadsheets-009/inspect-2.json": "153dfbb6845322d8457659957a234aef66f59f1e697f4ec67e4d865ed8a41983",
+    "turns/gpt-6-luna/browse/spreadsheets-009/submit.json": "11a9e72d8b6475eb9c5bb141fa24ceac4b759a3ccccf79f8dee82951323c7b35",
+    "turns/gpt-6-luna/fixed/spreadsheets-011/inspect-1.json": "0fd152487b87e72475e419062dd147c1da0217bae5840c32ae0162dd035b627d",
+    "turns/gpt-6-luna/browse/spreadsheets-011/inspect-1.json": "6e8a4b3b21a12795f9123624aa221b2f7f97b85b8ea2421ce613abf525721a87",
+    "turns/gpt-6-luna/browse/spreadsheets-011/inspect-2.json": "f070cafa6ab61dd8dad0dbebb4259858d2a0264c9ebf76359dc4246c0714a97c",
+    "turns/gpt-6-luna/browse/spreadsheets-011/submit.json": "023c10fba0b105c7a5d38f5da0e69f1737c5482eec9ea5bab3ff32b238ff1753",
+    "turns/gpt-6-luna/fixed/spreadsheets-017/inspect-1.json": "1281b1f3ad321b848fb8145ce2304e35d317a191e27b1fcfd8480ba7ee70c43e",
+    "turns/gpt-6-luna/fixed/spreadsheets-017/inspect-2.json": "60420185549084cd72539000872750b5a2dfb4b1e472271019e5d427e0ce75ba",
+    "turns/gpt-6-luna/fixed/spreadsheets-017/submit.json": "571f034ee8c7b16b4fedb29cea894e70ca36781c820c3567632c54d9287dd50c",
+    "turns/gpt-6-luna/browse/spreadsheets-018/inspect-1.json": "205885dfd85f2e688d0bf5b0a332e716e4bc68c266f0bdf60a0a49f731772f34",
+    "turns/gpt-6-luna/browse/spreadsheets-021/inspect-1.json": "9044cc9e62780afb287b048f000627943a47c5e6026414efa5c64926dc6a6b1c"
+  },
+  "prior_completed_batches_sha256": {
+    "recordings/gpt-6-luna/fixed/spreadsheets-001.json": "6615dfdd2244cf50f461da8d328d0fbcf3133855db74023a575a3c1f8a26b316",
+    "recordings/gpt-6-luna/browse/spreadsheets-001.json": "5d8349d43b444c7ebc4e74f9ef391bb74ce6cb0f84f2365e0058c7b02db99cc5",
+    "recordings/gpt-6-luna/fixed/spreadsheets-004.json": "bc725e1ac8dd196c06574eec4972ca9837fd4d44ffd8bdd12a1bdb7e8932ede4",
+    "recordings/gpt-6-luna/fixed/spreadsheets-005.json": "36063ad139584d7d67b855e67087036cba9dfec37d89f3b880870bbc9120018c",
+    "recordings/gpt-6-luna/fixed/spreadsheets-007.json": "ca2b620fed703b8d9b572ad40e73d8a0952712e46964603673f0dc0a0fe1ce24",
+    "recordings/gpt-6-luna/browse/spreadsheets-008.json": "47a93b2456c59a36167ff56320500381318114edee4f1b9d33ed4bc8a157f271",
+    "recordings/gpt-6-luna/browse/spreadsheets-009.json": "edb70213ace5d82c524c37735682e11b75c13acb19f6c00d5c922323efe2536d",
+    "recordings/gpt-6-luna/browse/spreadsheets-011.json": "bd9768491c21cfade32a538872a362b71d53506096366f355c3da27342b8385e",
+    "recordings/gpt-6-luna/fixed/spreadsheets-017.json": "7a0e6e757c9d27db65ce0f3edc2c69ba69e049542d80e0f63c3b2960197977fa"
+  },
+  "spent_unknown_stages": [
+    {
+      "batch": "spreadsheets-000",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-000",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-004",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-005",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-007",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-008",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-009",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-011",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-017",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-018",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-018",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-021",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-021",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "browse",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "fixed",
+      "stage": "inspect-1"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "browse",
+      "stage": "inspect-1"
+    }
+  ],
+  "remaining_unattempted_stages": [
+    {
+      "batch": "spreadsheets-000",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-000",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-000",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-000",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-002",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-003",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-004",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-005",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-005",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-006",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-007",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-007",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-008",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-008",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-009",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-009",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-010",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-011",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-012",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-013",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-014",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-015",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-016",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-017",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-017",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-018",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-018",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-018",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-019",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-020",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-021",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-021",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-021",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-022",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-023",
+      "arm": "browse",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "fixed",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "fixed",
+      "stage": "submit"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "browse",
+      "stage": "inspect-2"
+    },
+    {
+      "batch": "spreadsheets-024",
+      "arm": "browse",
+      "stage": "submit"
+    }
+  ]
+}

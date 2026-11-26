@@ -1,0 +1,246 @@
+{
+  "examples": [
+    {
+      "outcome": "browse_only_gain",
+      "task_id": "sheet-36236",
+      "model": "gpt-6-luna",
+      "failed_arm": "fixed",
+      "browse_reads": [],
+      "new_cells_returned": [],
+      "difference": {
+        "stage": "recalculated",
+        "input": "public",
+        "sheet": "Sheet1",
+        "cell": "F2",
+        "expected": [
+          "s",
+          "Amazon"
+        ],
+        "actual": [
+          "e",
+          "#NAME?"
+        ],
+        "submitted_formula": "=TEXTJOIN(\", \",TRUE,UNIQUE(A2:B2))"
+      },
+      "fixed_formula_at_cell": "=TEXTJOIN(\", \",TRUE,UNIQUE(A2:B2))",
+      "browse_formula_at_cell": "=IF(A2=B2,A2,IF(A2=\"\",B2,IF(B2=\"\",A2,A2&\", \"&B2)))"
+    },
+    {
+      "outcome": "persistent_failure",
+      "task_id": "sheet-49859",
+      "model": "gpt-6-luna",
+      "failed_arm": "browse",
+      "browse_reads": [
+        {
+          "op": "range",
+          "sheet": "Vat",
+          "range": "C12:J17"
+        },
+        {
+          "op": "range",
+          "sheet": "Vat",
+          "range": "C18:Q23"
+        }
+      ],
+      "new_cells_returned": [
+        [
+          "Vat",
+          "C22"
+        ],
+        [
+          "Vat",
+          "D21"
+        ],
+        [
+          "Vat",
+          "D22"
+        ],
+        [
+          "Vat",
+          "E21"
+        ],
+        [
+          "Vat",
+          "E22"
+        ],
+        [
+          "Vat",
+          "F21"
+        ],
+        [
+          "Vat",
+          "F22"
+        ],
+        [
+          "Vat",
+          "G21"
+        ],
+        [
+          "Vat",
+          "G22"
+        ],
+        [
+          "Vat",
+          "H21"
+        ],
+        [
+          "Vat",
+          "H22"
+        ],
+        [
+          "Vat",
+          "I21"
+        ],
+        [
+          "Vat",
+          "I22"
+        ],
+        [
+          "Vat",
+          "J21"
+        ],
+        [
+          "Vat",
+          "J22"
+        ]
+      ],
+      "difference": {
+        "stage": "recalculated",
+        "input": "public",
+        "sheet": "Vat",
+        "cell": "F20",
+        "expected": [
+          "n",
+          "1"
+        ],
+        "actual": [
+          "n",
+          "0"
+        ],
+        "submitted_formula": "=IF(AND($C20>=F$8,$C20<=F$9),1,0)"
+      },
+      "fixed_formula_at_cell": "=IF(AND($C20>=F$8,$C20<=F$9),1,0)",
+      "browse_formula_at_cell": "=IF(AND($C20>=F$8,$C20<=F$9),1,0)"
+    }
+  ],
+  "wheel_sha256": "59ca9397dbae0d95a4c179fd6b92ecb1ac886c47af164a0d4f5664aece96009a",
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "historical_score_sha256": "fa76aa14697109b0f89e6403d2968fbbb4c1f196955ec3d260c3daae48cb61bc",
+  "historical_verdicts_reproduced": 600,
+  "new_verdicts": 200,
+  "failed_submissions_replayed": 101,
+  "failed_candidate_sha256": {
+    "gpt-6-luna/fixed": {
+      "sheet-17251": "0deb1da8855dcae9759c92fe42a67030221f4f2d9b9406fcdf730692602435d2",
+      "sheet-18935": "efc9a5abc0e772ba439bff0985c37ad69f26c536b47e6fe941bae08c876f637d",
+      "sheet-32562": "de94d067c45099d981c836647d6f9b4b0b959eb974388224e8d39de425e10b73",
+      "sheet-33157": "34c7f63f979ccacb77acb66901b6219ffffd973301408cb8cadf2722792f6fbe",
+      "sheet-34033": "95210bd57d84a9ab0a5ccbb538d448ff6866886eecf76da91f6647425ea57fb9",
+      "sheet-34210": "dcdac1c3572903b2370b36beeee7a2037af7aed8f2109487df50678deb01d1f3",
+      "sheet-36236": "68b9ab8466b57148387f34ffbc95c0fc018d2496816e33678f1f629f80e71346",
+      "sheet-36277": "4385cd715a721dff26b72c2ccb9185a25c3672cafb4e264e851c2ac7e4b96756",
+      "sheet-37228": "2ba1902f4298ecd0ea3d87b0095880abdeaf2d5f59060dc25748d7439cbe99fd",
+      "sheet-37378": "bea4d7b412ebf198b34539337301bd0a79c60a0f04d80812bc41a6c26c883723",
+      "sheet-37554": "496cd83f6b20ffb83b00f0dd2972af2c6a287860a7bcb6f4c6d44888bf3f67b0",
+      "sheet-37615": "599ac078f4157add28bac1647a46b4ba9889095bb40a1d611e4b66ea0790d1cc",
+      "sheet-38462": "d3fe665bde53d4d4779fc727f76afd9ff12e971a0857c5f13252a7ca1d72c8aa",
+      "sheet-38537": "2d9562c255ef78cfd5e93a52a9bc9edfa5091c324d5588fc1346f0401186b359",
+      "sheet-38662": "b7c0b8b18802950dbc0a1fbc60ba92c3ffacc9e96324978dbb6682e768b9af13",
+      "sheet-39432": "8cdab9723710eb3443310239c2ea449e0635df78b8a748c5fef388609ec43a9e",
+      "sheet-40478": "9272e277f16ec0577725ba92fa3fcf0c1b2246fb12211fa771e7bf11497e18c6",
+      "sheet-40757": "061628fb9a115fcbec9232c2e0cd79b6f98d6faa8a689634b80f367265975c68",
+      "sheet-42515": "e84bf67cd485d29fbdc7d883593062267dae33d7faf050a85068f3e8be269c81",
+      "sheet-43406": "d000f6540708cdb1a01bc82b8a0aff744d86f14f0071c8c99ae66798ee0ebfb4",
+      "sheet-43436": "8c794261f8999e1ef5e326379ddf25543c8ad9f6116e0bc02d808f540f0159d6",
+      "sheet-44264": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-44266": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-44628": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-45030": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-45063": "f7577edd210e28d0c9c40fff47b486fd97f1c8cd41be2e76cfd733ecb6dc0316",
+      "sheet-47699": "0f268e2823b2e896590eb0ecdbdb6fabf699eb27db42883fbcfb2607f6e78cc9",
+      "sheet-48365": "118cd15afd5642e8c914c6579297e78e9ee29401d68605414ba8ecf531821f8a",
+      "sheet-48588": "4b07cf7419a022f81aab98009a5d1903cc685f0d60373ba58d321d89f1e65cb9",
+      "sheet-48643": "e55bec8b43edbda4ced774ff0077336fc839066e30c7f352598461e76699aa4b",
+      "sheet-48969": "39476d52b8bde0c9059064d3213ac9aeb46f4ae435109a622236a30f60a223ef",
+      "sheet-48983": "9027ad22df2da69d0a3cd22d4e85b36027443166f24ed0226bc3249a5f9d9bed",
+      "sheet-49455": "d15fa3e5445b4d8d25cb04bbc5b1e1b2062afb9e8eb07f59dd38e158e604121c",
+      "sheet-49859": "a424c7f90d6e87dca1bdbf3dd0b82fa68bdb376334aac835ec0082bc1764e0e3",
+      "sheet-51807": "369587740587ccac609dec808de6f9aa195b9bc1d6bf00f79f0573c0c647b978",
+      "sheet-52532": "06fe5caa364dea181bc3e947840a9260bfeafa97620e315f0f30b1bc2db35f9c",
+      "sheet-53167": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-53383": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-54274": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-55085": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "sheet-55260": "4375e201c908ffe11d477e5d6b9e0cd739b59b1161a8e79cf2e51408866d88c6",
+      "sheet-55535": "1dd33b8a0bf66d9b0cc633c4c0b953342df3c3ed888e20e32aadb23b3d5d0a0b",
+      "sheet-55609": "2705daec4ad77fbbd435f9bb0938e3e79d49bc0ccd1b3278bf4ba6cfd64c6f3e",
+      "sheet-56427": "749486cb1b59553e6bd7c0c164fb5f7a61d420185bb9c1de2a409591660d4f4c",
+      "sheet-56451": "66f46adafeef8522ddb51536cf434c1668aefacfcd7e6d9db8ddaca5fac00498",
+      "sheet-56915": "935d32f135bcc98a871930b1383968e8b5b65ad7b627798017c4e8c3b3932344",
+      "sheet-56995": "4575af98bd2378b5d43f6000a3f8e21edde4277446845bee5f61827ba9e7ca8c",
+      "sheet-57105": "0b7821f26bc498277b45c0ca410cb00740fb2e6403667dfb74a920c0c8711dbc",
+      "sheet-57137": "b1b518c48eb981dee1febfb584ccb42963c093c992b35a95b11cc8cd7d7441c9",
+      "sheet-57262": "cecd7b435a9fa9432b0ae009291ec0263a35fc71b9c251433d593cba2e9e5f60",
+      "sheet-57354": "f184bb641e84bfe01e08c7c21d3c6f2261c19ea791ddea1053a8e4d090a8ac6e",
+      "sheet-58047": "beef1ebc8a3aeeedad0b4c8e2eace30741da98ef43e97db7142317772930a352",
+      "sheet-59224": "1ba85a62da3a95c19eb6057333c5df9d8648c45817b0e0f691fd720e6ac92edd",
+      "sheet-59358": "8ef6fe1826f005da20b81bd063e97c4b3d38514949b80420b7a380928dc71404",
+      "sheet-59794": "f5779cef1e56d0f95bf4d7dc6acce175e71cbb1121bb84323b7e0a5cc71f283c",
+      "sheet-7902": "e0a14cffe994febc31c2d0450f7b2935a7df65c9f1bee4ce96d4d5a25582cd0c"
+    },
+    "gpt-6-luna/browse": {
+      "sheet-18935": "2277acb28a1c60828320f53f566b191bbc49e3882e0fea63d73698a3058d4217",
+      "sheet-32255": "781e742c981d7399bf64d8a1841f6bba49502728a2be9b33fa1fddbf44956142",
+      "sheet-34033": "0eadecbc022cdc86b351fb7b18039a49df4323f46882d434a2c34707bb14daed",
+      "sheet-36277": "c63841558e078a0433ca2c07b5e6933549b044d3d2902e30563e30a8b25a2283",
+      "sheet-37228": "efa9c10164469e31dea4bb1bb3c22ec2c32a85dfd0ae17a7702d70a0065a754f",
+      "sheet-37378": "5609745bcf9080c989dd729457312b5ae43c03ddc3af3e0c05192c1176298d29",
+      "sheet-37554": "496cd83f6b20ffb83b00f0dd2972af2c6a287860a7bcb6f4c6d44888bf3f67b0",
+      "sheet-37615": "fd776adedc52a93397cd3994adfd5d48646e4a8344f4057449f73239915b97a0",
+      "sheet-38462": "d3fe665bde53d4d4779fc727f76afd9ff12e971a0857c5f13252a7ca1d72c8aa",
+      "sheet-39432": "10b811fdf6f2f7397693f25570ec93a7862c6e66964ec67b4795e48709ff3a85",
+      "sheet-40478": "9272e277f16ec0577725ba92fa3fcf0c1b2246fb12211fa771e7bf11497e18c6",
+      "sheet-40757": "a3e18d589e55abf439a6542e3038dab769e8587714bd0c9c22c80225275f1f3d",
+      "sheet-42515": "705e21560f3fc32cb0cbb60933add855fd4808ae084e5c289bb8931c1bb4a5d2",
+      "sheet-42526": "65ae0fd0fae88b950af5e696c5e2aba3b60201b7990f19e12e99243915a85c32",
+      "sheet-43406": "627bfe4e35b87b4418cdf6bc8506784435ffab28b0cf79832e4ab6fb280c1759",
+      "sheet-43436": "a0a287f7cd0d5d07bd93fcd6705956f9beab74aaf4323a92bd341430c5f055c5",
+      "sheet-44264": "4079ac1d7f482ef26646a84414138397543c931bd2de5394077273b079c4d5cf",
+      "sheet-47699": "ec477ee0a39c3406b73785399cece02e27ab53e366ed49d473c5d1934aa3aec8",
+      "sheet-48365": "c9b912bd1240ecc13065bde2341bc371e5b5a457a32893e36e5a615b8ead3ace",
+      "sheet-48588": "00de3b2cefbe7fd398e4aa8083a72657d4069a5d7c91b89f3fc5ec66cb988a75",
+      "sheet-48608": "3ddf19139dfce9b919dc3db970ec7a1fbd3cb97211de9f0278dff160a0e715fb",
+      "sheet-48643": "f1b99a3a97bc412d854020c88949cbc11baef84d7377cfb6a5a55d9871d22ed7",
+      "sheet-48969": "dc0d58ad7d75294f8bfcef3b303f4ddd9b29099fc987198cd63c90e832934040",
+      "sheet-49857": "e34f6bdf6ef460dbc6d22bdae6bafca18a86488a8bdcd39f156c2bf546f82534",
+      "sheet-49859": "a424c7f90d6e87dca1bdbf3dd0b82fa68bdb376334aac835ec0082bc1764e0e3",
+      "sheet-50630": "1d58023426defb25c980672c36659fad310b795d106529b313fcd27b6070f9da",
+      "sheet-51807": "b40fa94c5a7d9400852ed6b7827202424403cfad725e2cff263bbce2c930a60d",
+      "sheet-52532": "be05b6b5ae63744fbf33385c0a2a645547e5ee01ce45925258d9ee63ade93037",
+      "sheet-53167": "50319733cf3f28cee4d4fc755654f288d2e2d5f14e1ea50063c1d7ad505a9552",
+      "sheet-55085": "575f611ce129c620b1bc62fb95ff07e8ed0e1f3715af0009dffbd47ef8c189da",
+      "sheet-55260": "f89d7039864345b7ba6bf6ec47f51545cdcf1ba08037b7faaf9a303345839b9c",
+      "sheet-55535": "b54951b2d87f1a43c1e3a3569fcd6ef8f1e86a66281c38d2667642fe8ae41b70",
+      "sheet-55609": "47c957db124a7a67103e7fe26f9453880c037b0568e75456d7f020fed3823626",
+      "sheet-56427": "e9d270b561bc9e919699b9271b0e195b9f06ae46f1a7dd5cfba0986ab5f68894",
+      "sheet-56451": "ca3290e443117d3d6fc5addbafd7e682cb4e725174ce4d2e91f25b85373ed0e1",
+      "sheet-56915": "835d017cd71b1fad7dd6261aff0f5121cede5fe81239d8d5cad4586e87bd92b4",
+      "sheet-56995": "7108826a01e79f09c48dd2ba9d8c9f1a6379543d52a687bb4377fcb030291199",
+      "sheet-57105": "15408d583246d9038b544ef09b9c243bca1524f250e3668a1fff88098001947f",
+      "sheet-57137": "52a3c75c8958d076e863c810046695c887d5d187f0aa3102bbe24727c276b5db",
+      "sheet-57262": "29b41db8aca6716801dc40170cef38dd91e3cf0e0edecab9cc722d77e7583471",
+      "sheet-57354": "6b770fa41b62650943089658c994c12abe2cd78b3e6077ba08fb704dcb7ad6f4",
+      "sheet-58047": "beef1ebc8a3aeeedad0b4c8e2eace30741da98ef43e97db7142317772930a352",
+      "sheet-59358": "8ef6fe1826f005da20b81bd063e97c4b3d38514949b80420b7a380928dc71404",
+      "sheet-59794": "b1747fe2fb7e74cf4c4c532b868c86df88f0f5549b64dc539c63b3c20f70caea",
+      "sheet-7902": "fe9c7f44f37e66ea2e971e28f260719dce3f5d0b97ff4fdb5d1e6a145201c57a"
+    }
+  },
+  "network_barrier": [
+    "/usr/bin/sandbox-exec",
+    "-p",
+    "(version 1)(allow default)(deny network*)"
+  ],
+  "prediction_lock_sha256": "203545e2c1eb389fbc0ef92e7b819cae3baf34c3d323f170facc9da947c93cda",
+  "parent_prediction_lock_sha256": "dda2bfaa9a144382d2879b459071dfe2461d9a149fc69013767cc84e71e6f9ee"
+}

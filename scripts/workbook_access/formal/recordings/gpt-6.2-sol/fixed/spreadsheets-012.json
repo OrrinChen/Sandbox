@@ -1,0 +1,292 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "18c0027fcbd3557a3c9afede206ff9e86a171a84b37f161c94929a41168dea8d",
+    "10e59ff5fbbe86f7d10005f015287ceb5413a44787fac77f6b4da7b3d2efcbb0",
+    "f7de5b465e5d098facf6b7c69bc6e5b5c687dcff4b5c0cf19d99670c3bbbbdaa"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-46897",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "I3": "=COUNTIF(INDEX($A$2:$D$1048576,0,XMATCH($I$1,$A$1:$D$1,0)),IF(ISTEXT($I$2),\"=\"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE($I$2,\"~\",\"~~\"),\"*\",\"~*\"),\"?\",\"~?\"),$I$2))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59836,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1319,
+        "reasoning_output_tokens": 770
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-47699",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "D1": "=COUNTIF(A:A,FALSE)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Prev working day Quote (2)",
+            "range": "A5:A27"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Prev working day Quote (2)",
+            "range": "A5:A27",
+            "range_size": 23,
+            "cells": [
+              [
+                "A5",
+                "True"
+              ],
+              [
+                "A6",
+                "True"
+              ],
+              [
+                "A7",
+                "True"
+              ],
+              [
+                "A8",
+                "True"
+              ],
+              [
+                "A9",
+                "True"
+              ],
+              [
+                "A10",
+                "True"
+              ],
+              [
+                "A11",
+                "False"
+              ],
+              [
+                "A12",
+                "True"
+              ],
+              [
+                "A13",
+                "True"
+              ],
+              [
+                "A14",
+                "True"
+              ],
+              [
+                "A15",
+                "True"
+              ],
+              [
+                "A16",
+                "False"
+              ],
+              [
+                "A17",
+                "True"
+              ],
+              [
+                "A18",
+                "True"
+              ],
+              [
+                "A19",
+                "True"
+              ],
+              [
+                "A20",
+                "True"
+              ],
+              [
+                "A21",
+                "True"
+              ],
+              [
+                "A22",
+                "False"
+              ],
+              [
+                "A23",
+                "True"
+              ],
+              [
+                "A24",
+                "#REF!"
+              ],
+              [
+                "A25",
+                "#REF!"
+              ],
+              [
+                "A26",
+                "#REF!"
+              ],
+              [
+                "A27",
+                "#REF!"
+              ]
+            ],
+            "total": 23,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59836,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1319,
+        "reasoning_output_tokens": 770
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48354",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D6",
+            "formula": "=IF(ISNUMBER(SEARCH(\"domestic\",B2)),\"D\",IF(ISNUMBER(SEARCH(\"international\",B2)),\"I\",\"N/A\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59836,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1319,
+        "reasoning_output_tokens": 770
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48365",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(COUNTIF($C$11:$C$13,\"All\")>0,SUMIF(Data!$A:$A,$C$2,Data!$C:$C),IF($C$11=\"\",0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$11))+IF(OR($C$12=\"\",$C$12=$C$11),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$12))+IF(OR($C$13=\"\",$C$13=$C$11,$C$13=$C$12),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$13)))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Dashboard",
+            "range": "B1:D13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Dashboard",
+            "range": "B1:D13",
+            "range_size": 39,
+            "cells": [
+              [
+                "B2",
+                "Product"
+              ],
+              [
+                "C2",
+                "AAA"
+              ],
+              [
+                "C3",
+                "M1"
+              ],
+              [
+                "B4",
+                "Outcome"
+              ],
+              [
+                "B10",
+                "Regions"
+              ],
+              [
+                "B11",
+                "1"
+              ],
+              [
+                "C11",
+                "EMEA"
+              ],
+              [
+                "B12",
+                "2"
+              ],
+              [
+                "B13",
+                "3"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 30
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59836,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1319,
+        "reasoning_output_tokens": 770
+      },
+      "model_calls": 3
+    }
+  ]
+}

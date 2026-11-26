@@ -1,0 +1,340 @@
+[
+  {
+    "task_id": "decision-trace-an-excerpt-across-a-splice",
+    "tool": "sqlite.query",
+    "instruction": "For each listening request, trace the requested excerpt through the assembly log. All positions are integer audio frames. Each request and each log entry uses a half-open interval, including its first frame and excluding its end frame. Within an entry, output frames advance one-for-one with source frames, starting at reel_first. Entries for a mix do not overlap, but the log can have gaps. Return one row per positive-length documented intersection, omitting gaps and requests with no documented frames. Cite the entry that supports each span, even when adjacent entries use the same reel. No fields are null. Return ask_id, entry_id, reel_id, mix_first, mix_end, reel_first, reel_end, ordered by ask_id, mix_first, then entry_id in ascending order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "assembly_entry": {
+        "columns": [
+          "entry_id TEXT",
+          "mix_id TEXT",
+          "first_frame INTEGER",
+          "end_frame INTEGER",
+          "reel_id TEXT",
+          "reel_first INTEGER",
+          "entry_text TEXT"
+        ],
+        "rows": [
+          [
+            "L1",
+            "moss",
+            5,
+            15,
+            "reed",
+            90,
+            "Lay reed from frame 90 at mix frame 5."
+          ],
+          [
+            "L2",
+            "moss",
+            15,
+            20,
+            "bell",
+            40,
+            "Splice in bell at its frame 40."
+          ],
+          [
+            "L3",
+            "moss",
+            22,
+            30,
+            "reed",
+            3,
+            "Resume reed from frame 3 after the gap."
+          ],
+          [
+            "L4",
+            "fern",
+            10,
+            25,
+            "hum",
+            0,
+            "Lay hum on the fern mix."
+          ]
+        ]
+      },
+      "listening_ask": {
+        "columns": [
+          "ask_id TEXT",
+          "mix_id TEXT",
+          "first_frame INTEGER",
+          "end_frame INTEGER"
+        ],
+        "rows": [
+          [
+            "Q1",
+            "moss",
+            12,
+            23
+          ],
+          [
+            "Q2",
+            "moss",
+            20,
+            22
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "ask_id",
+      "entry_id",
+      "reel_id",
+      "mix_first",
+      "mix_end",
+      "reel_first",
+      "reel_end"
+    ]
+  },
+  {
+    "task_id": "decision-trace-common-quote-witnesses",
+    "tool": "sqlite.query",
+    "instruction": "The Amber and Blue editions each quote several accounts of the same garden exhibition. For each edition, start at every document it quotes and follow copied_from until reaching an original account, identified by NULL. All chains terminate. Each original is a distinct firsthand witness. Multiple routes to one original count as one witness, and an intermediate copy contributes no additional witness. Locate the two independent witnesses that both editions draw on. Return one row per shared original, with its document ID in the single column witness, sorted by ID in binary text order. Exactly two originals qualify. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "account": {
+        "columns": [
+          "doc TEXT",
+          "copied_from TEXT"
+        ],
+        "rows": [
+          [
+            "Birch",
+            null
+          ],
+          [
+            "Clay",
+            null
+          ],
+          [
+            "Reed",
+            null
+          ],
+          [
+            "Slip",
+            "Birch"
+          ],
+          [
+            "Index",
+            "Slip"
+          ],
+          [
+            "Card",
+            "Clay"
+          ],
+          [
+            "Leaf",
+            "Reed"
+          ]
+        ]
+      },
+      "quotation": {
+        "columns": [
+          "edition TEXT",
+          "doc TEXT"
+        ],
+        "rows": [
+          [
+            "Amber",
+            "Index"
+          ],
+          [
+            "Amber",
+            "Slip"
+          ],
+          [
+            "Amber",
+            "Card"
+          ],
+          [
+            "Blue",
+            "Slip"
+          ],
+          [
+            "Blue",
+            "Clay"
+          ],
+          [
+            "Blue",
+            "Leaf"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "witness"
+    ]
+  },
+  {
+    "task_id": "decision-trace-shared-equipment-premium-splits",
+    "tool": "sqlite.query",
+    "instruction": "For each equipment premium posting, find the operating memo for that equipment with the latest effective day on or before the posting's service day. If two eligible memos share the latest day, use the higher revision number. Effective day and revision are unique together within an equipment code. Each memo supplies its approved workshop share in basis points and the primary text supporting it. Allocate the positive premium to Workshop by multiplying cents by the selected share and rounding down to whole cents. Allocate the remainder to Stores. Return one row per posting with posting_id, workshop_cents, stores_cents, source_id, primary_text, quoting the selected memo verbatim. Order by unique posting_id in ascending binary text order. Dates are ISO calendar dates, 10000 basis points equal 100 percent, every posting has eligible evidence, and no field is null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "equipment_posting": {
+        "columns": [
+          "posting_id TEXT",
+          "gear_code TEXT",
+          "service_day TEXT",
+          "premium_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "P2",
+            "LIFT",
+            "2025-05-01",
+            999
+          ],
+          [
+            "P1",
+            "LIFT",
+            "2025-04-30",
+            999
+          ],
+          [
+            "P3",
+            "CART",
+            "2025-05-01",
+            250
+          ]
+        ]
+      },
+      "operating_memo": {
+        "columns": [
+          "source_id TEXT",
+          "gear_code TEXT",
+          "effective_day TEXT",
+          "revision_no INTEGER",
+          "workshop_bps INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "M8",
+            "LIFT",
+            "2025-04-01",
+            4,
+            2500,
+            "One of four lift shifts serves Workshop."
+          ],
+          [
+            "M2",
+            "LIFT",
+            "2025-05-01",
+            1,
+            5000,
+            "Split lift time equally between crews."
+          ],
+          [
+            "M3",
+            "LIFT",
+            "2025-05-01",
+            2,
+            6000,
+            "Corrected roster gives Workshop three of five lift shifts."
+          ],
+          [
+            "M4",
+            "CART",
+            "2025-01-01",
+            1,
+            0,
+            "Stores uses the cart exclusively."
+          ],
+          [
+            "M5",
+            "CART",
+            "2025-05-02",
+            1,
+            10000,
+            "Transfer the cart to Workshop."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "posting_id",
+      "workshop_cents",
+      "stores_cents",
+      "source_id",
+      "primary_text"
+    ]
+  },
+  {
+    "task_id": "decision-triangulate-forward-sight-consensus",
+    "tool": "sqlite.query",
+    "instruction": "A crew searching for one displaced monument marked a finite set of possible recovery stakes. Coordinates are integer metres east and north on one local grid. Each sight is from a different station. Its nonzero vector (step_e, step_n) gives the observed forward direction in grid units and need not have unit length. A stake supports a sight if its displacement from the station is a strictly positive real multiple of that vector. A stake at the station itself provides no support. All inputs are non-NULL and IDs are unique within each table. Count supporting sights per stake and report every stake tied for greatest support, provided that count is at least two. Output stake_id, sight_count ordered by stake_id in binary ascending order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "field_sight": {
+        "columns": [
+          "sight_id TEXT",
+          "base_e INTEGER",
+          "base_n INTEGER",
+          "step_e INTEGER",
+          "step_n INTEGER"
+        ],
+        "rows": [
+          [
+            "S1",
+            0,
+            0,
+            3,
+            3
+          ],
+          [
+            "S2",
+            2,
+            0,
+            0,
+            1
+          ],
+          [
+            "S3",
+            -2,
+            0,
+            0,
+            1
+          ],
+          [
+            "S4",
+            4,
+            2,
+            -1,
+            0
+          ]
+        ]
+      },
+      "search_stake": {
+        "columns": [
+          "stake_id TEXT",
+          "east_m INTEGER",
+          "north_m INTEGER"
+        ],
+        "rows": [
+          [
+            "Ash",
+            2,
+            2
+          ],
+          [
+            "Elm",
+            -2,
+            -2
+          ],
+          [
+            "Oak",
+            0,
+            0
+          ],
+          [
+            "Yew",
+            2,
+            -2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "stake_id",
+      "sight_count"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-014",
+    "stage": "submit",
+    "prompt_sha256": "b0eb92f51ec9b2443475f849b70798f323c16307036c47cf2b4b2cd52ca4c029",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f0-9c33-7f43-bf80-ed1185e3588f",
+    "raw": "{\"sheet-48983\":{\"fills\":[{\"range\":\"M6:S11\",\"formula\":\"=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))\"}],\"formulas\":{}},\"sheet-49246\":{\"fills\":[{\"range\":\"B2:B14\",\"formula\":\"=VLOOKUP(LOOKUP(2,1/($A$2:A2<>\\\"\\\"),$A$2:A2),$J$1:$K$4,2,0)\"}],\"formulas\":{}},\"sheet-49300\":{\"fills\":[{\"range\":\"C2:C3\",\"formula\":\"=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))\"}],\"formulas\":{}},\"sheet-49455\":{\"formulas\":{\"H3\":\"=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\\\"\\\"))\"}}}",
+    "usage": {
+      "input_tokens": 20395,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 326,
+      "reasoning_output_tokens": 71
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

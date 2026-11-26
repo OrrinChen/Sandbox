@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23033,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 286,
+    "reasoning_output_tokens": 65
+  },
+  "thread": "01a20d8e-faef-7fa2-a9d0-4e5359aa2cc5",
+  "packet_sha256": "cfe3a5fc22ea1f9e8ed5253e954d9a285f05d09f0b55c2e9d924c7e69559828c",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2024Q3/food_manufacturing-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2024Q3/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2024Q3/semiconductors-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000895419\",\n          \"reason\": \"Quarterly revenue fell from $208.4 million to $200.7 million sequentially while the year-ago comparison rose from $173.8 million to $192.6 million. YoY growth narrowed from 19.91% to 4.21%. Strong materials demand and improved output (B) support a forecast that growth stays above -5% in the intervening quarter, but the narrowing sales lead points to a first decline of at least 5% in the target quarter.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000895419",
+            "reason": "Quarterly revenue fell from $208.4 million to $200.7 million sequentially while the year-ago comparison rose from $173.8 million to $192.6 million. YoY growth narrowed from 19.91% to 4.21%. Strong materials demand and improved output (B) support a forecast that growth stays above -5% in the intervening quarter, but the narrowing sales lead points to a first decline of at least 5% in the target quarter."
+          }
+        ]
+      }
+    ]
+  }
+}

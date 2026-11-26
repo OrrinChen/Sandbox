@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-019",
+    "stage": "submit",
+    "prompt_sha256": "3ef3d9ea1db6057e635ae5e771618b80fe09b130ab5a89c2abd20fb74c45c8a8",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-ad81-7f52-9b81-f7fc29a0cbf3"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-55260\":{\"formulas\":{\"C1\":\"=FLOOR.MATH(B1,10)+IF(MOD(B1,10)>5,10,5)\",\"C2\":\"=MROUND(B2,5)\"}},\"sheet-55535\":{\"fills\":[{\"range\":\"A1:A17\",\"formula\":\"=IF(B1=\\\"\\\",\\\"\\\",\\\"KC-GPGY-\\\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")+COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")*0,\\\"0000\\\"))\"}],\"formulas\":{}},\"sheet-55609\":{\"fills\":[{\"range\":\"D3:M8\",\"formula\":\"=INDEX($D$12:$M$17,MATCH(COLUMN()-COLUMN($D$2)+1,$D$11:$M$11,0),MATCH($D$2,$D$2:$M$2,0))\"}],\"formulas\":{}},\"sheet-56427\":{\"fills\":[{\"range\":\"H2:S28\",\"formula\":\"=IF(OR(COUNTIF($A$2:A2,A2)=0,B2>C2,G$1>\\\"#\\\"&C2),\\\"\\\",IF($B2=1,INDEX($G:$G,MATCH($A2,$A:$A,0)+COLUMN()-COLUMN($H2)),\\\"\\\"))\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20190,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 314,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-55260\":{\"formulas\":{\"C1\":\"=FLOOR.MATH(B1,10)+IF(MOD(B1,10)>5,10,5)\",\"C2\":\"=MROUND(B2,5)\"}},\"sheet-55535\":{\"fills\":[{\"range\":\"A1:A17\",\"formula\":\"=IF(B1=\\\"\\\",\\\"\\\",\\\"KC-GPGY-\\\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")+COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")*0,\\\"0000\\\"))\"}],\"formulas\":{}},\"sheet-55609\":{\"fills\":[{\"range\":\"D3:M8\",\"formula\":\"=INDEX($D$12:$M$17,MATCH(COLUMN()-COLUMN($D$2)+1,$D$11:$M$11,0),MATCH($D$2,$D$2:$M$2,0))\"}],\"formulas\":{}},\"sheet-56427\":{\"fills\":[{\"range\":\"H2:S28\",\"formula\":\"=IF(OR(COUNTIF($A$2:A2,A2)=0,B2>C2,G$1>\\\"#\\\"&C2),\\\"\\\",IF($B2=1,INDEX($G:$G,MATCH($A2,$A:$A,0)+COLUMN()-COLUMN($H2)),\\\"\\\"))\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-ad81-7f52-9b81-f7fc29a0cbf3",
+    "raw": "{\"sheet-55260\":{\"formulas\":{\"C1\":\"=FLOOR.MATH(B1,10)+IF(MOD(B1,10)>5,10,5)\",\"C2\":\"=MROUND(B2,5)\"}},\"sheet-55535\":{\"fills\":[{\"range\":\"A1:A17\",\"formula\":\"=IF(B1=\\\"\\\",\\\"\\\",\\\"KC-GPGY-\\\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")+COUNTIF($B$1:B1,LEFT(B1,2)&\\\"BC*\\\")*0,\\\"0000\\\"))\"}],\"formulas\":{}},\"sheet-55609\":{\"fills\":[{\"range\":\"D3:M8\",\"formula\":\"=INDEX($D$12:$M$17,MATCH(COLUMN()-COLUMN($D$2)+1,$D$11:$M$11,0),MATCH($D$2,$D$2:$M$2,0))\"}],\"formulas\":{}},\"sheet-56427\":{\"fills\":[{\"range\":\"H2:S28\",\"formula\":\"=IF(OR(COUNTIF($A$2:A2,A2)=0,B2>C2,G$1>\\\"#\\\"&C2),\\\"\\\",IF($B2=1,INDEX($G:$G,MATCH($A2,$A:$A,0)+COLUMN()-COLUMN($H2)),\\\"\\\"))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20190,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 314,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

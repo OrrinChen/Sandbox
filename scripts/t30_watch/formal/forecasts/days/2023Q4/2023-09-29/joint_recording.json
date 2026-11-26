@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25728,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 321,
+    "reasoning_output_tokens": 23
+  },
+  "thread": "01a20d8e-5199-79a3-b499-3a059e21e9c1",
+  "packet_sha256": "690c322cb74be2589784e5cbd77ceee3c135c83fc6df0e16e4e5f95da04aa1d7",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q4/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000813298\",\n          \"reason\": \"Consolidated sales growth slowed from -1.73% year over year in Q1 to -3.17% in Q2 (A). Extending that 1.44-point deterioration per quarter implies about -4.61% in Q3 and -6.06% in Q4, placing the first crossing in the target quarter.\"\n        },\n        {\n          \"cik\": \"0000897429\",\n          \"reason\": \"Consolidated net sales growth slowed from -1.14% year over year in Q1 to -2.43% in Q2, when companywide comparable sales fell 3.0% (A). Extending the 1.29-point deterioration implies about -3.73% in Q3 and -5.02% in Q4. The forecast clears the threshold narrowly, and rising units and spend per transaction (D) temper confidence.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0000813298",
+            "reason": "Consolidated sales growth slowed from -1.73% year over year in Q1 to -3.17% in Q2 (A). Extending that 1.44-point deterioration per quarter implies about -4.61% in Q3 and -6.06% in Q4, placing the first crossing in the target quarter."
+          },
+          {
+            "cik": "0000897429",
+            "reason": "Consolidated net sales growth slowed from -1.14% year over year in Q1 to -2.43% in Q2, when companywide comparable sales fell 3.0% (A). Extending the 1.29-point deterioration implies about -3.73% in Q3 and -5.02% in Q4. The forecast clears the threshold narrowly, and rising units and spend per transaction (D) temper confidence."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

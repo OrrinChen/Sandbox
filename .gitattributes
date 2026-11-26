@@ -1,0 +1,2 @@
+# Some frozen CSVs use the csv module's CRLF record terminator. Preserve their recorded digests.
+scripts/**/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

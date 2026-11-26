@@ -1,0 +1,263 @@
+[
+  {
+    "task_id": "decision-consecutive-stockout-penalty",
+    "tool": "sqlite.query",
+    "instruction": "Assess the stock availability contract for each item. The ledger contains one closing inventory count in units per item per calendar day, with consecutive day numbers starting at 1 and no duplicate item-day pairs. Each item starts with no prior deficient days. A day is deficient when closing_units is strictly below 5. Each uninterrupted run of deficient days has two free days. Charge 70 cents on the third day of that run and on each subsequent deficient day until the run ends. A count of 5 or more ends the run and restores the full grace period. Return item_code, charged_days, and penalty_cents in that order. Include every item, including those owing zero, with one row per item sorted by item_code in ascending binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stock_day": {
+        "columns": [
+          "item_code TEXT",
+          "day_no INTEGER",
+          "closing_units INTEGER"
+        ],
+        "rows": [
+          [
+            "BOX",
+            1,
+            3
+          ],
+          [
+            "BOX",
+            2,
+            4
+          ],
+          [
+            "BOX",
+            3,
+            5
+          ],
+          [
+            "BOX",
+            4,
+            2
+          ],
+          [
+            "BOX",
+            5,
+            1
+          ],
+          [
+            "BOX",
+            6,
+            0
+          ],
+          [
+            "TIN",
+            1,
+            3
+          ],
+          [
+            "TIN",
+            2,
+            5
+          ],
+          [
+            "TIN",
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "item_code",
+      "charged_days",
+      "penalty_cents"
+    ]
+  },
+  {
+    "task_id": "decision-consolidate-inbound-lot-fees",
+    "tool": "sqlite.query",
+    "instruction": "Select exactly two distinct, indivisible lots to replenish one item. The warehouse needs at least 10 cartons and the receiving cage holds at most 10. Each lot price covers the whole lot, in cents. The applicable supplier notice gives a fee in cents charged once per supplier represented in the purchase. Minimize total landed cost, breaking ties by the lexicographically smallest pair of lot IDs after sorting the IDs ascending. Return one row with columns first_lot, second_lot, landed_cents, first_notice, second_notice. Cite the actual notice for each selected lot in corresponding order, even when both cite the same notice. Each supplier has one notice, lot IDs are unique, all fields are non-null, and a feasible pair exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stock_lot": {
+        "columns": [
+          "lot_id TEXT",
+          "supplier_id TEXT",
+          "cartons INTEGER",
+          "lot_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "X",
+            6,
+            300
+          ],
+          [
+            "B",
+            "X",
+            4,
+            200
+          ],
+          [
+            "C",
+            "Y",
+            4,
+            170
+          ],
+          [
+            "D",
+            "Y",
+            6,
+            290
+          ]
+        ]
+      },
+      "supplier_notice": {
+        "columns": [
+          "notice_id TEXT",
+          "supplier_id TEXT",
+          "fee_cents INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "X1",
+            "X",
+            40,
+            "One 40-cent collection fee covers all lots on this purchase."
+          ],
+          [
+            "Y1",
+            "Y",
+            90,
+            "Collect any number of our lots together for 90 cents."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_lot",
+      "second_lot",
+      "landed_cents",
+      "first_notice",
+      "second_notice"
+    ]
+  },
+  {
+    "task_id": "decision-contiguous-party-seat-quote",
+    "tool": "sqlite.query",
+    "instruction": "Find the cheapest run of seats that fills the single party request in party_slip. The fixture covers one theater row. Each seat_no is a unique physical position, and consecutive positions differ by one. A missing position or a NULL price_cents means that position cannot be sold. All other prices are per seat in cents. Use exactly party_size seats, which is positive. Minimize their total price, breaking ties by smaller first seat number. Return one row with columns slip_id, first_seat, last_seat, total_cents in that order, citing the actual request slip. A feasible run exists. Only price_cents can be NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "party_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "party_size INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "P12",
+            3,
+            "Quote three side-by-side places in the loom row."
+          ]
+        ]
+      },
+      "row_chair": {
+        "columns": [
+          "seat_no INTEGER",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            400
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            400
+          ],
+          [
+            5,
+            200
+          ],
+          [
+            6,
+            300
+          ],
+          [
+            7,
+            300
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "slip_id",
+      "first_seat",
+      "last_seat",
+      "total_cents"
+    ]
+  },
+  {
+    "task_id": "decision-corroborate-a-room-attribution",
+    "tool": "sqlite.query",
+    "instruction": "The archive indexes room observations by take and observed room. Each card contains an observation or a transcription of one. Equal origin_id values identify cards descended from the same original observation. A room attribution qualifies when at least two distinct origins name that room for the same take. Evaluate each room separately, even if another room also qualifies. Cite one card from every supporting origin, choosing its lexicographically smallest card_id for that take and room. Null room_id means the observation did not identify a room and supplies no evidence for an attribution. All other fields are non-null. Return take_id, room_id, origin_count, card_id, ordered ascending by take_id, room_id, card_id. Counts are numbers of independent observations. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "room_card": {
+        "columns": [
+          "card_id TEXT",
+          "origin_id TEXT",
+          "take_id TEXT",
+          "room_id TEXT",
+          "card_text TEXT"
+        ],
+        "rows": [
+          [
+            "C4",
+            "slate",
+            "drip",
+            "loft",
+            "Copy of slate: drip in loft."
+          ],
+          [
+            "C1",
+            "slate",
+            "drip",
+            "loft",
+            "Loft slate visible at drip start."
+          ],
+          [
+            "C3",
+            "patch",
+            "drip",
+            "loft",
+            "Loft feed patched for drip."
+          ],
+          [
+            "C5",
+            "box",
+            "tick",
+            "bay",
+            "Tick box marked bay."
+          ],
+          [
+            "C6",
+            "box",
+            "tick",
+            "bay",
+            "Transcribed box marking: bay."
+          ],
+          [
+            "C7",
+            "meter",
+            "tick",
+            null,
+            "Meter active during tick; room field blank."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "take_id",
+      "room_id",
+      "origin_count",
+      "card_id"
+    ]
+  }
+]

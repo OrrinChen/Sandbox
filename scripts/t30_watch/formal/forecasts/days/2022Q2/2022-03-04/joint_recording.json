@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23648,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 261,
+    "reasoning_output_tokens": 38
+  },
+  "thread": "01a20d8a-d739-7fb3-b005-3cc2d93fbcdc",
+  "packet_sha256": "8e0f86ed7dbabcceaac6005be78ee2ddd9c1d17d31dea4de462ad9cd587cf0ba",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"VIAVI’s reported revenue growth slowed from 14.79% to 4.97% YoY (A), and NSE reported some impact on customer demand (B). If growth slows by another 5 to 9 percentage points in each of the next two quarters, the intervening quarter stays above −5.00% and the quarter starting April 3 crosses below it.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "VIAVI’s reported revenue growth slowed from 14.79% to 4.97% YoY (A), and NSE reported some impact on customer demand (B). If growth slows by another 5 to 9 percentage points in each of the next two quarters, the intervening quarter stays above −5.00% and the quarter starting April 3 crosses below it."
+          }
+        ]
+      }
+    ]
+  }
+}

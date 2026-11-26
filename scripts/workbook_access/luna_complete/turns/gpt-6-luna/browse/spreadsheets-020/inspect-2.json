@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-020",
+    "stage": "inspect-2",
+    "prompt_sha256": "01962f14985987cb9ce1866d8904bef40f8829e27df80b49ffcb01537fb4b29c",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-da71-7ba1-9bc8-a0b40d1cde94"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the remaining inspection round only where the excerpts leave a real ambiguity: the quiz score rule and the Cover sheet’s merged data layout."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-56451\":[{\"op\":\"range\",\"sheet\":\"Sheet 2\",\"range\":\"A1:F7\"}],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G5:J10\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A16:I24\"},{\"op\":\"range\",\"sheet\":\"COVER\",\"range\":\"A18:E23\"}],\"sheet-56995\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 39264,
+          "cached_input_tokens": 31360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 685,
+          "reasoning_output_tokens": 491
+        }
+      ],
+      "cli_final": "{\"sheet-56451\":[{\"op\":\"range\",\"sheet\":\"Sheet 2\",\"range\":\"A1:F7\"}],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G5:J10\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A16:I24\"},{\"op\":\"range\",\"sheet\":\"COVER\",\"range\":\"A18:E23\"}],\"sheet-56995\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-da71-7ba1-9bc8-a0b40d1cde94",
+    "raw": "{\"sheet-56451\":[{\"op\":\"range\",\"sheet\":\"Sheet 2\",\"range\":\"A1:F7\"}],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G5:J10\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A16:I24\"},{\"op\":\"range\",\"sheet\":\"COVER\",\"range\":\"A18:E23\"}],\"sheet-56995\":[]}",
+    "usage": {
+      "input_tokens": 39264,
+      "cached_input_tokens": 31360,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 685,
+      "reasoning_output_tokens": 491
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

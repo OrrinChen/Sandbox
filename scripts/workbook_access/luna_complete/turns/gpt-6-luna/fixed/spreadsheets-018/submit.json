@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-018",
+    "stage": "submit",
+    "prompt_sha256": "6ee24cb39c5092ada410deda985c40f810235a54193e5587cbba9cf0b1f8fd88",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-f5e4-7940-b43a-857805357d37"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-53167\":{\"formulas\":{\"E5\":\"=IFERROR(D5-LOOKUP(2,1/($B$4:B4=B5),$D$4:D4),0)\",\"E6\":\"=IFERROR(D6-LOOKUP(2,1/($B$4:B5=B6),$D$4:D5),0)\",\"E7\":\"=IFERROR(D7-LOOKUP(2,1/($B$4:B6=B7),$D$4:D6),0)\",\"E8\":\"=IFERROR(D8-LOOKUP(2,1/($B$4:B7=B8),$D$4:D7),0)\",\"E9\":\"=IFERROR(D9-LOOKUP(2,1/($B$4:B8=B9),$D$4:D8),0)\",\"E10\":\"=IFERROR(D10-LOOKUP(2,1/($B$4:B9=B10),$D$4:D9),0)\",\"E11\":\"=IFERROR(D11-LOOKUP(2,1/($B$4:B10=B11),$D$4:D10),0)\",\"E12\":\"=IFERROR(D12-LOOKUP(2,1/($B$4:B11=B12),$D$4:D11),0)\",\"E13\":\"=IFERROR(D13-LOOKUP(2,1/($B$4:B12=B13),$D$4:D12),0)\",\"E14\":\"=IFERROR(D14-LOOKUP(2,1/($B$4:B13=B14),$D$4:D13),0)\",\"E15\":\"=IFERROR(D15-LOOKUP(2,1/($B$4:B14=B15),$D$4:D14),0)\",\"E16\":\"=IFERROR(D16-LOOKUP(2,1/($B$4:B15=B16),$D$4:D15),0)\"}},\"sheet-53383\":{\"fills\":[{\"range\":\"C3:C6\",\"formula\":\"=IFERROR(IF(B3=INDEX('worksheet 1'!$B$3:$B$6,MATCH(A3,'worksheet 1'!$A$3:$A$6,0)),\\\"Matched\\\",\\\"Not Matched\\\"),\\\"Not Matched\\\")\"}],\"formulas\":{}},\"sheet-54274\":{\"formulas\":{\"G4\":\"=IF(F4<=B4,F4/B4,IF(F4<C4,MIN(F4/B4,1.09),IF(F4=C4,MIN(F4/B4,1.1),IF(F4<D4,MIN(F4/B4,1.19),MIN(F4/B4,1.2))))\"},\"fills\":[]}},\"sheet-55085\":{\"formulas\":{\"G10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=G$2)*('Master-RM'!$H$6:$K$6=G$3),0)),0)\",\"H10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=H$2)*('Master-RM'!$H$6:$K$6=H$3),0)),0)\",\"I10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=I$2)*('Master-RM'!$H$6:$K$6=I$3),0)),0)\",\"J10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=J$2)*('Master-RM'!$J$6:$K$6=J$3),0)),0)\",\"K10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=K$2)*('Master-RM'!$J$6:$K$6=K$3),0)),0)\",\"L10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=L$2)*('Master-RM'!$J$6:$K$6=L$3),0)),0)\"}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18867,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1029,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-53167\":{\"formulas\":{\"E5\":\"=IFERROR(D5-LOOKUP(2,1/($B$4:B4=B5),$D$4:D4),0)\",\"E6\":\"=IFERROR(D6-LOOKUP(2,1/($B$4:B5=B6),$D$4:D5),0)\",\"E7\":\"=IFERROR(D7-LOOKUP(2,1/($B$4:B6=B7),$D$4:D6),0)\",\"E8\":\"=IFERROR(D8-LOOKUP(2,1/($B$4:B7=B8),$D$4:D7),0)\",\"E9\":\"=IFERROR(D9-LOOKUP(2,1/($B$4:B8=B9),$D$4:D8),0)\",\"E10\":\"=IFERROR(D10-LOOKUP(2,1/($B$4:B9=B10),$D$4:D9),0)\",\"E11\":\"=IFERROR(D11-LOOKUP(2,1/($B$4:B10=B11),$D$4:D10),0)\",\"E12\":\"=IFERROR(D12-LOOKUP(2,1/($B$4:B11=B12),$D$4:D11),0)\",\"E13\":\"=IFERROR(D13-LOOKUP(2,1/($B$4:B12=B13),$D$4:D12),0)\",\"E14\":\"=IFERROR(D14-LOOKUP(2,1/($B$4:B13=B14),$D$4:D13),0)\",\"E15\":\"=IFERROR(D15-LOOKUP(2,1/($B$4:B14=B15),$D$4:D14),0)\",\"E16\":\"=IFERROR(D16-LOOKUP(2,1/($B$4:B15=B16),$D$4:D15),0)\"}},\"sheet-53383\":{\"fills\":[{\"range\":\"C3:C6\",\"formula\":\"=IFERROR(IF(B3=INDEX('worksheet 1'!$B$3:$B$6,MATCH(A3,'worksheet 1'!$A$3:$A$6,0)),\\\"Matched\\\",\\\"Not Matched\\\"),\\\"Not Matched\\\")\"}],\"formulas\":{}},\"sheet-54274\":{\"formulas\":{\"G4\":\"=IF(F4<=B4,F4/B4,IF(F4<C4,MIN(F4/B4,1.09),IF(F4=C4,MIN(F4/B4,1.1),IF(F4<D4,MIN(F4/B4,1.19),MIN(F4/B4,1.2))))\"},\"fills\":[]}},\"sheet-55085\":{\"formulas\":{\"G10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=G$2)*('Master-RM'!$H$6:$K$6=G$3),0)),0)\",\"H10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=H$2)*('Master-RM'!$H$6:$K$6=H$3),0)),0)\",\"I10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=I$2)*('Master-RM'!$H$6:$K$6=I$3),0)),0)\",\"J10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=J$2)*('Master-RM'!$J$6:$K$6=J$3),0)),0)\",\"K10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=K$2)*('Master-RM'!$J$6:$K$6=K$3),0)),0)\",\"L10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=L$2)*('Master-RM'!$J$6:$K$6=L$3),0)),0)\"}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-f5e4-7940-b43a-857805357d37",
+    "raw": "{\"sheet-53167\":{\"formulas\":{\"E5\":\"=IFERROR(D5-LOOKUP(2,1/($B$4:B4=B5),$D$4:D4),0)\",\"E6\":\"=IFERROR(D6-LOOKUP(2,1/($B$4:B5=B6),$D$4:D5),0)\",\"E7\":\"=IFERROR(D7-LOOKUP(2,1/($B$4:B6=B7),$D$4:D6),0)\",\"E8\":\"=IFERROR(D8-LOOKUP(2,1/($B$4:B7=B8),$D$4:D7),0)\",\"E9\":\"=IFERROR(D9-LOOKUP(2,1/($B$4:B8=B9),$D$4:D8),0)\",\"E10\":\"=IFERROR(D10-LOOKUP(2,1/($B$4:B9=B10),$D$4:D9),0)\",\"E11\":\"=IFERROR(D11-LOOKUP(2,1/($B$4:B10=B11),$D$4:D10),0)\",\"E12\":\"=IFERROR(D12-LOOKUP(2,1/($B$4:B11=B12),$D$4:D11),0)\",\"E13\":\"=IFERROR(D13-LOOKUP(2,1/($B$4:B12=B13),$D$4:D12),0)\",\"E14\":\"=IFERROR(D14-LOOKUP(2,1/($B$4:B13=B14),$D$4:D13),0)\",\"E15\":\"=IFERROR(D15-LOOKUP(2,1/($B$4:B14=B15),$D$4:D14),0)\",\"E16\":\"=IFERROR(D16-LOOKUP(2,1/($B$4:B15=B16),$D$4:D15),0)\"}},\"sheet-53383\":{\"fills\":[{\"range\":\"C3:C6\",\"formula\":\"=IFERROR(IF(B3=INDEX('worksheet 1'!$B$3:$B$6,MATCH(A3,'worksheet 1'!$A$3:$A$6,0)),\\\"Matched\\\",\\\"Not Matched\\\"),\\\"Not Matched\\\")\"}],\"formulas\":{}},\"sheet-54274\":{\"formulas\":{\"G4\":\"=IF(F4<=B4,F4/B4,IF(F4<C4,MIN(F4/B4,1.09),IF(F4=C4,MIN(F4/B4,1.1),IF(F4<D4,MIN(F4/B4,1.19),MIN(F4/B4,1.2))))\"},\"fills\":[]}},\"sheet-55085\":{\"formulas\":{\"G10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=G$2)*('Master-RM'!$H$6:$K$6=G$3),0)),0)\",\"H10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=H$2)*('Master-RM'!$H$6:$K$6=H$3),0)),0)\",\"I10\":\"=IFERROR(INDEX('Master-RM'!$I$9:$I$20,MATCH(1,('Master-RM'!$A$9:$A$20=I$2)*('Master-RM'!$H$6:$K$6=I$3),0)),0)\",\"J10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=J$2)*('Master-RM'!$J$6:$K$6=J$3),0)),0)\",\"K10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=K$2)*('Master-RM'!$J$6:$K$6=K$3),0)),0)\",\"L10\":\"=IFERROR(INDEX('Master-RM'!$K$9:$K$20,MATCH(1,('Master-RM'!$A$9:$A$20=L$2)*('Master-RM'!$J$6:$K$6=L$3),0)),0)\"}}}",
+    "usage": {
+      "input_tokens": 18867,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1029,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

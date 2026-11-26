@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-014",
+    "stage": "inspect-2",
+    "prompt_sha256": "5b085e075f7375a93a25d21e06e10ee3298465fc745443ce4accfdb8aeceeb9a",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d8-7f14-77a1-a4ba-3a6717985a38",
+    "raw": "{\n  \"sheet-48983\": [\n    {\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B5:I10\"},\n    {\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B11:I19\"}\n  ],\n  \"sheet-49246\": [],\n  \"sheet-49300\": [\n    {\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"B2:N4\"},\n    {\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"AV2:AY4\"}\n  ],\n  \"sheet-49455\": [\n    {\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"C185:D208\"}\n  ]\n}",
+    "usage": {
+      "input_tokens": 22022,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 193,
+      "reasoning_output_tokens": 54
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

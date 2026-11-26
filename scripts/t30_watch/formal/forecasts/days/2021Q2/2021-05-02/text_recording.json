@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23295,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 215,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8c-6392-7323-977c-723b6d44c196",
+  "packet_sha256": "55fda45780fe2b3140ba4898440910d42b2c4c7fe94d1f07f383e01e8e816579",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2021Q2/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000016918\",\n          \"reason\": \"The January wine and spirits sale removes divested-brand sales from both forecast quarters’ year-over-year comparisons (A, C). Reduced Mexican brewery production constrained beer shipments early in the prior fiscal year (B), giving March–May an easier comparison. I forecast beer growth will keep the consolidated net sales change above −5% in March–May, but a tougher beer comparison in June–August will leave the divestiture large enough to push the change to −5% or below.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2021Q2/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000016918",
+            "reason": "The January wine and spirits sale removes divested-brand sales from both forecast quarters’ year-over-year comparisons (A, C). Reduced Mexican brewery production constrained beer shipments early in the prior fiscal year (B), giving March–May an easier comparison. I forecast beer growth will keep the consolidated net sales change above −5% in March–May, but a tougher beer comparison in June–August will leave the divestiture large enough to push the change to −5% or below."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

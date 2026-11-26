@@ -1,0 +1,335 @@
+[
+  {
+    "task_id": "decision-trim-unsealed-packing-file-tails",
+    "tool": "sqlite.query",
+    "instruction": "Produce the data rows of trim_plan.csv for the failed packing-list import. file_size records the current byte length of each file. Each seal_note is a primary operator note about that file. Its structured action is either seal, which certifies a complete CSV record boundary at byte_mark bytes from the start, or inspect, which records an observation only. A seal with a null mark, a negative mark, or a mark beyond the current file is unusable. For each file, use the greatest usable sealed mark. If several notes seal that mark, cite the lexicographically smallest note_id using SQLite binary order. Include a file only if it has a usable seal and bytes actually need trimming. A mark of zero certifies an empty prefix. Return file_key, keep_bytes, trim_bytes, source_id in ascending file_key order. source_id must identify the note certifying the chosen cut. All fields other than byte_mark are non-null, and file keys and note IDs are unique within their respective tables. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "file_size": {
+        "columns": [
+          "file_key TEXT",
+          "size_bytes INTEGER"
+        ],
+        "rows": [
+          [
+            "amber",
+            150
+          ],
+          [
+            "blue",
+            90
+          ],
+          [
+            "clay",
+            60
+          ]
+        ]
+      },
+      "seal_note": {
+        "columns": [
+          "note_id TEXT",
+          "file_key TEXT",
+          "action_code TEXT",
+          "byte_mark INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "n4",
+            "amber",
+            "seal",
+            100,
+            "Verified the packing rows through byte 100."
+          ],
+          [
+            "n2",
+            "amber",
+            "seal",
+            100,
+            "Recounted the sealed 100-byte prefix."
+          ],
+          [
+            "n5",
+            "amber",
+            "inspect",
+            140,
+            "Saw a newline at byte 140 during copying."
+          ],
+          [
+            "n6",
+            "amber",
+            "seal",
+            170,
+            "Verified a 170-byte prefix on the longer staging copy."
+          ],
+          [
+            "n1",
+            "blue",
+            "seal",
+            90,
+            "Verified the whole 90-byte blue list."
+          ],
+          [
+            "n7",
+            "clay",
+            "seal",
+            0,
+            "Confirmed the starting file was empty."
+          ],
+          [
+            "n8",
+            "clay",
+            "inspect",
+            null,
+            "Copy ended during the first row."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "file_key",
+      "keep_bytes",
+      "trim_bytes",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-true-up-deleted-slot-credits",
+    "tool": "sqlite.query",
+    "instruction": "Construct credit_adjustments.csv at the close of a catalog cleanup. Each contract prepays a single fee in integer cents for a positive number of equal catalog slots. The deletion ledger supplies the cumulative number of slots permanently deleted through close, from zero through the purchased quantity. Contract policy sets cumulative earned credit to the prepaid fee times the deleted fraction, rounded down to whole cents once per contract. Credit postings are signed integer cents, positive for a credit already issued and negative for its reversal. Sum every posting for the contract, treating an absent posting history as zero. Report the signed adjustment still required, including negative amounts for excess credit. Omit balanced contracts. All inputs are non-null, contract codes are unique in slot_contracts, and each posting row is a separate transaction even if its amount repeats. Output contract_code, earned_cents, posted_cents, adjustment_cents in ascending binary contract_code order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "credit_postings": {
+        "columns": [
+          "contract_code TEXT",
+          "credit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            40
+          ],
+          [
+            "P",
+            40
+          ],
+          [
+            "P",
+            -10
+          ],
+          [
+            "Q",
+            30
+          ],
+          [
+            "S",
+            5
+          ]
+        ]
+      },
+      "slot_contracts": {
+        "columns": [
+          "contract_code TEXT",
+          "fee_cents INTEGER",
+          "slot_qty INTEGER",
+          "deleted_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            101,
+            4,
+            3
+          ],
+          [
+            "Q",
+            90,
+            3,
+            1
+          ],
+          [
+            "R",
+            35,
+            6,
+            6
+          ],
+          [
+            "S",
+            80,
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "contract_code",
+      "earned_cents",
+      "posted_cents",
+      "adjustment_cents"
+    ]
+  },
+  {
+    "task_id": "decision-true-up-studio-print-charges",
+    "tool": "sqlite.query",
+    "instruction": "Construct print_adjustments.csv for all completed studio jobs requiring a nonzero adjustment. A rate file sets a whole-job tariff starting on start_day, an integer production day. For each job use the greatest start_day at or before its production day, then the greatest edition for that start_day. A later edition corrects the entire interval retroactively. The first tier_qty prints of a job cost base_cents each and all excess prints cost extra_cents each. The ledger records the total prints and cents already posted for each job. Compute the correct whole-job charge, then subtract the posted amount to get the signed adjustment in cents. A negative result is a credit. Job IDs and file IDs are unique, editions are unique per start_day, every job has an applicable tariff, and no values are null. Return job_id, file_id, charge_cents, adjustment_cents in ascending job_id order, omitting zero adjustments. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "job_ledger": {
+        "columns": [
+          "job_id TEXT",
+          "production_day INTEGER",
+          "print_qty INTEGER",
+          "posted_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "J1",
+            7,
+            13,
+            144
+          ],
+          [
+            "J2",
+            8,
+            5,
+            70
+          ],
+          [
+            "J3",
+            11,
+            7,
+            80
+          ],
+          [
+            "J4",
+            3,
+            4,
+            40
+          ]
+        ]
+      },
+      "rate_files": {
+        "columns": [
+          "file_id TEXT",
+          "start_day INTEGER",
+          "edition INTEGER",
+          "tier_qty INTEGER",
+          "base_cents INTEGER",
+          "extra_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "r1",
+            1,
+            1,
+            10,
+            12,
+            8
+          ],
+          [
+            "r2",
+            1,
+            2,
+            10,
+            11,
+            7
+          ],
+          [
+            "r3",
+            8,
+            1,
+            5,
+            14,
+            9
+          ],
+          [
+            "r4",
+            20,
+            1,
+            5,
+            15,
+            10
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "job_id",
+      "file_id",
+      "charge_cents",
+      "adjustment_cents"
+    ]
+  },
+  {
+    "task_id": "decision-two-bank-chair-setup-budget",
+    "tool": "sqlite.query",
+    "instruction": "Choose one preset for the east bank and one for the west bank for the single shift described by crew_note. Each bank has an idle preset. A preset gives the whole setup time in crew-minutes and the number of chairs it opens beyond the fixed seating. Presets within a bank are mutually exclusive. The two setup times add and may total at most minute_cap. Maximize chairs opened, then minimize crew-minutes used, then choose the lexicographically smallest (east preset code, west preset code) using SQLite BINARY order. Return one row with columns note_id, east_code, west_code, opened_chairs, used_minutes, citing the shift note. Preset codes are unique within each bank. All fields are non-NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bank_preset": {
+        "columns": [
+          "bank_name TEXT",
+          "preset_code TEXT",
+          "crew_minutes INTEGER",
+          "chair_gain INTEGER"
+        ],
+        "rows": [
+          [
+            "east",
+            "E0",
+            0,
+            0
+          ],
+          [
+            "east",
+            "E1",
+            2,
+            5
+          ],
+          [
+            "east",
+            "E2",
+            4,
+            8
+          ],
+          [
+            "west",
+            "W0",
+            0,
+            0
+          ],
+          [
+            "west",
+            "W1",
+            3,
+            7
+          ],
+          [
+            "west",
+            "W2",
+            5,
+            10
+          ]
+        ]
+      },
+      "crew_note": {
+        "columns": [
+          "note_id TEXT",
+          "minute_cap INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "C8",
+            5,
+            "Five crew-minutes remain for folding-chair setup across both banks."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "note_id",
+      "east_code",
+      "west_code",
+      "opened_chairs",
+      "used_minutes"
+    ]
+  }
+]

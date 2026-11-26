@@ -1,0 +1,329 @@
+[
+  {
+    "task_id": "decision-press-first-pass-at-shift-close",
+    "tool": "sqlite.query",
+    "instruction": "For each press with at least one eligible unit, report first-pass yield for units entering during the shift [0,480), using only information posted by minute 480 inclusive. Times are integer minutes relative to shift start. Each unit enters once. An inspection attempt can have several complete revisions. For each unit and attempt, keep the visible revision with the greatest posted_min, breaking a tie by greatest log_id. A NULL verdict on that revision withdraws the entire attempt. Among the surviving attempts for a unit, use the smallest attempt_no. Exclude units without a surviving attempt. Verdicts on surviving attempts are pass or fail. Return press_code, inspected_units, first_pass_units, yield_bp in ascending press_code order. Express yield in basis points, rounding down. All fields except verdict are non-NULL, and log_id is unique. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "inspection_log": {
+        "columns": [
+          "log_id INTEGER",
+          "unit_code TEXT",
+          "attempt_no INTEGER",
+          "posted_min INTEGER",
+          "verdict TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "u1",
+            1,
+            40,
+            "fail"
+          ],
+          [
+            2,
+            "u1",
+            2,
+            60,
+            "pass"
+          ],
+          [
+            3,
+            "u2",
+            1,
+            50,
+            "fail"
+          ],
+          [
+            4,
+            "u2",
+            1,
+            50,
+            null
+          ],
+          [
+            5,
+            "u2",
+            2,
+            80,
+            "pass"
+          ],
+          [
+            6,
+            "u3",
+            1,
+            480,
+            "pass"
+          ],
+          [
+            7,
+            "u3",
+            1,
+            481,
+            "fail"
+          ]
+        ]
+      },
+      "press_entry": {
+        "columns": [
+          "unit_code TEXT",
+          "press_code TEXT",
+          "entry_min INTEGER"
+        ],
+        "rows": [
+          [
+            "u1",
+            "A",
+            10
+          ],
+          [
+            "u2",
+            "A",
+            15
+          ],
+          [
+            "u3",
+            "B",
+            30
+          ],
+          [
+            "u4",
+            "B",
+            480
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "press_code",
+      "inspected_units",
+      "first_pass_units",
+      "yield_bp"
+    ]
+  },
+  {
+    "task_id": "decision-preview-deck-session-scheduling",
+    "tool": "sqlite.query",
+    "instruction": "The theater can staff one or two preview sessions on a single seating deck. Choose among the fixed offers in preview_offer for the day covered by the single deck_order. Every accepted offer reserves the whole deck from start_min up to end_min, measured in minutes after opening, and occupies seat_count seats for that entire positive duration. Between two sessions allow at least reset_min full minutes, with equality permitted. No reset is required before the first or after the last session. Maximize occupied seat-minutes, then prefer fewer sessions, then the lexicographically smallest chronological sequence of offer codes using SQLite BINARY order. Return one row with columns order_id, first_offer, second_offer, seat_minutes, citing the day's deck order. For a single session return NULL for second_offer. All input fields are non-NULL, offer codes are unique, and at least one offer exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "deck_order": {
+        "columns": [
+          "order_id TEXT",
+          "reset_min INTEGER",
+          "order_text TEXT"
+        ],
+        "rows": [
+          [
+            "D3",
+            10,
+            "Leave ten clear minutes between deck audiences to reset the numbered chairs."
+          ]
+        ]
+      },
+      "preview_offer": {
+        "columns": [
+          "offer_code TEXT",
+          "start_min INTEGER",
+          "end_min INTEGER",
+          "seat_count INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            0,
+            30,
+            10
+          ],
+          [
+            "B",
+            30,
+            60,
+            15
+          ],
+          [
+            "C",
+            40,
+            65,
+            12
+          ],
+          [
+            "D",
+            70,
+            90,
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "order_id",
+      "first_offer",
+      "second_offer",
+      "seat_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-price-prepaid-cancellation-credits-from-term-notices",
+    "tool": "sqlite.query",
+    "instruction": "For each prepaid subscription term cancelled during service, calculate the credit owed for unused service and cite the governing term notice. Day numbers are integers on a common timeline. first_day is included and end_day is excluded. cancel_day is the first unused day. Include first_day <= cancel_day < end_day, and omit null cancel_day (no cancellation). All terms have positive duration and positive integer paid_cents. Other fields are non-null. For each included term use the notice for its tier with the latest issue_day on or before first_day. Each tier has at most one notice per issue day and a governing notice always exists. Each notice supplies its primary text and the corresponding numeric deduction in whole percentage points. Compute the unused fraction of the paid price, then retain the notice's deduction percentage of that unused value and credit the remainder. Round down to integer cents only once, at the end. Return term_id, credit_cents, source_id ordered by unique term_id ascending in binary order. Cite the actual source_id of the applied notice even if the resulting credit is zero. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "prepaid_terms": {
+        "columns": [
+          "term_id TEXT",
+          "tier_code TEXT",
+          "first_day INTEGER",
+          "end_day INTEGER",
+          "cancel_day INTEGER",
+          "paid_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "t1",
+            "core",
+            10,
+            20,
+            16,
+            1003
+          ],
+          [
+            "t2",
+            "core",
+            15,
+            25,
+            15,
+            999
+          ],
+          [
+            "t3",
+            "plus",
+            12,
+            16,
+            15,
+            203
+          ],
+          [
+            "t4",
+            "core",
+            10,
+            20,
+            20,
+            1000
+          ],
+          [
+            "t5",
+            "plus",
+            12,
+            22,
+            null,
+            500
+          ]
+        ]
+      },
+      "term_notices": {
+        "columns": [
+          "source_id TEXT",
+          "tier_code TEXT",
+          "issue_day INTEGER",
+          "deduct_pct INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "c01",
+            "core",
+            1,
+            10,
+            "For terms starting under this notice, retain 10% of unused prepaid value."
+          ],
+          [
+            "c15",
+            "core",
+            15,
+            25,
+            "For new core terms retain one quarter of unused prepaid value."
+          ],
+          [
+            "p03",
+            "plus",
+            3,
+            0,
+            "Credit the entire unused prepaid value for new plus terms."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "term_id",
+      "credit_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-print-only-changed-shelf-labels",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of the printer input file as one TEXT cell named csv_body. The desired_label table is the full current assortment. The printed_label table records the last printed state. Each code occurs at most once per table. Include a desired row if its code was never printed or its caption or integer price in cents changed. Omit codes that only occur in printed_label. A NULL caption means blank and compares equal to an empty caption. Other fields are non-NULL. Start with the literal header code,caption,price_cents. In data records always double-quote code and caption, doubling every embedded double quote, and write cents as an unquoted decimal integer. Use one LF after every record including the header and final record. Sort records by raw code ascending under binary text order, independent of input order. Return only the single column csv_body. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "desired_label": {
+        "columns": [
+          "code TEXT",
+          "caption TEXT",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "T3",
+            null,
+            75
+          ],
+          [
+            "T1",
+            "Tray, small",
+            450
+          ],
+          [
+            "T4",
+            null,
+            80
+          ],
+          [
+            "T2",
+            "Rack \"Mini\"",
+            600
+          ]
+        ]
+      },
+      "printed_label": {
+        "columns": [
+          "code TEXT",
+          "caption TEXT",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "T1",
+            "Tray, small",
+            500
+          ],
+          [
+            "T3",
+            "",
+            75
+          ],
+          [
+            "T2",
+            "Rack",
+            600
+          ],
+          [
+            "T0",
+            "Hook",
+            20
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  }
+]

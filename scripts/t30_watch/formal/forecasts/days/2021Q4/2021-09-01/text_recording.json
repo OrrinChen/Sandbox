@@ -1,0 +1,112 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 53088,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 767,
+    "reasoning_output_tokens": 33
+  },
+  "thread": "01a20d8a-5fc6-7440-9ffd-a5d5a81dfba8",
+  "packet_sha256": "4e643fb20f637c1758180a44d86244d05153643ec96563f272092ba36ae5b8da",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q4/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/industrial_machinery-3\",\"alerts\":[{\"cik\":\"0000792987\",\"reason\":\"Astec's June net sales rose just 4.8% while its order backlog grew 139.7% year over year to $436.1 million (A, C). The order book supports a September quarter above −5%. My forecast of a December crossing rests on the reported labor shortages persisting long enough to push equipment shipments beyond year-end (D).\"}]},\n    {\"sector\":\"2021Q4/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/prepackaged_software-2\",\"alerts\":[{\"cik\":\"0000877890\",\"reason\":\"Citrix's June total net revenue grew only 1.6% despite 73.9% growth in subscription annual recurring revenue (A, B). Since December, deferred maintenance and support revenue had fallen $178.1 million, exceeding the $168.9 million increase in deferred subscription revenue (C). I expect subscription growth to keep September above −5%, with the shrinking maintenance balance contributing less revenue by December and taking the year-over-year change to −5% or lower.\"}]},\n    {\"sector\":\"2021Q4/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0000946581\",\"reason\":\"Take-Two's June net bookings fell $284.8 million year over year across several franchises, while recognized net revenue fell only $18.0 million (B, E). Grand Theft Auto alone supplied 33.7% of quarterly net revenue and contributed to the bookings decline (A, B). I expect earlier bookings to cushion September revenue above −5%, with weaker bookings feeding through to a decline of at least 5% in December.\"}]},\n    {\"sector\":\"2021Q4/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/semiconductors-2\",\"alerts\":[{\"cik\":\"0001274494\",\"reason\":\"First Solar's June net sales fell 2%. Higher module volume and a project indemnification settlement partly offset lower project sales and construction activity (A, B). I expect module volume to keep September above −5%. With project sales uneven, the settlement benefit unlikely to recur, and module selling prices under pressure (D), I forecast a December decline of at least 5%.\"}]},\n    {\"sector\":\"2021Q4/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q4/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000792987",
+            "reason": "Astec's June net sales rose just 4.8% while its order backlog grew 139.7% year over year to $436.1 million (A, C). The order book supports a September quarter above −5%. My forecast of a December crossing rests on the reported labor shortages persisting long enough to push equipment shipments beyond year-end (D)."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/prepackaged_software-2",
+        "alerts": [
+          {
+            "cik": "0000877890",
+            "reason": "Citrix's June total net revenue grew only 1.6% despite 73.9% growth in subscription annual recurring revenue (A, B). Since December, deferred maintenance and support revenue had fallen $178.1 million, exceeding the $168.9 million increase in deferred subscription revenue (C). I expect subscription growth to keep September above −5%, with the shrinking maintenance balance contributing less revenue by December and taking the year-over-year change to −5% or lower."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q4/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0000946581",
+            "reason": "Take-Two's June net bookings fell $284.8 million year over year across several franchises, while recognized net revenue fell only $18.0 million (B, E). Grand Theft Auto alone supplied 33.7% of quarterly net revenue and contributed to the bookings decline (A, B). I expect earlier bookings to cushion September revenue above −5%, with weaker bookings feeding through to a decline of at least 5% in December."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0001274494",
+            "reason": "First Solar's June net sales fell 2%. Higher module volume and a project indemnification settlement partly offset lower project sales and construction activity (A, B). I expect module volume to keep September above −5%. With project sales uneven, the settlement benefit unlikely to recur, and module selling prices under pressure (D), I forecast a December decline of at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q4/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q4/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,280 @@
+[
+  {
+    "task_id": "decision-bank-clearing-exception-csv",
+    "tool": "csv.export",
+    "instruction": "Reconcile one closed settlement period and construct the complete contents of its exception CSV. clearing_lines contains signed ledger postings in cents. bank_lines contains signed bank movements in the same cents. Each row is a separate posting, including repeated equal amounts. A batch_ref may occur on either or both sides, with any number of split postings. Sum each side independently by batch_ref, treating an absent side as zero. For each reference whose bank total differs from its ledger total, output the bank total minus the ledger total. References are nonempty uppercase ASCII letters or digits and require no CSV quoting. All fields are nonnull. Return one row and one TEXT column named csv_contents. The file must begin with the exact header batch_ref,difference_cents, contain one record per discrepant reference in ascending binary text order, use base-ten integers without a plus sign or padding, and end every line including the header with a single LF. A fully matched period produces just the header. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "bank_lines": {
+        "columns": [
+          "batch_ref TEXT",
+          "bank_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Q2",
+            400
+          ],
+          [
+            "Q2",
+            140
+          ],
+          [
+            "A1",
+            120
+          ],
+          [
+            "B3",
+            90
+          ],
+          [
+            "C4",
+            30
+          ],
+          [
+            "C4",
+            40
+          ]
+        ]
+      },
+      "clearing_lines": {
+        "columns": [
+          "batch_ref TEXT",
+          "ledger_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Q2",
+            300
+          ],
+          [
+            "Q2",
+            300
+          ],
+          [
+            "Q2",
+            -50
+          ],
+          [
+            "A1",
+            120
+          ],
+          [
+            "X9",
+            80
+          ],
+          [
+            "C4",
+            70
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_contents"
+    ]
+  },
+  {
+    "task_id": "decision-bin-code-migration-matrix",
+    "tool": "sqlite.query",
+    "instruction": "Compare two snapshots of a warehouse labeling system. Each bin_key occurs at most once per snapshot. Count every distinct key appearing in either snapshot exactly once, pairing its old code with its current code. On either side, use '?' when the key is missing or its code is NULL. The only resolved codes are 'A' and 'B'. Return the full 3-by-3 transition matrix in long form, including zero counts. Output old_code, current_code, bin_count, where the unit is bins. Sort first by old_code and then by current_code, using A, B, ? on both axes. Each code pair has exactly one row. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "current_bins": {
+        "columns": [
+          "bin_key TEXT",
+          "code TEXT"
+        ],
+        "rows": [
+          [
+            "k1",
+            "B"
+          ],
+          [
+            "k3",
+            "B"
+          ],
+          [
+            "k4",
+            "A"
+          ]
+        ]
+      },
+      "old_bins": {
+        "columns": [
+          "bin_key TEXT",
+          "code TEXT"
+        ],
+        "rows": [
+          [
+            "k1",
+            "A"
+          ],
+          [
+            "k2",
+            "A"
+          ],
+          [
+            "k3",
+            "B"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "old_code",
+      "current_code",
+      "bin_count"
+    ]
+  },
+  {
+    "task_id": "decision-book-a-coolant-exchange-stop",
+    "tool": "sqlite.query",
+    "instruction": "Select exactly one depot on the way to delivery. The route sheet gives driving minutes from dispatch to each depot and from that depot to delivery. Each depot has one signed offer. Its primary text states the minutes from arrival to completed exchange and the fee in cents. The wait_min and fee_cents fields transcribe those terms. The original coolant lasts 100 minutes from dispatch and must last through completion of the exchange. Fresh coolant then lasts 90 minutes. Delivery is due within 180 minutes of dispatch, including the exchange. All limits are inclusive. Minimize the fee, then elapsed minutes to delivery, then depot code in ascending binary text order. Inputs contain no nulls, and a feasible offer exists. Return one row with columns depot_code, source_id, fee_cents, elapsed_min in that order, citing the signed offer used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "route_sheet": {
+        "columns": [
+          "depot_code TEXT",
+          "inbound_min INTEGER",
+          "outbound_min INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            85,
+            55
+          ],
+          [
+            "B",
+            75,
+            85
+          ],
+          [
+            "C",
+            65,
+            95
+          ],
+          [
+            "D",
+            80,
+            80
+          ],
+          [
+            "E",
+            95,
+            88
+          ]
+        ]
+      },
+      "signed_offer": {
+        "columns": [
+          "source_id TEXT",
+          "depot_code TEXT",
+          "primary_text TEXT",
+          "wait_min INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A17",
+            "A",
+            "Exchange complete 20 minutes after arrival for 90 cents.",
+            20,
+            90
+          ],
+          [
+            "B31",
+            "B",
+            "Exchange complete 15 minutes after arrival for 140 cents.",
+            15,
+            140
+          ],
+          [
+            "C09",
+            "C",
+            "Exchange complete 5 minutes after arrival for 100 cents.",
+            5,
+            100
+          ],
+          [
+            "D22",
+            "D",
+            "Exchange complete 10 minutes after arrival for 140 cents.",
+            10,
+            140
+          ],
+          [
+            "E08",
+            "E",
+            "Exchange complete 4 minutes after arrival for 80 cents.",
+            4,
+            80
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "depot_code",
+      "source_id",
+      "fee_cents",
+      "elapsed_min"
+    ]
+  },
+  {
+    "task_id": "decision-book-complementary-demo-packages",
+    "tool": "sqlite.query",
+    "instruction": "Choose one or two distinct, indivisible demo packages for a launch with two available crews and a total budget of 10000 cents. Each package uses one crew. Partners grant exclusivity by territory, so two selected packages must have different territory values. Maximize the sum of forecast qualified signups, then minimize total fee in cents, then prefer fewer packages, then choose the lexicographically smallest ordered sequence of package codes under SQLite BINARY ordering. Package codes are unique single uppercase ASCII letters. Fees and forecasts are positive integers, at least one package is affordable, and inputs have no nulls. Return one row with ordered columns first_code, second_code, total_cents, forecast_signups. List selected codes in ascending order and use null for second_code on a solo booking. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "demo_packages": {
+        "columns": [
+          "package_code TEXT",
+          "territory TEXT",
+          "fee_cents INTEGER",
+          "signup_forecast INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "East",
+            5000,
+            13
+          ],
+          [
+            "B",
+            "East",
+            5000,
+            15
+          ],
+          [
+            "C",
+            "West",
+            4000,
+            8
+          ],
+          [
+            "E",
+            "South",
+            5000,
+            12
+          ],
+          [
+            "D",
+            "West",
+            5000,
+            12
+          ],
+          [
+            "F",
+            "North",
+            6000,
+            17
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_code",
+      "second_code",
+      "total_cents",
+      "forecast_signups"
+    ]
+  }
+]

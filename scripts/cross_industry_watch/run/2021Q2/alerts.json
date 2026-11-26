@@ -1,0 +1,120 @@
+{
+  "origin": "2021Q2",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000023217",
+          "reason": "Conagra’s reported net sales rose in fiscal Q3 (A). Grocery & Snacks volume grew 9% excluding divestitures (B), partly because customers replenished inventory (C). As those orders taper and Conagra laps elevated at-home demand, reported net sales could fall at least 5% year on year in fiscal Q4 or Q1."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Activision Blizzard’s consolidated net revenue rose 27% in Q1 (A). Stay-at-home orders gave players more time to play and lifted demand early in the pandemic (C). Q2 and Q3 face that stronger prior-year demand, so a return toward earlier playing habits could push quarterly revenue at least 5% below the prior year."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001140215",
+          "reason": "Reported sales YoY 49.31% then 27.54%; linear projections 5.78% and -15.98%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000026324",
+          "reason": "Reported sales YoY 1.93% then -0.69%; linear projections -3.32% and -5.95%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001579910",
+          "reason": "Reported sales YoY 32.24% then 11.76%; linear projections -8.71% and -29.19%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

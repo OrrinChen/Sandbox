@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "8318e0e344098f7834a20f35633a7c3904da947d44ab5b49e687bf7af7d2eeb0",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-38537\": {\n    \"fills\": [\n      {\n        \"range\": \"A3:A36\",\n        \"formula\": \"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(9+COUNTIF($B$3:B3,\\\"<>\\\"),\\\"000\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-38662\": {\n    \"formulas\": {\n      \"A2\": \"=INDEX('Job Code Table'!A:A,IFNA(MATCH(B2,'Job Code Table'!C:C,0),MATCH(B2,'Job Code Table'!B:B,0)))\"\n    }\n  },\n  \"sheet-38969\": {\n    \"fills\": [\n      {\n        \"range\": \"R2:R20\",\n        \"formula\": \"=IF(IFERROR(S2=\\\"#N/A\\\",TRUE),\\\"Upload\\\",IF(ABS(U2)<=1,\\\"Do not Upload\\\",\\\"to Check\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-39432\": {\n    \"fills\": [\n      {\n        \"range\": \"M2:M5\",\n        \"formula\": \"=IF(L2=0,0,(MIN(L2,J2+0)*K2+MIN(MAX(L2-J2,0),H2+0)*I2+MIN(MAX(L2-J2-H2,0),F2+0)*G2+MIN(MAX(L2-J2-H2-F2,0),D2+0)*E2+MIN(MAX(L2-J2-H2-F2-D2,0),B2+0)*C2)/L2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-38537": {
+      "fills": [
+        {
+          "range": "A3:A36",
+          "formula": "=IF(B3=\"\",\"\",$B$2&\"-02-\"&TEXT(9+COUNTIF($B$3:B3,\"<>\"),\"000\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-38662": {
+      "formulas": {
+        "A2": "=INDEX('Job Code Table'!A:A,IFNA(MATCH(B2,'Job Code Table'!C:C,0),MATCH(B2,'Job Code Table'!B:B,0)))"
+      }
+    },
+    "sheet-38969": {
+      "fills": [
+        {
+          "range": "R2:R20",
+          "formula": "=IF(IFERROR(S2=\"#N/A\",TRUE),\"Upload\",IF(ABS(U2)<=1,\"Do not Upload\",\"to Check\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-39432": {
+      "fills": [
+        {
+          "range": "M2:M5",
+          "formula": "=IF(L2=0,0,(MIN(L2,J2+0)*K2+MIN(MAX(L2-J2,0),H2+0)*I2+MIN(MAX(L2-J2-H2,0),F2+0)*G2+MIN(MAX(L2-J2-H2-F2,0),D2+0)*E2+MIN(MAX(L2-J2-H2-F2-D2,0),B2+0)*C2)/L2)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-039c-7a70-b9ee-802a806c8c8c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26128,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 369,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "date": null,
+  "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023035291/saia-ex99_1.htm",
+  "basis": "Saia publicly established the decline by July 28, 2023. Its consolidated operating revenue for the three months ended June 30 was $694,622,000 in 2023 and $745,554,000 in 2022. The actual was $13,654,300 below the $708,276,300 cutoff. The two reviews agree on the amount and publication date. The unresolved question is what Saia’s CEO said at the May 23 Wolfe conference and whether those remarks were public. I could verify the scheduled session but could not recover its remarks or a session-specific deck. July 28 therefore remains the earliest qualifying disclosure verified, with the earliest-date field left null.",
+  "coverage": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023001744/saia-ex99_1.htm",
+      "detail": "February 3, preceding earnings cycle. The release reported $655.7 million of Q4 2022 revenue and gave no Q2 2023 consolidated revenue ceiling."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023002395/saia-ex99_1.htm",
+      "detail": "February 3 earnings call. The issuer-furnished transcript discusses softer freight volumes and uncertain demand. I found no numeric Q2 2023 revenue upper bound."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023005716/saia-ex99_1.htm",
+      "detail": "March 2 operating update. The reported changes covered LTL shipments, tonnage and weight per shipment in January and February, both in Q1."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023015487/saia-ex99_1.htm",
+      "detail": "April 28 Q1 earnings release. The $660.5 million revenue figure and 0.1% year-over-year decline applied to the March quarter. The release supplied no Q2 revenue range."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023017826/saia-ex99_1.htm",
+      "detail": "April 28 public call, transcript furnished May 4. CFO Doug Col expected Q2 revenue to rise from Q1. That direction allows revenue on either side of $708,276,300. His 100-basis-point figure concerned possible sequential improvement in operating ratio."
+    },
+    {
+      "url": "https://assets.ctfassets.net/kjv8gs2ccggb/5ZMgiWqegAICTN3y469YBb/f8492152379b20e1e25cc70974e704b0/Saia-InvestorPresentation_1Q23.pdf",
+      "detail": "Saia’s full Q1 investor deck gives rounded Q1 2023 revenue of $661 million and leaves the Q2 2023 revenue cell blank. I could not verify that this deck accompanied the May 23 remarks."
+    },
+    {
+      "url": "https://www.meetmax.com/upload/event_91801/2023_Wolfe_Transport_Industrial_Conference_Agenda.pdf",
+      "detail": "Wolfe’s agenda schedules Saia’s CEO for May 23 from 1:55 to 2:25 p.m. ET and restricts press attendance. It contains no remarks or guidance. The event landing-page attempt at https://www.meetmax.com/sched/event_91801/conference_home.html returned no accessible page."
+    },
+    {
+      "url": "https://www.carrier.com/us/en/news/corporate/2023/carrierto-present-at-the-2023-wolfe-research-global-transportation-industrials-conference/",
+      "detail": "Carrier announced a public webcast for its session in the same room on May 23. That confirms the press restriction alone cannot establish whether Saia’s session was publicly accessible."
+    },
+    {
+      "url": "https://wsw.com/webcast/wolfe4/saia/",
+      "detail": "Webcast recovery attempt using Saia’s ticker and the conference’s webcast path. Both this candidate URL and https://wsw.com/webcast/wolfe4/ were inaccessible. The archive lookup at https://web.archive.org/cdx/search/cdx?url=wsw.com%2Fwebcast%2Fwolfe4%2Fsaia%2F*&output=json was also inaccessible. These attempts establish neither a Saia webcast nor its contents."
+    },
+    {
+      "url": "https://www.saia.com/about-us/investor-relations/financial-releases",
+      "detail": "Saia’s contemporaneously advertised webcast page yielded only an iframe in the accessible text. The IR archive attempts at https://saia.gcs-web.com/events-and-presentations and https://saia.gcs-web.com/news-releases?year=2023 were inaccessible. Searches of issuer, host and SEC materials recovered the earnings calls but no Saia-specific Wolfe recording, transcript or slides."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023025894/saia-ex99_1.htm",
+      "detail": "June 2 Q2 operating update. April and May LTL shipments per workday fell 5.7% and 4.2% year over year. Tonnage per workday fell 1.1% and 2.0%. These two months of volume data supply no full-quarter consolidated revenue ceiling."
+    },
+    {
+      "url": "https://www.stephens.com/uploads/shared/transactions-pdf/SAIA-JUN.pdf",
+      "detail": "Stephens’ June 7–8 Boston roadshow invitation names Saia’s CEO and CFO and directs investors to a sales representative to arrange attendance. The notice gives no guidance. The host and issuer searches produced no public transcript, audio or roadshow-specific deck."
+    },
+    {
+      "url": "https://saia.gcs-web.com/news-releases/news-release-details/saia-reports-second-quarter-results-0",
+      "detail": "July 28 actuals. Saia’s IR release identifies the comparison as Q2 2023 versus Q2 2022 and reports a 6.8% revenue decline. Exhibit 99.1 gives 694,622 and 745,554 in thousands of dollars on the same consolidated operating revenue row under the second-quarter columns."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017023035291/saia-20230728.htm",
+      "detail": "Item 2.02 confirms Saia issued its Q2 2023 results release on July 28."
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2023/07/28/2713060/0/en/Saia-Reports-Second-Quarter-Results.html",
+      "detail": "Saia’s original wire distribution timestamps publication at 7:30 a.m. ET on July 28, before the 11 a.m. results call."
+    }
+  ],
+  "comparison_type": "usd",
+  "upper_bound": "694622000",
+  "publication_date_evidence": "The July 28, 2023 dateline, Item 2.02 issuance statement and 7:30 a.m. ET issuer wire timestamp verify publication of the actual used for upper_bound. Public dissemination and content of the May 23 Saia session remain unverified.",
+  "adjudication_reason": "Saia publicly established the decline by July 28, 2023. Its consolidated operating revenue for the three months ended June 30 was $694,622,000 in 2023 and $745,554,000 in 2022. The actual was $13,654,300 below the $708,276,300 cutoff. The two reviews agree on the amount and publication date. The unresolved question is what Saia’s CEO said at the May 23 Wolfe conference and whether those remarks were public. I could verify the scheduled session but could not recover its remarks or a session-specific deck. July 28 therefore remains the earliest qualifying disclosure verified, with the earliest-date field left null.",
+  "reviewed_dates": [
+    "2023-07-28",
+    null
+  ]
+}

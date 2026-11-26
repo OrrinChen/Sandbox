@@ -1,0 +1,204 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "540d238d660450ac979338c148c63998ca256b676b45cb13984a7d01e057893e",
+    "efcbb4131595db1306a6c461a4389b01a9821626862719d9fd214475cd63e5a8",
+    "94b207f0bd4f4eec78673d06aaa95b47d6c32602ea1176bf98508bcf8cfac3e6"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-45063",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "formulas": {
+          "B2": "=IFNA(VLOOKUP(A2,Sheet2!$A$2:$B$6,2,FALSE),\"\")",
+          "B3": "=IFNA(VLOOKUP(A3,Sheet2!$A$2:$B$6,2,FALSE),\"\")",
+          "B4": "=IFNA(VLOOKUP(A4,Sheet2!$A$2:$B$6,2,FALSE),\"\")",
+          "B5": "=IFNA(VLOOKUP(A5,Sheet2!$A$2:$B$6,2,FALSE),\"\")",
+          "B6": "=IFNA(VLOOKUP(A6,Sheet2!$A$2:$B$6,2,FALSE),\"\")"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57095,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 942,
+        "reasoning_output_tokens": 237
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-45300",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "formulas": {
+          "B1": "=IFERROR(LEFT(A1,FIND(\" FT\",\" \"&A1)-1),A1)",
+          "B2": "=IFERROR(LEFT(A2,FIND(\" FT\",\" \"&A2)-1),A2)",
+          "B3": "=IFERROR(LEFT(A3,FIND(\" FT\",\" \"&A3)-1),A3)",
+          "B4": "=IFERROR(LEFT(A4,FIND(\" FT\",\" \"&A4)-1),A4)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57095,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 942,
+        "reasoning_output_tokens": 237
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-45937",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "formulas": {
+          "E7": "=IFNA(IF(C7<=INDEX($I$20:$I$22,MATCH(C7,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\"\"),\"\")",
+          "E8": "=IFNA(IF(C8<=INDEX($I$20:$I$22,MATCH(C8,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C8,$H$20:$H$22,1),MATCH(D8,$J$18:$N$18,0)),\"\"),\"\")",
+          "E9": "=IFNA(IF(C9<=INDEX($I$20:$I$22,MATCH(C9,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C9,$H$20:$H$22,1),MATCH(D9,$J$18:$N$18,0)),\"\"),\"\")"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Current",
+            "range": "B6:E9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Current",
+            "range": "B6:E9",
+            "range_size": 16,
+            "cells": [
+              [
+                "B6",
+                "Number"
+              ],
+              [
+                "C6",
+                "kms"
+              ],
+              [
+                "D6",
+                "Category"
+              ],
+              [
+                "E6",
+                "%"
+              ],
+              [
+                "B7",
+                "59"
+              ],
+              [
+                "C7",
+                "25000"
+              ],
+              [
+                "D7",
+                "A"
+              ],
+              [
+                "E7",
+                "22.5"
+              ],
+              [
+                "B8",
+                "60"
+              ],
+              [
+                "C8",
+                "25000"
+              ],
+              [
+                "D8",
+                "B"
+              ],
+              [
+                "B9",
+                "100"
+              ],
+              [
+                "C9",
+                "26002"
+              ],
+              [
+                "D9",
+                "C"
+              ]
+            ],
+            "total": 14,
+            "truncated": false,
+            "blank_count": 2
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57095,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 942,
+        "reasoning_output_tokens": 237
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-46167",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "formulas": {
+          "D2": "=SUMIF(A2:A12,111111,B2:B12)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57095,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 942,
+        "reasoning_output_tokens": 237
+      },
+      "model_calls": 3
+    }
+  ]
+}

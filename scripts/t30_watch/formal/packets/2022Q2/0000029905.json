@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000029905",
+  "issuer": "DOVER CORP",
+  "cutoff": "2022-03-02",
+  "projected_target_start": "2022-04-01",
+  "status": "complete",
+  "period_end": "2021-12-31",
+  "filing_date": "2022-02-11",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000029905",
+    "issuer": "DOVER CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-02-11",
+        "text": "For the year ended December 31, 2021, consolidated revenue was $7.9 billion, an increase of $1.2 billion or 18.3%, as compared to the prior year."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-02-11",
+        "text": "Bookings increased 35.3% over the prior year to $9.4 billion for the year ended December 31, 2021."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-02-11",
+        "text": "Backlog as of December 31, 2021 was $3.2 billion, up from $1.8 billion from the prior year."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-02-11",
+        "text": "Overall, customer pricing favorably impacted revenue by approximately 2.8% for the year."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-02-11",
+        "text": "Cash provided by operating activities for the year ended December 31, 2021 increased compared to 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-10-19",
+        "reported_sales_usd": 2018269000,
+        "year_ago_reported_sales_usd": 1748256000,
+        "yoy_percent": "15.4447"
+      },
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-11",
+        "reported_sales_usd": 1989235000,
+        "year_ago_reported_sales_usd": 1780390000,
+        "yoy_percent": "11.7303"
+      }
+    ],
+    "status": "complete"
+  }
+}

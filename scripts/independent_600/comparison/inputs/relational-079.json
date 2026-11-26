@@ -1,0 +1,158 @@
+[
+  {
+    "task_id": "decision-wayfinding-sign-export-after-walkthrough",
+    "tool": "csv.export",
+    "instruction": "Produce the complete contents of replacement_signs.csv for the print shop. Each sign_order row gives the required wording at one unique sign site and cites its authorizing order. Each site has exactly one field_check row documenting the wording seen there. A null seen_text means no sign was mounted. Include sites where the sign was absent or its wording differed from required_text under exact case-sensitive comparison. All other fields are non-null. Return one row with columns order_id_set, check_id_set, csv_content. The first two fields are comma-separated lists of the actual order IDs and check IDs, respectively, in the same site_code ascending order as the exported records, with one ID per record. IDs contain no commas. The CSV starts with the unquoted header site_code,required_text,order_id,check_id. Double-quote every data field, double any embedded double quotes, use commas between fields, and terminate every line including the last with one LF. Fields contain no line breaks. Each fixture needs at least one replacement. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "field_check": {
+        "columns": [
+          "site_code TEXT",
+          "check_id TEXT",
+          "seen_text TEXT",
+          "check_text TEXT"
+        ],
+        "rows": [
+          [
+            "N3",
+            "F6",
+            "Lift lobby",
+            "N3 reads “Lift lobby”."
+          ],
+          [
+            "W2",
+            "F1",
+            null,
+            "W2 mounting frame was empty."
+          ],
+          [
+            "E1",
+            "F9",
+            "Use Elm gate",
+            "E1 sign omits the quotation marks around Elm."
+          ]
+        ]
+      },
+      "sign_order": {
+        "columns": [
+          "site_code TEXT",
+          "order_id TEXT",
+          "required_text TEXT",
+          "order_text TEXT"
+        ],
+        "rows": [
+          [
+            "W2",
+            "S8",
+            "Exit, west",
+            "Mount the wording “Exit, west” at W2."
+          ],
+          [
+            "E1",
+            "S4",
+            "Use \"Elm\" gate",
+            "Direct E1 passengers to the gate named Elm using the quoted name."
+          ],
+          [
+            "N3",
+            "S5",
+            "Lift lobby",
+            "Mark N3 as the lift lobby."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "order_id_set",
+      "check_id_set",
+      "csv_content"
+    ]
+  },
+  {
+    "task_id": "decision-wheel-state-at-shutter-open",
+    "tool": "sqlite.query",
+    "instruction": "Reconstruct the filter for each exposure in frames. All times are integer seconds on one observatory clock. Each wheel_notes row is a primary wheel-controller log entry. A 'seated' entry confirms the named filter is physically in place. A 'request' entry only commands motion and leaves the last confirmed identification in force for this report. State persists across exposures. Use confirmations at or before shutter_s, including the instant of opening. At the same second the larger seq_no happened later. Times and sequence numbers together uniquely order entries. Keep every exposure, using NULL for both filter_code and source_id when there is no qualifying confirmation. Inputs have no NULLs. Return frame_id, filter_code, source_id in ascending frame_id order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "frames": {
+        "columns": [
+          "frame_id TEXT",
+          "shutter_s INTEGER"
+        ],
+        "rows": [
+          [
+            "F03",
+            22
+          ],
+          [
+            "F01",
+            8
+          ],
+          [
+            "F04",
+            30
+          ],
+          [
+            "F02",
+            14
+          ]
+        ]
+      },
+      "wheel_notes": {
+        "columns": [
+          "source_id TEXT",
+          "event_s INTEGER",
+          "seq_no INTEGER",
+          "event_kind TEXT",
+          "filter_code TEXT",
+          "entry_text TEXT"
+        ],
+        "rows": [
+          [
+            "W1",
+            10,
+            1,
+            "seated",
+            "blue",
+            "Blue detent switch closed."
+          ],
+          [
+            "W2",
+            13,
+            2,
+            "request",
+            "red",
+            "Red wheel position commanded."
+          ],
+          [
+            "W3",
+            22,
+            3,
+            "seated",
+            "red",
+            "Red detent switch closed."
+          ],
+          [
+            "W4",
+            22,
+            4,
+            "seated",
+            "green",
+            "Final contact readback confirms green."
+          ],
+          [
+            "W5",
+            31,
+            5,
+            "seated",
+            "blue",
+            "Blue detent switch closed again."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "frame_id",
+      "filter_code",
+      "source_id"
+    ]
+  }
+]

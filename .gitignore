@@ -6,7 +6,10 @@ __pycache__/
 .mypy_cache/
 .coverage
 htmlcov/
-artifacts/
+/artifacts/*
+!/artifacts/independent-600-wheel/
+/artifacts/independent-600-wheel/*
+!/artifacts/independent-600-wheel/sandboxed_agent_eval_harness-0.1.0-py3-none-any.whl
 dist/
 build/
 *.egg-info/

@@ -1,0 +1,292 @@
+[
+  {
+    "task_id": "decision-size-ferry-departure-topup",
+    "tool": "sqlite.query",
+    "instruction": "A ferry operator must choose one whole departure top-up package. The single sailing_card gives the battery's initial energy, its maximum capacity, and the minimum reserve, all in kWh. Apply the purchased top-up before the first leg. Then apply each signed net_change from voyage_step in ascending step_no order. A negative change is a crossing's consumption, and a positive change is a scheduled pier charge that must be accepted in full. Each step changes energy monotonically. From immediately after the departure purchase through the end of the voyage, energy must stay between reserve_kwh and capacity_kwh inclusive. Each package quotes a total fee in cents. Minimize that fee, then prefer less purchased energy, then the alphabetically earliest package_code. Step numbers and package codes are unique within their respective tables. No fields are NULL. Return the chosen row as source_id, package_code, fee_cents, arrival_kwh, citing the sailing card. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dock_package": {
+        "columns": [
+          "package_code TEXT",
+          "buy_kwh INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Skip",
+            0,
+            0
+          ],
+          [
+            "Small",
+            3,
+            90
+          ],
+          [
+            "Medium",
+            4,
+            85
+          ],
+          [
+            "Bulk",
+            6,
+            70
+          ]
+        ]
+      },
+      "sailing_card": {
+        "columns": [
+          "source_id TEXT",
+          "card_text TEXT",
+          "initial_kwh INTEGER",
+          "capacity_kwh INTEGER",
+          "reserve_kwh INTEGER"
+        ],
+        "rows": [
+          [
+            "F3",
+            "Gauge reads 6 kWh. Keep at least 2 kWh aboard and accept all pier energy within the 14 kWh tank limit.",
+            6,
+            14,
+            2
+          ]
+        ]
+      },
+      "voyage_step": {
+        "columns": [
+          "step_no INTEGER",
+          "net_change INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            -7
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            -5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "source_id",
+      "package_code",
+      "fee_cents",
+      "arrival_kwh"
+    ]
+  },
+  {
+    "task_id": "decision-size-opening-pick-face-reserve",
+    "tool": "sqlite.query",
+    "instruction": "Choose one signed tug timetable for the entire shift and set the smallest nonnegative integer opening stock at the pick face that lets every wave take its full demand. All quantities are cartons of one item. In each wave the picks occur first, then that timetable's receipt becomes usable. Leftover stock carries forward, storage is unlimited, and no other receipts occur. Minimize opening cartons across timetables, breaking ties by ascending timetable ID. For the winning timetable also identify the earliest wave maximizing cumulative picks through that wave minus cumulative receipts strictly before it. Return one row with columns timetable_id, opening_cartons, tight_wave, timetable_note, citing the signed note ID. Each timetable has one receipt row per wave, including zero deliveries. Wave numbers give chronological order. All fields are non-null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pick_wave": {
+        "columns": [
+          "wave_no INTEGER",
+          "pick_qty INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            5
+          ]
+        ]
+      },
+      "signed_timetable": {
+        "columns": [
+          "timetable_id TEXT",
+          "note_id TEXT",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "E",
+            "N3",
+            "Release seven cartons after wave one and four after wave three."
+          ],
+          [
+            "L",
+            "N8",
+            "Release nine cartons after wave two and two after wave three."
+          ]
+        ]
+      },
+      "tug_drop": {
+        "columns": [
+          "timetable_id TEXT",
+          "wave_no INTEGER",
+          "drop_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "E",
+            1,
+            7
+          ],
+          [
+            "E",
+            2,
+            0
+          ],
+          [
+            "E",
+            3,
+            4
+          ],
+          [
+            "L",
+            1,
+            0
+          ],
+          [
+            "L",
+            2,
+            9
+          ],
+          [
+            "L",
+            3,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "timetable_id",
+      "opening_cartons",
+      "tight_wave",
+      "timetable_note"
+    ]
+  },
+  {
+    "task_id": "decision-sky-scaled-aperture-excess",
+    "tool": "sqlite.query",
+    "instruction": "Identify visits with at least 20 net detector counts in the target aperture. For each visit, aperture_notes contains one 'target' extraction and at most one 'sky' extraction from the same frame. gross_ct is the total count across pixel_n usable pixels in that extraction. Estimate sky counts per pixel from the sky extraction, then subtract the estimated sky contribution over the target's usable pixels from its gross count. Compare the unrounded net count to the inclusive threshold. Report the result in tenths of a count as an integer, rounding to the nearest tenth with halfway values rounded away from zero. Exclude visits missing a sky extraction. Inputs have no NULLs and pixel counts are positive. Return visit_id, net_tenths, target_source, sky_source ordered by visit_id ascending. The last two columns cite the extraction slips used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "aperture_notes": {
+        "columns": [
+          "source_id TEXT",
+          "visit_id TEXT",
+          "patch_kind TEXT",
+          "gross_ct INTEGER",
+          "pixel_n INTEGER",
+          "entry_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "V1",
+            "target",
+            40,
+            10,
+            "Target mask retained ten pixels."
+          ],
+          [
+            "P2",
+            "V1",
+            "sky",
+            8,
+            4,
+            "Four clear sky pixels summed to eight counts."
+          ],
+          [
+            "P3",
+            "V2",
+            "target",
+            42,
+            12,
+            "Target extraction sums to forty-two."
+          ],
+          [
+            "P4",
+            "V2",
+            "sky",
+            10,
+            5,
+            "Five sky pixels sum to ten."
+          ],
+          [
+            "P5",
+            "V3",
+            "target",
+            90,
+            8,
+            "Target measured before sky mask failed."
+          ],
+          [
+            "P6",
+            "V4",
+            "target",
+            32,
+            3,
+            "Three target pixels passed masking."
+          ],
+          [
+            "P7",
+            "V4",
+            "sky",
+            7,
+            4,
+            "Four blank pixels sum to seven."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "visit_id",
+      "net_tenths",
+      "target_source",
+      "sky_source"
+    ]
+  },
+  {
+    "task_id": "decision-sliding-phase-retention",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the cash settlement ledger for one project. On each invoice day, withhold 10% of the gross cents for the frame phase and 20% for the finish phase. Compute retention separately for each invoice. All supplied amounts yield whole cents. Retention covers the invoice day and the following calendar day. Release the full amount on invoice_day + 2, using the rate that applied to the original invoice. Report every day with an invoice or a release, including releases after the last invoice. Combine all events on the same day into one row. Return settlement_day, gross_cents, withheld_cents, released_cents, and payable_cents in that order, sorted by ascending day. Show withholding and releases as positive amounts. Payable equals gross minus withholding plus releases. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "invoice": {
+        "columns": [
+          "invoice_day INTEGER",
+          "phase TEXT",
+          "gross_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "frame",
+            1000
+          ],
+          [
+            1,
+            "finish",
+            500
+          ],
+          [
+            3,
+            "finish",
+            300
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "settlement_day",
+      "gross_cents",
+      "withheld_cents",
+      "released_cents",
+      "payable_cents"
+    ]
+  }
+]

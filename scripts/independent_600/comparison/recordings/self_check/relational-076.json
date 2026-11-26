@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "0fac02742f4d31e7539971e9126e7d6ba0383f0d3997a824164621df684ebcf1",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-trim-unsealed-packing-file-tails\": \"WITH ranked AS (\\n  SELECT f.file_key, f.size_bytes, n.byte_mark AS keep_bytes, n.note_id AS source_id,\\n         ROW_NUMBER() OVER (PARTITION BY f.file_key ORDER BY n.byte_mark DESC, n.note_id COLLATE BINARY) AS rn\\n  FROM file_size AS f\\n  JOIN seal_note AS n ON n.file_key = f.file_key\\n  WHERE n.action_code = 'seal' AND n.byte_mark BETWEEN 0 AND f.size_bytes\\n)\\nSELECT file_key, keep_bytes, size_bytes - keep_bytes AS trim_bytes, source_id\\nFROM ranked\\nWHERE rn = 1 AND keep_bytes < size_bytes\\nORDER BY file_key COLLATE BINARY\",\n  \"decision-true-up-deleted-slot-credits\": \"WITH balances AS (\\n  SELECT c.contract_code, (c.fee_cents * c.deleted_qty) / c.slot_qty AS earned_cents,\\n         COALESCE((SELECT SUM(p.credit_cents) FROM credit_postings AS p WHERE p.contract_code = c.contract_code), 0) AS posted_cents\\n  FROM slot_contracts AS c\\n)\\nSELECT contract_code, earned_cents, posted_cents, earned_cents - posted_cents AS adjustment_cents\\nFROM balances\\nWHERE earned_cents <> posted_cents\\nORDER BY contract_code COLLATE BINARY\",\n  \"decision-true-up-studio-print-charges\": \"WITH charges AS (\\n  SELECT j.job_id, r.file_id, j.posted_cents,\\n         MIN(j.print_qty, r.tier_qty) * r.base_cents + MAX(j.print_qty - r.tier_qty, 0) * r.extra_cents AS charge_cents\\n  FROM job_ledger AS j\\n  JOIN rate_files AS r ON r.file_id = (\\n    SELECT t.file_id FROM rate_files AS t\\n    WHERE t.start_day <= j.production_day\\n    ORDER BY t.start_day DESC, t.edition DESC\\n    LIMIT 1\\n  )\\n)\\nSELECT job_id, file_id, charge_cents, charge_cents - posted_cents AS adjustment_cents\\nFROM charges\\nWHERE charge_cents <> posted_cents\\nORDER BY job_id COLLATE BINARY\",\n  \"decision-two-bank-chair-setup-budget\": \"SELECT n.note_id, e.preset_code AS east_code, w.preset_code AS west_code,\\n       e.chair_gain + w.chair_gain AS opened_chairs, e.crew_minutes + w.crew_minutes AS used_minutes\\nFROM crew_note AS n\\nCROSS JOIN bank_preset AS e\\nCROSS JOIN bank_preset AS w\\nWHERE e.bank_name = 'east' AND w.bank_name = 'west'\\n  AND e.crew_minutes + w.crew_minutes <= n.minute_cap\\nORDER BY opened_chairs DESC, used_minutes ASC, e.preset_code COLLATE BINARY, w.preset_code COLLATE BINARY\\nLIMIT 1\"\n}",
+  "submissions": {
+    "decision-trim-unsealed-packing-file-tails": "WITH ranked AS (\n  SELECT f.file_key, f.size_bytes, n.byte_mark AS keep_bytes, n.note_id AS source_id,\n         ROW_NUMBER() OVER (PARTITION BY f.file_key ORDER BY n.byte_mark DESC, n.note_id COLLATE BINARY) AS rn\n  FROM file_size AS f\n  JOIN seal_note AS n ON n.file_key = f.file_key\n  WHERE n.action_code = 'seal' AND n.byte_mark BETWEEN 0 AND f.size_bytes\n)\nSELECT file_key, keep_bytes, size_bytes - keep_bytes AS trim_bytes, source_id\nFROM ranked\nWHERE rn = 1 AND keep_bytes < size_bytes\nORDER BY file_key COLLATE BINARY",
+    "decision-true-up-deleted-slot-credits": "WITH balances AS (\n  SELECT c.contract_code, (c.fee_cents * c.deleted_qty) / c.slot_qty AS earned_cents,\n         COALESCE((SELECT SUM(p.credit_cents) FROM credit_postings AS p WHERE p.contract_code = c.contract_code), 0) AS posted_cents\n  FROM slot_contracts AS c\n)\nSELECT contract_code, earned_cents, posted_cents, earned_cents - posted_cents AS adjustment_cents\nFROM balances\nWHERE earned_cents <> posted_cents\nORDER BY contract_code COLLATE BINARY",
+    "decision-true-up-studio-print-charges": "WITH charges AS (\n  SELECT j.job_id, r.file_id, j.posted_cents,\n         MIN(j.print_qty, r.tier_qty) * r.base_cents + MAX(j.print_qty - r.tier_qty, 0) * r.extra_cents AS charge_cents\n  FROM job_ledger AS j\n  JOIN rate_files AS r ON r.file_id = (\n    SELECT t.file_id FROM rate_files AS t\n    WHERE t.start_day <= j.production_day\n    ORDER BY t.start_day DESC, t.edition DESC\n    LIMIT 1\n  )\n)\nSELECT job_id, file_id, charge_cents, charge_cents - posted_cents AS adjustment_cents\nFROM charges\nWHERE charge_cents <> posted_cents\nORDER BY job_id COLLATE BINARY",
+    "decision-two-bank-chair-setup-budget": "SELECT n.note_id, e.preset_code AS east_code, w.preset_code AS west_code,\n       e.chair_gain + w.chair_gain AS opened_chairs, e.crew_minutes + w.crew_minutes AS used_minutes\nFROM crew_note AS n\nCROSS JOIN bank_preset AS e\nCROSS JOIN bank_preset AS w\nWHERE e.bank_name = 'east' AND w.bank_name = 'west'\n  AND e.crew_minutes + w.crew_minutes <= n.minute_cap\nORDER BY opened_chairs DESC, used_minutes ASC, e.preset_code COLLATE BINARY, w.preset_code COLLATE BINARY\nLIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-35d5-7dc1-82b2-59042b285c4a",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22824,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 639,
+    "reasoning_output_tokens": 0
+  }
+}

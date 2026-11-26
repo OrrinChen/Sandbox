@@ -1,0 +1,276 @@
+[
+  {
+    "task_id": "decision-stage-a-reserve-trailer-for-worst-case-response",
+    "tool": "sqlite.query",
+    "instruction": "Rent one yard for a shift and stage the replenishment trailer there. Each yard_quote gives the full shift fee in cents and the one-way dispatch time in minutes from that yard to each of the two zones, Mill and Vale. The single shift_brief gives the inclusive rental budget in cents and positive forecast dispatch counts for the two zones. Both zones require coverage. Among affordable yards, minimize the longer of the two response times. Break ties by the lowest total forecast driving minutes (sum of each zone's time multiplied by its dispatch count), then by yard ID in SQLite BINARY order. Each dispatch is a separate one-way response for scoring. At least one yard is affordable. Yard IDs are unique and inputs contain no nulls. Return one row with columns yard_id, worst_minutes, forecast_minutes, quote_source, brief_source, in that order, citing the selected quote and the active shift brief. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "shift_brief": {
+        "columns": [
+          "source_id TEXT",
+          "budget_cents INTEGER",
+          "mill_calls INTEGER",
+          "vale_calls INTEGER",
+          "brief_text TEXT"
+        ],
+        "rows": [
+          [
+            "SB-6",
+            6000,
+            5,
+            1,
+            "Spend up to 6000 cents. Plan for five Mill dispatches and one Vale dispatch."
+          ]
+        ]
+      },
+      "yard_quote": {
+        "columns": [
+          "yard_id TEXT",
+          "fee_cents INTEGER",
+          "mill_min INTEGER",
+          "vale_min INTEGER",
+          "source_id TEXT",
+          "quote_text TEXT"
+        ],
+        "rows": [
+          [
+            "Kiln",
+            5000,
+            1,
+            7,
+            "Q-K",
+            "Shift hire 5000 cents. Loaded trailer trial took one minute to Mill and seven to Vale."
+          ],
+          [
+            "Loop",
+            6000,
+            5,
+            5,
+            "Q-L",
+            "Shift hire 6000 cents. Both loaded dispatch trials took five minutes."
+          ],
+          [
+            "Weir",
+            10000,
+            2,
+            2,
+            "Q-W",
+            "Shift hire 10000 cents. Both zones are two minutes away with the trailer."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "yard_id",
+      "worst_minutes",
+      "forecast_minutes",
+      "quote_source",
+      "brief_source"
+    ]
+  },
+  {
+    "task_id": "decision-stage-installation-crew-upgrade",
+    "tool": "sqlite.query",
+    "instruction": "A stage installation begins at hour 0. After the base is finished, the lights and deck can proceed in parallel. The inspection starts when both branches finish. The single rig_plan row gives the four durations in hours and the available upgrade budget in cents. Each crew_offer is a complete, mutually exclusive option, including a zero-change option. Its four cut columns give hours saved on the corresponding activities. Cuts never exceed the original durations. Among offers within budget, minimize the inspection finish hour, then the fee, then offer_id in ascending binary text order. All fields are non-null and offer IDs are unique. Return one row with columns offer_id, finish_hour, fee_cents in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crew_offer": {
+        "columns": [
+          "offer_id TEXT",
+          "base_cut INTEGER",
+          "light_cut INTEGER",
+          "deck_cut INTEGER",
+          "inspect_cut INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "standard",
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "lamp",
+            0,
+            5,
+            0,
+            0,
+            40000
+          ],
+          [
+            "paired",
+            0,
+            3,
+            1,
+            0,
+            55000
+          ],
+          [
+            "footing",
+            2,
+            0,
+            0,
+            0,
+            35000
+          ],
+          [
+            "full",
+            2,
+            4,
+            2,
+            1,
+            65000
+          ]
+        ]
+      },
+      "rig_plan": {
+        "columns": [
+          "base_hours INTEGER",
+          "light_hours INTEGER",
+          "deck_hours INTEGER",
+          "inspect_hours INTEGER",
+          "budget_cents INTEGER"
+        ],
+        "rows": [
+          [
+            3,
+            9,
+            7,
+            2,
+            60000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "offer_id",
+      "finish_hour",
+      "fee_cents"
+    ]
+  },
+  {
+    "task_id": "decision-standing-exchange-disqualifications",
+    "tool": "sqlite.query",
+    "instruction": "Produce the evidence list for the Copper mixed relay at the end of bulletin 4, inclusive. Each row is an official decision on one exchange incident. An incident number is local to its meet and squad. Within that scope, the greatest eligible bulletin number is the controlling decision, with at most one decision per incident per bulletin. A 'dq' decision disqualifies the squad and a 'clear' decision clears only that incident. Report one row per incident that still disqualifies its squad. Cite the controlling source ID and reproduce its primary text exactly. Bulletin and incident numbers are unitless integers. No fields are null. Return squad, incident_no, source_id, primary_text, ordered by squad and then numeric incident_no ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "ruling": {
+        "columns": [
+          "meet_code TEXT",
+          "squad TEXT",
+          "incident_no INTEGER",
+          "bulletin_no INTEGER",
+          "verdict TEXT",
+          "source_id TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "Copper",
+            "Kite",
+            2,
+            1,
+            "dq",
+            "C11",
+            "The second receiver took the chip beyond the stripe."
+          ],
+          [
+            "Copper",
+            "Kite",
+            2,
+            3,
+            "clear",
+            "C32",
+            "The overhead view places the transfer inside the stripe."
+          ],
+          [
+            "Copper",
+            "Kite",
+            5,
+            2,
+            "dq",
+            "C24",
+            "The fifth receiver bypassed the marked exchange lane."
+          ],
+          [
+            "Copper",
+            "Moss",
+            1,
+            4,
+            "dq",
+            "C41",
+            "The opening runner handed the chip to an unlisted reserve."
+          ],
+          [
+            "Copper",
+            "Moss",
+            1,
+            5,
+            "clear",
+            "C53",
+            "The signed reserve list includes the receiver."
+          ],
+          [
+            "Slate",
+            "Kite",
+            5,
+            4,
+            "clear",
+            "S42",
+            "The lane marshal confirmed the correct route."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "squad",
+      "incident_no",
+      "source_id",
+      "primary_text"
+    ]
+  },
+  {
+    "task_id": "decision-station-bias-with-fixed-effects",
+    "tool": "sqlite.query",
+    "instruction": "Use station_readings to estimate the common bias that test mode adds to a station's reading, in millimeters. Fit the model reading_mm = station-specific baseline + bias × test_mode by minimizing the sum of squared residuals weighted by confidence. A test_mode of 0 means baseline mode and 1 means test mode. Confidence is a positive relative weight. Remove each station's fixed effect by subtracting that station's confidence-weighted means from both test_mode and reading_mm before estimating the common slope. Each station has observations in both modes. Return one row with the single column bias_mm, rounded to three decimal places. Row ordering and ties do not arise. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "station_readings": {
+        "columns": [
+          "station TEXT",
+          "test_mode INTEGER",
+          "reading_mm INTEGER",
+          "confidence INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            0,
+            10,
+            2
+          ],
+          [
+            "A",
+            1,
+            14,
+            2
+          ],
+          [
+            "B",
+            0,
+            20,
+            3
+          ],
+          [
+            "B",
+            1,
+            28,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bias_mm"
+    ]
+  }
+]

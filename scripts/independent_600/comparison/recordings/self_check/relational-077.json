@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "9ea0b25b35849b21fb16a1c9cb2c63e377bd89e68aadc13d484d074ec4628830",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-undo-one-step-receipt-carry\": \"WITH RECURSIVE recovered(receipt_no, original_net_units, rescan_next) AS (\\n  SELECT receipt_no, reported_net_units, rescan_next\\n  FROM receipt_scans\\n  WHERE receipt_no = 1\\n  UNION ALL\\n  SELECT s.receipt_no, s.reported_net_units - CASE WHEN r.rescan_next = 1 THEN r.original_net_units ELSE 0 END, s.rescan_next\\n  FROM recovered AS r\\n  JOIN receipt_scans AS s ON s.receipt_no = r.receipt_no + 1\\n)\\nSELECT receipt_no, original_net_units\\nFROM recovered\\nORDER BY receipt_no ASC\",\n  \"decision-unwrap-counter-with-signed-log\": \"SELECT r.elapsed_s, r.digit,\\n       (SELECT digit FROM dial_readings WHERE elapsed_s = 0) + COALESCE((\\n         SELECT SUM(i.delta_counts)\\n         FROM increment_log AS i\\n         WHERE i.elapsed_s > 0 AND i.elapsed_s <= r.elapsed_s\\n       ), 0) AS full_count\\nFROM dial_readings AS r\\nORDER BY r.elapsed_s ASC\",\n  \"decision-verify-conversion-primary\": \"WITH RECURSIVE resolved(doc, primary_ref) AS (\\n  SELECT doc, doc FROM document WHERE parent IS NULL\\n  UNION\\n  SELECT d.doc, r.primary_ref\\n  FROM document AS d\\n  JOIN resolved AS r ON d.parent = r.doc\\n)\\nSELECT DISTINCT a.primary_ref AS primary_ref, p.factor * q.factor AS chips_per_case\\nFROM packing AS p\\nJOIN packing AS q ON q.big = p.small\\nJOIN resolved AS a ON a.doc = p.cited\\nJOIN resolved AS b ON b.doc = q.cited AND b.primary_ref = a.primary_ref\\nWHERE p.big = 'case' AND q.small = 'chip'\\nORDER BY primary_ref COLLATE BINARY ASC, chips_per_case ASC\",\n  \"decision-verify-display-light-ceiling\": \"WITH ranked_notes AS (\\n  SELECT bay_code, peak_lux, source_id,\\n         ROW_NUMBER() OVER (PARTITION BY bay_code ORDER BY peak_lux DESC, source_id COLLATE BINARY ASC) AS peak_rank\\n  FROM field_note\\n)\\nSELECT b.proposal_code, b.score_points, n.peak_lux, n.source_id\\nFROM installation_bid AS b\\nJOIN ranked_notes AS n ON n.bay_code = b.bay_code AND n.peak_rank = 1\\nWHERE n.peak_lux <= b.ceiling_lux\\nORDER BY b.score_points DESC, b.proposal_code COLLATE BINARY ASC\\nLIMIT 1\"\n}",
+  "submissions": {
+    "decision-undo-one-step-receipt-carry": "WITH RECURSIVE recovered(receipt_no, original_net_units, rescan_next) AS (\n  SELECT receipt_no, reported_net_units, rescan_next\n  FROM receipt_scans\n  WHERE receipt_no = 1\n  UNION ALL\n  SELECT s.receipt_no, s.reported_net_units - CASE WHEN r.rescan_next = 1 THEN r.original_net_units ELSE 0 END, s.rescan_next\n  FROM recovered AS r\n  JOIN receipt_scans AS s ON s.receipt_no = r.receipt_no + 1\n)\nSELECT receipt_no, original_net_units\nFROM recovered\nORDER BY receipt_no ASC",
+    "decision-unwrap-counter-with-signed-log": "SELECT r.elapsed_s, r.digit,\n       (SELECT digit FROM dial_readings WHERE elapsed_s = 0) + COALESCE((\n         SELECT SUM(i.delta_counts)\n         FROM increment_log AS i\n         WHERE i.elapsed_s > 0 AND i.elapsed_s <= r.elapsed_s\n       ), 0) AS full_count\nFROM dial_readings AS r\nORDER BY r.elapsed_s ASC",
+    "decision-verify-conversion-primary": "WITH RECURSIVE resolved(doc, primary_ref) AS (\n  SELECT doc, doc FROM document WHERE parent IS NULL\n  UNION\n  SELECT d.doc, r.primary_ref\n  FROM document AS d\n  JOIN resolved AS r ON d.parent = r.doc\n)\nSELECT DISTINCT a.primary_ref AS primary_ref, p.factor * q.factor AS chips_per_case\nFROM packing AS p\nJOIN packing AS q ON q.big = p.small\nJOIN resolved AS a ON a.doc = p.cited\nJOIN resolved AS b ON b.doc = q.cited AND b.primary_ref = a.primary_ref\nWHERE p.big = 'case' AND q.small = 'chip'\nORDER BY primary_ref COLLATE BINARY ASC, chips_per_case ASC",
+    "decision-verify-display-light-ceiling": "WITH ranked_notes AS (\n  SELECT bay_code, peak_lux, source_id,\n         ROW_NUMBER() OVER (PARTITION BY bay_code ORDER BY peak_lux DESC, source_id COLLATE BINARY ASC) AS peak_rank\n  FROM field_note\n)\nSELECT b.proposal_code, b.score_points, n.peak_lux, n.source_id\nFROM installation_bid AS b\nJOIN ranked_notes AS n ON n.bay_code = b.bay_code AND n.peak_rank = 1\nWHERE n.peak_lux <= b.ceiling_lux\nORDER BY b.score_points DESC, b.proposal_code COLLATE BINARY ASC\nLIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-47b9-77a3-bd1d-02f09d3962cf",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22353,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 570,
+    "reasoning_output_tokens": 0
+  }
+}

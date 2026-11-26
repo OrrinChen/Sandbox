@@ -1,0 +1,243 @@
+[
+  {
+    "task_id": "decision-undo-one-step-receipt-carry",
+    "tool": "sqlite.query",
+    "instruction": "Recover the original signed net-unit count on each receipt in one scanner batch. Positive units are purchases and negative units are returns. Receipts are numbered consecutively from 1. The scanner reports the receipt's original net units plus any carry from the immediately preceding receipt. Receipt 1 has no incoming carry. When rescan_next is 1, the scanner copies this receipt's original signed net units onto the next receipt exactly once. When it is 0, the outgoing carry is zero. Units already copied onto a receipt are excluded from its outgoing carry. Return receipt_no and original_net_units in that column order, sorted by receipt_no ascending. Receipt numbers are unique. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "receipt_scans": {
+        "columns": [
+          "receipt_no INTEGER",
+          "reported_net_units INTEGER",
+          "rescan_next INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            4,
+            1
+          ],
+          [
+            2,
+            7,
+            1
+          ],
+          [
+            3,
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "receipt_no",
+      "original_net_units"
+    ]
+  },
+  {
+    "task_id": "decision-unwrap-counter-with-signed-log",
+    "tool": "sqlite.query",
+    "instruction": "Use SQLite to reconstruct the signed full count at each dial reading. The dial displays the residue of the full count modulo 10, from 0 through 9. At time zero the full count equals the displayed digit. Each increment_log row records a signed movement in counts at elapsed_s seconds. Include every movement after time zero up to and including the reading time. Several movements may share a timestamp and all are additive. The log is complete and agrees with the readings. Return elapsed_s, digit, and full_count in that order, one row per reading, sorted by increasing elapsed_s. Reading times are unique. Full counts can be negative. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dial_readings": {
+        "columns": [
+          "elapsed_s INTEGER",
+          "digit INTEGER"
+        ],
+        "rows": [
+          [
+            4,
+            2
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            7,
+            9
+          ]
+        ]
+      },
+      "increment_log": {
+        "columns": [
+          "elapsed_s INTEGER",
+          "delta_counts INTEGER"
+        ],
+        "rows": [
+          [
+            4,
+            10
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            7,
+            -23
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "elapsed_s",
+      "digit",
+      "full_count"
+    ]
+  },
+  {
+    "task_id": "decision-verify-conversion-primary",
+    "tool": "sqlite.query",
+    "instruction": "Determine how many chips fill one case and which primary reference supports the calculation. Use exactly two packing rules in order, from case to an intermediate unit and from that unit to chip. A factor is the integer number of smaller units per larger unit, so multiply the factors. For each rule, start at its cited document and follow parent citations. A NULL parent identifies a primary reference. A repeated document invalidates that rule's chain. Accept a conversion only if both chains terminate at the same primary reference. Return distinct rows with primary_ref followed by chips_per_case, sorted by primary_ref in binary text order and then by chips_per_case ascending. The supplied rules have one supported result. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "document": {
+        "columns": [
+          "doc TEXT",
+          "parent TEXT"
+        ],
+        "rows": [
+          [
+            "Atlas",
+            null
+          ],
+          [
+            "Leaf",
+            "Atlas"
+          ],
+          [
+            "Note",
+            "Leaf"
+          ],
+          [
+            "Loop",
+            "Echo"
+          ],
+          [
+            "Echo",
+            "Loop"
+          ]
+        ]
+      },
+      "packing": {
+        "columns": [
+          "big TEXT",
+          "small TEXT",
+          "factor INTEGER",
+          "cited TEXT"
+        ],
+        "rows": [
+          [
+            "case",
+            "tray",
+            3,
+            "Leaf"
+          ],
+          [
+            "tray",
+            "chip",
+            4,
+            "Note"
+          ],
+          [
+            "case",
+            "bag",
+            2,
+            "Leaf"
+          ],
+          [
+            "bag",
+            "chip",
+            9,
+            "Loop"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "primary_ref",
+      "chips_per_case"
+    ]
+  },
+  {
+    "task_id": "decision-verify-display-light-ceiling",
+    "tool": "sqlite.query",
+    "instruction": "Choose one proposed installation for its assigned bay. Each proposal has a light ceiling in lux and a curatorial score in points. Each field note records an observer's measured peak in lux for a lighting trial, alongside the original observation. A bay needs at least one note, and every recorded peak in that bay must be at or below the proposal's ceiling. Among eligible proposals maximize score, then choose the smallest proposal code in SQLite BINARY order. Cite the actual source ID for the highest measured peak in the winning bay, breaking equal-peak ties by smallest source ID in SQLite BINARY order. Proposal codes and source IDs are each unique. All fields are non-null. Return one row with columns proposal_code, score_points, peak_lux, source_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "field_note": {
+        "columns": [
+          "source_id TEXT",
+          "bay_code TEXT",
+          "peak_lux INTEGER",
+          "observation TEXT"
+        ],
+        "rows": [
+          [
+            "e1",
+            "east",
+            42,
+            "I measured 42 lux at the mount with the blind down."
+          ],
+          [
+            "e2",
+            "east",
+            68,
+            "I measured 68 lux at the mount during the lamp test."
+          ],
+          [
+            "w2",
+            "west",
+            70,
+            "My afternoon sweep reached 70 lux at the upper edge."
+          ],
+          [
+            "w1",
+            "west",
+            70,
+            "My morning sweep reached 70 lux at the center."
+          ]
+        ]
+      },
+      "installation_bid": {
+        "columns": [
+          "proposal_code TEXT",
+          "bay_code TEXT",
+          "ceiling_lux INTEGER",
+          "score_points INTEGER"
+        ],
+        "rows": [
+          [
+            "ink",
+            "east",
+            50,
+            12
+          ],
+          [
+            "felt",
+            "west",
+            70,
+            10
+          ],
+          [
+            "tile",
+            "east",
+            90,
+            8
+          ],
+          [
+            "lace",
+            "loft",
+            60,
+            15
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "proposal_code",
+      "score_points",
+      "peak_lux",
+      "source_id"
+    ]
+  }
+]

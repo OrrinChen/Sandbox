@@ -1,0 +1,42 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25444,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 331,
+    "reasoning_output_tokens": 10
+  },
+  "thread": "01a20d8b-3804-73c2-a1cb-37647a1e35fd",
+  "packet_sha256": "2bcc432e9f192b096cc51513f78b932c0999dd04dfc485d0b5ef5828180def14",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001326380\",\n          \"reason\": \"GameStop’s net sales grew 6.21% and 7.96% year over year in the two latest quarters, supporting a forecast that the intervening quarter stays above −5%. Incremental inventory reserves and market pressure suggest some merchandise may need markdowns. If those pressures persist, I forecast that reported net sales growth falls to −5% or lower in the quarter starting July 31 (A, C).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/retail-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001018840\",\n          \"reason\": \"Abercrombie’s reported net sales grew 3.50% and 4.01% year over year in the two latest quarters, supporting an intervening quarter above −5%. Fewer markdowns and higher ticket prices helped the latest quarter, while currency movements reduced reported sales by about $9 million. If pricing support fades while that drag persists, I forecast reported net sales growth of −5% or lower in the quarter starting July 31 (A, D).\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "GameStop’s net sales grew 6.21% and 7.96% year over year in the two latest quarters, supporting a forecast that the intervening quarter stays above −5%. Incremental inventory reserves and market pressure suggest some merchandise may need markdowns. If those pressures persist, I forecast that reported net sales growth falls to −5% or lower in the quarter starting July 31 (A, C)."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-3",
+        "alerts": [
+          {
+            "cik": "0001018840",
+            "reason": "Abercrombie’s reported net sales grew 3.50% and 4.01% year over year in the two latest quarters, supporting an intervening quarter above −5%. Fewer markdowns and higher ticket prices helped the latest quarter, while currency movements reduced reported sales by about $9 million. If pricing support fades while that drag persists, I forecast reported net sales growth of −5% or lower in the quarter starting July 31 (A, D)."
+          }
+        ]
+      }
+    ]
+  }
+}

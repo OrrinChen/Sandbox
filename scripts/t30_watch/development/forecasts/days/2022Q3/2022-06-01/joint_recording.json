@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 36502,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 591,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7c-df43-7573-b93a-19cfa6cfb8fc",
+  "packet_sha256": "efddac5b36d96e894cdf799b117d1f11db21197e848bb6235f3fc7874274737a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001140215\",\n          \"reason\": \"Year-over-year net sales growth slowed from 19.71% in December to 0.30% in March (A). Reed’s 5% volume growth helped offset an 11% volume decline at Virgil’s (B). I forecast June sales growth above -5%, followed by a decline of at least 5% in July–September as Virgil’s weakness outweighs that offset.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/industrial_machinery-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000878726\",\n          \"reason\": \"Year-over-year net sales growth slowed from 26.56% in December to 4.09% in the quarter ended April 2 (A). Comparable-store sales rose just 0.6% while inventory grew about 29% (B, C), suggesting merchandise was selling more slowly. I forecast sales growth above -5% in the intervening quarter and a decline of at least 5% in the quarter beginning in July.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"March revenue grew 5.08% year over year, helped by higher industrial unit sales outside China (A, D). That provides some cushion for June. Customers were delaying capital spending, and both industrial unit sales in China and average industrial selling prices had fallen (B, D). I forecast June revenue growth above -5% and a decline of at least 5% in July–September as delayed purchases weigh on sales.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/transportation-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000799233\",\n          \"reason\": \"Reported revenue fell 4.91% year over year in December and 0.74% in March (A). The narrower March decline supports a June forecast above -5%. Strong freight demand, rising rates and better fleet utilization throughout 2021 (B) set a demanding comparison for July–September, when I forecast a reported revenue decline of at least 5%.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0001140215",
+            "reason": "Year-over-year net sales growth slowed from 19.71% in December to 0.30% in March (A). Reed’s 5% volume growth helped offset an 11% volume decline at Virgil’s (B). I forecast June sales growth above -5%, followed by a decline of at least 5% in July–September as Virgil’s weakness outweighs that offset."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000878726",
+            "reason": "Year-over-year net sales growth slowed from 26.56% in December to 4.09% in the quarter ended April 2 (A). Comparable-store sales rose just 0.6% while inventory grew about 29% (B, C), suggesting merchandise was selling more slowly. I forecast sales growth above -5% in the intervening quarter and a decline of at least 5% in the quarter beginning in July."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "March revenue grew 5.08% year over year, helped by higher industrial unit sales outside China (A, D). That provides some cushion for June. Customers were delaying capital spending, and both industrial unit sales in China and average industrial selling prices had fallen (B, D). I forecast June revenue growth above -5% and a decline of at least 5% in July–September as delayed purchases weigh on sales."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000799233",
+            "reason": "Reported revenue fell 4.91% year over year in December and 0.74% in March (A). The narrower March decline supports a June forecast above -5%. Strong freight demand, rising rates and better fleet utilization throughout 2021 (B) set a demanding comparison for July–September, when I forecast a reported revenue decline of at least 5%."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000768835",
+  "issuer": "BIG LOTS INC",
+  "cutoff": "2023-03-31",
+  "projected_target_start": "2023-04-30",
+  "status": "complete",
+  "period_end": "2023-01-28",
+  "filing_date": "2023-03-28",
+  "text": {
+    "sector": "retail",
+    "cik": "0000768835",
+    "issuer": "BIG LOTS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2023-03-28",
+        "text": "•Gross margin dollars decreased $483.5 million and gross margin rate decreased 400 basis points to 35.0% of net sales."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2023-03-28",
+        "text": "•Comparable sales for stores open at least fifteen months, plus our e-commerce operations, decreased $766.6 million, or 12.9%."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2023-03-28",
+        "text": "•Inventory decreased $89.8 million, or 7.3%, to $1,147.9 million."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2023-03-28",
+        "text": "•Selling and administrative expenses increased $5.4 million to $2,020.1 million."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2023-03-28",
+        "text": "The net gain on sale of real estate and related expenses in 2022 decreased our operating loss by $16.8 million and decreased our diluted loss per share by approximately $0.44 per share."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-10-29",
+        "filed": "2022-12-07",
+        "reported_sales_usd": 1204281000,
+        "year_ago_reported_sales_usd": 1335656000,
+        "yoy_percent": "-9.8360"
+      },
+      {
+        "quarter_end": "2023-01-28",
+        "filed": "2023-03-28",
+        "reported_sales_usd": 1543113000,
+        "year_ago_reported_sales_usd": 1732021000,
+        "yoy_percent": "-10.9068"
+      }
+    ],
+    "status": "complete"
+  }
+}

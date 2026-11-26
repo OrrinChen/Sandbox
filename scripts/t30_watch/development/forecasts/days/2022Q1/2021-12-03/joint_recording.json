@@ -1,0 +1,24 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21672,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 32,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7d-61a4-7f62-9287-53c5eb652ce1",
+  "packet_sha256": "85e82d4a307e1bb07ca47da379a04545862dbd0c214967a3bcaf7d29cc61f84b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q1/semiconductors-1\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/semiconductors-1",
+        "alerts": []
+      }
+    ]
+  }
+}

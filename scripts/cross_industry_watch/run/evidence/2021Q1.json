@@ -1,0 +1,2330 @@
+{
+  "origin": "2021Q1",
+  "cutoff": "2021-03-31",
+  "companies": [
+    {
+      "cik": "0000018255",
+      "issuer": "CATO CORP",
+      "sector": "retail",
+      "period_end": "2021-01-30",
+      "filing_date": "2021-03-29",
+      "accession": "0000018255-21-000004",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm",
+      "title": "FORM 10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Retail sales decreased by 30.5% to $567.5 million in fiscal 2020 compared to $816.2 million in fiscal 2019.",
+          "locator": "/html/body/div[3]/div[28]/div/div[73]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm"
+        },
+        {
+          "id": "B",
+          "text": "The decrease in retail sales in fiscal 2020 was primarily due to a 32% decrease in same-store sales, partially offset by sales from new store openings.",
+          "locator": "/html/body/div[3]/div[28]/div/div[74] through /html/body/div[3]/div[28]/div/div[82]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm"
+        },
+        {
+          "id": "C",
+          "text": "The decrease o f $84.1 million for fiscal 2020 compared to fiscal 2019 is primarily due to a net operating loss versus net operating income, an increase in accounts receivable primarily related to income taxes and an increase in prepaid expenses, partially offset by lower merchandise inventories and store impairment charges.",
+          "locator": "/html/body/div[3]/div[32]/div/div[7] through /html/body/div[3]/div[32]/div/div[13]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm"
+        },
+        {
+          "id": "D",
+          "text": "Related expenses include principally payroll, postage and other administrative expenses and totaled $1.5 million in fiscal 2020 compared to $1.8 million in fiscal 2019.",
+          "locator": "/html/body/div[3]/div[28]/div/div[94] through /html/body/div[3]/div[28]/div/div[100]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash used by operating activities during fiscal 2020 was $30.7 million as compared to $53.4 million provided in fiscal 2019 and $60.2 provided in fiscal 2018.",
+          "locator": "/html/body/div[3]/div[32]/div/div[7] through /html/body/div[3]/div[32]/div/div[13]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825521000004/cato20210130.htm"
+        }
+      ],
+      "document_sha256": "33aef3ee56bb8d762f787c6ebba502e262bd7779fc6ee5307a5eb8a308270a9c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001701758",
+      "issuer": "LOVESAC CO",
+      "sector": "retail",
+      "period_end": "2020-11-01",
+      "filing_date": "2020-12-09",
+      "accession": "0001213900-20-041810",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm",
+      "title": "QUARTERLY REPORT",
+      "slots": [
+        {
+          "id": "A",
+          "text": "SG&A as a percent to net sales for the thirteen weeks ended November 1, 2020 decreased 12.3% primarily due to leveraging employment costs, rent, selling related expenses such as credit card fees and pop-up shop fees, and travel expenses, partially offset by an increase in equity compensation.",
+          "locator": "/html/body/div/p[193]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "QUARTERLY REPORT",
+          "date": "2020-12-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm"
+        },
+        {
+          "id": "B",
+          "text": "Sales of this product were $10.2 million and $27.7 million in the thirteen and thirty-nine weeks ended November 1, 2020, as compared to $7.8 million and $23.4 million for the thirteen and thirty-nine weeks ended November 3, 2019.",
+          "locator": "/html/body/div/p[177]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "QUARTERLY REPORT",
+          "date": "2020-12-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm"
+        },
+        {
+          "id": "C",
+          "text": "Working capital and other activities consisted primarily of increase in inventory of $21.4 million and prepaid expenses of $2.8 million, partially offset by an increase in accounts payable and accrued expenses of $17.1 million, and customer deposits of $10.0 million.",
+          "locator": "/html/body/div/p[360]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "QUARTERLY REPORT",
+          "date": "2020-12-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm"
+        },
+        {
+          "id": "D",
+          "text": "SG&A as a percent to net sales for the thirty-nine weeks ended November 1, 2020 decreased 10.5% primarily due to leveraging employment costs, rent, selling related expenses such as credit card fees and pop-up shop fees, equity based compensation and travel expenses, partially offset by increases in insurance and computer expense related to infrastructure investments.",
+          "locator": "/html/body/div/p[193]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "QUARTERLY REPORT",
+          "date": "2020-12-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm"
+        },
+        {
+          "id": "E",
+          "text": "In the thirty-nine weeks ended November 1, 2020, net cash provided by operating activities was $6.9 million and consisted of changes in operating assets and liabilities of $2.9 million, a net loss of $7.0 million, and adjustments to reconcile net loss to cash used in operating activities of $11.0 million.",
+          "locator": "/html/body/div/p[360]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "QUARTERLY REPORT",
+          "date": "2020-12-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000121390020041810/f10q1120_thelovesac.htm"
+        }
+      ],
+      "document_sha256": "bd8e2796f16cdb8c7f2af722906bc2685ff13157b47969f7e6b1a758961b0513",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001402057",
+      "issuer": "CDW CORP",
+      "sector": "retail",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-26",
+      "accession": "0001402057-21-000022",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Total Net sales for the year ended December 31, 2020 increased $435 million, or 2.4%, to $18,468 million, compared to the prior year.",
+          "locator": "/html/body/div[476]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Given the COVID-19 pandemic, Education customers have prioritized their budgets towards IT spending while Healthcare customer budgets have been pressured.",
+          "locator": "/html/body/div[446]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "(5)The change is primarily due to mixing into vendors with extended payment terms in 2021, increased sales and year-end inventory purchases.",
+          "locator": "/html/body/div[586]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Gross profit margin was positively impacted by product margin and the mix of netted down revenues that are booked net of cost of goods sold, primarily software as a service.",
+          "locator": "/html/body/div[487]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income was $1,179 million for the year ended December 31, 2020, an increase of $46 million, or 4.0%, compared to $1,134 million for the year ended December 31, 2019.",
+          "locator": "/html/body/div[502]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205721000022/cdw-20201231.htm"
+        }
+      ],
+      "document_sha256": "6e56670dd6d46b49600995d320e86ff3d7300a16e67bf0190abd4d980a93388b",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000098246",
+      "issuer": "TIFFANY & CO",
+      "sector": "retail",
+      "period_end": "2020-10-31",
+      "filing_date": "2020-11-24",
+      "accession": "0000098246-20-000118",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For the three and nine months ended October 31, 2020, the Company's worldwide net sales declined 1% and 25%, respectively, compared to the prior year, with the decrease in the year-to-date due to the negative global impact of COVID-19.",
+          "locator": "/html/body/div[272]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2020-11-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm"
+        },
+        {
+          "id": "B",
+          "text": "Although the Company continues to experience decreased customer traffic and retail sales in many of its retail locations as compared to corresponding periods in the prior year, the Company has continued to benefit from increased sales both in Mainland China and its global e-commerce business during these periods.",
+          "locator": "/html/body/div[272]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2020-11-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm"
+        },
+        {
+          "id": "C",
+          "text": "•Inventories, net decreased 4% from October 31, 2019.",
+          "locator": "/html/body/div[315]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2020-11-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm"
+        },
+        {
+          "id": "D",
+          "text": "The decrease in the average price per jewelry unit sold in the year-to-date was primarily due to a change in sales mix, which management attributed to the strong growth in e-commerce sales, as well as a decline in sales of High jewelry within the Jewelry collections category.",
+          "locator": "/html/body/div[386]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2020-11-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm"
+        },
+        {
+          "id": "E",
+          "text": "The change in operating cash flows was primarily due to a decrease in cash outflows attributable to working capital, which was mostly offset by a decrease in earnings in the year-to-date of 2020, which management attributed to the effects of COVID-19.",
+          "locator": "/html/body/div[494]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2020-11-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm"
+        }
+      ],
+      "document_sha256": "998e5f068115dbca4205c6476c9d8c9228879566592411f3c22ebdc77b4d2754",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000829224",
+      "issuer": "STARBUCKS CORP",
+      "sector": "retail",
+      "period_end": "2020-12-27",
+      "filing_date": "2021-01-26",
+      "accession": "0000829224-21-000029",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "During the quarter ended December 27, 2020, our global comparable store sales declined 5%, including the negative impacts of COVID-19.",
+          "locator": "/html/body/div[197]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm"
+        },
+        {
+          "id": "B",
+          "text": "Stores that are temporarily closed or operating at reduced hours due to the COVID-19 outbreak remain in comparable store sales while stores identified for permanent closure have been removed.",
+          "locator": "/html/body/div[197]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm"
+        },
+        {
+          "id": "C",
+          "text": "Consolidated net revenues declined 5% to $6.7 billion in first quarter of fiscal 2021 compared to $7.1 billion in the first quarter of fiscal 2020, driven primarily by reduced customer traffic, modified business operations, reduced store operating hours and temporary closures of our company-operated and licensed stores.",
+          "locator": "/html/body/div[203]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm"
+        },
+        {
+          "id": "D",
+          "text": "Other operating expenses decreased $10 million for the first quarter of fiscal 2021, primarily due to lapping prior year incremental costs to develop and grow the Global Coffee Alliance.",
+          "locator": "/html/body/div[231]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm"
+        },
+        {
+          "id": "E",
+          "text": "Americas operating income for the first quarter of fiscal 2021 decreased 26% to $814 million, compared to $1.1 billion in the first quarter of fiscal 2020.",
+          "locator": "/html/body/div[258]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922421000029/sbux-20201227.htm"
+        }
+      ],
+      "document_sha256": "9f0c765b3797a5ed7437bed52e6c6574bba9854b01b287f3304a0d3ff8239ce2",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000878726",
+      "issuer": "TUESDAY MORNING CORP/DE",
+      "sector": "retail",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-05",
+      "accession": "0001564590-21-004404",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "The decrease in comparable store sales was due to a 25.2% decrease in customer transactions, partially offset by a 7.1% increase in average ticket.",
+          "locator": "/html/body/div[28]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The decrease in comparable store sales was due to a 23.1% decrease in customer transactions, partially offset by a 6.1% increase in average ticket.",
+          "locator": "/html/body/div[29]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Sales were impacted by lower store inventory levels, which averaged approximately 48% below last year when compared to the same quarter as well as decreased store traffic resulting from the continuing negative impact of COVID-19.",
+          "locator": "/html/body/div[28]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "• Gross margin for the second quarter of fiscal 2021 was 30.2%, compared to 32.6% for the same period last year.",
+          "locator": "/html/body/div[30]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "• Our operating loss for the second quarter of fiscal 2021 was $4.3 million, compared to operating income of $11.1 million for the same period last year.",
+          "locator": "/html/body/div[33]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000156459021004404/tuem-10q_20201231.htm"
+        }
+      ],
+      "document_sha256": "6bfaa292b20168cbc80aa2938cba890bb1fce21da3d9a2c51c7cedd53f1caac1",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001140215",
+      "issuer": "REED'S, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-03-30",
+      "accession": "0001493152-21-007217",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net sales for the year ended December 31, 2020 were up 23% from the prior year period.",
+          "locator": "/html/body/p[848]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm"
+        },
+        {
+          "id": "B",
+          "text": "Core brand gross revenue increased by 20% to $45,324 compared to the same period last year, driven by Reed’s volume growth of 29%.",
+          "locator": "/html/body/p[881]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm"
+        },
+        {
+          "id": "C",
+          "text": "The sales growth focus is on channel expansion, new product introduction and improved sales execution.",
+          "locator": "/html/body/p[838]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm"
+        },
+        {
+          "id": "D",
+          "text": "The margin enhancement initiative is driven by co-packer upgrades, better leveraged purchasing and improved efficiency.",
+          "locator": "/html/body/p[838]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm"
+        },
+        {
+          "id": "E",
+          "text": "Price on our core brands remained flat from the prior year, while volume grew 20% as compared to the same period last year.",
+          "locator": "/html/body/p[881]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-30",
+          "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315221007217/form10-k.htm"
+        }
+      ],
+      "document_sha256": "eb09f675300cffb2a38c00c96064467956777e047ac329e73b8e9c522a0af57c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000057515",
+      "issuer": "LANCASTER COLONY CORP",
+      "sector": "food_manufacturing",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-04",
+      "accession": "0000057515-21-000004",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated net sales for the three months ended December 31, 2020 increased 6% to a second quarter record $375.0 million versus $355.1 million last year.",
+          "locator": "/html/body/div[188]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Consolidated gross profit for the six months ended December 31, 2020 increased 4% to $199.5 million compared to $192.0 million in the prior-year period as influenced by the same factors noted above for the three-month period but with less favorability in the sales mix.",
+          "locator": "/html/body/div[191]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Examples of such items are commitments to purchase raw materials or packaging inventory that has not yet been received as of December 31, 2020.",
+          "locator": "/html/body/div[245]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Gross profit benefited from the strong Retail sales growth and reduced Retail trade spending partially offset by higher manufacturing costs and increased commodity and freight costs.",
+          "locator": "/html/body/div[190]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income increased 8% to $58.6 million for the three months ended December 31, 2020 and increased 2% to $107.5 million for the six months ended December 31, 2020, reflecting the strong Retail sales growth and resulting more favorable sales mix, improved net price realization and our cost savings programs.",
+          "locator": "/html/body/div[203]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751521000004/lanc-20201231.htm"
+        }
+      ],
+      "document_sha256": "47f04dfa66b1f6eac777a0f10c3c2a3a829feafefb8fa818782e6e1e7f60292b",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000892222",
+      "issuer": "CRAFT BREW ALLIANCE, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2020-06-30",
+      "filing_date": "2020-08-05",
+      "accession": "0000892222-20-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/892222/000089222220000046/brew-20200630.htm",
+      "title": "10-Q",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0001103982",
+      "issuer": "MONDELEZ INTERNATIONAL, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-05",
+      "accession": "0001103982-21-000004",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "•Our 2020 net revenue and net earnings in U.S. dollars were negatively affected by currency translation losses from a generally stronger U.S. dollar relative to other currencies in the countries in which we operate.",
+          "locator": "/html/body/div[619]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "–Net revenue increased in 2020, driven by higher net pricing, favorable volume/mix and incremental net revenues from our acquisitions of Give & Go in 2020 and Perfect Snacks in 2019.",
+          "locator": "/html/body/div[676]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "During 2020, we experienced a significant increase in demand and revenue growth in certain markets as consumers increased their food purchases for in-home consumption.",
+          "locator": "/html/body/div[602]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•During the second quarter of 2020, we incurred higher operating costs primarily for labor, customer service and logistics, security, personal protective equipment and cleaning.",
+          "locator": "/html/body/div[620]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Unfavorable currency changes decreased operating income by $59 million due primarily to the strength of the U.S. dollar relative to most currencies, including the Brazilian real, Russian ruble, Indian rupee, Swiss franc, South African rand and Turkish Lira, partially offset by the strength of several currencies relative to the U.S. dollar, including the euro, Egyptian pound, Philippine peso, British pound sterling and Swedish krona.",
+          "locator": "/html/body/div[790]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398221000004/mdlz-20201231.htm"
+        }
+      ],
+      "document_sha256": "bc0ae9b8833880ebe28a65e7a62932fcd0c905cd9b4763ea82e4303e8c476605",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001005286",
+      "issuer": "LANDEC CORP CA",
+      "sector": "food_manufacturing",
+      "period_end": "2020-11-29",
+      "filing_date": "2021-01-07",
+      "accession": "0001005286-21-000009",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "The decrease in Curation Foods' revenues for the three months ended November 29, 2020, compared to the same period last year, was primarily due to a $12.5 million decrease in the fresh packaged salads and vegetables segment, which is primarily due to a (1) $6.6 million planned shift away from non-strategic revenue streams, including packaged vegetables in bags and trays, and (2) a $3.2 million decrease in green bean revenues driven by a decrease in demand from food service customers during the COVID-19 pandemic.",
+          "locator": "/html/body/div[247]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm"
+        },
+        {
+          "id": "B",
+          "text": "The increase in gross profit for the Lifecore business for the three and six months ended November 29, 2020, compared to the same period last year, was due primarily to the increased revenue in both CDMO and fermentation, as well as a favorable sales mix.",
+          "locator": "/html/body/div[262]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm"
+        },
+        {
+          "id": "C",
+          "text": "The decrease in Curation Foods’ revenues for the six months ended November 29, 2020, compared to the same period last year, was primarily due to a $26.1 million decrease in the fresh packaged salads and vegetables segment, which is primarily due to a (1) $13.2 million planned shift away from non-strategic revenue streams, including packaged vegetables in bags and trays, and (2) a $6.7 million decrease in green bean revenues driven by a decrease in demand from food service customers during the COVID-19 pandemic.",
+          "locator": "/html/body/div[248]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm"
+        },
+        {
+          "id": "D",
+          "text": "The Yucatan Foods business added a double-digit growth platform, a lower-cost infrastructure in Mexico, and higher margin product offerings that generally exhibit less sourcing volatility.",
+          "locator": "/html/body/div[212]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm"
+        },
+        {
+          "id": "E",
+          "text": "Net cash provided by operating activities during the six months ended November 29, 2020 was $18.5 million, compared to $14.9 million of net cash used in operating activities for the six months ended November 24, 2019.",
+          "locator": "/html/body/div[305]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528621000009/lndc-20201129.htm"
+        }
+      ],
+      "document_sha256": "6eafdcb7ae654149dfaa3529be66071003cb9a9c61d2318857dff9ff21bb95c6",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000023217",
+      "issuer": "CONAGRA BRANDS INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2020-11-29",
+      "filing_date": "2021-01-07",
+      "accession": "0001564590-21-000508",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "In the second quarter of fiscal 2021, results reflected an increase in net sales, with organic (excludes the impacts of foreign exchange and divested businesses) increases in each of our operating segments with the exception of a decrease in our Foodservice segment, in each case compared to the second quarter of fiscal 2020.",
+          "locator": "/html/body/p[143]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm"
+        },
+        {
+          "id": "B",
+          "text": "Net sales for the second quarter of fiscal 2021 in our Grocery & Snacks segment included an increase in volumes of 14%, excluding the impact of divestitures, compared to the prior-year period.",
+          "locator": "/html/body/p[187]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm"
+        },
+        {
+          "id": "C",
+          "text": "The increase in volumes reflected an increase across multiple categories due to increased at-home eating and replenishment of customer inventory levels in connection with the COVID-19 pandemic.",
+          "locator": "/html/body/p[187]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm"
+        },
+        {
+          "id": "D",
+          "text": "Overall gross profit increased due to increased net sales, supply chain realized productivity, favorable margin mix, cost synergies associated with the Pinnacle acquisition, and fixed cost leverage, which were partially offset by higher input and transportation costs, COVID-19 related expenses, the impact of foreign exchange, and lost profits from divested businesses.",
+          "locator": "/html/body/p[144]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm"
+        },
+        {
+          "id": "E",
+          "text": "Overall segment operating profit increased in each operating segment with the exception of our Foodservice segment.",
+          "locator": "/html/body/p[144]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000156459021000508/cag-10q_20201129.htm"
+        }
+      ],
+      "document_sha256": "2f096ab568b26ee174c7b032f20281c66a1895a0ab712f7018732c720e933a4b",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000003197",
+      "issuer": "CECO ENVIRONMENTAL CORP",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-03-03",
+      "accession": "0001564590-21-010416",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated net sales in 2020 were $316.0 million compared with $341.9 million in 2019, a decrease of $25.9 million.",
+          "locator": "/html/body/p[408]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Orders booked were $279.6 million in 2020 compared with $383.7 million in 2019.",
+          "locator": "/html/body/p[410]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "This allows us to continue to serve our customers, however, the COVID-19 pandemic has also disrupted our global operations.",
+          "locator": "/html/body/p[359]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Material costs have also increased faster than labor costs, which also reduces gross margin percentage.",
+          "locator": "/html/body/p[384]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income as reported in accordance with GAAP $ 13.3 $ 18.0 $ 10.0",
+          "locator": "/html/body/div[99]/table/tr[3]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000156459021010416/cece-10k_20201231.htm"
+        }
+      ],
+      "document_sha256": "fb88e852badb05459b408383f2d6fb9b15b8a0f1cb97f8299021cc004c30af39",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000880266",
+      "issuer": "AGCO CORP /DE",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-03-01",
+      "accession": "0000880266-21-000009",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "However, production during the first half of 2020 was severely impacted by component availability, particularly during late March and throughout April, and therefore net sales levels during 2020 were directly impacted.",
+          "locator": "/html/body/div[541]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Net loss attributable to noncontrolling interests 0.1 — —",
+          "locator": "/html/body/div[551]/table/tr[21]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "In the EME region, net sales were flat during 2020 compared to 2019, primarily due to increased sales in the second half of 2020 that helped to offset the lost production and supply chain constraints caused by the impacts from the COVID-19 pandemic experienced in the first half of 2020.",
+          "locator": "/html/body/div[583]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The increase in income from operations during 2020 was primarily the result of improved margins which benefited from positive pricing impacts, a favorable sales mix and cost control initiatives as compared to prior year.",
+          "locator": "/html/body/div[559]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Income from operations was $599.7 million in 2020 compared to $348.1 million in 2019.",
+          "locator": "/html/body/div[559]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026621000009/agco-20201231.htm"
+        }
+      ],
+      "document_sha256": "f198e800334edaf5e874b2b4198dfbfb8670d0c80494a6ebd752849f318cf76c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000832101",
+      "issuer": "IDEX CORP /DE/",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-25",
+      "accession": "0000832101-21-000017",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "•Sales of $2.4 billion were down 6.0% and organic sales were down 9.0% compared to the prior year, partially offset by a 3% increase in sales due to acquisitions (Flow MD - February 2020 and Velcora - July 2019).",
+          "locator": "/html/body/div[470]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "•Net income decreased 11% from the prior year to $377.8 million in 2020.",
+          "locator": "/html/body/div[472]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "•Adjusted net income decreased 11% from the prior year to $396.5 million in 2020.",
+          "locator": "/html/body/div[478]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Operating income of $520.7 million was down 10% from the prior year and operating margin of 22.1% was down 110 basis points from the prior year.",
+          "locator": "/html/body/div[471]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "•Adjusted operating income of $536.6 million was down 11% from the prior year and adjusted operating margin of 22.8% was down 140 basis points from the prior year.",
+          "locator": "/html/body/div[477]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210121000017/iex-20201231.htm"
+        }
+      ],
+      "document_sha256": "f08e078b8398e32b7ff39dd59905af04e9f8f2616bc656f52aa8699d36fba15c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001121484",
+      "issuer": "OIL STATES INTERNATIONAL, INC",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-22",
+      "accession": "0001121484-21-000046",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated total revenues in 2020 decreased $379.3 million, or 37%, from 2019.",
+          "locator": "/html/body/div[619]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Bidding and quoting activity, along with orders from customers, for deepwater projects improved in 2019 from 2018 levels.",
+          "locator": "/html/body/div[593]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Backlog reported by our Offshore/Manufactured Products segment decreased from $280 million as of December 31, 2019 to $219 million as of December 31, 2020.",
+          "locator": "/html/body/div[594]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "While crude oil prices have recovered some of their losses since reaching record low levels in April of 2020, the spot price of Brent and WTI crude oil averaged $42 and $39 per barrel during 2020 – down 35% and 31%, respectively, from their comparable 2019 averages.",
+          "locator": "/html/body/div[555]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Reduced demand for our products and services, coupled with a reduction in the prices we are able to charge our customers for our products and services, has adversely affected our results of operations, cash flows and financial position.",
+          "locator": "/html/body/div[596]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148421000046/ois-20201231.htm"
+        }
+      ],
+      "document_sha256": "da6b01926163fe81c88427b5b10830303def2bc2428ec9cd14e4a7d537ef9d25",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000026324",
+      "issuer": "CURTISS WRIGHT CORP",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-25",
+      "accession": "0000026324-21-000007",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Sales decreased $188 million, or 17%, to $950 million, from the comparable prior year period, primarily due to the ongoing impact of the COVID-19 pandemic on the commercial aerospace and general industrial markets.",
+          "locator": "/html/body/div[605]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "New orders decreased $258 million, or 10%, from the prior year period to $2,321 million, primarily due to a pandemic-driven decline in new orders for sensors and controls equipment, industrial vehicle and industrial valve products, and surface treatment services in the Commercial/Industrial segment.",
+          "locator": "/html/body/div[582]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The pandemic has caused demand in the commercial aerospace and general industrial end markets to be negatively impacted for the foreseeable future, the extent of which is contingent upon future developments.",
+          "locator": "/html/body/div[501]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Additionally, sustained low oil prices contributed to increased passenger growth, as declining fuel prices led to cheaper airfares for consumers.",
+          "locator": "/html/body/div[524]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income for the year decreased $115 million, or 28%, to $289 million, and operating margin decreased 410 basis points compared with 2019.",
+          "locator": "/html/body/div[572]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000007/cw-20201231.htm"
+        }
+      ],
+      "document_sha256": "4fa243e2884f49cef9c0f23a5731499346814051377a077ef1c54461a6fec9ae",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001641991",
+      "issuer": "SPX FLOW, INC.",
+      "sector": "industrial_machinery",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-19",
+      "accession": "0001641991-21-000016",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "The decreases in organic revenue were due primarily to (i) a lower level of revenue from Food and Beverage systems projects, including large dry-dairy projects, and (ii) broad-based weakness across most Industrial segment product lines, attributable primarily to reduced demand due to the effects of the COVID-19 pandemic.",
+          "locator": "/html/body/div[406]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-19",
+          "url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "•In 2019, increased to $130.1 (from $28.0 in 2018), primarily as a result of (i) a reduced investment in inventories and other components of working capital, reflective of lower order intake in 2019, compared to 2018, and lower backlog levels as of December 31, 2019, compared to December 31, 2018 and (ii) reduced payments for incentive compensation.",
+          "locator": "/html/body/div[416]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-19",
+          "url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Additionally, the Industrial segment had lower opening shippable backlog in 2020 than in 2019.",
+          "locator": "/html/body/div[428]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-19",
+          "url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Among other items, the improvement in pre-tax income was due to (i) an increase in segment profitability, (ii) investment-related gains related to an increase in the net asset value of an investment in an equity security, (iii) reduced foreign currency exchange losses, and (iv) reduced interest expense due primarily to voluntary principal prepayments on our former term loan facility of $110.0 during 2018.",
+          "locator": "/html/body/div[413]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-19",
+          "url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "•In 2020, decreased to $120.3 (from $130.1 in 2019), primarily as a result of reduced cash flows from lower segment income, due partially to the effects of the COVID-19 pandemic as previously noted.",
+          "locator": "/html/body/div[415]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-19",
+          "url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199121000016/spxf-20201231.htm"
+        }
+      ],
+      "document_sha256": "873a5abf4194816d608a0d0256807d8a90641387cabd32fd52fc338c45ee120a",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001124796",
+      "issuer": "NLIGHT, INC.",
+      "sector": "semiconductors",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-26",
+      "accession": "0001124796-21-000048",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenues increased to $222.8 million in the year ended December 31, 2020 compared to $176.6 million in the same period of 2019 as a result of higher revenue from the Aerospace and Defense market, including Nutronics, offset partially by lower revenues from the Microfabrication market.",
+          "locator": "/html/body/div[586]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The increase in Laser Products revenue for 2020 compared to 2019 was driven by higher revenue and demand from the Industrial and Aerospace and Defense markets, offset partially by lower revenue from the Microfabrication market.",
+          "locator": "/html/body/div[629]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "These items were partially offset by a $6.9 million increase in inventory and changes in other operating assets and liabilities.",
+          "locator": "/html/body/div[726]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The decrease in Industrial market revenue for 2019 compared to 2018 was driven by price reductions in China, partially offset by increased unit sales and increased sales outside of China.",
+          "locator": "/html/body/div[642]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "During the year ended December 31, 2020, net cash provided by operating activities was $13.0 million, which was primarily driven by $20.9 million of net loss reported for the period, and non‑cash adjustments of $42.1 million related to depreciation and amortization, stock-based compensation, and other items.",
+          "locator": "/html/body/div[726]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479621000048/lasr-20201231.htm"
+        }
+      ],
+      "document_sha256": "138ea27a99298604ae1623ab7c3e50d219ba609a747809b31300de5b4bfce2e9",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000743316",
+      "issuer": "MAXIM INTEGRATED PRODUCTS INC",
+      "sector": "semiconductors",
+      "period_end": "2020-12-26",
+      "filing_date": "2021-01-27",
+      "accession": "0000743316-21-000010",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net revenues were $628.3 million and $551.1 million for the three months ended December 26, 2020 and December 28, 2019, respectively.",
+          "locator": "/html/body/div[341]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm"
+        },
+        {
+          "id": "B",
+          "text": "Revenue from automotive products was up 30% driven by an increased demand for infotainment, safety and security, and powertrain products.",
+          "locator": "/html/body/div[341]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm"
+        },
+        {
+          "id": "C",
+          "text": "Our gross margin increased by 0.9 percentage points, due to higher revenues, increased factory utilization and lower inventory reserves.",
+          "locator": "/html/body/div[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm"
+        },
+        {
+          "id": "D",
+          "text": "Our gross margin percentages were 66.3% and 65.4% for the three months ended December 26, 2020 and December 28, 2019, respectively.",
+          "locator": "/html/body/div[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash provided by operating activities decreased by $5.7 million for the six months ended December 26, 2020 compared with the six months ended December 28, 2019 primarily due to changes in working capital.",
+          "locator": "/html/body/div[406]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000010/mxim-20201226.htm"
+        }
+      ],
+      "document_sha256": "8d082298efff41c25f7efbf47a8c9c75ace2720f2704eec43bf7821b25531554",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001038074",
+      "issuer": "SILICON LABORATORIES INC.",
+      "sector": "semiconductors",
+      "period_end": "2021-01-02",
+      "filing_date": "2021-02-03",
+      "accession": "0001104659-21-011613",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm",
+      "title": "FORM 10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenues increased $49.1 million in fiscal 2020 compared to fiscal 2019 due to increased revenues from both our IoT products and Infrastructure and automotive products.",
+          "locator": "/html/body/div[69]/div[2]/p[3]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "● Increased revenues of $25.5 million for our IoT products, due primarily to increased demand for our MCU products and wireless connectivity products and the addition of revenues from an acquisition.",
+          "locator": "/html/body/div[73]/div[2]/table[2]/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "Testing performed by such third parties facilitates faster delivery of products to our customers (particularly those located in Asia), shorter production cycle times, lower inventory requirements, lower costs and increased flexibility of test capacity.",
+          "locator": "/html/body/div[67]/div[2]/p[7]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "Gross margin decreased to 59.5% in fiscal 2020 compared to 60.9% in fiscal 2019 primarily due to variations in product mix.",
+          "locator": "/html/body/div[69]/div[2]/p[3]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income in fiscal 2020 was $38.3 million compared to $56.7 million in fiscal 2019.",
+          "locator": "/html/body/div[69]/div[2]/p[3]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465921011613/slab-20210102x10k.htm"
+        }
+      ],
+      "document_sha256": "9853f0f583484db05887f51bd68a2ef50a793d723e7d5a31f8b98c0cf3ad05d4",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001579910",
+      "issuer": "RESONANT INC",
+      "sector": "semiconductors",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-03-12",
+      "accession": "0001579910-21-000005",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Restrictions on travel and the imposition of stay-at-home or work remote conditions have impacted our operations and those of our customers.",
+          "locator": "/html/body/div[532]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "While we have not experienced major disruptions, customers have requested engagement deferrals and our employees ability to deliver our products and services has been impacted.",
+          "locator": "/html/body/div[532]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "However, our ability to interact with customers has been impacted by the current environment.",
+          "locator": "/html/body/div[532]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Research and development expenses increased $0.6 million from $18.9 million in 2019 to $19.5 million in 2020.",
+          "locator": "/html/body/div[543]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "In 2020, the cash used was a result of purchases of property and equipment and expenditures for patents.",
+          "locator": "/html/body/div[558]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991021000005/resn-20201231.htm"
+        }
+      ],
+      "document_sha256": "5b54393a3db1b1146fa31d11195fecdaa4dd82d29aa793c992b5ca63eccf628c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001463101",
+      "issuer": "ENPHASE ENERGY, INC.",
+      "sector": "semiconductors",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-16",
+      "accession": "0001463101-21-000016",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm",
+      "title": "FORM 10-K - FY2020",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Our revenue in the fourth quarter of 2019 and first quarter of 2020 was positively impacted by the scheduled phase-down of the investment tax credit for solar projects under Section 48(a) (the “ITC”) of the Internal Revenue Code of 1986, as amended (the “Code”).",
+          "locator": "/html/body/div[747]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "FORM 10-K - FY2020",
+          "date": "2021-02-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Our revenue is affected by changes in the volume and average selling prices of our solutions and related accessories, supply and demand, sales incentives, and competitive product offerings.",
+          "locator": "/html/body/div[764]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K - FY2020",
+          "date": "2021-02-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The COVID-19 pandemic has significantly curtailed the movement of people, goods and services and had a notable impact on general economic conditions including but not limited to the temporary closures of many businesses, “shelter in place” orders and other governmental regulations, and reduced consumer spending.",
+          "locator": "/html/body/div[757]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "FORM 10-K - FY2020",
+          "date": "2021-02-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Gross margin increased by 9.3 percentage points for the year ended December 31, 2020, as compared to the same period in 2019.",
+          "locator": "/html/body/div[799]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K - FY2020",
+          "date": "2021-02-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Net cash provided by operating activities increased by $77.3 million for the year ended December 31, 2020 compared to the year ended December 31, 2019, primarily due to an increase in our gross profit as a result of increased revenue, $24.8 million cash received of the total tariff refund request of $39.5 million, partially offset by higher operating expenses as we continue to invest in the long-term growth of our business and also by $3.1 million cash repayment deemed as an amount paid for settlement of $43.9 million aggregate principal amount of the Notes due 2024 accreted debt discount.",
+          "locator": "/html/body/div[855]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K - FY2020",
+          "date": "2021-02-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310121000016/enph-20201231.htm"
+        }
+      ],
+      "document_sha256": "48fe85828d0061ce8c26a9dfb5ae92e73a21866c95d7ba81a7bc1bff07de11da",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000723125",
+      "issuer": "MICRON TECHNOLOGY INC",
+      "sector": "semiconductors",
+      "period_end": "2020-12-03",
+      "filing_date": "2021-01-08",
+      "accession": "0000723125-21-000012",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Total Revenue: Total revenue for the first quarter of 2021 decreased 5% as compared to the fourth quarter of 2020 primarily due to the additional week in the fourth quarter of 2020.",
+          "locator": "/html/body/div[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-08",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm"
+        },
+        {
+          "id": "B",
+          "text": "As a result, we have experienced volatility in the markets that our products are sold into, driven by the move to a stay-at-home economy and fluctuations in consumer and business spending, which has affected demand for certain of our products.",
+          "locator": "/html/body/div[310]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-08",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm"
+        },
+        {
+          "id": "C",
+          "text": "In some cases, we have added alternative suppliers and increased our on-hand inventory of raw materials needed in our operations.",
+          "locator": "/html/body/div[318]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-08",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm"
+        },
+        {
+          "id": "D",
+          "text": "In addition, declines in selling prices in the first quarter of 2021 were substantially offset by increases in NAND sales volumes due to higher production and market demand.",
+          "locator": "/html/body/div[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-08",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm"
+        },
+        {
+          "id": "E",
+          "text": "•CNBU operating income decreased primarily due to declines in bit shipments and DRAM pricing.",
+          "locator": "/html/body/div[392]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-01-08",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312521000012/mu-20201203.htm"
+        }
+      ],
+      "document_sha256": "104d703efa7415b0ff351b1c875449ef169db37bda66f376b4c839b1abe210a6",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000857005",
+      "issuer": "PTC INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-04",
+      "accession": "0001564590-21-004303",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "First quarter revenue was up 20% year over year, driven by 26% recurring revenue growth.",
+          "locator": "/html/body/p[222]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Our revenue results quarter to quarter are impacted by contract terms, including the duration and start dates of our subscription contracts, due to our up-front recognition of subscription license revenue.",
+          "locator": "/html/body/p[241]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "We ended Q1’21 with $399 million of cash and cash equivalents and $1.0 billion of debt outstanding, which was comprised of senior notes with a weighted average cost of debt of 3.8%.",
+          "locator": "/html/body/p[226]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Our Q1’21 operating margin increased compared to the year-ago period, primarily due to higher revenue and continued operating expense discipline.",
+          "locator": "/html/body/p[222]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash provided by operating activities was $114 million in Q1’21, compared to $8 million in Q1’20.",
+          "locator": "/html/body/p[338]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000156459021004303/ptc-10q_20201231.htm"
+        }
+      ],
+      "document_sha256": "6bd6ad6499c02ffb23edf968bb86f5ccbfb6219cd3e3305846afc4ca182058c7",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001660134",
+      "issuer": "OKTA, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2021-01-31",
+      "filing_date": "2021-03-04",
+      "accession": "0001660134-21-000007",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For the years ended January 31, 2021, 2020 and 2019, our revenue was $835.4 million, $586.1 million and $399.3 million, respectively, representing a growth rate of 43% and 47%, respectively.",
+          "locator": "/html/body/div[798]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm"
+        },
+        {
+          "id": "B",
+          "text": "Subscription revenue increased by $243.9 million, or 44%, for the year ended January 31, 2021 compared to the year ended January 31, 2020.",
+          "locator": "/html/body/div[862]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm"
+        },
+        {
+          "id": "C",
+          "text": "The primary drivers of the changes in operating assets and liabilities related to a $142.1 million increase in deferred revenue, a $53.8 million increase in accounts payable, accrued compensation and accrued other expenses and a $19.1 million decrease in operating lease right-of-use assets, partially offset by a $81.0 million increase in deferred commissions, a $66.4 million increase in accounts receivable, a $17.2 million decrease in operating lease liabilities and a $13.2 million increase in prepaid expenses and other assets.",
+          "locator": "/html/body/div[957]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm"
+        },
+        {
+          "id": "D",
+          "text": "We have further benefited from cost savings, driven by reduced growth in employee compensation costs due to slower hiring, reductions in employee-related expenses as our sales and marketing activities shift primarily to an online-only sales format and a shift to work-from-home procedures.",
+          "locator": "/html/body/div[790]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm"
+        },
+        {
+          "id": "E",
+          "text": "During the year ended January 31, 2021, cash provided by operating activities was $128.0 million primarily due to our net loss of $266.3 million, adjusted for non-cash charges of $357.0 million and net cash inflows of $37.3 million provided by changes in our operating assets and liabilities.",
+          "locator": "/html/body/div[957]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013421000007/okta-20210131.htm"
+        }
+      ],
+      "document_sha256": "7782a81337e639f30199ef177eaa02695362c68e3d66fd1c7fa2188da3c3be79",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001348036",
+      "issuer": "AVALARA, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-25",
+      "accession": "0001564590-21-008919",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenue from subscriptions and returns represented 93% of total revenue in both 2020 and 2019.",
+          "locator": "/html/body/p[408]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Our net revenue retention rate was 107% on average for the four quarters ended December 31, 2020.",
+          "locator": "/html/body/p[436]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "These factors, along with higher revenues, resulted in an increase in accounts receivable, which when considered net of the change in deferred revenue unfavorably impacted operating cash flows by $3.4 million.",
+          "locator": "/html/body/p[604]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Operating expenses increased to $419.4 million in 2020 from $323.0 million in 2019, as we continued to make significant investments in our future growth.",
+          "locator": "/html/body/p[417]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating loss was $62.0 million during 2020 compared to an operating loss of $55.9 million during 2019.",
+          "locator": "/html/body/p[418]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-25",
+          "url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459021008919/avlr-10k_20201231.htm"
+        }
+      ],
+      "document_sha256": "539700e7d43d59038967a89bae07c4ae8c9b1feeb33dc5e3ef6e2c859e5931ae",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000718877",
+      "issuer": "ACTIVISION BLIZZARD, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-23",
+      "accession": "0001628280-21-002828",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "•consolidated net revenues increased 25% to $8.1 billion and consolidated operating income increased 70% to $2.7 billion, as compared to consolidated net revenues of $6.5 billion and consolidated operating income of $1.6 billion in 2019;",
+          "locator": "/html/body/div[575]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "•a $186 million increase in Blizzard net bookings driven by higher net bookings from World of Warcraft, which includes the release of World of Warcraft: Shadowlands in November 2020, partially offset by lower net bookings from Overwatch;",
+          "locator": "/html/body/div[622]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "(2)Since certain of our games are hosted online or include significant online functionality that represents a separate performance obligation, we defer the transaction price allocable to the online functionality from the sale of these games and then recognize the attributable revenues over the relevant estimated service periods, which are generally less than a year.",
+          "locator": "/html/body/div[771]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "This table reflects the net effect from the deferrals of revenues and recognition of deferred revenues, along with the related cost of revenues, on certain of our online enabled products.",
+          "locator": "/html/body/div[771]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "•cash flows from operating activities were approximately $2.25 billion, an increase of 23%, as compared to $1.83 billion in 2019.",
+          "locator": "/html/body/div[579]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828021002828/atvi-20201231.htm"
+        }
+      ],
+      "document_sha256": "fa271837438ab47c5e397698c2b2269197eba7c2d7e8de3605269cf4c1f28e84",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001448056",
+      "issuer": "NEW RELIC, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-05",
+      "accession": "0001448056-21-000008",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For the nine months ended December 31, 2020 and 2019, our revenue was $495.0 million and $439.9 million, respectively, representing year-over-year growth of 13%.",
+          "locator": "/html/body/div[248]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Due to our historical reliance upon a subscription-based business model, the effects of the COVID-19 pandemic to date were not",
+          "locator": "/html/body/div[287]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "We had remaining performance obligations, or backlog, in the amount of $648.3 million and $635.2 million as of December 31, 2020 and March 31, 2020, respectively, consisting of both billed and unbilled consideration.",
+          "locator": "/html/body/div[283]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "In addition, our revenue and deferred revenue in fiscal 2021 have been negatively impacted by the slowdown in activity associated with the COVID-19 pandemic as well as by our change in pricing strategy announced on July 30, 2020.",
+          "locator": "/html/body/div[287]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "During the nine months ended December 31, 2020, cash provided by operating activities was $41.4 million as a result of a net loss of $132.0 million, adjusted by non-cash charges of $187.9 million and a change of $14.4 million in our operating assets and liabilities.",
+          "locator": "/html/body/div[382]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2021-02-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805621000008/newr-20201231.htm"
+        }
+      ],
+      "document_sha256": "2dda5fb45de5e7c46889a681ae525dd2ffbf4d01b0bf08cea483420b7ab9848f",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001627014",
+      "issuer": "BLACK KNIGHT, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-26",
+      "accession": "0001627014-21-000005",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For the year ended December 31, 2020, approximately $37 million in revenues were delayed beyond 2020.",
+          "locator": "/html/body/div[495]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The increase in Operating Expenses was primarily driven by the effect of current and prior year acquisitions, higher net personnel expense, software subscription and maintenance costs, and data acquisition costs, partially offset by lower equity-based compensation, medical costs and travel related costs.",
+          "locator": "/html/body/div[606]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The extraordinary effects of the broad-based response to the COVID-19 pandemic have delayed the timing of certain revenues.",
+          "locator": "/html/body/div[495]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "As of December 31, 2020, DNB's closing share price was $24.90 and the fair value of our investment in DNB was $1,365.8 million.",
+          "locator": "/html/body/div[482]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "The $37.1 million increase in cash provided by operating activities in 2020 compared to 2019 is primarily related to higher earnings and the timing of payments for employer payroll taxes, partially offset by acquisition-related payments.",
+          "locator": "/html/body/div[642]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000162701421000005/bki-20201231.htm"
+        }
+      ],
+      "document_sha256": "bf77956da69148fd931a4cd181ea5f8017711362d82e27783650ef4fa6ef0007",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001498710",
+      "issuer": "SPIRIT AIRLINES, INC.",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-10",
+      "accession": "0001498710-21-000020",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Operating revenues decreased by $2,020.5 million, or 52.7%, to $1,810.0 million in 2020 compared to 2019, primarily due to a decrease in traffic of 45.2%, and a decrease in average yield of 13.8%, year over year, driven by reduced air travel demand as a result of the impact of the COVID-19 pandemic.",
+          "locator": "/html/body/div[1008]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-10",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "With the sudden and significant reduction in air travel demand resulting from the COVID-19 pandemic, our load factor significantly decreased beginning in the latter part of March 2020 and remained as such through the remainder of the year.",
+          "locator": "/html/body/div[775]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-10",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "However, as a result of the COVID-19 pandemic, we experienced sharp declines in passenger demand and bookings beginning in March 2020, which continued through the remainder of the year, and we had unprecedented levels of cancellations and capacity reductions.",
+          "locator": "/html/body/div[774]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-10",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Reduced planned non-fuel operating costs for 2020 by approximately $30 million, excluding savings related to reduced capacity;",
+          "locator": "/html/body/div[879]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-10",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "In 2020, we generated operating revenues of $1,810.0 million and had an operating loss of $507.8 million resulting in a negative operating margin of 28.1% and a net loss of $428.7 million.",
+          "locator": "/html/body/div[1003]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-10",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871021000020/save-20201231.htm"
+        }
+      ],
+      "document_sha256": "cbf00f4f6f0c2ab969e529ff38ac3a3269b8f9f9d35b23c0947eaf8ddc49f802",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000799233",
+      "issuer": "HEARTLAND EXPRESS INC",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-22",
+      "accession": "0000799233-21-000016",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Operating revenue increased $48.5 million (8.1%), to $645.3 million for the year ended December 31, 2020 from $596.8 million for the year ended December 31, 2019.",
+          "locator": "/html/body/div[651]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Demand for our freight services was elevated throughout all of 2018 (peak in mid-2018 and began to decline in the second half of 2018), which resulted in tight freight capacity.",
+          "locator": "/html/body/div[616]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The Millis Transfer acquisition added additional dry van truckload capacity to our core operations and this resulted in increased revenues and increased operating costs after August 26, 2019.",
+          "locator": "/html/body/div[583]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "This led to an overall increase in freight demand and favorable pricing environment as freight rates increased throughout the second half of 2020.",
+          "locator": "/html/body/div[616]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Our cash flow from operating activities for the twelve months ended December 31, 2020 was $178.9 million or 27.7% of operating revenues, compared to $146.4 million or 24.5% of operating revenues in 2019.",
+          "locator": "/html/body/div[614]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923321000016/htld-20201231.htm"
+        }
+      ],
+      "document_sha256": "6b7bd5165f471f9c2eaefc2c7f9a4ae9656c06280143210d8f0a1967454bbe67",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000056047",
+      "issuer": "KIRBY CORP",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-23",
+      "accession": "0001140361-21-005871",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For 2020, 65% of the Company’s revenues were generated by its marine transportation segment.",
+          "locator": "/html/body/div[582]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "Consequently, the Company’s marine transportation business is directly affected by the volumes produced by the Company’s petroleum, petrochemical and refining customer base.",
+          "locator": "/html/body/div[582]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "The decreases were primarily due to reduced barge utilization in the inland and coastal markets and decreased term and spot contract pricing in the inland market, each as a result of a reduction in demand due to the COVID-19 pandemic, lower fuel rebills, retirements of three large coastal barges, and planned shipyard activity in the coastal market.",
+          "locator": "/html/body/div[585]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "There was no material rate increase on January 1, 2020, related to annual escalators for labor and the producer price index on a number of inland multi-year contracts.",
+          "locator": "/html/body/div[591]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "The Company’s marine transportation segment’s revenues for 2020 decreased 12% compared to 2019 and operating income decreased 24%, compared to 2019.",
+          "locator": "/html/body/div[585]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000114036121005871/brhc10019790_10k.htm"
+        }
+      ],
+      "document_sha256": "e0ba7e420e7ec96a745d4302ec1afff7d4c0027495d5cdb0b52ee5784ed2d323",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000878927",
+      "issuer": "OLD DOMINION FREIGHT LINE, INC.",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-24",
+      "accession": "0001564590-21-008056",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm",
+      "title": "FORM 10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenue decreased $94.0 million, or 2.3%, in 2020 compared to 2019.",
+          "locator": "/html/body/p[349]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Generally, freight is rated by a class system, which is established by the National Motor Freight Traffic Association, Inc. Light, bulky freight typically has a higher class and is priced at higher revenue per hundredweight than dense, heavy freight.",
+          "locator": "/html/body/div[66]/table/tr",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Generally, increases in weight per shipment indicate higher demand for our customers’ products and overall increased economic activity.",
+          "locator": "/html/body/div[67]/table/tr",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "We regularly upgrade our technological capabilities to improve our customer service and lower our operating costs.",
+          "locator": "/html/body/p[335]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "The change in our cash flows provided by operating activities during 2020 as compared to 2019 was impacted by an increase in our income taxes paid of $109.2 million and fluctuations in certain working capital accounts, which were partially offset by an increase in net income.",
+          "locator": "/html/body/p[371]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2021-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000156459021008056/odfl-10k_20201231.htm"
+        }
+      ],
+      "document_sha256": "1477c2771789c39b8000501dc1e072b3364e0b82a20be60e1ca2f36d7f510048",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000003453",
+      "issuer": "MATSON, INC.",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-02-26",
+      "accession": "0001558370-21-001909",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Ocean Transportation revenue increased $187.3 million, or 11.2 percent, during the year ended December 31, 2020, compared with the year ended December 31, 2019.",
+          "locator": "/html/body/div[63]/div[2]/p[2]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "Ocean Transportation: The Company’s container volume in the Hawaii service in the fourth quarter 2020 was 0.8 percent higher year-over-year primarily due to an additional westbound sailing and higher demand for sustenance and home improvement goods, partially offset by lower tourism activity as a result of the pandemic.",
+          "locator": "/html/body/div[59]/div[2]/p[3]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "In China, the Company’s container volume in the fourth quarter 2020 was 139.1 percent higher year-over-year due to volume from the CLX+ service in addition to higher volume on the CLX service as a result of our increased capacity in the tradelane.",
+          "locator": "/html/body/div[59]/div[2]/p[5]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "The Alaska economy continues to be negatively impacted by the economic effects from the COVID-19 pandemic and a low oil price environment.",
+          "locator": "/html/body/div[59]/div[2]/p[9]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "Logistics: In the fourth quarter 2020, operating income for the Company’s Logistics segment was $9.6 million, or $2.0 million higher compared to the operating income achieved in the fourth quarter 2019.",
+          "locator": "/html/body/div[59]/div[2]/p[13]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-02-26",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837021001909/matx-20201231x10k.htm"
+        }
+      ],
+      "document_sha256": "c90530b02751afe15950184f178dc27630cf1552b8d5d05da0243e32118378dd",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001158463",
+      "issuer": "JETBLUE AIRWAYS CORP",
+      "sector": "transportation",
+      "period_end": "2020-12-31",
+      "filing_date": "2021-03-02",
+      "accession": "0001628280-21-003705",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "In 2020, the decrease in Passenger revenue was primarily driven by the unprecedented decline in demand for travel tied to COVID-19 and its effects.",
+          "locator": "/html/body/div[658]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The unprecedented coronavirus (\"COVID-19\") pandemic and the related travel restrictions and physical distancing measures implemented throughout the world have significantly reduced demand for air travel.",
+          "locator": "/html/body/div[568]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm"
+        },
+        {
+          "id": "C",
+          "text": "We have significantly reduced our capacity to a level that maintains essential services to align with demand.",
+          "locator": "/html/body/div[592]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Operating expense decreased by 36.0% to $4.7 billion.",
+          "locator": "/html/body/div[631]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm"
+        },
+        {
+          "id": "E",
+          "text": "The CARES Act permits net operating loss (NOL) carryovers and carrybacks to offset 100% of taxable income for taxable years beginning before 2021.",
+          "locator": "/html/body/div[691]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2021-03-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000162828021003705/jblu-20201231.htm"
+        }
+      ],
+      "document_sha256": "3349931a5e4eabf43850a8ffb09ce8ebdad70042604bbc9089531acffefc8050",
+      "status": "complete",
+      "reason": ""
+    }
+  ]
+}

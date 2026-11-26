@@ -1,0 +1,59 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35701,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 419,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7c-def6-79d3-acc4-de69016b76c5",
+  "packet_sha256": "586a239daad51a7993f97ac9493526e3c258d0e571a619dc79f6ee086e9125f7",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-1\",\"alerts\":[{\"cik\":\"0000026324\",\"reason\":\"Curtiss-Wright’s consolidated sales growth slowed from +8.57% year over year in September to -0.25% in December. Orders rose 11% (B), supporting a March quarter above -5%. Lower commercial aerospace sales (A) and supply disruptions affecting both Curtiss-Wright and its customers (C) support a forecast of a decline of at least 5% in April–June.\"}]},\n    {\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-1\",\"alerts\":[{\"cik\":\"0001124796\",\"reason\":\"nLIGHT’s consolidated revenue growth slowed from +17.01% year over year in September to +2.66% in December. Industrial unit sales outside China were still rising, supporting a March result above -5%, while Chinese unit sales fell and product mix lowered average selling prices (D). Weaker demand and delayed customer capital spending (B) support a forecast of a decline of at least 5% in April–June.\"}]},\n    {\"sector\":\"2022Q2/transportation-1\",\"alerts\":[{\"cik\":\"0000799233\",\"reason\":\"Heartland Express’s year-over-year revenue change improved from -5.96% in September to -4.91% in December. Strong freight rates (D) support a March forecast just above -5%. Even with favorable pricing, full-year revenue fell 5.9% (A), and a deterioration of just 0.10 percentage point from December’s pace would put April–June below the threshold.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000026324",
+            "reason": "Curtiss-Wright’s consolidated sales growth slowed from +8.57% year over year in September to -0.25% in December. Orders rose 11% (B), supporting a March quarter above -5%. Lower commercial aerospace sales (A) and supply disruptions affecting both Curtiss-Wright and its customers (C) support a forecast of a decline of at least 5% in April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "nLIGHT’s consolidated revenue growth slowed from +17.01% year over year in September to +2.66% in December. Industrial unit sales outside China were still rising, supporting a March result above -5%, while Chinese unit sales fell and product mix lowered average selling prices (D). Weaker demand and delayed customer capital spending (B) support a forecast of a decline of at least 5% in April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000799233",
+            "reason": "Heartland Express’s year-over-year revenue change improved from -5.96% in September to -4.91% in December. Strong freight rates (D) support a March forecast just above -5%. Even with favorable pricing, full-year revenue fell 5.9% (A), and a deterioration of just 0.10 percentage point from December’s pace would put April–June below the threshold."
+          }
+        ]
+      }
+    ]
+  }
+}

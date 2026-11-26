@@ -1,0 +1,67 @@
+{
+  "text": [
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Q2 total sales fell 3.18% year over year, from $144.6 million to $140.0 million (A). Gross margin fell from 52.1% to 50.3% (D), and inventory ended 9.5% lower year over year (C). I forecast Q3 sales growth will remain above -5.00% and Q4 will cross to -5.00% or below. The timing is uncertain because Q3 sales were not yet disclosed."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/retail-3",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Consolidated sales growth slowed from -1.73% year over year in Q1 to -3.17% in Q2 (A). Extending that 1.44-point deterioration per quarter implies about -4.61% in Q3 and -6.06% in Q4, placing the first crossing in the target quarter."
+        },
+        {
+          "cik": "0000897429",
+          "reason": "Consolidated net sales growth slowed from -1.14% year over year in Q1 to -2.43% in Q2, when companywide comparable sales fell 3.0% (A). Extending the 1.29-point deterioration implies about -3.73% in Q3 and -5.02% in Q4. The forecast clears the threshold narrowly, and rising units and spend per transaction (D) temper confidence."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/retail-3",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Reported sales YoY -1.73% then -3.17%. Target is step 2; preceding -4.61% versus target -6.06%."
+        },
+        {
+          "cik": "0000897429",
+          "reason": "Reported sales YoY -1.14% then -2.43%. Target is step 2; preceding -3.73% versus target -5.02%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/retail-3",
+      "alerts": []
+    }
+  ]
+}

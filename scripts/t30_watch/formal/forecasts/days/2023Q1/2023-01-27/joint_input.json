@@ -1,0 +1,67 @@
+{
+  "cutoff": "2023-01-27",
+  "sectors": {
+    "2023Q1/retail-2": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000084129",
+          "issuer": "RITE AID CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2023-02-26",
+          "latest_filed_period_end": "2022-11-26",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-01-04",
+              "text": "Revenues decreased 2.3% and 2.7% for the thirteen and thirty-nine week periods ended November 26, 2022, compared to an increase of 1.8% and 2.1% for the thirteen and thirty-nine week periods ended November 27, 2021."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-01-04",
+              "text": "Pharmacy same store sales increased by 9.5% for the thirteen week period ended November 26, 2022 compared to an increase of 5.9% for the thirteen week period ended November 27, 2021."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-01-04",
+              "text": "Operating cash flow was negatively impacted by the build of the CMS receivable, increases in inventory due to seasonal build and inflation and the timing of warehouse and third party payables."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-01-04",
+              "text": "Net loss was also impacted by decreased Adjusted EBITDA, higher facility exit and impairment charges driven by the Company’s previously announced store closures, and higher interest expense."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-01-04",
+              "text": "Cash used in operating activities was $318.9 million compared to cash provided by operating activities of $36.6 million for the thirty-nine week periods ended November 26, 2022 and November 27, 2021, respectively."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-08-27",
+                "filed": "2022-10-05",
+                "reported_sales_usd": 5901069000,
+                "year_ago_reported_sales_usd": 6113000000,
+                "yoy_percent": "-3.4669"
+              },
+              {
+                "quarter_end": "2022-11-26",
+                "filed": "2023-01-04",
+                "reported_sales_usd": 6083346000,
+                "year_ago_reported_sales_usd": 6228880000,
+                "yoy_percent": "-2.3364"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

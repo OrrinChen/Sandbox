@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-006",
+    "stage": "submit",
+    "prompt_sha256": "761d0edc89155885d25b2b0ebddc82d0829459cd5aedf3ba3c08e01bc20163f5",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122b-a511-7b43-bbee-70f3e0fdc6c1"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-38537\":{\"fills\":[{\"range\":\"A3:A500\",\"formula\":\"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(9+COUNTIF($B$3:B3,\\\"<>\\\"),\\\"000\\\"))\"}],\"formulas\":{}},\"sheet-38662\":{\"formulas\":{\"A2\":\"=IFERROR(INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!B:B,0)),INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!C:C,0)))\"}},\"sheet-38969\":{\"fills\":[{\"range\":\"R2:R20\",\"formula\":\"=IF(ISERROR(S2),\\\"Upload\\\",IF(AND(U2>=-1,U2<=1),\\\"Do not Upload\\\",IF(U2>1,\\\"to Check\\\",\\\"\\\")))\"}],\"formulas\":{}},\"sheet-39432\":{\"fills\":[{\"range\":\"M2:M5\",\"formula\":\"=IF(L2<=SUM(D2,F2,H2,J2),LOOKUP(2,1/(D2:J2<>\\\"\\\"),E2:K2),SUMPRODUCT(B2:J2,C2:K2)/SUM(B2,D2,F2,H2,J2))\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18103,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 284,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-38537\":{\"fills\":[{\"range\":\"A3:A500\",\"formula\":\"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(9+COUNTIF($B$3:B3,\\\"<>\\\"),\\\"000\\\"))\"}],\"formulas\":{}},\"sheet-38662\":{\"formulas\":{\"A2\":\"=IFERROR(INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!B:B,0)),INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!C:C,0)))\"}},\"sheet-38969\":{\"fills\":[{\"range\":\"R2:R20\",\"formula\":\"=IF(ISERROR(S2),\\\"Upload\\\",IF(AND(U2>=-1,U2<=1),\\\"Do not Upload\\\",IF(U2>1,\\\"to Check\\\",\\\"\\\")))\"}],\"formulas\":{}},\"sheet-39432\":{\"fills\":[{\"range\":\"M2:M5\",\"formula\":\"=IF(L2<=SUM(D2,F2,H2,J2),LOOKUP(2,1/(D2:J2<>\\\"\\\"),E2:K2),SUMPRODUCT(B2:J2,C2:K2)/SUM(B2,D2,F2,H2,J2))\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122b-a511-7b43-bbee-70f3e0fdc6c1",
+    "raw": "{\"sheet-38537\":{\"fills\":[{\"range\":\"A3:A500\",\"formula\":\"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(9+COUNTIF($B$3:B3,\\\"<>\\\"),\\\"000\\\"))\"}],\"formulas\":{}},\"sheet-38662\":{\"formulas\":{\"A2\":\"=IFERROR(INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!B:B,0)),INDEX('Job Code Table'!A:A,MATCH(J1688,'Job Code Table'!C:C,0)))\"}},\"sheet-38969\":{\"fills\":[{\"range\":\"R2:R20\",\"formula\":\"=IF(ISERROR(S2),\\\"Upload\\\",IF(AND(U2>=-1,U2<=1),\\\"Do not Upload\\\",IF(U2>1,\\\"to Check\\\",\\\"\\\")))\"}],\"formulas\":{}},\"sheet-39432\":{\"fills\":[{\"range\":\"M2:M5\",\"formula\":\"=IF(L2<=SUM(D2,F2,H2,J2),LOOKUP(2,1/(D2:J2<>\\\"\\\"),E2:K2),SUMPRODUCT(B2:J2,C2:K2)/SUM(B2,D2,F2,H2,J2))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18103,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 284,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

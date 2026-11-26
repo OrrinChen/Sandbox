@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35042,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 279,
+    "reasoning_output_tokens": 23
+  },
+  "thread": "01a20369-cc33-7681-9926-8bcc3dea63ef",
+  "packet_sha256": "f9f9decd43f08b6e87b7c23ec90fdf7b08e55531864e9b6be77b16853b8c445d",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[{\"cik\":\"0000023217\",\"reason\":\"Conagra’s reported net sales rose in fiscal Q3 (A). Grocery & Snacks volume grew 9% excluding divestitures (B), partly because customers replenished inventory (C). As those orders taper and Conagra laps elevated at-home demand, reported net sales could fall at least 5% year on year in fiscal Q4 or Q1.\"}]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[]},\n    {\"sector\":\"semiconductors\",\"alerts\":[]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[{\"cik\":\"0000718877\",\"reason\":\"Activision Blizzard’s consolidated net revenue rose 27% in Q1 (A). Stay-at-home orders gave players more time to play and lifted demand early in the pandemic (C). Q2 and Q3 face that stronger prior-year demand, so a return toward earlier playing habits could push quarterly revenue at least 5% below the prior year.\"}]},\n    {\"sector\":\"transportation\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "Conagra’s reported net sales rose in fiscal Q3 (A). Grocery & Snacks volume grew 9% excluding divestitures (B), partly because customers replenished inventory (C). As those orders taper and Conagra laps elevated at-home demand, reported net sales could fall at least 5% year on year in fiscal Q4 or Q1."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Activision Blizzard’s consolidated net revenue rose 27% in Q1 (A). Stay-at-home orders gave players more time to play and lifted demand early in the pandemic (C). Q2 and Q3 face that stronger prior-year demand, so a return toward earlier playing habits could push quarterly revenue at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

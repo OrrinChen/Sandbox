@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-008",
+    "stage": "submit",
+    "prompt_sha256": "1d97f5601fda59a62237f92345320182411280f02f1dea5774bd42fed33553b5",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122c-933b-7cb2-8173-825b4eeb5c37"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-41680\":{\"formulas\":{\"F2\":\"=TRIM(E2)\",\"F3\":\"=TRIM(E3)\",\"F4\":\"=TRIM(E4)\",\"F5\":\"=TRIM(E5)\",\"F6\":\"=TRIM(E6)\",\"F7\":\"=TRIM(E7)\",\"F8\":\"=TRIM(E8)\",\"F9\":\"=TRIM(E9)\",\"F10\":\"=TRIM(E10)\",\"F11\":\"=TRIM(E11)\",\"F12\":\"=TRIM(E12)\",\"F13\":\"=TRIM(E13)\",\"F14\":\"=TRIM(E14)\",\"F15\":\"=TRIM(E15)\",\"F16\":\"=TRIM(E16)\",\"F17\":\"=TRIM(E17)\",\"F18\":\"=TRIM(E18)\"}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B:$B,8+5*INT((ROW()-5)/5))))\"}],\"formulas\":{}},\"sheet-42526\":{\"formulas\":{\"B2\":\"=A2/18*5\",\"B3\":\"=A3/18*5\",\"B4\":\"=A4/18*5\",\"B5\":\"=A5/18*5\",\"B6\":\"=A6/18*5\",\"B7\":\"=A7/18*5\",\"B8\":\"=A8/18*5\",\"B9\":\"=A9/18*5\",\"B10\":\"=A10/18*5\",\"B11\":\"=A11/18*5\",\"B12\":\"=A12/18*5\",\"B13\":\"=A13/18*5\",\"B14\":\"=A14/18*5\",\"B15\":\"=A15/18*5\",\"B16\":\"=A16/18*5\"}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 19088,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 459,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-41680\":{\"formulas\":{\"F2\":\"=TRIM(E2)\",\"F3\":\"=TRIM(E3)\",\"F4\":\"=TRIM(E4)\",\"F5\":\"=TRIM(E5)\",\"F6\":\"=TRIM(E6)\",\"F7\":\"=TRIM(E7)\",\"F8\":\"=TRIM(E8)\",\"F9\":\"=TRIM(E9)\",\"F10\":\"=TRIM(E10)\",\"F11\":\"=TRIM(E11)\",\"F12\":\"=TRIM(E12)\",\"F13\":\"=TRIM(E13)\",\"F14\":\"=TRIM(E14)\",\"F15\":\"=TRIM(E15)\",\"F16\":\"=TRIM(E16)\",\"F17\":\"=TRIM(E17)\",\"F18\":\"=TRIM(E18)\"}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B:$B,8+5*INT((ROW()-5)/5))))\"}],\"formulas\":{}},\"sheet-42526\":{\"formulas\":{\"B2\":\"=A2/18*5\",\"B3\":\"=A3/18*5\",\"B4\":\"=A4/18*5\",\"B5\":\"=A5/18*5\",\"B6\":\"=A6/18*5\",\"B7\":\"=A7/18*5\",\"B8\":\"=A8/18*5\",\"B9\":\"=A9/18*5\",\"B10\":\"=A10/18*5\",\"B11\":\"=A11/18*5\",\"B12\":\"=A12/18*5\",\"B13\":\"=A13/18*5\",\"B14\":\"=A14/18*5\",\"B15\":\"=A15/18*5\",\"B16\":\"=A16/18*5\"}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122c-933b-7cb2-8173-825b4eeb5c37",
+    "raw": "{\"sheet-41680\":{\"formulas\":{\"F2\":\"=TRIM(E2)\",\"F3\":\"=TRIM(E3)\",\"F4\":\"=TRIM(E4)\",\"F5\":\"=TRIM(E5)\",\"F6\":\"=TRIM(E6)\",\"F7\":\"=TRIM(E7)\",\"F8\":\"=TRIM(E8)\",\"F9\":\"=TRIM(E9)\",\"F10\":\"=TRIM(E10)\",\"F11\":\"=TRIM(E11)\",\"F12\":\"=TRIM(E12)\",\"F13\":\"=TRIM(E13)\",\"F14\":\"=TRIM(E14)\",\"F15\":\"=TRIM(E15)\",\"F16\":\"=TRIM(E16)\",\"F17\":\"=TRIM(E17)\",\"F18\":\"=TRIM(E18)\"}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B:$B,8+5*INT((ROW()-5)/5))))\"}],\"formulas\":{}},\"sheet-42526\":{\"formulas\":{\"B2\":\"=A2/18*5\",\"B3\":\"=A3/18*5\",\"B4\":\"=A4/18*5\",\"B5\":\"=A5/18*5\",\"B6\":\"=A6/18*5\",\"B7\":\"=A7/18*5\",\"B8\":\"=A8/18*5\",\"B9\":\"=A9/18*5\",\"B10\":\"=A10/18*5\",\"B11\":\"=A11/18*5\",\"B12\":\"=A12/18*5\",\"B13\":\"=A13/18*5\",\"B14\":\"=A14/18*5\",\"B15\":\"=A15/18*5\",\"B16\":\"=A16/18*5\"}}}",
+    "usage": {
+      "input_tokens": 19088,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 459,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

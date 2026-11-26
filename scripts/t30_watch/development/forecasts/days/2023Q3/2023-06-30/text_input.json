@@ -1,0 +1,49 @@
+{
+  "cutoff": "2023-06-30",
+  "sectors": {
+    "2023Q3/retail-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000018255",
+          "issuer": "CATO CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2023-07-30",
+          "latest_filed_period_end": "2023-04-29",
+          "records": [
+            {
+              "id": "A",
+              "title": "FORM 10-Q",
+              "date": "2023-05-25",
+              "text": "The total compensation expense during the three months ended April 29, 2023 was $"
+            },
+            {
+              "id": "B",
+              "title": "FORM 10-Q",
+              "date": "2023-05-25",
+              "text": "The current inflationary environment continues to negatively impact the Company’s operating costs, including higher wages, operating supplies and services."
+            },
+            {
+              "id": "C",
+              "title": "FORM 10-Q",
+              "date": "2023-05-25",
+              "text": "In addition, increased costs for fuel, food, and housing, including rent, as well as other consumable products across the economy, are negatively impacting our customers’ disposable income, and our customers’ willingness to purchase discretionary items such as apparel, jewelry and shoes."
+            },
+            {
+              "id": "D",
+              "title": "FORM 10-Q",
+              "date": "2023-05-25",
+              "text": "These rising interest rates have adversely affected the availability and cost of credit for both businesses and our customers."
+            },
+            {
+              "id": "E",
+              "title": "FORM 10-Q",
+              "date": "2023-05-25",
+              "text": "Total retail sales for the first quarter were $190.3 million compared to last year’s first quarter sales of $204.9 million."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

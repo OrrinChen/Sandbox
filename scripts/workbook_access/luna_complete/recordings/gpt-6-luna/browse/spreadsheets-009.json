@@ -1,0 +1,621 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "8ada405f819aeb6dcac63c549e213f104cab08ed206c48df6fa2d99840c1514e",
+    "041a908fdb5496b63031945c2a61f43ea764b3dfcfb6575927db6608cb2bf5d1",
+    "926720d3c7d8b29d76867f2e4efb25a841b335d9fa0872c9e6fb918d79fefb97"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-43406",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "submission": {
+        "fills": [
+          {
+            "range": "C7:C20",
+            "formula": "=IF(D7=\"H\",COUNTIF($D$7:D7,\"H\"),IF(D7=\"S\",LOOKUP(2,1/($D$7:D7=\"H\"),$C$7:C7)+COUNTIFS(INDEX($D:$D,MATCH(2,1/($D$7:D7=\"H\"),ROW($D$7:D7))+1):D7,\"S\")/10,\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A6:D20"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A6:D20",
+            "range_size": 60,
+            "cells": [
+              [
+                "A6",
+                "ROW"
+              ],
+              [
+                "B6",
+                "HELPER"
+              ],
+              [
+                "C6",
+                "What I'd like to see"
+              ],
+              [
+                "D6",
+                "Type"
+              ],
+              [
+                "A7",
+                "1"
+              ],
+              [
+                "C7",
+                "1"
+              ],
+              [
+                "D7",
+                "H"
+              ],
+              [
+                "A8",
+                "2"
+              ],
+              [
+                "C8",
+                "1.1"
+              ],
+              [
+                "D8",
+                "S"
+              ],
+              [
+                "A9",
+                "3"
+              ],
+              [
+                "C9",
+                "1.2"
+              ],
+              [
+                "D9",
+                "S"
+              ],
+              [
+                "A10",
+                "4"
+              ],
+              [
+                "C10",
+                "2"
+              ],
+              [
+                "D10",
+                "H"
+              ],
+              [
+                "A11",
+                "5"
+              ],
+              [
+                "C11",
+                "2.1"
+              ],
+              [
+                "D11",
+                "S"
+              ],
+              [
+                "A12",
+                "6"
+              ],
+              [
+                "C12",
+                "3"
+              ],
+              [
+                "D12",
+                "H"
+              ],
+              [
+                "A13",
+                "7"
+              ],
+              [
+                "C13",
+                "3.1"
+              ],
+              [
+                "D13",
+                "S"
+              ],
+              [
+                "A14",
+                "8"
+              ],
+              [
+                "D14",
+                "S"
+              ],
+              [
+                "A15",
+                "9"
+              ],
+              [
+                "D15",
+                "S"
+              ],
+              [
+                "A16",
+                "10"
+              ],
+              [
+                "D16",
+                "S"
+              ],
+              [
+                "A17",
+                "11"
+              ],
+              [
+                "D17",
+                "S"
+              ],
+              [
+                "A18",
+                "12"
+              ],
+              [
+                "D18",
+                "H"
+              ],
+              [
+                "A19",
+                "13"
+              ],
+              [
+                "D19",
+                "S"
+              ],
+              [
+                "A20",
+                "14"
+              ],
+              [
+                "D20",
+                "H"
+              ]
+            ],
+            "total": 39,
+            "truncated": false,
+            "blank_count": 21
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 70846,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1857,
+        "reasoning_output_tokens": 1158
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-43436",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "submission": {
+        "fills": [
+          {
+            "range": "I2:I6",
+            "formula": "=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\"<=\"&EOMONTH(DATE(2022,5,1),0),$D$2:$D$12,\">\"&EOMONTH(DATE(2022,5,1),-1))"
+          },
+          {
+            "range": "J2:J6",
+            "formula": "=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\"<=\"&EOMONTH(DATE(2022,6,1),0),$D$2:$D$12,\">\"&EOMONTH(DATE(2022,6,1),-1))"
+          },
+          {
+            "range": "K2:K6",
+            "formula": "=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\"<=\"&EOMONTH(DATE(2022,7,1),0),$D$2:$D$12,\">\"&EOMONTH(DATE(2022,7,1),-1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:K12"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:K12",
+            "range_size": 132,
+            "cells": [
+              [
+                "A1",
+                "Record #"
+              ],
+              [
+                "B1",
+                "Department"
+              ],
+              [
+                "C1",
+                "Date Created"
+              ],
+              [
+                "D1",
+                "Date Closed"
+              ],
+              [
+                "G1",
+                "Department"
+              ],
+              [
+                "H1",
+                "Open as of today"
+              ],
+              [
+                "I1",
+                "Open by of end of May 2022"
+              ],
+              [
+                "J1",
+                "Open by end of Jun 2022"
+              ],
+              [
+                "K1",
+                "Open by end of Jul 2022"
+              ],
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "A"
+              ],
+              [
+                "C2",
+                "2022-04-23 00:00:00"
+              ],
+              [
+                "G2",
+                "A"
+              ],
+              [
+                "H2",
+                "1"
+              ],
+              [
+                "A3",
+                "2"
+              ],
+              [
+                "B3",
+                "B"
+              ],
+              [
+                "C3",
+                "2022-06-12 00:00:00"
+              ],
+              [
+                "D3",
+                "2022-07-03 00:00:00"
+              ],
+              [
+                "G3",
+                "B"
+              ],
+              [
+                "H3",
+                "2"
+              ],
+              [
+                "A4",
+                "3"
+              ],
+              [
+                "B4",
+                "B"
+              ],
+              [
+                "C4",
+                "2021-11-06 00:00:00"
+              ],
+              [
+                "D4",
+                "2022-05-27 00:00:00"
+              ],
+              [
+                "G4",
+                "C"
+              ],
+              [
+                "H4",
+                "1"
+              ],
+              [
+                "A5",
+                "4"
+              ],
+              [
+                "B5",
+                "B"
+              ],
+              [
+                "C5",
+                "2021-12-03 00:00:00"
+              ],
+              [
+                "G5",
+                "D"
+              ],
+              [
+                "H5",
+                "0"
+              ],
+              [
+                "A6",
+                "5"
+              ],
+              [
+                "B6",
+                "B"
+              ],
+              [
+                "C6",
+                "2022-03-22 00:00:00"
+              ],
+              [
+                "G6",
+                "E"
+              ],
+              [
+                "H6",
+                "1"
+              ],
+              [
+                "A7",
+                "6"
+              ],
+              [
+                "B7",
+                "A"
+              ],
+              [
+                "C7",
+                "2022-06-21 00:00:00"
+              ],
+              [
+                "D7",
+                "2022-07-10 00:00:00"
+              ],
+              [
+                "A8",
+                "7"
+              ],
+              [
+                "B8",
+                "B"
+              ],
+              [
+                "C8",
+                "2022-03-10 00:00:00"
+              ],
+              [
+                "D8",
+                "2022-07-13 00:00:00"
+              ],
+              [
+                "A9",
+                "8"
+              ],
+              [
+                "B9",
+                "C"
+              ],
+              [
+                "C9",
+                "2021-11-03 00:00:00"
+              ],
+              [
+                "A10",
+                "9"
+              ],
+              [
+                "B10",
+                "D"
+              ],
+              [
+                "C10",
+                "2021-10-04 00:00:00"
+              ],
+              [
+                "D10",
+                "2022-05-26 00:00:00"
+              ],
+              [
+                "A11",
+                "10"
+              ],
+              [
+                "B11",
+                "E"
+              ],
+              [
+                "C11",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A12",
+                "11"
+              ],
+              [
+                "B12",
+                "C"
+              ],
+              [
+                "C12",
+                "2022-04-12 00:00:00"
+              ],
+              [
+                "D12",
+                "2022-07-02 00:00:00"
+              ]
+            ],
+            "total": 58,
+            "truncated": false,
+            "blank_count": 74
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 70846,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1857,
+        "reasoning_output_tokens": 1158
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-43589",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "submission": {
+        "formulas": {
+          "B2": "=VALUE(TRIM(MID(A2,FIND(\"to\",A2)+2,LEN(A2))))-VALUE(LEFT(A2,FIND(\"to\",A2)-1))+1"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 70846,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1857,
+        "reasoning_output_tokens": 1158
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-43775",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "submission": {
+        "fills": [
+          {
+            "range": "G6:Z6",
+            "formula": "=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E3:Z6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E3:Z6",
+            "range_size": 88,
+            "cells": [
+              [
+                "E3",
+                "Product List"
+              ],
+              [
+                "H3",
+                "Product 1"
+              ],
+              [
+                "I3",
+                "Product 2"
+              ],
+              [
+                "J3",
+                "Product 3"
+              ],
+              [
+                "K3",
+                "Product 4"
+              ],
+              [
+                "L3",
+                "Product 5"
+              ],
+              [
+                "I6",
+                "Product 1"
+              ],
+              [
+                "M6",
+                "Product 2"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 80
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 70846,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1857,
+        "reasoning_output_tokens": 1158
+      },
+      "model_calls": 3
+    }
+  ]
+}

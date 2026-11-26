@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "5a750903d223ff2fccc4bf90e9f8c9c4949b258058b5e7ecb9c452e75fa70f26",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-bundle-conveyor-repairs-into-two-line-stops\": \"SELECT a.permit_id AS first_permit, b.permit_id AS second_permit, COALESCE((SELECT SUM(r.priority_points) FROM repair_request AS r WHERE (a.start_hour BETWEEN r.earliest_hour AND r.latest_hour) OR (b.start_hour BETWEEN r.earliest_hour AND r.latest_hour)), 0) AS covered_points FROM stop_permit AS a JOIN stop_permit AS b ON b.start_hour >= a.start_hour + 4 ORDER BY covered_points DESC, a.start_hour ASC, b.start_hour ASC LIMIT 1\",\n  \"decision-buy-stock-limited-patch-cord-packs\": \"WITH counts(n) AS (VALUES (0), (1), (2), (3)), choices AS (SELECT o.*, c.n FROM pack_offer AS o JOIN counts AS c ON c.n <= o.stock_limit) SELECT m.n AS mixed_packs, s.n AS short_packs, l.n AS long_packs, m.n*m.price_cents + s.n*s.price_cents + l.n*l.price_cents AS total_cents, t.ticket_id FROM install_ticket AS t CROSS JOIN choices AS m CROSS JOIN choices AS s CROSS JOIN choices AS l WHERE m.pack_code = 'M' AND s.pack_code = 'S' AND l.pack_code = 'L' AND m.n*m.short_qty + s.n*s.short_qty + l.n*l.short_qty >= t.need_short AND m.n*m.long_qty + s.n*s.long_qty + l.n*l.long_qty >= t.need_long ORDER BY total_cents, m.n + s.n + l.n, m.n, s.n, l.n LIMIT 1\",\n  \"decision-calibrate-clock-from-paired-punches\": \"WITH offsets AS (SELECT reference_s AS t, bench_ms - 1000*reference_s AS ms FROM paired_punches), calibration AS (SELECT a.t, a.ms, 1000*(b.ms - a.ms)/(b.t - a.t) AS drift_ppm FROM offsets AS a JOIN offsets AS b ON a.t < b.t) SELECT ms - t*drift_ppm/1000 AS initial_offset_ms, drift_ppm FROM calibration\",\n  \"decision-canonical-circular-etch\": \"WITH RECURSIVE starts(piece_id, mark, start_offset) AS (SELECT piece_id, mark, 0 FROM etchings UNION ALL SELECT piece_id, mark, start_offset + 1 FROM starts WHERE start_offset + 1 < length(mark)), rotations AS (SELECT piece_id, substr(mark || mark, start_offset + 1, length(mark)) AS canonical_mark, start_offset FROM starts), ranked AS (SELECT rotations.*, row_number() OVER (PARTITION BY piece_id COLLATE BINARY ORDER BY canonical_mark COLLATE BINARY, start_offset) AS position FROM rotations) SELECT piece_id, canonical_mark, start_offset FROM ranked WHERE position = 1 ORDER BY piece_id COLLATE BINARY\"\n}",
+  "submissions": {
+    "decision-bundle-conveyor-repairs-into-two-line-stops": "SELECT a.permit_id AS first_permit, b.permit_id AS second_permit, COALESCE((SELECT SUM(r.priority_points) FROM repair_request AS r WHERE (a.start_hour BETWEEN r.earliest_hour AND r.latest_hour) OR (b.start_hour BETWEEN r.earliest_hour AND r.latest_hour)), 0) AS covered_points FROM stop_permit AS a JOIN stop_permit AS b ON b.start_hour >= a.start_hour + 4 ORDER BY covered_points DESC, a.start_hour ASC, b.start_hour ASC LIMIT 1",
+    "decision-buy-stock-limited-patch-cord-packs": "WITH counts(n) AS (VALUES (0), (1), (2), (3)), choices AS (SELECT o.*, c.n FROM pack_offer AS o JOIN counts AS c ON c.n <= o.stock_limit) SELECT m.n AS mixed_packs, s.n AS short_packs, l.n AS long_packs, m.n*m.price_cents + s.n*s.price_cents + l.n*l.price_cents AS total_cents, t.ticket_id FROM install_ticket AS t CROSS JOIN choices AS m CROSS JOIN choices AS s CROSS JOIN choices AS l WHERE m.pack_code = 'M' AND s.pack_code = 'S' AND l.pack_code = 'L' AND m.n*m.short_qty + s.n*s.short_qty + l.n*l.short_qty >= t.need_short AND m.n*m.long_qty + s.n*s.long_qty + l.n*l.long_qty >= t.need_long ORDER BY total_cents, m.n + s.n + l.n, m.n, s.n, l.n LIMIT 1",
+    "decision-calibrate-clock-from-paired-punches": "WITH offsets AS (SELECT reference_s AS t, bench_ms - 1000*reference_s AS ms FROM paired_punches), calibration AS (SELECT a.t, a.ms, 1000*(b.ms - a.ms)/(b.t - a.t) AS drift_ppm FROM offsets AS a JOIN offsets AS b ON a.t < b.t) SELECT ms - t*drift_ppm/1000 AS initial_offset_ms, drift_ppm FROM calibration",
+    "decision-canonical-circular-etch": "WITH RECURSIVE starts(piece_id, mark, start_offset) AS (SELECT piece_id, mark, 0 FROM etchings UNION ALL SELECT piece_id, mark, start_offset + 1 FROM starts WHERE start_offset + 1 < length(mark)), rotations AS (SELECT piece_id, substr(mark || mark, start_offset + 1, length(mark)) AS canonical_mark, start_offset FROM starts), ranked AS (SELECT rotations.*, row_number() OVER (PARTITION BY piece_id COLLATE BINARY ORDER BY canonical_mark COLLATE BINARY, start_offset) AS position FROM rotations) SELECT piece_id, canonical_mark, start_offset FROM ranked WHERE position = 1 ORDER BY piece_id COLLATE BINARY"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-3e8c-7792-99f3-2a1104599af4",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22308,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 626,
+    "reasoning_output_tokens": 0
+  }
+}

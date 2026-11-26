@@ -1,0 +1,68 @@
+{
+  "wave": "2024Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000029905",
+  "issuer": "DOVER CORP",
+  "cutoff": "2024-03-02",
+  "projected_target_start": "2024-04-01",
+  "status": "complete",
+  "period_end": "2023-12-31",
+  "filing_date": "2024-02-09",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000029905",
+    "issuer": "DOVER CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2024-02-09",
+        "text": "For the year ended December 31, 2023, consolidated revenue was $8.4 billion, a decrease of $70.0 million or 0.8%, as compared to the prior year."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2024-02-09",
+        "text": "Bookings decreased 4.4% over the prior year to $8.0 billion for the year ended December 31, 2023."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2024-02-09",
+        "text": "The decrease in inventories is due to reduced purchasing of inventories as supply chains have normalized."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2024-02-09",
+        "text": "Pricing and productivity initiatives continued during the year to offset the impact of lower volumes across some of the Company's businesses."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2024-02-09",
+        "text": "Cash flow from operating activities for the year ended December 31, 2023 increased by $530.6 million compared to 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-09-30",
+        "filed": "2023-10-24",
+        "reported_sales_usd": 2153268000,
+        "year_ago_reported_sales_usd": 2158291000,
+        "yoy_percent": "-0.2327"
+      },
+      {
+        "quarter_end": "2023-12-31",
+        "filed": "2024-02-09",
+        "reported_sales_usd": 2105757000,
+        "year_ago_reported_sales_usd": 2139181000,
+        "yoy_percent": "-1.5625"
+      }
+    ],
+    "status": "complete"
+  }
+}

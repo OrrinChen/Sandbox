@@ -1,0 +1,255 @@
+[
+  {
+    "task_id": "decision-platform-wait-across-a-frequency-change",
+    "tool": "sqlite.query",
+    "instruction": "For each platform, measure the total waiting time experienced by one hypothetical rider arriving at each integer minute from open_min inclusive to close_min exclusive. All times are integer minutes on the same operating day. A rider boards the first train departing that platform at or after arrival, including a train departing after the observation window. No train is full. A null depart_min denotes a canceled train. Duplicate departure minutes at one platform represent simultaneous trains. Each window has a known departure at or after close_min. Return platform_id, rider_count, wait_minutes in platform_id order. rider_count is the number of hypothetical arrivals and wait_minutes is their summed waiting time. Only depart_min can be null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "platform_window": {
+        "columns": [
+          "platform_id TEXT",
+          "open_min INTEGER",
+          "close_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Ash",
+            2,
+            9
+          ],
+          [
+            "Elm",
+            4,
+            8
+          ]
+        ]
+      },
+      "train_call": {
+        "columns": [
+          "platform_id TEXT",
+          "depart_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Ash",
+            0
+          ],
+          [
+            "Ash",
+            4
+          ],
+          [
+            "Ash",
+            null
+          ],
+          [
+            "Ash",
+            10
+          ],
+          [
+            "Elm",
+            5
+          ],
+          [
+            "Elm",
+            5
+          ],
+          [
+            "Elm",
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "platform_id",
+      "rider_count",
+      "wait_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-pooled-freight-booking",
+    "tool": "sqlite.query",
+    "instruction": "Two partners must each move one load, one on the east route and one on the west route. Choose exactly one quote for each route. The partners pool their advance cash and loading crew, so the combined advance_cents and crew_slots must each fit the corresponding limit in the single pool_limit row. All quotes serve their route equally well. fee_cents is the full freight expense including any advance. rebate_cents is a confirmed credit against that expense, with NULL meaning zero. The credit arrives after loading and cannot fund the advance. Minimize combined expense net of credits, then minimize combined advance, then choose the ascending binary text pair (east quote_code, west quote_code). Quote codes are unique, crew slots are whole slots, all monetary fields are integer cents, and only rebate_cents can be NULL. At least one pair is feasible. Return the single winning row with columns east_quote, west_quote, net_cents, advance_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "freight_quote": {
+        "columns": [
+          "quote_code TEXT",
+          "route_code TEXT",
+          "fee_cents INTEGER",
+          "rebate_cents INTEGER",
+          "advance_cents INTEGER",
+          "crew_slots INTEGER"
+        ],
+        "rows": [
+          [
+            "E1",
+            "east",
+            600,
+            200,
+            500,
+            1
+          ],
+          [
+            "E2",
+            "east",
+            540,
+            null,
+            180,
+            2
+          ],
+          [
+            "E3",
+            "east",
+            510,
+            30,
+            260,
+            1
+          ],
+          [
+            "W1",
+            "west",
+            480,
+            100,
+            350,
+            2
+          ],
+          [
+            "W2",
+            "west",
+            500,
+            50,
+            240,
+            1
+          ]
+        ]
+      },
+      "pool_limit": {
+        "columns": [
+          "cash_cents INTEGER",
+          "slot_count INTEGER"
+        ],
+        "rows": [
+          [
+            610,
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_quote",
+      "west_quote",
+      "net_cents",
+      "advance_cents"
+    ]
+  },
+  {
+    "task_id": "decision-portable-check-in-desk-dispatch",
+    "tool": "csv.export",
+    "instruction": "Assign the tournament's one portable desk to exactly one pod that has a spare socket. Each pod keeps its fixed desks. All entrants are present at opening, and each desk processes one entrant per minute, so a pod clears in the whole number of minutes needed to process everyone in parallel. Minimize the time until all pods clear, then the sum of pod clearance times, then the receiving pod ID in binary ascending order. The socket flag is 1 for available and 0 otherwise. Each pod has at least one fixed desk, entrants are nonnegative, and at least one socket is available. Pod IDs are unique uppercase ASCII letters and no fields are null. Return one row with the single column csv_body containing the complete dispatch.csv text. Use the literal header pod_id,desk_count,clear_min followed by one line per pod in ascending pod ID order with its final total desks and clearance minutes. Separate fields with commas, use decimal integers without padding, and terminate every line including the last with LF. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "checkin_pod": {
+        "columns": [
+          "pod_id TEXT",
+          "entrants INTEGER",
+          "fixed_desks INTEGER",
+          "spare_socket INTEGER"
+        ],
+        "rows": [
+          [
+            "C",
+            15,
+            2,
+            1
+          ],
+          [
+            "A",
+            10,
+            1,
+            1
+          ],
+          [
+            "B",
+            22,
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-post-crate-deposit-movements",
+    "tool": "sqlite.query",
+    "instruction": "Construct deposit_movements.csv with columns day_no, liability_change_cents, ordered by day_no ascending. Each crate_image row is a complete after-image of one rental lot following a change. At each position the lot's refundable deposit liability is its outstanding crate_count times its deposit_cents per crate. A revised deposit rate applies to every crate then outstanding in that lot. Count and rate can change together. Lots start with zero liability before their first image. Positions are unique per lot and increase chronologically, including within a day. Sum signed changes in liability across all lots by integer operating day. Use the entire file as history but export only observed days 2 through 4 inclusive, retaining observed days whose net change is zero. An increase is positive. All inputs are non-NULL integers except the non-NULL text lot_code. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crate_image": {
+        "columns": [
+          "lot_code TEXT",
+          "feed_pos INTEGER",
+          "day_no INTEGER",
+          "crate_count INTEGER",
+          "deposit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "amber",
+            1,
+            1,
+            4,
+            100
+          ],
+          [
+            "blue",
+            1,
+            1,
+            2,
+            150
+          ],
+          [
+            "amber",
+            3,
+            2,
+            3,
+            120
+          ],
+          [
+            "amber",
+            2,
+            2,
+            4,
+            120
+          ],
+          [
+            "blue",
+            2,
+            2,
+            0,
+            150
+          ],
+          [
+            "green",
+            1,
+            3,
+            2,
+            170
+          ],
+          [
+            "green",
+            2,
+            4,
+            2,
+            170
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "day_no",
+      "liability_change_cents"
+    ]
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "task_id": "decision-verify-relocated-boardings-against-dispatch-notices",
+    "tool": "sqlite.query",
+    "instruction": "Audit the scheduled calls in planned_call. Return a call only if a field record confirms passenger boarding at a temporary stop authorized for its scheduled stop, and no field record confirms boarding at the scheduled stop itself. A notice authorizes its temp_stop from first_min inclusive to last_min exclusive, evaluated at the call's plan_min. A null last_min means no expiry. Field records belong to calls by call_id. Event code BOARD confirms boarding, while PASS records a vehicle sighting. The structured fields encode the accompanying primary text. For each qualifying call cite the actual notice_id and record_id of a matching pair. If several pairs qualify, choose the lexicographically smallest notice_id, then the smallest record_id for that notice. All minutes are on one operating day, all IDs are unique within their own table, and only last_min can be null. Return call_id, temp_stop, notice_id, record_id in call_id order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dispatch_notice": {
+        "columns": [
+          "notice_id TEXT",
+          "plan_stop TEXT",
+          "temp_stop TEXT",
+          "first_min INTEGER",
+          "last_min INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "N2",
+            "Pier",
+            "Arch",
+            10,
+            20,
+            "Move Pier boarding to Arch for the paving shift."
+          ],
+          [
+            "N1",
+            "Pier",
+            "Arch",
+            12,
+            16,
+            "Use Arch for Pier calls during the crane lift."
+          ],
+          [
+            "N3",
+            "Mill",
+            "Bank",
+            14,
+            null,
+            "Board Mill passengers at Bank until further notice."
+          ]
+        ]
+      },
+      "field_record": {
+        "columns": [
+          "record_id TEXT",
+          "call_id TEXT",
+          "seen_stop TEXT",
+          "event_code TEXT",
+          "field_text TEXT"
+        ],
+        "rows": [
+          [
+            "F4",
+            "C1",
+            "Arch",
+            "BOARD",
+            "Rear door admitted riders at Arch."
+          ],
+          [
+            "F1",
+            "C1",
+            "Arch",
+            "BOARD",
+            "Front door admitted the Arch queue."
+          ],
+          [
+            "F2",
+            "C2",
+            "Arch",
+            "BOARD",
+            "Queue boarded at Arch."
+          ],
+          [
+            "F3",
+            "C3",
+            "Bank",
+            "PASS",
+            "Coach passed Bank with doors closed."
+          ],
+          [
+            "F5",
+            "C4",
+            "Bank",
+            "BOARD",
+            "Two riders boarded at Bank."
+          ],
+          [
+            "F6",
+            "C4",
+            "Mill",
+            "BOARD",
+            "Coach also picked up the Mill queue."
+          ]
+        ]
+      },
+      "planned_call": {
+        "columns": [
+          "call_id TEXT",
+          "plan_stop TEXT",
+          "plan_min INTEGER"
+        ],
+        "rows": [
+          [
+            "C1",
+            "Pier",
+            12
+          ],
+          [
+            "C2",
+            "Pier",
+            20
+          ],
+          [
+            "C3",
+            "Mill",
+            15
+          ],
+          [
+            "C4",
+            "Mill",
+            18
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "call_id",
+      "temp_stop",
+      "notice_id",
+      "record_id"
+    ]
+  },
+  {
+    "task_id": "decision-versioned-net-payment-file",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of the outbound payment file at the close of day 8. Each flow_code identifies one economic obligation. The highest rev_no recorded on or before day 8 replaces all earlier revisions of that flow, including its account and currency. Revision numbers are unique within a flow. A latest state_code of 'cancel' extinguishes the flow regardless of its stored amount. For the remaining 'live' flows, net signed_minor by account_code and ccy. Positive amounts are payable and negative amounts are receivable, in the named currency’s minor units. Export only strictly positive net balances. Account and currency codes contain only uppercase ASCII letters, so no CSV quoting is needed. All input fields are non-null. Return a single TEXT column csv_text with the literal header account,ccy,pay_minor, followed by the data records sorted by account then currency in ascending binary order. Use decimal integers without grouping, comma separators, and one LF after every record including the header and final record. A header-only file is valid. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "flow_revision": {
+        "columns": [
+          "flow_code TEXT",
+          "rev_no INTEGER",
+          "record_day INTEGER",
+          "state_code TEXT",
+          "account_code TEXT",
+          "ccy TEXT",
+          "signed_minor INTEGER"
+        ],
+        "rows": [
+          [
+            "F",
+            1,
+            1,
+            "live",
+            "WEST",
+            "EUR",
+            900
+          ],
+          [
+            "F",
+            2,
+            6,
+            "live",
+            "EAST",
+            "EUR",
+            700
+          ],
+          [
+            "G",
+            1,
+            2,
+            "live",
+            "EAST",
+            "EUR",
+            -250
+          ],
+          [
+            "H",
+            1,
+            3,
+            "live",
+            "WEST",
+            "GBP",
+            600
+          ],
+          [
+            "H",
+            2,
+            8,
+            "cancel",
+            "WEST",
+            "GBP",
+            600
+          ],
+          [
+            "J",
+            1,
+            8,
+            "live",
+            "EAST",
+            "GBP",
+            80
+          ],
+          [
+            "J",
+            2,
+            9,
+            "cancel",
+            "EAST",
+            "GBP",
+            80
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-warehouse-gate-correction-file",
+    "tool": "csv.export",
+    "instruction": "Produce the full text of gate_corrections.csv for a completed warehouse shift. The warehouse already imported one beam-counter total per gate. Scanner messages give replacement totals in crates. For each imported gate, the message with greatest revision_no is authoritative, even if its scan_crates is null. Null withdraws scanner confirmation. No message also means no confirmation. Emit a correction only for a confirmed total different from the imported total. Ignore messages for other gates. Gate tags are unique non-null text without line breaks, imported totals are non-null, and revision numbers are unique within a gate. Return one row with the single column csv_body. Start with the literal header gate_tag,delta_crates. In ascending binary gate-tag order, append one line per correction. Always surround the tag with double quotes and double any embedded double quote. Write the signed difference (scanner minus imported) as a decimal integer without a plus sign. End every line, including the header, with one LF. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "gate_imports": {
+        "columns": [
+          "gate_tag TEXT",
+          "beam_crates INTEGER"
+        ],
+        "rows": [
+          [
+            "Dock,2",
+            30
+          ],
+          [
+            "A\"1",
+            15
+          ],
+          [
+            "West",
+            10
+          ],
+          [
+            "Spare",
+            0
+          ]
+        ]
+      },
+      "scan_messages": {
+        "columns": [
+          "gate_tag TEXT",
+          "revision_no INTEGER",
+          "scan_crates INTEGER"
+        ],
+        "rows": [
+          [
+            "West",
+            4,
+            null
+          ],
+          [
+            "Dock,2",
+            2,
+            27
+          ],
+          [
+            "West",
+            1,
+            18
+          ],
+          [
+            "A\"1",
+            3,
+            17
+          ],
+          [
+            "Dock,2",
+            1,
+            30
+          ],
+          [
+            "Other",
+            1,
+            9
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-water-tariff-across-register-exchanges",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the variable water charge for each service in the supplied billing cycle. Each row is one complete, nonoverlapping register run within that cycle. An exchange ends one run and begins another on the same service. Opening and closing readings are cumulative whole cubic meters on that individual register, including any commissioning offset. Bill the first 10 cubic meters per service at 4 cents each and all additional cubic meters at 7 cents each. There are no fixed charges, missing runs, or nulls. Include services with zero use. Return service_code, volume_m3, charge_cents, one row per service, ordered by service_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "register_run": {
+        "columns": [
+          "service_code TEXT",
+          "register_code TEXT",
+          "opening_m3 INTEGER",
+          "closing_m3 INTEGER"
+        ],
+        "rows": [
+          [
+            "bay",
+            "r4",
+            80,
+            88
+          ],
+          [
+            "dock",
+            "r2",
+            12,
+            22
+          ],
+          [
+            "bay",
+            "r7",
+            3,
+            10
+          ],
+          [
+            "shed",
+            "r9",
+            5,
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "service_code",
+      "volume_m3",
+      "charge_cents"
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "939268ca2b055a5144c04cc82abe6f5354cbf6e721ade5fba76dab92694e8ac7",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-45063\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B6\",\n        \"formula\": \"=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45300\": {\n    \"fills\": [\n      {\n        \"range\": \"B1:B4\",\n        \"formula\": \"=LEFT(A1,FIND(\\\"FT\\\",A1&\\\"FT\\\")-1)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45937\": {\n    \"fills\": [\n      {\n        \"range\": \"E7:E9\",\n        \"formula\": \"=IF(COUNTIFS($H$20:$H$22,\\\"<=\\\"&C7,$I$20:$I$22,\\\">=\\\"&C7),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-46167\": {\n    \"formulas\": {\n      \"D2\": \"=SUMIF(A:A,111111,B:B)\"\n    }\n  }\n}",
+  "submissions": {
+    "sheet-45063": {
+      "fills": [
+        {
+          "range": "B2:B6",
+          "formula": "=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-45300": {
+      "fills": [
+        {
+          "range": "B1:B4",
+          "formula": "=LEFT(A1,FIND(\"FT\",A1&\"FT\")-1)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-45937": {
+      "fills": [
+        {
+          "range": "E7:E9",
+          "formula": "=IF(COUNTIFS($H$20:$H$22,\"<=\"&C7,$I$20:$I$22,\">=\"&C7),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-46167": {
+      "formulas": {
+        "D2": "=SUMIF(A:A,111111,B:B)"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-32fb-7f62-b279-5b8c96340e6c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 24246,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 280,
+    "reasoning_output_tokens": 0
+  }
+}

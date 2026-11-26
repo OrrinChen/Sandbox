@@ -1,0 +1,102 @@
+{
+  "stage": "development sampling frame only",
+  "selection_as_of": "2020-12-31",
+  "inputs": [
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q1.zip",
+      "member": "sub.txt",
+      "sha256": "5c89b0295c403903909c34b9293d9a050f589b0722585f3ee6d6035b16501950"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q2.zip",
+      "member": "sub.txt",
+      "sha256": "98b22c06bef3114129df460122f6bb0dc8dc87e217ab393144e56c815f28b09f"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q3.zip",
+      "member": "sub.txt",
+      "sha256": "bc21f3f831c75fb4f63952f01dc8823c9537db6a44da020aa8a167e663b325fa"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q4.zip",
+      "member": "sub.txt",
+      "sha256": "aa21f0660fed6c25f42ffe6a7b1cb62098bd56f51327aade4884e059a19b5d25"
+    }
+  ],
+  "industry_sic_ranges": {
+    "retail": [
+      [
+        5200,
+        5999
+      ]
+    ],
+    "food_manufacturing": [
+      [
+        2000,
+        2099
+      ]
+    ],
+    "industrial_machinery": [
+      [
+        3500,
+        3569
+      ],
+      [
+        3580,
+        3599
+      ]
+    ],
+    "semiconductors": [
+      [
+        3674,
+        3674
+      ]
+    ],
+    "prepackaged_software": [
+      [
+        7372,
+        7372
+      ]
+    ],
+    "transportation": [
+      [
+        4000,
+        4599
+      ]
+    ]
+  },
+  "seed": "sector-watch-dev-v1",
+  "selection": "Most recent original 2020 10-K per CIK. US address and incorporation; large accelerated or accelerated filer. Select the six smallest SHA-256(seed|10-digit CIK) per sector.",
+  "excluded_pilot_ciks": [
+    "0000027419",
+    "0000060667",
+    "0000354950",
+    "0000764478",
+    "0000794367",
+    "0000885639"
+  ],
+  "eligible_issuers_by_sector": {
+    "retail": 137,
+    "food_manufacturing": 46,
+    "industrial_machinery": 67,
+    "semiconductors": 49,
+    "prepackaged_software": 84,
+    "transportation": 42
+  },
+  "selected_by_sector": {
+    "retail": 6,
+    "food_manufacturing": 6,
+    "industrial_machinery": 6,
+    "semiconductors": 6,
+    "prepackaged_software": 6,
+    "transportation": 6
+  },
+  "company_count": 36,
+  "cutoff_count": 12,
+  "scheduled_company_cutoffs": 432,
+  "scope": "Original roster at all 12 calendar-quarter ends; no later survivor filter or replacement. Future data collection must mark unavailable reports, exits, duplicate information vintages and unresolvable horizons explicitly.",
+  "outputs_sha256": {
+    "companies.csv": "68077ff4407a9ac079a3861326552a58f3f77c809fc9490d993e71edc78273e1",
+    "company_quarters.csv": "47f686f5e2b43807e69a88979ec2500c3b5bffaa8e955ea9137dc9c979b9b4c8"
+  }
+}

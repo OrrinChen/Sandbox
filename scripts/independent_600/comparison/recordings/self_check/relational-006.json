@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "4417038013826ba43bbb2c0edd904900d3351897df83d524e1e198e5c9521c80",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-assign-survey-heads-before-simultaneous-readings\": \"SELECT l.head_id AS left_head, r.head_id AS right_head, MAX(ABS(l.residual_mm), ABS(r.residual_mm)) AS worst_mm, ABS(l.residual_mm) + ABS(r.residual_mm) AS combined_mm, l.fit_min + r.fit_min AS prep_min FROM fit_trial AS l JOIN fit_trial AS r ON l.head_id <> r.head_id CROSS JOIN prep_window AS w WHERE l.pad_id = 'L' AND r.pad_id = 'R' AND l.residual_mm IS NOT NULL AND r.residual_mm IS NOT NULL AND l.fit_min + r.fit_min <= w.allowed_min ORDER BY worst_mm, combined_mm, prep_min, left_head COLLATE BINARY, right_head COLLATE BINARY LIMIT 1\",\n  \"decision-attribute-signal-with-time-uncertainty\": \"SELECT s.signal_id, (SELECT CASE WHEN COUNT(*) = 1 THEN MIN(i.interval_id) END FROM source_intervals AS i WHERE i.start_ms <= s.center_ms + s.error_ms AND i.end_ms >= s.center_ms - s.error_ms) AS interval_id FROM signals AS s ORDER BY s.signal_id COLLATE BINARY\",\n  \"decision-audit-abandons-across-a-bulletin-change\": \"WITH audit AS (SELECT c.call_key, c.exit_sec - CASE b.primary_text WHEN 'Measure delay from queue entry.' THEN c.enter_sec WHEN 'Measure delay from greeting completion.' THEN c.greeting_end_sec END AS elapsed_sec, b.source_id, b.threshold_sec FROM call_outcomes AS c JOIN queue_bulletins AS b ON b.effective_sec = (SELECT MAX(q.effective_sec) FROM queue_bulletins AS q WHERE q.effective_sec <= c.enter_sec) WHERE c.outcome = 'abandoned') SELECT call_key, elapsed_sec, source_id FROM audit WHERE elapsed_sec >= threshold_sec ORDER BY call_key\",\n  \"decision-audit-disputed-save-credits\": \"SELECT s.keeper_code, s.play_code, n.source_id, n.finding_text FROM save_log AS s JOIN review_notes AS n ON n.play_code = s.play_code AND n.final_flag = 1 AND n.revision_no = (SELECT MAX(r.revision_no) FROM review_notes AS r WHERE r.play_code = s.play_code AND r.final_flag = 1) WHERE n.finding_text IN ('Shot was wide.', 'Defender stopped the shot.') ORDER BY s.keeper_code COLLATE BINARY, s.play_code COLLATE BINARY\"\n}",
+  "submissions": {
+    "decision-assign-survey-heads-before-simultaneous-readings": "SELECT l.head_id AS left_head, r.head_id AS right_head, MAX(ABS(l.residual_mm), ABS(r.residual_mm)) AS worst_mm, ABS(l.residual_mm) + ABS(r.residual_mm) AS combined_mm, l.fit_min + r.fit_min AS prep_min FROM fit_trial AS l JOIN fit_trial AS r ON l.head_id <> r.head_id CROSS JOIN prep_window AS w WHERE l.pad_id = 'L' AND r.pad_id = 'R' AND l.residual_mm IS NOT NULL AND r.residual_mm IS NOT NULL AND l.fit_min + r.fit_min <= w.allowed_min ORDER BY worst_mm, combined_mm, prep_min, left_head COLLATE BINARY, right_head COLLATE BINARY LIMIT 1",
+    "decision-attribute-signal-with-time-uncertainty": "SELECT s.signal_id, (SELECT CASE WHEN COUNT(*) = 1 THEN MIN(i.interval_id) END FROM source_intervals AS i WHERE i.start_ms <= s.center_ms + s.error_ms AND i.end_ms >= s.center_ms - s.error_ms) AS interval_id FROM signals AS s ORDER BY s.signal_id COLLATE BINARY",
+    "decision-audit-abandons-across-a-bulletin-change": "WITH audit AS (SELECT c.call_key, c.exit_sec - CASE b.primary_text WHEN 'Measure delay from queue entry.' THEN c.enter_sec WHEN 'Measure delay from greeting completion.' THEN c.greeting_end_sec END AS elapsed_sec, b.source_id, b.threshold_sec FROM call_outcomes AS c JOIN queue_bulletins AS b ON b.effective_sec = (SELECT MAX(q.effective_sec) FROM queue_bulletins AS q WHERE q.effective_sec <= c.enter_sec) WHERE c.outcome = 'abandoned') SELECT call_key, elapsed_sec, source_id FROM audit WHERE elapsed_sec >= threshold_sec ORDER BY call_key",
+    "decision-audit-disputed-save-credits": "SELECT s.keeper_code, s.play_code, n.source_id, n.finding_text FROM save_log AS s JOIN review_notes AS n ON n.play_code = s.play_code AND n.final_flag = 1 AND n.revision_no = (SELECT MAX(r.revision_no) FROM review_notes AS r WHERE r.play_code = s.play_code AND r.final_flag = 1) WHERE n.finding_text IN ('Shot was wide.', 'Defender stopped the shot.') ORDER BY s.keeper_code COLLATE BINARY, s.play_code COLLATE BINARY"
+  },
+  "attempt": 1,
+  "thread": "01a20e18-9eed-7561-8274-845a860817a8",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 21338,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 538,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-010",
+    "stage": "submit",
+    "prompt_sha256": "b0ddf44f62db5633fbd53c8d8deeea9c0085e6ed41e090528510c7892553f872",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122d-80bd-7811-99d8-f14daacd9547"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-44264\":{\"formulas\":{\"J7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R7\",\"K7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R7\",\"L7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R7\",\"M7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R7\",\"N7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R7\",\"J8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R8\",\"K8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R8\",\"L8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R8\",\"M8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R8\",\"N8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R8\",\"J9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R9\",\"K9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R9\",\"L9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R9\",\"M9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R9\",\"N9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R9\"}},\"sheet-44266\":{\"fills\":[{\"range\":\"B2:B12\",\"formula\":\"=IFERROR(INDEX(Data!$G$14:$O$14,1,MATCH(A2,Data!$F$4:$P$4,0)),\"\")\"}],\"formulas\":{}},\"sheet-44628\":{\"formulas\":{\"D3\":\"=SUMIF($A$2:$A$10,LEFT(D$2,1)&\"*\",$B$2:$B$10)\",\"E3\":\"=SUMIF($A$2:$A$10,LEFT(E$2,1)&\"*\",$B$2:$B$10)\",\"F3\":\"=SUMIF($A$2:$A$10,LEFT(F$2,1)&\"*\",$B$2:$B$10)\",\"G3\":\"=SUMIF($A$2:$A$10,LEFT(G$2,1)&\"*\",$B$2:$B$10)\"}},\"sheet-45030\":{\"fills\":[{\"range\":\"B7:B28\",\"formula\":\"=IFERROR(INDEX($E$7:$E$19,MATCH(1,(C7>=$E$7:$E$19)*(C7<$F$7:$F$19),0)),\"\")\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18967,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 737,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-44264\":{\"formulas\":{\"J7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R7\",\"K7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R7\",\"L7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R7\",\"M7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R7\",\"N7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R7\",\"J8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R8\",\"K8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R8\",\"L8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R8\",\"M8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R8\",\"N8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R8\",\"J9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R9\",\"K9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R9\",\"L9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R9\",\"M9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R9\",\"N9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R9\"}},\"sheet-44266\":{\"fills\":[{\"range\":\"B2:B12\",\"formula\":\"=IFERROR(INDEX(Data!$G$14:$O$14,1,MATCH(A2,Data!$F$4:$P$4,0)),\"\")\"}],\"formulas\":{}},\"sheet-44628\":{\"formulas\":{\"D3\":\"=SUMIF($A$2:$A$10,LEFT(D$2,1)&\"*\",$B$2:$B$10)\",\"E3\":\"=SUMIF($A$2:$A$10,LEFT(E$2,1)&\"*\",$B$2:$B$10)\",\"F3\":\"=SUMIF($A$2:$A$10,LEFT(F$2,1)&\"*\",$B$2:$B$10)\",\"G3\":\"=SUMIF($A$2:$A$10,LEFT(G$2,1)&\"*\",$B$2:$B$10)\"}},\"sheet-45030\":{\"fills\":[{\"range\":\"B7:B28\",\"formula\":\"=IFERROR(INDEX($E$7:$E$19,MATCH(1,(C7>=$E$7:$E$19)*(C7<$F$7:$F$19),0)),\"\")\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122d-80bd-7811-99d8-f14daacd9547",
+    "raw": "{\"sheet-44264\":{\"formulas\":{\"J7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R7\",\"K7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R7\",\"L7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R7\",\"M7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R7\",\"N7\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R7\",\"J8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R8\",\"K8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R8\",\"L8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R8\",\"M8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R8\",\"N8\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R8\",\"J9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,J$6)*$R9\",\"K9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,K$6)*$R9\",\"L9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,L$6)*$R9\",\"M9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,M$6)*$R9\",\"N9\":\"=SUMIFS($G$7:$G$9,$H$7:$H$9,N$6)*$R9\"}},\"sheet-44266\":{\"fills\":[{\"range\":\"B2:B12\",\"formula\":\"=IFERROR(INDEX(Data!$G$14:$O$14,1,MATCH(A2,Data!$F$4:$P$4,0)),\"\")\"}],\"formulas\":{}},\"sheet-44628\":{\"formulas\":{\"D3\":\"=SUMIF($A$2:$A$10,LEFT(D$2,1)&\"*\",$B$2:$B$10)\",\"E3\":\"=SUMIF($A$2:$A$10,LEFT(E$2,1)&\"*\",$B$2:$B$10)\",\"F3\":\"=SUMIF($A$2:$A$10,LEFT(F$2,1)&\"*\",$B$2:$B$10)\",\"G3\":\"=SUMIF($A$2:$A$10,LEFT(G$2,1)&\"*\",$B$2:$B$10)\"}},\"sheet-45030\":{\"fills\":[{\"range\":\"B7:B28\",\"formula\":\"=IFERROR(INDEX($E$7:$E$19,MATCH(1,(C7>=$E$7:$E$19)*(C7<$F$7:$F$19),0)),\"\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18967,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

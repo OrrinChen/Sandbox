@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-004",
+    "stage": "inspect-2",
+    "prompt_sha256": "c112f82c275dafe7dec647307dc81450db86056e831f066e6cfe62d28b865146",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122a-7160-7c43-bc8c-0b2ca8a9426f"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll spend the remaining reads only where they can clarify formula behavior: the full data table for the header lookup and examples of the delivery-window selection across rows. The other two tasks are already clear from their supplied examples."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-36277\":[],\"sheet-36764\":[],\"sheet-37228\":[],\"sheet-37378\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 37503,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 814,
+          "reasoning_output_tokens": 694
+        }
+      ],
+      "cli_final": "{\"sheet-36277\":[],\"sheet-36764\":[],\"sheet-37228\":[],\"sheet-37378\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122a-7160-7c43-bc8c-0b2ca8a9426f",
+    "raw": "{\"sheet-36277\":[],\"sheet-36764\":[],\"sheet-37228\":[],\"sheet-37378\":[]}",
+    "usage": {
+      "input_tokens": 37503,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 814,
+      "reasoning_output_tokens": 694
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

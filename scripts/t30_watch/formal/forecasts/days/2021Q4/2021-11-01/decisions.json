@@ -1,0 +1,49 @@
+{
+  "text": [
+    {
+      "sector": "2021Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/transportation-3",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2021Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/transportation-3",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2021Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2021Q4/transportation-3",
+      "alerts": [
+        {
+          "cik": "0001048911",
+          "reason": "Reported sales YoY 30.00% then 13.88%. Target is step 2; preceding -2.24% versus target -18.35%."
+        }
+      ]
+    }
+  ]
+}

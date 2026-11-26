@@ -1,0 +1,111 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 50061,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 730,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8a-4502-7821-bbf3-f2ac54254fb5",
+  "packet_sha256": "706b5380f7e1383247c6493442b53c69009bda2cc68b0f1614ef6575c35b783d",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q3/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/industrial_machinery-2\",\"alerts\":[{\"cik\":\"0001287213\",\"reason\":\"March-quarter net sales fell 0.7% year over year. Chassis and component shortages reduced Work Truck Solutions deliveries, and Work Truck Attachments also sold fewer units (A–C). I forecast a June-quarter decline of less than 5%, followed by a decline of at least 5% in the September quarter as shortages continue to limit deliveries.\"},{\"cik\":\"0000918541\",\"reason\":\"NN reported weaker demand across multiple regions even with all locations operating (B). Lower sales volume and supply interruptions contributed to a $4.1 million drop in operating income (C). I forecast that reported sales growth stays above −5% in the June quarter and crosses to −5% or worse in the September quarter as weaker orders translate into shipments. The timing is uncertain because the records give no consolidated sales growth rate.\"}]},\n    {\"sector\":\"2022Q3/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/prepackaged_software-2\",\"alerts\":[{\"cik\":\"0000877890\",\"reason\":\"March-quarter revenue grew 6.4%, supported by cloud adoption and on-premise license demand (A–B). Deferred revenue nevertheless fell $99.5 million from December, including $63.6 million in maintenance and support and $35.9 million in subscriptions (C). I forecast that current demand keeps June-quarter growth above −5%, but the smaller deferred balance leaves less revenue to recognize in the September quarter, when I expect a decline of at least 5%.\"}]},\n    {\"sector\":\"2022Q3/prepackaged_software-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/semiconductors-1\",\"alerts\":[{\"cik\":\"0000833640\",\"reason\":\"March-quarter net revenue grew 4.8% year over year, from $173.7 million to $182.1 million (A). Communications revenue was already falling as cellphone customers had bought heavily a year earlier to capture a competitor’s business (B). I forecast consolidated growth above −5% in June, followed by a decline of at least 5% in September if weaker cellphone orders outweigh growth elsewhere.\"}]},\n    {\"sector\":\"2022Q3/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0001287213",
+            "reason": "March-quarter net sales fell 0.7% year over year. Chassis and component shortages reduced Work Truck Solutions deliveries, and Work Truck Attachments also sold fewer units (A–C). I forecast a June-quarter decline of less than 5%, followed by a decline of at least 5% in the September quarter as shortages continue to limit deliveries."
+          },
+          {
+            "cik": "0000918541",
+            "reason": "NN reported weaker demand across multiple regions even with all locations operating (B). Lower sales volume and supply interruptions contributed to a $4.1 million drop in operating income (C). I forecast that reported sales growth stays above −5% in the June quarter and crosses to −5% or worse in the September quarter as weaker orders translate into shipments. The timing is uncertain because the records give no consolidated sales growth rate."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-2",
+        "alerts": [
+          {
+            "cik": "0000877890",
+            "reason": "March-quarter revenue grew 6.4%, supported by cloud adoption and on-premise license demand (A–B). Deferred revenue nevertheless fell $99.5 million from December, including $63.6 million in maintenance and support and $35.9 million in subscriptions (C). I forecast that current demand keeps June-quarter growth above −5%, but the smaller deferred balance leaves less revenue to recognize in the September quarter, when I expect a decline of at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0000833640",
+            "reason": "March-quarter net revenue grew 4.8% year over year, from $173.7 million to $182.1 million (A). Communications revenue was already falling as cellphone customers had bought heavily a year earlier to capture a competitor’s business (B). I forecast consolidated growth above −5% in June, followed by a decline of at least 5% in September if weaker cellphone orders outweigh growth elsewhere."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

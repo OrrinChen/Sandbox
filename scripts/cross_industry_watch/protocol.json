@@ -1,0 +1,49 @@
+{
+  "version": "industry-watch-development-v1",
+  "schedule_sha256": "47f686f5e2b43807e69a88979ec2500c3b5bffaa8e955ea9137dc9c979b9b4c8",
+  "companies_sha256": "68077ff4407a9ac079a3861326552a58f3f77c809fc9490d993e71edc78273e1",
+  "selection_sha256": "6a61ca6a69f2eae20fd5c6a79f47035f47af211fa908b91c113c34eeb8fec423",
+  "clock": "Each of the 12 calendar quarter ends at end of day in America/New_York. Latest actual fiscal quarter publicly filed in an original SEC 10-Q or 10-K by cutoff; latest fiscal period end, then filing date. If report period age exceeds 185 days or filing age exceeds 135 days no fresh anchor, retain cell explicitly. Both following quarters are actual issuer fiscal quarters anchored at that period end.",
+  "outcome": "New crossing to a consolidated reported quarterly GAAP net-sales year-over-year decline of at least 5.00% in either following fiscal quarter, with the immediately preceding quarter above -5.00%. Use consolidated net sales, else total revenue consistently; ratio of current to corresponding year-ago amounts minus one, before rounding. Count reported operations, without calendar, acquisition or currency adjustments. A continued decline already below the threshold is not a new onset. If it recovers then crosses again, that is a new onset.",
+  "first_disclosure": "Earliest dated official issuer public disclosure that unambiguously establishes the threshold for that specific fiscal quarter, including numeric quarterly guidance, preannouncements, and actual results. Exact figures or a range whose entire interval is at or below the threshold qualify; mapped dollar guidance must use the same prior-year base. Full-year projections, comparable sales alone and nonspecific warnings do not qualify. Search issuer earnings releases, intervening public updates, official investor presentations/call transcripts or issuer-furnished SEC exhibits for advance guidance. Record the first verified date, primary URL and evidence plus search coverage. Do not assert the date of the earliest market rumor or universal first mention.",
+  "eligible": "A crossing already explicitly disclosed on or before an origin cutoff earns no early-warning credit at that origin. Retain its row, distinguish known from absent events. Label positive if at least one newly crossing quarter in the horizon was first explicitly disclosed after cutoff. Match the first such quarter in chronological order.",
+  "missing": "Do not silently fill a slot, exclude an issuer, infer an unverified date, or count an unresolved case as negative. Mark unresolved explicitly if historical coverage does not substantiate an outcome or earliest known date.",
+  "arms": [
+    "text",
+    "metadata",
+    "trend"
+  ],
+  "budget_per_sector_per_origin": 2,
+  "abstention": true,
+  "public_evidence": "Latest anchor filing. Select five distinct historical operating sentences in filing order, preferably in MD&A. A consolidated revenue or sales; B demand; C balance or capacity; D pricing, cost or margin; E operating results or cash flow. Exclude forecasts, generic definitions, safe harbor, tables of contents and cross-references without substantive facts. Shortest meaningful contiguous source sentence or complete clause preferred, table rows carry headings and units. Fallback first unused historical financial or operating sentence in MD&A, then rest of filing including meaningful tables. If fewer than five available give explicit missing fields. Preserve source words, source URL and locators. Issuer provided filings on EDGAR.",
+  "industry_slots_B_C": {
+    "retail": [
+      "comparable sales, transactions",
+      "inventories"
+    ],
+    "food_manufacturing": [
+      "volume, mix",
+      "inventories"
+    ],
+    "industrial_machinery": [
+      "orders, backlog",
+      "backlog, supply"
+    ],
+    "semiconductors": [
+      "demand, shipments",
+      "inventories"
+    ],
+    "prepackaged_software": [
+      "subscriptions, bookings, retention",
+      "deferred revenue, remaining performance obligations"
+    ],
+    "transportation": [
+      "volume, loads, traffic",
+      "capacity, utilization"
+    ]
+  },
+  "text_and_metadata": "Matched roster, issuer IDs, sector, cutoff, target, slots and original form titles/publication dates. Only text arm also gets excerpt bodies. Separate fresh Codex reader context by arm and cutoff without lookup, prior responses or labels. Readers may process multiple sectors in one origin but must observe max 2 within each sector. Fixed common task instructions.",
+  "trend": "Mechanical extrapolation from as-of consolidated reported quarterly sales only. For two consecutive anchor-quarter and previous quarter YoY growth rates g and p (percent), project g+(g-p) and g+2*(g-p); flag only a fresh downward crossing from above -5 to at/below -5 in these projections. Rank by lowest projected growth then CIK and take at most 2 issuers per sector. Need both same-quarter year-ago comparisons and aligned anchor, no substitution. May abstain.",
+  "locking": "Freeze protocol and sample before extracting. Seal three arms sequentially per calendar cutoff. No resolution data or labels until all 12 locks exist. Missing future outcomes, no confirmed earliest disclosure and unresolvable horizon marked separately; no conversion to negatives. Proven earlier horizon crossing may resolve a positive absent remaining quarters.",
+  "report": "Per sector and total opportunity TP/FP/FN/TN and unresolved plus earliest eligible alert per distinct issuer and fiscal quarter crossing with lead days. Paired text vs trend on common resolved dates, both gross directions and net extra false alerts. Record precise source-cited forecasts and limits of first-disclosure coverage. Historical memory cannot be excluded."
+}

@@ -1,0 +1,649 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "aad3f554b508e8b3c8853836416fbb55b015a7e32f348acf087399bf4ca1c4b4",
+    "b32ce54bdd797e69ad020ea2a2a97ff58b9d85265212cfd701e13cc88eb01942",
+    "155e3dedd917f02ceaa85ec01a461b29ca2ee2d5d5d0279bca52c75e984c1f51"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-36277",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "formulas": {
+          "I2": "=INDEX($A$2:$E$25,MATCH($I$1,$B$2:$B$25,0),MATCH($H2,$A$1:$E$1,0))",
+          "I3": "=INDEX($A$2:$E$25,MATCH($I$1,$B$2:$B$25,0),MATCH($H3,$A$1:$E$1,0))",
+          "I4": "=INDEX($A$2:$E$25,MATCH($I$1,$B$2:$B$25,0),MATCH($H4,$A$1:$E$1,0))",
+          "I5": "=INDEX($A$2:$E$25,MATCH($I$1,$B$2:$B$25,0),MATCH($H5,$A$1:$E$1,0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "H1:I8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "H1:I8",
+            "range_size": 16,
+            "cells": [
+              [
+                "H1",
+                "Name"
+              ],
+              [
+                "I1",
+                "H"
+              ],
+              [
+                "H2",
+                "Category"
+              ],
+              [
+                "I2",
+                "Social Media"
+              ],
+              [
+                "H3",
+                "Type"
+              ],
+              [
+                "I3",
+                "Free"
+              ],
+              [
+                "H4",
+                "Revenue"
+              ],
+              [
+                "H5",
+                "Profit"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 8
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62527,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 756,
+        "reasoning_output_tokens": 162
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-36764",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "formulas": {
+          "C2": "=SUMIF(Sheet2!$A$2:$A$363,$A2,Sheet2!$R$2:$R$363)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3",
+            "range_size": 12,
+            "cells": [
+              [
+                "A1",
+                "5) Breakdown of products below"
+              ],
+              [
+                "C1",
+                "UK purchases"
+              ],
+              [
+                "D1",
+                "IE purchases"
+              ],
+              [
+                "A2",
+                "Fully linked                                      "
+              ],
+              [
+                "B2",
+                "223"
+              ],
+              [
+                "C2",
+                "0"
+              ],
+              [
+                "A3",
+                "To be actioned                                    "
+              ],
+              [
+                "B3",
+                "138"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 4
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "R1:S12"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "R1:S12",
+            "range_size": 24,
+            "cells": [
+              [
+                "R1",
+                "UK purchases"
+              ],
+              [
+                "S1",
+                "IE purchases"
+              ],
+              [
+                "R2",
+                "0"
+              ],
+              [
+                "S2",
+                "0"
+              ],
+              [
+                "R3",
+                "0"
+              ],
+              [
+                "S3",
+                "0"
+              ],
+              [
+                "R4",
+                "106"
+              ],
+              [
+                "S4",
+                "0"
+              ],
+              [
+                "R5",
+                "34"
+              ],
+              [
+                "S5",
+                "10"
+              ],
+              [
+                "R6",
+                "20"
+              ],
+              [
+                "S6",
+                "2"
+              ],
+              [
+                "R7",
+                "30"
+              ],
+              [
+                "S7",
+                "5"
+              ],
+              [
+                "R8",
+                "49"
+              ],
+              [
+                "S8",
+                "0"
+              ],
+              [
+                "R9",
+                "39"
+              ],
+              [
+                "S9",
+                "0"
+              ],
+              [
+                "R10",
+                "0"
+              ],
+              [
+                "S10",
+                "0"
+              ],
+              [
+                "R11",
+                "108"
+              ],
+              [
+                "S11",
+                "7"
+              ],
+              [
+                "R12",
+                "249"
+              ],
+              [
+                "S12",
+                "0"
+              ]
+            ],
+            "total": 24,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 62527,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 756,
+        "reasoning_output_tokens": 162
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37228",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "G2:G23",
+            "formula": "=IFERROR(IF(E2&\"\"=\"2\",TRIM(MID(F2,FIND(\"/\",F2)+1,LEN(F2))),TRIM(LEFT(F2,FIND(\"/\",F2)-1))),F2&\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E1:G23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E1:G23",
+            "range_size": 69,
+            "cells": [
+              [
+                "E1",
+                "Window"
+              ],
+              [
+                "F1",
+                "Time Slot"
+              ],
+              [
+                "G1",
+                "Result"
+              ],
+              [
+                "E2",
+                "1"
+              ],
+              [
+                "F2",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "G2",
+                "10AM-12PM"
+              ],
+              [
+                "E3",
+                "1"
+              ],
+              [
+                "F3",
+                "3pm-5pm"
+              ],
+              [
+                "G3",
+                "3pm-5pm"
+              ],
+              [
+                "E4",
+                "1"
+              ],
+              [
+                "F4",
+                "10am-12pm"
+              ],
+              [
+                "G4",
+                "10am-12pm"
+              ],
+              [
+                "E5",
+                "1"
+              ],
+              [
+                "F5",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "G5",
+                "8am-10am"
+              ],
+              [
+                "E6",
+                "1"
+              ],
+              [
+                "F6",
+                "10am-12pm"
+              ],
+              [
+                "G6",
+                "10am-12pm"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "F7",
+                "8AM-12PM / 2PM-4PM"
+              ],
+              [
+                "G7",
+                "8AM-12PM"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "F8",
+                "3pm-5pm"
+              ],
+              [
+                "G8",
+                "3pm-5pm"
+              ],
+              [
+                "E9",
+                "1"
+              ],
+              [
+                "F9",
+                "10am-12pm"
+              ],
+              [
+                "G9",
+                "10am-12pm"
+              ],
+              [
+                "E10",
+                "2"
+              ],
+              [
+                "F10",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "G10",
+                "12pm-2pm"
+              ],
+              [
+                "E11",
+                "2"
+              ],
+              [
+                "F11",
+                "10am-12pm"
+              ],
+              [
+                "G11",
+                "10am-12pm"
+              ],
+              [
+                "E12",
+                "2"
+              ],
+              [
+                "F12",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "E13",
+                "2"
+              ],
+              [
+                "F13",
+                "3pm-5pm"
+              ],
+              [
+                "E14",
+                "2"
+              ],
+              [
+                "F14",
+                "10am-12pm"
+              ],
+              [
+                "E15",
+                "2"
+              ],
+              [
+                "F15",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "E16",
+                "2"
+              ],
+              [
+                "F16",
+                "10am-12pm"
+              ],
+              [
+                "E17",
+                "2"
+              ],
+              [
+                "F17",
+                "10am-12pm"
+              ],
+              [
+                "E18",
+                "2"
+              ],
+              [
+                "F18",
+                "10am-12pm"
+              ],
+              [
+                "E19",
+                "2"
+              ],
+              [
+                "F19",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "E20",
+                "2"
+              ],
+              [
+                "F20",
+                "3pm-5pm"
+              ],
+              [
+                "E21",
+                "2"
+              ],
+              [
+                "F21",
+                "10am-12pm"
+              ],
+              [
+                "E22",
+                "2"
+              ],
+              [
+                "F22",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "E23",
+                "2"
+              ],
+              [
+                "F23",
+                "10am-12pm"
+              ]
+            ],
+            "total": 57,
+            "truncated": false,
+            "blank_count": 12
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62527,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 756,
+        "reasoning_output_tokens": 162
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37378",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "A2:A6",
+            "formula": "=IF(B2=\"\",\"\",ROWS($B$2:B2)-COUNTBLANK($B$2:B2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B6",
+            "range_size": 12,
+            "cells": [
+              [
+                "A1",
+                "#"
+              ],
+              [
+                "B1",
+                "A"
+              ],
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "2252"
+              ],
+              [
+                "A3",
+                "2"
+              ],
+              [
+                "B3",
+                "A"
+              ],
+              [
+                "B4",
+                "25"
+              ]
+            ],
+            "total": 7,
+            "truncated": false,
+            "blank_count": 5
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62527,
+        "cached_input_tokens": 27904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 756,
+        "reasoning_output_tokens": 162
+      },
+      "model_calls": 3
+    }
+  ]
+}

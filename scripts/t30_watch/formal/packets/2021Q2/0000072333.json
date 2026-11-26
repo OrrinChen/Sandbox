@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000072333",
+  "issuer": "NORDSTROM INC",
+  "cutoff": "2021-04-02",
+  "projected_target_start": "2021-05-02",
+  "status": "complete",
+  "period_end": "2021-01-30",
+  "filing_date": "2021-03-16",
+  "text": {
+    "sector": "retail",
+    "cik": "0000072333",
+    "issuer": "NORDSTROM INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-03-16",
+        "text": "While our net sales decreased 32%, which reflected temporary store closures during the first half of 2020, we are encouraged by the continued sequential improvement in topline trends during the second half."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-03-16",
+        "text": "For the year, net loss was $690, or $4.39 per diluted share."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-03-16",
+        "text": "Ending inventory as of January 30, 2021 decreased 3.0% compared with prior year."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-03-16",
+        "text": "The average sales price at both Nordstrom and Nordstrom Rack decreased primarily due to customer shopping behavior and category shift."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-03-16",
+        "text": "Net cash used in investing activities decreased by $562 between 2020 and 2019 due to a decrease in capital expenditures as the prior period included investments in our Nordstrom NYC store, as well as supply chain costs related to our market strategy."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-10-31",
+        "filed": "2020-12-04",
+        "reported_sales_usd": 3089000000,
+        "year_ago_reported_sales_usd": 3672000000,
+        "yoy_percent": "-15.8769"
+      },
+      {
+        "quarter_end": "2021-01-30",
+        "filed": "2021-03-16",
+        "reported_sales_usd": 3645000000,
+        "year_ago_reported_sales_usd": 4537000000,
+        "yoy_percent": "-19.6606"
+      }
+    ],
+    "status": "complete"
+  }
+}

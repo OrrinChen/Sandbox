@@ -1,0 +1,15 @@
+{
+  "score_sha256": "fa76aa14697109b0f89e6403d2968fbbb4c1f196955ec3d260c3daae48cb61bc",
+  "workbooks": 100,
+  "arms": {
+    "direct": {
+      "failed_after_formula_recalculation": 30,
+      "pass": 70
+    },
+    "self_check": {
+      "failed_after_formula_recalculation": 31,
+      "pass": 68,
+      "rejected_before_recalculation": 1
+    }
+  }
+}

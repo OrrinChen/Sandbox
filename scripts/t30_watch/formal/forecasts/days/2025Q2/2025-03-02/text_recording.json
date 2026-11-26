@@ -1,0 +1,117 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 47345,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1014,
+    "reasoning_output_tokens": 18
+  },
+  "thread": "01a20d90-532b-7893-bbb8-6d8e07e59b84",
+  "packet_sha256": "01d4f194260d1a9695409659480c2cf5e17466f0321a12975d3026ee1338f1bf",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2025Q2/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000034563\",\n          \"reason\": \"December net sales grew 0.6% as a 12.0% increase in average unit price offset a 10.0% decline in units (A, B, D). I expect pricing to keep March sales growth above -5%, then provide less protection in April–June. With units still down 10%, even a 5% price increase would imply a sales decline of about 5.5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/food_manufacturing-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/food_manufacturing-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000098677\",\n          \"reason\": \"December net product sales fell 2.1%, leaving 2.9 percentage points to the threshold (A). Lower volumes drove both the quarterly and annual declines, and customers and consumers were increasingly resistant to higher prices (B, D). I expect the March decline to stay under 5% and further volume losses to take the April–June decline to at least 5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/industrial_machinery-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/industrial_machinery-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000792987\",\n          \"reason\": \"Astec's 2024 net sales fell 2.5%, while year-end orders in backlog fell 26.4%, from $569.8 million to $419.6 million (A, C). I expect existing orders to cushion March sales enough to keep the decline under 5%, with fewer orders left to ship in April–June pushing the decline to at least 5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/prepackaged_software-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/prepackaged_software-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/retail-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/semiconductors-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/semiconductors-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/semiconductors-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/transportation-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q2/transportation-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000277948\",\n          \"reason\": \"CSX's 2024 total revenue fell 1%. Merchandise pricing gains and higher merchandise and intermodal volumes partly offset lower fuel recovery and coal revenue. Trucking surcharges also fell (A–C). I expect those offsets to keep the March decline under 5%, then weaken enough for coal and surcharge losses to push the April–June decline to at least 5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/transportation-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001692063\",\n          \"reason\": \"Schneider's reported 2024 revenue fell about 4%. Lower brokerage volume and revenue per order cut Logistics revenue excluding fuel surcharges by $112.4 million even with Cowan's contribution. Network rates and volumes and Intermodal revenue per order also fell (A, B, E). I expect the acquisition contribution to help keep March above -5%, with pressure across those businesses taking reported April–June revenue growth to -5% or lower.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q2/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000034563",
+            "reason": "December net sales grew 0.6% as a 12.0% increase in average unit price offset a 10.0% decline in units (A, B, D). I expect pricing to keep March sales growth above -5%, then provide less protection in April–June. With units still down 10%, even a 5% price increase would imply a sales decline of about 5.5%."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/food_manufacturing-3",
+        "alerts": [
+          {
+            "cik": "0000098677",
+            "reason": "December net product sales fell 2.1%, leaving 2.9 percentage points to the threshold (A). Lower volumes drove both the quarterly and annual declines, and customers and consumers were increasingly resistant to higher prices (B, D). I expect the March decline to stay under 5% and further volume losses to take the April–June decline to at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000792987",
+            "reason": "Astec's 2024 net sales fell 2.5%, while year-end orders in backlog fell 26.4%, from $569.8 million to $419.6 million (A, C). I expect existing orders to cushion March sales enough to keep the decline under 5%, with fewer orders left to ship in April–June pushing the decline to at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/transportation-2",
+        "alerts": [
+          {
+            "cik": "0000277948",
+            "reason": "CSX's 2024 total revenue fell 1%. Merchandise pricing gains and higher merchandise and intermodal volumes partly offset lower fuel recovery and coal revenue. Trucking surcharges also fell (A–C). I expect those offsets to keep the March decline under 5%, then weaken enough for coal and surcharge losses to push the April–June decline to at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/transportation-3",
+        "alerts": [
+          {
+            "cik": "0001692063",
+            "reason": "Schneider's reported 2024 revenue fell about 4%. Lower brokerage volume and revenue per order cut Logistics revenue excluding fuel surcharges by $112.4 million even with Cowan's contribution. Network rates and volumes and Intermodal revenue per order also fell (A, B, E). I expect the acquisition contribution to help keep March above -5%, with pressure across those businesses taking reported April–June revenue growth to -5% or lower."
+          }
+        ]
+      }
+    ]
+  }
+}

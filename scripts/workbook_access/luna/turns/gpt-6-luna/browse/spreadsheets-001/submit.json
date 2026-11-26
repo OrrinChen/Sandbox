@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-001",
+    "stage": "submit",
+    "prompt_sha256": "2ecb25b2fbe2e84171d4fd6c4a069bd8270dfd2ea92f3b225eb2188b987ee831",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121c-bfdf-7983-9b7b-0a226a414a53",
+    "raw": "{\"sheet-18935\":{\"formulas\":{\"D17\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A17)*($B$5:$B$10=C17),0),MATCH(B17,$C$4:$E$4,0))\",\"D18\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A18)*($B$5:$B$10=C18),0),MATCH(B18,$C$4:$E$4,0))\",\"D19\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A19)*($B$5:$B$10=C19),0),MATCH(B19,$C$4:$E$4,0))\",\"D20\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A20)*($B$5:$B$10=C20),0),MATCH(B20,$C$4:$E$4,0))\",\"D21\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A21)*($B$5:$B$10=C21),0),MATCH(B21,$C$4:$E$4,0))\",\"D22\":\"=INDEX($C$5:$E$10,MATCH(1,($A$5:$A$10=A22)*($B$5:$B$10=C22),0),MATCH(B22,$C$4:$E$4,0))\"}},\"sheet-2212\":{\"fills\":[{\"range\":\"E2:E13\",\"formula\":\"=COUNTIF($B$2:$B$273,\\\">=\\\"&D2)\"}],\"formulas\":{}},\"sheet-31915\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(COUNTIF($A$2:A2,A2)=1,SUMIF($A$2:$A$11,A2,$B$2:$B$11),\\\"\\\")\"}],\"formulas\":{}},\"sheet-32255\":{\"fills\":[{\"range\":\"D2:D13\",\"formula\":\"=IF(A2=\\\"\\\",\\\"\\\",A2)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 21822,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 498,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

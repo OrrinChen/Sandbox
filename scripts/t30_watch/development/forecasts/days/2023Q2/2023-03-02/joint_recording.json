@@ -1,0 +1,58 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34555,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 430,
+    "reasoning_output_tokens": 42
+  },
+  "thread": "01a20d7e-6c05-71f3-9d06-e7b8b9e7b061",
+  "packet_sha256": "a002e59e51e98a1911864eca9523bf64f77e0f411838a8815026753c8b3e7c99",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2023Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/prepackaged_software-1\",\"alerts\":[\n      {\"cik\":\"0001627014\",\"reason\":\"Reported revenue growth fell from +2.30% in September to -0.70% in December. A further 3-point slowdown each quarter would put March near -3.70% and June near -6.70%. Record B identifies a client that went out of business, though it does not quantify lost revenue.\"},\n      {\"cik\":\"0000857005\",\"reason\":\"Reported revenue growth slowed from +5.67% in September to +1.79% in December. Another slowdown of that size each quarter would put March near -2.1% and June near -6.0%. Shorter Windchill and IIoT subscriptions reduced revenue recognized in December, and the shift to partners reduced professional services revenue (B, A).\"}\n    ]},\n    {\"sector\":\"2023Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/transportation-1\",\"alerts\":[\n      {\"cik\":\"0000878927\",\"reason\":\"Old Dominion's reported revenue growth slowed from +14.55% in September to +5.76% in December. A repeat of that 8.8-point slowdown would leave March near -3%, still above the threshold. A further 2-point slowdown would put June at about -5%. Record C confirms revenue grew over 2022 as a whole.\"}\n    ]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Reported revenue growth fell from +2.30% in September to -0.70% in December. A further 3-point slowdown each quarter would put March near -3.70% and June near -6.70%. Record B identifies a client that went out of business, though it does not quantify lost revenue."
+          },
+          {
+            "cik": "0000857005",
+            "reason": "Reported revenue growth slowed from +5.67% in September to +1.79% in December. Another slowdown of that size each quarter would put March near -2.1% and June near -6.0%. Shorter Windchill and IIoT subscriptions reduced revenue recognized in December, and the shift to partners reduced professional services revenue (B, A)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000878927",
+            "reason": "Old Dominion's reported revenue growth slowed from +14.55% in September to +5.76% in December. A repeat of that 8.8-point slowdown would leave March near -3%, still above the threshold. A further 2-point slowdown would put June at about -5%. Record C confirms revenue grew over 2022 as a whole."
+          }
+        ]
+      }
+    ]
+  }
+}

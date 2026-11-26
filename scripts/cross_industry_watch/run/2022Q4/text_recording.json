@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35000,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 183,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a2036b-62e5-7e92-9181-86484c6822fe",
+  "packet_sha256": "045683a837712f00ed69614fa3f50b1217931e183cebc157b09aad062c16ebc5",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[]},\n    {\"sector\":\"semiconductors\",\"alerts\":[]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[]},\n    {\"sector\":\"transportation\",\"alerts\":[{\"cik\":\"0000003453\",\"reason\":\"Matson’s Q3 Ocean Transportation revenue rose 6.4% (A), but Hawaii container volume fell 7.1% (B). The filing cites “lower retail-related demand” after a prior-year pandemic spike (C). If that weakness persists and spreads across ocean services, consolidated revenue growth could cross to −5% or lower within two quarters. The packet gives only segment figures for Q3.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": []
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0000003453",
+            "reason": "Matson’s Q3 Ocean Transportation revenue rose 6.4% (A), but Hawaii container volume fell 7.1% (B). The filing cites “lower retail-related demand” after a prior-year pandemic spike (C). If that weakness persists and spreads across ocean services, consolidated revenue growth could cross to −5% or lower within two quarters. The packet gives only segment figures for Q3."
+          }
+        ]
+      }
+    ]
+  }
+}

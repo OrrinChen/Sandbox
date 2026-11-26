@@ -1,0 +1,23 @@
+{
+  "binding": {
+    "input_sha256": "83a1afeeddb86f5809968ce4f069651739a436eb695a848f13296a4f290fc2f0",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-wayfinding-sign-export-after-walkthrough\": \"WITH replacements AS (SELECT s.site_code, s.required_text, s.order_id, f.check_id FROM sign_order AS s JOIN field_check AS f USING (site_code) WHERE f.seen_text IS NULL OR f.seen_text COLLATE BINARY <> s.required_text), ordered AS (SELECT order_id, check_id, '\\\"' || replace(site_code, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(required_text, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(order_id, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(check_id, '\\\"', '\\\"\\\"') || '\\\"' || char(10) AS csv_line FROM replacements ORDER BY site_code COLLATE BINARY ASC) SELECT group_concat(order_id, ',') AS order_id_set, group_concat(check_id, ',') AS check_id_set, 'site_code,required_text,order_id,check_id' || char(10) || group_concat(csv_line, '') AS csv_content FROM ordered\",\n  \"decision-wheel-state-at-shutter-open\": \"SELECT f.frame_id, w.filter_code, w.source_id FROM frames AS f LEFT JOIN wheel_notes AS w ON (w.event_s, w.seq_no) = (SELECT n.event_s, n.seq_no FROM wheel_notes AS n WHERE n.event_kind = 'seated' AND n.event_s <= f.shutter_s ORDER BY n.event_s DESC, n.seq_no DESC LIMIT 1) ORDER BY f.frame_id ASC\"\n}",
+  "submissions": {
+    "decision-wayfinding-sign-export-after-walkthrough": "WITH replacements AS (SELECT s.site_code, s.required_text, s.order_id, f.check_id FROM sign_order AS s JOIN field_check AS f USING (site_code) WHERE f.seen_text IS NULL OR f.seen_text COLLATE BINARY <> s.required_text), ordered AS (SELECT order_id, check_id, '\"' || replace(site_code, '\"', '\"\"') || '\",\"' || replace(required_text, '\"', '\"\"') || '\",\"' || replace(order_id, '\"', '\"\"') || '\",\"' || replace(check_id, '\"', '\"\"') || '\"' || char(10) AS csv_line FROM replacements ORDER BY site_code COLLATE BINARY ASC) SELECT group_concat(order_id, ',') AS order_id_set, group_concat(check_id, ',') AS check_id_set, 'site_code,required_text,order_id,check_id' || char(10) || group_concat(csv_line, '') AS csv_content FROM ordered",
+    "decision-wheel-state-at-shutter-open": "SELECT f.frame_id, w.filter_code, w.source_id FROM frames AS f LEFT JOIN wheel_notes AS w ON (w.event_s, w.seq_no) = (SELECT n.event_s, n.seq_no FROM wheel_notes AS n WHERE n.event_kind = 'seated' AND n.event_s <= f.shutter_s ORDER BY n.event_s DESC, n.seq_no DESC LIMIT 1) ORDER BY f.frame_id ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-5237-7e01-ae58-9cd016182634",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 20649,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 329,
+    "reasoning_output_tokens": 0
+  }
+}

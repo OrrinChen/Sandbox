@@ -35,6 +35,9 @@ DEFAULT_VALIDATOR_NAMES = [
     "cost_inclusion_validator",
     "risk_limit_validator",
     "artifact_grounding_validator",
+    "rag_grounding",
+    "a1_rag",
+    "financial_benchmark",
 ]
 _CITATION_PATTERN = re.compile(r"\[([A-Za-z0-9_.:/-]+)\]")
 _OPERATORS = {
@@ -198,6 +201,45 @@ def validate_citations(
             return _failed("citation", "missing_citation", "Final answer omitted required citations.", details)
 
     return _passed("citation", "Final answer citations are supported.", details)
+
+
+def validate_rag_grounding(
+    final_answer: str,
+    events: Sequence[TraceEvent],
+    required_evidence_ids: Sequence[str],
+) -> ValidatorResult:
+    if not required_evidence_ids:
+        raise ValueError("rag_grounding requires at least one gold evidence ID")
+    result = _latest_tool_result(events, "rag.search") or {}
+    retrieved = [hit["evidence_id"] for hit in result.get("hits", [])]
+    missing = [evidence_id for evidence_id in required_evidence_ids if evidence_id not in retrieved]
+    details = {
+        "retrieved_evidence_ids": retrieved,
+        "required_evidence_ids": list(required_evidence_ids),
+        "missing_evidence_ids": missing,
+        "evidence_recall_at_k": 1 - len(missing) / len(required_evidence_ids),
+        "top_k": result.get("top_k"),
+    }
+    if missing:
+        return _failed("rag_grounding", "rag_retrieval_miss", "Search did not return required evidence.", details)
+
+    citation = validate_citations(final_answer, required_evidence_ids, required_evidence_ids)
+    details.update(citation.details)
+    if not citation.passed:
+        return _failed("rag_grounding", "rag_invalid_citation", citation.message, details)
+    return _passed("rag_grounding", "The answer cited the required evidence returned by search.", details)
+
+
+def validate_a1_rag(task_id: str, final_answer: str, events: Sequence[TraceEvent]) -> ValidatorResult:
+    from sandboxed_agent_eval_harness.benchmarks.financial_evidence.scoring import score_full
+
+    return score_full(task_id, final_answer, _latest_tool_result(events, "rag.search") or {})
+
+
+def validate_financial_benchmark(task: TaskSpec, final_answer: str, events: Sequence[TraceEvent]) -> ValidatorResult:
+    from sandboxed_agent_eval_harness.benchmarks.financial_benchmark.scoring import score
+
+    return score(task.task_id, task.initial_state["split"], final_answer, _latest_tool_result(events, "rag.search") or {})
 
 
 def validate_constraints(metrics: Mapping[str, Any], constraints: Sequence[Mapping[str, Any]]) -> ValidatorResult:

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-008",
+    "stage": "submit",
+    "prompt_sha256": "31a80a17aac09de75e9e094b2efdb79e8d8b0c045bf18019b8c94847870b3d6f",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211eb-bff7-7af0-8ff3-ccee4494d37f",
+    "raw": "{\"sheet-41680\":{\"fills\":[{\"range\":\"F2:F18\",\"formula\":\"=TRIM(E2)\"}],\"formulas\":{}},\"sheet-41969\":{\"fills\":[{\"range\":\"A6:C6\",\"formula\":\"=COUNTBLANK(OFFSET($A$3,0,(COLUMN()-1)*3,1,3))\"}],\"formulas\":{}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=B5/SUMIFS($B$5:$B$19,$A$5:$A$19,\\\"GBP-EUR\\\",$C$5:$C$19,G5)\"}],\"formulas\":{}},\"sheet-42526\":{\"fills\":[{\"range\":\"B2:B16\",\"formula\":\"=IF(A2=0,0,IF(A2>0,5*A2/MAX($A$2:$A$16),-5*A2/MIN($A$2:$A$16)))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18161,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 335,
+      "reasoning_output_tokens": 118
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "origin": "2023Q3",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000023217",
+          "reason": "Conagra’s fiscal-year net sales rose (A) despite a 9% volume decline (B). If that volume pressure persists as prior-year pricing gains enter the comparison, quarterly net sales could fall at least 5% within two quarters. The filing gives only an annual sales baseline."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001121484",
+          "reason": "Oil States’ Q2 consolidated revenue grew just 1% (A). Product revenue fell 6% on weaker perforating-product demand and delayed conversion of backlog to sales (C). Despite a larger offshore backlog (B), further shipment delays could push total revenue growth to −5% or lower in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Enphase’s Q2 revenue grew 34% as microinverter shipments rose 55% (A), but U.S. demand slowed broadly (B) and inventory accumulated at distributors and installers (C). Those customers could cut orders while selling existing stock, pushing consolidated revenue down at least 5% year over year in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Black Knight’s Q2 EBITDA and margins (D) imply revenue of about $324 million versus $339 million, down roughly 4.5%. Software’s share rose from 86% to 88% (A), implying a steeper decline outside software. A modest further decline there could take consolidated revenue growth to −5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0001498710",
+          "reason": "Spirit’s Q2 operating revenue grew 4.8%, but yield fell 7.4% and load factor fell 3.1 percentage points (A) as capacity grew 17.4%, ahead of traffic growth of 13.1% (B). If traffic growth slows while excess capacity keeps fares under pressure, revenue could fall at least 5% year over year in Q3 or Q4."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001701758",
+          "reason": "Reported sales YoY 21.74% then 9.13%; linear projections -3.48% and -16.08%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000057515",
+          "reason": "Reported sales YoY 15.23% then 0.50%; linear projections -14.23% and -28.96%."
+        },
+        {
+          "cik": "0000023217",
+          "reason": "Reported sales YoY 5.93% then 2.18%; linear projections -1.58% and -5.34%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001121484",
+          "reason": "Reported sales YoY 19.60% then 0.93%; linear projections -17.74% and -36.41%."
+        },
+        {
+          "cik": "0000832101",
+          "reason": "Reported sales YoY 12.55% then 6.29%; linear projections 0.03% and -6.23%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Reported sales YoY 64.52% then 34.12%; linear projections 3.73% and -26.67%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0001498710",
+          "reason": "Reported sales YoY 39.54% then 4.82%; linear projections -29.90% and -64.63%."
+        },
+        {
+          "cik": "0000799233",
+          "reason": "Reported sales YoY 118.75% then 63.01%; linear projections 7.27% and -48.47%."
+        }
+      ]
+    }
+  ]
+}

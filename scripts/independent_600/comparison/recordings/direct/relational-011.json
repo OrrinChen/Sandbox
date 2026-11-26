@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "fbf2c7469673382876281db36611f7011c20f4536b0b0685eb0d20a1b4e59fcb",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-bound-late-course-tickets\": \"SELECT wave_code, COUNT(*) AS observed_tickets, SUM(handoff_first - accept_last > allowance) AS min_late, SUM(handoff_last - accept_first > allowance) AS max_late FROM ticket_window WHERE handoff_last IS NOT NULL GROUP BY wave_code ORDER BY wave_code ASC\",\n  \"decision-bound-missing-fold-offsets\": \"WITH bounds AS (SELECT batch_code, MAX(band_lo - raw_x) AS lo, MIN(band_hi - raw_x) AS hi FROM fold_strip GROUP BY batch_code) SELECT batch_code, CASE WHEN lo > hi THEN 'conflict' WHEN lo = hi THEN 'resolved' ELSE 'open' END AS finding, CASE WHEN lo = hi THEN lo END AS offset_px FROM bounds ORDER BY batch_code ASC\",\n  \"decision-bound-preview-fix-by-consecutive-builds\": \"WITH boundaries AS (SELECT b.profile_code, v.build_no AS fixed_build, b.slip_id AS blank_slip, v.slip_id AS visible_slip, ROW_NUMBER() OVER (PARTITION BY b.profile_code ORDER BY v.build_no DESC) AS rn FROM bench_slip AS b JOIN bench_slip AS v ON v.profile_code = b.profile_code AND v.build_no = b.build_no + 1 WHERE b.preview_state = 'blank' AND v.preview_state = 'visible') SELECT profile_code, fixed_build, blank_slip, visible_slip FROM boundaries WHERE rn = 1 ORDER BY profile_code COLLATE BINARY ASC\",\n  \"decision-bound-reset-time-from-signed-sightings\": \"WITH old_slips AS (SELECT meter_code, seen_min, slip_id, ROW_NUMBER() OVER (PARTITION BY meter_code ORDER BY seen_min DESC, slip_id COLLATE BINARY ASC) AS rn FROM field_slip WHERE signed_flag = 1 AND lamp_code = 'OLD'), new_slips AS (SELECT meter_code, seen_min, slip_id, ROW_NUMBER() OVER (PARTITION BY meter_code ORDER BY seen_min ASC, slip_id COLLATE BINARY ASC) AS rn FROM field_slip WHERE signed_flag = 1 AND lamp_code = 'NEW') SELECT o.meter_code, o.seen_min AS after_min, n.seen_min AS by_min, o.slip_id AS old_source, n.slip_id AS new_source FROM old_slips AS o JOIN new_slips AS n ON n.meter_code = o.meter_code WHERE o.rn = 1 AND n.rn = 1 ORDER BY o.meter_code ASC\"\n}",
+  "submissions": {
+    "decision-bound-late-course-tickets": "SELECT wave_code, COUNT(*) AS observed_tickets, SUM(handoff_first - accept_last > allowance) AS min_late, SUM(handoff_last - accept_first > allowance) AS max_late FROM ticket_window WHERE handoff_last IS NOT NULL GROUP BY wave_code ORDER BY wave_code ASC",
+    "decision-bound-missing-fold-offsets": "WITH bounds AS (SELECT batch_code, MAX(band_lo - raw_x) AS lo, MIN(band_hi - raw_x) AS hi FROM fold_strip GROUP BY batch_code) SELECT batch_code, CASE WHEN lo > hi THEN 'conflict' WHEN lo = hi THEN 'resolved' ELSE 'open' END AS finding, CASE WHEN lo = hi THEN lo END AS offset_px FROM bounds ORDER BY batch_code ASC",
+    "decision-bound-preview-fix-by-consecutive-builds": "WITH boundaries AS (SELECT b.profile_code, v.build_no AS fixed_build, b.slip_id AS blank_slip, v.slip_id AS visible_slip, ROW_NUMBER() OVER (PARTITION BY b.profile_code ORDER BY v.build_no DESC) AS rn FROM bench_slip AS b JOIN bench_slip AS v ON v.profile_code = b.profile_code AND v.build_no = b.build_no + 1 WHERE b.preview_state = 'blank' AND v.preview_state = 'visible') SELECT profile_code, fixed_build, blank_slip, visible_slip FROM boundaries WHERE rn = 1 ORDER BY profile_code COLLATE BINARY ASC",
+    "decision-bound-reset-time-from-signed-sightings": "WITH old_slips AS (SELECT meter_code, seen_min, slip_id, ROW_NUMBER() OVER (PARTITION BY meter_code ORDER BY seen_min DESC, slip_id COLLATE BINARY ASC) AS rn FROM field_slip WHERE signed_flag = 1 AND lamp_code = 'OLD'), new_slips AS (SELECT meter_code, seen_min, slip_id, ROW_NUMBER() OVER (PARTITION BY meter_code ORDER BY seen_min ASC, slip_id COLLATE BINARY ASC) AS rn FROM field_slip WHERE signed_flag = 1 AND lamp_code = 'NEW') SELECT o.meter_code, o.seen_min AS after_min, n.seen_min AS by_min, o.slip_id AS old_source, n.slip_id AS new_source FROM old_slips AS o JOIN new_slips AS n ON n.meter_code = o.meter_code WHERE o.rn = 1 AND n.rn = 1 ORDER BY o.meter_code ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e18-e43f-72c2-bdb4-bfbce4b90d5c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22642,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 532,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,966 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "f6b6df9e9deddd1c03f39f3e7ec10de3f286f4bdbf50f19b15203a9dd934af30",
+    "695d7a14a1cb7dd9a57f81cf259c503e5904336f3ac44f1d1eeff08069bfda3f",
+    "8258056fedfbe24a3b37eb17ca54619d5840ef036960db62a214f2c7e002f0cb"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-37554",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "formulas": {
+          "F2": "=SUMPRODUCT(--EXACT(D2,$A$2:$A$17),$B$2:$B$17)",
+          "F3": "=SUMPRODUCT(--EXACT(D3,$A$2:$A$17),$B$2:$B$17)",
+          "F4": "=SUMPRODUCT(--EXACT(D4,$A$2:$A$17),$B$2:$B$17)",
+          "F5": "=SUMPRODUCT(--EXACT(D5,$A$2:$A$17),$B$2:$B$17)",
+          "F6": "=SUMPRODUCT(--EXACT(D6,$A$2:$A$17),$B$2:$B$17)",
+          "F7": "=SUMPRODUCT(--EXACT(D7,$A$2:$A$17),$B$2:$B$17)",
+          "F8": "=SUMPRODUCT(--EXACT(D8,$A$2:$A$17),$B$2:$B$17)",
+          "F9": "=SUMPRODUCT(--EXACT(D9,$A$2:$A$17),$B$2:$B$17)",
+          "F10": "=SUMPRODUCT(--EXACT(D10,$A$2:$A$17),$B$2:$B$17)",
+          "F11": "=SUMPRODUCT(--EXACT(D11,$A$2:$A$17),$B$2:$B$17)",
+          "F12": "=SUMPRODUCT(--EXACT(D12,$A$2:$A$17),$B$2:$B$17)",
+          "F13": "=SUMPRODUCT(--EXACT(D13,$A$2:$A$17),$B$2:$B$17)",
+          "F14": "=SUMPRODUCT(--EXACT(D14,$A$2:$A$17),$B$2:$B$17)",
+          "F15": "=SUMPRODUCT(--EXACT(D15,$A$2:$A$17),$B$2:$B$17)",
+          "F16": "=SUMPRODUCT(--EXACT(D16,$A$2:$A$17),$B$2:$B$17)",
+          "F17": "=SUMPRODUCT(--EXACT(D17,$A$2:$A$17),$B$2:$B$17)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F18"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F18",
+            "range_size": 108,
+            "cells": [
+              [
+                "A1",
+                "TYPE"
+              ],
+              [
+                "B1",
+                "Accounts"
+              ],
+              [
+                "D1",
+                "TYPE"
+              ],
+              [
+                "E1",
+                "% of Total"
+              ],
+              [
+                "F1",
+                "Accounts"
+              ],
+              [
+                "A2",
+                "Corporate"
+              ],
+              [
+                "B2",
+                "4377"
+              ],
+              [
+                "D2",
+                "Airline"
+              ],
+              [
+                "E2",
+                "0.009545923632610939"
+              ],
+              [
+                "F2",
+                "74"
+              ],
+              [
+                "A3",
+                "Local Tour Operator"
+              ],
+              [
+                "B3",
+                "1629"
+              ],
+              [
+                "D3",
+                "Competitor"
+              ],
+              [
+                "E3",
+                "0.0005159958720330237"
+              ],
+              [
+                "F3",
+                "4"
+              ],
+              [
+                "A4",
+                "Travel Agency"
+              ],
+              [
+                "B4",
+                "824"
+              ],
+              [
+                "D4",
+                "Corporate"
+              ],
+              [
+                "E4",
+                "0.5646284829721362"
+              ],
+              [
+                "F4",
+                "4377"
+              ],
+              [
+                "A5",
+                "Other"
+              ],
+              [
+                "B5",
+                "181"
+              ],
+              [
+                "D5",
+                "Destination Management Company"
+              ],
+              [
+                "E5",
+                "0.005288957688338493"
+              ],
+              [
+                "F5",
+                "41"
+              ],
+              [
+                "A6",
+                "Oversea Tour Operator"
+              ],
+              [
+                "B6",
+                "176"
+              ],
+              [
+                "D6",
+                "GSA"
+              ],
+              [
+                "E6",
+                "0.0001289989680082559"
+              ],
+              [
+                "F6",
+                "1"
+              ],
+              [
+                "A7",
+                "MICE"
+              ],
+              [
+                "B7",
+                "122"
+              ],
+              [
+                "D7",
+                "Head Office"
+              ],
+              [
+                "E7",
+                "0.002708978328173375"
+              ],
+              [
+                "F7",
+                "21"
+              ],
+              [
+                "A8",
+                "Online Travel Agency"
+              ],
+              [
+                "B8",
+                "117"
+              ],
+              [
+                "D8",
+                "Hotel"
+              ],
+              [
+                "E8",
+                "0.001418988648090815"
+              ],
+              [
+                "F8",
+                "11"
+              ],
+              [
+                "A9",
+                "Airline"
+              ],
+              [
+                "B9",
+                "74"
+              ],
+              [
+                "D9",
+                "Local Tour Operator"
+              ],
+              [
+                "E9",
+                "0.2101393188854489"
+              ],
+              [
+                "F9",
+                "1629"
+              ],
+              [
+                "A10",
+                "Destination Management Company"
+              ],
+              [
+                "B10",
+                "41"
+              ],
+              [
+                "D10",
+                "MICE"
+              ],
+              [
+                "E10",
+                "0.01573787409700722"
+              ],
+              [
+                "F10",
+                "122"
+              ],
+              [
+                "A11",
+                "Wedding & Events"
+              ],
+              [
+                "B11",
+                "38"
+              ],
+              [
+                "D11",
+                "Online Travel Agency"
+              ],
+              [
+                "E11",
+                "0.01509287925696595"
+              ],
+              [
+                "F11",
+                "117"
+              ],
+              [
+                "A12",
+                "Head Office"
+              ],
+              [
+                "B12",
+                "21"
+              ],
+              [
+                "D12",
+                "Other"
+              ],
+              [
+                "E12",
+                "0.02334881320949432"
+              ],
+              [
+                "F12",
+                "181"
+              ],
+              [
+                "A13",
+                "Regional Office"
+              ],
+              [
+                "B13",
+                "17"
+              ],
+              [
+                "D13",
+                "Oversea Tour Operator"
+              ],
+              [
+                "E13",
+                "0.02270381836945305"
+              ],
+              [
+                "F13",
+                "176"
+              ],
+              [
+                "A14",
+                "Hotel"
+              ],
+              [
+                "B14",
+                "11"
+              ],
+              [
+                "D14",
+                "Press"
+              ],
+              [
+                "E14",
+                "0.0002579979360165118"
+              ],
+              [
+                "F14",
+                "2"
+              ],
+              [
+                "A15",
+                "Competitor"
+              ],
+              [
+                "B15",
+                "4"
+              ],
+              [
+                "D15",
+                "Regional Office"
+              ],
+              [
+                "E15",
+                "0.002192982456140351"
+              ],
+              [
+                "F15",
+                "17"
+              ],
+              [
+                "A16",
+                "Press"
+              ],
+              [
+                "B16",
+                "2"
+              ],
+              [
+                "D16",
+                "Travel Agency"
+              ],
+              [
+                "E16",
+                "0.1213880288957688"
+              ],
+              [
+                "F16",
+                "941"
+              ]
+            ],
+            "total": 89,
+            "truncated": true,
+            "blank_count": 19
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "F2:F17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "F2:F17",
+            "range_size": 16,
+            "cells": [
+              [
+                "F2",
+                "74"
+              ],
+              [
+                "F3",
+                "4"
+              ],
+              [
+                "F4",
+                "4377"
+              ],
+              [
+                "F5",
+                "41"
+              ],
+              [
+                "F6",
+                "1"
+              ],
+              [
+                "F7",
+                "21"
+              ],
+              [
+                "F8",
+                "11"
+              ],
+              [
+                "F9",
+                "1629"
+              ],
+              [
+                "F10",
+                "122"
+              ],
+              [
+                "F11",
+                "117"
+              ],
+              [
+                "F12",
+                "181"
+              ],
+              [
+                "F13",
+                "176"
+              ],
+              [
+                "F14",
+                "2"
+              ],
+              [
+                "F15",
+                "17"
+              ],
+              [
+                "F16",
+                "941"
+              ],
+              [
+                "F17",
+                "38"
+              ]
+            ],
+            "total": 16,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 57061,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1354,
+        "reasoning_output_tokens": 557
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37609",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(AND(N(A2)<7,N(B2)<7),\"-\",\"e\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:C11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:C11",
+            "range_size": 33,
+            "cells": [
+              [
+                "A1",
+                "Column 1"
+              ],
+              [
+                "B1",
+                "Column 2"
+              ],
+              [
+                "C1",
+                "E/-"
+              ],
+              [
+                "A2",
+                "6"
+              ],
+              [
+                "B2",
+                "5"
+              ],
+              [
+                "C2",
+                "-"
+              ],
+              [
+                "A3",
+                "7"
+              ],
+              [
+                "B3",
+                "4"
+              ],
+              [
+                "C3",
+                "e"
+              ],
+              [
+                "A4",
+                "5"
+              ],
+              [
+                "B4",
+                "4"
+              ],
+              [
+                "C4",
+                "-"
+              ],
+              [
+                "A5",
+                "5"
+              ],
+              [
+                "B5",
+                "7"
+              ],
+              [
+                "C5",
+                "e"
+              ],
+              [
+                "A6",
+                "U"
+              ],
+              [
+                "B6",
+                "5"
+              ],
+              [
+                "C6",
+                "e"
+              ],
+              [
+                "A7",
+                "U"
+              ],
+              [
+                "B7",
+                "7"
+              ],
+              [
+                "C7",
+                "e"
+              ],
+              [
+                "A8",
+                "U"
+              ],
+              [
+                "B8",
+                "U"
+              ],
+              [
+                "C8",
+                "e"
+              ],
+              [
+                "A9",
+                "4"
+              ],
+              [
+                "B9",
+                "4"
+              ],
+              [
+                "C9",
+                "-"
+              ],
+              [
+                "A10",
+                "2"
+              ],
+              [
+                "B10",
+                "3"
+              ],
+              [
+                "C10",
+                "-"
+              ],
+              [
+                "A11",
+                "7"
+              ],
+              [
+                "B11",
+                "7"
+              ],
+              [
+                "C11",
+                "e"
+              ]
+            ],
+            "total": 33,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "C2:C11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "C2:C11",
+            "range_size": 10,
+            "cells": [
+              [
+                "C2",
+                "-"
+              ],
+              [
+                "C3",
+                "e"
+              ],
+              [
+                "C4",
+                "-"
+              ],
+              [
+                "C5",
+                "e"
+              ],
+              [
+                "C6",
+                "e"
+              ],
+              [
+                "C7",
+                "e"
+              ],
+              [
+                "C8",
+                "e"
+              ],
+              [
+                "C9",
+                "-"
+              ],
+              [
+                "C10",
+                "-"
+              ],
+              [
+                "C11",
+                "e"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 57061,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1354,
+        "reasoning_output_tokens": 557
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37615",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F7:F37",
+            "formula": "=IF(D7>TIME(4,0,0),57.2,28.6)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F16",
+            "range_size": 33,
+            "cells": [
+              [
+                "D6",
+                "Total Hours"
+              ],
+              [
+                "E6",
+                "Days Billed"
+              ],
+              [
+                "F6",
+                "$ Amount"
+              ],
+              [
+                "D7",
+                "8:00:00"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "D8",
+                "3:00:00"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "D9",
+                "0:00:00"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "D10",
+                "0:00:00"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "D11",
+                "8:15:00"
+              ],
+              [
+                "E11",
+                "1"
+              ],
+              [
+                "D12",
+                "3:50:00"
+              ],
+              [
+                "E12",
+                "1"
+              ],
+              [
+                "D13",
+                "5:00:00"
+              ],
+              [
+                "E13",
+                "1"
+              ],
+              [
+                "D14",
+                "7:30:00"
+              ],
+              [
+                "E14",
+                "1"
+              ],
+              [
+                "D15",
+                "0:00:00"
+              ],
+              [
+                "E15",
+                "0"
+              ],
+              [
+                "D16",
+                "0:00:00"
+              ],
+              [
+                "E16",
+                "0"
+              ]
+            ],
+            "total": 23,
+            "truncated": false,
+            "blank_count": 10
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "F7:F44"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "F7:F44",
+            "range_size": 38,
+            "cells": [
+              [
+                "F42",
+                "0"
+              ],
+              [
+                "F43",
+                "0"
+              ],
+              [
+                "F44",
+                "0"
+              ]
+            ],
+            "total": 3,
+            "truncated": false,
+            "blank_count": 35
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 57061,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1354,
+        "reasoning_output_tokens": 557
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-38462",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "formulas": {
+          "C1": "=ROUNDUP(B1,0)",
+          "C2": "=ROUNDUP(B2,0)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2",
+            "range_size": 6,
+            "cells": [
+              [
+                "A1",
+                "DEE"
+              ],
+              [
+                "B1",
+                "2046 days, 17:30:00"
+              ],
+              [
+                "C1",
+                "49122"
+              ],
+              [
+                "A2",
+                "DEF"
+              ],
+              [
+                "B2",
+                "2055 days, 11:58:00"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57061,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1354,
+        "reasoning_output_tokens": 557
+      },
+      "model_calls": 3
+    }
+  ]
+}

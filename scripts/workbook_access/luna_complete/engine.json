@@ -1,0 +1,17 @@
+{
+  "cli": "codex-cli 0.171.0-alpha.13.2",
+  "effort": "medium",
+  "disabled_features": [
+    "shell_tool",
+    "unified_exec",
+    "plugins",
+    "apps",
+    "memories",
+    "multi_agent",
+    "multi_agent_v2",
+    "image_generation"
+  ],
+  "model_provenance": "explicit Codex CLI --model selection",
+  "timeout_seconds": 600,
+  "openpyxl": "3.1.5"
+}

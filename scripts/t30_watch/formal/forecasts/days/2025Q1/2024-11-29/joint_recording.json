@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25783,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 258,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8f-cfb5-7bf2-af48-113b0c849be9",
+  "packet_sha256": "9878d4d66f991c511f45f270a5198aaf2261b3370dee4382f7ec37e0210f8815",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2025Q1/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"Reported revenue fell 4.40% year over year in June and 3.91% in September (A). I expect OSP strength to keep the December-quarter decline below 5% in magnitude. For the quarter beginning December 29, I forecast a decline of at least 5% as wireless equipment makers continue to restrain R&D and production spending and North American service-provider and enterprise demand remains weak (B, C). The timing is uncertain because September was a slight improvement.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q1/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "Reported revenue fell 4.40% year over year in June and 3.91% in September (A). I expect OSP strength to keep the December-quarter decline below 5% in magnitude. For the quarter beginning December 29, I forecast a decline of at least 5% as wireless equipment makers continue to restrain R&D and production spending and North American service-provider and enterprise demand remains weak (B, C). The timing is uncertain because September was a slight improvement."
+          }
+        ]
+      }
+    ]
+  }
+}

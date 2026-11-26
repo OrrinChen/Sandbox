@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25080,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 206,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d92-f57e-78c2-b822-b0a427c8f4f2",
+  "packet_sha256": "cebf1ffcc4db18eb90db3c269e69dc8cbe5cb7723b0965c1ecce322c5c4b6c66",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2026Q1/prepackaged_software-1\",\"alerts\":[]},{\"sector\":\"2026Q1/prepackaged_software-2\",\"alerts\":[]},{\"sector\":\"2026Q1/retail-1\",\"alerts\":[{\"cik\":\"0001326380\",\"reason\":\"GameStop’s consolidated net sales swung from +21.78% year over year in August to −4.57% in November, just 0.43 percentage points above the threshold (A). U.S. and Australian sales growth of 11.8% and 23.3% could keep the intervening quarter above −5.00%. With European sales down 45.7% and Canadian sales down 100% (B), even a modest weakening of that offset could push the quarter beginning February 1 to −5.00% or below.\"}]},{\"sector\":\"2026Q1/retail-3\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2026Q1/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "GameStop’s consolidated net sales swung from +21.78% year over year in August to −4.57% in November, just 0.43 percentage points above the threshold (A). U.S. and Australian sales growth of 11.8% and 23.3% could keep the intervening quarter above −5.00%. With European sales down 45.7% and Canadian sales down 100% (B), even a modest weakening of that offset could push the quarter beginning February 1 to −5.00% or below."
+          }
+        ]
+      },
+      {
+        "sector": "2026Q1/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

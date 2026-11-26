@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-009",
+    "stage": "submit",
+    "prompt_sha256": "ed045545bd7cb5e93706ed8881a6fbfea2a3038eadd4745d14fb4ca575af65f6",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121f-7377-7c81-8b1a-3ae0b9ba65ee",
+    "raw": "{\"sheet-43406\":{\"fills\":[{\"range\":\"C7:C20\",\"formula\":\"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),LOOKUP(2,1/($D$7:D7=\\\"H\\\"),ROW($D$7:D7))-ROW($D$7)+1+(COUNTIF(INDEX($D:$D,LOOKUP(2,1/($D$7:D7=\\\"H\\\"),ROW($D$7:D7))):D7,\\\"S\\\")-1)/10)\"}],\"formulas\":{}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:K6\",\"formula\":\"=COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(I$1,0),$D$2:$D$12,\\\">=\\\"&DATE(YEAR(I$1),MONTH(I$1),1))+COUNTIFS($C$2:$C$12,\\\"<=\\\"&EOMONTH(I$1,0),$D$2:$D$12,\\\"\\\")\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(TRIM(MID(A2,FIND(\\\"to\\\",A2)+2,99)))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-1))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"I6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 17524,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 362,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

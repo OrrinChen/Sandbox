@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "task_id": "repair-all-your-base",
+  "split": "test",
+  "tool": "python.repair",
+  "candidate": "def from_digits(digits, base):\n    return sum((number * base ** idx for (idx, number) in enumerate(reversed(digits))))\n\ndef to_digits(number, base_to):\n    result = []\n    while number > 1:\n        result.append(number % base_to)\n        number //= base_to\n    if result:\n        return result[::-1]\n    return [0]\n\ndef rebase(from_base, digits, to_base):\n    if from_base < 2:\n        raise ValueError('input base must be >= 2')\n    if to_base < 2:\n        raise ValueError('output base must be >= 2')\n    if any((True for idx in digits if idx < 0 or idx >= from_base)):\n        raise ValueError('all digits must satisfy 0 <= d < input base')\n    return to_digits(from_digits(digits, from_base), to_base)\n",
+  "candidate_sha256": "5d3eb1d2d0982b937e8e7740b033e21af8826be4aabeb227d376ba058dafc379",
+  "passed": false
+}

@@ -1,0 +1,14 @@
+{
+  "time": "2026-11-25T08:48:33.118531+00:00",
+  "elapsed_seconds": 480,
+  "capacity_rule_sha256": "015f0746a545310bc0b3f7f5af1ad8670d01234bec9548a7c9bb27424cfcfbb1",
+  "predecessor_registration_sha256": "5f3cae21310af4df04a15fa97e18ccf2be7c157092b366f9f1e98b83291db985",
+  "frozen_results_opened": false,
+  "observed": {
+    "professional_batches": 0,
+    "professional_turns": 3,
+    "sol_batches": 50
+  },
+  "active_second_model": "gpt-6.1-terra",
+  "action": "Retain all original Sol turns. Exclude every partial professional-tier turn, and collect both efficient-tier conditions from scratch."
+}

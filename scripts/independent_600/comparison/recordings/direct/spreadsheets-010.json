@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "d9e42efce48df3768b8b7c7dd6aac1b2b9bc7628439a43b937f6f5cca9f1fc29",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-44264\": {\n    \"fills\": [\n      {\n        \"range\": \"J7:N9\",\n        \"formula\": \"=IF(AND(J$6>=$H7,J$6<$H7+3),$G7*INDEX($R$7:$R$9,J$6-$H7+1),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-44266\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B12\",\n        \"formula\": \"=IFERROR(INDEX(Data!$G$14:$P$14,1,MATCH(A2,Data!$F$4:$O$4,0)),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-44628\": {\n    \"fills\": [\n      {\n        \"range\": \"D3:G3\",\n        \"formula\": \"=SUMIF($A:$A,D2&\\\"*\\\",$B:$B)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45030\": {\n    \"fills\": [\n      {\n        \"range\": \"B7:B28\",\n        \"formula\": \"=IFERROR(INDEX($E$7:$E$19,COUNTIF($E$7:$E$19,\\\">\\\"&C7)+1),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-44264": {
+      "fills": [
+        {
+          "range": "J7:N9",
+          "formula": "=IF(AND(J$6>=$H7,J$6<$H7+3),$G7*INDEX($R$7:$R$9,J$6-$H7+1),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-44266": {
+      "fills": [
+        {
+          "range": "B2:B12",
+          "formula": "=IFERROR(INDEX(Data!$G$14:$P$14,1,MATCH(A2,Data!$F$4:$O$4,0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-44628": {
+      "fills": [
+        {
+          "range": "D3:G3",
+          "formula": "=SUMIF($A:$A,D2&\"*\",$B:$B)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-45030": {
+      "fills": [
+        {
+          "range": "B7:B28",
+          "formula": "=IFERROR(INDEX($E$7:$E$19,COUNTIF($E$7:$E$19,\">\"&C7)+1),\"\")"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-2f32-7242-b634-6470eb4e7884",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26316,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 307,
+    "reasoning_output_tokens": 0
+  }
+}

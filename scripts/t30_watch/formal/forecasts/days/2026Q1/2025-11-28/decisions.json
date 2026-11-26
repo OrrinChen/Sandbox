@@ -1,0 +1,114 @@
+{
+  "text": [
+    {
+      "sector": "2026Q1/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2026Q1/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/food_manufacturing-3",
+      "alerts": [
+        {
+          "cik": "0000785956",
+          "reason": "Year-over-year net sales growth fell from +3.26% in June to −3.87% in September, just 1.13 percentage points above the threshold. Foodservice growth partly cushioned retail supermarket weakness (A), while lost limited-time churro volume added pressure (B). I forecast growth stays above −5.00% in the intervening quarter and falls to −5.00% or lower in the quarter beginning December 28. The timing is uncertain because neither record quantifies the target-quarter volume impact."
+        }
+      ]
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2026Q1/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2026Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0000772406",
+          "reason": "Reported sales YoY 8.89% then 3.53%. Target is step 2; preceding -1.84% versus target -7.20%."
+        }
+      ]
+    },
+    {
+      "sector": "2026Q1/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

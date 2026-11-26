@@ -1,0 +1,620 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "b4834253c787878ae5d96617ad1632488c5caae48fc41036450cca55dffe055b",
+    "73cf35217334084275c3adf9e5e0f1c7f23437c83f62feb2af15604171a0e874",
+    "c3ee195283ac3fded5b3614e23418505b9aa70cc5716c4569ac4dd71d816d784"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-37554",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F17",
+            "formula": "=SUMPRODUCT(($A$2:$A$17=D2)*$B$2:$B$17)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F19",
+            "range_size": 114,
+            "cells": [
+              [
+                "A1",
+                "TYPE"
+              ],
+              [
+                "B1",
+                "Accounts"
+              ],
+              [
+                "D1",
+                "TYPE"
+              ],
+              [
+                "E1",
+                "% of Total"
+              ],
+              [
+                "F1",
+                "Accounts"
+              ],
+              [
+                "A2",
+                "Corporate"
+              ],
+              [
+                "B2",
+                "4377"
+              ],
+              [
+                "D2",
+                "Airline"
+              ],
+              [
+                "E2",
+                "0.009545923632610939"
+              ],
+              [
+                "F2",
+                "74"
+              ],
+              [
+                "A3",
+                "Local Tour Operator"
+              ],
+              [
+                "B3",
+                "1629"
+              ],
+              [
+                "D3",
+                "Competitor"
+              ],
+              [
+                "E3",
+                "0.0005159958720330237"
+              ],
+              [
+                "F3",
+                "4"
+              ],
+              [
+                "A4",
+                "Travel Agency"
+              ],
+              [
+                "B4",
+                "824"
+              ],
+              [
+                "D4",
+                "Corporate"
+              ],
+              [
+                "E4",
+                "0.5646284829721362"
+              ],
+              [
+                "F4",
+                "4377"
+              ],
+              [
+                "A5",
+                "Other"
+              ],
+              [
+                "B5",
+                "181"
+              ],
+              [
+                "D5",
+                "Destination Management Company"
+              ],
+              [
+                "E5",
+                "0.005288957688338493"
+              ],
+              [
+                "F5",
+                "41"
+              ],
+              [
+                "A6",
+                "Oversea Tour Operator"
+              ],
+              [
+                "B6",
+                "176"
+              ],
+              [
+                "D6",
+                "GSA"
+              ],
+              [
+                "E6",
+                "0.0001289989680082559"
+              ],
+              [
+                "F6",
+                "1"
+              ],
+              [
+                "A7",
+                "MICE"
+              ],
+              [
+                "B7",
+                "122"
+              ],
+              [
+                "D7",
+                "Head Office"
+              ],
+              [
+                "E7",
+                "0.002708978328173375"
+              ],
+              [
+                "F7",
+                "21"
+              ],
+              [
+                "A8",
+                "Online Travel Agency"
+              ],
+              [
+                "B8",
+                "117"
+              ],
+              [
+                "D8",
+                "Hotel"
+              ],
+              [
+                "E8",
+                "0.001418988648090815"
+              ],
+              [
+                "F8",
+                "11"
+              ],
+              [
+                "A9",
+                "Airline"
+              ],
+              [
+                "B9",
+                "74"
+              ],
+              [
+                "D9",
+                "Local Tour Operator"
+              ],
+              [
+                "E9",
+                "0.2101393188854489"
+              ],
+              [
+                "F9",
+                "1629"
+              ],
+              [
+                "A10",
+                "Destination Management Company"
+              ],
+              [
+                "B10",
+                "41"
+              ],
+              [
+                "D10",
+                "MICE"
+              ],
+              [
+                "E10",
+                "0.01573787409700722"
+              ],
+              [
+                "F10",
+                "122"
+              ],
+              [
+                "A11",
+                "Wedding & Events"
+              ],
+              [
+                "B11",
+                "38"
+              ],
+              [
+                "D11",
+                "Online Travel Agency"
+              ],
+              [
+                "E11",
+                "0.01509287925696595"
+              ],
+              [
+                "F11",
+                "117"
+              ],
+              [
+                "A12",
+                "Head Office"
+              ],
+              [
+                "B12",
+                "21"
+              ],
+              [
+                "D12",
+                "Other"
+              ],
+              [
+                "E12",
+                "0.02334881320949432"
+              ],
+              [
+                "F12",
+                "181"
+              ],
+              [
+                "A13",
+                "Regional Office"
+              ],
+              [
+                "B13",
+                "17"
+              ],
+              [
+                "D13",
+                "Oversea Tour Operator"
+              ],
+              [
+                "E13",
+                "0.02270381836945305"
+              ],
+              [
+                "F13",
+                "176"
+              ],
+              [
+                "A14",
+                "Hotel"
+              ],
+              [
+                "B14",
+                "11"
+              ],
+              [
+                "D14",
+                "Press"
+              ],
+              [
+                "E14",
+                "0.0002579979360165118"
+              ],
+              [
+                "F14",
+                "2"
+              ],
+              [
+                "A15",
+                "Competitor"
+              ],
+              [
+                "B15",
+                "4"
+              ],
+              [
+                "D15",
+                "Regional Office"
+              ],
+              [
+                "E15",
+                "0.002192982456140351"
+              ],
+              [
+                "F15",
+                "17"
+              ],
+              [
+                "A16",
+                "Press"
+              ],
+              [
+                "B16",
+                "2"
+              ],
+              [
+                "D16",
+                "Travel Agency"
+              ],
+              [
+                "E16",
+                "0.1213880288957688"
+              ],
+              [
+                "F16",
+                "941"
+              ]
+            ],
+            "total": 91,
+            "truncated": true,
+            "blank_count": 23
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 58011,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 104
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37609",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(OR(A2=\"U\",B2=\"U\"),\"-\",IF(OR(N(A2)>=7,N(B2)>=7),\"e\",\"-\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58011,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 104
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37615",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F7:F37",
+            "formula": "=IF(D7<=0,0,IF(D7>TIME(4,0,0),57.2,28.6))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "B7:F12"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "B7:F12",
+            "range_size": 30,
+            "cells": [
+              [
+                "B7",
+                "07:00:00"
+              ],
+              [
+                "C7",
+                "15:00:00"
+              ],
+              [
+                "D7",
+                "8:00:00"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "B8",
+                "08:00:00"
+              ],
+              [
+                "C8",
+                "11:00:00"
+              ],
+              [
+                "D8",
+                "3:00:00"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "D9",
+                "0:00:00"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "D10",
+                "0:00:00"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "B11",
+                "08:30:00"
+              ],
+              [
+                "C11",
+                "16:45:00"
+              ],
+              [
+                "D11",
+                "8:15:00"
+              ],
+              [
+                "E11",
+                "1"
+              ],
+              [
+                "B12",
+                "09:45:00"
+              ],
+              [
+                "C12",
+                "13:35:00"
+              ],
+              [
+                "D12",
+                "3:50:00"
+              ],
+              [
+                "E12",
+                "1"
+              ]
+            ],
+            "total": 20,
+            "truncated": false,
+            "blank_count": 10
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D40:F44"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D40:F44",
+            "range_size": 15,
+            "cells": [
+              [
+                "D42",
+                "57.2"
+              ],
+              [
+                "F42",
+                "0"
+              ],
+              [
+                "D43",
+                "28.6"
+              ],
+              [
+                "F43",
+                "0"
+              ],
+              [
+                "E44",
+                "Total invoice:"
+              ],
+              [
+                "F44",
+                "0"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 58011,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 104
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-38462",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C1:C2",
+            "formula": "=ROUNDUP(B1*24,0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58011,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 104
+      },
+      "model_calls": 3
+    }
+  ]
+}

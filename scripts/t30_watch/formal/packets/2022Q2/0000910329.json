@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "food_manufacturing-3",
+  "sector": "food_manufacturing",
+  "cik": "0000910329",
+  "issuer": "MEDIFAST INC",
+  "cutoff": "2022-03-02",
+  "projected_target_start": "2022-04-01",
+  "status": "incomplete_trend",
+  "period_end": "2021-12-31",
+  "filing_date": "2022-02-23",
+  "text": {
+    "sector": "food_manufacturing",
+    "cik": "0000910329",
+    "issuer": "MEDIFAST INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-02-23",
+        "text": "Revenue: Revenue increased $591.2 million, or 63.2%, to $1.526 billion in 2021 from $934.8 million in 2020."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-02-23",
+        "text": "We have operated and reported as a single sales segment, OPTAVIA, since 2018."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-02-23",
+        "text": "Decrease in operating assets and liabilities was primarily due to a $122.0 decrease in the change in inventories."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-02-23",
+        "text": "Costs of Sales: Cost of sales increased $161.5 million, or 68.1%, to $398.5 million in 2021 from $237.0 million in 2020."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-02-23",
+        "text": "Income from operations: Income from operations in 2021 increased $82.0 million to $216.2 million from $134.2 million in 2020 primarily as a result of increased gross profits partially offset by increased SG&A expenses."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-11-04",
+        "reported_sales_usd": 413395000,
+        "year_ago_reported_sales_usd": 271470000,
+        "yoy_percent": "52.2802"
+      },
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-23",
+        "reported_sales_usd": null,
+        "year_ago_reported_sales_usd": null,
+        "yoy_percent": null
+      }
+    ],
+    "status": "incomplete"
+  }
+}

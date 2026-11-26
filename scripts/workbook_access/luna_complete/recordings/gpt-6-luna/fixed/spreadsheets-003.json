@@ -1,0 +1,381 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "73491ce1361d0fb6e503f1ea59d460aeb4e1f981b8da7cb86114d7aa02f7d1c4",
+    "6b9203ee8996fd83f2b04dd2dba2aefe8dcbcfaad2b7d1c0a9adce786fc51616",
+    "b909db7208ae72b9b7024b8c033946a4c86bc8a4cca803bf99e3abe101f30118"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-34210",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "formulas": {
+          "C1": "=A1",
+          "C2": "=IF(A2=\"\",C1,A2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C15",
+            "range_size": 45,
+            "cells": [
+              [
+                "A1",
+                "Company A"
+              ],
+              [
+                "B1",
+                "WordPress Website Hosting + Security Protection"
+              ],
+              [
+                "B2",
+                "Webmaster Services"
+              ],
+              [
+                "B3",
+                "Search Engine Optimization (SEO) & Content Marketing Hours"
+              ],
+              [
+                "B4",
+                "Tracking, Reporting & Account Management"
+              ],
+              [
+                "B5",
+                "Call Tagging - Unlimited"
+              ],
+              [
+                "B6",
+                "Phone Product - Unlimited"
+              ],
+              [
+                "B7",
+                "Proven Layout Website Design & Development"
+              ],
+              [
+                "B8",
+                "Credit - Webmaster Services - January 2022"
+              ],
+              [
+                "B9",
+                "Paid Advertising Management"
+              ],
+              [
+                "B10",
+                "Google Business Profile (GBP) Advanced Management – First Location"
+              ],
+              [
+                "A11",
+                "Company B"
+              ],
+              [
+                "B11",
+                "Tracking, Reporting & Account Management"
+              ],
+              [
+                "B12",
+                "Call Tagging - Unlimited"
+              ],
+              [
+                "B13",
+                "Phone Product - Unlimited"
+              ],
+              [
+                "B14",
+                "Search Engine Optimization (SEO) & Content Marketing Hours"
+              ],
+              [
+                "B15",
+                "Webmaster Services"
+              ]
+            ],
+            "total": 17,
+            "truncated": false,
+            "blank_count": 28
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 119521,
+        "cached_input_tokens": 50944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1583,
+        "reasoning_output_tokens": 1108
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-35739",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C100",
+            "formula": "=IF(OR(A2=\"\",B2=\"\"),\"\",MOD(B2-TIME(0,30,0),1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A50:C70"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A50:C70",
+            "range_size": 63,
+            "cells": [
+              [
+                "A50",
+                "12-Jun-2023"
+              ],
+              [
+                "B50",
+                "05:15"
+              ],
+              [
+                "C50",
+                "04:45:00"
+              ],
+              [
+                "A51",
+                "12-Jun-2023"
+              ],
+              [
+                "B51",
+                "05:45"
+              ],
+              [
+                "C51",
+                "05:15:00"
+              ],
+              [
+                "A52",
+                "12-Jun-2023"
+              ],
+              [
+                "B52",
+                "05:45"
+              ],
+              [
+                "C52",
+                "05:15:00"
+              ],
+              [
+                "A53",
+                "12-Jun-2023"
+              ],
+              [
+                "B53",
+                "05:45"
+              ],
+              [
+                "C53",
+                "05:15:00"
+              ],
+              [
+                "C54",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C55",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C56",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C57",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C58",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C59",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C60",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C61",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C62",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C63",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C64",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C65",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C66",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C67",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C68",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C69",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C70",
+                "1899-12-29 23:30:00"
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 34
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A90:C100"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A90:C100",
+            "range_size": 33,
+            "cells": [
+              [
+                "C99",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C100",
+                "1899-12-29 23:30:00"
+              ]
+            ],
+            "total": 2,
+            "truncated": false,
+            "blank_count": 31
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 119521,
+        "cached_input_tokens": 50944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1583,
+        "reasoning_output_tokens": 1108
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-35747",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "formulas": {
+          "M2": "=SUMPRODUCT(($A$2:$A$11=$L2)*($B$2:$J$11>100)*($B$1:$J$1>=$M$1)*($B$1:$J$1<$N$1))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 119521,
+        "cached_input_tokens": 50944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1583,
+        "reasoning_output_tokens": 1108
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-36236",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F6",
+            "formula": "=TEXTJOIN(\", \",TRUE,UNIQUE(A2:B2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 119521,
+        "cached_input_tokens": 50944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1583,
+        "reasoning_output_tokens": 1108
+      },
+      "model_calls": 3
+    }
+  ]
+}

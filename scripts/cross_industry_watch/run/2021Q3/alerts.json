@@ -1,0 +1,130 @@
+{
+  "origin": "2021Q3",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001121484",
+          "reason": "Slot A puts Q2 consolidated revenue roughly flat year on year. Slot B shows Offshore/Manufactured Products booked only $0.90 per dollar billed in Q2, and E reports pressure on both demand and prices. If that persists into Q3 or Q4, consolidated revenue could fall at least 5% year on year."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001579910",
+          "reason": "Slot B reports flat revenue concentrated in the Murata agreement. A reports difficulty interacting with customers, and C says royalty gains were nominal. A delay in contract work could therefore move quarterly revenue from flat to down at least 5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Q2 consolidated revenue rose 19% (A), but net bookings fell despite an $82 million increase at King (B). Revenue recognition can lag bookings (D), so weaker bookings could push Q3 or Q4 revenue down at least 5% against a prior year that benefited from stay-at-home demand (C)."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Q2 operating revenue fell 4.2% year on year (A), only 0.8 percentage points above the cutoff. Freight rates rose throughout the second half of 2020 (D), giving Q3 and Q4 tougher year-on-year comparisons. Even modest further deterioration would cross the threshold."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000018255",
+          "reason": "Reported sales YoY 111.54% then 23.53%; linear projections -64.47% and -152.47%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001140215",
+          "reason": "Reported sales YoY 27.54% then 3.84%; linear projections -19.86% and -43.56%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001579910",
+          "reason": "Reported sales YoY 11.76% then 1.66%; linear projections -8.45% and -18.56%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

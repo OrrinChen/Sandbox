@@ -1,0 +1,366 @@
+[
+  {
+    "task_id": "decision-date-a-legend-reading-between-proofs",
+    "tool": "sqlite.query",
+    "instruction": "For each catalog impression, reconstruct the reading of its queried glyph on the day it was printed. Days are integer days from the start of this fictional atlas project. Each proof note establishes its reading from its note day onward, including that day. A NULL plate code on a note means the note applies to every plate. A plate-specific note applies only to its named plate. Among applicable notes for the same glyph, the latest note day wins. Only on the same day does a plate-specific note outrank a general note. Break any remaining tie by ascending source ID in SQLite binary text order. The reading is the catalog transcription of the primary text in that note. Retain impressions lacking applicable evidence, with NULL for both reading and citation. All other input cells are non-NULL. Return impression_id, reading, source_id in ascending impression_id order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "impressions": {
+        "columns": [
+          "impression_id TEXT",
+          "plate_code TEXT",
+          "glyph TEXT",
+          "print_day INTEGER"
+        ],
+        "rows": [
+          [
+            "I1",
+            "Fen",
+            "ring",
+            3
+          ],
+          [
+            "I2",
+            "Fen",
+            "ring",
+            6
+          ],
+          [
+            "I3",
+            "Fen",
+            "ring",
+            9
+          ],
+          [
+            "I4",
+            "Mere",
+            "ring",
+            6
+          ],
+          [
+            "I5",
+            "Fen",
+            "dash",
+            2
+          ]
+        ]
+      },
+      "proof_notes": {
+        "columns": [
+          "source_id TEXT",
+          "plate_code TEXT",
+          "glyph TEXT",
+          "note_day INTEGER",
+          "reading TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            null,
+            "ring",
+            3,
+            "pool",
+            "Use the open ring for a pool throughout."
+          ],
+          [
+            "P2",
+            "Fen",
+            "ring",
+            6,
+            "spring",
+            "Fen proof: ring now denotes a spring."
+          ],
+          [
+            "P3",
+            null,
+            "ring",
+            6,
+            "well",
+            "Set the common ring caption to well."
+          ],
+          [
+            "P4",
+            null,
+            "ring",
+            8,
+            "basin",
+            "Reset all ring captions to basin."
+          ],
+          [
+            "P5",
+            "Mere",
+            "dash",
+            1,
+            "reed bed",
+            "Mere dash marks the reed beds."
+          ],
+          [
+            "P6",
+            "Fen",
+            "dash",
+            4,
+            "bank",
+            "Fen dash denotes a bank."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "impression_id",
+      "reading",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-dead-heat-purse-apportionment",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the payout ledger for one mixed relay final. Each squad appears once. A nonnull official_ms is its classified elapsed time in integer milliseconds. A null marks an unclassified squad that gets no ledger row and occupies no position. Smaller times finish earlier. Squads with identical official_ms share a finishing place equal to one plus the number of faster classified squads. A tie of size k occupies k consecutive purse positions starting at that place. Pool the prizes for all occupied positions, treating absent prize rows as zero, and divide the pool equally in whole cents. Give one extra cent to each of the first squads in ascending binary squad-name order until the remainder is exhausted. Purse positions are unique positive integers and prizes are nonnegative integer cents. Only official_ms can be null. Include classified squads with zero payouts. Return squad, finish_place, payout_cents, ordered by finish_place then squad ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "finish_log": {
+        "columns": [
+          "squad TEXT",
+          "official_ms INTEGER"
+        ],
+        "rows": [
+          [
+            "Opal",
+            90100
+          ],
+          [
+            "Flint",
+            90100
+          ],
+          [
+            "Pine",
+            90200
+          ],
+          [
+            "Lime",
+            90400
+          ],
+          [
+            "Rill",
+            null
+          ]
+        ]
+      },
+      "prize_slot": {
+        "columns": [
+          "slot_no INTEGER",
+          "prize_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            10000
+          ],
+          [
+            2,
+            6001
+          ],
+          [
+            3,
+            3000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "squad",
+      "finish_place",
+      "payout_cents"
+    ]
+  },
+  {
+    "task_id": "decision-dispatch-recovery-blocks",
+    "tool": "sqlite.query",
+    "instruction": "A depot can purchase exactly one indivisible loading block from each of two vendors, A and B. Pair any A offer with any B offer. The pair must handle at least the backlog in crates and use at most the available crew hours in total. Select the feasible pair with the smallest total fee, breaking ties by ascending A offer code then ascending B offer code. Compare the entire fee with the recovery budget, even if the pair supplies excess capacity. Inputs have no nulls, offer codes are unique within vendor, depot_limit has one row, and a feasible pair exists. Return the single winning row with columns a_code, b_code, fee_cents, over_budget_cents (signed fee less budget). Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "block_offer": {
+        "columns": [
+          "vendor TEXT",
+          "offer_code TEXT",
+          "crates INTEGER",
+          "hours_used INTEGER",
+          "fee INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "A1",
+            6,
+            4,
+            300
+          ],
+          [
+            "A",
+            "A2",
+            5,
+            2,
+            500
+          ],
+          [
+            "A",
+            "A3",
+            8,
+            5,
+            550
+          ],
+          [
+            "B",
+            "B1",
+            5,
+            3,
+            320
+          ],
+          [
+            "B",
+            "B2",
+            4,
+            2,
+            540
+          ],
+          [
+            "B",
+            "B3",
+            3,
+            1,
+            450
+          ]
+        ]
+      },
+      "depot_limit": {
+        "columns": [
+          "backlog INTEGER",
+          "crew_hours INTEGER",
+          "budget_cents INTEGER"
+        ],
+        "rows": [
+          [
+            10,
+            6,
+            800
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "a_code",
+      "b_code",
+      "fee_cents",
+      "over_budget_cents"
+    ]
+  },
+  {
+    "task_id": "decision-display-tray-stock-writedown",
+    "tool": "sqlite.query",
+    "instruction": "For each shop that adopted the new display-tray standard, cite its unique launch memo and calculate the inventory write-down at opening on its adoption day. The memo's action_code is either launch, recording actual adoption on memo_day, or rehearsal, recording a practice session. Opening counts are complete independent snapshots for the indicated shop and day, with one row per tray style present. An absent style has zero units, including when there are no rows for that shop and day. Value each style at the lower of its book and recovery values per unit. Its write-down equals the reduction from book value times units held. Sum the reductions across styles. Amounts are nonnegative integer cents, units are nonnegative whole trays, dates are ISO calendar days, and no inputs are null. Return shop_code, adoption_day, write_down_cents, source_id ordered by shop_code ascending, including adopted shops with zero write-down. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "opening_count": {
+        "columns": [
+          "shop_code TEXT",
+          "count_day TEXT",
+          "style_code TEXT",
+          "units_held INTEGER",
+          "book_cents INTEGER",
+          "recovery_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Arch",
+            "2035-01-04",
+            "Wide",
+            10,
+            130,
+            90
+          ],
+          [
+            "Arch",
+            "2035-01-06",
+            "Wide",
+            4,
+            130,
+            90
+          ],
+          [
+            "Arch",
+            "2035-01-06",
+            "Tall",
+            5,
+            70,
+            100
+          ],
+          [
+            "Arch",
+            "2035-01-06",
+            "Flat",
+            2,
+            90,
+            85
+          ],
+          [
+            "Brook",
+            "2035-01-06",
+            "Flat",
+            6,
+            90,
+            85
+          ],
+          [
+            "Cove",
+            "2035-01-06",
+            "Tall",
+            3,
+            80,
+            60
+          ]
+        ]
+      },
+      "shop_memo": {
+        "columns": [
+          "source_id TEXT",
+          "shop_code TEXT",
+          "memo_day TEXT",
+          "action_code TEXT",
+          "excerpt TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "Arch",
+            "2035-01-04",
+            "rehearsal",
+            "Staff practised setting the new trays before opening."
+          ],
+          [
+            "P2",
+            "Arch",
+            "2035-01-06",
+            "launch",
+            "The new tray standard went into use at opening today."
+          ],
+          [
+            "P3",
+            "Brook",
+            "2035-01-07",
+            "launch",
+            "All displays opened under the new tray standard."
+          ],
+          [
+            "P4",
+            "Cove",
+            "2035-01-06",
+            "rehearsal",
+            "Today's display was a practice setup."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shop_code",
+      "adoption_day",
+      "write_down_cents",
+      "source_id"
+    ]
+  }
+]

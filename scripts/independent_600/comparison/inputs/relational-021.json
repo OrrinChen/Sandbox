@@ -1,0 +1,322 @@
+[
+  {
+    "task_id": "decision-crate-stack-notice-audit",
+    "tool": "sqlite.query",
+    "instruction": "Audit the hourly crate-stack observations against the packing desk's issued notices. A notice applies only to its crate style, starting at effective_tick inclusive, until superseded by the next notice for that style. For each observation, use the latest applicable notice, then report the observation only if its observed number of layers strictly exceeds the permitted number. The layer_cap field transcribes the limit in that notice's primary text. Exclude observations with no applicable notice or a null layer count, which means the stack was obscured. All other fields are non-null. Source IDs and observation IDs are unique in their respective tables, and effective ticks are unique within style. Return obs_id, excess_layers, source_id, notice_text, citing the governing notice verbatim. Order by observation tick and then obs_id in binary order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stack_check": {
+        "columns": [
+          "obs_id TEXT",
+          "crate_style TEXT",
+          "tick_no INTEGER",
+          "layers_seen INTEGER"
+        ],
+        "rows": [
+          [
+            "S1",
+            "reed",
+            1,
+            8
+          ],
+          [
+            "S2",
+            "reed",
+            2,
+            5
+          ],
+          [
+            "S3",
+            "reed",
+            4,
+            4
+          ],
+          [
+            "S4",
+            "reed",
+            5,
+            6
+          ],
+          [
+            "S5",
+            "slat",
+            5,
+            4
+          ],
+          [
+            "S6",
+            "slat",
+            6,
+            null
+          ]
+        ]
+      },
+      "stack_notice": {
+        "columns": [
+          "source_id TEXT",
+          "crate_style TEXT",
+          "effective_tick INTEGER",
+          "layer_cap INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "reed",
+            2,
+            3,
+            "Limit reed stacks to three layers."
+          ],
+          [
+            "P2",
+            "reed",
+            4,
+            5,
+            "The reed spacer permits five layers."
+          ],
+          [
+            "P3",
+            "slat",
+            3,
+            4,
+            "Cap slat stacks at four layers."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "obs_id",
+      "excess_layers",
+      "source_id",
+      "notice_text"
+    ]
+  },
+  {
+    "task_id": "decision-crosswalk-print-blocks-from-impressions",
+    "tool": "sqlite.query",
+    "instruction": "Construct verified_blocks.csv for a print workshop migrating from drawer keys to plate keys. Each evidence slip identifies a block in one catalog and transcribes its proof impression as 'Face shows <motif> with <rim> rim.' Wording follows that template exactly, so equal full slip text means equal observed features. Only drawer keys listed in drawer_queue are requested, but all slips count when testing uniqueness. Certify a crosswalk only when exactly one drawer slip and exactly one plate slip have that impression. Omit unresolved requests. Cite the actual slip keys for both observations. Each catalog has at most one slip per block key, slip keys and queue entries are unique, and no fields are null. All values are identifiers or text with no physical units. Output drawer_key, plate_key, drawer_source, plate_source ordered by drawer_key using binary text order. No tie is broken between competing slips. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "drawer_queue": {
+        "columns": [
+          "drawer_key TEXT"
+        ],
+        "rows": [
+          [
+            "D4"
+          ],
+          [
+            "D2"
+          ],
+          [
+            "D1"
+          ]
+        ]
+      },
+      "proof_slip": {
+        "columns": [
+          "slip_key TEXT",
+          "catalog_kind TEXT",
+          "block_key TEXT",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "S8",
+            "drawer",
+            "D1",
+            "Face shows fern with dotted rim."
+          ],
+          [
+            "S2",
+            "plate",
+            "P5",
+            "Face shows fern with dotted rim."
+          ],
+          [
+            "S9",
+            "drawer",
+            "D2",
+            "Face shows pear with plain rim."
+          ],
+          [
+            "S4",
+            "plate",
+            "P3",
+            "Face shows pear with plain rim."
+          ],
+          [
+            "S1",
+            "drawer",
+            "D7",
+            "Face shows pear with plain rim."
+          ],
+          [
+            "S6",
+            "drawer",
+            "D4",
+            "Face shows fern with plain rim."
+          ],
+          [
+            "S3",
+            "plate",
+            "P1",
+            "Face shows fern with plain rim."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "drawer_key",
+      "plate_key",
+      "drawer_source",
+      "plate_source"
+    ]
+  },
+  {
+    "task_id": "decision-cumulative-holdback-on-progress-bills",
+    "tool": "sqlite.query",
+    "instruction": "For each posted bill, compute the signed payment due in cents under the single holdback addendum for its job. Bill sequence numbers are unique within a job and define posting order even if they have gaps. Gross cents are incremental accepted work and may be negative for a credit. Each job starts with zero accepted work and zero held. After each posting the required held balance is the smaller of the cap in cents and the percentage of cumulative gross, rounded down to whole cents. Rates are integer basis points (10000 equals 100 percent). Cumulative gross is always nonnegative. Payment due equals this bill's gross less the change in the required held balance since the previous posting. All fields are non-null. Include every bill, including credits, with job_code, bill_seq, source_id, held_cents, due_cents ordered by job_code ascending under BINARY ordering and then bill_seq numerically ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "hold_notice": {
+        "columns": [
+          "job_code TEXT",
+          "source_id TEXT",
+          "rate_bp INTEGER",
+          "cap_cents INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "Hall",
+            "H7",
+            1000,
+            12,
+            "Hold ten percent of cumulative accepted value up to twelve cents."
+          ],
+          [
+            "Yard",
+            "Y4",
+            2500,
+            40,
+            "Hold one quarter of cumulative accepted value up to forty cents."
+          ]
+        ]
+      },
+      "work_bill": {
+        "columns": [
+          "job_code TEXT",
+          "bill_seq INTEGER",
+          "gross_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Hall",
+            3,
+            57
+          ],
+          [
+            "Hall",
+            1,
+            67
+          ],
+          [
+            "Hall",
+            5,
+            -35
+          ],
+          [
+            "Yard",
+            2,
+            19
+          ],
+          [
+            "Yard",
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "job_code",
+      "bill_seq",
+      "source_id",
+      "held_cents",
+      "due_cents"
+    ]
+  },
+  {
+    "task_id": "decision-customer-relationship-value-from-mature-renewals",
+    "tool": "sqlite.query",
+    "instruction": "Value the remaining two years of an acquired customer relationship portfolio by segment. Each historical row is a disjoint cohort at its first annual renewal date. opening_accounts counts accounts eligible to renew, and renewed_accounts counts renewals. NULL means the observation window is incomplete, so discard that whole cohort. A recorded zero is a completed observation. Estimate the annual account retention probability by pooling renewed accounts over opening accounts across completed cohorts within the segment. Each modeled segment has a positive completed denominator. opening_margin_cents is the full acquired base's annual cash margin before attrition, already net of taxes and contributory asset charges. Assume equal margin per account within each segment, renewal before each year's cash receipt, the same conditional retention probability at both renewals, no new customers and no terminal value. Multiply opening margin by the survival probability for each year and by that year's supplied present-value multiplier (pv1_bp or pv2_bp divided by 10000). Add the two discounted cash flows, then round to the nearest cent, with halves rounded upward. All amounts are nonnegative, all fields other than renewed_accounts are nonnull, and the model has one row per segment. Output segment_code, completed_accounts (the pooled opening count), renewed_accounts (the pooled renewal count), relationship_value_cents in ascending binary segment_code order. Cohorts on the same footing all contribute. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "renewal_cohort": {
+        "columns": [
+          "segment_code TEXT",
+          "cohort_code TEXT",
+          "opening_accounts INTEGER",
+          "renewed_accounts INTEGER"
+        ],
+        "rows": [
+          [
+            "craft",
+            "spring",
+            80,
+            60
+          ],
+          [
+            "craft",
+            "autumn",
+            20,
+            0
+          ],
+          [
+            "craft",
+            "winter",
+            50,
+            null
+          ],
+          [
+            "trade",
+            "spring",
+            10,
+            9
+          ],
+          [
+            "trade",
+            "autumn",
+            30,
+            27
+          ]
+        ]
+      },
+      "segment_model": {
+        "columns": [
+          "segment_code TEXT",
+          "opening_margin_cents INTEGER",
+          "pv1_bp INTEGER",
+          "pv2_bp INTEGER"
+        ],
+        "rows": [
+          [
+            "craft",
+            100000,
+            9000,
+            8000
+          ],
+          [
+            "trade",
+            50000,
+            9000,
+            8000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "segment_code",
+      "completed_accounts",
+      "renewed_accounts",
+      "relationship_value_cents"
+    ]
+  }
+]

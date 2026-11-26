@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-018",
+    "stage": "submit",
+    "prompt_sha256": "c9b0067e0f26d79f3eb4ebb2685d3fc13acb2d05287fd7478f78872168f880ed",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f3-4ae8-7fc1-b41b-bb843d753459",
+    "raw": "{\"sheet-53167\":{\"fills\":[{\"range\":\"E5:E16\",\"formula\":\"=IFERROR(LOOKUP(2,1/($B$4:B4=B5),$D$4:D4)-D5,0)\"}],\"formulas\":{\"E4\":\"=0\"}},\"sheet-53383\":{\"fills\":[{\"range\":\"C3:C6\",\"formula\":\"=IF(COUNTIFS('worksheet 1'!$A$3:$A$6,A3,'worksheet 1'!$B$3:$B$6,B3)>0,\\\"Matched\\\",\\\"Not Matched\\\")\"}],\"formulas\":{}},\"sheet-54274\":{\"formulas\":{\"G4\":\"=IF(F4<=B4,F4/B4,IF(F4<C4,MIN(F4/B4,1.09),IF(F4=C4,MIN(F4/B4,1.1),IF(F4<D4,MIN(F4/B4,1.19),MIN(F4/B4,1.2)))))\"}},\"sheet-55085\":{\"fills\":[{\"range\":\"G10:L10\",\"formula\":\"=IFERROR(INDEX('Master-RM'!$H$8:$K$20,MATCH(G$2,'Master-RM'!$A$8:$A$20,0),MATCH(1,INDEX(('Master-RM'!$H$6:$K$6=G$3)*('Master-RM'!$H$7:$K$7=\\\"Amount\\\"),0),0)),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18612,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 434,
+      "reasoning_output_tokens": 97
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

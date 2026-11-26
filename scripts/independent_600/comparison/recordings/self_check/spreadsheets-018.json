@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "input_sha256": "c992ced46d24ad16c08d558f85bf6c1fc27ce38633885753cf3d2c808e73d29c",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-53167\": {\n    \"fills\": [\n      {\n        \"range\": \"E5:E16\",\n        \"formula\": \"=XLOOKUP(B5,$B$4:B4,$D$4:D4,D5,0,-1)-D5\"\n      }\n    ],\n    \"formulas\": {\n      \"E4\": \"=0\"\n    }\n  },\n  \"sheet-53383\": {\n    \"fills\": [\n      {\n        \"range\": \"C3:C6\",\n        \"formula\": \"=IF(COUNTIFS('worksheet 1'!$A$3:$A$6,A3,'worksheet 1'!$B$3:$B$6,B3)>0,\\\"Matched\\\",\\\"Not Matched\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-54274\": {\n    \"formulas\": {\n      \"G4\": \"=IF(F4<=B4,F4/B4,MIN(F4/B4,IF(F4<C4,1.09,IF(F4=C4,1.1,IF(F4<D4,1.19,1.2)))))\"\n    }\n  },\n  \"sheet-55085\": {\n    \"fills\": [\n      {\n        \"range\": \"G10:L10\",\n        \"formula\": \"=INDEX('Master-RM'!$H$9:$K$20,MATCH(G$2,'Master-RM'!$A$9:$A$20,0),MATCH(1,INDEX(('Master-RM'!$H$6:$K$6=G$3)*('Master-RM'!$H$7:$K$7=\\\"Amount\\\"),1,0),0))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-53167": {
+      "fills": [
+        {
+          "range": "E5:E16",
+          "formula": "=XLOOKUP(B5,$B$4:B4,$D$4:D4,D5,0,-1)-D5"
+        }
+      ],
+      "formulas": {
+        "E4": "=0"
+      }
+    },
+    "sheet-53383": {
+      "fills": [
+        {
+          "range": "C3:C6",
+          "formula": "=IF(COUNTIFS('worksheet 1'!$A$3:$A$6,A3,'worksheet 1'!$B$3:$B$6,B3)>0,\"Matched\",\"Not Matched\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-54274": {
+      "formulas": {
+        "G4": "=IF(F4<=B4,F4/B4,MIN(F4/B4,IF(F4<C4,1.09,IF(F4=C4,1.1,IF(F4<D4,1.19,1.2)))))"
+      }
+    },
+    "sheet-55085": {
+      "fills": [
+        {
+          "range": "G10:L10",
+          "formula": "=INDEX('Master-RM'!$H$9:$K$20,MATCH(G$2,'Master-RM'!$A$9:$A$20,0),MATCH(1,INDEX(('Master-RM'!$H$6:$K$6=G$3)*('Master-RM'!$H$7:$K$7=\"Amount\"),1,0),0))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-7e63-70c2-9bb5-7db2d9d94403",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26174,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 378,
+    "reasoning_output_tokens": 0
+  }
+}

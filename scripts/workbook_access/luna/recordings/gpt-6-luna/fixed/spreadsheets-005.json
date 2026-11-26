@@ -1,0 +1,477 @@
+{
+  "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49",
+  "turns_sha256": [
+    "a04bacf780c0e0b45160fc15c593af4b354d0843464bf5050fe5ed63585cc8bb",
+    "fcd806f8f2dd3b1e3a9e80dfc2477f6e93d27abe64710bb80b14fea48f90f07a",
+    "69144418c93dc4811e0fe010c5ca06a706249c741e4b9c315588e236a6be8d26"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-37554",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "formulas": {
+          "F2": "=SUMPRODUCT(--EXACT($A2,$D$2:$D$17),$F$2:$F$17)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C19",
+            "range_size": 57,
+            "cells": [
+              [
+                "A1",
+                "TYPE"
+              ],
+              [
+                "B1",
+                "Accounts"
+              ],
+              [
+                "A2",
+                "Corporate"
+              ],
+              [
+                "B2",
+                "4377"
+              ],
+              [
+                "A3",
+                "Local Tour Operator"
+              ],
+              [
+                "B3",
+                "1629"
+              ],
+              [
+                "A4",
+                "Travel Agency"
+              ],
+              [
+                "B4",
+                "824"
+              ],
+              [
+                "A5",
+                "Other"
+              ],
+              [
+                "B5",
+                "181"
+              ],
+              [
+                "A6",
+                "Oversea Tour Operator"
+              ],
+              [
+                "B6",
+                "176"
+              ],
+              [
+                "A7",
+                "MICE"
+              ],
+              [
+                "B7",
+                "122"
+              ],
+              [
+                "A8",
+                "Online Travel Agency"
+              ],
+              [
+                "B8",
+                "117"
+              ],
+              [
+                "A9",
+                "Airline"
+              ],
+              [
+                "B9",
+                "74"
+              ],
+              [
+                "A10",
+                "Destination Management Company"
+              ],
+              [
+                "B10",
+                "41"
+              ],
+              [
+                "A11",
+                "Wedding & Events"
+              ],
+              [
+                "B11",
+                "38"
+              ],
+              [
+                "A12",
+                "Head Office"
+              ],
+              [
+                "B12",
+                "21"
+              ],
+              [
+                "A13",
+                "Regional Office"
+              ],
+              [
+                "B13",
+                "17"
+              ],
+              [
+                "A14",
+                "Hotel"
+              ],
+              [
+                "B14",
+                "11"
+              ],
+              [
+                "A15",
+                "Competitor"
+              ],
+              [
+                "B15",
+                "4"
+              ],
+              [
+                "A16",
+                "Press"
+              ],
+              [
+                "B16",
+                "2"
+              ],
+              [
+                "A17",
+                "GSA"
+              ],
+              [
+                "B17",
+                "1"
+              ],
+              [
+                "B18",
+                "7635"
+              ]
+            ],
+            "total": 35,
+            "truncated": false,
+            "blank_count": 22
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 92782,
+        "cached_input_tokens": 18176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1558,
+        "reasoning_output_tokens": 1221
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37609",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(AND(N(A2)<7,N(B2)<7),\"-\",\"e\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 92782,
+        "cached_input_tokens": 18176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1558,
+        "reasoning_output_tokens": 1221
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37615",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F7:F37",
+            "formula": "=IF(D7>TIME(4,0,0),D42,D43)*E7"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D42:F44"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D42:F44",
+            "range_size": 9,
+            "cells": [
+              [
+                "D42",
+                "57.2"
+              ],
+              [
+                "F42",
+                "0"
+              ],
+              [
+                "D43",
+                "28.6"
+              ],
+              [
+                "F43",
+                "0"
+              ],
+              [
+                "E44",
+                "Total invoice:"
+              ],
+              [
+                "F44",
+                "0"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 3
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F15",
+            "range_size": 30,
+            "cells": [
+              [
+                "D6",
+                "Total Hours"
+              ],
+              [
+                "E6",
+                "Days Billed"
+              ],
+              [
+                "F6",
+                "$ Amount"
+              ],
+              [
+                "D7",
+                "8:00:00"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "D8",
+                "3:00:00"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "D9",
+                "0:00:00"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "D10",
+                "0:00:00"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "D11",
+                "8:15:00"
+              ],
+              [
+                "E11",
+                "1"
+              ],
+              [
+                "D12",
+                "3:50:00"
+              ],
+              [
+                "E12",
+                "1"
+              ],
+              [
+                "D13",
+                "5:00:00"
+              ],
+              [
+                "E13",
+                "1"
+              ],
+              [
+                "D14",
+                "7:30:00"
+              ],
+              [
+                "E14",
+                "1"
+              ],
+              [
+                "D15",
+                "0:00:00"
+              ],
+              [
+                "E15",
+                "0"
+              ]
+            ],
+            "total": 21,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 92782,
+        "cached_input_tokens": 18176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1558,
+        "reasoning_output_tokens": 1221
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-38462",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "formulas": {
+          "C2": "=ROUNDUP(B2*24,0)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2",
+            "range_size": 6,
+            "cells": [
+              [
+                "A1",
+                "DEE"
+              ],
+              [
+                "B1",
+                "2046 days, 17:30:00"
+              ],
+              [
+                "C1",
+                "49122"
+              ],
+              [
+                "A2",
+                "DEF"
+              ],
+              [
+                "B2",
+                "2055 days, 11:58:00"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 92782,
+        "cached_input_tokens": 18176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1558,
+        "reasoning_output_tokens": 1221
+      },
+      "model_calls": 3
+    }
+  ]
+}

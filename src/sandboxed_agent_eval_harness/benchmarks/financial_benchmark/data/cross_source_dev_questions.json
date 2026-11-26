@@ -1,0 +1,1442 @@
+[
+  {
+    "task_id": "cross-dev-a0308f1d3b78ef54",
+    "family": "cross_source",
+    "question": "For Fenwick March Enterprise (FY2021), start with fees for revolving credit from the earnings Q&A, then subtract capitalised software work from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD01A",
+      "XD01B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD01A",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD01A",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-485d4b140bbea736",
+    "family": "cross_source",
+    "question": "Fenwick March Partners, FY2021: how much higher is fees for revolving credit in the analyst call than capitalised software work in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD01A",
+      "XD01B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD01B",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD01B",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-34bbe838b605101d",
+    "family": "cross_source",
+    "question": "Use the FY2024 disclosures for Fenwick Sound Enterprise: take spending to recover from floods in the investor presentation away from income from renting facilities in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD02A",
+      "XD02B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD02A",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD02A",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-f0b72fe52c3df8f1",
+    "family": "cross_source",
+    "question": "For Fenwick Sound Partners and FY2024, give income from renting facilities from the results call less spending to recover from floods in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD02A",
+      "XD02B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD02B",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD02B",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-958cee91c0d69c5e",
+    "family": "cross_source",
+    "question": "From write-downs on outdated stock in the slide pack, subtract sales of reconditioned parts in the call transcript. Use Fenwick Bluff Enterprise's FY2021 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD03A",
+      "XD03B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD03A",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD03A",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-089170373bcf2e44",
+    "family": "cross_source",
+    "question": "For the FY2021 Fenwick Bluff Partners workbook in US dollars, what is write-downs on outdated stock from the slide deck minus sales of reconditioned parts from the earnings transcript?",
+    "company_tickers": [
+      "XD03A",
+      "XD03B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD03B",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD03B",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-0ba6b585e60b0767",
+    "family": "cross_source",
+    "question": "For Fenwick Cove Enterprise (FY2024), start with payments for hooking up to the grid from the earnings Q&A, then subtract cost of fitting new meters from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD04A",
+      "XD04B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD04A",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD04A",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-278848cca59ee4d5",
+    "family": "cross_source",
+    "question": "Fenwick Cove Partners, FY2024: how much higher is payments for hooking up to the grid in the analyst call than cost of fitting new meters in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD04A",
+      "XD04B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD04B",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD04B",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-f9aa3c213e64b84e",
+    "family": "cross_source",
+    "question": "Use the FY2021 disclosures for Loam March Enterprise: take spending on field service in the investor presentation away from cash collected on upkeep agreements in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD05A",
+      "XD05B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD05A",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD05A",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-38894e9bd44bcb6f",
+    "family": "cross_source",
+    "question": "For Loam March Partners and FY2021, give cash collected on upkeep agreements from the results call less spending on field service in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD05A",
+      "XD05B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD05B",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD05B",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-65f7da0775bb6d0a",
+    "family": "cross_source",
+    "question": "From incentive payments to resellers in the slide pack, subtract interest earned on deposits in the call transcript. Use Loam Sound Enterprise's FY2024 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD06A",
+      "XD06B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD06A",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD06A",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-dc1c27d775954cec",
+    "family": "cross_source",
+    "question": "For the FY2024 Loam Sound Partners workbook in US dollars, what is incentive payments to resellers from the slide deck minus interest earned on deposits from the earnings transcript?",
+    "company_tickers": [
+      "XD06A",
+      "XD06B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD06B",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD06B",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-d6194a59675457e3",
+    "family": "cross_source",
+    "question": "For Loam Bluff Enterprise (FY2021), start with fees for revolving credit from the earnings Q&A, then subtract capitalised software work from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD07A",
+      "XD07B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD07A",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD07A",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-2246478c4ecca957",
+    "family": "cross_source",
+    "question": "Loam Bluff Partners, FY2021: how much higher is fees for revolving credit in the analyst call than capitalised software work in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD07A",
+      "XD07B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD07B",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD07B",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-9c81ed7639dee353",
+    "family": "cross_source",
+    "question": "Use the FY2024 disclosures for Loam Cove Enterprise: take spending to recover from floods in the investor presentation away from income from renting facilities in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD08A",
+      "XD08B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD08A",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD08A",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-cd1d45e41b1af0af",
+    "family": "cross_source",
+    "question": "For Loam Cove Partners and FY2024, give income from renting facilities from the results call less spending to recover from floods in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD08A",
+      "XD08B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD08B",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD08B",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-2e7857a09069c197",
+    "family": "cross_source",
+    "question": "From write-downs on outdated stock in the slide pack, subtract sales of reconditioned parts in the call transcript. Use Hearth March Enterprise's FY2021 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD09A",
+      "XD09B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD09A",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD09A",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-2b778c34772d37b4",
+    "family": "cross_source",
+    "question": "For the FY2021 Hearth March Partners workbook in US dollars, what is write-downs on outdated stock from the slide deck minus sales of reconditioned parts from the earnings transcript?",
+    "company_tickers": [
+      "XD09A",
+      "XD09B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD09B",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD09B",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-4cb0fa124cd93b7f",
+    "family": "cross_source",
+    "question": "For Hearth Sound Enterprise (FY2024), start with payments for hooking up to the grid from the earnings Q&A, then subtract cost of fitting new meters from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD10A",
+      "XD10B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD10A",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD10A",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-12fe6a36d592bcf0",
+    "family": "cross_source",
+    "question": "Hearth Sound Partners, FY2024: how much higher is payments for hooking up to the grid in the analyst call than cost of fitting new meters in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD10A",
+      "XD10B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD10B",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD10B",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-ebaba502f3e45471",
+    "family": "cross_source",
+    "question": "Use the FY2021 disclosures for Hearth Bluff Enterprise: take spending on field service in the investor presentation away from cash collected on upkeep agreements in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD11A",
+      "XD11B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD11A",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD11A",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-93390da292c3582b",
+    "family": "cross_source",
+    "question": "For Hearth Bluff Partners and FY2021, give cash collected on upkeep agreements from the results call less spending on field service in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD11A",
+      "XD11B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD11B",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD11B",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-67174134867b6357",
+    "family": "cross_source",
+    "question": "From incentive payments to resellers in the slide pack, subtract interest earned on deposits in the call transcript. Use Hearth Cove Enterprise's FY2024 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD12A",
+      "XD12B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD12A",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD12A",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-f3ec6b23c04460d8",
+    "family": "cross_source",
+    "question": "For the FY2024 Hearth Cove Partners workbook in US dollars, what is incentive payments to resellers from the slide deck minus interest earned on deposits from the earnings transcript?",
+    "company_tickers": [
+      "XD12A",
+      "XD12B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD12B",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD12B",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-0b29091f11816fb7",
+    "family": "cross_source",
+    "question": "For Osier March Enterprise (FY2021), start with fees for revolving credit from the earnings Q&A, then subtract capitalised software work from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD13A",
+      "XD13B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD13A",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD13A",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-d48bdeb6546635a0",
+    "family": "cross_source",
+    "question": "Osier March Partners, FY2021: how much higher is fees for revolving credit in the analyst call than capitalised software work in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD13A",
+      "XD13B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD13B",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD13B",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-777463ff2b8e0300",
+    "family": "cross_source",
+    "question": "Use the FY2024 disclosures for Osier Sound Enterprise: take spending to recover from floods in the investor presentation away from income from renting facilities in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD14A",
+      "XD14B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD14A",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD14A",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-8d815191b96aa895",
+    "family": "cross_source",
+    "question": "For Osier Sound Partners and FY2024, give income from renting facilities from the results call less spending to recover from floods in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD14A",
+      "XD14B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD14B",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD14B",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-243afb310af88c88",
+    "family": "cross_source",
+    "question": "From write-downs on outdated stock in the slide pack, subtract sales of reconditioned parts in the call transcript. Use Osier Bluff Enterprise's FY2021 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD15A",
+      "XD15B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD15A",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD15A",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-a4ec4474f3c561ae",
+    "family": "cross_source",
+    "question": "For the FY2021 Osier Bluff Partners workbook in US dollars, what is write-downs on outdated stock from the slide deck minus sales of reconditioned parts from the earnings transcript?",
+    "company_tickers": [
+      "XD15A",
+      "XD15B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD15B",
+        "period": "FY2021",
+        "metric": "inventory_obsolescence",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD15B",
+        "period": "FY2021",
+        "metric": "parts_refurbishment_sales",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-3dd5c54525d7a805",
+    "family": "cross_source",
+    "question": "For Osier Cove Enterprise (FY2024), start with payments for hooking up to the grid from the earnings Q&A, then subtract cost of fitting new meters from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD16A",
+      "XD16B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD16A",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD16A",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-552d0a0e310b7c4b",
+    "family": "cross_source",
+    "question": "Osier Cove Partners, FY2024: how much higher is payments for hooking up to the grid in the analyst call than cost of fitting new meters in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD16A",
+      "XD16B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD16B",
+        "period": "FY2024",
+        "metric": "grid_connection_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD16B",
+        "period": "FY2024",
+        "metric": "meter_installation_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-2516211434b3eac2",
+    "family": "cross_source",
+    "question": "Use the FY2021 disclosures for Kite March Enterprise: take spending on field service in the investor presentation away from cash collected on upkeep agreements in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD17A",
+      "XD17B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD17A",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD17A",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-264a1306e6916e50",
+    "family": "cross_source",
+    "question": "For Kite March Partners and FY2021, give cash collected on upkeep agreements from the results call less spending on field service in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD17A",
+      "XD17B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD17B",
+        "period": "FY2021",
+        "metric": "maintenance_contract_collections",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD17B",
+        "period": "FY2021",
+        "metric": "field_service_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-d1994f97c1e33407",
+    "family": "cross_source",
+    "question": "From incentive payments to resellers in the slide pack, subtract interest earned on deposits in the call transcript. Use Kite Sound Enterprise's FY2024 figures in millions of US dollars.",
+    "company_tickers": [
+      "XD18A",
+      "XD18B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD18A",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD18A",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-dev-e0a4009ffd69a186",
+    "family": "cross_source",
+    "question": "For the FY2024 Kite Sound Partners workbook in US dollars, what is incentive payments to resellers from the slide deck minus interest earned on deposits from the earnings transcript?",
+    "company_tickers": [
+      "XD18A",
+      "XD18B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD18B",
+        "period": "FY2024",
+        "metric": "reseller_incentives",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XD18B",
+        "period": "FY2024",
+        "metric": "deposit_interest_income",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-24379028b702a9ed",
+    "family": "cross_source",
+    "question": "For Kite Bluff Enterprise (FY2021), start with fees for revolving credit from the earnings Q&A, then subtract capitalised software work from the investor slides. Report in US dollars.",
+    "company_tickers": [
+      "XD19A",
+      "XD19B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD19A",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD19A",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-dev-d776e0f0a2e8b64b",
+    "family": "cross_source",
+    "question": "Kite Bluff Partners, FY2021: how much higher is fees for revolving credit in the analyst call than capitalised software work in the slide deck? Give a signed result in thousands of US dollars.",
+    "company_tickers": [
+      "XD19A",
+      "XD19B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD19B",
+        "period": "FY2021",
+        "metric": "credit_facility_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD19B",
+        "period": "FY2021",
+        "metric": "software_capitalization",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-85bf46073ac866a7",
+    "family": "cross_source",
+    "question": "Use the FY2024 disclosures for Kite Cove Enterprise: take spending to recover from floods in the investor presentation away from income from renting facilities in the earnings call. Show the result in thousands of US dollars.",
+    "company_tickers": [
+      "XD20A",
+      "XD20B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD20A",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD20A",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-dev-3afa62af1db1e193",
+    "family": "cross_source",
+    "question": "For Kite Cove Partners and FY2024, give income from renting facilities from the results call less spending to recover from floods in the investor deck, in millions of US dollars.",
+    "company_tickers": [
+      "XD20A",
+      "XD20B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XD20B",
+        "period": "FY2024",
+        "metric": "facility_rental_income",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XD20B",
+        "period": "FY2024",
+        "metric": "flood_recovery_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_millions"
+  }
+]

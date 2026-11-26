@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000026324",
+  "issuer": "CURTISS WRIGHT CORP",
+  "cutoff": "2022-03-02",
+  "projected_target_start": "2022-04-01",
+  "status": "complete",
+  "period_end": "2021-12-31",
+  "filing_date": "2022-02-24",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000026324",
+    "issuer": "CURTISS WRIGHT CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-02-24",
+        "text": "Sales decreased $19 million, or 2%, to $786 million, from the comparable prior year period, as lower sales in the commercial aerospace market were partially offset by sales increases in the general industrial market."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-02-24",
+        "text": "New orders increased $258 million, or 11%, from the prior year period to $2,580 million, primarily due to an increase in new orders for industrial vehicles and sensors and actuation equipment in the Aerospace & Industrial segment, as well as the incremental impact of our PacStar acquisition in the Defense Electronics segment."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-02-24",
+        "text": "Though the onset of COVID-19 variants continues to cause supply-chain disruptions to global economies, including our business, as well as our customers and suppliers, U.S. economic activity rebounded quite dramatically in 2021, due in part to the availability of vaccines and increased government support to rebuild the country’s infrastructure."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-02-24",
+        "text": "Additionally, sustained low oil prices contributed to declining fuel prices, which in turn led to cheaper airfares for consumers and increased passenger growth."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-02-24",
+        "text": "Operating income for the year increased $94 million, or 32%, to $383 million, and operating margin increased 320 basis points compared with 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-11-04",
+        "reported_sales_usd": 620619000,
+        "year_ago_reported_sales_usd": 571614000,
+        "yoy_percent": "8.5731"
+      },
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-24",
+        "reported_sales_usd": 666758000,
+        "year_ago_reported_sales_usd": 668444000,
+        "yoy_percent": "-0.2522"
+      }
+    ],
+    "status": "complete"
+  }
+}

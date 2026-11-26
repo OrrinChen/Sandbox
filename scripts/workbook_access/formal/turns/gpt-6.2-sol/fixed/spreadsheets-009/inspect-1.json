@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-009",
+    "stage": "inspect-1",
+    "prompt_sha256": "5ea9c4f1eab0e16dd6687a9d0df2963a50967d9251d473bcd0ffe519cf99c09b",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d6-aea7-7961-8246-555c1090c7e0",
+    "raw": "{\n  \"sheet-43406\": [{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B7:D20\"}],\n  \"sheet-43436\": [{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G1:K7\"}],\n  \"sheet-43589\": [],\n  \"sheet-43775\": [{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E3:Z6\"}]\n}",
+    "usage": {
+      "input_tokens": 18859,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 91,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

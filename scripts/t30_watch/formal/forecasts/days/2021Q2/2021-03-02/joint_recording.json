@@ -1,0 +1,107 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 61943,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 701,
+    "reasoning_output_tokens": 40
+  },
+  "thread": "01a20d8a-8deb-7e92-8dde-e36273db1612",
+  "packet_sha256": "14242d2d81844796f13cd7d84c541893ac5d9d28f975b71d4b40bdf8f2084e34",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-2\",\"alerts\":[{\"cik\":\"0000877890\",\"reason\":\"Citrix's reported revenue growth slowed from 4.68% in September to -0.02% in December. Product and license revenue fell 23.8% in 2020 (A). Subscription growth supports a March quarter above -5%, but $223.5 million of additional subscription revenue was deferred (B, C). I forecast that by the June quarter, recognized subscription revenue will fall short of offsetting license declines by enough for total revenue to fall at least 5% year over year.\"}]},\n    {\"sector\":\"2021Q2/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0000946581\",\"reason\":\"Take-Two's December revenue fell 7.44% year over year, but several releases that drove the $73.9 million bookings decline had September–November 2019 launch dates (B). Those launch comparisons pass by March, supporting a recovery above -5%. For April–June, I forecast a fresh decline of at least 5% as revenue is compared with a quarter that benefited from lockdown-driven player engagement (C).\"}]},\n    {\"sector\":\"2021Q2/retail-1\",\"alerts\":[{\"cik\":\"0000815556\",\"reason\":\"Fastenal's 6.35% December sales growth supports a March quarter above -5%. Pandemic PPE unit sales drove most of 2020's sales increase, while masks were already oversupplied in the second half and pricing had little effect on annual sales (A–D). I forecast that lapping the initial PPE buying in April–June will push consolidated net sales down at least 5% year over year.\"}]},\n    {\"sector\":\"2021Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-2",
+        "alerts": [
+          {
+            "cik": "0000877890",
+            "reason": "Citrix's reported revenue growth slowed from 4.68% in September to -0.02% in December. Product and license revenue fell 23.8% in 2020 (A). Subscription growth supports a March quarter above -5%, but $223.5 million of additional subscription revenue was deferred (B, C). I forecast that by the June quarter, recognized subscription revenue will fall short of offsetting license declines by enough for total revenue to fall at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0000946581",
+            "reason": "Take-Two's December revenue fell 7.44% year over year, but several releases that drove the $73.9 million bookings decline had September–November 2019 launch dates (B). Those launch comparisons pass by March, supporting a recovery above -5%. For April–June, I forecast a fresh decline of at least 5% as revenue is compared with a quarter that benefited from lockdown-driven player engagement (C)."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000815556",
+            "reason": "Fastenal's 6.35% December sales growth supports a March quarter above -5%. Pandemic PPE unit sales drove most of 2020's sales increase, while masks were already oversupplied in the second half and pricing had little effect on annual sales (A–D). I forecast that lapping the initial PPE buying in April–June will push consolidated net sales down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

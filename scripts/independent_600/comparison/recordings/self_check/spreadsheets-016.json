@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "input_sha256": "81ab7566d107129d52d0cc98872e42dd24fdeb952a0ea5d5a3750ec8dd0cd509",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-50952\": {\n    \"fills\": [\n      {\n        \"range\": \"G2:G5\",\n        \"formula\": \"=IF(OR(E2=\\\"\\\",F2=\\\"\\\"),\\\"\\\",XLOOKUP(1,ISNUMBER(SEARCH(E2,$B$2:$B$10000))*ISNUMBER(SEARCH(F2,$B$2:$B$10000))*($A$2:$A$10000<>\\\"\\\"),$A$2:$A$10000,\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-51249\": {\n    \"formulas\": {\n      \"D1\": \"=IF(AND(COUNTIF(B1:B2,\\\"*Description A*\\\")>0,COUNTIF(B1:B2,\\\"*Description B*\\\")>0),\\\"Multiple\\\",IF(B2<>\\\"\\\",\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B1)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B1)),\\\"Single B\\\",\\\"\\\"))))\",\n      \"D5\": \"=IF(AND(COUNTIF(B5:B6,\\\"*Description A*\\\")>0,COUNTIF(B5:B6,\\\"*Description B*\\\")>0),\\\"Multiple\\\",IF(B6<>\\\"\\\",\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B5)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B5)),\\\"Single B\\\",\\\"\\\"))))\",\n      \"D9\": \"=IF(AND(COUNTIF(B9:B10,\\\"*Description A*\\\")>0,COUNTIF(B9:B10,\\\"*Description B*\\\")>0),\\\"Multiple\\\",IF(B10<>\\\"\\\",\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B9)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B9)),\\\"Single B\\\",\\\"\\\"))))\"\n    }\n  },\n  \"sheet-51262\": {\n    \"fills\": [\n      {\n        \"range\": \"F6:H6\",\n        \"formula\": \"=SUMPRODUCT(($F$10:$F$14<>\\\"\\\")*SUMIFS($D$6:$D$13,$B$6:$B$13,\\\">=\\\"&DATE(YEAR(F5),MONTH(F5),1),$B$6:$B$13,\\\"<\\\"&DATE(YEAR(F5),MONTH(F5)+1,1),$C$6:$C$13,$F$10:$F$14)/COUNTIF($F$10:$F$14,$F$10:$F$14&\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-51807\": {\n    \"fills\": [\n      {\n        \"range\": \"D1:D3\",\n        \"formula\": \"=IF(A1=\\\"\\\",\\\"\\\",\\\"Carton \\\"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\\\"\\\",\\\" Boxes \\\"&MOD(A1,12)))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-50952": {
+      "fills": [
+        {
+          "range": "G2:G5",
+          "formula": "=IF(OR(E2=\"\",F2=\"\"),\"\",XLOOKUP(1,ISNUMBER(SEARCH(E2,$B$2:$B$10000))*ISNUMBER(SEARCH(F2,$B$2:$B$10000))*($A$2:$A$10000<>\"\"),$A$2:$A$10000,\"\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-51249": {
+      "formulas": {
+        "D1": "=IF(AND(COUNTIF(B1:B2,\"*Description A*\")>0,COUNTIF(B1:B2,\"*Description B*\")>0),\"Multiple\",IF(B2<>\"\",\"\",IF(ISNUMBER(SEARCH(\"Description A\",B1)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B1)),\"Single B\",\"\"))))",
+        "D5": "=IF(AND(COUNTIF(B5:B6,\"*Description A*\")>0,COUNTIF(B5:B6,\"*Description B*\")>0),\"Multiple\",IF(B6<>\"\",\"\",IF(ISNUMBER(SEARCH(\"Description A\",B5)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B5)),\"Single B\",\"\"))))",
+        "D9": "=IF(AND(COUNTIF(B9:B10,\"*Description A*\")>0,COUNTIF(B9:B10,\"*Description B*\")>0),\"Multiple\",IF(B10<>\"\",\"\",IF(ISNUMBER(SEARCH(\"Description A\",B9)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B9)),\"Single B\",\"\"))))"
+      }
+    },
+    "sheet-51262": {
+      "fills": [
+        {
+          "range": "F6:H6",
+          "formula": "=SUMPRODUCT(($F$10:$F$14<>\"\")*SUMIFS($D$6:$D$13,$B$6:$B$13,\">=\"&DATE(YEAR(F5),MONTH(F5),1),$B$6:$B$13,\"<\"&DATE(YEAR(F5),MONTH(F5)+1,1),$C$6:$C$13,$F$10:$F$14)/COUNTIF($F$10:$F$14,$F$10:$F$14&\"\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-51807": {
+      "fills": [
+        {
+          "range": "D1:D3",
+          "formula": "=IF(A1=\"\",\"\",\"Carton \"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\"\",\" Boxes \"&MOD(A1,12)))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-6e1b-7200-86b2-84dacbde1ebc",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 24238,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 636,
+    "reasoning_output_tokens": 0
+  }
+}

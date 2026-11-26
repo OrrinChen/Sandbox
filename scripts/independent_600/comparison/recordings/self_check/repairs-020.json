@@ -1,0 +1,23 @@
+{
+  "binding": {
+    "input_sha256": "475bd11ebeb62e272685ab1ff1ae8ed982afdd5f0247b98367c281791c3e2043",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-twelve-days\": \"GIFTS = ['twelve Drummers Drumming', 'eleven Pipers Piping', 'ten Lords-a-Leaping', 'nine Ladies Dancing', 'eight Maids-a-Milking', 'seven Swans-a-Swimming', 'six Geese-a-Laying', 'five Gold Rings', 'four Calling Birds', 'three French Hens', 'two Turtle Doves', 'a Partridge in a Pear Tree']\\nORDINAL = [None, 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']\\n\\n\\ndef verse(day_number):\\n    gifts = GIFTS[-day_number:]\\n    if len(gifts) > 1:\\n        gifts[-1] = 'and ' + gifts[-1]\\n    gift_list = ', '.join(gifts)\\n    return f'On the {ORDINAL[day_number]} day of Christmas my true love gave to me: {gift_list}.'\\n\\n\\ndef recite(start, end):\\n    return [verse(number) for number in range(start, end + 1)]\\n\",\n  \"repair-wordy\": \"from operator import add, floordiv as div, mul, sub\\n\\nVALID_OPERATIONS = {'plus': add, 'minus': sub, 'multiplied by': mul, 'divided by': div}\\n\\n\\ndef answer(question):\\n    if question in ('What is', 'What is?'):\\n        raise ValueError('syntax error')\\n    if not question.startswith('What is '):\\n        raise ValueError('unknown operation')\\n    if not question.endswith('?'):\\n        raise ValueError('syntax error')\\n\\n    words = iter(question[8:-1].lower().split())\\n\\n    def read_number():\\n        try:\\n            return int(next(words))\\n        except (StopIteration, ValueError) as error:\\n            raise ValueError('syntax error') from error\\n\\n    result = read_number()\\n    for operation in words:\\n        if operation in ('multiplied', 'divided'):\\n            if next(words, None) != 'by':\\n                raise ValueError('syntax error')\\n            operation += ' by'\\n        if operation not in VALID_OPERATIONS:\\n            if operation == 'by' or operation.lstrip('+-').isdigit():\\n                raise ValueError('syntax error')\\n            raise ValueError('unknown operation')\\n        result = VALID_OPERATIONS[operation](result, read_number())\\n    return result\\n\"\n}",
+  "submissions": {
+    "repair-twelve-days": "GIFTS = ['twelve Drummers Drumming', 'eleven Pipers Piping', 'ten Lords-a-Leaping', 'nine Ladies Dancing', 'eight Maids-a-Milking', 'seven Swans-a-Swimming', 'six Geese-a-Laying', 'five Gold Rings', 'four Calling Birds', 'three French Hens', 'two Turtle Doves', 'a Partridge in a Pear Tree']\nORDINAL = [None, 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']\n\n\ndef verse(day_number):\n    gifts = GIFTS[-day_number:]\n    if len(gifts) > 1:\n        gifts[-1] = 'and ' + gifts[-1]\n    gift_list = ', '.join(gifts)\n    return f'On the {ORDINAL[day_number]} day of Christmas my true love gave to me: {gift_list}.'\n\n\ndef recite(start, end):\n    return [verse(number) for number in range(start, end + 1)]\n",
+    "repair-wordy": "from operator import add, floordiv as div, mul, sub\n\nVALID_OPERATIONS = {'plus': add, 'minus': sub, 'multiplied by': mul, 'divided by': div}\n\n\ndef answer(question):\n    if question in ('What is', 'What is?'):\n        raise ValueError('syntax error')\n    if not question.startswith('What is '):\n        raise ValueError('unknown operation')\n    if not question.endswith('?'):\n        raise ValueError('syntax error')\n\n    words = iter(question[8:-1].lower().split())\n\n    def read_number():\n        try:\n            return int(next(words))\n        except (StopIteration, ValueError) as error:\n            raise ValueError('syntax error') from error\n\n    result = read_number()\n    for operation in words:\n        if operation in ('multiplied', 'divided'):\n            if next(words, None) != 'by':\n                raise ValueError('syntax error')\n            operation += ' by'\n        if operation not in VALID_OPERATIONS:\n            if operation == 'by' or operation.lstrip('+-').isdigit():\n                raise ValueError('syntax error')\n            raise ValueError('unknown operation')\n        result = VALID_OPERATIONS[operation](result, read_number())\n    return result\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-b5fc-7450-92eb-073a45a41fe6",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22310,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 592,
+    "reasoning_output_tokens": 0
+  }
+}

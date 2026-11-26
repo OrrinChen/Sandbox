@@ -1,0 +1,57 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25182,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 264,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8f-f56e-7272-a51d-6396b8a850bc",
+  "packet_sha256": "b2b07ffe2b76338aeaf3a4851f2993611f2d60b5e8c972ba56f3e1bbdebfd59f",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2025Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/industrial_machinery-3\",\"alerts\":[{\"cik\":\"0000886346\",\"reason\":\"Kadant’s reported Q1 consolidated revenue fell 4% year over year (A). Record demand for parts and consumables helped lift total bookings 3%, supporting a forecast that Q2 revenue growth stays above -5% (B). Capital bookings fell as customers took longer to place orders (C, D). Those delays could reduce Q3 capital-equipment revenue enough to push the consolidated decline to 5% or more.\"}]},\n    {\"sector\":\"2025Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2025Q3/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000886346",
+            "reason": "Kadant’s reported Q1 consolidated revenue fell 4% year over year (A). Record demand for parts and consumables helped lift total bookings 3%, supporting a forecast that Q2 revenue growth stays above -5% (B). Capital bookings fell as customers took longer to place orders (C, D). Those delays could reduce Q3 capital-equipment revenue enough to push the consolidated decline to 5% or more."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q3/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

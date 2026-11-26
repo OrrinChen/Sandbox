@@ -1,0 +1,117 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 48719,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 842,
+    "reasoning_output_tokens": 36
+  },
+  "thread": "01a20d8f-8247-7220-90af-37d69c23114e",
+  "packet_sha256": "394ea1b1a8bd187209d489e0a6e6c55f36b4f8ecabd0f7cc02bfe2f7b75b868b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/food_manufacturing-3\",\"alerts\":[{\"cik\":\"0000098677\",\"reason\":\"Net product sales growth slowed from about 15.1% in the first nine months to 3.8% in the December quarter, calculated from A and B. Higher realized prices drove most of the growth (D). A further slowdown as those prices enter the prior-year comparison supports a forecast above −5% in January–March and at or below −5% in April–June.\"}]},\n    {\"sector\":\"2024Q2/industrial_machinery-1\",\"alerts\":[{\"cik\":\"0000029905\",\"reason\":\"Bookings fell 4.4% to $8.0 billion while reported annual revenue fell only 0.8% to $8.4 billion (A, B). Existing orders could support January–March revenue, but bookings running roughly $400 million below sales and lower volumes in several businesses (D) point to a decline of at least 5% by April–June.\"}]},\n    {\"sector\":\"2024Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-3\",\"alerts\":[{\"cik\":\"0000792987\",\"reason\":\"Net sales rose 5.0%, but deliveries outpaced new orders and backlog fell 37.6%, from $912.7 million to $569.8 million (A–C). The remaining orders could keep the March-quarter sales change above −5%. Continued deliveries from a much smaller backlog support a decline of at least 5% in April–June.\"}]},\n    {\"sector\":\"2024Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0001768267\",\"reason\":\"Cerence recognized $67.8 million of deferred revenue early in the December quarter, exceeding its entire $54.6 million year-over-year revenue gain by $13.2 million (A, C). That leaves less revenue to recognize in later quarters. I forecast the crossing in April–June, with timing uncertain because C does not give the original recognition schedule.\"}]},\n    {\"sector\":\"2024Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/transportation-1\",\"alerts\":[{\"cik\":\"0000793074\",\"reason\":\"Reported annual operating revenue fell just 0.2%. Acquisition-driven shipments lifted Truckload Logistics revenue 32% even as revenue per shipment fell (A, B). One-Way Truckload revenue per mile excluding fuel surcharges also fell 5.5% (D). As the acquired shipments enter the prior-year comparison, those rate declines could take consolidated revenue growth from above −5% in January–March to at or below −5% in April–June.\"}]},\n    {\"sector\":\"2024Q2/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/food_manufacturing-3",
+        "alerts": [
+          {
+            "cik": "0000098677",
+            "reason": "Net product sales growth slowed from about 15.1% in the first nine months to 3.8% in the December quarter, calculated from A and B. Higher realized prices drove most of the growth (D). A further slowdown as those prices enter the prior-year comparison supports a forecast above −5% in January–March and at or below −5% in April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000029905",
+            "reason": "Bookings fell 4.4% to $8.0 billion while reported annual revenue fell only 0.8% to $8.4 billion (A, B). Existing orders could support January–March revenue, but bookings running roughly $400 million below sales and lower volumes in several businesses (D) point to a decline of at least 5% by April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000792987",
+            "reason": "Net sales rose 5.0%, but deliveries outpaced new orders and backlog fell 37.6%, from $912.7 million to $569.8 million (A–C). The remaining orders could keep the March-quarter sales change above −5%. Continued deliveries from a much smaller backlog support a decline of at least 5% in April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0001768267",
+            "reason": "Cerence recognized $67.8 million of deferred revenue early in the December quarter, exceeding its entire $54.6 million year-over-year revenue gain by $13.2 million (A, C). That leaves less revenue to recognize in later quarters. I forecast the crossing in April–June, with timing uncertain because C does not give the original recognition schedule."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000793074",
+            "reason": "Reported annual operating revenue fell just 0.2%. Acquisition-driven shipments lifted Truckload Logistics revenue 32% even as revenue per shipment fell (A, B). One-Way Truckload revenue per mile excluding fuel surcharges also fell 5.5% (D). As the acquired shipments enter the prior-year comparison, those rate declines could take consolidated revenue growth from above −5% in January–March to at or below −5% in April–June."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

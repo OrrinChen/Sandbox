@@ -1,0 +1,356 @@
+[
+  {
+    "task_id": "decision-reconcile-carton-short-shipment-credit",
+    "tool": "sqlite.query",
+    "instruction": "Reconcile purchases of library copies at the purchase-line level. Each invoice line bills billed_qty copies at unit_cents cents each. The unique closing carton report for that line gives accepted_qty across all deliveries and all credit already posted for the shortage in posted_cents. A null posted_cents explicitly means no credit posted. All other fields are non-null. Each invoice line has exactly one closing report, billed_qty is positive, and all quantities and monetary amounts are nonnegative integers. Compute the value of billed copies still missing, treating overdelivery as zero missing copies, then subtract credit already posted on that line. Report only strictly positive remaining claims. Credits cannot be transferred between titles. Cite both the invoice line ID and the carton report ID. Return line_id, report_id, missing_qty, claim_cents in descending claim_cents order with ties by ascending line_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "carton_close": {
+        "columns": [
+          "report_id TEXT",
+          "line_id TEXT",
+          "accepted_qty INTEGER",
+          "posted_cents INTEGER",
+          "report_text TEXT"
+        ],
+        "rows": [
+          [
+            "R8",
+            "L1",
+            3,
+            425,
+            "Accepted three Orchard Index copies. A 425-cent credit posted."
+          ],
+          [
+            "R3",
+            "L2",
+            3,
+            null,
+            "Accepted three Loom Notes copies. No credit posted."
+          ],
+          [
+            "R4",
+            "L3",
+            3,
+            null,
+            "Accepted three Tile Atlas copies including an extra. No credit posted."
+          ],
+          [
+            "R9",
+            "L4",
+            3,
+            300,
+            "Accepted three Canal Songs copies. A 300-cent credit posted."
+          ]
+        ]
+      },
+      "invoice_line": {
+        "columns": [
+          "line_id TEXT",
+          "billed_qty INTEGER",
+          "unit_cents INTEGER",
+          "invoice_text TEXT"
+        ],
+        "rows": [
+          [
+            "L1",
+            6,
+            275,
+            "Billed six Orchard Index copies at 275 cents per copy."
+          ],
+          [
+            "L2",
+            4,
+            400,
+            "Billed four Loom Notes copies at 400 cents per copy."
+          ],
+          [
+            "L3",
+            2,
+            900,
+            "Billed two Tile Atlas copies at 900 cents per copy."
+          ],
+          [
+            "L4",
+            5,
+            150,
+            "Billed five Canal Songs copies at 150 cents per copy."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "line_id",
+      "report_id",
+      "missing_qty",
+      "claim_cents"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-course-charges-at-close",
+    "tool": "sqlite.query",
+    "instruction": "Prepare a table-level charge reconciliation through minute 60 inclusive, using integer minutes from opening and integer cents. Each course_charge is one original posting with a unique charge_id and positive face_cents. Each bill_flip fully reverses the immediately preceding posting in that charge's chain, which may itself be a reversal. Thus a charge can be restored and reversed again. Every flip belongs to an existing charge and follows its original posting. For ties within a charge, apply flips in increasing flip_seq. Each flip occurs exactly once. Include tables with any original posting through close, even when their net charge is zero. Exclude later postings and later flips. No fields are NULL. Return table_code, gross_cents (original charges through close), adjustment_cents (signed cumulative effect of eligible flips), net_cents (gross plus adjustment), ordered by table_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bill_flip": {
+        "columns": [
+          "charge_id TEXT",
+          "flip_seq INTEGER",
+          "flip_min INTEGER"
+        ],
+        "rows": [
+          [
+            "P1",
+            1,
+            30
+          ],
+          [
+            "P1",
+            2,
+            41
+          ],
+          [
+            "P2",
+            1,
+            50
+          ],
+          [
+            "P2",
+            2,
+            62
+          ],
+          [
+            "P3",
+            1,
+            60
+          ]
+        ]
+      },
+      "course_charge": {
+        "columns": [
+          "charge_id TEXT",
+          "table_code TEXT",
+          "post_min INTEGER",
+          "face_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "P1",
+            "A",
+            10,
+            850
+          ],
+          [
+            "P2",
+            "A",
+            22,
+            450
+          ],
+          [
+            "P3",
+            "B",
+            40,
+            700
+          ],
+          [
+            "P4",
+            "B",
+            61,
+            300
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "table_code",
+      "gross_cents",
+      "adjustment_cents",
+      "net_cents"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-display-ad-shortfall-credits",
+    "tool": "sqlite.query",
+    "instruction": "The fictional Flint Loom Advertiser is correcting its published advertising accounts. Each inspection slip records contracted and usable printed column-lines for one insertion, plus its integer rate in cents per column-line. The gross allowance is the positive shortfall times that rate, or zero when usable space meets or exceeds contract. Ledger entries are credit movements in cents. Positive amounts grant credit and negative amounts reverse it. Only posted movements count. Subtract their signed sum from the gross allowance, treating no posted movements as zero. Report only insertions still owed a positive additional credit. Return insertion_id, gross_cents, posted_net_cents, due_cents, source_id, ordered by due_cents descending then insertion_id ascending. Cite the inspection slip that establishes the shortfall. Each insertion has exactly one slip, movement IDs are unique, and all fields are nonnull. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "credit_movement": {
+        "columns": [
+          "movement_id TEXT",
+          "insertion_id TEXT",
+          "entry_state TEXT",
+          "delta_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "M1",
+            "Blue",
+            "posted",
+            30
+          ],
+          [
+            "M2",
+            "Blue",
+            "posted",
+            -10
+          ],
+          [
+            "M3",
+            "Blue",
+            "draft",
+            28
+          ],
+          [
+            "M4",
+            "Gold",
+            "posted",
+            30
+          ]
+        ]
+      },
+      "inspection_slip": {
+        "columns": [
+          "source_id TEXT",
+          "insertion_id TEXT",
+          "booked_lines INTEGER",
+          "usable_lines INTEGER",
+          "rate_cents INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "S1",
+            "Blue",
+            20,
+            14,
+            8,
+            "Blue weave panel measured fourteen usable column-lines."
+          ],
+          [
+            "S2",
+            "Gold",
+            12,
+            9,
+            10,
+            "Gold stall panel retained nine column-lines."
+          ],
+          [
+            "S3",
+            "Grey",
+            10,
+            11,
+            5,
+            "Grey ribbon received eleven clear column-lines."
+          ],
+          [
+            "S4",
+            "Red",
+            12,
+            8,
+            6,
+            "Red loom block measured eight usable column-lines."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "insertion_id",
+      "gross_cents",
+      "posted_net_cents",
+      "due_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-gallery-scan-page-counts",
+    "tool": "sqlite.query",
+    "instruction": "Construct exceptions.csv for a paginated gallery inventory. A page footer gives the number of inventory rows actually exported on that page. The scan desk supplies signed count sheets for two quantities per page: frames counts all scanned frames, and slates counts the separator frames among them. Each remaining frame should yield one inventory row on the same page. sheet_text is the original desk entry, and tally is its transcribed whole-frame count. For each quantity independently use the sheet with the greatest revision_no; if revisions tie, use the lexicographically smallest source_id under binary ordering. Review only pages with a footer and evidence for both quantities. A missing sheet means unknown; a recorded zero is valid evidence. No stored fields are null. Emit only discrepancies, with columns page_no, exported_rows, required_rows, missing_rows, frames_source, slates_source. missing_rows is required minus exported and can be negative. Cite the selected source_id for each quantity. Sort by page_no ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "desk_sheet": {
+        "columns": [
+          "source_id TEXT",
+          "page_no INTEGER",
+          "sheet_kind TEXT",
+          "revision_no INTEGER",
+          "tally INTEGER",
+          "sheet_text TEXT"
+        ],
+        "rows": [
+          [
+            "F1",
+            1,
+            "frames",
+            1,
+            6,
+            "Counted six frames on the strip."
+          ],
+          [
+            "F2",
+            1,
+            "frames",
+            2,
+            8,
+            "Recount including tail: eight frames."
+          ],
+          [
+            "S1",
+            1,
+            "slates",
+            1,
+            1,
+            "One divider at the start."
+          ],
+          [
+            "F3",
+            2,
+            "frames",
+            1,
+            5,
+            "Five frames on strip two."
+          ],
+          [
+            "S3",
+            2,
+            "slates",
+            1,
+            2,
+            "Both end frames are dividers."
+          ],
+          [
+            "F4",
+            3,
+            "frames",
+            1,
+            4,
+            "Four frames on the final strip."
+          ]
+        ]
+      },
+      "gallery_footer": {
+        "columns": [
+          "page_no INTEGER",
+          "exported_rows INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "page_no",
+      "exported_rows",
+      "required_rows",
+      "missing_rows",
+      "frames_source",
+      "slates_source"
+    ]
+  }
+]

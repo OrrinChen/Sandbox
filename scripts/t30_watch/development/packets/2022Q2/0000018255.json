@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000018255",
+  "issuer": "CATO CORP",
+  "cutoff": "2022-04-01",
+  "projected_target_start": "2022-05-01",
+  "status": "complete",
+  "period_end": "2022-01-29",
+  "filing_date": "2022-03-23",
+  "text": {
+    "sector": "retail",
+    "cik": "0000018255",
+    "issuer": "CATO CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-K",
+        "date": "2022-03-23",
+        "text": "Retail sales increased by 34.2% to $761.4 million in fiscal 2021 compared to $567.5 million in fiscal 2020."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-K",
+        "date": "2022-03-23",
+        "text": "This improvement was primarily attributable to government stimulus, increased customer traffic, states lifting capacity limits as more people were vaccinated, consumers’ increasing comfort level with venturing out to social events and customers’ preparing to return to work."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-K",
+        "date": "2022-03-23",
+        "text": "The increase of $90.5 million for fiscal 2021 compared to fiscal 2020 is primarily due to net operating income versus a net operating loss and an increase in accounts payable, partially offset by higher merchandise inventories and lower store impairment charges."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-K",
+        "date": "2022-03-23",
+        "text": "The Company faces additional uncertainty from the continued effects of disruption in the global supply chain, inflation and its impact on our cost of products, transportation, wage rates and other operating costs, as well as, the impact on our customers’ disposable incomes, and the availability of workers."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-K",
+        "date": "2022-03-23",
+        "text": "Cash provided by operating activities during fiscal 2021 was $59.8 million as compared to $30.7 million used in fiscal 2020 and $53.4 million provided in fiscal 2019."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-10-30",
+        "filed": "2021-11-19",
+        "reported_sales_usd": 172213000,
+        "year_ago_reported_sales_usd": 150791000,
+        "yoy_percent": "14.2064"
+      },
+      {
+        "quarter_end": "2022-01-29",
+        "filed": "2022-03-23",
+        "reported_sales_usd": 176227000,
+        "year_ago_reported_sales_usd": 155418000,
+        "yoy_percent": "13.3891"
+      }
+    ],
+    "status": "complete"
+  }
+}

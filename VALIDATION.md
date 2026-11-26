@@ -743,6 +743,8 @@ python -m sandboxed_agent_eval_harness.rl.train --config configs/agentic_rl.json
 
 ## Before Commit
 
+For the A1 regression, independent release and three-model workbook study, follow the commands in the [benchmark guide](BENCHMARKS.md#offline-reproduction). The historical workbook study uses the retained distribution, a second input workbook with different expected values and OS-enforced network denial during grading.
+
 Always run:
 
 ```bash

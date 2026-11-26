@@ -1,0 +1,285 @@
+[
+  {
+    "task_id": "decision-first-peak-of-simultaneous-waiting",
+    "tool": "sqlite.query",
+    "instruction": "For the observation window from second 100 inclusive to second 160 exclusive, report each queue's maximum number of simultaneously waiting calls and the earliest integer second at which it reached that maximum. Each unique wait_key represents one call. A call waits from enter_sec inclusive to leave_sec exclusive. A null leave_sec means the call was still waiting at the end of observation. A zero-duration wait occupies no time. Include calls already waiting when observation began. Report only queues with at least one occupied second in the window. Return queue_code, peak_calls, first_peak_sec, ordered by queue_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "call_waits": {
+        "columns": [
+          "wait_key TEXT",
+          "queue_code TEXT",
+          "enter_sec INTEGER",
+          "leave_sec INTEGER"
+        ],
+        "rows": [
+          [
+            "w1",
+            "amber",
+            90,
+            110
+          ],
+          [
+            "w2",
+            "amber",
+            100,
+            120
+          ],
+          [
+            "w3",
+            "amber",
+            110,
+            130
+          ],
+          [
+            "w4",
+            "amber",
+            140,
+            null
+          ],
+          [
+            "w5",
+            "slate",
+            80,
+            100
+          ],
+          [
+            "w6",
+            "slate",
+            155,
+            null
+          ],
+          [
+            "w7",
+            "slate",
+            155,
+            155
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "queue_code",
+      "peak_calls",
+      "first_peak_sec"
+    ]
+  },
+  {
+    "task_id": "decision-fit-booklet-files-to-press-stock",
+    "tool": "sqlite.query",
+    "instruction": "Construct press_pick.csv with one row for the entire run. Select exactly one cover file and one insert file from the candidate versions. Both must have the same finished width in millimeters, and their combined whole-run sheet requirement must fit the 100 sheets on hand. Quality points are integer scores on a common scale. Maximize the lower of the two component scores because either component can limit the booklet's grade. Break ties by higher combined score, then fewer sheets used, then ascending cover_id and insert_id using SQLite's binary text order. File IDs are unique within each table, no values are null, and a feasible pair exists. Return cover_id, insert_id, grade_points (the lower score), sheets_used, in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cover_options": {
+        "columns": [
+          "cover_id TEXT",
+          "width_mm INTEGER",
+          "sheet_qty INTEGER",
+          "quality_pts INTEGER"
+        ],
+        "rows": [
+          [
+            "c1",
+            140,
+            48,
+            99
+          ],
+          [
+            "c2",
+            140,
+            39,
+            84
+          ],
+          [
+            "c3",
+            150,
+            40,
+            83
+          ]
+        ]
+      },
+      "insert_options": {
+        "columns": [
+          "insert_id TEXT",
+          "width_mm INTEGER",
+          "sheet_qty INTEGER",
+          "quality_pts INTEGER"
+        ],
+        "rows": [
+          [
+            "i1",
+            140,
+            61,
+            85
+          ],
+          [
+            "i2",
+            140,
+            50,
+            75
+          ],
+          [
+            "i3",
+            150,
+            60,
+            88
+          ],
+          [
+            "i4",
+            160,
+            40,
+            98
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "cover_id",
+      "insert_id",
+      "grade_points",
+      "sheets_used"
+    ]
+  },
+  {
+    "task_id": "decision-fit-catalog-pages-under-byte-cap",
+    "tool": "sqlite.query",
+    "instruction": "Construct catalog_manifest.csv for a catalog uploader. Choose one of the offered rows_per_file settings for the whole run. In ascending seq_no order, place exactly that many consecutive catalog rows in each file except the last, which takes the remainder. Sequence numbers are unique and contiguous from 1. Each file adds a 2-byte header; row_bytes already includes the encoded row and its line ending. Every individual file must fit within 13 bytes including its header. Among feasible settings minimize the number of files, then choose the smaller rows_per_file. At least one setting is feasible. All inputs are positive integers without nulls, and offered settings are distinct. Emit one row per chosen file with columns rows_per_file, file_no, first_seq, last_seq, file_bytes. Number files from 1 and sort by file_no ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "catalog_row": {
+        "columns": [
+          "seq_no INTEGER",
+          "row_bytes INTEGER"
+        ],
+        "rows": [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "split_setting": {
+        "columns": [
+          "rows_per_file INTEGER"
+        ],
+        "rows": [
+          [
+            4
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "rows_per_file",
+      "file_no",
+      "first_seq",
+      "last_seq",
+      "file_bytes"
+    ]
+  },
+  {
+    "task_id": "decision-fit-cited-corrections-into-stoppress-space",
+    "tool": "sqlite.query",
+    "instruction": "The fictional Chalk Quay Weekly has six lines and at most two type frames left in its correction strip. Each docket row is a verified correction supported by the cited primary note. One correction consumes one frame and its full positive line count. Corrections in the same bundle reach exactly the same copies, so the editor permits at most one per bundle. Different bundles have disjoint circulation. Choose a nonempty feasible set maximizing total affected copies reached. Break ties by fewer total lines, then by the lexicographically smallest ascending sequence of docket IDs, with a proper prefix first. IDs are unique single uppercase ASCII letters within the docket. Every docket row has exactly one matching note, all values are nonnull, and at least one correction fits. Return one row per chosen correction with columns docket_id, copies_reached, source_id, sorted by docket_id ascending. Copies are whole newspaper copies. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "correction_docket": {
+        "columns": [
+          "docket_id TEXT",
+          "bundle_code TEXT",
+          "line_count INTEGER",
+          "copy_count INTEGER",
+          "note_id TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "Dock",
+            4,
+            90,
+            "N1"
+          ],
+          [
+            "B",
+            "Dock",
+            2,
+            90,
+            "N2"
+          ],
+          [
+            "C",
+            "Hill",
+            4,
+            84,
+            "N3"
+          ],
+          [
+            "D",
+            "Vale",
+            2,
+            65,
+            "N4"
+          ],
+          [
+            "E",
+            "Moor",
+            7,
+            250,
+            "N5"
+          ]
+        ]
+      },
+      "primary_note": {
+        "columns": [
+          "source_id TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "Dock stall book assigns linen to bay four."
+          ],
+          [
+            "N2",
+            "Dock bell sheet puts closing at six."
+          ],
+          [
+            "N3",
+            "Hill exhibition card lists woven reeds."
+          ],
+          [
+            "N4",
+            "Vale tally records nine display carts."
+          ],
+          [
+            "N5",
+            "Moor hall card gives the entrance as west."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "docket_id",
+      "copies_reached",
+      "source_id"
+    ]
+  }
+]

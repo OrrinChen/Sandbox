@@ -1,0 +1,2335 @@
+[
+  {
+    "task_id": "sheet-18935",
+    "tool": "spreadsheet.edit_formulas",
+    "instruction": "How can I perform a lookup in Excel to retrieve a value from a Data Table and place it into a report format, using the data and structure provided in the attached file?\nCurrently I need to lookup a value from a Data Table and return the value to the report format. Kindly refer to the attach file for reference. How can I lookup the Category Value based on the (1) Work Criteria, (2) Category Type and (3) Material from the Data Table above?  \nNote : The category value varies based on work type and material type. Submit the local workbook formula edits as JSON with a formulas object keyed by cell address. Use the supplied input.xlsx. The scorer applies the same formulas to this workbook and a second input with different values, checking the specified target cells in both.",
+    "supported_functions": [
+      "ABS",
+      "ACOS",
+      "ADDRESS",
+      "AGGREGATE",
+      "AND",
+      "AREAS",
+      "ASIN",
+      "ATAN",
+      "ATAN2",
+      "AVERAGE",
+      "AVERAGEA",
+      "AVERAGEIF",
+      "AVERAGEIFS",
+      "CEILING",
+      "CEILING.MATH",
+      "CEILING.PRECISE",
+      "CHAR",
+      "CHOOSE",
+      "CLEAN",
+      "CODE",
+      "COLUMN",
+      "COLUMNS",
+      "COMBIN",
+      "CONCAT",
+      "CONCATENATE",
+      "COS",
+      "COUNT",
+      "COUNTA",
+      "COUNTBLANK",
+      "COUNTIF",
+      "COUNTIFS",
+      "DATE",
+      "DATEDIF",
+      "DATEVALUE",
+      "DAY",
+      "DAYS",
+      "DAYS360",
+      "DECIMAL",
+      "DEGREES",
+      "EDATE",
+      "EOMONTH",
+      "EVEN",
+      "EXACT",
+      "EXP",
+      "FACT",
+      "FALSE",
+      "FILTER",
+      "FIND",
+      "FIXED",
+      "FLOOR",
+      "FLOOR.MATH",
+      "FLOOR.PRECISE",
+      "FREQ",
+      "FREQUENCY",
+      "HLOOKUP",
+      "HOUR",
+      "IF",
+      "IFERROR",
+      "IFNA",
+      "IFS",
+      "INDEX",
+      "INDIRECT",
+      "INT",
+      "ISBLANK",
+      "ISERR",
+      "ISERROR",
+      "ISEVEN",
+      "ISLOGICAL",
+      "ISNA",
+      "ISNUMBER",
+      "ISODD",
+      "ISREF",
+      "ISTEXT",
+      "LARGE",
+      "LEFT",
+      "LEN",
+      "LN",
+      "LOG",
+      "LOG10",
+      "LOOKUP",
+      "LOWER",
+      "MATCH",
+      "MAX",
+      "MAXIFS",
+      "MEDIAN",
+      "MID",
+      "MIN",
+      "MINIFS",
+      "MINUTE",
+      "MOD",
+      "MODE",
+      "MODE.SNGL",
+      "MONTH",
+      "MROUND",
+      "N",
+      "NA",
+      "NETWORKDAYS",
+      "NETWORKDAYS.INTL",
+      "NOT",
+      "NUMBERVALUE",
+      "ODD",
+      "OFFSET",
+      "OR",
+      "PERCENTILE",
+      "PERCENTILE.INC",
+      "PERCENTRANK",
+      "PI",
+      "POWER",
+      "PRODUCT",
+      "PROPER",
+      "QUOTIENT",
+      "RADIANS",
+      "RANK",
+      "RANK.EQ",
+      "REPLACE",
+      "REPT",
+      "RIGHT",
+      "ROMAN",
+      "ROUND",
+      "ROUNDDOWN",
+      "ROUNDUP",
+      "ROW",
+      "ROWS",
+      "SEARCH",
+      "SECOND",
+      "SIGN",
+      "SIN",
+      "SMALL",
+      "SORT",
+      "SQRT",
+      "STDEV",
+      "STDEV.S",
+      "SUBSTITUTE",
+      "SUBTOTAL",
+      "SUM",
+      "SUMIF",
+      "SUMIFS",
+      "SUMPRODUCT",
+      "SUMSQ",
+      "SWITCH",
+      "T",
+      "TAN",
+      "TEXT",
+      "TEXTJOIN",
+      "TIME",
+      "TIMEVALUE",
+      "TRANSPOSE",
+      "TRIM",
+      "TRUE",
+      "TRUNC",
+      "TYPE",
+      "UNIQUE",
+      "UPPER",
+      "VALUE",
+      "VLOOKUP",
+      "WEEKDAY",
+      "WEEKNUM",
+      "WORKDAY",
+      "WORKDAY.INTL",
+      "XLOOKUP",
+      "XMATCH",
+      "YEAR",
+      "YEARFRAC"
+    ],
+    "target_sheet": "Sheet1",
+    "target_range": "D17:D22",
+    "observation": {
+      "Sheet1": {
+        "dimensions": [
+          22,
+          5
+        ],
+        "nonempty_count": 59,
+        "cells": [
+          [
+            "A2",
+            "Data Table"
+          ],
+          [
+            "A4",
+            "Work"
+          ],
+          [
+            "B4",
+            "Material"
+          ],
+          [
+            "C4",
+            "Category 1"
+          ],
+          [
+            "D4",
+            "Category 2"
+          ],
+          [
+            "E4",
+            "Category 3"
+          ],
+          [
+            "D16",
+            "Category Value"
+          ],
+          [
+            "C16",
+            "Material"
+          ],
+          [
+            "C17",
+            "Material 1"
+          ],
+          [
+            "C18",
+            "Material 2"
+          ],
+          [
+            "C19",
+            "Material 2"
+          ],
+          [
+            "C20",
+            "Material 1"
+          ],
+          [
+            "C21",
+            "Material 2"
+          ],
+          [
+            "B16",
+            "Category Type"
+          ],
+          [
+            "B17",
+            "Category 1"
+          ],
+          [
+            "B18",
+            "Category 2"
+          ],
+          [
+            "B19",
+            "Category 3"
+          ],
+          [
+            "B20",
+            "Category 1"
+          ],
+          [
+            "B21",
+            "Category 3"
+          ],
+          [
+            "A14",
+            "Report Format"
+          ],
+          [
+            "A16",
+            "Work"
+          ],
+          [
+            "A17",
+            "1"
+          ],
+          [
+            "A18",
+            "1"
+          ],
+          [
+            "A19",
+            "1"
+          ],
+          [
+            "A20",
+            "2"
+          ],
+          [
+            "A21",
+            "1"
+          ],
+          [
+            "A22",
+            "1"
+          ],
+          [
+            "B22",
+            "Category 2"
+          ],
+          [
+            "C22",
+            "Material 3"
+          ],
+          [
+            "A5",
+            "1"
+          ],
+          [
+            "B5",
+            "Material 1"
+          ],
+          [
+            "C5",
+            "0"
+          ],
+          [
+            "D5",
+            "0"
+          ],
+          [
+            "E5",
+            "0.75"
+          ],
+          [
+            "A6",
+            "1"
+          ],
+          [
+            "B6",
+            "Material 2"
+          ],
+          [
+            "C6",
+            "0"
+          ],
+          [
+            "D6",
+            "25.43"
+          ],
+          [
+            "E6",
+            "0"
+          ],
+          [
+            "A7",
+            "1"
+          ],
+          [
+            "B7",
+            "Material 3"
+          ],
+          [
+            "C7",
+            "0.72"
+          ],
+          [
+            "D7",
+            "0"
+          ],
+          [
+            "E7",
+            "0"
+          ],
+          [
+            "A8",
+            "2"
+          ],
+          [
+            "B8",
+            "Material 1"
+          ],
+          [
+            "C8",
+            "0"
+          ],
+          [
+            "D8",
+            "5.82"
+          ],
+          [
+            "E8",
+            "0"
+          ],
+          [
+            "A9",
+            "2"
+          ],
+          [
+            "B9",
+            "Material 1"
+          ],
+          [
+            "C9",
+            "0"
+          ],
+          [
+            "D9",
+            "0"
+          ],
+          [
+            "E9",
+            "4.9"
+          ],
+          [
+            "A10",
+            "2"
+          ],
+          [
+            "B10",
+            "Material 2"
+          ],
+          [
+            "C10",
+            "3.89"
+          ],
+          [
+            "D10",
+            "0"
+          ],
+          [
+            "E10",
+            "0"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "task_id": "sheet-2212",
+    "tool": "spreadsheet.edit_formulas",
+    "instruction": "How do I create a formula in cell E2 that counts the number of cells within the range $B$2:$B$273 that contain dates greater than or equal to the date specified in cell D2, and can be copied down to cells E3, E4, E5, etc., so that it dynamically updates for each corresponding cell D3, D4, D5, etc.? This is so that as new data is added, the formula will automatically calculate the counts, and an associated graph will update accordingly. Submit the local workbook formula edits as JSON with a formulas object keyed by cell address. Use the supplied input.xlsx. The scorer applies the same formulas to this workbook and a second input with different values, checking the specified target cells in both.",
+    "supported_functions": [
+      "ABS",
+      "ACOS",
+      "ADDRESS",
+      "AGGREGATE",
+      "AND",
+      "AREAS",
+      "ASIN",
+      "ATAN",
+      "ATAN2",
+      "AVERAGE",
+      "AVERAGEA",
+      "AVERAGEIF",
+      "AVERAGEIFS",
+      "CEILING",
+      "CEILING.MATH",
+      "CEILING.PRECISE",
+      "CHAR",
+      "CHOOSE",
+      "CLEAN",
+      "CODE",
+      "COLUMN",
+      "COLUMNS",
+      "COMBIN",
+      "CONCAT",
+      "CONCATENATE",
+      "COS",
+      "COUNT",
+      "COUNTA",
+      "COUNTBLANK",
+      "COUNTIF",
+      "COUNTIFS",
+      "DATE",
+      "DATEDIF",
+      "DATEVALUE",
+      "DAY",
+      "DAYS",
+      "DAYS360",
+      "DECIMAL",
+      "DEGREES",
+      "EDATE",
+      "EOMONTH",
+      "EVEN",
+      "EXACT",
+      "EXP",
+      "FACT",
+      "FALSE",
+      "FILTER",
+      "FIND",
+      "FIXED",
+      "FLOOR",
+      "FLOOR.MATH",
+      "FLOOR.PRECISE",
+      "FREQ",
+      "FREQUENCY",
+      "HLOOKUP",
+      "HOUR",
+      "IF",
+      "IFERROR",
+      "IFNA",
+      "IFS",
+      "INDEX",
+      "INDIRECT",
+      "INT",
+      "ISBLANK",
+      "ISERR",
+      "ISERROR",
+      "ISEVEN",
+      "ISLOGICAL",
+      "ISNA",
+      "ISNUMBER",
+      "ISODD",
+      "ISREF",
+      "ISTEXT",
+      "LARGE",
+      "LEFT",
+      "LEN",
+      "LN",
+      "LOG",
+      "LOG10",
+      "LOOKUP",
+      "LOWER",
+      "MATCH",
+      "MAX",
+      "MAXIFS",
+      "MEDIAN",
+      "MID",
+      "MIN",
+      "MINIFS",
+      "MINUTE",
+      "MOD",
+      "MODE",
+      "MODE.SNGL",
+      "MONTH",
+      "MROUND",
+      "N",
+      "NA",
+      "NETWORKDAYS",
+      "NETWORKDAYS.INTL",
+      "NOT",
+      "NUMBERVALUE",
+      "ODD",
+      "OFFSET",
+      "OR",
+      "PERCENTILE",
+      "PERCENTILE.INC",
+      "PERCENTRANK",
+      "PI",
+      "POWER",
+      "PRODUCT",
+      "PROPER",
+      "QUOTIENT",
+      "RADIANS",
+      "RANK",
+      "RANK.EQ",
+      "REPLACE",
+      "REPT",
+      "RIGHT",
+      "ROMAN",
+      "ROUND",
+      "ROUNDDOWN",
+      "ROUNDUP",
+      "ROW",
+      "ROWS",
+      "SEARCH",
+      "SECOND",
+      "SIGN",
+      "SIN",
+      "SMALL",
+      "SORT",
+      "SQRT",
+      "STDEV",
+      "STDEV.S",
+      "SUBSTITUTE",
+      "SUBTOTAL",
+      "SUM",
+      "SUMIF",
+      "SUMIFS",
+      "SUMPRODUCT",
+      "SUMSQ",
+      "SWITCH",
+      "T",
+      "TAN",
+      "TEXT",
+      "TEXTJOIN",
+      "TIME",
+      "TIMEVALUE",
+      "TRANSPOSE",
+      "TRIM",
+      "TRUE",
+      "TRUNC",
+      "TYPE",
+      "UNIQUE",
+      "UPPER",
+      "VALUE",
+      "VLOOKUP",
+      "WEEKDAY",
+      "WEEKNUM",
+      "WORKDAY",
+      "WORKDAY.INTL",
+      "XLOOKUP",
+      "XMATCH",
+      "YEAR",
+      "YEARFRAC"
+    ],
+    "target_sheet": "Sheet1",
+    "target_range": "E2:E13",
+    "observation": {
+      "Sheet1": {
+        "dimensions": [
+          273,
+          5
+        ],
+        "nonempty_count": 287,
+        "cells": [
+          [
+            "B1",
+            "DATE"
+          ],
+          [
+            "D1",
+            "MONTHS"
+          ],
+          [
+            "E1",
+            "Nos."
+          ],
+          [
+            "B2",
+            "2020-11-29 00:00:00"
+          ],
+          [
+            "D2",
+            "2021-01-01 00:00:00"
+          ],
+          [
+            "B3",
+            "2020-11-29 00:00:00"
+          ],
+          [
+            "D3",
+            "2021-02-01 00:00:00"
+          ],
+          [
+            "B4",
+            "2020-11-29 00:00:00"
+          ],
+          [
+            "D4",
+            "2021-03-01 00:00:00"
+          ],
+          [
+            "D5",
+            "2021-04-01 00:00:00"
+          ],
+          [
+            "D6",
+            "2021-05-01 00:00:00"
+          ],
+          [
+            "B5",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B6",
+            "2020-12-31 00:00:00"
+          ],
+          [
+            "B272",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B273",
+            "2021-03-26 00:00:00"
+          ],
+          [
+            "B7",
+            "2020-12-10 00:00:00"
+          ],
+          [
+            "D7",
+            "2021-06-01 00:00:00"
+          ],
+          [
+            "B8",
+            "2020-11-28 00:00:00"
+          ],
+          [
+            "D8",
+            "2021-07-01 00:00:00"
+          ],
+          [
+            "B9",
+            "2020-12-20 00:00:00"
+          ],
+          [
+            "D9",
+            "2021-08-01 00:00:00"
+          ],
+          [
+            "B10",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "D10",
+            "2021-09-01 00:00:00"
+          ],
+          [
+            "B11",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "D11",
+            "2021-10-01 00:00:00"
+          ],
+          [
+            "B12",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "D12",
+            "2021-11-01 00:00:00"
+          ],
+          [
+            "B13",
+            "2020-11-22 00:00:00"
+          ],
+          [
+            "D13",
+            "2021-12-01 00:00:00"
+          ],
+          [
+            "B14",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B15",
+            "2020-12-11 00:00:00"
+          ],
+          [
+            "B16",
+            "2020-12-01 00:00:00"
+          ],
+          [
+            "B17",
+            "2020-11-29 00:00:00"
+          ],
+          [
+            "B18",
+            "2020-12-21 00:00:00"
+          ],
+          [
+            "B19",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B20",
+            "2021-05-10 00:00:00"
+          ],
+          [
+            "B21",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B22",
+            "2021-04-28 00:00:00"
+          ],
+          [
+            "B23",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B24",
+            "2020-11-28 00:00:00"
+          ],
+          [
+            "B25",
+            "2020-12-18 00:00:00"
+          ],
+          [
+            "B26",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B27",
+            "2021-05-01 00:00:00"
+          ],
+          [
+            "B28",
+            "2020-11-28 00:00:00"
+          ],
+          [
+            "B29",
+            "2020-12-04 00:00:00"
+          ],
+          [
+            "B30",
+            "2020-12-11 00:00:00"
+          ],
+          [
+            "B31",
+            "2021-04-01 00:00:00"
+          ],
+          [
+            "B32",
+            "2020-11-26 00:00:00"
+          ],
+          [
+            "B33",
+            "2020-11-26 00:00:00"
+          ],
+          [
+            "B34",
+            "2020-12-22 00:00:00"
+          ],
+          [
+            "B35",
+            "2020-12-02 00:00:00"
+          ],
+          [
+            "B36",
+            "2020-12-15 00:00:00"
+          ],
+          [
+            "B37",
+            "2020-12-01 00:00:00"
+          ],
+          [
+            "B38",
+            "2020-12-21 00:00:00"
+          ],
+          [
+            "B39",
+            "2020-11-26 00:00:00"
+          ],
+          [
+            "B40",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B41",
+            "2021-05-07 00:00:00"
+          ],
+          [
+            "B42",
+            "2021-03-20 00:00:00"
+          ],
+          [
+            "B43",
+            "2020-12-04 00:00:00"
+          ],
+          [
+            "B44",
+            "2020-11-27 00:00:00"
+          ],
+          [
+            "B45",
+            "2021-04-29 00:00:00"
+          ],
+          [
+            "B46",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B47",
+            "2020-11-28 00:00:00"
+          ],
+          [
+            "B48",
+            "2021-03-29 00:00:00"
+          ],
+          [
+            "B49",
+            "2021-07-13 00:00:00"
+          ],
+          [
+            "B50",
+            "2020-12-11 00:00:00"
+          ],
+          [
+            "B51",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B52",
+            "00:00:00"
+          ],
+          [
+            "B53",
+            "Tahirova,Lala,Ms."
+          ],
+          [
+            "B54",
+            "2020-12-13 00:00:00"
+          ],
+          [
+            "B55",
+            "2021-01-13 00:00:00"
+          ],
+          [
+            "B56",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B57",
+            "2020-11-24 00:00:00"
+          ],
+          [
+            "B58",
+            "2021-04-13 00:00:00"
+          ],
+          [
+            "B59",
+            "2020-12-02 00:00:00"
+          ],
+          [
+            "B60",
+            "2021-01-02 00:00:00"
+          ],
+          [
+            "B61",
+            "2020-12-25 00:00:00"
+          ],
+          [
+            "B62",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B63",
+            "2020-12-03 00:00:00"
+          ],
+          [
+            "B64",
+            "2021-01-02 00:00:00"
+          ],
+          [
+            "B65",
+            "2020-12-12 00:00:00"
+          ],
+          [
+            "B66",
+            "2021-03-29 00:00:00"
+          ],
+          [
+            "B67",
+            "2020-12-09 00:00:00"
+          ],
+          [
+            "B68",
+            "2021-02-19 00:00:00"
+          ],
+          [
+            "B69",
+            "2021-10-07 00:00:00"
+          ],
+          [
+            "B70",
+            "2020-12-04 00:00:00"
+          ],
+          [
+            "B71",
+            "2021-01-09 00:00:00"
+          ],
+          [
+            "B72",
+            "2021-03-25 00:00:00"
+          ],
+          [
+            "B73",
+            "2020-12-14 00:00:00"
+          ],
+          [
+            "B74",
+            "2021-01-11 00:00:00"
+          ],
+          [
+            "B75",
+            "2020-11-26 00:00:00"
+          ],
+          [
+            "B76",
+            "2021-05-14 00:00:00"
+          ],
+          [
+            "B77",
+            "2020-11-27 00:00:00"
+          ],
+          [
+            "B78",
+            "2021-03-28 00:00:00"
+          ],
+          [
+            "B79",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B80",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B81",
+            "2020-11-29 00:00:00"
+          ],
+          [
+            "B82",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B83",
+            "2020-12-05 00:00:00"
+          ],
+          [
+            "B84",
+            "2020-11-27 00:00:00"
+          ],
+          [
+            "B85",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B86",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B87",
+            "2021-01-21 00:00:00"
+          ],
+          [
+            "B88",
+            "2020-12-17 00:00:00"
+          ],
+          [
+            "B89",
+            "2020-12-07 00:00:00"
+          ],
+          [
+            "B90",
+            "2020-12-18 00:00:00"
+          ],
+          [
+            "B91",
+            "2020-12-29 00:00:00"
+          ],
+          [
+            "B92",
+            "2021-03-10 00:00:00"
+          ],
+          [
+            "B93",
+            "2020-11-24 00:00:00"
+          ],
+          [
+            "B94",
+            "2020-11-22 00:00:00"
+          ],
+          [
+            "B95",
+            "2021-05-12 00:00:00"
+          ],
+          [
+            "B96",
+            "2020-12-29 00:00:00"
+          ],
+          [
+            "B97",
+            "2021-04-30 00:00:00"
+          ],
+          [
+            "B98",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B99",
+            "2021-03-14 00:00:00"
+          ],
+          [
+            "B100",
+            "2020-12-09 00:00:00"
+          ],
+          [
+            "B101",
+            "2020-12-04 00:00:00"
+          ],
+          [
+            "B102",
+            "2021-05-24 00:00:00"
+          ],
+          [
+            "B103",
+            "2020-12-11 00:00:00"
+          ],
+          [
+            "B104",
+            "2021-03-29 00:00:00"
+          ],
+          [
+            "B105",
+            "2021-03-12 00:00:00"
+          ],
+          [
+            "B106",
+            "2021-05-07 00:00:00"
+          ],
+          [
+            "B107",
+            "2021-03-15 00:00:00"
+          ],
+          [
+            "B108",
+            "2021-03-23 00:00:00"
+          ],
+          [
+            "B109",
+            "2021-01-11 00:00:00"
+          ],
+          [
+            "B110",
+            "2021-02-10 00:00:00"
+          ],
+          [
+            "B111",
+            "2020-12-01 00:00:00"
+          ],
+          [
+            "B112",
+            "2021-01-05 00:00:00"
+          ],
+          [
+            "B113",
+            "2021-02-06 00:00:00"
+          ],
+          [
+            "B114",
+            "2021-03-31 00:00:00"
+          ],
+          [
+            "B115",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B116",
+            "2020-12-13 00:00:00"
+          ],
+          [
+            "B117",
+            "2020-12-15 00:00:00"
+          ],
+          [
+            "B118",
+            "2020-11-22 00:00:00"
+          ],
+          [
+            "B119",
+            "2020-12-07 00:00:00"
+          ],
+          [
+            "B120",
+            "2020-11-27 00:00:00"
+          ],
+          [
+            "B121",
+            "2021-05-09 00:00:00"
+          ],
+          [
+            "B122",
+            "2021-03-12 00:00:00"
+          ],
+          [
+            "B123",
+            "2021-03-16 00:00:00"
+          ],
+          [
+            "B124",
+            "2020-12-26 00:00:00"
+          ],
+          [
+            "B125",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B126",
+            "2020-12-09 00:00:00"
+          ],
+          [
+            "B127",
+            "2020-11-27 00:00:00"
+          ],
+          [
+            "B128",
+            "2020-12-24 00:00:00"
+          ],
+          [
+            "B129",
+            "2020-12-23 00:00:00"
+          ],
+          [
+            "B130",
+            "2021-05-08 00:00:00"
+          ],
+          [
+            "B131",
+            "2021-04-12 00:00:00"
+          ],
+          [
+            "B132",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B133",
+            "2021-03-17 00:00:00"
+          ],
+          [
+            "B134",
+            "2020-11-24 00:00:00"
+          ],
+          [
+            "B135",
+            "2021-01-19 00:00:00"
+          ],
+          [
+            "B136",
+            "2021-01-13 00:00:00"
+          ],
+          [
+            "B137",
+            "2020-12-14 00:00:00"
+          ],
+          [
+            "B138",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B139",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B140",
+            "2020-11-23 00:00:00"
+          ],
+          [
+            "B141",
+            "2020-12-17 00:00:00"
+          ],
+          [
+            "B142",
+            "2021-03-23 00:00:00"
+          ],
+          [
+            "B143",
+            "2020-12-01 00:00:00"
+          ],
+          [
+            "B144",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B145",
+            "2021-02-06 00:00:00"
+          ],
+          [
+            "B146",
+            "2020-12-24 00:00:00"
+          ],
+          [
+            "B147",
+            "2021-03-23 00:00:00"
+          ],
+          [
+            "B148",
+            "2020-12-15 00:00:00"
+          ],
+          [
+            "B149",
+            "2020-11-30 00:00:00"
+          ],
+          [
+            "B150",
+            "2020-12-01 00:00:00"
+          ],
+          [
+            "B151",
+            "2021-04-08 00:00:00"
+          ],
+          [
+            "B152",
+            "2020-12-05 00:00:00"
+          ],
+          [
+            "B153",
+            "2021-03-17 00:00:00"
+          ],
+          [
+            "B154",
+            "2020-11-25 00:00:00"
+          ],
+          [
+            "B155",
+            "2020-11-24 00:00:00"
+          ],
+          [
+            "B156",
+            "2021-01-04 00:00:00"
+          ],
+          [
+            "B157",
+            "2021-03-30 00:00:00"
+          ],
+          [
+            "B158",
+            "2020-12-20 00:00:00"
+          ],
+          [
+            "B159",
+            "2021-04-03 00:00:00"
+          ],
+          [
+            "B160",
+            "2021-04-30 00:00:00"
+          ],
+          [
+            "B161",
+            "2021-03-14 00:00:00"
+          ],
+          [
+            "B162",
+            "2020-12-06 00:00:00"
+          ],
+          [
+            "B163",
+            "2021-03-27 00:00:00"
+          ],
+          [
+            "B164",
+            "2020-11-22 00:00:00"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "task_id": "sheet-31915",
+    "tool": "spreadsheet.edit_formulas",
+    "instruction": "create a formula in Excel that allows me to sum the prices in column B corresponding to each unique serial number in column A, with the sum appearing only once on the first row instance of each serial number Submit the local workbook formula edits as JSON with a formulas object keyed by cell address. Use the supplied input.xlsx. The scorer applies the same formulas to this workbook and a second input with different values, checking the specified target cells in both.",
+    "supported_functions": [
+      "ABS",
+      "ACOS",
+      "ADDRESS",
+      "AGGREGATE",
+      "AND",
+      "AREAS",
+      "ASIN",
+      "ATAN",
+      "ATAN2",
+      "AVERAGE",
+      "AVERAGEA",
+      "AVERAGEIF",
+      "AVERAGEIFS",
+      "CEILING",
+      "CEILING.MATH",
+      "CEILING.PRECISE",
+      "CHAR",
+      "CHOOSE",
+      "CLEAN",
+      "CODE",
+      "COLUMN",
+      "COLUMNS",
+      "COMBIN",
+      "CONCAT",
+      "CONCATENATE",
+      "COS",
+      "COUNT",
+      "COUNTA",
+      "COUNTBLANK",
+      "COUNTIF",
+      "COUNTIFS",
+      "DATE",
+      "DATEDIF",
+      "DATEVALUE",
+      "DAY",
+      "DAYS",
+      "DAYS360",
+      "DECIMAL",
+      "DEGREES",
+      "EDATE",
+      "EOMONTH",
+      "EVEN",
+      "EXACT",
+      "EXP",
+      "FACT",
+      "FALSE",
+      "FILTER",
+      "FIND",
+      "FIXED",
+      "FLOOR",
+      "FLOOR.MATH",
+      "FLOOR.PRECISE",
+      "FREQ",
+      "FREQUENCY",
+      "HLOOKUP",
+      "HOUR",
+      "IF",
+      "IFERROR",
+      "IFNA",
+      "IFS",
+      "INDEX",
+      "INDIRECT",
+      "INT",
+      "ISBLANK",
+      "ISERR",
+      "ISERROR",
+      "ISEVEN",
+      "ISLOGICAL",
+      "ISNA",
+      "ISNUMBER",
+      "ISODD",
+      "ISREF",
+      "ISTEXT",
+      "LARGE",
+      "LEFT",
+      "LEN",
+      "LN",
+      "LOG",
+      "LOG10",
+      "LOOKUP",
+      "LOWER",
+      "MATCH",
+      "MAX",
+      "MAXIFS",
+      "MEDIAN",
+      "MID",
+      "MIN",
+      "MINIFS",
+      "MINUTE",
+      "MOD",
+      "MODE",
+      "MODE.SNGL",
+      "MONTH",
+      "MROUND",
+      "N",
+      "NA",
+      "NETWORKDAYS",
+      "NETWORKDAYS.INTL",
+      "NOT",
+      "NUMBERVALUE",
+      "ODD",
+      "OFFSET",
+      "OR",
+      "PERCENTILE",
+      "PERCENTILE.INC",
+      "PERCENTRANK",
+      "PI",
+      "POWER",
+      "PRODUCT",
+      "PROPER",
+      "QUOTIENT",
+      "RADIANS",
+      "RANK",
+      "RANK.EQ",
+      "REPLACE",
+      "REPT",
+      "RIGHT",
+      "ROMAN",
+      "ROUND",
+      "ROUNDDOWN",
+      "ROUNDUP",
+      "ROW",
+      "ROWS",
+      "SEARCH",
+      "SECOND",
+      "SIGN",
+      "SIN",
+      "SMALL",
+      "SORT",
+      "SQRT",
+      "STDEV",
+      "STDEV.S",
+      "SUBSTITUTE",
+      "SUBTOTAL",
+      "SUM",
+      "SUMIF",
+      "SUMIFS",
+      "SUMPRODUCT",
+      "SUMSQ",
+      "SWITCH",
+      "T",
+      "TAN",
+      "TEXT",
+      "TEXTJOIN",
+      "TIME",
+      "TIMEVALUE",
+      "TRANSPOSE",
+      "TRIM",
+      "TRUE",
+      "TRUNC",
+      "TYPE",
+      "UNIQUE",
+      "UPPER",
+      "VALUE",
+      "VLOOKUP",
+      "WEEKDAY",
+      "WEEKNUM",
+      "WORKDAY",
+      "WORKDAY.INTL",
+      "XLOOKUP",
+      "XMATCH",
+      "YEAR",
+      "YEARFRAC"
+    ],
+    "target_sheet": "Sheet2",
+    "target_range": "'Sheet2'!C2:C11",
+    "observation": {
+      "Sheet1": {
+        "dimensions": [
+          156,
+          6
+        ],
+        "nonempty_count": 925,
+        "cells": [
+          [
+            "A1",
+            "serial"
+          ],
+          [
+            "B1",
+            "crop"
+          ],
+          [
+            "C1",
+            "name"
+          ],
+          [
+            "D1",
+            "survey"
+          ],
+          [
+            "E1",
+            "extent"
+          ],
+          [
+            "F1",
+            "TotalExtent"
+          ],
+          [
+            "A2",
+            "1"
+          ],
+          [
+            "B2",
+            "pp"
+          ],
+          [
+            "C2",
+            "Ramasamy"
+          ],
+          [
+            "D2",
+            "145-4, 145-8"
+          ],
+          [
+            "E2",
+            "0.155"
+          ],
+          [
+            "F2",
+            "0.355"
+          ],
+          [
+            "A3",
+            "1"
+          ],
+          [
+            "B3",
+            "uuuu"
+          ],
+          [
+            "C3",
+            "Ramasamy"
+          ],
+          [
+            "D3",
+            "174-6A"
+          ],
+          [
+            "E3",
+            "0.2"
+          ],
+          [
+            "F3",
+            "0.355"
+          ],
+          [
+            "A4",
+            "2"
+          ],
+          [
+            "B4",
+            "chil"
+          ],
+          [
+            "C4",
+            "marichamy"
+          ],
+          [
+            "D4",
+            "116-4B2, 116-4B1, 116-3C"
+          ],
+          [
+            "E4",
+            "0.95"
+          ],
+          [
+            "F4",
+            "0.95"
+          ],
+          [
+            "A155",
+            "104"
+          ],
+          [
+            "B155",
+            "mm"
+          ],
+          [
+            "C155",
+            "veerapandian"
+          ],
+          [
+            "D155",
+            "165-1, 166-13"
+          ],
+          [
+            "E155",
+            "1.325"
+          ],
+          [
+            "F155",
+            "1.325"
+          ],
+          [
+            "A156",
+            "105"
+          ],
+          [
+            "B156",
+            "chil"
+          ],
+          [
+            "C156",
+            "ayyalusamy"
+          ],
+          [
+            "D156",
+            "124-8b"
+          ],
+          [
+            "E156",
+            "0.4075"
+          ],
+          [
+            "F156",
+            "0.4075"
+          ],
+          [
+            "A5",
+            "3"
+          ],
+          [
+            "B5",
+            "mm"
+          ],
+          [
+            "C5",
+            "Nagalakshmi"
+          ],
+          [
+            "D5",
+            "103-9, 194-6, 194-7"
+          ],
+          [
+            "E5",
+            "1.715"
+          ],
+          [
+            "F5",
+            "1.715"
+          ],
+          [
+            "A6",
+            "4"
+          ],
+          [
+            "B6",
+            "mm"
+          ],
+          [
+            "C6",
+            "Devendraraj"
+          ],
+          [
+            "D6",
+            "130-4, 146-10A, 166-1, 167-7"
+          ],
+          [
+            "E6",
+            "1.46"
+          ],
+          [
+            "F6",
+            "1.46"
+          ],
+          [
+            "A7",
+            "5"
+          ],
+          [
+            "B7",
+            "mm"
+          ],
+          [
+            "C7",
+            "Jeyabalan"
+          ],
+          [
+            "D7",
+            "51-2, 51-3A, 51-3b, 51-3c, 51-3d, 51-3e"
+          ],
+          [
+            "E7",
+            "1.15"
+          ],
+          [
+            "F7",
+            "1.15"
+          ],
+          [
+            "A8",
+            "6"
+          ],
+          [
+            "B8",
+            "mm"
+          ],
+          [
+            "C8",
+            "Pechimuthu"
+          ],
+          [
+            "D8",
+            "54-2, 54-3B"
+          ],
+          [
+            "E8",
+            "0.695"
+          ],
+          [
+            "F8",
+            "0.695"
+          ],
+          [
+            "A9",
+            "7"
+          ],
+          [
+            "B9",
+            "mm"
+          ],
+          [
+            "C9",
+            "Krishnamoorthi"
+          ],
+          [
+            "D9",
+            "50-2B, 57-1A3, 50-3B, 50-6A, 50-6B"
+          ],
+          [
+            "E9",
+            "1.6945"
+          ],
+          [
+            "F9",
+            "1.6945"
+          ],
+          [
+            "A10",
+            "8"
+          ],
+          [
+            "B10",
+            "mm"
+          ],
+          [
+            "C10",
+            "Chellapandi"
+          ],
+          [
+            "D10",
+            "50-2A, 54-4A, 57-1A1, 50-3A, 50-4A, 50-4B, 50-5"
+          ]
+        ]
+      },
+      "Sheet2": {
+        "dimensions": [
+          11,
+          3
+        ],
+        "nonempty_count": 25,
+        "cells": [
+          [
+            "A1",
+            "serial"
+          ],
+          [
+            "B1",
+            "price"
+          ],
+          [
+            "C1",
+            "total"
+          ],
+          [
+            "A2",
+            "1"
+          ],
+          [
+            "B2",
+            "20.5"
+          ],
+          [
+            "C2",
+            "42.5"
+          ],
+          [
+            "A3",
+            "1"
+          ],
+          [
+            "B3",
+            "12"
+          ],
+          [
+            "A4",
+            "1"
+          ],
+          [
+            "B4",
+            "10"
+          ],
+          [
+            "C5",
+            "76"
+          ],
+          [
+            "B5",
+            "62"
+          ],
+          [
+            "B6",
+            "14"
+          ],
+          [
+            "A5",
+            "2"
+          ],
+          [
+            "A6",
+            "2"
+          ],
+          [
+            "A10",
+            "4"
+          ],
+          [
+            "B10",
+            "12"
+          ],
+          [
+            "A11",
+            "4"
+          ],
+          [
+            "B11",
+            "8.5"
+          ],
+          [
+            "A7",
+            "3"
+          ],
+          [
+            "B7",
+            "18"
+          ],
+          [
+            "A8",
+            "4"
+          ],
+          [
+            "B8",
+            "20.5"
+          ],
+          [
+            "A9",
+            "4"
+          ],
+          [
+            "B9",
+            "19.5"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "task_id": "sheet-32255",
+    "tool": "spreadsheet.edit_formulas",
+    "instruction": "I'm not an expert with spreadsheets, but I have a specific problem I can't figure out. I'm working on a spreadsheet and have run into an issue regarding how to ignore empty or blank cells in a formula I'm using. The formula needs to perform a certain action only on cells that contain data, and I need help adjusting it accordingly. An example of my problem should be evident in the attached spreadsheet I've provided. How can I modify my formula to ignore these empty or blank cells?\nA10 through A13 has no data entered, I need column D to ignore these cells (i.e., empty), until there is data entered. Submit the local workbook formula edits as JSON with a formulas object keyed by cell address. Use the supplied input.xlsx. The scorer applies the same formulas to this workbook and a second input with different values, checking the specified target cells in both.",
+    "supported_functions": [
+      "ABS",
+      "ACOS",
+      "ADDRESS",
+      "AGGREGATE",
+      "AND",
+      "AREAS",
+      "ASIN",
+      "ATAN",
+      "ATAN2",
+      "AVERAGE",
+      "AVERAGEA",
+      "AVERAGEIF",
+      "AVERAGEIFS",
+      "CEILING",
+      "CEILING.MATH",
+      "CEILING.PRECISE",
+      "CHAR",
+      "CHOOSE",
+      "CLEAN",
+      "CODE",
+      "COLUMN",
+      "COLUMNS",
+      "COMBIN",
+      "CONCAT",
+      "CONCATENATE",
+      "COS",
+      "COUNT",
+      "COUNTA",
+      "COUNTBLANK",
+      "COUNTIF",
+      "COUNTIFS",
+      "DATE",
+      "DATEDIF",
+      "DATEVALUE",
+      "DAY",
+      "DAYS",
+      "DAYS360",
+      "DECIMAL",
+      "DEGREES",
+      "EDATE",
+      "EOMONTH",
+      "EVEN",
+      "EXACT",
+      "EXP",
+      "FACT",
+      "FALSE",
+      "FILTER",
+      "FIND",
+      "FIXED",
+      "FLOOR",
+      "FLOOR.MATH",
+      "FLOOR.PRECISE",
+      "FREQ",
+      "FREQUENCY",
+      "HLOOKUP",
+      "HOUR",
+      "IF",
+      "IFERROR",
+      "IFNA",
+      "IFS",
+      "INDEX",
+      "INDIRECT",
+      "INT",
+      "ISBLANK",
+      "ISERR",
+      "ISERROR",
+      "ISEVEN",
+      "ISLOGICAL",
+      "ISNA",
+      "ISNUMBER",
+      "ISODD",
+      "ISREF",
+      "ISTEXT",
+      "LARGE",
+      "LEFT",
+      "LEN",
+      "LN",
+      "LOG",
+      "LOG10",
+      "LOOKUP",
+      "LOWER",
+      "MATCH",
+      "MAX",
+      "MAXIFS",
+      "MEDIAN",
+      "MID",
+      "MIN",
+      "MINIFS",
+      "MINUTE",
+      "MOD",
+      "MODE",
+      "MODE.SNGL",
+      "MONTH",
+      "MROUND",
+      "N",
+      "NA",
+      "NETWORKDAYS",
+      "NETWORKDAYS.INTL",
+      "NOT",
+      "NUMBERVALUE",
+      "ODD",
+      "OFFSET",
+      "OR",
+      "PERCENTILE",
+      "PERCENTILE.INC",
+      "PERCENTRANK",
+      "PI",
+      "POWER",
+      "PRODUCT",
+      "PROPER",
+      "QUOTIENT",
+      "RADIANS",
+      "RANK",
+      "RANK.EQ",
+      "REPLACE",
+      "REPT",
+      "RIGHT",
+      "ROMAN",
+      "ROUND",
+      "ROUNDDOWN",
+      "ROUNDUP",
+      "ROW",
+      "ROWS",
+      "SEARCH",
+      "SECOND",
+      "SIGN",
+      "SIN",
+      "SMALL",
+      "SORT",
+      "SQRT",
+      "STDEV",
+      "STDEV.S",
+      "SUBSTITUTE",
+      "SUBTOTAL",
+      "SUM",
+      "SUMIF",
+      "SUMIFS",
+      "SUMPRODUCT",
+      "SUMSQ",
+      "SWITCH",
+      "T",
+      "TAN",
+      "TEXT",
+      "TEXTJOIN",
+      "TIME",
+      "TIMEVALUE",
+      "TRANSPOSE",
+      "TRIM",
+      "TRUE",
+      "TRUNC",
+      "TYPE",
+      "UNIQUE",
+      "UPPER",
+      "VALUE",
+      "VLOOKUP",
+      "WEEKDAY",
+      "WEEKNUM",
+      "WORKDAY",
+      "WORKDAY.INTL",
+      "XLOOKUP",
+      "XMATCH",
+      "YEAR",
+      "YEARFRAC"
+    ],
+    "target_sheet": "Sheet1",
+    "target_range": "D2:D13",
+    "observation": {
+      "Sheet1": {
+        "dimensions": [
+          13,
+          11
+        ],
+        "nonempty_count": 64,
+        "cells": [
+          [
+            "A1",
+            "Profit"
+          ],
+          [
+            "A2",
+            "-1"
+          ],
+          [
+            "B2",
+            "1"
+          ],
+          [
+            "C2",
+            "0"
+          ],
+          [
+            "D2",
+            "0"
+          ],
+          [
+            "A3",
+            "-1"
+          ],
+          [
+            "B3",
+            "1"
+          ],
+          [
+            "C3",
+            "0"
+          ],
+          [
+            "D3",
+            "0"
+          ],
+          [
+            "J3",
+            "% Total"
+          ],
+          [
+            "K3",
+            "% Total Less BE"
+          ],
+          [
+            "A4",
+            "-1"
+          ],
+          [
+            "B4",
+            "1"
+          ],
+          [
+            "C4",
+            "0"
+          ],
+          [
+            "D4",
+            "0"
+          ],
+          [
+            "H4",
+            "Wins"
+          ],
+          [
+            "I4",
+            "1"
+          ],
+          [
+            "J4",
+            "8.333333333333334"
+          ],
+          [
+            "K4",
+            "14.28571428571428"
+          ],
+          [
+            "D5",
+            "0"
+          ],
+          [
+            "D6",
+            "0"
+          ],
+          [
+            "C5",
+            "0"
+          ],
+          [
+            "C6",
+            "0"
+          ],
+          [
+            "B5",
+            "1"
+          ],
+          [
+            "B6",
+            "1"
+          ],
+          [
+            "A5",
+            "-1"
+          ],
+          [
+            "A6",
+            "-1"
+          ],
+          [
+            "H5",
+            "Losses"
+          ],
+          [
+            "H6",
+            "BE"
+          ],
+          [
+            "I5",
+            "6"
+          ],
+          [
+            "I6",
+            "5"
+          ],
+          [
+            "J5",
+            "50"
+          ],
+          [
+            "J6",
+            "41.66666666666667"
+          ],
+          [
+            "K5",
+            "85.71428571428571"
+          ],
+          [
+            "B12",
+            "0"
+          ],
+          [
+            "C12",
+            "0"
+          ],
+          [
+            "D12",
+            "1"
+          ],
+          [
+            "B13",
+            "0"
+          ],
+          [
+            "C13",
+            "0"
+          ],
+          [
+            "D13",
+            "1"
+          ],
+          [
+            "A7",
+            "0.79"
+          ],
+          [
+            "B7",
+            "0"
+          ],
+          [
+            "C7",
+            "1"
+          ],
+          [
+            "D7",
+            "0"
+          ],
+          [
+            "H7",
+            "Total"
+          ],
+          [
+            "I7",
+            "12"
+          ],
+          [
+            "J7",
+            "100"
+          ],
+          [
+            "K7",
+            "100"
+          ],
+          [
+            "A8",
+            "0"
+          ],
+          [
+            "B8",
+            "0"
+          ],
+          [
+            "C8",
+            "0"
+          ],
+          [
+            "D8",
+            "1"
+          ],
+          [
+            "H8",
+            "Total Less BE"
+          ],
+          [
+            "I8",
+            "7"
+          ],
+          [
+            "A9",
+            "-1"
+          ],
+          [
+            "B9",
+            "1"
+          ],
+          [
+            "C9",
+            "0"
+          ],
+          [
+            "D9",
+            "0"
+          ],
+          [
+            "B10",
+            "0"
+          ],
+          [
+            "C10",
+            "0"
+          ],
+          [
+            "D10",
+            "1"
+          ],
+          [
+            "B11",
+            "0"
+          ],
+          [
+            "C11",
+            "0"
+          ],
+          [
+            "D11",
+            "1"
+          ]
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000768835",
+  "issuer": "BIG LOTS INC",
+  "cutoff": "2021-04-02",
+  "projected_target_start": "2021-05-02",
+  "status": "complete",
+  "period_end": "2021-01-30",
+  "filing_date": "2021-03-30",
+  "text": {
+    "sector": "retail",
+    "cik": "0000768835",
+    "issuer": "BIG LOTS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-03-30",
+        "text": "•Gross margin dollars increased $382.7 million and gross margin rate increased 60 basis points to 40.3% of net sales."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-03-30",
+        "text": "•Comparable sales for stores open at least fifteen months, plus our e-commerce operations, increased $816.1 million, or 16.1%."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-03-30",
+        "text": "•Inventory of $940.3 million represented a $19.0 million increase, or 2.1%, from 2019."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-03-30",
+        "text": "The combined gain on sale of distribution centers and associated consulting and other expenses increased our operating profit by $459.1 million and increased our diluted earnings per share by approximately $8.75 per share."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-03-30",
+        "text": "•Operating profit increased $521.7 million to $856.5 million."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-10-31",
+        "filed": "2020-12-09",
+        "reported_sales_usd": 1377925000,
+        "year_ago_reported_sales_usd": 1167988000,
+        "yoy_percent": "17.9742"
+      },
+      {
+        "quarter_end": "2021-01-30",
+        "filed": "2021-03-30",
+        "reported_sales_usd": 1737915000,
+        "year_ago_reported_sales_usd": 1606982000,
+        "yoy_percent": "8.1478"
+      }
+    ],
+    "status": "complete"
+  }
+}

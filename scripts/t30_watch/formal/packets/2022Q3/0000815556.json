@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000815556",
+  "issuer": "FASTENAL CO",
+  "cutoff": "2022-06-01",
+  "projected_target_start": "2022-07-01",
+  "status": "complete",
+  "period_end": "2022-03-31",
+  "filing_date": "2022-04-18",
+  "text": {
+    "sector": "retail",
+    "cik": "0000815556",
+    "issuer": "FASTENAL CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-04-18",
+        "text": "Net sales increased $287.0, or 20.3%, in the first quarter of 2022 when compared to the first quarter of 2021."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-04-18",
+        "text": "This increase is due to improved unit sales across most products to our traditional manufacturing and construction customers, resulting from continued improvement in business activity."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-04-18",
+        "text": "The table below summarizes our total and FTE (based on 40 hours per week) employee headcount, our investments related to in-market locations (defined as the sum of the total number of branch locations and the total number of active Onsite locations), and weighted Fastenal Managed Inventory (FMI) devices at the end of the periods presented and the percentage change compared to the end of the prior periods."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-04-18",
+        "text": "The overall impact of product pricing on net sales was 580 to 610 basis points during the first quarter of 2022."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-04-18",
+        "text": "The decline in our operating cash flow and conversion rate is primarily due to an increased need for working capital to support our customer's growth as business activity improves, as well as from inflation in inventory."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-07",
+        "reported_sales_usd": 1531900000,
+        "year_ago_reported_sales_usd": 1358000000,
+        "yoy_percent": "12.8056"
+      },
+      {
+        "quarter_end": "2022-03-31",
+        "filed": "2022-04-18",
+        "reported_sales_usd": 1704100000,
+        "year_ago_reported_sales_usd": 1417000000,
+        "yoy_percent": "20.2611"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "cutoff": "2024-08-28",
+  "sectors": {
+    "2024Q4/food_manufacturing-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000880117",
+          "issuer": "SANFILIPPO JOHN B & SON INC",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2024-09-27",
+          "latest_filed_period_end": "2024-06-27",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2024-08-21",
+              "text": "Our net sales for fiscal 2024 increased $67.1 million, or 6.7%, to $1,066.8 million compared to fiscal 2023."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2024-08-21",
+              "text": "While we have seen stabilization in truckload capacity and volume at U.S. ports and improvements with driver hiring, there are still warehouse and dock staff shortages and fuel and energy concerns due to continued unrest abroad coupled with persistent inflation."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2024-08-21",
+              "text": "We have remained agile by proactively identifying risks, modifying inventory plans and diversifying our supplier base to mitigate risk of customer order shortages and maintain our supply chain."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2024-08-21",
+              "text": "Due to the continued inflationary environment, we have seen higher selling prices at retail which recently have started to moderate for some products and decrease for other products."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2024-08-21",
+              "text": "Due to the factors discussed above, income from operations was $85.2 million, or 8.0% of net sales, for fiscal 2024, compared to $90.2 million, or 9.0% of net sales, for fiscal 2023."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-03-28",
+                "filed": "2024-05-01",
+                "reported_sales_usd": 271884000,
+                "year_ago_reported_sales_usd": 238535000,
+                "yoy_percent": "13.9808"
+              },
+              {
+                "quarter_end": "2024-06-27",
+                "filed": "2024-08-21",
+                "reported_sales_usd": 269572000,
+                "year_ago_reported_sales_usd": 234222000,
+                "yoy_percent": "15.0925"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "409c115a40818537b3802523b2e7c271b81d8ac9bdac41d000f0a767c6fc6e56",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-passing-loop-charter-packing\": \"WITH plans AS (SELECT b.bid_id AS bid_list, b.fee_cents, n.notice_id, 1 AS awards FROM charter_bid AS b CROSS JOIN loop_notice AS n UNION ALL SELECT a.bid_id || ',' || b.bid_id, a.fee_cents + b.fee_cents, n.notice_id, 2 FROM charter_bid AS a JOIN charter_bid AS b ON a.release_min <= b.arrive_min CROSS JOIN loop_notice AS n WHERE n.award_cap = 2) SELECT bid_list, fee_cents, notice_id FROM plans ORDER BY fee_cents DESC, awards ASC, bid_list COLLATE BINARY ASC LIMIT 1\",\n  \"decision-place-a-relief-trip-in-a-service-gap\": \"SELECT o.offer_code, o.route_code, o.relief_min, g.arrival_rate * (o.relief_min - g.left_min) * (g.right_min - o.relief_min) AS saved_rider_min, g.source_id FROM relief_offer AS o JOIN gap_survey AS g ON g.route_code = o.route_code WHERE o.relief_min - g.left_min >= 3 AND g.right_min - o.relief_min >= 3 ORDER BY saved_rider_min DESC, o.offer_code COLLATE BINARY ASC LIMIT 1\",\n  \"decision-plan-two-coupon-redemptions\": \"WITH choices AS (SELECT campaign_id AS coupon, stock, first_cents, second_cents FROM campaigns WHERE stock >= 1 UNION ALL SELECT '-', 2, 0, 0) SELECT a.coupon AS first_coupon, b.coupon AS second_coupon, a.first_cents + b.second_cents AS saved_cents FROM choices AS a CROSS JOIN choices AS b WHERE (a.coupon <> b.coupon OR a.stock >= 2) AND NOT (a.coupon = 'A' AND b.coupon = 'B') AND NOT (a.coupon = 'B' AND b.coupon = 'A') ORDER BY saved_cents DESC, a.coupon COLLATE BINARY ASC, b.coupon COLLATE BINARY ASC LIMIT 1\",\n  \"decision-platform-amendment-at-departure\": \"WITH ranked AS (SELECT d.trip_id, b.platform_code, b.source_id, ROW_NUMBER() OVER (PARTITION BY d.trip_id ORDER BY b.posted_min DESC, b.source_id COLLATE BINARY ASC) AS pos FROM departure_board AS d JOIN platform_bulletin AS b ON b.route_code = d.route_code AND b.posted_min <= d.depart_min AND b.open_min <= d.depart_min AND (b.close_min IS NULL OR d.depart_min < b.close_min)) SELECT trip_id, platform_code, source_id FROM ranked WHERE pos = 1 ORDER BY trip_id ASC\"\n}",
+  "submissions": {
+    "decision-passing-loop-charter-packing": "WITH plans AS (SELECT b.bid_id AS bid_list, b.fee_cents, n.notice_id, 1 AS awards FROM charter_bid AS b CROSS JOIN loop_notice AS n UNION ALL SELECT a.bid_id || ',' || b.bid_id, a.fee_cents + b.fee_cents, n.notice_id, 2 FROM charter_bid AS a JOIN charter_bid AS b ON a.release_min <= b.arrive_min CROSS JOIN loop_notice AS n WHERE n.award_cap = 2) SELECT bid_list, fee_cents, notice_id FROM plans ORDER BY fee_cents DESC, awards ASC, bid_list COLLATE BINARY ASC LIMIT 1",
+    "decision-place-a-relief-trip-in-a-service-gap": "SELECT o.offer_code, o.route_code, o.relief_min, g.arrival_rate * (o.relief_min - g.left_min) * (g.right_min - o.relief_min) AS saved_rider_min, g.source_id FROM relief_offer AS o JOIN gap_survey AS g ON g.route_code = o.route_code WHERE o.relief_min - g.left_min >= 3 AND g.right_min - o.relief_min >= 3 ORDER BY saved_rider_min DESC, o.offer_code COLLATE BINARY ASC LIMIT 1",
+    "decision-plan-two-coupon-redemptions": "WITH choices AS (SELECT campaign_id AS coupon, stock, first_cents, second_cents FROM campaigns WHERE stock >= 1 UNION ALL SELECT '-', 2, 0, 0) SELECT a.coupon AS first_coupon, b.coupon AS second_coupon, a.first_cents + b.second_cents AS saved_cents FROM choices AS a CROSS JOIN choices AS b WHERE (a.coupon <> b.coupon OR a.stock >= 2) AND NOT (a.coupon = 'A' AND b.coupon = 'B') AND NOT (a.coupon = 'B' AND b.coupon = 'A') ORDER BY saved_cents DESC, a.coupon COLLATE BINARY ASC, b.coupon COLLATE BINARY ASC LIMIT 1",
+    "decision-platform-amendment-at-departure": "WITH ranked AS (SELECT d.trip_id, b.platform_code, b.source_id, ROW_NUMBER() OVER (PARTITION BY d.trip_id ORDER BY b.posted_min DESC, b.source_id COLLATE BINARY ASC) AS pos FROM departure_board AS d JOIN platform_bulletin AS b ON b.route_code = d.route_code AND b.posted_min <= d.depart_min AND b.open_min <= d.depart_min AND (b.close_min IS NULL OR d.depart_min < b.close_min)) SELECT trip_id, platform_code, source_id FROM ranked WHERE pos = 1 ORDER BY trip_id ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1b-7d02-7172-9957-b5b0f719e2f5",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22686,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 582,
+    "reasoning_output_tokens": 0
+  }
+}

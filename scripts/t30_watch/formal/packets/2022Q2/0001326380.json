@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2022-04-01",
+  "projected_target_start": "2022-05-01",
+  "status": "complete",
+  "period_end": "2022-01-29",
+  "filing_date": "2022-03-17",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-03-17",
+        "text": "Net sales increased $920.9 million, or 18.1%, in fiscal 2021 compared to fiscal 2020."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-03-17",
+        "text": "We generated $1.68 billion in aggregate gross proceeds from sales under the ATM Transactions, and paid an aggregate of $10.1 million in commissions to the sales agent, among other legal and administrative fees."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-03-17",
+        "text": "Cash used in operating activities during fiscal 2021 was primarily attributable to an increase in merchandise inventory levels when compared to prior year to, among other things, support our product category expansion efforts, and to mitigate the full impact of global supply chain issues."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-03-17",
+        "text": "Our gross profit for fiscal 2021 reflects a shift in product mix towards higher dollar lower margin categories such as new console hardware and increased freight and credit card fees associated with the shift to ecommerce sales."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-03-17",
+        "text": "We utilize cash generated from operations and have funds available to us under the 2026 Revolver to cover seasonal fluctuations in cash flows and to support our various initiatives."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-10-30",
+        "filed": "2021-12-08",
+        "reported_sales_usd": 1296600000,
+        "year_ago_reported_sales_usd": 1004700000,
+        "yoy_percent": "29.0534"
+      },
+      {
+        "quarter_end": "2022-01-29",
+        "filed": "2022-03-17",
+        "reported_sales_usd": 2253900000,
+        "year_ago_reported_sales_usd": 2122100000,
+        "yoy_percent": "6.2108"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22052,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 183,
+    "reasoning_output_tokens": 30
+  },
+  "thread": "01a20d7f-c8cc-7810-903f-b093706e1e34",
+  "packet_sha256": "5c7ef5b553517c617607d85423f0c1e63976e9256f4ee6d5abb63348d7731bed",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q3/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000023217\",\n          \"reason\": \"Fiscal 2023 net sales rose despite a 9% volume decline (A, B), suggesting that pricing or mix offset the volume loss. I forecast that this cushion keeps reported net sales above −5% year over year in the preceding quarter, then fades enough for persistent volume weakness to push sales growth to −5% or below in the quarter beginning August 28. The annual figures leave the timing uncertain.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "Fiscal 2023 net sales rose despite a 9% volume decline (A, B), suggesting that pricing or mix offset the volume loss. I forecast that this cushion keeps reported net sales above −5% year over year in the preceding quarter, then fades enough for persistent volume weakness to push sales growth to −5% or below in the quarter beginning August 28. The annual figures leave the timing uncertain."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "task_id": "decision-acoustic-recording-channel-witness-set",
+  "split": "test",
+  "tool": "sqlite.query",
+  "candidate": "WITH RECURSIVE subsets(ids, last_id, mask) AS (SELECT '', '', 0 UNION ALL SELECT s.ids || t.take_id, t.take_id, s.mask | t.channel_mask FROM subsets s JOIN takes t ON t.take_id>s.last_id) SELECT ids AS witness_ids, length(ids) AS take_count FROM subsets WHERE mask=7 ORDER BY length(ids), ids COLLATE BINARY LIMIT 1",
+  "candidate_sha256": "8be0c2db21510bad997324a89c6511b745f19dcb194772a934766008eb2cbae2",
+  "passed": false
+}

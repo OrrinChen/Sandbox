@@ -1,0 +1,494 @@
+{
+  "scope": "Public instructions from all 100 program-repair and 120 workbook tasks; nearest neighbors considered within these two adapters and against the relational tasks. Candidate review is a targeted screen, not exhaustive semantic equivalence.",
+  "method": "English stopword-filtered word TF-IDF unigrams/bigrams. Include the closest within-adapter and other-adapter problem at cosine >=0.095 and high-similarity pairs at >=0.20 when iterating the external-source tasks. Search descriptions truncate long exercise instructions. A separate workbook curation rule excludes repeated source stems, input bytes and formula structures.",
+  "initial_candidate_pairs": 80,
+  "removed": "sheet-5835",
+  "overlap_with": "sheet-39931",
+  "reason": "Both original workbooks ask for retrieving a value with two keys. Different reference formulas on unique keys were insufficient to count these as separate problems. The development task was retained.",
+  "added": "sheet-43775",
+  "replacement_rationale": "Creates a sparse horizontal layout with regular spacers from a vertical list. The closest other workbook, sheet-48527, filters unique text on matching columns.",
+  "final_pairs_reviewed": 80,
+  "final_flagged": 0,
+  "reviewed_pairs": [
+    {
+      "a": "repair-game-of-life",
+      "b": "repair-scrabble-score",
+      "duplicate": false,
+      "reason": "Game of Life computes each cell's next state from its current state and live-neighbor count. Scrabble sums fixed letter values to produce one score."
+    },
+    {
+      "a": "repair-knapsack",
+      "b": "repair-scrabble-score",
+      "duplicate": false,
+      "reason": "Knapsack chooses a subset that maximizes value within a weight limit. Scrabble scores every letter in a given word without making any selection."
+    },
+    {
+      "a": "repair-ledger",
+      "b": "repair-markdown",
+      "duplicate": false,
+      "reason": "Both ask for a behavior-preserving refactor. The ledger must retain locale- and currency-specific formatting, while the parser must recognize Markdown syntax and render the corresponding HTML."
+    },
+    {
+      "a": "repair-matrix",
+      "b": "repair-reverse-string",
+      "duplicate": false,
+      "reason": "The matrix task parses numbers and groups them by row and column. String reversal returns the characters of one sequence in reverse order."
+    },
+    {
+      "a": "repair-matrix",
+      "b": "repair-transpose",
+      "duplicate": false,
+      "reason": "Both read down columns. The matrix task exposes both rows and columns of parsed numbers. Text transposition must also handle unequal line lengths, inserting spaces for missing interior positions while preserving original spaces."
+    },
+    {
+      "a": "repair-nth-prime",
+      "b": "repair-sieve",
+      "duplicate": false,
+      "reason": "The nth-prime task takes a rank and returns one prime. The sieve task takes a numeric upper bound and must use the Sieve of Eratosthenes to enumerate every prime through that bound."
+    },
+    {
+      "a": "repair-original-allocate-invoice-cents",
+      "b": "repair-original-retry-invoice-issuance",
+      "duplicate": false,
+      "reason": "Allocation distributes rounding differences among billable lines. Retry processing checks journal entries for prior successful postings, then returns the outstanding IDs and their summed cents."
+    },
+    {
+      "a": "repair-original-apply-product-exclusions",
+      "b": "repair-original-deduplicate-upload-names",
+      "duplicate": false,
+      "reason": "Exclusion tests each code against supplied exact and prefix rules, preserving repeated survivors. Deduplication compares NFC-normalized names with earlier submissions and keeps the first spelling of each."
+    },
+    {
+      "a": "repair-original-apply-product-exclusions",
+      "b": "repair-original-inherit-report-subscriptions",
+      "duplicate": false,
+      "reason": "Product exclusions filter occurrences using an order-independent union of rules. Subscription inheritance updates a set through ordered active layers, so a later layer can restore a previously removed code."
+    },
+    {
+      "a": "repair-original-booklet-signature",
+      "b": "repair-original-resume-page-token",
+      "duplicate": false,
+      "reason": "Booklet assembly pads and rearranges all page positions into sheet fronts and backs. Export resumption filters pages by checkpoint, state, and token validity, then returns the token at the lowest eligible position."
+    },
+    {
+      "a": "repair-original-cache-eviction-pinned-bytes",
+      "b": "repair-original-fair-package-promotion",
+      "duplicate": false,
+      "reason": "Cache eviction removes unpinned entries in a fixed least-recently-used order until enough bytes are freed or candidates run out. Package promotion chooses among packages that still fit, updating size-class priorities after each selection."
+    },
+    {
+      "a": "repair-original-cap-net-cancellation-refund",
+      "b": "repair-original-merge-catalog-tombstones",
+      "duplicate": false,
+      "reason": "The refund sums every posted charge, applies a notice-based percentage, and subtracts concessions. The catalog merge selects one winner per SKU by revision, operation, and price."
+    },
+    {
+      "a": "repair-original-cap-net-cancellation-refund",
+      "b": "repair-original-orphaned-bookings",
+      "duplicate": false,
+      "reason": "The refund calculates a monetary amount for one booking. The orphan task replays events chronologically and tracks which reservation a dependent booking belongs to when an ID is reused."
+    },
+    {
+      "a": "repair-original-cap-net-cancellation-refund",
+      "b": "repair-original-retry-invoice-issuance",
+      "duplicate": false,
+      "reason": "Repeated posted charges each contribute to the refund. For invoice retries, one posted confirmation excludes a line from issuance, and further confirmations have no effect. The result lists and totals the outstanding lines."
+    },
+    {
+      "a": "repair-original-dated-ownership-mapping",
+      "b": "repair-original-dispatch-record-date",
+      "duplicate": false,
+      "reason": "Ownership lookup tests which intervals cover the requested date and chooses the latest eligible start. Dispatch lookup uses the declared version and field precedence to read a date from one record."
+    },
+    {
+      "a": "repair-original-dated-ownership-mapping",
+      "b": "repair-original-expand-month-end-close",
+      "duplicate": false,
+      "reason": "Ownership lookup selects an existing mapping for one date. The close schedule computes each month's last nonholiday weekday and includes it if it falls within the requested window."
+    },
+    {
+      "a": "repair-original-decode-routing-fields",
+      "b": "repair-original-ordered-cdn-key-split",
+      "duplicate": false,
+      "reason": "In routing text, a backslash can make a pipe part of a field. In a live CDN key, every pipe is a separator, and the values after the route must be assigned to header names by position."
+    },
+    {
+      "a": "repair-original-decode-routing-fields",
+      "b": "repair-original-parse-multiline-dispatch-csv",
+      "duplicate": false,
+      "reason": "Routing decodes a single field list with backslash escapes. CSV parsing tracks quoted fields and record boundaries, preserves embedded line endings, and decodes doubled quotes."
+    },
+    {
+      "a": "repair-original-decode-routing-fields",
+      "b": "repair-original-sort-release-catalog",
+      "duplicate": false,
+      "reason": "Routing decodes fields in input order. Release sorting compares numeric version components and prerelease identifiers to reorder the original strings by precedence."
+    },
+    {
+      "a": "repair-original-dispatch-index-ties",
+      "b": "repair-original-resume-page-token",
+      "duplicate": false,
+      "reason": "Both preserve input order for ties. The dispatch index returns an arbitrary slice of ready slips in a bounded time range. Token lookup selects a single minimum-position page at or beyond a checkpoint after excluding blank tokens."
+    },
+    {
+      "a": "repair-original-expire-event-id-suppression",
+      "b": "repair-original-gate-dispatch-sequence-rollover",
+      "duplicate": false,
+      "reason": "Suppression tracks the last kept timestamp separately for each ID and returns retained event indices. Ticket issuance tracks one counter in input order, emits numbers on issue, and conditionally resets at rollover."
+    },
+    {
+      "a": "repair-original-fabric-repeat-cuts",
+      "b": "repair-original-join-cited-paragraph-ranges",
+      "duplicate": false,
+      "reason": "The first rounds demand up to whole repeats and packs them into length-limited cuts. The second joins selected text slices and clips citations to each slice."
+    },
+    {
+      "a": "repair-original-fair-package-promotion",
+      "b": "repair-original-simultaneous-track-merge",
+      "duplicate": false,
+      "reason": "Package selection prioritizes the least-promoted size class among packages that still fit. Cart selection prioritizes earliest ready time and uses the previous track to break ties."
+    },
+    {
+      "a": "repair-original-join-cited-paragraph-ranges",
+      "b": "repair-original-schedule-marker-covering-music",
+      "duplicate": false,
+      "reason": "The excerpt builder processes every selected range in request order and clips overlapping citations. The music scheduler chooses a maximum-score subset of compatible intervals that covers a marker."
+    },
+    {
+      "a": "repair-original-reconcile-early-transfer-receipts",
+      "b": "repair-original-webhook-part-receipts",
+      "duplicate": false,
+      "reason": "Transfer reconciliation sums accepted units by transfer through a cutoff, counting identical receipt rows separately. The webhook ledger retains only the first accepted receipt for each source, delivery, and part."
+    },
+    {
+      "a": "repair-original-repeated-hour-pickups",
+      "b": "repair-original-utc-handoff-meeting",
+      "duplicate": false,
+      "reason": "The pickup task resolves repeated local times to elapsed minutes, then filters and sorts events. The meeting task finds the earliest interval of the required duration shared by all teams."
+    },
+    {
+      "a": "repair-original-resume-page-token",
+      "b": "repair-original-round-fiscal-week",
+      "duplicate": false,
+      "reason": "Page selection finds the lowest eligible position at or above a threshold and breaks ties by input order. Fiscal rounding finds the closest checkpoint in either direction and breaks midpoint ties toward the later week."
+    },
+    {
+      "a": "repair-original-schedule-marker-covering-music",
+      "b": "repair-original-stereo-segment-marker-alignment",
+      "duplicate": false,
+      "reason": "Music scheduling optimizes the total score of a compatible set of cues. Stereo alignment independently matches each left marker to the right marker nearest in fractional progress and allows reuse."
+    },
+    {
+      "a": "repair-original-signed-literal-delta-runs",
+      "b": "repair-original-webhook-part-receipts",
+      "duplicate": false,
+      "reason": "The meter task decodes literal and repeated deltas and emits cumulative readings. The webhook task filters receipts and deduplicates them by source, delivery, and part."
+    },
+    {
+      "a": "sheet-14240",
+      "b": "sheet-56921",
+      "duplicate": false,
+      "reason": "The first sum selects rows by two criteria and columns by a matching header. The second selects rows by one criterion and sums every fourth column by position."
+    },
+    {
+      "a": "sheet-1563",
+      "b": "sheet-32255",
+      "duplicate": false,
+      "reason": "The first fills each blank from the nearest nonblank cell above. The second leaves the output blank while the corresponding input is empty."
+    },
+    {
+      "a": "sheet-1563",
+      "b": "sheet-40536",
+      "duplicate": false,
+      "reason": "The first carries values forward to produce a filled column. The second counts nonblank cells and multiplies that count by a fixed cell value to produce one result."
+    },
+    {
+      "a": "sheet-1563",
+      "b": "sheet-46058",
+      "duplicate": false,
+      "reason": "The first fills blanks with the nearest preceding value. The second tests for an S within the same row and appends S when present."
+    },
+    {
+      "a": "sheet-17251",
+      "b": "sheet-31915",
+      "duplicate": false,
+      "reason": "The first orders parts by price. The second totals prices by serial number and displays each total only at the first occurrence."
+    },
+    {
+      "a": "sheet-18935",
+      "b": "sheet-45937",
+      "duplicate": false,
+      "reason": "The first retrieves a value by matching three categorical keys. The second uses a distance range and the category in D7 to select a percentage from a legend."
+    },
+    {
+      "a": "sheet-2212",
+      "b": "sheet-35747",
+      "duplicate": false,
+      "reason": "The first counts dates on or after a cutoff. The second counts measurements above 100 for a matching asset within a bounded date window."
+    },
+    {
+      "a": "sheet-2212",
+      "b": "sheet-43213",
+      "duplicate": false,
+      "reason": "The first counts dates meeting each row’s cutoff. The second computes a running average over an expanding range."
+    },
+    {
+      "a": "sheet-2212",
+      "b": "sheet-59224",
+      "duplicate": false,
+      "reason": "The first returns a count for each cutoff date. The second finds the period containing the project start date and labels that row and every row above it."
+    },
+    {
+      "a": "sheet-31915",
+      "b": "sheet-46897",
+      "duplicate": false,
+      "reason": "The first sums prices for each serial number and displays each total once. The second selects a column by header and counts occurrences of a target value."
+    },
+    {
+      "a": "sheet-31915",
+      "b": "sheet-49246",
+      "duplicate": false,
+      "reason": "The first aggregates prices by serial number. The second carries the last available outlet number forward and looks up its restaurant name."
+    },
+    {
+      "a": "sheet-33157",
+      "b": "sheet-59196",
+      "duplicate": false,
+      "reason": "Both return a column heading. The first matches the supplied earliest date in J against the activity dates. The second must find the row maximum to identify its column."
+    },
+    {
+      "a": "sheet-34033",
+      "b": "sheet-38823",
+      "duplicate": false,
+      "reason": "The first retrieves one value by locating a date between adjacent dates and checking another condition. The second sums all values whose dates fall within supplied bounds and whose text contains a search term."
+    },
+    {
+      "a": "sheet-3413",
+      "b": "sheet-46897",
+      "duplicate": false,
+      "reason": "The first sums by department and RU, falling back to a department-wide sum when the pair is absent. The second counts a target value in a column selected by header."
+    },
+    {
+      "a": "sheet-34210",
+      "b": "sheet-46058",
+      "duplicate": false,
+      "reason": "The first copies a value from column A into empty cells in C. The second checks column B for an S and conditionally appends S to the text from A."
+    },
+    {
+      "a": "sheet-35739",
+      "b": "sheet-48354",
+      "duplicate": false,
+      "reason": "The first subtracts 30 minutes with midnight wraparound and leaves empty rows blank. The second maps text matches to category codes."
+    },
+    {
+      "a": "sheet-35739",
+      "b": "sheet-49300",
+      "duplicate": false,
+      "reason": "The first computes a cutoff time. The second retrieves an existing value at the intersection of a matching row and column."
+    },
+    {
+      "a": "sheet-36764",
+      "b": "sheet-37378",
+      "duplicate": false,
+      "reason": "The first sums quantities across all rows matching a product. The second assigns each nonblank entry its running sequence number."
+    },
+    {
+      "a": "sheet-37378",
+      "b": "sheet-37609",
+      "duplicate": false,
+      "reason": "The first counts nonblank entries through the current row. The second classifies two cells in the current row using a numeric threshold and a rule for 'U'."
+    },
+    {
+      "a": "sheet-37378",
+      "b": "sheet-40892",
+      "duplicate": false,
+      "reason": "The first numbers nonblank entries in order. The second searches each description for a color from an allowed list and returns the matching color."
+    },
+    {
+      "a": "sheet-37378",
+      "b": "sheet-51249",
+      "duplicate": false,
+      "reason": "The first produces a running count of nonblank entries. The second maps combinations of two cell values to labels and applies a fill color to populated output cells."
+    },
+    {
+      "a": "sheet-37378",
+      "b": "sheet-54242",
+      "duplicate": false,
+      "reason": "The first numbers entries according to how many nonblank cells have appeared. The second assigns a revenue or expense label based on a keyword in each cell."
+    },
+    {
+      "a": "sheet-37554",
+      "b": "sheet-45030",
+      "duplicate": false,
+      "reason": "The first counts exact text matches to avoid including longer category names. The second finds the numeric interval containing a cost and returns its tier."
+    },
+    {
+      "a": "sheet-38662",
+      "b": "sheet-45030",
+      "duplicate": false,
+      "reason": "The first returns a job code when a key equals a value in either of two columns. The second returns a tier when a cost falls between its lower and upper bounds."
+    },
+    {
+      "a": "sheet-38823",
+      "b": "sheet-43589",
+      "duplicate": false,
+      "reason": "The first filters rows by date and search term, then sums their values. The second parses two endpoints from text and calculates the inclusive day count."
+    },
+    {
+      "a": "sheet-39515",
+      "b": "sheet-7902",
+      "duplicate": false,
+      "reason": "The first selects a monthly value according to the row's month and year. The second compares values within a row to choose between a same-row result and a fallback table lookup."
+    },
+    {
+      "a": "sheet-39604",
+      "b": "sheet-49300",
+      "duplicate": false,
+      "reason": "The first adds a threshold that returns zero before the existing subtraction rules apply. The second uses two keys to retrieve a value from a table."
+    },
+    {
+      "a": "sheet-39931",
+      "b": "sheet-49857",
+      "duplicate": false,
+      "reason": "The first retrieves a value by matching data across columns. The second numbers the YES rows in sequence and puts zero on other rows."
+    },
+    {
+      "a": "sheet-40892",
+      "b": "sheet-49857",
+      "duplicate": false,
+      "reason": "The first searches a description for a listed color and returns its name. The second counts YES rows cumulatively to assign sequence numbers."
+    },
+    {
+      "a": "sheet-42515",
+      "b": "sheet-52233",
+      "duplicate": false,
+      "reason": "The first changes the reference rate when the date group changes and uses it in an exchange-rate calculation. The second advances the source column as the formula is filled down and sums a fixed span of rows."
+    },
+    {
+      "a": "sheet-43436",
+      "b": "sheet-52917",
+      "duplicate": false,
+      "reason": "The first counts records whose open intervals overlap a month. The second constructs a date from separate day, month, and year values."
+    },
+    {
+      "a": "sheet-44266",
+      "b": "sheet-52807",
+      "duplicate": false,
+      "reason": "The first returns one value for a matching year, with a blank for a missing match. The second totals matching actuals and calculates a forecast when the actuals total is unavailable."
+    },
+    {
+      "a": "sheet-45063",
+      "b": "sheet-58047",
+      "duplicate": false,
+      "reason": "The first matches a product across sheets to retrieve its sales quantity. The second converts a sales-report value into the format shown in another column."
+    },
+    {
+      "a": "sheet-46058",
+      "b": "sheet-9111",
+      "duplicate": false,
+      "reason": "The first checks for the letter S and appends it to text. The second looks up names in two lists and applies priority and fallback rules to select an ID."
+    },
+    {
+      "a": "sheet-46897",
+      "b": "sheet-53383",
+      "duplicate": false,
+      "reason": "The first selects a column by its header and counts occurrences of a value. The second matches each name across sheets and reports whether its statuses agree."
+    },
+    {
+      "a": "sheet-47699",
+      "b": "sheet-52220",
+      "duplicate": false,
+      "reason": "The first counts FALSE entries in a column for use in a subtraction. The second adds two cells only when both contain values."
+    },
+    {
+      "a": "sheet-48365",
+      "b": "sheet-52807",
+      "duplicate": false,
+      "reason": "The first sums a product's amounts across selected regions, with an All option. The second uses an actuals total when available and otherwise divides accumulated actuals by the number of remaining months."
+    },
+    {
+      "a": "sheet-48969",
+      "b": "sheet-52917",
+      "duplicate": false,
+      "reason": "The first matches rows and columns across two data sources. The second combines three components from one row into a date."
+    },
+    {
+      "a": "sheet-49300",
+      "b": "sheet-56451",
+      "duplicate": false,
+      "reason": "The first retrieves one value by matching a row key and a column key. The second matches a row key and advances the return column as the formula is copied across."
+    },
+    {
+      "a": "sheet-49455",
+      "b": "sheet-52917",
+      "duplicate": false,
+      "reason": "The first counts rows where a value belongs to a list and the adjacent cell contains a date. The second constructs a date from day, month, and year values."
+    },
+    {
+      "a": "sheet-51262",
+      "b": "sheet-57105",
+      "duplicate": false,
+      "reason": "Both sum amounts by month, but the first also requires each row's category to belong to a specified list. The second sums every amount dated within the month."
+    },
+    {
+      "a": "sheet-52220",
+      "b": "sheet-57029",
+      "duplicate": false,
+      "reason": "The first adds two values when both cells are populated. The second tests whether one cell's text occurs within the other and returns a Boolean."
+    },
+    {
+      "a": "sheet-52233",
+      "b": "sheet-55468",
+      "duplicate": false,
+      "reason": "The first sums a fixed span of rows and advances the source column when copied down. The second retrieves one cell by matching two row criteria and two column criteria."
+    },
+    {
+      "a": "sheet-52532",
+      "b": "sheet-57693",
+      "duplicate": false,
+      "reason": "Counting wins requires finding the highest score in each game before tallying wins by player. Counting letters tallies each character directly from the input string."
+    },
+    {
+      "a": "sheet-57105",
+      "b": "sheet-58047",
+      "duplicate": false,
+      "reason": "The first aggregates amounts into monthly totals. The second converts each sales-report entry to the format shown in the adjacent column."
+    },
+    {
+      "a": "sheet-57693",
+      "b": "sheet-59639",
+      "duplicate": false,
+      "reason": "The first returns a frequency for each letter. The second returns one cell per character, preserving the string's order and repeated letters."
+    },
+    {
+      "a": "decision-allocate-invoice-discount-before-page-subtotals",
+      "b": "repair-original-allocate-invoice-cents",
+      "duplicate": false,
+      "reason": "Both distribute leftover cents by largest remainder. The first calculates each line’s proportional share of a fixed discount and sums allocations by page. The second converts each line’s mills to cents and reconciles the line amounts to the rounded invoice total."
+    },
+    {
+      "a": "decision-schedule-after-business-day-lag",
+      "b": "repair-original-expand-month-end-close",
+      "duplicate": false,
+      "reason": "The first counts forward from each job’s release to its Nth business day. The second finds the last business day of each calendar month and checks whether it falls within the reporting window."
+    },
+    {
+      "a": "repair-original-expire-event-id-suppression",
+      "b": "repair-original-reconcile-early-transfer-receipts",
+      "duplicate": false,
+      "reason": "The first suppresses repeated IDs based on elapsed time since the last kept event. The second matches receipts to transfers by ID and totals accepted units through a cutoff, counting identical receipt rows separately."
+    },
+    {
+      "a": "repair-original-inherit-report-subscriptions",
+      "b": "repair-original-orient-joined-consist",
+      "duplicate": false,
+      "reason": "The first applies successive additions and removals to a set of codes. The second orients two sequences according to their coupled ends and concatenates them, preserving repeated labels."
+    },
+    {
+      "a": "repair-original-retain-interpolation-boundary",
+      "b": "repair-original-schedule-marker-covering-music",
+      "duplicate": false,
+      "reason": "The first computes a temperature at one instant using an exact reading or linear interpolation. The second selects nonoverlapping intervals that cover a marker and maximizes their total score, with tie-breakers for count and playback-order IDs."
+    }
+  ]
+}

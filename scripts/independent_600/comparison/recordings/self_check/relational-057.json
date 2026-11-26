@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "c75245dda8ee2b881ee7bd61dbaed2a527522927c696c7c5cb13ffa42d5b45a7",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-reconcile-translated-menu-edits\": \"SELECT entry_code, CASE WHEN local_label COLLATE BINARY IS NOT base_label THEN 'review' WHEN incoming_label IS NULL THEN 'remove' ELSE 'write' END AS action_code, CASE WHEN local_label COLLATE BINARY IS base_label THEN incoming_label END AS payload FROM menu_edits WHERE incoming_label COLLATE BINARY IS NOT local_label AND incoming_label COLLATE BINARY IS NOT base_label ORDER BY entry_code COLLATE BINARY ASC\",\n  \"decision-recoup-returns-against-originating-credit-lots\": \"WITH per_lot AS (SELECT l.lot_id, l.imprint_id, l.unit_cents, MIN(l.issued_qty, COALESCE(SUM(p.request_qty), 0)) - MIN(l.issued_qty, SUM(CASE WHEN p.posted_day < '2026-04-01' THEN p.request_qty ELSE 0 END)) AS recognized FROM credit_lots AS l LEFT JOIN return_posts AS p ON p.lot_id = l.lot_id AND p.posted_day < '2026-05-01' GROUP BY l.lot_id, l.imprint_id, l.issued_qty, l.unit_cents) SELECT imprint_id, SUM(recognized) AS returned_credits, SUM(recognized * unit_cents) AS debit_cents FROM per_lot GROUP BY imprint_id ORDER BY imprint_id ASC\",\n  \"decision-recover-archived-catalogue-join\": \"WITH RECURSIVE edges(src, dst) AS (SELECT from_code, to_code FROM substitution UNION SELECT to_code, from_code FROM substitution), walk(entry_id, printed_code, code, previous_code, hops) AS (SELECT s.entry_id, s.printed_code, s.printed_code, NULL, 0 FROM shelf_entry AS s WHERE NOT EXISTS (SELECT 1 FROM master_item AS m WHERE m.master_code = s.printed_code) UNION ALL SELECT w.entry_id, w.printed_code, e.dst, w.code, w.hops + 1 FROM walk AS w JOIN edges AS e ON e.src = w.code WHERE e.dst IS NOT w.previous_code) SELECT w.entry_id, w.printed_code, m.master_code, m.item_label, w.hops FROM walk AS w JOIN master_item AS m ON m.master_code = w.code ORDER BY w.entry_id COLLATE BINARY ASC\",\n  \"decision-recover-missing-counter-intervals\": \"SELECT r.belt_id, r.end_hour, COALESCE(r.interval_items, r.meter_items - p.meter_items) AS item_count FROM belt_readings AS r LEFT JOIN belt_readings AS p ON p.belt_id = r.belt_id AND p.end_hour = r.end_hour - 1 AND p.meter_run = r.meter_run AND p.meter_items <= r.meter_items WHERE r.interval_items IS NOT NULL OR p.meter_items IS NOT NULL ORDER BY r.belt_id ASC, r.end_hour ASC\"\n}",
+  "submissions": {
+    "decision-reconcile-translated-menu-edits": "SELECT entry_code, CASE WHEN local_label COLLATE BINARY IS NOT base_label THEN 'review' WHEN incoming_label IS NULL THEN 'remove' ELSE 'write' END AS action_code, CASE WHEN local_label COLLATE BINARY IS base_label THEN incoming_label END AS payload FROM menu_edits WHERE incoming_label COLLATE BINARY IS NOT local_label AND incoming_label COLLATE BINARY IS NOT base_label ORDER BY entry_code COLLATE BINARY ASC",
+    "decision-recoup-returns-against-originating-credit-lots": "WITH per_lot AS (SELECT l.lot_id, l.imprint_id, l.unit_cents, MIN(l.issued_qty, COALESCE(SUM(p.request_qty), 0)) - MIN(l.issued_qty, SUM(CASE WHEN p.posted_day < '2026-04-01' THEN p.request_qty ELSE 0 END)) AS recognized FROM credit_lots AS l LEFT JOIN return_posts AS p ON p.lot_id = l.lot_id AND p.posted_day < '2026-05-01' GROUP BY l.lot_id, l.imprint_id, l.issued_qty, l.unit_cents) SELECT imprint_id, SUM(recognized) AS returned_credits, SUM(recognized * unit_cents) AS debit_cents FROM per_lot GROUP BY imprint_id ORDER BY imprint_id ASC",
+    "decision-recover-archived-catalogue-join": "WITH RECURSIVE edges(src, dst) AS (SELECT from_code, to_code FROM substitution UNION SELECT to_code, from_code FROM substitution), walk(entry_id, printed_code, code, previous_code, hops) AS (SELECT s.entry_id, s.printed_code, s.printed_code, NULL, 0 FROM shelf_entry AS s WHERE NOT EXISTS (SELECT 1 FROM master_item AS m WHERE m.master_code = s.printed_code) UNION ALL SELECT w.entry_id, w.printed_code, e.dst, w.code, w.hops + 1 FROM walk AS w JOIN edges AS e ON e.src = w.code WHERE e.dst IS NOT w.previous_code) SELECT w.entry_id, w.printed_code, m.master_code, m.item_label, w.hops FROM walk AS w JOIN master_item AS m ON m.master_code = w.code ORDER BY w.entry_id COLLATE BINARY ASC",
+    "decision-recover-missing-counter-intervals": "SELECT r.belt_id, r.end_hour, COALESCE(r.interval_items, r.meter_items - p.meter_items) AS item_count FROM belt_readings AS r LEFT JOIN belt_readings AS p ON p.belt_id = r.belt_id AND p.end_hour = r.end_hour - 1 AND p.meter_run = r.meter_run AND p.meter_items <= r.meter_items WHERE r.interval_items IS NOT NULL OR p.meter_items IS NOT NULL ORDER BY r.belt_id ASC, r.end_hour ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1c-0f56-7302-b4d7-726ec4cae9e6",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22515,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 627,
+    "reasoning_output_tokens": 0
+  }
+}

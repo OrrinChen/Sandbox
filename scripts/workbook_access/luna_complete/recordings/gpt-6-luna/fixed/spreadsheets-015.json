@@ -1,0 +1,211 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "7a8ff95aa086fe83265669b0a5b6c60204c359b22405f948f8fb0be215ad9af1",
+    "c78d2353aa1505d8e58cd06742a6811c3b20a81bcf3e0807625fa87fcc0d5492",
+    "cd6a36f52f38e60c296fa1f56f60661e376cb6ab42de7d9c4a45df1cd87878c1"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-49801",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "C1": "=LEFT(A1,2)&RIGHT(A1,5)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 73330,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 891,
+        "reasoning_output_tokens": 482
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49857",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "G4:G10",
+            "formula": "=IF(F4=\"Yes\",MAX(G$3:G3)+1,0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 73330,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 891,
+        "reasoning_output_tokens": 482
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49859",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "D12:Q23",
+            "formula": "=IF(AND($C12>=D$8,$C12<=D$9),1,0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 73330,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 891,
+        "reasoning_output_tokens": 482
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-50630",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "C5:E6",
+            "formula": "=IF(COLUMN()=3,TRIM(LEFT($A5,SEARCH(\"Added\",$A5)-1)),IF(COLUMN()=4,TRIM(MID($A5,SEARCH(\"Added\",$A5)+5,SEARCH(\"Due\",$A5)-SEARCH(\"Added\",$A5)-5)),TRIM(MID($A5,SEARCH(\"Due\",$A5)+3,LEN($A5)))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6",
+            "range_size": 10,
+            "cells": [
+              [
+                "A5",
+                "rafal kucharski Added 8 Sep 2021 Due 15 Nov 2021"
+              ],
+              [
+                "C5",
+                "rafal kucharski "
+              ],
+              [
+                "D5",
+                "8 Sep 2021 "
+              ],
+              [
+                "E5",
+                "2021-11-15 00:00:00"
+              ],
+              [
+                "A6",
+                "Zita Kvitovszka Added 8 Sep 2021 Due 16 Nov 2021"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 5
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6",
+            "range_size": 10,
+            "cells": [
+              [
+                "A5",
+                "rafal kucharski Added 8 Sep 2021 Due 15 Nov 2021"
+              ],
+              [
+                "C5",
+                "rafal kucharski "
+              ],
+              [
+                "D5",
+                "8 Sep 2021 "
+              ],
+              [
+                "E5",
+                "2021-11-15 00:00:00"
+              ],
+              [
+                "A6",
+                "Zita Kvitovszka Added 8 Sep 2021 Due 16 Nov 2021"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 5
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 73330,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 891,
+        "reasoning_output_tokens": 482
+      },
+      "model_calls": 3
+    }
+  ]
+}

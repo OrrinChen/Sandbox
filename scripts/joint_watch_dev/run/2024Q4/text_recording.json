@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 36696,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 524,
+    "reasoning_output_tokens": 17
+  },
+  "thread": "01a2039a-bfaa-7f70-9948-a1dbcdcb2767",
+  "packet_sha256": "35693d6e603b8f91ecc67d5104b9865bf5e8124b2c47234e63951aa26681a290",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000885245\",\n          \"reason\": \"Buckle’s Q3 net sales fell 3.2% (A) even as its average price per piece rose 2.8% (D). That implies roughly 6% fewer pieces sold. If unit weakness persists, a smaller price increase could take the sales decline to 5% within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000949870\",\n          \"reason\": \"Boston Beer’s quarterly revenue grew just 0.6% as shipments fell 1.9% (A, B). Distributors held 5.5 weeks of inventory against a 4–5 week target (C). Cutting orders to return to target could deepen the shipment decline enough to push quarterly revenue down 5% within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001047127\",\n          \"reason\": \"Amkor’s Q3 net sales grew only 2.2% despite 30% consumer growth and 23% computing growth (A, B). Elevated customer inventories and weaker demand drove a 17% nine-month automotive and industrial decline (C). If those inventories continue to suppress orders, slower growth in the two offsetting markets could tip quarterly sales to a 5% decline within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000810332\",\n          \"reason\": \"Mesa’s quarterly operating revenue fell 3.4% (A). It reported the “retirement and sale of several aircraft” (D), and flying and aircraft leasing generate contract revenue (B). A smaller fleet could limit revenue over the next two quarters, enough to widen the decline by the 1.6 percentage points needed to reach 5%.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": [
+          {
+            "cik": "0000885245",
+            "reason": "Buckle’s Q3 net sales fell 3.2% (A) even as its average price per piece rose 2.8% (D). That implies roughly 6% fewer pieces sold. If unit weakness persists, a smaller price increase could take the sales decline to 5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0000949870",
+            "reason": "Boston Beer’s quarterly revenue grew just 0.6% as shipments fell 1.9% (A, B). Distributors held 5.5 weeks of inventory against a 4–5 week target (C). Cutting orders to return to target could deepen the shipment decline enough to push quarterly revenue down 5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0001047127",
+            "reason": "Amkor’s Q3 net sales grew only 2.2% despite 30% consumer growth and 23% computing growth (A, B). Elevated customer inventories and weaker demand drove a 17% nine-month automotive and industrial decline (C). If those inventories continue to suppress orders, slower growth in the two offsetting markets could tip quarterly sales to a 5% decline within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0000810332",
+            "reason": "Mesa’s quarterly operating revenue fell 3.4% (A). It reported the “retirement and sale of several aircraft” (D), and flying and aircraft leasing generate contract revenue (B). A smaller fleet could limit revenue over the next two quarters, enough to widen the decline by the 1.6 percentage points needed to reach 5%."
+          }
+        ]
+      }
+    ]
+  }
+}

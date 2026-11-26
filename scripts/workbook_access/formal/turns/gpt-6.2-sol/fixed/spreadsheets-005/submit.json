@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-005",
+    "stage": "submit",
+    "prompt_sha256": "1a1c109c4c280f190fbd571859266939ab3cbd43b5d2d0de75951de5e42c213f",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d5-e4c1-7af2-9dc7-372091e4014a",
+    "raw": "{\n  \"sheet-37554\": {\n    \"fills\": [{\"range\": \"F2:F17\", \"formula\": \"=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)\"}],\n    \"formulas\": {}\n  },\n  \"sheet-37609\": {\n    \"fills\": [{\"range\": \"C2:C11\", \"formula\": \"=IF(OR(A2=\\\"U\\\",B2=\\\"U\\\"),\\\"-\\\",IF(OR(N(A2)>=7,N(B2)>=7),\\\"e\\\",\\\"-\\\"))\"}],\n    \"formulas\": {}\n  },\n  \"sheet-37615\": {\n    \"fills\": [{\"range\": \"F7:F37\", \"formula\": \"=IF(D7>0,IF(ROUND(D7*24,10)>4,$D$42,$D$43),0)\"}],\n    \"formulas\": {}\n  },\n  \"sheet-38462\": {\n    \"fills\": [{\"range\": \"C1:C2\", \"formula\": \"=ROUNDUP(ROUND(B1*24,9),0)\"}],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20826,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 435,
+      "reasoning_output_tokens": 186
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-011",
+    "stage": "submit",
+    "prompt_sha256": "9e53fc7497a86ff2c63b734829372a6c221ae56009540eccd73cacd5bf52c939",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d7-9b44-7af3-a63c-3dbdcfa7191f",
+    "raw": "{\n  \"sheet-45063\": {\n    \"formulas\": {\n      \"B2\": \"=IFNA(VLOOKUP(A2,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\",\n      \"B3\": \"=IFNA(VLOOKUP(A3,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\",\n      \"B4\": \"=IFNA(VLOOKUP(A4,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\",\n      \"B5\": \"=IFNA(VLOOKUP(A5,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\",\n      \"B6\": \"=IFNA(VLOOKUP(A6,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\"\n    }\n  },\n  \"sheet-45300\": {\n    \"formulas\": {\n      \"B1\": \"=IFERROR(LEFT(A1,FIND(\\\" FT\\\",\\\" \\\"&A1)-1),A1)\",\n      \"B2\": \"=IFERROR(LEFT(A2,FIND(\\\" FT\\\",\\\" \\\"&A2)-1),A2)\",\n      \"B3\": \"=IFERROR(LEFT(A3,FIND(\\\" FT\\\",\\\" \\\"&A3)-1),A3)\",\n      \"B4\": \"=IFERROR(LEFT(A4,FIND(\\\" FT\\\",\\\" \\\"&A4)-1),A4)\"\n    }\n  },\n  \"sheet-45937\": {\n    \"formulas\": {\n      \"E7\": \"=IFNA(IF(C7<=INDEX($I$20:$I$22,MATCH(C7,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\\\"\\\"),\\\"\\\")\",\n      \"E8\": \"=IFNA(IF(C8<=INDEX($I$20:$I$22,MATCH(C8,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C8,$H$20:$H$22,1),MATCH(D8,$J$18:$N$18,0)),\\\"\\\"),\\\"\\\")\",\n      \"E9\": \"=IFNA(IF(C9<=INDEX($I$20:$I$22,MATCH(C9,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C9,$H$20:$H$22,1),MATCH(D9,$J$18:$N$18,0)),\\\"\\\"),\\\"\\\")\"\n    }\n  },\n  \"sheet-46167\": {\n    \"formulas\": {\n      \"D2\": \"=SUMIF(A2:A12,111111,B2:B12)\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 19168,
+      "cached_input_tokens": 14720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 850,
+      "reasoning_output_tokens": 237
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

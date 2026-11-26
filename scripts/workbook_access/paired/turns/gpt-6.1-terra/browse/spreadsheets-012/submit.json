@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-012",
+    "stage": "submit",
+    "prompt_sha256": "d7b1655c1f6ff4f91fe7e631af2a853f836173fa6b1fa3907bef6b22089cd843",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211ee-8edd-7bb0-a471-0d543b0060f2",
+    "raw": "{\"sheet-46897\":{\"formulas\":{\"I3\":\"=COUNTIF(INDEX(A2:D1048576,0,MATCH(I1,A1:D1,0)),I2)\"}},\"sheet-47699\":{\"formulas\":{\"D1\":\"=SUMIF(A5:A1048576,FALSE,D5:D1048576)\"}},\"sheet-48354\":{\"fills\":[{\"range\":\"D2:D6\",\"formula\":\"=IF(ISNUMBER(SEARCH(\\\"domestic\\\",B2)),\\\"D\\\",IF(ISNUMBER(SEARCH(\\\"international\\\",B2)),\\\"I\\\",\\\"N/A\\\"))\"}],\"formulas\":{}},\"sheet-48365\":{\"formulas\":{\"C4\":\"=IF(COUNTIF(C11:C13,\\\"All\\\")>0,SUMIF(Data!A:A,C2,Data!C:C),SUMPRODUCT((Data!A2:A10000=C2)*(COUNTIF(C11:C13,Data!B2:B10000)>0)*Data!C2:C10000))\"}}}",
+    "usage": {
+      "input_tokens": 18394,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 391,
+      "reasoning_output_tokens": 174
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

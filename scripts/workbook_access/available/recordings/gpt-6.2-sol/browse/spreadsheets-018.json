@@ -1,0 +1,494 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "df5bb032b1cc3a20d2c6aa48e2089c9b75ddeb34b32f9ca3db1f495f71eaba35",
+    "82097e291fb86873b0beb3c52a4d24b96a0e5328afeffe40bb6e7ee71c8d3f6b",
+    "03465a8fef3e56b38002e5f0c67dd856f41b3031ee9f352b8d9a36824fe9a64c"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-53167",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "submission": {
+        "fills": [
+          {
+            "range": "E5:E16",
+            "formula": "=XLOOKUP(B5,$B$4:B4,$D$4:D4,D5,0,-1)-D5"
+          }
+        ],
+        "formulas": {
+          "E4": "=0"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59367,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 967,
+        "reasoning_output_tokens": 496
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-53383",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:C6",
+            "formula": "=IF(COUNTIFS('worksheet 1'!$A$3:$A$6,A3,'worksheet 1'!$B$3:$B$6,B3)>0,\"Matched\",\"Not Matched\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59367,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 967,
+        "reasoning_output_tokens": 496
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-54274",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "submission": {
+        "formulas": {
+          "G4": "=IF(F4<=B4,F4/B4,MIN(F4/B4,IF(F4<C4,1.09,IF(F4=C4,1.1,IF(F4<D4,1.19,1.2)))))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59367,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 967,
+        "reasoning_output_tokens": 496
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55085",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "submission": {
+        "fills": [
+          {
+            "range": "G10:L10",
+            "formula": "=INDEX('Master-RM'!$H$8:$K$20,MATCH(G$2,'Master-RM'!$A$8:$A$20,0),MATCH(G$3,'Master-RM'!$H$6:$K$6,0)+1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A12:K20"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A12:K20",
+            "range_size": 99,
+            "cells": [
+              [
+                "A12",
+                "Apple"
+              ],
+              [
+                "B12",
+                "Total"
+              ],
+              [
+                "E12",
+                "0"
+              ],
+              [
+                "F12",
+                "0"
+              ],
+              [
+                "G12",
+                "0"
+              ],
+              [
+                "H12",
+                "133"
+              ],
+              [
+                "I12",
+                "202"
+              ],
+              [
+                "J12",
+                "116"
+              ],
+              [
+                "K12",
+                "439"
+              ],
+              [
+                "B14",
+                "Papa"
+              ],
+              [
+                "E14",
+                "0"
+              ],
+              [
+                "H14",
+                "61"
+              ],
+              [
+                "I14",
+                "90"
+              ],
+              [
+                "J14",
+                "42"
+              ],
+              [
+                "K14",
+                "263"
+              ],
+              [
+                "B15",
+                "Mummy"
+              ],
+              [
+                "E15",
+                "0"
+              ],
+              [
+                "H15",
+                "40"
+              ],
+              [
+                "I15",
+                "47"
+              ],
+              [
+                "J15",
+                "11"
+              ],
+              [
+                "K15",
+                "113"
+              ],
+              [
+                "A16",
+                "Mango"
+              ],
+              [
+                "B16",
+                "Total"
+              ],
+              [
+                "H16",
+                "101"
+              ],
+              [
+                "I16",
+                "137"
+              ],
+              [
+                "J16",
+                "53"
+              ],
+              [
+                "K16",
+                "376"
+              ],
+              [
+                "B18",
+                "Son"
+              ],
+              [
+                "E18",
+                "0"
+              ],
+              [
+                "H18",
+                "36"
+              ],
+              [
+                "I18",
+                "66"
+              ],
+              [
+                "J18",
+                "101"
+              ],
+              [
+                "K18",
+                "320"
+              ],
+              [
+                "B19",
+                "Moon"
+              ],
+              [
+                "E19",
+                "0"
+              ],
+              [
+                "H19",
+                "60"
+              ],
+              [
+                "I19",
+                "89"
+              ],
+              [
+                "J19",
+                "119"
+              ],
+              [
+                "K19",
+                "401"
+              ],
+              [
+                "A20",
+                "Banana"
+              ],
+              [
+                "B20",
+                "Total"
+              ],
+              [
+                "H20",
+                "96"
+              ],
+              [
+                "I20",
+                "155"
+              ],
+              [
+                "J20",
+                "220"
+              ],
+              [
+                "K20",
+                "721"
+              ]
+            ],
+            "total": 45,
+            "truncated": false,
+            "blank_count": 54
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Result",
+            "range": "A1:L10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Result",
+            "range": "A1:L10",
+            "range_size": 120,
+            "cells": [
+              [
+                "J1",
+                "#REF!"
+              ],
+              [
+                "K1",
+                "#REF!"
+              ],
+              [
+                "L1",
+                "#REF!"
+              ],
+              [
+                "G2",
+                "Apple"
+              ],
+              [
+                "H2",
+                "Mango"
+              ],
+              [
+                "I2",
+                "Banana"
+              ],
+              [
+                "J2",
+                "Apple"
+              ],
+              [
+                "K2",
+                "Mango"
+              ],
+              [
+                "L2",
+                "Banana"
+              ],
+              [
+                "G3",
+                "Shrawan"
+              ],
+              [
+                "H3",
+                "Shrawan"
+              ],
+              [
+                "I3",
+                "Shrawan"
+              ],
+              [
+                "J3",
+                "Bhadra"
+              ],
+              [
+                "K3",
+                "Bhadra"
+              ],
+              [
+                "L3",
+                "Bhadra"
+              ],
+              [
+                "A10",
+                "Purchase"
+              ],
+              [
+                "G10",
+                "202"
+              ],
+              [
+                "H10",
+                "116"
+              ],
+              [
+                "I10",
+                "439"
+              ],
+              [
+                "J10",
+                "0"
+              ],
+              [
+                "K10",
+                "0"
+              ],
+              [
+                "L10",
+                "0"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 98
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "Master-RM",
+          "A16"
+        ],
+        [
+          "Master-RM",
+          "B16"
+        ],
+        [
+          "Master-RM",
+          "B18"
+        ],
+        [
+          "Master-RM",
+          "E18"
+        ],
+        [
+          "Master-RM",
+          "H16"
+        ],
+        [
+          "Master-RM",
+          "H18"
+        ],
+        [
+          "Master-RM",
+          "I16"
+        ],
+        [
+          "Master-RM",
+          "I18"
+        ],
+        [
+          "Master-RM",
+          "J16"
+        ],
+        [
+          "Master-RM",
+          "J18"
+        ],
+        [
+          "Master-RM",
+          "K15"
+        ],
+        [
+          "Master-RM",
+          "K16"
+        ],
+        [
+          "Master-RM",
+          "K18"
+        ]
+      ],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 59367,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 967,
+        "reasoning_output_tokens": 496
+      },
+      "model_calls": 3
+    }
+  ]
+}

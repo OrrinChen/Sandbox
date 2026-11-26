@@ -1,0 +1,68 @@
+{
+  "wave": "2025Q2",
+  "cohort": "transportation-2",
+  "sector": "transportation",
+  "cik": "0000277948",
+  "issuer": "CSX CORP",
+  "cutoff": "2025-03-02",
+  "projected_target_start": "2025-04-01",
+  "status": "complete",
+  "period_end": "2024-12-31",
+  "filing_date": "2025-02-27",
+  "text": {
+    "sector": "transportation",
+    "cik": "0000277948",
+    "issuer": "CSX CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2025-02-27",
+        "text": "Total revenue decreased by $117 million in 2024, or 1%, when compared to the previous year primarily due to lower fuel recovery and lower coal revenue, which includes the impact of lower global benchmark rates."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2025-02-27",
+        "text": "These decreases were partially offset by pricing gains in merchandise as well as higher merchandise and intermodal volumes."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2025-02-27",
+        "text": "Trucking revenue decreased $38 million versus the prior year due to lower fuel and capacity surcharges."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2025-02-27",
+        "text": "• Expenses of $9.3 billion increased $137 million or 1% year over year."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2025-02-27",
+        "text": "• Operating income of $5.2 billion decreased $254 million or 5% year over year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2024-09-30",
+        "filed": "2024-10-17",
+        "reported_sales_usd": 3619000000,
+        "year_ago_reported_sales_usd": 3572000000,
+        "yoy_percent": "1.3158"
+      },
+      {
+        "quarter_end": "2024-12-31",
+        "filed": "2025-02-27",
+        "reported_sales_usd": 3539000000,
+        "year_ago_reported_sales_usd": 3680000000,
+        "yoy_percent": "-3.8315"
+      }
+    ],
+    "status": "complete"
+  }
+}

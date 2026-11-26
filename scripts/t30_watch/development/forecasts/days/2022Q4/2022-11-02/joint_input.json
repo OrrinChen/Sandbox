@@ -1,0 +1,67 @@
+{
+  "cutoff": "2022-11-02",
+  "sectors": {
+    "2022Q4/semiconductors-1": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000723125",
+          "issuer": "MICRON TECHNOLOGY INC",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2022-12-02",
+          "latest_filed_period_end": "2022-09-01",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2022-10-07",
+              "text": "Total Revenue: Total revenue for 2022 increased 11% as compared to 2021 primarily due to increases in sales of both DRAM and NAND products."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2022-10-07",
+              "text": "•Sales of DRAM products increased 12% primarily due to increases in bit shipments of slightly over 10%."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2022-10-07",
+              "text": "In the fourth quarter of 2022, the memory and storage industry environment deteriorated sharply due to global and macroeconomic challenges combined with downward inventory adjustments by customers, leading to significant reductions in bit shipments and average selling prices for both DRAM and NAND resulting in a 23% decline in revenue as compared to the third quarter of 2022."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2022-10-07",
+              "text": "•Sales of NAND products increased 11% primarily due to a high-single-digit percent increase in bit shipments and a low-single-digit percent increase in average selling prices."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2022-10-07",
+              "text": "•CNBU operating income increased primarily due to higher bit shipments and manufacturing cost reductions."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-06-02",
+                "filed": "2022-07-01",
+                "reported_sales_usd": 8642000000,
+                "year_ago_reported_sales_usd": 7422000000,
+                "yoy_percent": "16.4376"
+              },
+              {
+                "quarter_end": "2022-09-01",
+                "filed": "2022-10-07",
+                "reported_sales_usd": 6643000000,
+                "year_ago_reported_sales_usd": 8274000000,
+                "yoy_percent": "-19.7124"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

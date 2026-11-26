@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000880266",
+  "issuer": "AGCO CORP /DE",
+  "cutoff": "2023-03-02",
+  "projected_target_start": "2023-04-01",
+  "status": "complete",
+  "period_end": "2022-12-31",
+  "filing_date": "2023-03-01",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000880266",
+    "issuer": "AGCO CORP /DE",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2023-03-01",
+        "text": "Net sales for 2022 were approximately $12,651.4 million, or 13.6% higher than 2021, primarily due to robust high horsepower tractor end-market demand and favorable pricing, which helped to offset the negative impacts of currency translation, supply chain constraints and inflationary pressures."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2023-03-01",
+        "text": "Net income attributable to AGCO Corporation and subsidiaries 7.0 % 8.1 % 4.7 %"
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2023-03-01",
+        "text": "Industry retail tractors sales were restricted by supply chain challenges during 2022."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2023-03-01",
+        "text": "The increase in income from operations during 2022 was primarily the result of higher net sales and production volumes along with significant pricing to offset inflationary cost increases."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2023-03-01",
+        "text": "Income from operations was approximately $1,265.4 million in 2022 compared to approximately $1,001.4 million in 2021."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-09-30",
+        "filed": "2022-11-09",
+        "reported_sales_usd": 3121600000,
+        "year_ago_reported_sales_usd": 2725100000,
+        "yoy_percent": "14.5499"
+      },
+      {
+        "quarter_end": "2022-12-31",
+        "filed": "2023-03-01",
+        "reported_sales_usd": 3898900000,
+        "year_ago_reported_sales_usd": 3155200000,
+        "yoy_percent": "23.5706"
+      }
+    ],
+    "status": "complete"
+  }
+}

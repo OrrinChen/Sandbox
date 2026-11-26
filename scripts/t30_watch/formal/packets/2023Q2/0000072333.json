@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000072333",
+  "issuer": "NORDSTROM INC",
+  "cutoff": "2023-03-31",
+  "projected_target_start": "2023-04-30",
+  "status": "complete",
+  "period_end": "2023-01-28",
+  "filing_date": "2023-03-10",
+  "text": {
+    "sector": "retail",
+    "cik": "0000072333",
+    "issuer": "NORDSTROM INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-K",
+        "date": "2023-03-10",
+        "text": "Total Company net sales and GMV increased for the full fiscal year compared with 2021."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-K",
+        "date": "2023-03-10",
+        "text": "Customer demand decelerated beginning in late June and this trend continued through the holiday season, and while these pressures impacted all customer segments, they were more pronounced in customers with lower income profiles."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-K",
+        "date": "2023-03-10",
+        "text": "While this strategy required more markdowns than we had initially planned in 2022, we exited the year with inventory levels down 15% and are positioned for greater agility amidst continuing macroeconomic uncertainty."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-K",
+        "date": "2023-03-10",
+        "text": "Excluding a gain on the sale of our interest in a corporate office building, Trunk Club wind-down costs and a supply chain technology and related asset impairment charge, adjusted EBIT was $5021, Adjusted EBIT margin was 3.3%1 and adjusted EPS was $1.691."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-K",
+        "date": "2023-03-10",
+        "text": "Net cash provided by operating activities increased $241 between 2022 and 2021 primarily due to lower payments for inventory and our amended 2022 TD program agreement, partially offset by the receipt of the income tax refund related to the loss carryback provision of the CARES Act in 2021."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-10-29",
+        "filed": "2022-12-02",
+        "reported_sales_usd": 3546000000,
+        "year_ago_reported_sales_usd": 3637000000,
+        "yoy_percent": "-2.5021"
+      },
+      {
+        "quarter_end": "2023-01-28",
+        "filed": "2023-03-10",
+        "reported_sales_usd": 4319000000,
+        "year_ago_reported_sales_usd": 4486000000,
+        "yoy_percent": "-3.7227"
+      }
+    ],
+    "status": "complete"
+  }
+}

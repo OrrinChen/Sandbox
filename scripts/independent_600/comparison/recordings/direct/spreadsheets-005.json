@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "45fdbaa425d9c0edb2e1b62d8cbf2a3bf397abf2717716393e3bb1e0468e1bd0",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-37554\": {\n    \"fills\": [\n      {\"range\": \"F2:F17\", \"formula\": \"=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-37609\": {\n    \"fills\": [\n      {\"range\": \"C2:C11\", \"formula\": \"=IF(OR(A2=\\\"U\\\",B2=\\\"U\\\"),\\\"-\\\",IF(MAX(N(A2),N(B2))>=7,\\\"e\\\",\\\"-\\\"))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-37615\": {\n    \"fills\": [\n      {\"range\": \"F7:F37\", \"formula\": \"=IF(D7<=0,0,IF(ROUND(D7*86400,6)>14400,$D$42,$D$43))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-38462\": {\n    \"fills\": [\n      {\"range\": \"C1:C2\", \"formula\": \"=ROUNDUP(B1*24,0)\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-37554": {
+      "fills": [
+        {
+          "range": "F2:F17",
+          "formula": "=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-37609": {
+      "fills": [
+        {
+          "range": "C2:C11",
+          "formula": "=IF(OR(A2=\"U\",B2=\"U\"),\"-\",IF(MAX(N(A2),N(B2))>=7,\"e\",\"-\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-37615": {
+      "fills": [
+        {
+          "range": "F7:F37",
+          "formula": "=IF(D7<=0,0,IF(ROUND(D7*86400,6)>14400,$D$42,$D$43))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-38462": {
+      "fills": [
+        {
+          "range": "C1:C2",
+          "formula": "=ROUNDUP(B1*24,0)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-fcb5-71c2-b12b-7fff641095fe",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 25519,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 255,
+    "reasoning_output_tokens": 0
+  }
+}

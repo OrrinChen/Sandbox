@@ -1,0 +1,67 @@
+{
+  "cutoff": "2023-08-30",
+  "sectors": {
+    "2023Q4/food_manufacturing-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000880117",
+          "issuer": "SANFILIPPO JOHN B & SON INC",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2023-09-29",
+          "latest_filed_period_end": "2023-06-29",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2023-08-23",
+              "text": "Our net sales for fiscal 2023 increased $43.8 million, or 4.6%, to $999.7 million compared to fiscal 2022."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2023-08-23",
+              "text": "We have seen stabilization in truckload capacity and volume at U.S. ports and improvements with driver hiring, there are still warehouse and dock staff shortages and fuel and energy concerns due to continued unrest abroad coupled with persistent inflation."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2023-08-23",
+              "text": "We have remained agile by proactively identifying risks, modifying inventory plans and diversifying our supplier base to mitigate risk of customer order shortages."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2023-08-23",
+              "text": "Due to significant inflation, we have seen higher selling prices at retail."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2023-08-23",
+              "text": "Due to the factors discussed above, income from operations was $90.2 million, or 9.0% of net sales, for fiscal 2023, compared to $87.4 million, or 9.1% of net sales, for fiscal 2022."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2023-03-30",
+                "filed": "2023-05-02",
+                "reported_sales_usd": 238535000,
+                "year_ago_reported_sales_usd": 218584000,
+                "yoy_percent": "9.1274"
+              },
+              {
+                "quarter_end": "2023-06-29",
+                "filed": "2023-08-23",
+                "reported_sales_usd": 234222000,
+                "year_ago_reported_sales_usd": 257748000,
+                "yoy_percent": "-9.1275"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

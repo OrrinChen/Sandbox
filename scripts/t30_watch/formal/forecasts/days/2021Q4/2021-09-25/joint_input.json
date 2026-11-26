@@ -1,0 +1,129 @@
+{
+  "cutoff": "2021-09-25",
+  "sectors": {
+    "2021Q4/semiconductors-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000006951",
+          "issuer": "APPLIED MATERIALS INC /DE",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2021-10-25",
+          "latest_filed_period_end": "2021-08-01",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2021-08-26",
+              "text": "Applied’s display and adjacent markets revenue increased in the three and nine months ended August 1, 2021 compared to the same periods in the prior year due to increased investment in display manufacturing equipment for TVs."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2021-08-26",
+              "text": "The timing of customer investment in manufacturing equipment is also affected by the timing of next-generation process development, and the timing of capacity expansion to meet end-market demand."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2021-08-26",
+              "text": "Even with the ongoing challenges faced during the pandemic, semiconductor equipment customers continued to make strategic investments in new technology transitions during the three and nine months ended August 1, 2021."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2021-08-26",
+              "text": "Gross margin in the three and nine months ended August 1, 2021 increased compared to the same periods in the prior year primarily due to the increase in net sales and favorable changes in customer and product mix, partially offset by higher freight costs and higher personnel costs due to an increase in headcount to provide manufacturing capacity and flexibility."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2021-08-26",
+              "text": "Cash provided by operating activities increased in the first nine months of fiscal 2021 compared to the same period in the prior year primarily due to higher net income."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-05-02",
+                "filed": "2021-05-27",
+                "reported_sales_usd": 5582000000,
+                "year_ago_reported_sales_usd": 3957000000,
+                "yoy_percent": "41.0665"
+              },
+              {
+                "quarter_end": "2021-08-01",
+                "filed": "2021-08-26",
+                "reported_sales_usd": 6196000000,
+                "year_ago_reported_sales_usd": 4395000000,
+                "yoy_percent": "40.9784"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2021Q4/semiconductors-3": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001045810",
+          "issuer": "NVIDIA CORP",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2021-10-25",
+          "latest_filed_period_end": "2021-08-01",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2021-08-20",
+              "text": "Gaming revenue was up 85% from a year ago and up 11% sequentially, reflecting higher sales in GeForce GPUs and game-console SOCs."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2021-08-20",
+              "text": "Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, or AV, robotics, and augmented and virtual reality, or AR and VR."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2021-08-20",
+              "text": "GAAP gross margin for the second quarter was up 600 basis points from a year earlier, primarily due to a non-recurring inventory step-up expense of $161 million related to the Mellanox acquisition in the second quarter of fiscal year 2021."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2021-08-20",
+              "text": "GAAP gross margin was up 70 basis points sequentially."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2021-08-20",
+              "text": "Income from operations was $2.44 billion, up 275% from a year earlier and up 25% sequentially."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-05-02",
+                "filed": "2021-05-26",
+                "reported_sales_usd": 5661000000,
+                "year_ago_reported_sales_usd": 3080000000,
+                "yoy_percent": "83.7987"
+              },
+              {
+                "quarter_end": "2021-08-01",
+                "filed": "2021-08-20",
+                "reported_sales_usd": 6507000000,
+                "year_ago_reported_sales_usd": 3866000000,
+                "yoy_percent": "68.3135"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35351,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 728,
+    "reasoning_output_tokens": 20
+  },
+  "thread": "01a20d7e-a826-7b42-b054-185607f3a07d",
+  "packet_sha256": "5f721e4c959e36f284e38b912d48f923a3787435ee37d7c13c2b7600ee9039d7",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q4/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/industrial_machinery-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000832101\",\n          \"reason\": \"Reported net sales growth slowed from 12.55% in March to 6.29% in June (A). Pricing supported sales across all segments, while weaker Health & Science Technologies volumes offset part of that gain (D). Another 6.26 percentage points of deceleration each quarter would put September near flat and December near -6.2%.\"\n        },\n        {\n          \"cik\": \"0001121484\",\n          \"reason\": \"Total revenue growth slowed from 19.60% in March to 0.93% in June (A). Offshore backlog rose to $338 million (B), which could keep September above -5%. Product revenue was already down 6% as some backlog took longer to convert and demand for perforating products fell (C). I forecast that weakness will pull December total revenue at least 5% below the prior year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001463101\",\n          \"reason\": \"Revenue growth slowed from 64.52% in March to 34.12% in June even as June microinverter shipments rose 55% year over year (A). Higher interest rates weakened U.S. demand, leaving distributors and installers with elevated inventory (B, C). I forecast September growth stays above -5%, followed by a December decline of at least 5% as customers draw down inventory and cut orders.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/transportation-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000799233\",\n          \"reason\": \"Reported revenue fell from $330.9 million in March to $306.2 million in June while the year-ago comparison rose from $151.3 million to $187.8 million. Year-over-year growth narrowed from 118.75% to 63.01%. That leaves a sizable cushion for September, but another two quarters of narrowing at even two-thirds of that pace would put December below -5%. Record B places peak freight demand in the earlier comparison period.\"\n        },\n        {\n          \"cik\": \"0001498710\",\n          \"reason\": \"Revenue growth slowed from 39.54% in March to 4.82% in June. June traffic grew 13.1%, but capacity grew 17.4%, average yield fell 7.4%, and load factor fell 3.1 percentage points (A, B). I forecast traffic growth keeps September above -5%, then offsets less of the yield decline in December, taking reported revenue growth to -5% or lower.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000832101",
+            "reason": "Reported net sales growth slowed from 12.55% in March to 6.29% in June (A). Pricing supported sales across all segments, while weaker Health & Science Technologies volumes offset part of that gain (D). Another 6.26 percentage points of deceleration each quarter would put September near flat and December near -6.2%."
+          },
+          {
+            "cik": "0001121484",
+            "reason": "Total revenue growth slowed from 19.60% in March to 0.93% in June (A). Offshore backlog rose to $338 million (B), which could keep September above -5%. Product revenue was already down 6% as some backlog took longer to convert and demand for perforating products fell (C). I forecast that weakness will pull December total revenue at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001463101",
+            "reason": "Revenue growth slowed from 64.52% in March to 34.12% in June even as June microinverter shipments rose 55% year over year (A). Higher interest rates weakened U.S. demand, leaving distributors and installers with elevated inventory (B, C). I forecast September growth stays above -5%, followed by a December decline of at least 5% as customers draw down inventory and cut orders."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000799233",
+            "reason": "Reported revenue fell from $330.9 million in March to $306.2 million in June while the year-ago comparison rose from $151.3 million to $187.8 million. Year-over-year growth narrowed from 118.75% to 63.01%. That leaves a sizable cushion for September, but another two quarters of narrowing at even two-thirds of that pace would put December below -5%. Record B places peak freight demand in the earlier comparison period."
+          },
+          {
+            "cik": "0001498710",
+            "reason": "Revenue growth slowed from 39.54% in March to 4.82% in June. June traffic grew 13.1%, but capacity grew 17.4%, average yield fell 7.4%, and load factor fell 3.1 percentage points (A, B). I forecast traffic growth keeps September above -5%, then offsets less of the yield decline in December, taking reported revenue growth to -5% or lower."
+          }
+        ]
+      }
+    ]
+  }
+}

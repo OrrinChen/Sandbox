@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001402057",
+  "issuer": "CDW CORP",
+  "cutoff": "2023-06-01",
+  "projected_target_start": "2023-07-01",
+  "status": "complete",
+  "period_end": "2023-03-31",
+  "filing_date": "2023-05-03",
+  "text": {
+    "sector": "retail",
+    "cik": "0001402057",
+    "issuer": "CDW CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2023-05-03",
+        "text": "Total Net sales decreased $846 million, or 14.2%, to $5,103 million for the three months ended March 31, 2023, compared to $5,949 million for the three months ended March 31, 2022."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2023-05-03",
+        "text": "The decline in Net sales occurred across all operating segments, primarily driven by a decrease in hardware sales."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2023-05-03",
+        "text": "This increase was primarily driven by share repurchases in 2023 with no similar activity in 2022 and less inventory financing as a result of lower sales activity, partially offset by less repayments on debt due to lower borrowings."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2023-05-03",
+        "text": "The increase in Gross profit margin was primarily driven by higher product margin, including notebook mix and rate, and a higher mix of netted down revenue, primarily software."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2023-05-03",
+        "text": "Operating income was $355 million for the three months ended March 31, 2023, a decrease of $32 million, compared to $387 million for the three months ended March 31, 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-12-31",
+        "filed": "2023-02-24",
+        "reported_sales_usd": 5438300000,
+        "year_ago_reported_sales_usd": 5536900000,
+        "yoy_percent": "-1.7808"
+      },
+      {
+        "quarter_end": "2023-03-31",
+        "filed": "2023-05-03",
+        "reported_sales_usd": 5103100000,
+        "year_ago_reported_sales_usd": 5949100000,
+        "yoy_percent": "-14.2206"
+      }
+    ],
+    "status": "complete"
+  }
+}

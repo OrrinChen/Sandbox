@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25823,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 262,
+    "reasoning_output_tokens": 10
+  },
+  "thread": "01a20d8f-9936-7b43-8607-3eb5a0573a02",
+  "packet_sha256": "737e97b4c75ea0748bbada22cbf1997c5352e1075522621c519bee6d1081b08a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"VIAVI’s year-over-year revenue decline narrowed from 10.54% in December to 0.73% in March (A). Stronger OSP demand supports a forecast that the intervening quarter stays above −5%. OSP only partly offset weakness among service-provider and enterprise customers, and demand remained volatile (B, C). I forecast those pressures push consolidated revenue growth to −5% or below in the quarter starting June 30.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "VIAVI’s year-over-year revenue decline narrowed from 10.54% in December to 0.73% in March (A). Stronger OSP demand supports a forecast that the intervening quarter stays above −5%. OSP only partly offset weakness among service-provider and enterprise customers, and demand remained volatile (B, C). I forecast those pressures push consolidated revenue growth to −5% or below in the quarter starting June 30."
+          }
+        ]
+      }
+    ]
+  }
+}

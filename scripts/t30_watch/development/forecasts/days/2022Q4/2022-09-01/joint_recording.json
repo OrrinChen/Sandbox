@@ -1,0 +1,59 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35866,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 425,
+    "reasoning_output_tokens": 25
+  },
+  "thread": "01a20d7c-ad84-7af2-b4ae-25c0b2e851f8",
+  "packet_sha256": "77a20259a3a036a88df83f5409d55a2f511b96e103a1092e67992f1f54710f1f",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q4/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-1\",\"alerts\":[{\"cik\":\"0001627014\",\"reason\":\"Black Knight’s reported revenue growth eased from 10.72% in March to 9.19% in June, leaving room for September to stay above -5%. Mortgage originations were already falling as rates rose after a prolonged refinancing boom (C). I forecast that lower origination volumes against elevated prior-year volumes will pull December-quarter revenue down at least 5% year over year.\"}]},\n    {\"sector\":\"2022Q4/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/semiconductors-1\",\"alerts\":[{\"cik\":\"0001124796\",\"reason\":\"nLIGHT’s June revenue fell 11.99% year over year during a roughly two-month Shanghai plant closure (D). I forecast a September rebound above -5% as that temporary disruption eases, followed by a December decline of at least 5%. Lower China product sales, declining development revenue and customers delaying capital spending support the renewed decline (A, B).\"}]},\n    {\"sector\":\"2022Q4/transportation-1\",\"alerts\":[{\"cik\":\"0000003453\",\"reason\":\"Matson’s consolidated revenue growth slowed from 63.74% in March to 44.14% in June. Ocean Transportation revenue still rose 53.6%, but Hawaii container volume fell 1.5% as retail demand weakened (A–C). I forecast September growth above -5% and a December decline of at least 5% if the weakness in retail freight spreads beyond Hawaii.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Black Knight’s reported revenue growth eased from 10.72% in March to 9.19% in June, leaving room for September to stay above -5%. Mortgage originations were already falling as rates rose after a prolonged refinancing boom (C). I forecast that lower origination volumes against elevated prior-year volumes will pull December-quarter revenue down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "nLIGHT’s June revenue fell 11.99% year over year during a roughly two-month Shanghai plant closure (D). I forecast a September rebound above -5% as that temporary disruption eases, followed by a December decline of at least 5%. Lower China product sales, declining development revenue and customers delaying capital spending support the renewed decline (A, B)."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000003453",
+            "reason": "Matson’s consolidated revenue growth slowed from 63.74% in March to 44.14% in June. Ocean Transportation revenue still rose 53.6%, but Hawaii container volume fell 1.5% as retail demand weakened (A–C). I forecast September growth above -5% and a December decline of at least 5% if the weakness in retail freight spreads beyond Hawaii."
+          }
+        ]
+      }
+    ]
+  }
+}

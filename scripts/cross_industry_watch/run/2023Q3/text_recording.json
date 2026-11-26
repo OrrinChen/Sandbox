@@ -1,0 +1,69 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32576,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 590,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a2036b-fa8a-75e0-b1a9-646c56b611cc",
+  "packet_sha256": "f3846fcb76be940c22e00b7f54d593eaffb4e0513e9275378f44cc77301cd11f",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000023217\",\n          \"reason\": \"Conagra’s fiscal-year net sales rose (A) despite a 9% volume decline (B). If that volume pressure persists as prior-year pricing gains enter the comparison, quarterly net sales could fall at least 5% within two quarters. The filing gives only an annual sales baseline.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001121484\",\n          \"reason\": \"Oil States’ Q2 consolidated revenue grew just 1% (A). Product revenue fell 6% on weaker perforating-product demand and delayed conversion of backlog to sales (C). Despite a larger offshore backlog (B), further shipment delays could push total revenue growth to −5% or lower in Q3 or Q4.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001463101\",\n          \"reason\": \"Enphase’s Q2 revenue grew 34% as microinverter shipments rose 55% (A), but U.S. demand slowed broadly (B) and inventory accumulated at distributors and installers (C). Those customers could cut orders while selling existing stock, pushing consolidated revenue down at least 5% year over year in Q3 or Q4.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001627014\",\n          \"reason\": \"Black Knight’s Q2 EBITDA and margins (D) imply revenue of about $324 million versus $339 million, down roughly 4.5%. Software’s share rose from 86% to 88% (A), implying a steeper decline outside software. A modest further decline there could take consolidated revenue growth to −5% within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001498710\",\n          \"reason\": \"Spirit’s Q2 operating revenue grew 4.8%, but yield fell 7.4% and load factor fell 3.1 percentage points (A) as capacity grew 17.4%, ahead of traffic growth of 13.1% (B). If traffic growth slows while excess capacity keeps fares under pressure, revenue could fall at least 5% year over year in Q3 or Q4.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "Conagra’s fiscal-year net sales rose (A) despite a 9% volume decline (B). If that volume pressure persists as prior-year pricing gains enter the comparison, quarterly net sales could fall at least 5% within two quarters. The filing gives only an annual sales baseline."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0001121484",
+            "reason": "Oil States’ Q2 consolidated revenue grew just 1% (A). Product revenue fell 6% on weaker perforating-product demand and delayed conversion of backlog to sales (C). Despite a larger offshore backlog (B), further shipment delays could push total revenue growth to −5% or lower in Q3 or Q4."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0001463101",
+            "reason": "Enphase’s Q2 revenue grew 34% as microinverter shipments rose 55% (A), but U.S. demand slowed broadly (B) and inventory accumulated at distributors and installers (C). Those customers could cut orders while selling existing stock, pushing consolidated revenue down at least 5% year over year in Q3 or Q4."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Black Knight’s Q2 EBITDA and margins (D) imply revenue of about $324 million versus $339 million, down roughly 4.5%. Software’s share rose from 86% to 88% (A), implying a steeper decline outside software. A modest further decline there could take consolidated revenue growth to −5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0001498710",
+            "reason": "Spirit’s Q2 operating revenue grew 4.8%, but yield fell 7.4% and load factor fell 3.1 percentage points (A) as capacity grew 17.4%, ahead of traffic growth of 13.1% (B). If traffic growth slows while excess capacity keeps fares under pressure, revenue could fall at least 5% year over year in Q3 or Q4."
+          }
+        ]
+      }
+    ]
+  }
+}

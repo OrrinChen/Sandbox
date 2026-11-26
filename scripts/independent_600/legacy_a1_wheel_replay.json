@@ -1,0 +1,42 @@
+{
+  "wheel_sha256": "59ca9397dbae0d95a4c179fd6b92ecb1ac886c47af164a0d4f5664aece96009a",
+  "regression": "A1 original 60 questions at top-5, five methods",
+  "runs": 300,
+  "distinct_tasks": 60,
+  "top_k": 5,
+  "replayed_passes": 1,
+  "replayed_failures": 299,
+  "replay_divergences": 0,
+  "methods": {
+    "bm25": {
+      "tasks": 60,
+      "passed": 0,
+      "failed": 60
+    },
+    "dense_proxy": {
+      "tasks": 60,
+      "passed": 0,
+      "failed": 60
+    },
+    "full_engine": {
+      "tasks": 60,
+      "passed": 1,
+      "failed": 59
+    },
+    "graph": {
+      "tasks": 60,
+      "passed": 0,
+      "failed": 60
+    },
+    "hybrid": {
+      "tasks": 60,
+      "passed": 0,
+      "failed": 60
+    }
+  },
+  "network_denial": [
+    "/usr/bin/sandbox-exec",
+    "-p",
+    "(version 1)(allow default)(deny network*)"
+  ]
+}

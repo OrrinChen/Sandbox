@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-023",
+    "stage": "inspect-1",
+    "prompt_sha256": "ff409cf3518df0858815335540d7fbba095c07dc098bf46d4f760e0a6a964b7a",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21231-51d6-74e3-897c-32b48e650979"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-59196\":[],\"sheet-59224\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"C3:E14\"}],\"sheet-59259\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L16\"}],\"sheet-59358\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L9\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18198,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 453,
+          "reasoning_output_tokens": 371
+        }
+      ],
+      "cli_final": "{\"sheet-59196\":[],\"sheet-59224\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"C3:E14\"}],\"sheet-59259\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L16\"}],\"sheet-59358\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L9\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21231-51d6-74e3-897c-32b48e650979",
+    "raw": "{\"sheet-59196\":[],\"sheet-59224\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"C3:E14\"}],\"sheet-59259\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L16\"}],\"sheet-59358\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"J6:L9\"}]}",
+    "usage": {
+      "input_tokens": 18198,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 453,
+      "reasoning_output_tokens": 371
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "text": [
+    {
+      "sector": "2023Q3/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/prepackaged_software-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-1",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q3/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/prepackaged_software-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q3/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0001528396",
+          "reason": "Reported sales YoY 13.67% then 5.09%. Target is step 2; preceding -3.50% versus target -12.09%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q3/prepackaged_software-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-1",
+      "alerts": []
+    }
+  ]
+}

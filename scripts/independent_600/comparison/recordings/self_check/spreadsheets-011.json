@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "939268ca2b055a5144c04cc82abe6f5354cbf6e721ade5fba76dab92694e8ac7",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-45063\": {\n    \"fills\": [{\"range\": \"B2:B6\", \"formula\": \"=IFNA(VLOOKUP(A2,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\"}],\n    \"formulas\": {}\n  },\n  \"sheet-45300\": {\n    \"fills\": [{\"range\": \"B1:B4\", \"formula\": \"=LEFT(A1,FIND(\\\"FT\\\",A1&\\\"FT\\\")-1)\"}],\n    \"formulas\": {}\n  },\n  \"sheet-45937\": {\n    \"fills\": [{\"range\": \"E7:E9\", \"formula\": \"=IF(COUNTIFS($H$20:$H$22,\\\"<=\\\"&C7,$I$20:$I$22,\\\">=\\\"&C7),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\\\"\\\")\"}],\n    \"formulas\": {}\n  },\n  \"sheet-46167\": {\n    \"formulas\": {\"D2\": \"=SUMIF(A2:A12,111111,B2:B12)\"}\n  }\n}",
+  "submissions": {
+    "sheet-45063": {
+      "fills": [
+        {
+          "range": "B2:B6",
+          "formula": "=IFNA(VLOOKUP(A2,Sheet2!$A$2:$B$6,2,FALSE),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-45300": {
+      "fills": [
+        {
+          "range": "B1:B4",
+          "formula": "=LEFT(A1,FIND(\"FT\",A1&\"FT\")-1)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-45937": {
+      "fills": [
+        {
+          "range": "E7:E9",
+          "formula": "=IF(COUNTIFS($H$20:$H$22,\"<=\"&C7,$I$20:$I$22,\">=\"&C7),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-46167": {
+      "formulas": {
+        "D2": "=SUMIF(A2:A12,111111,B2:B12)"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-3479-7d02-ab96-c2529d720c97",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 24259,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 262,
+    "reasoning_output_tokens": 0
+  }
+}

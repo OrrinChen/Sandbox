@@ -1,0 +1,435 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "b9888eddac8e5c5f83d10f522917744db406c7e952022355662c1baff380ad48",
+    "90623a1f1101ab1c1070f563218dda0af028248d64572a170d9bd201bb1abd05",
+    "ef6c5c25bdd1a8e0a6936cdfc83dd8f368a2d10a827fa408eeca5a5dd2e9b61a"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59196",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "formulas": {
+          "H3": "=INDEX($D$2:$G$2,1,MATCH(MAX(D3:G3),D3:G3,0))",
+          "H4": "=INDEX($D$2:$G$2,1,MATCH(MAX(D4:G4),D4:G4,0))",
+          "H5": "=INDEX($D$2:$G$2,1,MATCH(MAX(D5:G5),D5:G5,0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56472,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 826,
+        "reasoning_output_tokens": 371
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59224",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "E4:E14",
+            "formula": "=IF(AND($B$2>C4,$B$2<D4),\"Select Period\",IF(AND($B$2>C4,$B$2<D4),\"Select Period\",IF(AND($B$2<C4,COUNTIF($C$4:C3,\"Select Period\")>0),\"Select Period\",\"Do Not Select\")))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C3:E14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C3:E14",
+            "range_size": 36,
+            "cells": [
+              [
+                "C3",
+                "On or after"
+              ],
+              [
+                "D3",
+                "To"
+              ],
+              [
+                "E3",
+                "Initial Date"
+              ],
+              [
+                "C4",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "D4",
+                "2020-12-31 00:00:00"
+              ],
+              [
+                "E4",
+                "Do Not Select"
+              ],
+              [
+                "C5",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "D5",
+                "2020-09-30 00:00:00"
+              ],
+              [
+                "E5",
+                "Do Not Select"
+              ],
+              [
+                "C6",
+                "2020-04-01 00:00:00"
+              ],
+              [
+                "D6",
+                "2020-06-30 00:00:00"
+              ],
+              [
+                "E6",
+                "Do Not Select"
+              ],
+              [
+                "C7",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "D7",
+                "2020-03-31 00:00:00"
+              ],
+              [
+                "E7",
+                "Do Not Select"
+              ],
+              [
+                "C8",
+                "2019-10-01 00:00:00"
+              ],
+              [
+                "D8",
+                "2019-12-31 00:00:00"
+              ],
+              [
+                "E8",
+                "Do Not Select"
+              ],
+              [
+                "C9",
+                "2019-07-01 00:00:00"
+              ],
+              [
+                "D9",
+                "2019-09-30 00:00:00"
+              ],
+              [
+                "E9",
+                "Select Period"
+              ],
+              [
+                "C10",
+                "2019-04-01 00:00:00"
+              ],
+              [
+                "D10",
+                "2019-06-30 00:00:00"
+              ],
+              [
+                "E10",
+                "Do Not Select"
+              ],
+              [
+                "C11",
+                "2019-01-01 00:00:00"
+              ],
+              [
+                "D11",
+                "2019-03-31 00:00:00"
+              ],
+              [
+                "E11",
+                "Do Not Select"
+              ],
+              [
+                "C12",
+                "2018-10-01 00:00:00"
+              ],
+              [
+                "D12",
+                "2018-12-31 00:00:00"
+              ],
+              [
+                "E12",
+                "Do Not Select"
+              ],
+              [
+                "C13",
+                "2018-07-01 00:00:00"
+              ],
+              [
+                "D13",
+                "2018-09-30 00:00:00"
+              ],
+              [
+                "E13",
+                "Do Not Select"
+              ],
+              [
+                "C14",
+                "2018-04-01 00:00:00"
+              ],
+              [
+                "D14",
+                "2018-06-30 00:00:00"
+              ],
+              [
+                "E14",
+                "Do Not Select"
+              ]
+            ],
+            "total": 36,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 56472,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 826,
+        "reasoning_output_tokens": 371
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59259",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "J5:L16",
+            "formula": "=SUMIFS($E$5:$E$16,$C$5:$C$16,J$4,$F$5:$F$16,\"<=\"&$I5)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L16",
+            "range_size": 33,
+            "cells": [
+              [
+                "J6",
+                "0"
+              ],
+              [
+                "K6",
+                "0"
+              ],
+              [
+                "L6",
+                "100"
+              ],
+              [
+                "J7",
+                "0"
+              ],
+              [
+                "K7",
+                "0"
+              ],
+              [
+                "L7",
+                "100"
+              ],
+              [
+                "J8",
+                "0"
+              ],
+              [
+                "K8",
+                "0"
+              ],
+              [
+                "L8",
+                "100"
+              ],
+              [
+                "J9",
+                "0"
+              ],
+              [
+                "K9",
+                "0"
+              ],
+              [
+                "L9",
+                "100"
+              ],
+              [
+                "J10",
+                "250"
+              ],
+              [
+                "K10",
+                "0"
+              ],
+              [
+                "L10",
+                "100"
+              ]
+            ],
+            "total": 15,
+            "truncated": false,
+            "blank_count": 18
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 56472,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 826,
+        "reasoning_output_tokens": 371
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59358",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "L7:L9",
+            "formula": "=IFERROR(INDEX($F$2:$F$23,MATCH(1,INDEX(($B$2:$B$23=K7)*($D$2:$D$23=J7),0),0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L9",
+            "range_size": 12,
+            "cells": [
+              [
+                "J6",
+                "Match from D"
+              ],
+              [
+                "K6",
+                "Match from  B"
+              ],
+              [
+                "L6",
+                "Display"
+              ],
+              [
+                "J7",
+                "HCBPT"
+              ],
+              [
+                "K7",
+                "40023710"
+              ],
+              [
+                "J8",
+                "HCPF"
+              ],
+              [
+                "K8",
+                "40023710"
+              ],
+              [
+                "J9",
+                "HCSC"
+              ],
+              [
+                "K9",
+                "40023710"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 56472,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 826,
+        "reasoning_output_tokens": 371
+      },
+      "model_calls": 3
+    }
+  ]
+}

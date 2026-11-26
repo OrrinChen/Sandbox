@@ -1,0 +1,785 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "38993859dcb7c839138034391d2a980315d3c872bec3cc8800d48fe3530fb940",
+    "98a05dc8c42e1d0ce4f7aa83be8cb3ae4d4c733133bbc90b49fa202dc84e4659",
+    "614b60dca84607ea1be827d4dfbbc56b220afd4ae55771976e34f9f60162dd49"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-53167",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "submission": "",
+      "submission_status": "missing_or_invalid_json",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B3:E16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B3:E16",
+            "range_size": 56,
+            "cells": [
+              [
+                "B3",
+                "Serial Number"
+              ],
+              [
+                "C3",
+                "Date"
+              ],
+              [
+                "D3",
+                "Weight"
+              ],
+              [
+                "E3",
+                "Amount Used"
+              ],
+              [
+                "B4",
+                "A"
+              ],
+              [
+                "C4",
+                "2021-06-01 13:00:00"
+              ],
+              [
+                "D4",
+                "120"
+              ],
+              [
+                "E4",
+                "0"
+              ],
+              [
+                "B5",
+                "B"
+              ],
+              [
+                "C5",
+                "2021-06-01 13:10:00"
+              ],
+              [
+                "D5",
+                "120"
+              ],
+              [
+                "E5",
+                "0"
+              ],
+              [
+                "B6",
+                "A"
+              ],
+              [
+                "C6",
+                "2021-06-01 14:00:00"
+              ],
+              [
+                "D6",
+                "110"
+              ],
+              [
+                "E6",
+                "10"
+              ],
+              [
+                "B7",
+                "A"
+              ],
+              [
+                "C7",
+                "2021-06-01 14:10:00"
+              ],
+              [
+                "D7",
+                "105"
+              ],
+              [
+                "E7",
+                "5"
+              ],
+              [
+                "B8",
+                "A"
+              ],
+              [
+                "C8",
+                "2021-06-01 14:30:00"
+              ],
+              [
+                "D8",
+                "100"
+              ],
+              [
+                "E8",
+                "5"
+              ],
+              [
+                "B9",
+                "B"
+              ],
+              [
+                "C9",
+                "2021-06-02 12:00:00"
+              ],
+              [
+                "D9",
+                "110"
+              ],
+              [
+                "E9",
+                "10"
+              ],
+              [
+                "B10",
+                "C"
+              ],
+              [
+                "C10",
+                "2021-06-02 13:00:00"
+              ],
+              [
+                "D10",
+                "120"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "B11",
+                "C"
+              ],
+              [
+                "C11",
+                "2021-06-02 13:30:00"
+              ],
+              [
+                "D11",
+                "115"
+              ],
+              [
+                "B12",
+                "B"
+              ],
+              [
+                "C12",
+                "2021-06-02 14:00:00"
+              ],
+              [
+                "D12",
+                "102"
+              ],
+              [
+                "B13",
+                "B"
+              ],
+              [
+                "C13",
+                "2021-06-02 14:30:00"
+              ],
+              [
+                "D13",
+                "101"
+              ],
+              [
+                "B14",
+                "A"
+              ],
+              [
+                "C14",
+                "2021-06-03 15:00:00"
+              ],
+              [
+                "D14",
+                "95"
+              ],
+              [
+                "B15",
+                "D"
+              ],
+              [
+                "C15",
+                "2021-06-04 13:00:00"
+              ],
+              [
+                "D15",
+                "120"
+              ],
+              [
+                "B16",
+                "D"
+              ],
+              [
+                "C16",
+                "2021-06-04 17:00:00"
+              ],
+              [
+                "D16",
+                "100"
+              ]
+            ],
+            "total": 50,
+            "truncated": false,
+            "blank_count": 6
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 54939,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1485,
+        "reasoning_output_tokens": 308
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-53383",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "submission": "",
+      "submission_status": "missing_or_invalid_json",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "worksheet 1",
+            "range": "A1:B6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "worksheet 1",
+            "range": "A1:B6",
+            "range_size": 12,
+            "cells": [
+              [
+                "A1",
+                "worksheet 1"
+              ],
+              [
+                "A2",
+                "Name Column"
+              ],
+              [
+                "B2",
+                "status"
+              ],
+              [
+                "A3",
+                "name 1"
+              ],
+              [
+                "B3",
+                "ready for review"
+              ],
+              [
+                "A4",
+                "name 2"
+              ],
+              [
+                "B4",
+                "closed "
+              ],
+              [
+                "A5",
+                "name 3"
+              ],
+              [
+                "B5",
+                "open"
+              ],
+              [
+                "A6",
+                "name 4"
+              ],
+              [
+                "B6",
+                "ready for review"
+              ]
+            ],
+            "total": 11,
+            "truncated": false,
+            "blank_count": 1
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "worksheet2",
+            "range": "A1:C6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "worksheet2",
+            "range": "A1:C6",
+            "range_size": 18,
+            "cells": [
+              [
+                "A1",
+                "worksheet 2"
+              ],
+              [
+                "A2",
+                "Name Column"
+              ],
+              [
+                "B2",
+                "status"
+              ],
+              [
+                "C2",
+                "Match status (formula) column"
+              ],
+              [
+                "A3",
+                "name 1"
+              ],
+              [
+                "B3",
+                "ready for review"
+              ],
+              [
+                "C3",
+                "Matched"
+              ],
+              [
+                "A4",
+                "name 2"
+              ],
+              [
+                "B4",
+                "open"
+              ],
+              [
+                "C4",
+                "Not Matched"
+              ],
+              [
+                "A5",
+                "name 3"
+              ],
+              [
+                "B5",
+                "open"
+              ],
+              [
+                "A6",
+                "name 4"
+              ],
+              [
+                "B6",
+                "ready for review"
+              ]
+            ],
+            "total": 14,
+            "truncated": false,
+            "blank_count": 4
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 54939,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1485,
+        "reasoning_output_tokens": 308
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-54274",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "submission": "",
+      "submission_status": "missing_or_invalid_json",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 54939,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1485,
+        "reasoning_output_tokens": 308
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55085",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "submission": "",
+      "submission_status": "missing_or_invalid_json",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A1:K7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A1:K7",
+            "range_size": 77,
+            "cells": [
+              [
+                "H5",
+                "Net Purchase"
+              ],
+              [
+                "I5",
+                "Net Purchase"
+              ],
+              [
+                "J5",
+                "Net Purchase"
+              ],
+              [
+                "K5",
+                "Net Purchase"
+              ],
+              [
+                "D6",
+                "Cash Discount"
+              ],
+              [
+                "F6",
+                "Trade Discount"
+              ],
+              [
+                "H6",
+                "Shrawan"
+              ],
+              [
+                "I6",
+                "Shrawan"
+              ],
+              [
+                "J6",
+                "Bhadra"
+              ],
+              [
+                "K6",
+                "Bhadra"
+              ],
+              [
+                "B7",
+                "Items"
+              ],
+              [
+                "C7",
+                "Units"
+              ],
+              [
+                "D7",
+                "Quantity"
+              ],
+              [
+                "E7",
+                "Amount"
+              ],
+              [
+                "F7",
+                "Quantity"
+              ],
+              [
+                "G7",
+                "Amount"
+              ],
+              [
+                "H7",
+                "Quantity"
+              ],
+              [
+                "I7",
+                "Amount"
+              ],
+              [
+                "J7",
+                "Quantity"
+              ],
+              [
+                "K7",
+                "Amount"
+              ]
+            ],
+            "total": 20,
+            "truncated": false,
+            "blank_count": 57
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A8:K20"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Master-RM",
+            "range": "A8:K20",
+            "range_size": 143,
+            "cells": [
+              [
+                "B9",
+                "x"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "H9",
+                "32"
+              ],
+              [
+                "I9",
+                "65"
+              ],
+              [
+                "J9",
+                "63"
+              ],
+              [
+                "K9",
+                "63"
+              ],
+              [
+                "B10",
+                "y"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "H10",
+                "61"
+              ],
+              [
+                "I10",
+                "90"
+              ],
+              [
+                "J10",
+                "42"
+              ],
+              [
+                "K10",
+                "263"
+              ],
+              [
+                "B11",
+                "z"
+              ],
+              [
+                "E11",
+                "0"
+              ],
+              [
+                "H11",
+                "40"
+              ],
+              [
+                "I11",
+                "47"
+              ],
+              [
+                "J11",
+                "11"
+              ],
+              [
+                "K11",
+                "113"
+              ],
+              [
+                "A12",
+                "Apple"
+              ],
+              [
+                "B12",
+                "Total"
+              ],
+              [
+                "E12",
+                "0"
+              ],
+              [
+                "F12",
+                "0"
+              ],
+              [
+                "G12",
+                "0"
+              ],
+              [
+                "H12",
+                "133"
+              ],
+              [
+                "I12",
+                "202"
+              ],
+              [
+                "J12",
+                "116"
+              ],
+              [
+                "K12",
+                "439"
+              ],
+              [
+                "B14",
+                "Papa"
+              ],
+              [
+                "E14",
+                "0"
+              ],
+              [
+                "H14",
+                "61"
+              ],
+              [
+                "I14",
+                "90"
+              ],
+              [
+                "J14",
+                "42"
+              ],
+              [
+                "K14",
+                "263"
+              ],
+              [
+                "B15",
+                "Mummy"
+              ],
+              [
+                "E15",
+                "0"
+              ],
+              [
+                "H15",
+                "40"
+              ],
+              [
+                "I15",
+                "47"
+              ],
+              [
+                "J15",
+                "11"
+              ],
+              [
+                "B19",
+                "Moon"
+              ],
+              [
+                "E19",
+                "0"
+              ],
+              [
+                "H19",
+                "60"
+              ],
+              [
+                "I19",
+                "89"
+              ],
+              [
+                "J19",
+                "119"
+              ],
+              [
+                "K19",
+                "401"
+              ],
+              [
+                "A20",
+                "Banana"
+              ],
+              [
+                "B20",
+                "Total"
+              ],
+              [
+                "H20",
+                "96"
+              ],
+              [
+                "I20",
+                "155"
+              ],
+              [
+                "J20",
+                "220"
+              ],
+              [
+                "K20",
+                "721"
+              ]
+            ],
+            "total": 50,
+            "truncated": false,
+            "blank_count": 93
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 54939,
+        "cached_input_tokens": 35712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1485,
+        "reasoning_output_tokens": 308
+      },
+      "model_calls": 3
+    }
+  ]
+}

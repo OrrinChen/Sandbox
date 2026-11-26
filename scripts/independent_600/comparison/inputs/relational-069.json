@@ -1,0 +1,332 @@
+[
+  {
+    "task_id": "decision-shared-asset-exit-buyout",
+    "tool": "sqlite.query",
+    "instruction": "For each equipment buyout, calculate the departing partner’s payout and cite the applicable equipment bulletin. For the same asset_class, use the bulletin with the greatest start_month at or before exit_month. If two bulletins start in that month, use the greater revision_no. Class, start month and revision together are unique, and an applicable bulletin always exists. Month fields are integer indices on one common calendar. The rate_cents and floor_cents fields transcribe the bulletin’s monthly straight-line reduction and minimum equipment value. Count completed months as exit_month minus service_month, and apply the selected bulletin’s rate to all completed months. Apply its floor to the whole equipment value, then multiply by the departing partner’s stake_bp in basis points (10000 means full ownership). Round the nonnegative payout down to whole cents only at the end. Asset codes and source IDs are unique within their respective tables. All fields are non-NULL. Return one row per buyout in ascending binary asset_code order with columns asset_code, payout_cents, source_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "equipment_exit": {
+        "columns": [
+          "asset_code TEXT",
+          "asset_class TEXT",
+          "service_month INTEGER",
+          "exit_month INTEGER",
+          "cost_cents INTEGER",
+          "stake_bp INTEGER"
+        ],
+        "rows": [
+          [
+            "Press",
+            "bench",
+            2,
+            9,
+            1550,
+            2500
+          ],
+          [
+            "Rack",
+            "bench",
+            0,
+            12,
+            1400,
+            5000
+          ],
+          [
+            "Tray",
+            "cart",
+            5,
+            10,
+            1100,
+            3333
+          ]
+        ]
+      },
+      "rate_bulletin": {
+        "columns": [
+          "source_id TEXT",
+          "asset_class TEXT",
+          "start_month INTEGER",
+          "revision_no INTEGER",
+          "rate_cents INTEGER",
+          "floor_cents INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "B1",
+            "bench",
+            0,
+            1,
+            100,
+            200,
+            "Reduce bench value by 100 cents per completed month, down to 200 cents."
+          ],
+          [
+            "B2",
+            "bench",
+            10,
+            1,
+            90,
+            250,
+            "Use 90 cents per month for benches and retain at least 250 cents."
+          ],
+          [
+            "B3",
+            "bench",
+            10,
+            2,
+            110,
+            300,
+            "Corrected bench schedule uses 110 cents monthly with a 300-cent minimum."
+          ],
+          [
+            "C1",
+            "cart",
+            0,
+            1,
+            80,
+            100,
+            "Reduce cart value by 80 cents monthly to a minimum of 100 cents."
+          ],
+          [
+            "C2",
+            "cart",
+            11,
+            1,
+            60,
+            150,
+            "Cart values decline by 60 cents monthly with a 150-cent floor."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "asset_code",
+      "payout_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-shared-circuit-kiln-dispatch",
+    "tool": "sqlite.query",
+    "instruction": "Start the glaze and bisque loads simultaneously, assigning each to a different kiln. Each firing_options row is an available load–kiln pairing with its duration in minutes, constant draw in kilowatts and total firing price in cents. An absent pairing is unavailable. The single circuit_notice row records the binding combined draw limit. Minimize the minutes until both loads finish, then minimize total cents, then choose the lexicographically smallest (glaze kiln, bisque kiln) pair under SQLite BINARY ordering. All fields are non-null, pairings are unique and a feasible assignment exists. Return one row with columns glaze_kiln, bisque_kiln, finish_min, total_cents, source_id. Cite the circuit notice that governs the assignment. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "circuit_notice": {
+        "columns": [
+          "source_id TEXT",
+          "limit_kw INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "CN-14",
+            10,
+            "The kiln feeder may carry 10 kW across all active kilns."
+          ]
+        ]
+      },
+      "firing_options": {
+        "columns": [
+          "load_kind TEXT",
+          "kiln_id TEXT",
+          "run_min INTEGER",
+          "draw_kw INTEGER",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "glaze",
+            "A",
+            6,
+            7,
+            100
+          ],
+          [
+            "glaze",
+            "B",
+            8,
+            4,
+            65
+          ],
+          [
+            "glaze",
+            "C",
+            7,
+            5,
+            80
+          ],
+          [
+            "bisque",
+            "A",
+            5,
+            6,
+            70
+          ],
+          [
+            "bisque",
+            "B",
+            6,
+            6,
+            85
+          ],
+          [
+            "bisque",
+            "C",
+            9,
+            3,
+            40
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "glaze_kiln",
+      "bisque_kiln",
+      "finish_min",
+      "total_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-shared-crate-loan-pair",
+    "tool": "sqlite.query",
+    "instruction": "Select exactly two distinct loans for the entrance alcove within its 760-cent booking budget. Each loan incurs its own handling charge. The carrier also charges the listed crate fee once for each crate code used by the pair. Loans with the same crate code can travel together. Maximize combined interpretation points, then minimize total booking cost, then choose the lexicographically smallest pair of loan codes using SQLite BINARY order. Loan codes are unique, every crate code has exactly one fee, and all fields are non-null. Return one row with columns first_loan, second_loan, booking_cents, total_points, placing the smaller loan code first. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crate_tariff": {
+        "columns": [
+          "crate_code TEXT",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "reed",
+            200
+          ],
+          [
+            "clay",
+            100
+          ]
+        ]
+      },
+      "loan_offer": {
+        "columns": [
+          "loan_code TEXT",
+          "crate_code TEXT",
+          "handling_cents INTEGER",
+          "interpretation_points INTEGER"
+        ],
+        "rows": [
+          [
+            "arch",
+            "reed",
+            300,
+            10
+          ],
+          [
+            "bell",
+            "reed",
+            260,
+            9
+          ],
+          [
+            "coil",
+            "clay",
+            200,
+            7
+          ],
+          [
+            "dial",
+            "clay",
+            180,
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_loan",
+      "second_loan",
+      "booking_cents",
+      "total_points"
+    ]
+  },
+  {
+    "task_id": "decision-shared-yard-highest-value-use",
+    "tool": "sqlite.query",
+    "instruction": "Determine the highest-value feasible use of an acquired two-pad yard as one property. Choose exactly one use from each pad, A and B. An idle option is available only when listed. The single yard_terms row gives the connection's total simultaneous load capacity, the maximum combined conversion outlay a market participant can fund, and a one-time activation cost for a shared connection. Load is measured in integer capacity units and all financial inputs are total integer cents. Each use's gross_pv is the present value of its operating proceeds before conversion and activation. Pay activation once if either selected option has positive load. Activation counts toward both outlay and valuation cost. Both the combined load and total outlay must be within their respective limits, inclusive. Maximize combined gross_pv less total outlay. Break equal-value ties by smaller total outlay, then ascending A use_code, then ascending B use_code using binary text ordering. All inputs are nonnull, codes are unique within a pad, and at least one pair is feasible. Return one row with pad_a_use, pad_b_use, outlay_cents, yard_value_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pad_option": {
+        "columns": [
+          "pad_code TEXT",
+          "use_code TEXT",
+          "load_units INTEGER",
+          "conversion_cents INTEGER",
+          "gross_pv INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "store",
+            0,
+            0,
+            60000
+          ],
+          [
+            "A",
+            "chill",
+            4,
+            25000,
+            135000
+          ],
+          [
+            "A",
+            "pack",
+            2,
+            15000,
+            108000
+          ],
+          [
+            "B",
+            "store",
+            0,
+            0,
+            48000
+          ],
+          [
+            "B",
+            "chill",
+            4,
+            20000,
+            125000
+          ],
+          [
+            "B",
+            "pack",
+            2,
+            14000,
+            99000
+          ]
+        ]
+      },
+      "yard_terms": {
+        "columns": [
+          "load_cap INTEGER",
+          "outlay_cap INTEGER",
+          "activation_cents INTEGER"
+        ],
+        "rows": [
+          [
+            6,
+            45000,
+            10000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "pad_a_use",
+      "pad_b_use",
+      "outlay_cents",
+      "yard_value_cents"
+    ]
+  }
+]

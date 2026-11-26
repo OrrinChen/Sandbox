@@ -1,0 +1,72 @@
+{
+  "text": [
+    {
+      "sector": "2023Q1/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0000772406",
+          "reason": "Cirrus reported 8% year-over-year net sales growth in the December quarter (A). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and more content per smartphone also lifted mixed-signal sales despite lower smartphone battery and power product sales (D). I expect those offsets to keep March-quarter growth above -5%, then weaken enough for June-quarter net sales to fall at least 5% year over year."
+        }
+      ]
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q1/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0000772406",
+          "reason": "Consolidated net sales growth slowed from 16.03% YoY in September to 7.70% in December (A and historical sales). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and content gains also supported mixed-signal sales as smartphone battery and power product sales fell (D). A slowdown of roughly eight percentage points per quarter would put the intervening quarter near flat and the target quarter beginning March 26 below −5.00% YoY."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q1/food_manufacturing-3",
+      "alerts": [
+        {
+          "cik": "0000785956",
+          "reason": "Reported sales YoY 23.95% then 10.32%. Target is step 2; preceding -3.32% versus target -16.95%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q1/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0000772406",
+          "reason": "Reported sales YoY 16.03% then 7.70%. Target is step 2; preceding -0.63% versus target -8.96%."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "8a61edcd2f04acfd28da3169527ff4b6a6541273985c48af5085ecc2a935165a",
+    "72aab2e33fc3f7eb38845674d604d3c6bdd2f3f24fbdcf7997ccb519d7b5f52a",
+    "88e79ce6549739fb94e9ec9a3c7a759b7d177cbe02053c5b590dcdce187a83bf"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-39604",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(B4<=20,0,IF(B3*1000<22000,B4-20,B4-30))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56159,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 585
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40478",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B1:B3",
+            "formula": "=IFERROR(TRIM(MID(A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1,FIND(\"-\",A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1)-FIND(\" \",A1,FIND(\" \",A1)+1)-1)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56159,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 585
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40757",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B10:B11",
+            "formula": "=IF(SUMPRODUCT(--(TEXT($A$3:$A$8,\"mmmm\")=TRIM(A10)),--ISNUMBER($A$3:$A$8),--ISNUMBER($B$3:$B$8),--($B$3:$B$8<>0))=0,\"\",SUMPRODUCT(--(TEXT($A$3:$A$8,\"mmmm\")=TRIM(A10)),--ISNUMBER($A$3:$A$8),$B$3:$B$8))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B11",
+            "range_size": 22,
+            "cells": [
+              [
+                "A2",
+                "Date"
+              ],
+              [
+                "B2",
+                "Amount"
+              ],
+              [
+                "A3",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "B3",
+                "2"
+              ],
+              [
+                "A4",
+                "2022-07-22 00:00:00"
+              ],
+              [
+                "B4",
+                "2"
+              ],
+              [
+                "A5",
+                "2022-08-15 00:00:00"
+              ],
+              [
+                "B5",
+                "3"
+              ],
+              [
+                "A6",
+                "2022-08-19 00:00:00"
+              ],
+              [
+                "B6",
+                "3"
+              ],
+              [
+                "B9",
+                "Result"
+              ],
+              [
+                "A10",
+                "July"
+              ],
+              [
+                "A11",
+                "August"
+              ]
+            ],
+            "total": 13,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 56159,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 585
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40892",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B17",
+            "formula": "=XLOOKUP(1,($D$3:$D$17<>\"\")*ISNUMBER(SEARCH(\" \"&TRIM($D$3:$D$17)&\" \",\" \"&TRIM(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(A2,\",\",\" \"),\".\",\" \"),\"/\",\" \"),\"-\",\" \"),\"(\",\" \"),\")\",\" \"),\":\",\" \"))&\" \")),$D$3:$D$17,\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17",
+            "range_size": 68,
+            "cells": [
+              [
+                "A1",
+                "Product Name"
+              ],
+              [
+                "B1",
+                "Needs to return value from list when A2 etc matches "
+              ],
+              [
+                "D1",
+                "List"
+              ],
+              [
+                "A2",
+                "Dress with red details"
+              ],
+              [
+                "B2",
+                "Red"
+              ],
+              [
+                "D2",
+                "Colour"
+              ],
+              [
+                "A3",
+                "Jumper Gold"
+              ],
+              [
+                "B3",
+                "Gold"
+              ],
+              [
+                "D3",
+                "Red"
+              ],
+              [
+                "A4",
+                "Red Jumper"
+              ],
+              [
+                "B4",
+                "Red"
+              ],
+              [
+                "D4",
+                "Gold"
+              ],
+              [
+                "A5",
+                "Blue Jumper"
+              ],
+              [
+                "D5",
+                "Red"
+              ],
+              [
+                "A6",
+                "Black Trousers"
+              ],
+              [
+                "D6",
+                "Blue"
+              ],
+              [
+                "A7",
+                "Dress with Red detail"
+              ],
+              [
+                "D7",
+                "Black"
+              ],
+              [
+                "A8",
+                "Orange Jumpsuits"
+              ],
+              [
+                "D8",
+                "Red"
+              ],
+              [
+                "A9",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A10",
+                "Purple Scarf"
+              ],
+              [
+                "A11",
+                "Top Red"
+              ],
+              [
+                "A12",
+                "Trousers Black "
+              ],
+              [
+                "A13",
+                "Orange Jumpsuits"
+              ],
+              [
+                "A14",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A15",
+                "Purple Scarf"
+              ],
+              [
+                "A16",
+                "Top Red"
+              ],
+              [
+                "A17",
+                "Trousers Black "
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 39
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 56159,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 585
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24387,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 324,
+    "reasoning_output_tokens": 101
+  },
+  "thread": "01a20d8e-04f1-7e70-afd9-bc15bf009b1b",
+  "packet_sha256": "2b734ec72136903281f7be4f09c237f76143da21bc33fc7d10ed1fb7cfbab2cb",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q2/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000813298\",\n          \"reason\": \"Destination XL’s fiscal 2022 sales grew 8.1% (A), while year-end inventory rose 13.7%, from $81.8 million to $93.0 million (C). I forecast that year-over-year net sales growth stays above -5.00% in the preceding quarter but reaches -5.00% or lower in the quarter starting April 30 as slower sell-through creates pressure to mark down merchandise. The timing is the least certain part of the forecast because A and C give annual figures.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q2/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q2/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000813298",
+            "reason": "Destination XL’s fiscal 2022 sales grew 8.1% (A), while year-end inventory rose 13.7%, from $81.8 million to $93.0 million (C). I forecast that year-over-year net sales growth stays above -5.00% in the preceding quarter but reaches -5.00% or lower in the quarter starting April 30 as slower sell-through creates pressure to mark down merchandise. The timing is the least certain part of the forecast because A and C give annual figures."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23038,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 187,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d91-c317-7102-a9cf-d428945770ab",
+  "packet_sha256": "586c6e1aa8f879073a0c9dfa4b9d64012246fe7de4a2eb31a928f69a03bc6d1e",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2025Q2/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000016918\",\n          \"reason\": \"February consolidated net sales rose 1.17% year over year. Beer shipment growth and pricing offset weaker branded wine and spirits shipments (A), supporting a forecast above -5.00% for March–May. The SVEDKA sale and wine assets held for sale (E) could remove enough prior-year sales from the June–August comparison to push reported growth to -5.00% or below. The timing and size of the wine divestiture remain uncertain.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q2/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q2/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000016918",
+            "reason": "February consolidated net sales rose 1.17% year over year. Beer shipment growth and pricing offset weaker branded wine and spirits shipments (A), supporting a forecast above -5.00% for March–May. The SVEDKA sale and wine assets held for sale (E) could remove enough prior-year sales from the June–August comparison to push reported growth to -5.00% or below. The timing and size of the wine divestiture remain uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

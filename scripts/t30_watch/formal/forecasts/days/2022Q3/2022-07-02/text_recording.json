@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24803,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 246,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8b-7720-7da0-8cd9-b316fa21060c",
+  "packet_sha256": "cf2b69f706dc95316da27897c7b293d18cb0772724fa32ad3abbaab2c43eaa38",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q3/food_manufacturing-1\",\"alerts\":[]},{\"sector\":\"2022Q3/prepackaged_software-1\",\"alerts\":[]},{\"sector\":\"2022Q3/prepackaged_software-2\",\"alerts\":[]},{\"sector\":\"2022Q3/retail-1\",\"alerts\":[]},{\"sector\":\"2022Q3/semiconductors-1\",\"alerts\":[]},{\"sector\":\"2022Q3/semiconductors-2\",\"alerts\":[]},{\"sector\":\"2022Q3/semiconductors-3\",\"alerts\":[{\"cik\":\"0001045810\",\"reason\":\"Gaming revenue grew 31% year over year and 6% sequentially (A), supporting a forecast that consolidated revenue growth stays above -5% in the quarter before the target. Inventory provisions nevertheless rose from $58 million to $90 million year over year (C), and NVIDIA said cryptocurrency volatility had affected mining demand and made product demand harder to estimate (D). I forecast that a slowdown in GPU purchases takes consolidated revenue growth to -5% or below in the quarter beginning in August. The timing is uncertain.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-3",
+        "alerts": [
+          {
+            "cik": "0001045810",
+            "reason": "Gaming revenue grew 31% year over year and 6% sequentially (A), supporting a forecast that consolidated revenue growth stays above -5% in the quarter before the target. Inventory provisions nevertheless rose from $58 million to $90 million year over year (C), and NVIDIA said cryptocurrency volatility had affected mining demand and made product demand harder to estimate (D). I forecast that a slowdown in GPU purchases takes consolidated revenue growth to -5% or below in the quarter beginning in August. The timing is uncertain."
+          }
+        ]
+      }
+    ]
+  }
+}

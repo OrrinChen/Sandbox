@@ -1,0 +1,46 @@
+{
+  "date": null,
+  "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359423000055/ex99_1earningsreleaseq3fy23.htm",
+  "basis": "August 3, 2023 is the earliest date I could verify for the full consolidated revenue figure. MACOM reported fiscal Q3 revenue of $148,522,000 against $172,259,000 a year earlier, below the $163,646,050 threshold. The May 4 forecast capped revenue at $150,000,000 but expressly excluded OMMIC, which closed during Q3. I could not verify a contemporaneous upper bound on OMMIC’s contribution or complete primary-source coverage of intervening public management remarks. The earliest qualifying date therefore remains unresolved.",
+  "coverage": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359423000032/ex99_1earningsreleaseq1fy23.htm",
+      "detail": "February 2, preceding earnings cycle. MACOM guided revenue to $166 million–$170 million for fiscal Q2 ending March 31. The release gave no revenue range for fiscal Q3 ending June 30."
+    },
+    {
+      "url": "https://ir.macom.com/static-files/739dcca2-dea1-427e-afd0-dfa0b591d63c",
+      "detail": "February 2, OMMIC agreement. MACOM disclosed an expected purchase price of €38.5 million and an anticipated fiscal Q2 closing. It gave no estimate of OMMIC’s June-quarter revenue."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359423000043/ex99_1earningsreleaseq2fy23.htm",
+      "detail": "May 4, fiscal Q2 release. The $145 million–$150 million range explicitly covered fiscal Q3 ending June 30 and excluded all revenue from the pending OMMIC acquisition. At the high end, OMMIC could contribute at most $13,646,050 for the combined forecast to meet the threshold. The release supplied no such ceiling."
+    },
+    {
+      "url": "https://ir.macom.com/news-releases/news-release-details/macom-report-second-quarter-fiscal-year-2023-financial-results",
+      "detail": "MACOM scheduled its May 4 management call for 8:30 a.m. Eastern and announced a replay window of approximately 90 days. Searchable call excerpts repeated the OMMIC exclusion. I could not verify the complete Q&A against an issuer recording or transcript."
+    },
+    {
+      "url": "https://ir.macom.com/sec-filings/sec-filing/8-k/0001493594-23-000049",
+      "detail": "May 25, intervening Form 8-K. The Item 5.02 filing concerned an executive retirement and supplied no updated Q3 revenue range."
+    },
+    {
+      "url": "https://ir.macom.com/news-releases/news-release-details/macom-establishes-european-semiconductor-center/",
+      "detail": "May 31. MACOM announced completion of the OMMIC acquisition a month before quarter end. The announcement gave neither a revenue contribution estimate nor revised consolidated guidance."
+    },
+    {
+      "url": "https://ir.macom.com/news-releases?NumberPerPage=10&PageNum=4&SortOrder=Date+Descending&mobile=1&page=8",
+      "detail": "The issuer’s archive lists June technical announcements and a July 19 contract announcement. The July 20 earnings notice scheduled the August 3 release. No preliminary Q3 consolidated revenue figure surfaced in the archive or in searches for interim guidance and investor presentations."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359423000055/ex99_1earningsreleaseq3fy23.htm",
+      "detail": "August 3, actual results. The consolidated statements of operations, in thousands of dollars, show revenue of 148,522 for the three months ended June 30, 2023 and 172,259 for the three months ended July 1, 2022. MACOM reported a 13.8% year-over-year decline."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1493594/000149359423000057/mtsi-20230630.htm",
+      "detail": "The Q3 Form 10-Q confirms the May 31 closing and describes the acquired operation’s post-closing results as immaterial. That retrospective assessment supplies no numerical upper bound that was public on May 4."
+    }
+  ],
+  "comparison_type": "usd",
+  "upper_bound": "148522000",
+  "publication_date_evidence": "MACOM’s actual-results release is datelined August 3, 2023 and states that the company announced the results that day. The URL and upper_bound identify that verified public release and its exact reported revenue. The missing evidence concerns whether an earlier public communication established the same threshold on the full consolidated basis."
+}

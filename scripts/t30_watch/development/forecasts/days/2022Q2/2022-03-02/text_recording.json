@@ -1,0 +1,59 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32096,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 460,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7c-df21-7b33-8ae7-dd073b6c68ab",
+  "packet_sha256": "17230c9c6ee60aa36d737928880d886bd3ada71abece6851e3b2f4369f2330c6",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q2/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q2/industrial_machinery-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000026324\",\n          \"reason\": \"Curtiss-Wright reported a 2% sales decline as industrial gains only partly offset commercial aerospace weakness (A). Orders rose 11% (B), supporting a forecast that March-quarter sales stay above −5% year over year. Disruptions affecting both Curtiss-Wright and its suppliers (C) could delay shipments enough to push June-quarter sales to −5% or worse.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q2/prepackaged_software-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000718877\",\n          \"reason\": \"Activision segment net bookings fell $464 million as several titles generated fewer bookings than their comparators (B), while full-year consolidated revenue grew 9% (A). Deferred revenue on online-enabled products (C, D) could cushion the March quarter and delay the impact of weaker bookings, supporting a forecast of consolidated revenue growth above −5% in March and at or below −5% in June.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q2/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q2/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"Higher industrial unit sales outside China had offset falling Chinese unit sales and lower average selling prices (D). That offset supports a forecast of March-quarter revenue growth above −5%. Customers delaying capital spending and implementation (B) could weaken unit sales outside China enough to push consolidated revenue growth to −5% or worse in June.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q2/transportation-1\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000026324",
+            "reason": "Curtiss-Wright reported a 2% sales decline as industrial gains only partly offset commercial aerospace weakness (A). Orders rose 11% (B), supporting a forecast that March-quarter sales stay above −5% year over year. Disruptions affecting both Curtiss-Wright and its suppliers (C) could delay shipments enough to push June-quarter sales to −5% or worse."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Activision segment net bookings fell $464 million as several titles generated fewer bookings than their comparators (B), while full-year consolidated revenue grew 9% (A). Deferred revenue on online-enabled products (C, D) could cushion the March quarter and delay the impact of weaker bookings, supporting a forecast of consolidated revenue growth above −5% in March and at or below −5% in June."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "Higher industrial unit sales outside China had offset falling Chinese unit sales and lower average selling prices (D). That offset supports a forecast of March-quarter revenue growth above −5%. Customers delaying capital spending and implementation (B) could weaken unit sales outside China enough to push consolidated revenue growth to −5% or worse in June."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/transportation-1",
+        "alerts": []
+      }
+    ]
+  }
+}

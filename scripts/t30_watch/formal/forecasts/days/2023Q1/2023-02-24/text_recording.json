@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23190,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 191,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-d089-7c93-93ff-b14b86215d53",
+  "packet_sha256": "d0c90c3649822fe7e0f2c03050f7dfd1e6b9b93dd5cf68d0d1bfd618a23f3368",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2023Q1/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/semiconductors-1\",\"alerts\":[{\"cik\":\"0000772406\",\"reason\":\"Cirrus reported 8% year-over-year net sales growth in the December quarter (A). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and more content per smartphone also lifted mixed-signal sales despite lower smartphone battery and power product sales (D). I expect those offsets to keep March-quarter growth above -5%, then weaken enough for June-quarter net sales to fall at least 5% year over year.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0000772406",
+            "reason": "Cirrus reported 8% year-over-year net sales growth in the December quarter (A). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and more content per smartphone also lifted mixed-signal sales despite lower smartphone battery and power product sales (D). I expect those offsets to keep March-quarter growth above -5%, then weaken enough for June-quarter net sales to fall at least 5% year over year."
+          }
+        ]
+      }
+    ]
+  }
+}

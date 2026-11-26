@@ -1,0 +1,24 @@
+SpreadsheetBench dataset attribution
+
+Source: SpreadsheetBench by Zeyao Ma, Bohan Zhang, Jing Zhang, Jifan Yu,
+Xiaokang Zhang, Xiaohan Zhang, Sijia Luo, Xi Wang, and Jie Tang.
+Verified subset developed with Shortcut.AI / Fundamental Research Labs.
+https://github.com/RUCKBReasoning/SpreadsheetBench
+https://huggingface.co/datasets/KAKA22/SpreadsheetBench/tree/ab0b742b0fc95b946f212d80ac7771b5531272e4
+Article: https://arxiv.org/abs/2406.14991
+
+This dataset and the adapted spreadsheet fixtures in this directory are
+distributed under Creative Commons Attribution-ShareAlike 4.0 International.
+License text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Changes by Sandbox: selected independently usable offline cell-formula
+problems, projected source workbooks to visible input values and date/time
+formats, removed metadata, links and macros, added formula-edit instructions,
+regrouped the public problem IDs, and added scorer-only reference formulas
+and a tested incorrect edit. The source archive, question ID, and SHA-256
+hashes of the original input and golden workbook accompany each task.
+The scorer also verifies the same formulas on a second, independently supplied
+workbook with different expected target values. Both workbooks represent one
+original forum problem. The gold files and source
+questions are already publicly released upstream. The split controls reuse
+in this local study; it makes no claim about prior model training exposure.

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-010",
+    "stage": "submit",
+    "prompt_sha256": "1c254998a918864a6154663d301c412d2ccfb97aaf8e6bd90c2c15c9fa3cd2ad",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d7-4948-7a20-8c98-bb9885a81d70",
+    "raw": "{\n  \"sheet-44264\": {\n    \"fills\": [\n      {\n        \"range\": \"J7:N9\",\n        \"formula\": \"=IF(AND(J$6>=$H7,J$6<$H7+ROWS($R$7:$R$9)),$G7*INDEX($R$7:$R$9,J$6-$H7+1),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-44266\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B12\",\n        \"formula\": \"=IF(A2=\\\"\\\",\\\"\\\",IFERROR(INDEX(Data!$G$14:$O$14,1,MATCH(A2,Data!$F$4:$N$4,0)),\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-44628\": {\n    \"fills\": [\n      {\n        \"range\": \"D3:G3\",\n        \"formula\": \"=SUMIF($A:$A,D$2&\\\"*\\\",$B:$B)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45030\": {\n    \"fills\": [\n      {\n        \"range\": \"B7:B28\",\n        \"formula\": \"=IF(C7=\\\"\\\",\\\"\\\",IF(C7>=$E$7,$E$7,IF(COUNTIFS($E$8:$E$19,\\\"<=\\\"&C7,$F$8:$F$19,\\\">\\\"&C7)=0,\\\"\\\",SUMIFS($E$8:$E$19,$E$8:$E$19,\\\"<=\\\"&C7,$F$8:$F$19,\\\">\\\"&C7))))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20537,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1364,
+      "reasoning_output_tokens": 979
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

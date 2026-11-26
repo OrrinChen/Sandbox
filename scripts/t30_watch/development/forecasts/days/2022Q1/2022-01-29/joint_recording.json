@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22400,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 140,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7e-4225-7572-adae-52d10c5fa124",
+  "packet_sha256": "161132482e1c2622880a44b13c7e97905d066f165855206317b62597ab2f3f81",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q1/food_manufacturing-1\",\"alerts\":[{\"cik\":\"0001005286\",\"reason\":\"Landec’s consolidated revenue decline narrowed from 5.05% in August to 1.08% in November. Lifecore’s revenue growth (B) supports a forecast that the intervening quarter stays above −5.00%. Curation Foods’ planned reduction in its legacy vegetable and tray business (A) could outweigh that growth by the quarter starting February 28, pushing reported consolidated revenue to a decline of at least 5.00% year over year.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0001005286",
+            "reason": "Landec’s consolidated revenue decline narrowed from 5.05% in August to 1.08% in November. Lifecore’s revenue growth (B) supports a forecast that the intervening quarter stays above −5.00%. Curation Foods’ planned reduction in its legacy vegetable and tray business (A) could outweigh that growth by the quarter starting February 28, pushing reported consolidated revenue to a decline of at least 5.00% year over year."
+          }
+        ]
+      }
+    ]
+  }
+}

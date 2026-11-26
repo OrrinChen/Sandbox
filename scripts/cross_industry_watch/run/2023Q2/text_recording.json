@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 33011,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 264,
+    "reasoning_output_tokens": 16
+  },
+  "thread": "01a2036b-c002-70c2-b14b-5a3d02e1610d",
+  "packet_sha256": "4ac8edd10c83941c98310f3dc6688d801d385b3dbd32214fec3ede5c783cb8cf",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[{\"cik\":\"0000023217\",\"reason\":\"Slot A reports Q3 net sales growth, but slot B says volumes fell 10% year on year in Q3 and 9% over the first three quarters. If that volume weakness persists and price or mix offsets less of it, reported net sales could fall at least 5% in either of the next two quarters.\"}]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[]},\n    {\"sector\":\"semiconductors\",\"alerts\":[]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[]},\n    {\"sector\":\"transportation\",\"alerts\":[{\"cik\":\"0000878927\",\"reason\":\"Slot A reports Q1 revenue down 3.7% year on year and LTL tons down 11.9%. With revenue just 1.3 percentage points above the threshold, a modest further loss of tonnage or a smaller offset from revenue per ton could push the decline to 5% in Q2 or Q3.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "Slot A reports Q3 net sales growth, but slot B says volumes fell 10% year on year in Q3 and 9% over the first three quarters. If that volume weakness persists and price or mix offsets less of it, reported net sales could fall at least 5% in either of the next two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0000878927",
+            "reason": "Slot A reports Q1 revenue down 3.7% year on year and LTL tons down 11.9%. With revenue just 1.3 percentage points above the threshold, a modest further loss of tonnage or a smaller offset from revenue per ton could push the decline to 5% in Q2 or Q3."
+          }
+        ]
+      }
+    ]
+  }
+}

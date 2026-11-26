@@ -1,0 +1,66 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 27878,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 474,
+    "reasoning_output_tokens": 11
+  },
+  "thread": "01a20d8a-099d-7bf0-b8cb-cbb8eca4c61c",
+  "packet_sha256": "13d407b60bff079ddf8e39c4cbe1a9b953b5d31a17b7648ebed9b39677aaab89",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2021Q2/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000100493\",\n          \"reason\": \"I forecast sales growth above −5% in the intervening quarter and a decline of at least 5% in the quarter starting March 28. Year-over-year sales growth fell from +5.29% to −3.28%. Lower volume cut quarterly sales by $480 million, and retail volume gains fell short of foodservice losses (A, B). Persistent volume pressure could close the remaining 1.72-percentage-point gap.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2021Q2/food_manufacturing-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/retail-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/semiconductors-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/semiconductors-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000912093\",\n          \"reason\": \"Year-over-year revenue growth improved from −5.04% to −4.40% (A). I forecast it will stay above −5% in the intervening quarter. With the latest decline only 0.60 percentage points from the threshold, continued pressure on Field Instruments demand (B) could push consolidated revenue growth back to −5% or lower in the quarter starting March 28.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000100493",
+            "reason": "I forecast sales growth above −5% in the intervening quarter and a decline of at least 5% in the quarter starting March 28. Year-over-year sales growth fell from +5.29% to −3.28%. Lower volume cut quarterly sales by $480 million, and retail volume gains fell short of foodservice losses (A, B). Persistent volume pressure could close the remaining 1.72-percentage-point gap."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "Year-over-year revenue growth improved from −5.04% to −4.40% (A). I forecast it will stay above −5% in the intervening quarter. With the latest decline only 0.60 percentage points from the threshold, continued pressure on Field Instruments demand (B) could push consolidated revenue growth back to −5% or lower in the quarter starting March 28."
+          }
+        ]
+      }
+    ]
+  }
+}

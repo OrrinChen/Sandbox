@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-003",
+    "stage": "submit",
+    "prompt_sha256": "6619030531b4cf170fd54ad4804756d1783f12a76e04bc7362ce883820d6af8d",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122a-5ca9-7031-ae12-9156aabc14fa"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-34210\":{\"formulas\":{\"C1\":\"=A1\",\"C2\":\"=IF(A2=\\\"\\\",C1,A2)\"}},\"sheet-35739\":{\"fills\":[{\"range\":\"C2:C100\",\"formula\":\"=IF(OR(A2=\\\"\\\",B2=\\\"\\\"),\\\"\\\",MOD(B2-TIME(0,30,0),1))\"}],\"formulas\":{}},\"sheet-35747\":{\"formulas\":{\"M2\":\"=SUMPRODUCT(($A$2:$A$11=$L2)*($B$2:$J$11>100)*($B$1:$J$1>=$M$1)*($B$1:$J$1<$N$1))\"}},\"sheet-36236\":{\"fills\":[{\"range\":\"F2:F6\",\"formula\":\"=TEXTJOIN(\\\", \\\",TRUE,UNIQUE(A2:B2))\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20215,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 197,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-34210\":{\"formulas\":{\"C1\":\"=A1\",\"C2\":\"=IF(A2=\\\"\\\",C1,A2)\"}},\"sheet-35739\":{\"fills\":[{\"range\":\"C2:C100\",\"formula\":\"=IF(OR(A2=\\\"\\\",B2=\\\"\\\"),\\\"\\\",MOD(B2-TIME(0,30,0),1))\"}],\"formulas\":{}},\"sheet-35747\":{\"formulas\":{\"M2\":\"=SUMPRODUCT(($A$2:$A$11=$L2)*($B$2:$J$11>100)*($B$1:$J$1>=$M$1)*($B$1:$J$1<$N$1))\"}},\"sheet-36236\":{\"fills\":[{\"range\":\"F2:F6\",\"formula\":\"=TEXTJOIN(\\\", \\\",TRUE,UNIQUE(A2:B2))\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122a-5ca9-7031-ae12-9156aabc14fa",
+    "raw": "{\"sheet-34210\":{\"formulas\":{\"C1\":\"=A1\",\"C2\":\"=IF(A2=\\\"\\\",C1,A2)\"}},\"sheet-35739\":{\"fills\":[{\"range\":\"C2:C100\",\"formula\":\"=IF(OR(A2=\\\"\\\",B2=\\\"\\\"),\\\"\\\",MOD(B2-TIME(0,30,0),1))\"}],\"formulas\":{}},\"sheet-35747\":{\"formulas\":{\"M2\":\"=SUMPRODUCT(($A$2:$A$11=$L2)*($B$2:$J$11>100)*($B$1:$J$1>=$M$1)*($B$1:$J$1<$N$1))\"}},\"sheet-36236\":{\"fills\":[{\"range\":\"F2:F6\",\"formula\":\"=TEXTJOIN(\\\", \\\",TRUE,UNIQUE(A2:B2))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20215,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 197,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

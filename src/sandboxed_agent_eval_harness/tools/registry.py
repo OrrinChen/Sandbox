@@ -61,6 +61,37 @@ class ToolRegistry:
 def default_tool_specs() -> List[ToolSpec]:
     return [
         ToolSpec(
+            tool_name="rag.search",
+            input_schema={
+                "type": "object",
+                "required": ["query", "top_k"],
+                "properties": {
+                    "query": {"type": "string"},
+                    "top_k": {"type": "integer"},
+                    "method": {"type": "string"},
+                    "corpus": {"type": "string"},
+                    "tickers": {"type": "array"},
+                    "fiscal_periods": {"type": "array"},
+                    "source_types": {"type": "array"},
+                },
+            },
+            output_schema={
+                "type": "object",
+                "required": ["corpus_version", "top_k", "hits"],
+                "properties": {
+                    "corpus_version": {"type": "string"},
+                    "top_k": {"type": "integer"},
+                    "hits": {"type": "array"},
+                    "subqueries": {"type": "array"},
+                    "method": {"type": "string"},
+                },
+            },
+            side_effects=[],
+            permissions=["read_fixture"],
+            state_mutation={},
+            failure_modes=["invalid_top_k", "invalid_search_method", "invalid_search_filters"],
+        ),
+        ToolSpec(
             tool_name="financial_statement.lookup",
             input_schema={
                 "type": "object",

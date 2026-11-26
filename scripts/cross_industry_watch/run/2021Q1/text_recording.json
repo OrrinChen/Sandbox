@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34947,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 512,
+    "reasoning_output_tokens": 52
+  },
+  "thread": "01a20369-7d86-7b40-92df-e83f65724436",
+  "packet_sha256": "c6b2fdb409c07524ea28fc60337ea4ab868e1664b7d0f8620c70dd9f8019bb5c",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000023217\",\n          \"reason\": \"A shows reported Q2 net sales grew despite Foodservice weakness. B and C tie part of the 14% Grocery & Snacks volume gain to customers replenishing inventory. If restocking fades as Conagra laps elevated at-home demand, consolidated net sales could fall at least 5% year over year by fiscal Q4.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000003197\",\n          \"reason\": \"B shows annual orders fell 27% to $279.6 million, well below the $316.0 million of sales in A. Fewer orders available to ship put Q1 and Q2 sales at risk of a 5% year-over-year decline. A gives only annual sales, so the starting quarterly rate is uncertain.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001579910\",\n          \"reason\": \"B says customers requested engagement deferrals and employees had difficulty delivering products and services. Those delays could shift enough revenue out of Q1 or Q2 to produce a new 5% year-over-year decline, though the filing gives neither the amount deferred nor the latest quarterly growth rate.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001448056\",\n          \"reason\": \"D says slower activity and the pricing change hurt both revenue and deferred revenue. A shows nine-month revenue still grew 13%. As existing subscriptions run off, weaker deferred revenue could pull a coming quarter's reported revenue at least 5% below the prior year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "A shows reported Q2 net sales grew despite Foodservice weakness. B and C tie part of the 14% Grocery & Snacks volume gain to customers replenishing inventory. If restocking fades as Conagra laps elevated at-home demand, consolidated net sales could fall at least 5% year over year by fiscal Q4."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0000003197",
+            "reason": "B shows annual orders fell 27% to $279.6 million, well below the $316.0 million of sales in A. Fewer orders available to ship put Q1 and Q2 sales at risk of a 5% year-over-year decline. A gives only annual sales, so the starting quarterly rate is uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0001579910",
+            "reason": "B says customers requested engagement deferrals and employees had difficulty delivering products and services. Those delays could shift enough revenue out of Q1 or Q2 to produce a new 5% year-over-year decline, though the filing gives neither the amount deferred nor the latest quarterly growth rate."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0001448056",
+            "reason": "D says slower activity and the pricing change hurt both revenue and deferred revenue. A shows nine-month revenue still grew 13%. As existing subscriptions run off, weaker deferred revenue could pull a coming quarter's reported revenue at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

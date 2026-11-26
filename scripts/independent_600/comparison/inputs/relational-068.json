@@ -1,0 +1,241 @@
+[
+  {
+    "task_id": "decision-serialize-confirmed-specimen-labels",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of labels.csv as one row with the single column csv_text. The header is specimen,label,source_id. For each specimen in label_slip, all slips with a non-null label must agree exactly for the specimen to appear. Null means the slip offers no reading. An empty string is an explicit blank reading and participates in agreement. Cite the lexicographically smallest source_id among slips that provide the agreed reading. Each slip has a unique source_id. Sort data records by specimen using SQLite's default binary text order. Quote all three fields of every data record with double quotes and escape each embedded double quote by doubling it. Preserve commas and spaces. Inputs contain no line breaks. Use a single LF after every record, including the header and the last record. All fields except label are non-null. There are no numeric units. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "label_slip": {
+        "columns": [
+          "source_id TEXT",
+          "specimen TEXT",
+          "label TEXT",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "s3",
+            "A",
+            "sand, fine",
+            "Tray card reads sand, fine."
+          ],
+          [
+            "s1",
+            "A",
+            "sand, fine",
+            "Jar inscription reads sand, fine."
+          ],
+          [
+            "s2",
+            "B",
+            "bed \"Q\"",
+            "Quotation marks enclose Q on the tag."
+          ],
+          [
+            "s4",
+            "C",
+            "silt",
+            "Card identifies silt."
+          ],
+          [
+            "s5",
+            "C",
+            "clay",
+            "Sleeve identifies clay."
+          ],
+          [
+            "s6",
+            "D",
+            null,
+            "Inscription obscured by a fold."
+          ],
+          [
+            "s7",
+            "E",
+            "",
+            "Label panel verified blank."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-settle-capped-royalty-and-advance",
+    "tool": "sqlite.query",
+    "instruction": "Settle each independent license for one quarter. All monetary inputs and outputs are nonnegative whole cents. Earn 10% on the first 10000 cents of sales and 20% on sales above 10000 cents. Round each tier's earnings down to whole cents, sum them, then limit the sum to royalty_cap_cents. Use the capped royalty to recover as much of opening_advance_cents as possible. Pay any royalty left after recovery in cash. If that cash is below minimum_cash_cents, top it up to exactly the minimum. The top-up never recoups or increases the advance, and the royalty cap limits earned royalties only. Return license_id, capped_royalty_cents, recouped_cents, cash_due_cents, and closing_advance_cents in that order. Sort by unique license_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "license_quarter": {
+        "columns": [
+          "license_id TEXT",
+          "sales_cents INTEGER",
+          "royalty_cap_cents INTEGER",
+          "opening_advance_cents INTEGER",
+          "minimum_cash_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            20000,
+            2400,
+            2100,
+            500
+          ],
+          [
+            "B",
+            8000,
+            1200,
+            1000,
+            250
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "license_id",
+      "capped_royalty_cents",
+      "recouped_cents",
+      "cash_due_cents",
+      "closing_advance_cents"
+    ]
+  },
+  {
+    "task_id": "decision-settle-monthly-solar-export-credit",
+    "tool": "sqlite.query",
+    "instruction": "Compute the energy bill for each listed month of one household. The tariff_notice table contains primary notices and their transcribed numeric terms. Cite the source_id of the notice with the latest effective_month on or before the bill_month. Months use fixed-width YYYY-MM text, effective months are unique, and each bill has an applicable notice. imported_kwh and exported_kwh are separate monthly whole-kWh meter totals. Charge imports at buy_cents per kWh. Credit exports at sell_cents per kWh up to the import charge, with no carryover or payout. Add fixed_cents for the month. All amounts and quantities are nonnegative integers, each bill_month occurs once, and no fields are null. Return bill_month, import_cents, applied_credit_cents, due_cents, source_id in ascending bill_month order, showing the applied credit as a positive amount or zero. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bill_meter": {
+        "columns": [
+          "bill_month TEXT",
+          "imported_kwh INTEGER",
+          "exported_kwh INTEGER"
+        ],
+        "rows": [
+          [
+            "2031-04",
+            2,
+            20
+          ],
+          [
+            "2031-03",
+            10,
+            4
+          ],
+          [
+            "2031-05",
+            0,
+            6
+          ]
+        ]
+      },
+      "tariff_notice": {
+        "columns": [
+          "source_id TEXT",
+          "effective_month TEXT",
+          "notice_text TEXT",
+          "buy_cents INTEGER",
+          "sell_cents INTEGER",
+          "fixed_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "N7",
+            "2031-01",
+            "January terms: imports 9 cents/kWh, exports 3 cents/kWh against import charges only, monthly fee 20 cents.",
+            9,
+            3,
+            20
+          ],
+          [
+            "N8",
+            "2031-04",
+            "From April: imports 12 cents/kWh, exports 4 cents/kWh against import charges only, monthly fee 18 cents.",
+            12,
+            4,
+            18
+          ],
+          [
+            "N9",
+            "2031-06",
+            "June terms: imports 11 cents/kWh, exports 5 cents/kWh against import charges only, monthly fee 22 cents.",
+            11,
+            5,
+            22
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bill_month",
+      "import_cents",
+      "applied_credit_cents",
+      "due_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-seven-day-repeat-contact-cohort",
+    "tool": "sqlite.query",
+    "instruction": "The contact log is complete from launch on day 1 through the end of day 20. Measure the seven-day repeat-contact fraction by intake queue for distinct tracked service tickets. The first logged contact for a ticket establishes its intake queue and intake day. Break same-day intake ties by the smaller unique contact_seq. Include a ticket in the denominator only if all seven calendar days following intake were observed. Count it once in the numerator if it had any contact in any queue on days intake_day + 1 through intake_day + 7 inclusive. Other contacts on intake day do not qualify. A null ticket_code denotes an untracked contact and is excluded. Other fields are nonnull. Return the fraction as its unreduced integer counts, with columns intake_queue, repeat_tickets, eligible_tickets. Include queues with eligible tickets even if none repeated, and order by intake_queue ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "ticket_contacts": {
+        "columns": [
+          "contact_seq INTEGER",
+          "ticket_code TEXT",
+          "queue_code TEXT",
+          "contact_day INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "t1",
+            "gold",
+            3
+          ],
+          [
+            2,
+            "t1",
+            "blue",
+            3
+          ],
+          [
+            3,
+            "t1",
+            "blue",
+            10
+          ],
+          [
+            4,
+            "t1",
+            "gold",
+            9
+          ],
+          [
+            5,
+            "t2",
+            "blue",
+            13
+          ],
+          [
+            6,
+            "t3",
+            "gold",
+            14
+          ],
+          [
+            7,
+            null,
+            "blue",
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "intake_queue",
+      "repeat_tickets",
+      "eligible_tickets"
+    ]
+  }
+]

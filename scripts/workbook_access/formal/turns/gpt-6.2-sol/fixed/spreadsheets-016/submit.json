@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-016",
+    "stage": "submit",
+    "prompt_sha256": "dc46db91e402fb412701b7b10259c7fef01530ca542c7fb55074b26fbc42dac7",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d9-3aec-7cc3-ae19-a3564c06ff7a",
+    "raw": "{\n  \"sheet-50952\": {\n    \"fills\": [\n      {\n        \"range\": \"G2:G5\",\n        \"formula\": \"=IF(OR(E2=\\\"\\\",F2=\\\"\\\"),\\\"\\\",IFERROR(INDEX($A$2:$A$10001,MATCH(1,INDEX(($A$2:$A$10001<>\\\"\\\")*ISNUMBER(SEARCH(E2,$B$2:$B$10001))*ISNUMBER(SEARCH(F2,$B$2:$B$10001)),0),0)),\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-51249\": {\n    \"formulas\": {\n      \"D1\": \"=IF(B2=\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B1)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B1)),\\\"Single B\\\",\\\"\\\")),IF(AND(ISNUMBER(SEARCH(\\\"Description A\\\",B1)),ISNUMBER(SEARCH(\\\"Description B\\\",B2))),\\\"Multiple\\\",\\\"\\\"))\",\n      \"D5\": \"=IF(B6=\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B5)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B5)),\\\"Single B\\\",\\\"\\\")),IF(AND(ISNUMBER(SEARCH(\\\"Description A\\\",B5)),ISNUMBER(SEARCH(\\\"Description B\\\",B6))),\\\"Multiple\\\",\\\"\\\"))\",\n      \"D9\": \"=IF(B10=\\\"\\\",IF(ISNUMBER(SEARCH(\\\"Description A\\\",B9)),\\\"Single A\\\",IF(ISNUMBER(SEARCH(\\\"Description B\\\",B9)),\\\"Single B\\\",\\\"\\\")),IF(AND(ISNUMBER(SEARCH(\\\"Description A\\\",B9)),ISNUMBER(SEARCH(\\\"Description B\\\",B10))),\\\"Multiple\\\",\\\"\\\"))\"\n    }\n  },\n  \"sheet-51262\": {\n    \"fills\": [\n      {\n        \"range\": \"F6:H6\",\n        \"formula\": \"=SUMPRODUCT(($B$6:$B$13>=EOMONTH(F5,-1)+1)*($B$6:$B$13<EOMONTH(F5,0)+1)*($C$6:$C$13<>\\\"\\\")*(COUNTIF($F$10:$F$14,$C$6:$C$13)>0),$D$6:$D$13)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-51807\": {\n    \"fills\": [\n      {\n        \"range\": \"D1:D3\",\n        \"formula\": \"=IF(A1=\\\"\\\",\\\"\\\",\\\"Carton \\\"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\\\"\\\",\\\" Boxes \\\"&MOD(A1,12)))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 19623,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 991,
+      "reasoning_output_tokens": 403
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

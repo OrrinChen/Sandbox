@@ -1,0 +1,303 @@
+[
+  {
+    "task_id": "decision-lamp-survival-day-two",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the probability that a lamp survives beyond day 2 using the Kaplan–Meier estimator. Each lamp starts working at day 0 and has one exit record. An exit marked failed is an observed failure. An exit marked censored means observation ended while the lamp still worked. Start survival at 1. At each distinct failure day up to and including day 2, multiply survival by (number at risk minus failures that day) divided by number at risk. Count all lamps with exit_day at least that day as at risk, including lamps censored on the same day. Apply tied failures together. A day with only censoring contributes no factor. Return one row with the single column survival_day_2, a probability from 0 to 1 rounded to six decimal places after multiplication. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "lamp_exits": {
+        "columns": [
+          "lamp TEXT",
+          "exit_day INTEGER",
+          "outcome TEXT"
+        ],
+        "rows": [
+          [
+            "L1",
+            1,
+            "failed"
+          ],
+          [
+            "L2",
+            1,
+            "censored"
+          ],
+          [
+            "L3",
+            2,
+            "failed"
+          ],
+          [
+            "L4",
+            3,
+            "censored"
+          ],
+          [
+            "L5",
+            4,
+            "failed"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "survival_day_2"
+    ]
+  },
+  {
+    "task_id": "decision-last-confirmed-shelf-before-inventory",
+    "tool": "sqlite.query",
+    "instruction": "Reconstruct the shelf of each listed holding at the end of its own inventory close day. Day numbers are integers on one shared calendar and include the entire day. A shelf note records either a completed physical sighting or a planned move. Only a sighting on or before the holding's close day establishes its location. Among eligible sightings use the latest day, breaking a same-day tie by the larger slip number, which denotes the later entry. Slip numbers are unique source IDs. The shelf code is the indexed location in the slip text. Omit holdings without an eligible sighting. All input fields are non-null. Return holding_code, shelf_code, slip_no in ascending holding_code order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "inventory_close": {
+        "columns": [
+          "holding_code TEXT",
+          "close_day INTEGER"
+        ],
+        "rows": [
+          [
+            "ATLAS",
+            12
+          ],
+          [
+            "FABLE",
+            9
+          ],
+          [
+            "LOOM",
+            11
+          ]
+        ]
+      },
+      "shelf_note": {
+        "columns": [
+          "slip_no INTEGER",
+          "holding_code TEXT",
+          "note_kind TEXT",
+          "note_day INTEGER",
+          "shelf_code TEXT",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            10,
+            "ATLAS",
+            "sighted",
+            7,
+            "Map",
+            "Counted the atlas in the map case."
+          ],
+          [
+            11,
+            "ATLAS",
+            "sighted",
+            12,
+            "Desk",
+            "Found the atlas on the desk shelf."
+          ],
+          [
+            12,
+            "ATLAS",
+            "sighted",
+            12,
+            "Map",
+            "Rechecked after shelving and found the atlas in the map case."
+          ],
+          [
+            13,
+            "ATLAS",
+            "planned",
+            12,
+            "Loft",
+            "Set aside loft space for the proposed atlas move."
+          ],
+          [
+            14,
+            "FABLE",
+            "sighted",
+            8,
+            "East",
+            "Counted the fable volume on the east shelf."
+          ],
+          [
+            15,
+            "FABLE",
+            "sighted",
+            10,
+            "West",
+            "Saw the fable volume on the west shelf."
+          ],
+          [
+            16,
+            "LOOM",
+            "planned",
+            9,
+            "Desk",
+            "Reserved desk space for the weaving manual."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "holding_code",
+      "shelf_code",
+      "slip_no"
+    ]
+  },
+  {
+    "task_id": "decision-least-cost-dual-dealer-funding",
+    "tool": "sqlite.query",
+    "instruction": "For the single funding request, buy exactly need_units whole foreign currency units using one ticket from each of desks A and B. Each ticket can be used once. A zero-unit ticket represents skipping that desk. A ticket that delivers after cutoff_day is ineligible. The sum of hold_cents for the two tickets must fit the request’s USD collateral limit, cap_cents. Collateral is returned and is separate from purchase cost. Minimize the sum of the two all-in USD prices in price_cents. Break cost ties by ascending A ticket_code, then ascending B ticket_code, using SQLite binary text order. Ticket codes are unique and at least one pair qualifies. Days are integer day numbers on the same calendar. All fields are non-null. Return one row with a_code, b_code, cost_cents, hold_cents for the selected pair. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dealer_ticket": {
+        "columns": [
+          "desk_code TEXT",
+          "ticket_code TEXT",
+          "buy_units INTEGER",
+          "delivery_day INTEGER",
+          "price_cents INTEGER",
+          "hold_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "A0",
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            "A",
+            "A4",
+            4,
+            3,
+            430,
+            50
+          ],
+          [
+            "A",
+            "A6",
+            6,
+            4,
+            625,
+            45
+          ],
+          [
+            "B",
+            "B4",
+            4,
+            4,
+            415,
+            55
+          ],
+          [
+            "B",
+            "B6",
+            6,
+            3,
+            590,
+            60
+          ],
+          [
+            "B",
+            "BX",
+            10,
+            5,
+            999,
+            90
+          ],
+          [
+            "B",
+            "B0",
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      "funding_request": {
+        "columns": [
+          "need_units INTEGER",
+          "cutoff_day INTEGER",
+          "cap_cents INTEGER"
+        ],
+        "rows": [
+          [
+            10,
+            4,
+            100
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "a_code",
+      "b_code",
+      "cost_cents",
+      "hold_cents"
+    ]
+  },
+  {
+    "task_id": "decision-least-cost-two-stage-finish",
+    "tool": "sqlite.query",
+    "instruction": "Choose a booking for one panel batch that requires sanding followed by waxing. Each row is a supplier certificate that also quotes the work. The structured fees and durations transcribe its primary text. A NULL stage fee and duration mean that stage is unavailable. Assign one certificate to each stage. The stages run sequentially, and their combined duration must be at most 8 hours. Pay both stage fees plus the handling fee once per distinct certificate used. All money is in cents. Minimize total cost, then combined hours, then sanding source ID, then waxing source ID, with IDs compared in SQLite BINARY order. Return the single winning row with columns sand_source, wax_source, total_cents, total_hours. Cite the actual certificate IDs in stage order, including the same ID twice when it supplies both stages. Each fixture has a feasible booking. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "finish_quote": {
+        "columns": [
+          "source_id TEXT",
+          "primary_text TEXT",
+          "sand_cents INTEGER",
+          "sand_hours INTEGER",
+          "wax_cents INTEGER",
+          "wax_hours INTEGER",
+          "handling_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "F1",
+            "Sanding 220 cents in 3 h. Waxing 250 cents in 4 h. Batch handling 90 cents.",
+            220,
+            3,
+            250,
+            4,
+            90
+          ],
+          [
+            "F2",
+            "Sanding only, 180 cents in 5 h. Batch handling 40 cents.",
+            180,
+            5,
+            null,
+            null,
+            40
+          ],
+          [
+            "F3",
+            "Waxing only, 190 cents in 4 h. Batch handling 60 cents.",
+            null,
+            null,
+            190,
+            4,
+            60
+          ],
+          [
+            "F4",
+            "Waxing only, 290 cents in 3 h. Batch handling 60 cents.",
+            null,
+            null,
+            290,
+            3,
+            60
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "sand_source",
+      "wax_source",
+      "total_cents",
+      "total_hours"
+    ]
+  }
+]

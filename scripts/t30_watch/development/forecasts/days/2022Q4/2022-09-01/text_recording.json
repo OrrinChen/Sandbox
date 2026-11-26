@@ -1,0 +1,59 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32250,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 487,
+    "reasoning_output_tokens": 20
+  },
+  "thread": "01a20d7c-addf-7550-abb0-bb5ea837ece3",
+  "packet_sha256": "1be3060ff72c23dda0df9576bf9456c7751659eec5b7607f6abe8400970c74c9",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/industrial_machinery-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/prepackaged_software-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001627014\",\n          \"reason\": \"Black Knight reported lower mortgage origination volumes as rates rose after a prolonged period of elevated refinancing (C). I forecast Q3 consolidated revenue growth above -5% and a Q4 decline of at least 5% as fewer originations generate transaction revenue. The timing is uncertain because the filing does not quantify revenue tied to originations.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"nLIGHT’s first-half revenue fell 4.0% year over year, from $130.5 million to $125.3 million. Product sales outside China rose and partly offset declines in China sales and development revenue (A). I expect that offset to keep Q3 above -5%, with weaker demand and delayed customer capital spending pushing the Q4 decline to at least 5% (B).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/transportation-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000003453\",\n          \"reason\": \"Matson’s Q2 Ocean Transportation revenue grew 53.6%, supporting a forecast for consolidated revenue growth above -5% in Q3 (A). Hawaii container volume had already fallen 1.5% year over year, and Matson cited lower retail-related demand (B, C). I forecast a Q4 consolidated decline of at least 5% if that weakness spreads beyond Hawaii.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Black Knight reported lower mortgage origination volumes as rates rose after a prolonged period of elevated refinancing (C). I forecast Q3 consolidated revenue growth above -5% and a Q4 decline of at least 5% as fewer originations generate transaction revenue. The timing is uncertain because the filing does not quantify revenue tied to originations."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "nLIGHT’s first-half revenue fell 4.0% year over year, from $130.5 million to $125.3 million. Product sales outside China rose and partly offset declines in China sales and development revenue (A). I expect that offset to keep Q3 above -5%, with weaker demand and delayed customer capital spending pushing the Q4 decline to at least 5% (B)."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000003453",
+            "reason": "Matson’s Q2 Ocean Transportation revenue grew 53.6%, supporting a forecast for consolidated revenue growth above -5% in Q3 (A). Hawaii container volume had already fallen 1.5% year over year, and Matson cited lower retail-related demand (B, C). I forecast a Q4 consolidated decline of at least 5% if that weakness spreads beyond Hawaii."
+          }
+        ]
+      }
+    ]
+  }
+}

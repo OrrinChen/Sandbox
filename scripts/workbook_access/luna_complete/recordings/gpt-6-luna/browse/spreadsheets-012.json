@@ -1,0 +1,573 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "3dbff4ec58b4daeeb9b49bc5c1d27d3a169a1d97028ec4dd0cee0280676d3ecf",
+    "9f3415176ff6ae2094bd55c94000261146952a00989a864a8243a3a5aff84a7c",
+    "b4ec19c4967ca703276036014021308505fccc3f9674303e5d113efa83ea3630"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-46897",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "I3": "=COUNTIF(INDEX($A$2:$D$15,0,MATCH(I1,$A$1:$D$1,0)),I2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I15",
+            "range_size": 135,
+            "cells": [
+              [
+                "A1",
+                "Animals"
+              ],
+              [
+                "B1",
+                "Fruits"
+              ],
+              [
+                "C1",
+                "Bevarages"
+              ],
+              [
+                "D1",
+                "Colors"
+              ],
+              [
+                "H1",
+                "Coulum Header"
+              ],
+              [
+                "I1",
+                "Fruits"
+              ],
+              [
+                "A2",
+                "Turkey"
+              ],
+              [
+                "B2",
+                "Apple"
+              ],
+              [
+                "C2",
+                "Milk"
+              ],
+              [
+                "D2",
+                "Red "
+              ],
+              [
+                "H2",
+                "Value"
+              ],
+              [
+                "I2",
+                "Apple"
+              ],
+              [
+                "A3",
+                "Rooster"
+              ],
+              [
+                "B3",
+                "Watermelon"
+              ],
+              [
+                "C3",
+                "Tea"
+              ],
+              [
+                "D3",
+                "Yellow"
+              ],
+              [
+                "H3",
+                "Result"
+              ],
+              [
+                "A4",
+                "Hen"
+              ],
+              [
+                "B4",
+                "Orange"
+              ],
+              [
+                "C4",
+                "Coffee"
+              ],
+              [
+                "D4",
+                "Blue "
+              ],
+              [
+                "A5",
+                "Sheep"
+              ],
+              [
+                "B5",
+                "Pear"
+              ],
+              [
+                "C5",
+                "Water"
+              ],
+              [
+                "D5",
+                "Brown"
+              ],
+              [
+                "A6",
+                "Rabbit"
+              ],
+              [
+                "B6",
+                "Cherry"
+              ],
+              [
+                "C6",
+                "Juice"
+              ],
+              [
+                "D6",
+                "Orange"
+              ],
+              [
+                "A7",
+                "Pig"
+              ],
+              [
+                "B7",
+                "Strawberry"
+              ],
+              [
+                "C7",
+                "Energy drink"
+              ],
+              [
+                "D7",
+                "Green"
+              ],
+              [
+                "A8",
+                "Parrot"
+              ],
+              [
+                "B8",
+                "Nectarine"
+              ],
+              [
+                "C8",
+                "Cocktails"
+              ],
+              [
+                "D8",
+                "Violet"
+              ],
+              [
+                "A9",
+                "Horse"
+              ],
+              [
+                "B9",
+                "Grape"
+              ],
+              [
+                "C9",
+                "Milkshake"
+              ],
+              [
+                "D9",
+                "Black"
+              ],
+              [
+                "A10",
+                "Rooster"
+              ],
+              [
+                "B10",
+                "Apple"
+              ],
+              [
+                "C10",
+                "Water"
+              ],
+              [
+                "D10",
+                "Red "
+              ],
+              [
+                "A11",
+                "Hen"
+              ],
+              [
+                "B11",
+                "Watermelon"
+              ],
+              [
+                "C11",
+                "Juice"
+              ],
+              [
+                "D11",
+                "Yellow"
+              ],
+              [
+                "A12",
+                "Sheep"
+              ],
+              [
+                "B12",
+                "Orange"
+              ],
+              [
+                "C12",
+                "Energy drink"
+              ],
+              [
+                "D12",
+                "Blue "
+              ],
+              [
+                "A13",
+                "Rabbit"
+              ],
+              [
+                "B13",
+                "Pear"
+              ],
+              [
+                "C13",
+                "Juice"
+              ],
+              [
+                "D13",
+                "Green"
+              ],
+              [
+                "A14",
+                "Pig"
+              ],
+              [
+                "B14",
+                "Cherry"
+              ],
+              [
+                "C14",
+                "Energy drink"
+              ],
+              [
+                "D14",
+                "Violet"
+              ],
+              [
+                "A15",
+                "Parrot"
+              ],
+              [
+                "B15",
+                "Apple"
+              ],
+              [
+                "C15",
+                "Cocktails"
+              ],
+              [
+                "D15",
+                "Yellow"
+              ]
+            ],
+            "total": 65,
+            "truncated": false,
+            "blank_count": 70
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 72454,
+        "cached_input_tokens": 53120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1438,
+        "reasoning_output_tokens": 1032
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-47699",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "D1": "=COUNTIF(A:A,FALSE)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 72454,
+        "cached_input_tokens": 53120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1438,
+        "reasoning_output_tokens": 1032
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48354",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D6",
+            "formula": "=IF(ISNUMBER(SEARCH(\"domestic\",B2)),\"D\",IF(ISNUMBER(SEARCH(\"international\",B2)),\"I\",\"N/A\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D6",
+            "range_size": 24,
+            "cells": [
+              [
+                "A1",
+                "D or I"
+              ],
+              [
+                "B1",
+                "ContactType"
+              ],
+              [
+                "A2",
+                "N/A"
+              ],
+              [
+                "B2",
+                "operating an international flight "
+              ],
+              [
+                "D2",
+                "#NAME?"
+              ],
+              [
+                "A3",
+                "N/A"
+              ],
+              [
+                "B3",
+                "operating a domestic flight"
+              ],
+              [
+                "D3",
+                "#NAME?"
+              ],
+              [
+                "A4",
+                "N/A"
+              ],
+              [
+                "B4",
+                "jumpseating (domestic)"
+              ],
+              [
+                "D4",
+                "#NAME?"
+              ],
+              [
+                "A5",
+                "N/A"
+              ],
+              [
+                "B5",
+                "training"
+              ],
+              [
+                "D5",
+                "#NAME?"
+              ],
+              [
+                "A6",
+                "N/A"
+              ],
+              [
+                "B6",
+                "Commercial DH"
+              ],
+              [
+                "D6",
+                "#NAME?"
+              ]
+            ],
+            "total": 17,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 72454,
+        "cached_input_tokens": 53120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1438,
+        "reasoning_output_tokens": 1032
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48365",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(COUNTIF($C$11:$C$13,$Q$1)>0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2),SUM(SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$11:$C$13)))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Dashboard",
+            "range": "A1:Q13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Dashboard",
+            "range": "A1:Q13",
+            "range_size": 221,
+            "cells": [
+              [
+                "Q1",
+                "All"
+              ],
+              [
+                "B2",
+                "Product"
+              ],
+              [
+                "C2",
+                "AAA"
+              ],
+              [
+                "Q2",
+                "EMEA"
+              ],
+              [
+                "C3",
+                "M1"
+              ],
+              [
+                "Q3",
+                "LAC"
+              ],
+              [
+                "B4",
+                "Outcome"
+              ],
+              [
+                "Q4",
+                "APAC"
+              ],
+              [
+                "Q5",
+                "US"
+              ],
+              [
+                "A10",
+                "Choose"
+              ],
+              [
+                "B10",
+                "Regions"
+              ],
+              [
+                "B11",
+                "1"
+              ],
+              [
+                "C11",
+                "EMEA"
+              ],
+              [
+                "B12",
+                "2"
+              ],
+              [
+                "B13",
+                "3"
+              ]
+            ],
+            "total": 15,
+            "truncated": false,
+            "blank_count": 206
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 72454,
+        "cached_input_tokens": 53120,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1438,
+        "reasoning_output_tokens": 1032
+      },
+      "model_calls": 3
+    }
+  ]
+}

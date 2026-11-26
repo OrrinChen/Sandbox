@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "10b92524fb076dede2c1fcaa87bd6c813733c21435205f65b2e83b5879176d45",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-32562\": {\n    \"fills\": [\n      {\"range\": \"B2:B21\", \"formula\": \"=COUNTIF($A$2:A2,A2)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-33157\": {\n    \"fills\": [\n      {\"range\": \"K2:K6\", \"formula\": \"=IF(J2=\\\"\\\",\\\"\\\",IF(J2=C2,$B$1,IF(J2=E2,$D$1,IF(J2=G2,$F$1,IF(J2=I2,$H$1,\\\"\\\")))))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-34033\": {\n    \"fills\": [\n      {\"range\": \"K6:K10\", \"formula\": \"=IFERROR(INDEX($C$3:$E$13,MATCH(1,INDEX(($B$3:$B$13=H6)*($A$3:$A$13=MAXIFS($A$3:$A$13,$B$3:$B$13,H6,$A$3:$A$13,\\\"<=\\\"&J6)),0),0),MATCH(I6,$C$1:$E$1,0)),\\\"\\\")\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-3413\": {\n    \"fills\": [\n      {\"range\": \"G3:G6\", \"formula\": \"=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-32562": {
+      "fills": [
+        {
+          "range": "B2:B21",
+          "formula": "=COUNTIF($A$2:A2,A2)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-33157": {
+      "fills": [
+        {
+          "range": "K2:K6",
+          "formula": "=IF(J2=\"\",\"\",IF(J2=C2,$B$1,IF(J2=E2,$D$1,IF(J2=G2,$F$1,IF(J2=I2,$H$1,\"\")))))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-34033": {
+      "fills": [
+        {
+          "range": "K6:K10",
+          "formula": "=IFERROR(INDEX($C$3:$E$13,MATCH(1,INDEX(($B$3:$B$13=H6)*($A$3:$A$13=MAXIFS($A$3:$A$13,$B$3:$B$13,H6,$A$3:$A$13,\"<=\"&J6)),0),0),MATCH(I6,$C$1:$E$1,0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-3413": {
+      "fills": [
+        {
+          "range": "G3:G6",
+          "formula": "=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-d844-7de2-a36d-1b69310add2c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26572,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 396,
+    "reasoning_output_tokens": 0
+  }
+}

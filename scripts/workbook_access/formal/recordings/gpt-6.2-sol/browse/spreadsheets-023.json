@@ -1,0 +1,695 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "9d9a475fbd936b2f897bdfdb38b30a8e26f7d5771d9d1f58bee8933d207787c3",
+    "b09066eb5587f5cb918ebe2afeabd7cd543e3a43ded38ea7e587d038477e1e17",
+    "3f86b80870ebeae2b49ae033055799e01ad6bdc953de0fa816515f8e70307b6e"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59196",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "formulas": {
+          "H3": "=INDEX($D$2:$G$2,1,MATCH(MAX(D3:G3),D3:G3,0))",
+          "H4": "=INDEX($D$2:$G$2,1,MATCH(MAX(D4:G4),D4:G4,0))",
+          "H5": "=INDEX($D$2:$G$2,1,MATCH(MAX(D5:G5),D5:G5,0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 64048,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 693,
+        "reasoning_output_tokens": 138
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59224",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "E4:E14",
+            "formula": "=IF(COUNTIFS(C4:$C$14,\"<\"&$B$2,D4:$D$14,\">\"&$B$2)>0,\"Select Period\",\"Do Not Select\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C3:E14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C3:E14",
+            "range_size": 36,
+            "cells": [
+              [
+                "C3",
+                "On or after"
+              ],
+              [
+                "D3",
+                "To"
+              ],
+              [
+                "E3",
+                "Initial Date"
+              ],
+              [
+                "C4",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "D4",
+                "2020-12-31 00:00:00"
+              ],
+              [
+                "E4",
+                "Do Not Select"
+              ],
+              [
+                "C5",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "D5",
+                "2020-09-30 00:00:00"
+              ],
+              [
+                "E5",
+                "Do Not Select"
+              ],
+              [
+                "C6",
+                "2020-04-01 00:00:00"
+              ],
+              [
+                "D6",
+                "2020-06-30 00:00:00"
+              ],
+              [
+                "E6",
+                "Do Not Select"
+              ],
+              [
+                "C7",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "D7",
+                "2020-03-31 00:00:00"
+              ],
+              [
+                "E7",
+                "Do Not Select"
+              ],
+              [
+                "C8",
+                "2019-10-01 00:00:00"
+              ],
+              [
+                "D8",
+                "2019-12-31 00:00:00"
+              ],
+              [
+                "E8",
+                "Do Not Select"
+              ],
+              [
+                "C9",
+                "2019-07-01 00:00:00"
+              ],
+              [
+                "D9",
+                "2019-09-30 00:00:00"
+              ],
+              [
+                "E9",
+                "Select Period"
+              ],
+              [
+                "C10",
+                "2019-04-01 00:00:00"
+              ],
+              [
+                "D10",
+                "2019-06-30 00:00:00"
+              ],
+              [
+                "E10",
+                "Do Not Select"
+              ],
+              [
+                "C11",
+                "2019-01-01 00:00:00"
+              ],
+              [
+                "D11",
+                "2019-03-31 00:00:00"
+              ],
+              [
+                "E11",
+                "Do Not Select"
+              ],
+              [
+                "C12",
+                "2018-10-01 00:00:00"
+              ],
+              [
+                "D12",
+                "2018-12-31 00:00:00"
+              ],
+              [
+                "E12",
+                "Do Not Select"
+              ],
+              [
+                "C13",
+                "2018-07-01 00:00:00"
+              ],
+              [
+                "D13",
+                "2018-09-30 00:00:00"
+              ],
+              [
+                "E13",
+                "Do Not Select"
+              ],
+              [
+                "C14",
+                "2018-04-01 00:00:00"
+              ],
+              [
+                "D14",
+                "2018-06-30 00:00:00"
+              ],
+              [
+                "E14",
+                "Do Not Select"
+              ]
+            ],
+            "total": 36,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 64048,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 693,
+        "reasoning_output_tokens": 138
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59259",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "J5:L16",
+            "formula": "=SUMIFS($E$5:$E$13,$C$5:$C$13,J$4,$F$5:$F$13,\">=\"&DATE(YEAR($I5),1,1),$F$5:$F$13,\"<\"&(EOMONTH($I5,0)+1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I4:L16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I4:L16",
+            "range_size": 52,
+            "cells": [
+              [
+                "I4",
+                "Reporting Month"
+              ],
+              [
+                "J4",
+                "Furniture"
+              ],
+              [
+                "K4",
+                "Computer"
+              ],
+              [
+                "L4",
+                "Machinery"
+              ],
+              [
+                "I5",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "J5",
+                "0"
+              ],
+              [
+                "K5",
+                "0"
+              ],
+              [
+                "L5",
+                "100"
+              ],
+              [
+                "I6",
+                "2020-02-01 00:00:00"
+              ],
+              [
+                "J6",
+                "0"
+              ],
+              [
+                "K6",
+                "0"
+              ],
+              [
+                "L6",
+                "100"
+              ],
+              [
+                "I7",
+                "2020-03-01 00:00:00"
+              ],
+              [
+                "J7",
+                "0"
+              ],
+              [
+                "K7",
+                "0"
+              ],
+              [
+                "L7",
+                "100"
+              ],
+              [
+                "I8",
+                "2020-04-01 00:00:00"
+              ],
+              [
+                "J8",
+                "0"
+              ],
+              [
+                "K8",
+                "0"
+              ],
+              [
+                "L8",
+                "100"
+              ],
+              [
+                "I9",
+                "2020-05-01 00:00:00"
+              ],
+              [
+                "J9",
+                "0"
+              ],
+              [
+                "K9",
+                "0"
+              ],
+              [
+                "L9",
+                "100"
+              ],
+              [
+                "I10",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "J10",
+                "250"
+              ],
+              [
+                "K10",
+                "0"
+              ],
+              [
+                "L10",
+                "100"
+              ],
+              [
+                "I11",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "I12",
+                "2020-08-01 00:00:00"
+              ],
+              [
+                "I13",
+                "2020-09-01 00:00:00"
+              ],
+              [
+                "I14",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "I15",
+                "2020-11-01 00:00:00"
+              ],
+              [
+                "I16",
+                "2020-12-01 00:00:00"
+              ]
+            ],
+            "total": 34,
+            "truncated": false,
+            "blank_count": 18
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B4:F14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B4:F14",
+            "range_size": 55,
+            "cells": [
+              [
+                "B4",
+                "Date acquired"
+              ],
+              [
+                "C4",
+                "Asset category"
+              ],
+              [
+                "D4",
+                "Description"
+              ],
+              [
+                "E4",
+                "Amount"
+              ],
+              [
+                "F4",
+                "Posting month"
+              ],
+              [
+                "B5",
+                "2020-01-04 00:00:00"
+              ],
+              [
+                "C5",
+                "Machinery"
+              ],
+              [
+                "D5",
+                "Generator"
+              ],
+              [
+                "E5",
+                "100"
+              ],
+              [
+                "F5",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "B6",
+                "2020-06-30 00:00:00"
+              ],
+              [
+                "C6",
+                "Furniture"
+              ],
+              [
+                "D6",
+                "Rack"
+              ],
+              [
+                "E6",
+                "250"
+              ],
+              [
+                "F6",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "B7",
+                "2020-07-09 00:00:00"
+              ],
+              [
+                "C7",
+                "Furniture"
+              ],
+              [
+                "D7",
+                "Cabinet level 1"
+              ],
+              [
+                "E7",
+                "110"
+              ],
+              [
+                "F7",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "B8",
+                "2020-07-09 00:00:00"
+              ],
+              [
+                "C8",
+                "Computer"
+              ],
+              [
+                "D8",
+                "Laptop"
+              ],
+              [
+                "E8",
+                "180"
+              ],
+              [
+                "F8",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "B9",
+                "2020-07-10 00:00:00"
+              ],
+              [
+                "C9",
+                "Furniture"
+              ],
+              [
+                "D9",
+                "Office chair"
+              ],
+              [
+                "E9",
+                "50"
+              ],
+              [
+                "F9",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "B10",
+                "2020-10-03 00:00:00"
+              ],
+              [
+                "C10",
+                "Furniture"
+              ],
+              [
+                "D10",
+                "Table"
+              ],
+              [
+                "E10",
+                "105"
+              ],
+              [
+                "F10",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "B11",
+                "2020-10-03 00:00:00"
+              ],
+              [
+                "C11",
+                "Machinery"
+              ],
+              [
+                "D11",
+                "Compressor"
+              ],
+              [
+                "E11",
+                "100"
+              ],
+              [
+                "F11",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "E14",
+                "895"
+              ]
+            ],
+            "total": 41,
+            "truncated": false,
+            "blank_count": 14
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 64048,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 693,
+        "reasoning_output_tokens": 138
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59358",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "L7:L9",
+            "formula": "=IFNA(INDEX($F$2:$F$23,MATCH(1,INDEX(($B$2:$B$23=K7)*($D$2:$D$23=J7),0),0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "J6:L9",
+            "range_size": 12,
+            "cells": [
+              [
+                "J6",
+                "Match from D"
+              ],
+              [
+                "K6",
+                "Match from  B"
+              ],
+              [
+                "L6",
+                "Display"
+              ],
+              [
+                "J7",
+                "HCBPT"
+              ],
+              [
+                "K7",
+                "40023710"
+              ],
+              [
+                "J8",
+                "HCPF"
+              ],
+              [
+                "K8",
+                "40023710"
+              ],
+              [
+                "J9",
+                "HCSC"
+              ],
+              [
+                "K9",
+                "40023710"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 64048,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 693,
+        "reasoning_output_tokens": 138
+      },
+      "model_calls": 3
+    }
+  ]
+}

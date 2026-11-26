@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35667,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 463,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20369-fd7b-7be0-a80b-94c75b450aa5",
+  "packet_sha256": "17db724058bc9373cc38c2b8c1bbf28d4b5cc88a17c97b9c165fdf245e5dc4a5",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001121484\",\n          \"reason\": \"Slot A puts Q2 consolidated revenue roughly flat year on year. Slot B shows Offshore/Manufactured Products booked only $0.90 per dollar billed in Q2, and E reports pressure on both demand and prices. If that persists into Q3 or Q4, consolidated revenue could fall at least 5% year on year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001579910\",\n          \"reason\": \"Slot B reports flat revenue concentrated in the Murata agreement. A reports difficulty interacting with customers, and C says royalty gains were nominal. A delay in contract work could therefore move quarterly revenue from flat to down at least 5% within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000718877\",\n          \"reason\": \"Q2 consolidated revenue rose 19% (A), but net bookings fell despite an $82 million increase at King (B). Revenue recognition can lag bookings (D), so weaker bookings could push Q3 or Q4 revenue down at least 5% against a prior year that benefited from stay-at-home demand (C).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000799233\",\n          \"reason\": \"Q2 operating revenue fell 4.2% year on year (A), only 0.8 percentage points above the cutoff. Freight rates rose throughout the second half of 2020 (D), giving Q3 and Q4 tougher year-on-year comparisons. Even modest further deterioration would cross the threshold.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": []
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0001121484",
+            "reason": "Slot A puts Q2 consolidated revenue roughly flat year on year. Slot B shows Offshore/Manufactured Products booked only $0.90 per dollar billed in Q2, and E reports pressure on both demand and prices. If that persists into Q3 or Q4, consolidated revenue could fall at least 5% year on year."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0001579910",
+            "reason": "Slot B reports flat revenue concentrated in the Murata agreement. A reports difficulty interacting with customers, and C says royalty gains were nominal. A delay in contract work could therefore move quarterly revenue from flat to down at least 5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Q2 consolidated revenue rose 19% (A), but net bookings fell despite an $82 million increase at King (B). Revenue recognition can lag bookings (D), so weaker bookings could push Q3 or Q4 revenue down at least 5% against a prior year that benefited from stay-at-home demand (C)."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0000799233",
+            "reason": "Q2 operating revenue fell 4.2% year on year (A), only 0.8 percentage points above the cutoff. Freight rates rose throughout the second half of 2020 (D), giving Q3 and Q4 tougher year-on-year comparisons. Even modest further deterioration would cross the threshold."
+          }
+        ]
+      }
+    ]
+  }
+}

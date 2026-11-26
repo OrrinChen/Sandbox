@@ -1,0 +1,2662 @@
+[
+  {
+    "task_id": "decision-buy-rolls-for-uncut-banners",
+    "source_group": "citation/versioned-product-manuals",
+    "reasoning": "Compute whole banners per roll before optimizing purchase cost under the shift's roll limit.",
+    "incorrect_behavior": "Pools usable centimetres across rolls, effectively splicing remnants to make another banner.",
+    "title": "Choose roll stock for a banner run"
+  },
+  {
+    "task_id": "decision-export-panel-caption-change-file",
+    "source_group": "citation/versioned-product-manuals",
+    "reasoning": "Diff two complete snapshots using NULL-aware equality and serialize the cited changes with distinct CSV representations for a clear and an empty caption.",
+    "incorrect_behavior": "Normalizes NULL and the present empty caption to the same string before deciding whether a patch record is needed.",
+    "title": "Build the caption patch for a panel importer"
+  },
+  {
+    "task_id": "decision-reconcile-returnable-spool-deposits",
+    "source_group": "citation/versioned-product-manuals",
+    "reasoning": "Reconstruct each lot's cutoff quantity from dated receipts and value it at the refundable rate locked in on issuance.",
+    "incorrect_behavior": "Reprices outstanding refundable deposits at the newest manual rate, losing the historical basis of each lot.",
+    "title": "Reconcile outstanding spool deposits across a manual revision"
+  },
+  {
+    "task_id": "decision-kiln-meter-observed-load",
+    "source_group": "data_analysis/longitudinal-measurement",
+    "reasoning": "Estimate a time-weighted load by dividing total observed energy change by total eligible elapsed time across irregular intervals.",
+    "incorrect_behavior": "Averaging interval loads equally gives a short interval as much influence as a long one.",
+    "title": "Estimate kiln load across irregular meter reads"
+  },
+  {
+    "task_id": "decision-ferry-charging-window",
+    "source_group": "data_analysis/longitudinal-measurement",
+    "reasoning": "Enumerate adjacent slot pairs, enforce phase-specific capacity and berth constraints, and minimize the cost of the asymmetric draw profile.",
+    "incorrect_behavior": "Pooling spare capacity across the two slots can select a charge whose second phase exceeds the available power in that slot.",
+    "title": "Schedule one uninterrupted ferry charge"
+  },
+  {
+    "task_id": "decision-packing-scale-retrospective-audit",
+    "source_group": "data_analysis/longitudinal-measurement",
+    "reasoning": "Resolve overlapping retrospective calibration evidence as of an audit cutoff before testing each corrected measurement against its ceiling.",
+    "incorrect_behavior": "Filtering for exceedances before resolving the controlling note allows a superseded calibration to generate an audit finding.",
+    "title": "Trace understated test weights to signed bench notes"
+  },
+  {
+    "task_id": "decision-loom-pattern-change-export",
+    "source_group": "data_analysis/longitudinal-measurement",
+    "reasoning": "Carry the last confirmed pattern across unreadable inspections and serialize just the starts of observed pattern runs into a deterministic CSV file.",
+    "incorrect_behavior": "Comparing with the immediately preceding inspection treats an unreadable visit as a break even when the same confirmed pattern resumes.",
+    "title": "Export confirmed loom pattern starts as CSV"
+  },
+  {
+    "task_id": "decision-recover-dryer-run-minutes-across-overlapping-files",
+    "source_group": "file_workflow/recovering-split-exports",
+    "reasoning": "Split the timeline at every observed endpoint and assign each resulting span to the highest-ranked recorder covering it.",
+    "incorrect_behavior": "It accepts a run signal from either recorder even when the main recorder explicitly reports idle.",
+    "title": "Recover dryer run time from overlapping recorder exports"
+  },
+  {
+    "task_id": "decision-assemble-best-feasible-prop-van-load",
+    "source_group": "file_workflow/recovering-split-exports",
+    "reasoning": "Evaluate feasible singleton and pair loads jointly because the most valuable individual case can prevent a higher-scoring pair.",
+    "incorrect_behavior": "It commits to the highest-scoring feasible individual case before evaluating pairs.",
+    "title": "Rebuild a one-trip prop dispatch manifest"
+  },
+  {
+    "task_id": "decision-restore-crate-labels-from-dated-routing-notices",
+    "source_group": "file_workflow/recovering-split-exports",
+    "reasoning": "Resolve the authority in force for each shipment day and family, then recover both the destination and its citation from the same primary record.",
+    "incorrect_behavior": "It lets a newer general instruction supersede an active family-specific instruction.",
+    "title": "Reprint crate labels with the authorizing notice"
+  },
+  {
+    "task_id": "decision-allocate-bundle-rounding-cents",
+    "source_group": "finance/revenue-recognition",
+    "reasoning": "Rank exact integer remainders within each bundle to distribute rounding cents while preserving the signed total.",
+    "incorrect_behavior": "Independent nearest-cent rounding can post a component total that differs from the signed bundle price.",
+    "title": "Reconcile bundle revenue to the signed price"
+  },
+  {
+    "task_id": "decision-metered-revenue-across-quarterly-bands",
+    "source_group": "finance/revenue-recognition",
+    "reasoning": "Intersect the interval of newly consumed quarterly units with each marginal tariff band before pricing March.",
+    "incorrect_behavior": "Restarting the tariff at unit one in March prices incremental consumption as though the quarterly thresholds reset monthly.",
+    "title": "Price March usage across quarterly tariff bands"
+  },
+  {
+    "task_id": "decision-fabrication-progress-estimate-catchup",
+    "source_group": "finance/revenue-recognition",
+    "reasoning": "Apply the effective remaining-cost estimate to cumulative eligible costs and book the difference from revenue previously recognized.",
+    "incorrect_behavior": "Including abnormal scrap in the progress measure treats wasted inputs as completed fabrication work.",
+    "title": "Post the June catch-up on custom fabrication jobs"
+  },
+  {
+    "task_id": "decision-consignment-count-reconciliation",
+    "source_group": "finance/revenue-recognition",
+    "reasoning": "Infer customer sales as the balancing quantity between physical counts after accounting for deliveries and non-sale removals.",
+    "incorrect_behavior": "Omitting documented damage from non-sale removals recognizes revenue on destroyed stock.",
+    "title": "Infer consignment sell-through from signed stock counts"
+  },
+  {
+    "task_id": "decision-balance-simultaneous-closing-desks",
+    "source_group": "optimization/fair-staff-rostering",
+    "reasoning": "Match distinct crews to simultaneous posts by minimizing the largest accumulated closing burden before considering bid preferences.",
+    "incorrect_behavior": "It gives bid preferences priority over balancing accumulated closing duties.",
+    "title": "Staff two simultaneous closing desks"
+  },
+  {
+    "task_id": "decision-stagger-two-slot-relief-breaks",
+    "source_group": "optimization/fair-staff-rostering",
+    "reasoning": "Schedule two uninterrupted relief intervals on a shared worker while minimizing the worse displacement from a requested break time.",
+    "incorrect_behavior": "It allows different start slots even when the second break overlaps the last slot of the first.",
+    "title": "Route one relief worker between two booths"
+  },
+  {
+    "task_id": "decision-price-fair-stockroom-extension",
+    "source_group": "optimization/fair-staff-rostering",
+    "reasoning": "Choose an integer division of extra work under a cumulative fairness bound by pricing each crew's hours across its own remaining pay tiers.",
+    "incorrect_behavior": "It charges the base rate for every allocated hour, including hours beyond the remaining base allowance.",
+    "title": "Split a five-hour stockroom extension"
+  },
+  {
+    "task_id": "decision-clear-consensual-shift-exchange",
+    "source_group": "optimization/fair-staff-rostering",
+    "reasoning": "Clear a directed cycle of strict improvements, prioritizing the number of beneficiaries over aggregate preference gain.",
+    "incorrect_behavior": "It admits a zero-gain offer and counts an indifferent participant as a beneficiary.",
+    "title": "Clear one weekend shift exchange"
+  },
+  {
+    "task_id": "decision-temperature-chamber-release-gap",
+    "source_group": "citation/laboratory-instrument-calibration-logs-non-biological",
+    "reasoning": "Reconstruct chamber state at each run start from signed transitions and cite the controlling failure.",
+    "incorrect_behavior": "Treats a draft check as an authorized change in chamber status.",
+    "title": "Identify runs made while a chamber was on hold"
+  },
+  {
+    "task_id": "decision-balance-check-weight-pair",
+    "source_group": "citation/laboratory-instrument-calibration-logs-non-biological",
+    "reasoning": "Enumerate distinct exact-load pairs and minimize handling time subject to an additive certificate bound.",
+    "incorrect_behavior": "Applies the job's error allowance separately to each weight, allowing pairs whose combined bound exceeds it.",
+    "title": "Select a certified two-weight load for a balance check"
+  },
+  {
+    "task_id": "decision-voltmeter-trim-paired-reference",
+    "source_group": "citation/laboratory-instrument-calibration-logs-non-biological",
+    "reasoning": "Difference two within-snapshot errors to remove changes in the applied voltage while retaining the trim direction.",
+    "incorrect_behavior": "Attributes all change in the meter indication to trim, including movement of the voltage source.",
+    "title": "Measure the signed effect of a voltmeter trim"
+  },
+  {
+    "task_id": "decision-encoder-sweep-coverage-gaps",
+    "source_group": "citation/laboratory-instrument-calibration-logs-non-biological",
+    "reasoning": "Track the furthest endpoint reached across all earlier sweeps so that nested certificates cannot create spurious gaps.",
+    "incorrect_behavior": "Checks only the immediately preceding start group's endpoint, losing coverage supplied by a longer enclosing sweep.",
+    "title": "Find unsupported angular spans in an encoder calibration"
+  },
+  {
+    "task_id": "decision-second-week-return-with-reporting-lag",
+    "source_group": "data_analysis/cohort-retention",
+    "reasoning": "Apply observation maturity at the workspace level before measuring whether any opening falls inside its relative return window.",
+    "incorrect_behavior": "It admits workspaces as soon as their second week starts, mixing partial and complete opportunities to return.",
+    "title": "Measure second-week return after the activity feed closes"
+  },
+  {
+    "task_id": "decision-gross-retention-across-billing-components",
+    "source_group": "data_analysis/cohort-retention",
+    "reasoning": "Reconcile component substitutions within each contract before capping retained value at the contract's opening run rate.",
+    "incorrect_behavior": "It caps each component separately, recording a revenue loss when a contract moves spending to a replacement component.",
+    "title": "Reconcile retained recurring revenue after plan changes"
+  },
+  {
+    "task_id": "decision-schedule-two-renewal-clinics",
+    "source_group": "data_analysis/cohort-retention",
+    "reasoning": "Evaluate feasible clinic pairs on the size of their combined audience with overlap removed.",
+    "incorrect_behavior": "It adds each clinic's audience size and can select two clinics serving the same clubs.",
+    "title": "Choose two clinics for the upcoming renewal cohort"
+  },
+  {
+    "task_id": "decision-trace-renewals-through-studio-rename-notices",
+    "source_group": "data_analysis/cohort-retention",
+    "reasoning": "Resolve superseding editorial evidence before matching a missing opening listing to its renewed successor.",
+    "incorrect_behavior": "It removes withdrawals before deciding which notice controls, allowing a retracted approval to establish retention.",
+    "title": "Cite the notices that reconnect renamed studios to their cohort"
+  },
+  {
+    "task_id": "decision-reconcile-complete-shelf-count-files",
+    "source_group": "file_workflow/incremental-synchronization",
+    "reasoning": "A missing item authorizes removal only when the shelf manifest certifies that its count file is complete.",
+    "incorrect_behavior": "It treats submission of a partial count file as proof that every omitted item left the shelf.",
+    "title": "Build the shelf-count correction CSV"
+  },
+  {
+    "task_id": "decision-advance-gap-free-spool-checkpoints",
+    "source_group": "file_workflow/incremental-synchronization",
+    "reasoning": "Deduplicate usable sequence numbers and find the consecutive prefix adjacent to each durable checkpoint.",
+    "incorrect_behavior": "It advances to the highest verified file even when the receiver still needs an earlier file to restart safely.",
+    "title": "Publish restart positions for print spools"
+  },
+  {
+    "task_id": "decision-pack-preview-refresh-window",
+    "source_group": "file_workflow/incremental-synchronization",
+    "reasoning": "Compare feasible single bundles and pairs under both a transfer-size limit and a two-bundle limit, scoring the complete selection before applying tie rules.",
+    "incorrect_behavior": "It commits to the highest-value single bundle before evaluating whether a pair excluding it would refresh more views.",
+    "title": "Choose preview bundles for the next transfer"
+  },
+  {
+    "task_id": "decision-apply-retroactive-carton-bulletins",
+    "source_group": "file_workflow/incremental-synchronization",
+    "reasoning": "Resolve a dated evidence interval and its revisions for each lot before deciding whether its exported conversion needs correction.",
+    "incorrect_behavior": "It lets the last-issued historical revision override a specification with a later effective date.",
+    "title": "Correct carton conversions with bulletin citations"
+  },
+  {
+    "task_id": "decision-reconcile-cash-at-bank-close",
+    "source_group": "finance/treasury-cash-management",
+    "reasoning": "Reconstruct two independently adjusted cash balances by applying each documented timing difference to the side missing the posting.",
+    "incorrect_behavior": "It posts each timing item a second time to the side where it already appeared.",
+    "title": "Reconcile a clearing account at close"
+  },
+  {
+    "task_id": "decision-price-a-short-term-funding-bridge",
+    "source_group": "finance/treasury-cash-management",
+    "reasoning": "Price the eligible bridge draws after testing their fee and repayment cash flows against every daily liquidity floor.",
+    "incorrect_behavior": "It treats repaid principal as available cash through the end of the horizon.",
+    "title": "Choose a bridge draw that survives repayment"
+  },
+  {
+    "task_id": "decision-export-incremental-cash-pool-sweeps",
+    "source_group": "finance/treasury-cash-management",
+    "reasoning": "Aggregate live holds per account, round each transferable surplus down to a permitted increment, and serialize the instructions as a bank-ready CSV.",
+    "incorrect_behavior": "It treats equal hold amounts as duplicate tickets and releases too much cash for transfer.",
+    "title": "Generate the cash pool transfer file"
+  },
+  {
+    "task_id": "decision-measure-cutoff-cash-forecast-error",
+    "source_group": "finance/treasury-cash-management",
+    "reasoning": "Reconstruct the forecast visible at each funding cutoff before measuring signed bias and absolute error on the same eligible unit-days.",
+    "incorrect_behavior": "It removes withdrawals before selecting the cutoff revision, which revives superseded forecasts.",
+    "title": "Measure receipt forecast accuracy at the funding cutoff"
+  },
+  {
+    "task_id": "decision-paired-lots-with-shipping-tare",
+    "source_group": "optimization/packing-bulk-freight",
+    "reasoning": "Compare whole-lot pairs by combined revenue after charging both shipping frames against the shuttle's load limit.",
+    "incorrect_behavior": "The eligibility check counts only cargo even though the frames travel on the shuttle.",
+    "title": "Fill a shuttle with two sealed lots"
+  },
+  {
+    "task_id": "decision-whole-tonne-grit-blend",
+    "source_group": "optimization/packing-bulk-freight",
+    "reasoning": "Allocate integer tonnes between two stockpiles at minimum cost under an exact mass-weighted quality ceiling and stock limits.",
+    "incorrect_behavior": "Integer division rounds the average fines content down before the ticket limit is applied.",
+    "title": "Pack a hopper to a fines specification"
+  },
+  {
+    "task_id": "decision-continuous-bin-discharge-window",
+    "source_group": "optimization/packing-bulk-freight",
+    "reasoning": "Select the highest-mass contiguous interval whose bins are all unlocked and whose total discharge time fits the berth window.",
+    "incorrect_behavior": "Filtering locked bins out before constructing runs allows the conveyor to skip a locked interior bin.",
+    "title": "Load a barge during one conveyor pass"
+  },
+  {
+    "task_id": "decision-rotatable-bulk-totes-on-deck",
+    "source_group": "optimization/packing-bulk-freight",
+    "reasoning": "Enumerate independent quarter-turns and two placement patterns to minimize the deck length reserved within a fixed clear width.",
+    "incorrect_behavior": "It considers both placement patterns but treats the totes' marked orientations as fixed.",
+    "title": "Reserve the shortest deck section for two bulk totes"
+  },
+  {
+    "task_id": "decision-reconstruct-dust-bulletin-at-press-time",
+    "source_group": "citation/environmental-sensor-bulletins",
+    "reasoning": "Select calibration evidence on both its effective timeline and its publication timeline before correcting each historical reading.",
+    "incorrect_behavior": "It lets slips filed after press time change what an earlier bulletin could cite.",
+    "title": "Reconstruct the dust readings the editor could cite"
+  },
+  {
+    "task_id": "decision-bound-the-order-of-fog-arrival",
+    "source_group": "citation/environmental-sensor-bulletins",
+    "reasoning": "Prove a strict chronology by comparing the closed upper bound at one mast with the open lower bound at another.",
+    "incorrect_behavior": "It orders first detections even when the underlying arrival intervals overlap.",
+    "title": "Which fog arrivals can the bulletin put in strict order?"
+  },
+  {
+    "task_id": "decision-fit-complementary-surveys-into-radio-bulletin",
+    "source_group": "citation/environmental-sensor-bulletins",
+    "reasoning": "Evaluate feasible pairs by the cardinality of their combined geographic coverage under a fixed airtime budget.",
+    "incorrect_behavior": "It counts two reports about the same basin as two basins, inflating the value of redundant dispatches.",
+    "title": "Choose two survey dispatches for the radio bulletin"
+  },
+  {
+    "task_id": "decision-export-auditable-rainfall-increments",
+    "source_group": "citation/environmental-sensor-bulletins",
+    "reasoning": "Difference adjacent readable cumulative observations within a continuous run and serialize the supported wet intervals with their endpoint citations.",
+    "incorrect_behavior": "It pairs physical cards before filtering unreadable dials, losing rainfall that two readable endpoints establish across a missed reading.",
+    "title": "Build the rainfall interval attachment"
+  },
+  {
+    "task_id": "decision-paired-quadrat-colonization",
+    "source_group": "data_analysis/ecological-sampling-plants-only",
+    "reasoning": "Condition on observed baseline absence and a completed revisit before counting transitions to presence.",
+    "incorrect_behavior": "Counting a missed revisit in the denominator treats a quadrat with unknown outcome as a failed colonization.",
+    "title": "Colonization among revisited quadrats"
+  },
+  {
+    "task_id": "decision-shrub-canopy-line-intercept",
+    "source_group": "data_analysis/ecological-sampling-plants-only",
+    "reasoning": "Partition each line at its observed endpoints and count each elementary segment once if any canopy covers it.",
+    "incorrect_behavior": "Subtracting overlap with only the immediately preceding span loses track of an earlier canopy extending beyond a nested one.",
+    "title": "Ground length beneath shrub canopy"
+  },
+  {
+    "task_id": "decision-stratified-rosette-inventory",
+    "source_group": "data_analysis/ecological-sampling-plants-only",
+    "reasoning": "Expand each zone by its own frame size and suppress a bed estimate if any part of its frame lacks observations.",
+    "incorrect_behavior": "Rounding each zone before aggregation can accumulate rounding error in the bed inventory.",
+    "title": "Expand rosette counts across a sampling frame"
+  },
+  {
+    "task_id": "decision-seed-tray-pair-diversity",
+    "source_group": "data_analysis/ecological-sampling-plants-only",
+    "reasoning": "Pool conspecific seeds across packets before subtracting within-species pairs from all unordered seed pairs.",
+    "incorrect_behavior": "Counting same-species pairs only within individual packets misclassifies conspecific seeds drawn from separate packets.",
+    "title": "Species diversity in a two-seed draw"
+  },
+  {
+    "task_id": "decision-rebuild-invoice-tax-from-running-totals",
+    "source_group": "file_workflow/invoice-import-corrections",
+    "reasoning": "Difference consecutive rounded cumulative tax amounts to recover the cents attributable to each line.",
+    "incorrect_behavior": "Rounding each line independently can allocate the same rounding cent twice or miss a cent accumulated across small lines.",
+    "title": "Rebuild line tax after an exporter rounded each line separately"
+  },
+  {
+    "task_id": "decision-restore-carton-quantities-from-dock-notices",
+    "source_group": "file_workflow/invoice-import-corrections",
+    "reasoning": "Resolve the applicable dated packing notice per dispatch and extract its conversion factor to reconstruct the imported quantity.",
+    "incorrect_behavior": "Using the newest notice on file applies later packing changes to earlier dispatches.",
+    "title": "Correct carton imports using the notice in force at dispatch"
+  },
+  {
+    "task_id": "decision-schedule-indivisible-import-repair-files",
+    "source_group": "file_workflow/invoice-import-corrections",
+    "reasoning": "Evaluate feasible single files and pairs against the shared time budget and rank complete selections by recovery, runtime, and code sequence.",
+    "incorrect_behavior": "Committing to the largest individual recovery before evaluating pairs can leave too little time for the best combination.",
+    "title": "Choose the repair files for a limited import window"
+  },
+  {
+    "task_id": "decision-recover-unacknowledged-invoice-line-occurrences",
+    "source_group": "file_workflow/invoice-import-corrections",
+    "reasoning": "Subtract successful receipt multiplicities from ordered source occurrences within each null-safe charge signature.",
+    "incorrect_behavior": "Treating one matching receipt as proof that every identical source line loaded suppresses legitimate retries.",
+    "title": "Resume a partial invoice import when receipts omit source row numbers"
+  },
+  {
+    "task_id": "decision-fifo-count-across-receipt-layers",
+    "source_group": "finance/inventory-valuation",
+    "reasoning": "Assign the closing count to the newest receipt layers, taking only the residual quantity from the boundary layer.",
+    "incorrect_behavior": "It retains the earliest receipt first within a day, which misprices a count that cuts through that day's receipts.",
+    "title": "Value a warehouse count that cuts through a receipt layer"
+  },
+  {
+    "task_id": "decision-idle-plant-overhead-absorption",
+    "source_group": "finance/inventory-valuation",
+    "reasoning": "Apply a capacity floor to the overhead denominator, then distinguish overhead absorbed by all output from overhead retained in unsold units.",
+    "incorrect_behavior": "It uses normal capacity even during above-capacity production and can allocate more fixed cost than the plant incurred.",
+    "title": "Separate idle capacity expense from finished goods"
+  },
+  {
+    "task_id": "decision-intercompany-margin-in-blended-stock",
+    "source_group": "finance/inventory-valuation",
+    "reasoning": "Spread the net internal margin across the commingled pool and eliminate only the portion attributable to closing units.",
+    "incorrect_behavior": "It eliminates the margin on all receipts, including units the depot has already sold outside the group.",
+    "title": "Eliminate internal transfer profit from blended inventory"
+  },
+  {
+    "task_id": "decision-consignment-ownership-cutoff",
+    "source_group": "finance/inventory-valuation",
+    "reasoning": "Resolve dated and superseding ownership evidence before recognizing the cost of physically present stock.",
+    "incorrect_behavior": "It applies future transfers to the closing count by selecting the latest declaration regardless of its effective date.",
+    "title": "Reconcile a depot count to owned inventory at cutoff"
+  },
+  {
+    "task_id": "decision-sequence-trim-bench-orders",
+    "source_group": "optimization/workshop-job-scheduling",
+    "reasoning": "Evaluate feasible permutations under a material-release precedence constraint and minimize completion-time-dependent weighted tardiness.",
+    "incorrect_behavior": "The dispatcher reports the monetary charge correctly for the chosen sequence but optimizes total late minutes as if every job had the same rate.",
+    "title": "Sequence three orders on a trim bench"
+  },
+  {
+    "task_id": "decision-pack-a-compatible-kiln-firing",
+    "source_group": "optimization/workshop-job-scheduling",
+    "reasoning": "Pack one or two compatible indivisible lots into a single firing under a shared payload limit.",
+    "incorrect_behavior": "It checks each lot against the rack rating individually, allowing a pair whose combined mass overloads the rack.",
+    "title": "Allocate the last kiln firing"
+  },
+  {
+    "task_id": "decision-place-a-dust-extractor-shutdown",
+    "source_group": "optimization/workshop-job-scheduling",
+    "reasoning": "Place a fixed-duration maintenance outage by minimizing the fees for the union of tickets touched by its interval.",
+    "incorrect_behavior": "It counts cancelled tickets distinctly but charges the cancellation fee separately for every overlapping slice.",
+    "title": "Book an extractor shutdown around split jobs"
+  },
+  {
+    "task_id": "decision-contract-relief-for-dated-assembly-work",
+    "source_group": "optimization/workshop-job-scheduling",
+    "reasoning": "Price indivisible staffing offers after checking cumulative capacity against cumulative work at every deadline.",
+    "incorrect_behavior": "It checks capacity only at the end of the schedule, so relief delivered after a missed deadline can make an infeasible offer appear adequate.",
+    "title": "Buy relief coverage for an assembly backlog"
+  },
+  {
+    "task_id": "decision-cite-last-complete-enclosure-count",
+    "source_group": "citation/archival-correspondence",
+    "reasoning": "Validate each letter sleeve by sleeve before ranking complete letters, so the cited source independently supports the entire reported total.",
+    "incorrect_behavior": "Counting distinct numeric tallies ignores NULL, allowing a later letter with one pencilled count and an explicit unresolved claim to displace a complete count.",
+    "title": "Which letter supports the enclosure count?"
+  },
+  {
+    "task_id": "decision-audit-weekly-carrier-minimum-top-ups",
+    "source_group": "finance/carrier-invoice-reconciliation",
+    "reasoning": "Net signed postings under each tariff's fuel eligibility rule before applying the weekly minimum once per dispatched settlement.",
+    "incorrect_behavior": "It discards credit postings before totaling eligible charges, which can understate the required top-up and make the invoice appear overbilled.",
+    "title": "Reconcile weekly minimum charges after freight credits"
+  },
+  {
+    "task_id": "decision-factorial-interaction-walsh-coefficient",
+    "source_group": "supplement/distribution-and-paired-forecasts",
+    "reasoning": "Project the four responses onto the interaction basis vector and normalize by the number of factorial runs.",
+    "incorrect_behavior": "The query projects onto the speed main effect and omits the pressure sign required for the interaction.",
+    "title": "Extract the speed-by-pressure coefficient in a paper-folding experiment"
+  },
+  {
+    "task_id": "decision-paired-published-baseline-brier-skill",
+    "source_group": "supplement/distribution-and-paired-forecasts",
+    "reasoning": "Filter once for complete forecast pairs, then calculate relative improvement from their two mean squared probability errors.",
+    "incorrect_behavior": "Each AVG independently skips missing probabilities, so a day with only one forecast enters just one score and changes the comparison.",
+    "title": "Score rain forecasts against the published baseline"
+  },
+  {
+    "task_id": "decision-audit-independent-glaze-attributions",
+    "source_group": "citation/museum-catalogue",
+    "reasoning": "Collapse derivative slips into independent votes, discard internally divided families, and cite one slip from each family behind a qualifying winner.",
+    "incorrect_behavior": "A divided family gets a vote for each reading, allowing a disputed observation to supply the decisive second vote.",
+    "title": "Audit the evidence behind a glaze attribution"
+  },
+  {
+    "task_id": "decision-export-approved-caption-patch",
+    "source_group": "citation/museum-catalogue",
+    "reasoning": "Resolve the approved caption as of the export cutoff, suppress unchanged values with null-safe comparison, and serialize the cited changes into an importable CSV.",
+    "incorrect_behavior": "Ordinary inequality evaluates to unknown when either caption is NULL, silently dropping clear or fill operations.",
+    "title": "Prepare a cited caption correction file"
+  },
+  {
+    "task_id": "decision-flag-impossible-gallery-transfers",
+    "source_group": "citation/museum-catalogue",
+    "reasoning": "Compare consecutive cited sightings using the widest feasible elapsed time and the minimum for the direction actually traveled.",
+    "incorrect_behavior": "It tests the shortest possible gap, flagging a pair whenever some date choices fail even if other choices satisfy the transfer minimum.",
+    "title": "Find impossible transfers in a display history"
+  },
+  {
+    "task_id": "decision-dryer-paired-moisture-change",
+    "source_group": "data_analysis/regular-event-streams",
+    "reasoning": "Estimate a within-tray change using the intersection of the two probes' observed samples.",
+    "incorrect_behavior": "Subtracting separate probe means allows unmatched trays into the estimate and can even report a drop for a line with zero paired trays.",
+    "title": "Measure moisture change across a dryer pass"
+  },
+  {
+    "task_id": "decision-kiln-cart-dispatch",
+    "source_group": "data_analysis/regular-event-streams",
+    "reasoning": "Compare feasible empty, singleton, and two-batch loads using a capacity constraint and a deterministic multipart objective.",
+    "incorrect_behavior": "Committing the highest-value individual batch first can exclude a pair with greater combined savings.",
+    "title": "Load a two-position kiln cart before departure"
+  },
+  {
+    "task_id": "decision-crate-stack-notice-audit",
+    "source_group": "data_analysis/regular-event-streams",
+    "reasoning": "Resolve the governing evidence as of each observation before testing the observed stack against its documented limit.",
+    "incorrect_behavior": "Filtering for breaches before ranking notices lets a superseded, stricter limit produce a false finding.",
+    "title": "Cite the packing notice governing each excessive stack"
+  },
+  {
+    "task_id": "decision-refill-meter-csv",
+    "source_group": "data_analysis/regular-event-streams",
+    "reasoning": "Convert adjacent cyclic counter readings into interval volumes and serialize the qualifying records into one ordered CSV text value.",
+    "incorrect_behavior": "Removing missed readings before taking the previous reading exports a multi-tick change as a single interval.",
+    "title": "Export net refill volumes from a wrapping meter"
+  },
+  {
+    "task_id": "decision-close-prepaid-update-revenue",
+    "source_group": "file_workflow/normalizing-a-compendium",
+    "reasoning": "Allocate each prepayment's residual cents to early service periods and reconcile the current-period flow with the closing unearned balance.",
+    "incorrect_behavior": "It postpones all residual cents until the final service period, shifting both earned revenue and the closing balance.",
+    "title": "Close the third period for prepaid compendium updates"
+  },
+  {
+    "task_id": "decision-marginal-volume-rebate-accrual",
+    "source_group": "finance/contractual-rebates",
+    "reasoning": "Net signed quarterly movements and distribute the resulting units across marginal rate bands.",
+    "incorrect_behavior": "It reprices every unit at the highest rate reached, treating a marginal schedule as retroactive.",
+    "title": "Price the quarter-end volume accrual"
+  },
+  {
+    "task_id": "decision-capacity-constrained-rebate-elections",
+    "source_group": "finance/contractual-rebates",
+    "reasoning": "Compare complete feasible elections under a shared capacity limit and supplier exclusivity.",
+    "incorrect_behavior": "It permits two mutually exclusive elections from one supplier.",
+    "title": "Elect a supplier rebate portfolio"
+  },
+  {
+    "task_id": "decision-rebate-remittance-balance-file",
+    "source_group": "finance/contractual-rebates",
+    "reasoning": "Reconstruct each payment attempt's final state before reconciling approved rebates and serializing outstanding balances.",
+    "incorrect_behavior": "It deducts historical posted payments even when a subsequent reversal restored the payable.",
+    "title": "Build the open rebate remittance CSV"
+  },
+  {
+    "task_id": "decision-preserve-a-reusable-reel-remnant",
+    "source_group": "optimization/network-cabling-plan",
+    "reasoning": "Enumerate indivisible cut assignments and preserve the longest continuous remnant subject to both reel capacities.",
+    "incorrect_behavior": "It charges the preparation allowance once per occupied reel, so a reel carrying multiple cuts appears to retain too much cable.",
+    "title": "Preserve a reusable reel remnant"
+  },
+  {
+    "task_id": "decision-limit-cable-exposure-in-one-duct",
+    "source_group": "optimization/network-cabling-plan",
+    "reasoning": "Minimize route length after aggregating the replacement exposure of all pieces sharing each physical duct.",
+    "incorrect_behavior": "It treats each piece as an independent replacement exposure even when several pieces occupy the same duct.",
+    "title": "Choose a route within the duct replacement limit"
+  },
+  {
+    "task_id": "decision-schedule-a-two-slot-patch-panel-move",
+    "source_group": "optimization/network-cabling-plan",
+    "reasoning": "Find an adjacent pair of permitted slots minimizing the cardinality of the union of their booked booths.",
+    "incorrect_behavior": "It counts booth-slot bookings, charging two disruptions to a booth that uses the panel throughout the move.",
+    "title": "Schedule a patch-panel move around booth bookings"
+  },
+  {
+    "task_id": "decision-buy-stock-limited-patch-cord-packs",
+    "source_group": "optimization/network-cabling-plan",
+    "reasoning": "Optimize a bounded integer purchase across three pack offers that jointly cover two separate size requirements.",
+    "incorrect_behavior": "It uses the maximum possible stock limit for every offer, allowing purchases beyond the stock actually listed.",
+    "title": "Fill a patch-cord order from limited pack stock"
+  },
+  {
+    "task_id": "decision-platform-amendment-at-departure",
+    "source_group": "citation/railway-operation-notices",
+    "reasoning": "Resolve overlapping platform notices by checking both publication time and validity at each departure before ranking eligible evidence.",
+    "incorrect_behavior": "Treats the expiry minute as inclusive, keeping a temporary platform instruction in force for a departure at the exact handback minute.",
+    "title": "Cite the platform instruction in force at departure"
+  },
+  {
+    "task_id": "decision-paired-relief-shuttle-allocation",
+    "source_group": "citation/railway-operation-notices",
+    "reasoning": "Evaluate feasible pairs under budget and vehicle-pool constraints, capping the benefit of combined capacity separately at each stop.",
+    "incorrect_behavior": "Pools demand across stops, allowing spare seats on one route to count as service for passengers waiting at the other stop.",
+    "title": "Select two relief shuttles for a closure notice"
+  },
+  {
+    "task_id": "decision-wayfinding-sign-export-after-walkthrough",
+    "source_group": "citation/railway-operation-notices",
+    "reasoning": "Reconcile prescribed wording against physical inspection evidence, then serialize only the discrepancies into a fully escaped, ordered CSV with citations.",
+    "incorrect_behavior": "Uses ordinary inequality for the walkthrough comparison, which silently drops empty mounting frames recorded with null wording.",
+    "title": "Build the replacement-sign CSV from a station walkthrough"
+  },
+  {
+    "task_id": "decision-book-complementary-demo-packages",
+    "source_group": "data_analysis/customer-acquisition",
+    "reasoning": "Compare feasible single bookings and compatible pairs under crew, budget and territory constraints using a deterministic objective hierarchy.",
+    "incorrect_behavior": "Treating distinct package codes as sufficient compatibility permits two crews to book the same exclusive territory.",
+    "title": "Book demo packages for launch weekend"
+  },
+  {
+    "task_id": "decision-export-unfulfilled-partner-kit-orders",
+    "source_group": "data_analysis/customer-acquisition",
+    "reasoning": "Reconcile shipments at order grain before consolidating partner balances and serializing escaped CSV records.",
+    "incorrect_behavior": "Netting quantities across a partner's orders allows an overshipment on a closed order to reduce another order's packing quantity.",
+    "title": "Generate the partner kit packing CSV"
+  },
+  {
+    "task_id": "decision-meter-reset-production-depreciation",
+    "source_group": "finance/asset-depreciation",
+    "reasoning": "Measure production separately on each physical meter interval and cap the resulting expense at the remaining depreciable basis.",
+    "incorrect_behavior": "Treats readings from replacement meters as points on one continuous counter.",
+    "title": "Close a production line after a meter swap"
+  },
+  {
+    "task_id": "decision-retired-components-sale-settlement",
+    "source_group": "finance/asset-depreciation",
+    "reasoning": "Derecognize the depreciated carrying amount of only the units sold and compare it with the receipt’s net settlement.",
+    "incorrect_behavior": "Charges an additional month of depreciation in the sale month, understating the book value of units still above residual.",
+    "title": "Settle a partial disposal of reusable fixtures"
+  },
+  {
+    "task_id": "decision-packing-upgrades-under-depreciation-ceiling",
+    "source_group": "finance/asset-depreciation",
+    "reasoning": "Compare feasible single upgrades and pairs under simultaneous capital and annual depreciation limits, resolving equal capacity by spend and quote IDs.",
+    "incorrect_behavior": "Reports annual depreciation but enforces only the purchase budget when selecting the winner.",
+    "title": "Select packing upgrades for the next fiscal year"
+  },
+  {
+    "task_id": "decision-consolidate-inbound-lot-fees",
+    "source_group": "optimization/warehouse-replenishment",
+    "reasoning": "Choose a capacity-filling pair of whole lots while consolidating the fixed inbound fee for lots from the same supplier.",
+    "incorrect_behavior": "It ranks purchases by merchandise price alone and adds collection fees only when reporting the selected purchase.",
+    "title": "Buy a full receiving cage"
+  },
+  {
+    "task_id": "decision-sequence-single-dock-refills",
+    "source_group": "optimization/warehouse-replenishment",
+    "reasoning": "Evaluate unloading permutations with release times and propagate each completion time to minimize weighted tardiness.",
+    "incorrect_behavior": "It treats every trailer as available at minute zero, allowing unloads before arrival.",
+    "title": "Sequence three refill trailers at one dock"
+  },
+  {
+    "task_id": "decision-size-opening-pick-face-reserve",
+    "source_group": "optimization/warehouse-replenishment",
+    "reasoning": "Compare timetables by their largest pre-delivery inventory deficit over all prefixes of the shift.",
+    "incorrect_behavior": "It checks stock after both events in each wave, crediting a delivery toward picks that precede it.",
+    "title": "Set opening stock against a fixed delivery timetable"
+  },
+  {
+    "task_id": "decision-ration-sealed-refill-packs",
+    "source_group": "optimization/warehouse-replenishment",
+    "reasoning": "Allocate discrete packs under a shared stock limit using max-min proportional fulfillment followed by throughput.",
+    "incorrect_behavior": "It prioritizes total units shipped, which can leave a bay empty even when both bays could receive half their demand.",
+    "title": "Share a short replenishment run between two bays"
+  },
+  {
+    "task_id": "decision-market-stall-repair-pair",
+    "source_group": "citation/municipal-meeting-minutes",
+    "reasoning": "Evaluate repair pairs against two shared limits and break benefit ties by cost and then citation order.",
+    "incorrect_behavior": "Treats the two jobs as parallel even though they draw on the same crew.",
+    "title": "Cite the two stall repairs that fit the market closure"
+  },
+  {
+    "task_id": "decision-mural-progress-payment",
+    "source_group": "citation/municipal-meeting-minutes",
+    "reasoning": "Reconcile cumulative certified earnings to signed cash movements at the review cutoff after rounding the holdback.",
+    "incorrect_behavior": "Deduplicates cash by amount and therefore drops genuine equal-sized installments.",
+    "title": "Reconcile the mural installment recorded in the arts minutes"
+  },
+  {
+    "task_id": "decision-book-drop-pilot-paired-stops",
+    "source_group": "citation/municipal-meeting-minutes",
+    "reasoning": "Compare crate-weighted phase means on paired stops and return the complete set of contributing citations.",
+    "incorrect_behavior": "Gives a one-crate report the same influence as a nine-crate report when deciding whether a stop improved.",
+    "title": "Check the book-drop pilot claim against paired stop logs"
+  },
+  {
+    "task_id": "decision-audit-missed-survey-pickups",
+    "source_group": "data_analysis/survey-nonresponse",
+    "reasoning": "Resolve overlapping primary accounts by specificity before attributing an observed blank to a missed pickup.",
+    "incorrect_behavior": "Filtering for missed pickups before comparing accounts discards more specific evidence that a pickup took place.",
+    "title": "Which blank returns can a missed pickup explain?"
+  },
+  {
+    "task_id": "decision-allocate-two-reminder-slots",
+    "source_group": "data_analysis/survey-nonresponse",
+    "reasoning": "Enumerate feasible session pairs and score the union of their batches under a binding crew budget.",
+    "incorrect_behavior": "Adding session yields credits the same batch twice when both selected sessions reach it.",
+    "title": "Book two reminder slots without counting the same returns twice"
+  },
+  {
+    "task_id": "decision-close-followup-vendor-ledger",
+    "source_group": "data_analysis/survey-nonresponse",
+    "reasoning": "Recognize attempt fees and acceptance bonuses on separate earning dates and reconcile vendor-level cash into payables or advances.",
+    "incorrect_behavior": "Backdating every eventual acceptance bonus to the attempt day overstates earnings when acceptance falls after the close.",
+    "title": "Close the books on survey follow-up calls"
+  },
+  {
+    "task_id": "decision-prepaid-booth-space-close",
+    "source_group": "file_workflow/conflicting-duplicate-updates",
+    "reasoning": "Reconstruct each contract field from sparse revisions, then recognize whole monthly installments with the rounding remainder deferred to the last month.",
+    "incorrect_behavior": "Prorating the total fee before rounding can release a remainder cent before the final service month.",
+    "title": "Close the prepaid booth-space ledger"
+  },
+  {
+    "task_id": "decision-crate-destination-receipt-audit",
+    "source_group": "file_workflow/conflicting-duplicate-updates",
+    "reasoning": "Identify genuine routing conflicts and resolve each against a primary receipt whose event type and bay both support the conclusion.",
+    "incorrect_behavior": "Treating a sighting as acceptance can cite a passing crate or resolve a dispute that has no qualifying receipt.",
+    "title": "Reconcile disputed crate destinations"
+  },
+  {
+    "task_id": "decision-packing-pilot-paired-savings",
+    "source_group": "file_workflow/conflicting-duplicate-updates",
+    "reasoning": "Filter duplicate measurements by agreement before matching the two patterns and computing a median over within-run differences.",
+    "incorrect_behavior": "Selecting the smallest reported measurement silently admits disputed runs into the paired cohort.",
+    "title": "Measure material savings on matched packing trials"
+  },
+  {
+    "task_id": "decision-isolate-trading-working-capital",
+    "source_group": "finance/cash-flow-classification",
+    "reasoning": "Strip signed changes in consolidation scope and currency translation from a stock difference before applying the asset or liability cash-flow sign.",
+    "incorrect_behavior": "It removes documented ordinary trading movements along with acquisition and translation movements, understating the portion of the balance change generated by trading.",
+    "title": "Reconcile the operating cash adjustment after a depot acquisition"
+  },
+  {
+    "task_id": "decision-split-irregular-equipment-loan-payments",
+    "source_group": "finance/cash-flow-classification",
+    "reasoning": "A rounded day-count accrual and opening arrears determine how far each actual payment reaches through the interest-first repayment waterfall.",
+    "incorrect_behavior": "It applies cash to principal as soon as current-period interest is covered, even when opening interest remains payable.",
+    "title": "Classify the cash actually remitted on equipment loans"
+  },
+  {
+    "task_id": "decision-net-revolver-sweeps-within-facility-day",
+    "source_group": "finance/cash-flow-classification",
+    "reasoning": "Apply gross or net presentation at the facility-day level before aggregating directional financing flows across facilities.",
+    "incorrect_behavior": "It pools all net-eligible facilities on a date, allowing a repayment on one facility to offset a draw on another.",
+    "title": "Prepare daily financing receipts and repayments from treasury postings"
+  },
+  {
+    "task_id": "decision-hold-a-pulse-for-feeder-groups",
+    "source_group": "optimization/bus-timetabling",
+    "reasoning": "A departure changes which groups can connect, and an otherwise attractive hold can exceed the bus's remaining capacity.",
+    "incorrect_behavior": "It credits all connecting riders even when the seat notice makes their option infeasible.",
+    "title": "Set the departure minute for a timed transfer"
+  },
+  {
+    "task_id": "decision-reserve-an-unbroken-charging-window",
+    "source_group": "optimization/bus-timetabling",
+    "reasoning": "The scheduler must buy a contiguous pair of indivisible charging slots that fits both the layover and the battery's admissible charge range.",
+    "incorrect_behavior": "It accepts an indivisible delivery that would overfill the battery.",
+    "title": "Reserve a terminal charger between scheduled runs"
+  },
+  {
+    "task_id": "decision-place-a-relief-trip-in-a-service-gap",
+    "source_group": "optimization/bus-timetabling",
+    "reasoning": "Splitting a service gap changes accumulated waiting quadratically, so placement and demand jointly determine the value of a relief trip.",
+    "incorrect_behavior": "It ranks gaps by waiting before the intervention and ignores how much waiting the offered placement would remove.",
+    "title": "Place one relief departure to reduce platform waiting"
+  },
+  {
+    "task_id": "decision-bound-preview-fix-by-consecutive-builds",
+    "source_group": "citation/software-release-errata",
+    "reasoning": "Establish a fix boundary from a same-profile pair of opposite observations exactly one build apart, then retain the latest such pair.",
+    "incorrect_behavior": "It treats consecutive recorded tests as consecutive release builds, so an untested interval can acquire a spurious fix boundary.",
+    "title": "Which builds establish that the page-preview fix landed?"
+  },
+  {
+    "task_id": "decision-reconcile-independent-carton-witnesses",
+    "source_group": "citation/software-release-errata",
+    "reasoning": "Collapse repeated testimony to independent desks, apply a carton-wide contradiction veto, and cite canonical notes from the first two witnesses.",
+    "incorrect_behavior": "It counts notes as witnesses, allowing repeated inspections by the same desk to corroborate each other.",
+    "title": "Which insert omissions have independent witnesses?"
+  },
+  {
+    "task_id": "decision-export-applicable-menu-caption-errata",
+    "source_group": "citation/software-release-errata",
+    "reasoning": "Match each correction against the shipped precondition and serialize the applicable evidence-backed edits as an ordered, quote-escaped CSV file.",
+    "incorrect_behavior": "It converts an unknown shipped caption to a verified empty string, applying a correction whose precondition has never been observed.",
+    "title": "Build the caption-correction CSV for the shipped menu"
+  },
+  {
+    "task_id": "decision-water-tariff-across-register-exchanges",
+    "source_group": "data_analysis/meter-resets",
+    "reasoning": "Sum within-register differences by service before applying the cycle's marginal tariff.",
+    "incorrect_behavior": "The cheap tier starts over at each register exchange, giving some services more than 10 cubic meters at the lower rate.",
+    "title": "Keep the billing tier through a water meter exchange"
+  },
+  {
+    "task_id": "decision-schedule-reset-checks-before-dispatch",
+    "source_group": "data_analysis/meter-resets",
+    "reasoning": "Compare feasible singleton and two-job schedules under both a crew-time conflict constraint and a consumables budget.",
+    "incorrect_behavior": "The plan respects the spending cap but can assign the crew to two overlapping checks.",
+    "title": "Allocate a calibration crew's two reset checks"
+  },
+  {
+    "task_id": "decision-bound-reset-time-from-signed-sightings",
+    "source_group": "data_analysis/meter-resets",
+    "reasoning": "Intersect the one-sided time bounds from trusted observations and retain the primary source attaining each endpoint.",
+    "incorrect_behavior": "Using the first OLD sighting leaves a wider interval even when a later signed slip proves the reset had still not occurred.",
+    "title": "Bracket an untimed reset using two field observations"
+  },
+  {
+    "task_id": "decision-trim-unsealed-packing-file-tails",
+    "source_group": "file_workflow/rolling-back-partial-imports",
+    "reasoning": "Choose the furthest certified record boundary that still exists in each file and cite the primary note supporting the cut.",
+    "incorrect_behavior": "Treats an observed delimiter as certification that every row through it is complete.",
+    "title": "Recover the sealed prefix of each packing file"
+  },
+  {
+    "task_id": "decision-replay-surviving-catalog-cell-edits",
+    "source_group": "file_workflow/rolling-back-partial-imports",
+    "reasoning": "Compare the last applied absolute assignment per cell with the last surviving assignment, including explicit clears.",
+    "incorrect_behavior": "Restores the seed value of each affected cell and loses legitimate assignments made after the seed.",
+    "title": "Restore catalog cells while preserving later edits"
+  },
+  {
+    "task_id": "decision-reverse-bundle-credit-allocations",
+    "source_group": "file_workflow/rolling-back-partial-imports",
+    "reasoning": "Deduplicate rejected unit identities and unwind each booked unit's original quotient-and-remainder allocation in cents.",
+    "incorrect_behavior": "Prorates the bundle credit by the number of rejected units and rounds once, losing which units received the extra cents.",
+    "title": "Reverse the exact booked credit on rejected bundle units"
+  },
+  {
+    "task_id": "decision-inventory-step-up-by-production-stage",
+    "source_group": "finance/purchase-price-allocation",
+    "reasoning": "Production stage determines both the relevant market evidence and which remaining efforts reduce the quoted price.",
+    "incorrect_behavior": "The calculation reimburses completion costs but leaves the profit attributable to future completion work in acquired inventory value.",
+    "title": "Measure the inventory step-up at the production handover"
+  },
+  {
+    "task_id": "decision-shared-yard-highest-value-use",
+    "source_group": "finance/purchase-price-allocation",
+    "reasoning": "Evaluate joint pad uses because a shared fixed activation cost and two site-wide constraints couple their conversion decisions.",
+    "incorrect_behavior": "The funding test excludes connection activation even though the buyer must fund it at conversion.",
+    "title": "Value an acquired yard with a shared loading connection"
+  },
+  {
+    "task_id": "decision-step-acquisition-goodwill-bridge-csv",
+    "source_group": "finance/purchase-price-allocation",
+    "reasoning": "Reconstruct the deemed acquisition total across ownership tranches and reconcile it to the acquiree's full net assets in a four-line CSV.",
+    "incorrect_behavior": "The bridge carries the old stake into the acquisition at its book amount instead of its acquisition-date fair value.",
+    "title": "Produce the goodwill bridge for a step acquisition"
+  },
+  {
+    "task_id": "decision-customer-relationship-value-from-mature-renewals",
+    "source_group": "finance/purchase-price-allocation",
+    "reasoning": "Pool completed renewal exposures to estimate conditional retention, then compound that probability to value second-year surviving cash flows.",
+    "incorrect_behavior": "The retention estimate gives each cohort equal weight even when the numbers of accounts exposed to renewal differ.",
+    "title": "Estimate acquired customer relationship value from mature renewal cohorts"
+  },
+  {
+    "task_id": "decision-schedule-fixed-volume-pump-runs",
+    "source_group": "optimization/water-distribution",
+    "reasoning": "Choose binary pump runs while carrying inventory forward and enforcing both hourly tank bounds and a terminal reserve.",
+    "incorrect_behavior": "It checks only the final inventory, allowing a cheap schedule that runs the tank dry before the first refill.",
+    "title": "Schedule an elevated tank’s pump runs"
+  },
+  {
+    "task_id": "decision-isolate-main-with-overlapping-outages",
+    "source_group": "optimization/water-distribution",
+    "reasoning": "Select a two-valve cut that covers both feed paths while minimizing the weighted union of interrupted blocks.",
+    "incorrect_behavior": "It adds the two valves’ interruption counts and double-counts connections in a shared block.",
+    "title": "Choose valves for a main isolation"
+  },
+  {
+    "task_id": "decision-sequence-leak-repairs-before-refill",
+    "source_group": "optimization/water-distribution",
+    "reasoning": "Optimize repair order on a directed travel network by crediting each stopped leak for the time remaining after its own completion.",
+    "incorrect_behavior": "It starts crediting both repairs at the second completion, discarding the water already saved by the first repair during travel and work at the second site.",
+    "title": "Sequence two repairs before the refill window ends"
+  },
+  {
+    "task_id": "decision-return-crate-pilot-quorum",
+    "source_group": "citation/standards-adoption-dates",
+    "reasoning": "Deduplicate live evidence within each depot before identifying the bulletin that crosses the two-depot threshold.",
+    "incorrect_behavior": "Counts repeat bulletins from one depot as independent confirmations.",
+    "title": "Date the return-crate pilot reached its adoption quorum"
+  },
+  {
+    "task_id": "decision-catalogue-freeze-correction-trail",
+    "source_group": "citation/standards-adoption-dates",
+    "reasoning": "Resolve supersession within the evidence available at each historical freeze.",
+    "incorrect_behavior": "Allows corrections issued after a freeze to erase the evidence that editors had at that freeze.",
+    "title": "Reconstruct the edition of record at catalogue freeze"
+  },
+  {
+    "task_id": "decision-loom-calibration-cutover-slot",
+    "source_group": "citation/standards-adoption-dates",
+    "reasoning": "Evaluate each cited slot against the combined workload of all eligible runs before ranking feasible dates by covered production.",
+    "incorrect_behavior": "Checks whether the largest individual run fits while allowing the combined work to exceed the slot.",
+    "title": "Choose a feasible adoption day for a weave standard"
+  },
+  {
+    "task_id": "decision-display-tray-stock-writedown",
+    "source_group": "citation/standards-adoption-dates",
+    "reasoning": "Match the launch evidence to opening inventory on the effective day and apply the valuation floor separately to each tray style.",
+    "incorrect_behavior": "Offsets one style's loss with another style's excess recovery value before applying the zero floor.",
+    "title": "Book the adoption-day write-down of display trays"
+  },
+  {
+    "task_id": "decision-kiln-disagreement-by-exposure-time",
+    "source_group": "data_analysis/sensor-disagreement",
+    "reasoning": "Clip each paired state’s holding interval to the observation window and weight disagreement by its covered duration.",
+    "incorrect_behavior": "Removing unavailable updates before finding interval boundaries extends the preceding valid pair through a coverage gap.",
+    "title": "Measure how long two kiln probes disagreed"
+  },
+  {
+    "task_id": "decision-warehouse-gate-correction-file",
+    "source_group": "data_analysis/sensor-disagreement",
+    "reasoning": "Resolve scanner revisions and withdrawals before serializing signed adjustments into a deterministically ordered, escaped CSV file.",
+    "incorrect_behavior": "Surrounding each tag with quotes handles commas but leaves a literal quote inside a tag unescaped.",
+    "title": "Build the correction CSV for a warehouse gate import"
+  },
+  {
+    "task_id": "decision-dryer-probe-swap-evidence",
+    "source_group": "data_analysis/sensor-disagreement",
+    "reasoning": "Use a primary swap record to identify the matched observations and test whether the hotter reading moved with the exchanged probe.",
+    "incorrect_behavior": "Substituting the latest subsequent reading for the cited settled check can attribute an unrelated temperature change to the swap.",
+    "title": "Trace a dryer temperature split through a documented probe swap"
+  },
+  {
+    "task_id": "decision-apply-one-pass-folder-moves",
+    "source_group": "file_workflow/rebuilding-a-directory-manifest",
+    "reasoning": "Resolve nested folder moves by longest whole-directory prefix in the pre-move namespace.",
+    "incorrect_behavior": "The broadest move claims a file even when its original subdirectory has a dedicated destination.",
+    "title": "Rebuild the exhibit directory after a folder shuffle"
+  },
+  {
+    "task_id": "decision-cite-release-slips-at-packing-cutoff",
+    "source_group": "file_workflow/rebuilding-a-directory-manifest",
+    "reasoning": "Resolve overlapping batch and file testimony as of the packing cutoff and cite the controlling release instruction for each included file.",
+    "incorrect_behavior": "It gives an old file-specific hold permanent precedence over a newer batch release.",
+    "title": "Recover the print-room release manifest"
+  },
+  {
+    "task_id": "decision-measure-reclaimable-folder-bytes",
+    "source_group": "file_workflow/rebuilding-a-directory-manifest",
+    "reasoning": "Attribute each allocation once to a folder only when that folder contains every directory entry referring to the object.",
+    "incorrect_behavior": "It counts bytes only for objects with one name globally, overlooking objects whose multiple names all disappear together.",
+    "title": "Rebuild a cleanup manifest for shared storage"
+  },
+  {
+    "task_id": "decision-estimate-unreported-drive-failures",
+    "source_group": "finance/warranty-provision",
+    "reasoning": "Estimate reporting development from paired historical counts, then price the rounded outstanding failure count at the current repair cost.",
+    "incorrect_behavior": "Discarding cohorts with no early reports removes genuine late failures from the pooled numerator.",
+    "title": "Estimate failures still to be reported"
+  },
+  {
+    "task_id": "decision-allocate-refurbishment-kits-to-warranty-lots",
+    "source_group": "finance/warranty-provision",
+    "reasoning": "Compare the all-replacement baseline with every feasible single-lot and two-lot refurbishment plan under shared capacity.",
+    "incorrect_behavior": "Checking kit stock for each lot independently allows two jobs to spend the same kits.",
+    "title": "Price a feasible settlement plan for returned lots"
+  },
+  {
+    "task_id": "decision-export-warranty-close-adjustments",
+    "source_group": "finance/warranty-provision",
+    "reasoning": "Select each depot's effective closing estimate and reconcile it to the provision remaining after claim payments to generate an importable journal.",
+    "incorrect_behavior": "Using the highest approved estimate keeps a superseded target when a later revision reduces the provision.",
+    "title": "Build the month-end adjustment journal CSV"
+  },
+  {
+    "task_id": "decision-measure-warranty-top-up-after-prior-service",
+    "source_group": "finance/warranty-provision",
+    "reasoning": "Resolve overlapping warranty cards by serial number and precedence, then apply the remaining lifetime allowance across all pending repairs on the unit.",
+    "incorrect_behavior": "Applying the full unused allowance independently to each pending line counts the same lifetime coverage more than once.",
+    "title": "Measure unpaid service obligations under unit caps"
+  },
+  {
+    "task_id": "decision-shared-crate-loan-pair",
+    "source_group": "optimization/museum-exhibit-selection",
+    "reasoning": "Enumerate loan pairs and charge shared freight once before applying the budget and ranking feasible bookings.",
+    "incorrect_behavior": "Bills a crate fee for each loan, which can price a feasible shared shipment out of the budget.",
+    "title": "Book two loans for the entrance alcove"
+  },
+  {
+    "task_id": "decision-balance-three-gallery-sessions",
+    "source_group": "optimization/museum-exhibit-selection",
+    "reasoning": "Find a feasible one-to-one assignment of demonstrations to sessions using a maximin attendance objective.",
+    "incorrect_behavior": "Gives total daily visits priority over attendance in the weakest session.",
+    "title": "Program the demonstration gallery"
+  },
+  {
+    "task_id": "decision-verify-display-light-ceiling",
+    "source_group": "optimization/museum-exhibit-selection",
+    "reasoning": "Screen installations against the worst documented trial in their own bay and retain the binding observation as evidence.",
+    "incorrect_behavior": "Discards over-ceiling trials before evaluating the bay, allowing a single passing observation to qualify an installation.",
+    "title": "Award a display slot using measured illumination"
+  },
+  {
+    "task_id": "decision-last-confirmed-shelf-before-inventory",
+    "source_group": "citation/public-library-holdings",
+    "reasoning": "Resolve each holding's location against its own cutoff using only completed sightings and cite the winning slip.",
+    "incorrect_behavior": "The most recent paperwork can describe reserved space for a future move, so treating a plan as a sighting can invent a location.",
+    "title": "Cite the last confirmed shelf at inventory close"
+  },
+  {
+    "task_id": "decision-paired-map-packet-acquisition",
+    "source_group": "citation/public-library-holdings",
+    "reasoning": "Enumerate feasible pairs under two shared capacity limits and score the union of the quoted contents.",
+    "incorrect_behavior": "Adding packet sheet counts gives duplicate designs full credit twice and can favor a cheaper redundant pair.",
+    "title": "Select two map packets for the local holdings cabinet"
+  },
+  {
+    "task_id": "decision-reconcile-carton-short-shipment-credit",
+    "source_group": "citation/public-library-holdings",
+    "reasoning": "Reconcile a quantity shortage valued at invoice unit cost against credits already posted in cents on the same purchase line.",
+    "incorrect_behavior": "Treating any posted credit as full settlement discards lines whose partial credit leaves an outstanding balance.",
+    "title": "Substantiate outstanding credits on short shipments"
+  },
+  {
+    "task_id": "decision-balance-crossover-packing-times",
+    "source_group": "data_analysis/paired-experiment",
+    "reasoning": "Equal weighting of the two run orders prevents an imbalance in complete pairs from changing the crossover estimand.",
+    "incorrect_behavior": "Pooling complete pairs weights each sequence by the number of lots that finished it.",
+    "title": "Estimate packing time saved across both run orders"
+  },
+  {
+    "task_id": "decision-choose-two-recovery-retrofits",
+    "source_group": "data_analysis/paired-experiment",
+    "reasoning": "Enumerate feasible two-retrofit portfolios and rank their combined incremental yields under both shutdown constraints.",
+    "incorrect_behavior": "The hour budget alone admits pairs that compete for the same lift bay.",
+    "title": "Allocate a shutdown window to two material recovery retrofits"
+  },
+  {
+    "task_id": "decision-cite-active-glaze-inspection-card",
+    "source_group": "data_analysis/paired-experiment",
+    "reasoning": "An as-of evidence match determines both the cited revision and the direction in which a paired defect difference must be assessed.",
+    "incorrect_behavior": "Always using the absolute gap flags improvements under cards that count only additional trial defects.",
+    "title": "Trace paired glaze failures to the inspection card in force"
+  },
+  {
+    "task_id": "decision-export-paired-counter-exceptions",
+    "source_group": "data_analysis/paired-experiment",
+    "reasoning": "Pivot the two report streams while preserving unknown counts, then serialize the ordered exception records into a single escaped CSV file.",
+    "incorrect_behavior": "Substituting zero during comparison silently clears unknown counts when the other reading is zero or also unknown.",
+    "title": "Build the exception CSV for a shadow parcel counter"
+  },
+  {
+    "task_id": "decision-rotation-restore-exceptions",
+    "source_group": "file_workflow/log-rotation-and-archival",
+    "reasoning": "Test the byte count and content tag jointly on each copy before deciding whether the rotation has any usable copy.",
+    "incorrect_behavior": "It accepts a rotation when one copy supplies the matching byte count and another supplies the matching tag.",
+    "title": "Find sealed rotations with no usable restore copy"
+  },
+  {
+    "task_id": "decision-archive-writer-shift-meter",
+    "source_group": "file_workflow/log-rotation-and-archival",
+    "reasoning": "Difference consecutive valid counter readings within runs and restart accumulation from zero at an explicit run change.",
+    "incorrect_behavior": "It infers restarts only from counter decreases, missing a new run whose first reading already exceeds the old counter.",
+    "title": "Reconcile shift output across archive writer restarts"
+  },
+  {
+    "task_id": "decision-frozen-archive-location-manifest",
+    "source_group": "file_workflow/log-rotation-and-archival",
+    "reasoning": "Resolve each segment's last in-scope catalog event, including withdrawals, before emitting its frozen placement.",
+    "incorrect_behavior": "It discards withdrawals before ranking events, which restores an obsolete shelf placement for a withdrawn segment.",
+    "title": "Rebuild the location manifest at catalog freeze"
+  },
+  {
+    "task_id": "decision-apply-meal-tip-policy-at-service-date",
+    "source_group": "finance/employee-expense-settlement",
+    "reasoning": "Select the notice in force on the service date, then calculate the receipt-level excess using that notice's eligible base and percentage.",
+    "incorrect_behavior": "It applies the latest notice in each program retroactively to earlier meals.",
+    "title": "Audit tip reductions across a policy change"
+  },
+  {
+    "task_id": "decision-choose-same-day-reimbursement-batch",
+    "source_group": "finance/employee-expense-settlement",
+    "reasoning": "Evaluate feasible singleton and pair batches against a fee-inclusive cash ceiling and rank them by payout count, principal, and ID sequence.",
+    "incorrect_behavior": "It tests the cash ceiling against principal alone even though the same cash account funds transfer fees.",
+    "title": "Choose the reimbursements for a constrained payment run"
+  },
+  {
+    "task_id": "decision-export-trip-advance-clearing-csv",
+    "source_group": "finance/employee-expense-settlement",
+    "reasoning": "Clear advances against approved spending and prior cash returns, then serialize each residual payment or collection into an ordered CSV file.",
+    "incorrect_behavior": "It subtracts cash already returned, increasing the apparent amount still owed by the traveler.",
+    "title": "Produce the trip closeout transfer file"
+  },
+  {
+    "task_id": "decision-book-uninterrupted-tug-charge",
+    "source_group": "optimization/battery-charging-plan",
+    "reasoning": "Match consecutive hourly offers, screen both against the tug's constant draw, and minimize the two-hour energy bill.",
+    "incorrect_behavior": "It lets surplus feeder capacity in one hour compensate for a shortfall in the other.",
+    "title": "Book a two-hour charge for a yard tug"
+  },
+  {
+    "task_id": "decision-ration-swap-pack-charging",
+    "source_group": "optimization/battery-charging-plan",
+    "reasoning": "Compare whole-pack subsets under a shared energy ceiling, accounting for combinations that outperform the best individual job.",
+    "incorrect_behavior": "It takes the affordable prefix of jobs ranked by individual trips, missing higher-value combinations of smaller jobs.",
+    "title": "Ration an overnight energy allotment among swap packs"
+  },
+  {
+    "task_id": "decision-size-ferry-departure-topup",
+    "source_group": "optimization/battery-charging-plan",
+    "reasoning": "Use the minimum and maximum cumulative energy changes to find departure packages that preserve both reserve and charging headroom throughout the voyage.",
+    "incorrect_behavior": "It checks departure and arrival energy while overlooking intermediate reserve breaches and pier-charge overflow.",
+    "title": "Buy departure energy for a ferry with fixed pier charges"
+  },
+  {
+    "task_id": "decision-select-outage-resilient-charging-layout",
+    "source_group": "optimization/battery-charging-plan",
+    "reasoning": "Optimize the worst surviving charging capacity after loss of one circuit subject to an installation budget.",
+    "incorrect_behavior": "It ranks layouts by intact output even though the decision objective is output guaranteed during a circuit outage.",
+    "title": "Choose a pop-up charging layout for a field workshop"
+  },
+  {
+    "task_id": "decision-least-cost-two-stage-finish",
+    "source_group": "citation/supplier-certificates",
+    "reasoning": "Evaluate ordered pairs of certified stage bookings under a sequential deadline and charge shared handling once.",
+    "incorrect_behavior": "It charges two handling fees when both stages use one certificate, which can change the winning booking.",
+    "title": "Book a certified two-stage finish"
+  },
+  {
+    "task_id": "decision-release-manifest-after-corrections",
+    "source_group": "citation/supplier-certificates",
+    "reasoning": "Reconstruct each lot's state at a cutoff before filtering releases and serialize the cited decisions into CSV.",
+    "incorrect_behavior": "Filtering to releases before ranking resurrects a release superseded by a hold.",
+    "title": "Produce the receiving desk's release CSV"
+  },
+  {
+    "task_id": "decision-bound-cartons-needing-rework",
+    "source_group": "citation/supplier-certificates",
+    "reasoning": "Derive tight union bounds within each disjoint pallet using its capacity or attested overlap, then add the bounds across pallets.",
+    "incorrect_behavior": "It pools pallets with unreported overlaps, allowing a corner defect on one pallet to overlap a label defect on another.",
+    "title": "Bound the rework count from pallet certificates"
+  },
+  {
+    "task_id": "decision-platform-wait-across-a-frequency-change",
+    "source_group": "data_analysis/transit-reliability",
+    "reasoning": "Weight each gap between departures by the arrival minutes it contains, clipping the arrival interval at both window boundaries.",
+    "incorrect_behavior": "It assigns a rider arriving at a departure minute to the following train, adding a full headway to that rider's wait.",
+    "title": "Measure platform waiting across a frequency change"
+  },
+  {
+    "task_id": "decision-simultaneous-terminal-bay-outages",
+    "source_group": "data_analysis/transit-reliability",
+    "reasoning": "Partition the watch at outage boundaries and count a span once only when distinct unavailable bays cover it.",
+    "incorrect_behavior": "Summing pairwise report intersections counts the same blocked minute twice when two reports cover one bay.",
+    "title": "Count minutes when a terminal loses both bays"
+  },
+  {
+    "task_id": "decision-choose-a-transfer-hold-with-recovery-slack",
+    "source_group": "data_analysis/transit-reliability",
+    "reasoning": "Score feasible departure choices against both the cost imposed on riders already aboard and the waiting avoided by connecting groups.",
+    "incorrect_behavior": "It treats every offered duration as feasible even when a run lacks the recovery slack to absorb it.",
+    "title": "Choose a connection hold within recovery slack"
+  },
+  {
+    "task_id": "decision-verify-relocated-boardings-against-dispatch-notices",
+    "source_group": "data_analysis/transit-reliability",
+    "reasoning": "Corroborate relocated service with a time-valid dispatch notice and a boarding observation while checking for boarding at the original stop.",
+    "incorrect_behavior": "It treats any sighting at the scheduled stop as evidence of boarding there, excluding a verified relocation when the vehicle merely passed the closed stop.",
+    "title": "Verify calls served at an authorized temporary stop"
+  },
+  {
+    "task_id": "decision-repair-sparse-bin-updates",
+    "source_group": "file_workflow/change-data-capture",
+    "reasoning": "Find the last explicit field assignment inside the replay window and compare its nullable value with the exported value.",
+    "incorrect_behavior": "Falling back to the exported value for an explicit NULL silently drops bin clearances.",
+    "title": "Rebuild the bin assignment repair file"
+  },
+  {
+    "task_id": "decision-post-crate-deposit-movements",
+    "source_group": "file_workflow/change-data-capture",
+    "reasoning": "Difference consecutive full liability valuations per lot before aggregating the resulting movements by posting day.",
+    "incorrect_behavior": "Pricing only the change in crate count at the new rate misses the revaluation of crates carried forward.",
+    "title": "Post daily changes in refundable crate deposits"
+  },
+  {
+    "task_id": "decision-audit-diverter-routes-as-received",
+    "source_group": "file_workflow/change-data-capture",
+    "reasoning": "Reconstruct the effective instruction inside each scanner's visible feed history and cite the notice establishing a mismatch.",
+    "incorrect_behavior": "Ranking by receipt alone lets a late correction to an older instruction override a later effective routing change.",
+    "title": "Cite the routing notice available when a tray was scanned"
+  },
+  {
+    "task_id": "decision-effective-reserve-true-up",
+    "source_group": "finance/merchant-settlement",
+    "reasoning": "Determine which notice governed each close, then post the difference between its capped reserve requirement and the amount already held.",
+    "incorrect_behavior": "It keeps the first revision on the controlling date, so a same-day correction never takes effect.",
+    "title": "Post the reserve adjustment at statement close"
+  },
+  {
+    "task_id": "decision-net-currency-pocket-conversion",
+    "source_group": "finance/merchant-settlement",
+    "reasoning": "Net signed entries in their original currency and round exactly once per currency pocket before combining settlement values.",
+    "incorrect_behavior": "It rounds each event during conversion, allowing fractional cents to accumulate differently across events in the same pocket.",
+    "title": "Value a payout after currency netting"
+  },
+  {
+    "task_id": "decision-early-payout-funding-selection",
+    "source_group": "finance/merchant-settlement",
+    "reasoning": "Compare feasible empty, single-offer and two-offer allocations under both the cash limit and the payout-count limit.",
+    "incorrect_behavior": "It commits to the highest-fee affordable offer first, which can leave too little cash for the most profitable pair.",
+    "title": "Allocate a limited early-payout balance"
+  },
+  {
+    "task_id": "decision-bank-clearing-exception-csv",
+    "source_group": "finance/merchant-settlement",
+    "reasoning": "Reconcile split postings across the union of ledger and bank references and serialize only nonzero net differences into an ordered CSV file.",
+    "incorrect_behavior": "It treats repeated equal amounts on the same side of a batch as duplicate records and drops genuine postings.",
+    "title": "Produce the bank clearing exception file"
+  },
+  {
+    "task_id": "decision-route-a-balancing-rig-between-press-bays",
+    "source_group": "optimization/maintenance-windows",
+    "reasoning": "Find the highest-value ordered pair of fixed appointments that one rig can reach using direction-specific transfer times.",
+    "incorrect_behavior": "Treating every nonoverlapping pair as reachable omits time spent moving the rig.",
+    "title": "Route one balancing rig through two press appointments"
+  },
+  {
+    "task_id": "decision-commit-a-kiln-cooldown-before-orders-settle",
+    "source_group": "optimization/maintenance-windows",
+    "reasoning": "Minimize worst-case opportunity loss using a separate feasible hindsight benchmark for each production mix.",
+    "incorrect_behavior": "Ranking windows by their largest absolute refiring cost ignores the different achievable cost baselines for tile and brick.",
+    "title": "Commit to a kiln cooldown before the order mix is known"
+  },
+  {
+    "task_id": "decision-bundle-conveyor-repairs-into-two-line-stops",
+    "source_group": "optimization/maintenance-windows",
+    "reasoning": "Place two separated stops to maximize the weighted union of the repair requests they cover.",
+    "incorrect_behavior": "Adding independently scored stops counts a flexible repair twice when both starts fall within its acceptable range.",
+    "title": "Cover repair requests with two conveyor stops"
+  },
+  {
+    "task_id": "decision-fit-cited-corrections-into-stoppress-space",
+    "source_group": "citation/historical-newspaper-correction",
+    "reasoning": "Compare feasible singletons and pairs under space, frame, and distribution constraints before applying circulation and tie objectives.",
+    "incorrect_behavior": "It allows two corrections for the same bundle and counts that bundle's copies twice.",
+    "title": "Set the stop-press correction strip"
+  },
+  {
+    "task_id": "decision-reconcile-display-ad-shortfall-credits",
+    "source_group": "citation/historical-newspaper-correction",
+    "reasoning": "Reconcile the measured advertising shortfall with signed posted credit movements before issuing any residual allowance.",
+    "incorrect_behavior": "It excludes posted reversals, overstating the credit already granted.",
+    "title": "Correct the advertising credit ledger"
+  },
+  {
+    "task_id": "decision-export-page-specific-caption-errata",
+    "source_group": "citation/historical-newspaper-correction",
+    "reasoning": "Match mount evidence by composite panel location, then serialize verified discrepancies into an ordered, escaped CSV file.",
+    "incorrect_behavior": "It wraps captions in quotes but leaves internal quotation marks undoubled, corrupting the CSV representation of quoted titles.",
+    "title": "Deliver the corrected caption register"
+  },
+  {
+    "task_id": "decision-choose-a-two-line-endcap",
+    "source_group": "data_analysis/product-assortment",
+    "reasoning": "Evaluate feasible cross-family pairs with a shared capacity limit and pair-specific incremental contribution.",
+    "incorrect_behavior": "It treats standalone forecasts as additive even when the two lines change each other's contribution.",
+    "title": "Allocate a ten-slot endcap"
+  },
+  {
+    "task_id": "decision-print-only-changed-shelf-labels",
+    "source_group": "data_analysis/product-assortment",
+    "reasoning": "Compute a normalized change set against printer history and serialize it as a deterministically ordered CSV file.",
+    "incorrect_behavior": "It wraps text in quotes but leaves embedded quote characters unescaped, corrupting the CSV fields.",
+    "title": "Build the shelf-label printer's change file"
+  },
+  {
+    "task_id": "decision-measure-margin-after-graded-returns",
+    "source_group": "data_analysis/product-assortment",
+    "reasoning": "Reconcile refunds and inventory recoveries separately at historical lot values before consolidating margin by SKU.",
+    "incorrect_behavior": "It reverses inventory cost for every refunded unit, including units that failed inspection and yielded no inventory recovery.",
+    "title": "Reconcile assortment margin after returns inspection"
+  },
+  {
+    "task_id": "decision-stitch-overlapping-pick-list-pages",
+    "source_group": "file_workflow/export-pagination",
+    "reasoning": "Resolve overlap by absolute record position while preserving identical picks at different positions.",
+    "incorrect_behavior": "Deduplicating payloads collapses legitimate repeated picks and can retain conflicting captures of a single position.",
+    "title": "Reassemble a pick list after overlapping page fetches"
+  },
+  {
+    "task_id": "decision-fit-catalog-pages-under-byte-cap",
+    "source_group": "file_workflow/export-pagination",
+    "reasoning": "Evaluate each offered split against the largest actual file before comparing feasible settings by file count and tie preference.",
+    "incorrect_behavior": "Pooling byte capacity across files lets spare room in a short final file compensate for an oversized earlier file.",
+    "title": "Choose a catalog splitter setting and export its file manifest"
+  },
+  {
+    "task_id": "decision-reconcile-gallery-scan-page-counts",
+    "source_group": "file_workflow/export-pagination",
+    "reasoning": "Reconstruct the expected row count from two independently versioned primary records and cite both records for each exception.",
+    "incorrect_behavior": "Treating an absent divider sheet as a signed count of zero creates an unsupported exception.",
+    "title": "Cite the scan sheets behind a gallery export discrepancy"
+  },
+  {
+    "task_id": "decision-allocate-invoice-discount-before-page-subtotals",
+    "source_group": "file_workflow/export-pagination",
+    "reasoning": "Rank fractional entitlements across all active invoice lines before summing the cent-exact allocations on their respective pages.",
+    "incorrect_behavior": "Allocating directly to page gross totals preserves the invoice discount but can move a residual cent to a different page.",
+    "title": "Carry invoice-wide discount cents into page footers"
+  },
+  {
+    "task_id": "decision-reconcile-between-stock-counts",
+    "source_group": "finance/retail-shrinkage",
+    "reasoning": "Roll a physical opening balance forward across the exact posting interval, then expense only the positive shortfall against the closing count.",
+    "incorrect_behavior": "The inclusive opening boundary double-counts movements already reflected in the end-of-day opening count.",
+    "title": "Reconcile the book balance between two physical counts"
+  },
+  {
+    "task_id": "decision-project-unsampled-breakage",
+    "source_group": "finance/retail-shrinkage",
+    "reasoning": "Project a pooled unit-level breakage rate onto unsampled inventory while excluding both numerator and denominator contributions from incomplete cartons.",
+    "incorrect_behavior": "Averaging carton percentages gives a small carton as much influence as a large carton when estimating risk per unit.",
+    "title": "Estimate the breakage reserve for unopened cartons"
+  },
+  {
+    "task_id": "decision-single-feed-finals-handoff",
+    "source_group": "optimization/tournament-planning",
+    "reasoning": "Optimize the combined audience over pairs of bookings whose chronological handoff fits the hall-dependent setup time.",
+    "incorrect_behavior": "It allows a five-minute handoff even when the crew must change halls.",
+    "title": "Book two finals on one broadcast feed"
+  },
+  {
+    "task_id": "decision-score-slip-print-order",
+    "source_group": "optimization/tournament-planning",
+    "reasoning": "Enumerate bounded integer purchase quantities under a storage ceiling and minimize a cost with a separate fixed charge for each activated format.",
+    "incorrect_behavior": "It reports the full invoice but ranks orders using only their variable charges.",
+    "title": "Order sealed packs of score slips"
+  },
+  {
+    "task_id": "decision-loan-podiums-with-current-confirmations",
+    "source_group": "optimization/tournament-planning",
+    "reasoning": "Resolve superseded depot evidence before comparing single-source design options by quality and surplus.",
+    "incorrect_behavior": "It discards revisions with insufficient stock before deciding which confirmation supersedes the others.",
+    "title": "Choose a podium design backed by current loan confirmations"
+  },
+  {
+    "task_id": "decision-portable-check-in-desk-dispatch",
+    "source_group": "optimization/tournament-planning",
+    "reasoning": "Compare the system-wide bottleneck after each eligible placement, use aggregate clearance time to resolve ties, and serialize the winning allocation.",
+    "incorrect_behavior": "It prioritizes total minutes saved across pods ahead of the time when the last pod clears.",
+    "title": "Produce the tournament check-in desk manifest"
+  },
+  {
+    "task_id": "decision-date-a-legend-reading-between-proofs",
+    "source_group": "citation/historic-map-legend",
+    "reasoning": "Reconstruct an as-of reading using chronology first and geographic scope only as a same-day tiebreaker.",
+    "incorrect_behavior": "It treats an old local caption as a permanent override even after a later general reset.",
+    "title": "Date a legend reading between proof sheets"
+  },
+  {
+    "task_id": "decision-export-wrapped-legend-captions",
+    "source_group": "citation/historic-map-legend",
+    "reasoning": "Segment physical evidence lines at caption starts before assembling source-cited records and escaping the CSV fields.",
+    "incorrect_behavior": "It treats a caption's opening physical line as the complete transcription and loses continuation evidence.",
+    "title": "Export a diplomatic caption transcript"
+  },
+  {
+    "task_id": "decision-press-first-pass-at-shift-close",
+    "source_group": "data_analysis/factory-yield",
+    "reasoning": "Resolve revisions at the reporting cutoff before identifying each unit's first valid attempt.",
+    "incorrect_behavior": "Discarding withdrawal records before ranking revisions revives superseded verdicts.",
+    "title": "Recover first-pass yield from a corrected inspection log"
+  },
+  {
+    "task_id": "decision-coating-yield-at-contract-mix",
+    "source_group": "data_analysis/factory-yield",
+    "reasoning": "Directly standardize within-finish yield differences to a fixed contract mix while requiring complete support.",
+    "incorrect_behavior": "Averaging run yields gives a small run the same influence as a large run within a finish.",
+    "title": "Measure a coating change at the contracted product mix"
+  },
+  {
+    "task_id": "decision-kiln-pair-recovery-allocation",
+    "source_group": "data_analysis/factory-yield",
+    "reasoning": "Evaluate complete pairs against two shared resource caps before ranking their joint yield benefit.",
+    "incorrect_behavior": "Checking glaze availability separately for each kiln allows both kilns to claim the same stock.",
+    "title": "Allocate one recovery cycle to each of two kilns"
+  },
+  {
+    "task_id": "decision-release-cleared-caption-masters",
+    "source_group": "file_workflow/file-version-selection",
+    "reasoning": "Resolve the current disposition of each file before selecting the highest cleared revision for each reel, carrying its controlling evidence into the handoff.",
+    "incorrect_behavior": "Filtering to clear entries first allows a superseded clearance to authorize a file that is currently on hold.",
+    "title": "Build the caption-master handoff from the inspection log"
+  },
+  {
+    "task_id": "decision-fit-booklet-files-to-press-stock",
+    "source_group": "file_workflow/file-version-selection",
+    "reasoning": "Evaluate compatible version pairs under a shared stock ceiling and optimize their weaker component before applying secondary objectives.",
+    "incorrect_behavior": "Optimizing combined quality first lets a superior cover compensate for an insert that lowers the booklet grade.",
+    "title": "Choose a cover and insert for a short press run"
+  },
+  {
+    "task_id": "decision-restore-counts-from-aisle-snapshots",
+    "source_group": "file_workflow/file-version-selection",
+    "reasoning": "Select whole replacement snapshots from the receipt manifest before reading their contents so that omissions and empty files take effect.",
+    "incorrect_behavior": "Taking the last observation per bin carries old bins forward through replacement files that omitted them.",
+    "title": "Restore a stock-count CSV at the shift cutoff"
+  },
+  {
+    "task_id": "decision-true-up-studio-print-charges",
+    "source_group": "file_workflow/file-version-selection",
+    "reasoning": "Resolve a corrected effective-dated rate file by production day and reconcile the marginal two-tier charge against the amount already posted.",
+    "incorrect_behavior": "Applying the excess-print rate to every print after the job crosses the threshold understates the charge for the first tier.",
+    "title": "Post print-charge adjustments after rate-file corrections"
+  },
+  {
+    "task_id": "decision-quarterly-tier-close-with-usage-corrections",
+    "source_group": "finance/usage-based-billing",
+    "reasoning": "Reprice the cumulative quantity at each close and recognize the difference, including any reversal through the breakpoint.",
+    "incorrect_behavior": "The April movement receives a fresh first tier, losing the position already reached in March.",
+    "title": "Close April against a quarterly volume ladder"
+  },
+  {
+    "task_id": "decision-regional-capacity-commitment-under-cash-cap",
+    "source_group": "finance/usage-based-billing",
+    "reasoning": "Evaluate regional offer pairs jointly because a shared cash cap can preclude the independently cheapest commitments.",
+    "incorrect_behavior": "Applying the full cash cap separately in each region permits a pair whose combined fees exceed available cash.",
+    "title": "Select two regional commitments within an upfront budget"
+  },
+  {
+    "task_id": "decision-evidenced-meter-credit-export",
+    "source_group": "finance/usage-based-billing",
+    "reasoning": "Resolve the controlling meter evidence before computing a positive invoice credit and serializing its source citation into the posting file.",
+    "incorrect_behavior": "Filtering for favorable recounts before selecting the controlling evidence resurrects a superseded credit when the latest signed count eliminates it.",
+    "title": "Produce the approved meter-credit posting file"
+  },
+  {
+    "task_id": "decision-book-nonoverlapping-shaker-visits",
+    "source_group": "optimization/orchard-harvest-planning",
+    "reasoning": "Combine compatible fixed-time equipment bookings while respecting the day's staging capacity.",
+    "incorrect_behavior": "It requires a positive idle interval between bookings and discards valid exact handoffs.",
+    "title": "Book the shared tree shaker"
+  },
+  {
+    "task_id": "decision-reserve-a-weather-resilient-pick-plan",
+    "source_group": "optimization/orchard-harvest-planning",
+    "reasoning": "Make a single advance commitment by maximizing worst-state output subject to cooling capacity in every weather state.",
+    "incorrect_behavior": "It ranks plans by combined output across mutually exclusive states, allowing a strong dry yield to outweigh a poor wet guarantee.",
+    "title": "Commit a crew before the weather clears"
+  },
+  {
+    "task_id": "decision-sequence-field-heat-removal",
+    "source_group": "optimization/orchard-harvest-planning",
+    "reasoning": "Compare feasible permutations of three nonpreemptive treatments using rate-weighted cumulative completion times.",
+    "incorrect_behavior": "It minimizes unweighted completion hours even though each lot accrues exposure charges at its own rate.",
+    "title": "Sequence three lots through the cooling tunnel"
+  },
+  {
+    "task_id": "decision-wheel-state-at-shutter-open",
+    "source_group": "citation/observational-astronomy-logs",
+    "reasoning": "An inclusive as-of lookup reconstructs confirmed instrument state while ignoring intervening commands.",
+    "incorrect_behavior": "It treats a commanded wheel position as a confirmed filter change.",
+    "title": "Cite the filter in place when the shutter opened"
+  },
+  {
+    "task_id": "decision-sky-scaled-aperture-excess",
+    "source_group": "citation/observational-astronomy-logs",
+    "reasoning": "Area scaling converts a paired background measurement into the sky contribution within the target aperture before thresholding.",
+    "incorrect_behavior": "It subtracts the entire sky patch even when the two extractions cover different numbers of usable pixels.",
+    "title": "Find apertures that clear the sky-excess threshold"
+  },
+  {
+    "task_id": "decision-assemble-verified-night-handoff-csv",
+    "source_group": "citation/observational-astronomy-logs",
+    "reasoning": "An evidence join admits only inspected and accessioned plates, then ordered CSV serialization preserves field boundaries and provenance.",
+    "incorrect_behavior": "It wraps fields in quotes while leaving embedded quotes unescaped.",
+    "title": "Serialize the verified plate handoff"
+  },
+  {
+    "task_id": "decision-first-peak-of-simultaneous-waiting",
+    "source_group": "data_analysis/call-center-queue-metrics",
+    "reasoning": "Clip waits to the observation window and combine simultaneous arrivals and departures before measuring occupancy.",
+    "incorrect_behavior": "It counts a departing call as still waiting at its departure second, creating a false overlap with an arriving call.",
+    "title": "When did each queue first reach its peak?"
+  },
+  {
+    "task_id": "decision-audit-abandons-across-a-bulletin-change",
+    "source_group": "data_analysis/call-center-queue-metrics",
+    "reasoning": "Resolve the bulletin in force at entry, then apply its documented clock origin and threshold to each abandonment.",
+    "incorrect_behavior": "It assigns the bulletin in force at exit, which can change the clock, the cited source, and whether a call qualifies.",
+    "title": "Which abandoned calls belong in the delay audit?"
+  },
+  {
+    "task_id": "decision-pair-relief-shifts-to-cover-two-surges",
+    "source_group": "data_analysis/call-center-queue-metrics",
+    "reasoning": "Evaluate affordable offer pairs against separate block demand ceilings before comparing coverage and cost.",
+    "incorrect_behavior": "It pools capacity across blocks, allowing early surplus to cover late calls or vice versa.",
+    "title": "Choose two relief shifts for a split demand surge"
+  },
+  {
+    "task_id": "decision-seven-day-repeat-contact-cohort",
+    "source_group": "data_analysis/call-center-queue-metrics",
+    "reasoning": "Anchor each ticket to its first contact, require complete follow-up, and count repeat tickets once across queue transfers.",
+    "incorrect_behavior": "It includes tickets with incomplete follow-up in the denominator, treating the unobserved days as days without a repeat.",
+    "title": "Estimate repeat contact by intake queue"
+  },
+  {
+    "task_id": "decision-reopened-carton-deletions",
+    "source_group": "file_workflow/deletion-ledger-reconciliation",
+    "reasoning": "Resolve the last eligible state transition for each queue entry and cite the controlling note when a closure has been reversed.",
+    "incorrect_behavior": "Treats any eligible clearance as permanent even when a later inspection reopens the carton.",
+    "title": "Rebuild the open carton-deletion queue"
+  },
+  {
+    "task_id": "decision-select-overlap-aware-purge-runs",
+    "source_group": "file_workflow/deletion-ledger-reconciliation",
+    "reasoning": "Enumerate feasible run pairs and optimize the size of their union under the shared time limit.",
+    "incorrect_behavior": "Scores both runs for clearing the same ledger entry.",
+    "title": "Choose two purge runs for a maintenance window"
+  },
+  {
+    "task_id": "decision-true-up-deleted-slot-credits",
+    "source_group": "file_workflow/deletion-ledger-reconciliation",
+    "reasoning": "Compute cumulative prorated credit before rounding, then reconcile it against the net signed posting history.",
+    "incorrect_behavior": "Discards fractional cents per slot before multiplying, so even deletion of all slots can earn less than the full prepaid fee.",
+    "title": "Reconcile prepaid slot credits after deletion"
+  },
+  {
+    "task_id": "decision-match-unlabeled-copy-removals",
+    "source_group": "file_workflow/deletion-ledger-reconciliation",
+    "reasoning": "Allocate anonymous batch counts to individual request occurrences by ordinal position within a null-safe composite key.",
+    "incorrect_behavior": "Normalizes an unlabeled edition to empty text, allowing a completion for one edition to consume a request for the other.",
+    "title": "Recover the outstanding copy-removal manifest"
+  },
+  {
+    "task_id": "decision-least-cost-dual-dealer-funding",
+    "source_group": "finance/foreign-currency-settlement",
+    "reasoning": "Compare exact-fill ticket pairs under a delivery deadline and a shared collateral ceiling, then minimize all-in purchase cost.",
+    "incorrect_behavior": "Testing each ticket against the full collateral limit lets both desks use the same collateral.",
+    "title": "Fund a currency payout with indivisible dealer tickets"
+  },
+  {
+    "task_id": "decision-versioned-net-payment-file",
+    "source_group": "finance/foreign-currency-settlement",
+    "reasoning": "Resolve revisions at the file cutoff before netting live obligations and serializing payable balances in deterministic record order.",
+    "incorrect_behavior": "Removing cancellations before ranking resurrects the last live revision of a cancelled obligation.",
+    "title": "Produce the outbound net settlement CSV"
+  },
+  {
+    "task_id": "decision-evidenced-short-settlement-reconciliation",
+    "source_group": "finance/foreign-currency-settlement",
+    "reasoning": "Reconcile the instructed-to-credited difference against amounts extracted from posted debit evidence and retain the supporting source identifiers.",
+    "incorrect_behavior": "Treating estimates as debits reduces the unexplained balance using fees the bank only quoted and cites those quotes as evidence of payment.",
+    "title": "Reconcile short credits against documented bank charges"
+  },
+  {
+    "task_id": "decision-reserve-a-sorter-service-window",
+    "source_group": "optimization/library-resource-allocation",
+    "reasoning": "Choose an uninterrupted crew slot by minimizing the worst hourly overflow before considering total overflow.",
+    "incorrect_behavior": "It minimizes total delay first and can concentrate too much disruption in a single hour.",
+    "title": "Reserve two consecutive hours for sorter maintenance"
+  },
+  {
+    "task_id": "decision-split-reading-kits-between-branches",
+    "source_group": "optimization/library-resource-allocation",
+    "reasoning": "Allocate a fixed stock by maximizing the worse branch's normalized coverage under whole-kit dispatch limits.",
+    "incorrect_behavior": "It balances raw counts of covered classes despite the branches having different numbers of classes.",
+    "title": "Allocate reading kits to balance class coverage"
+  },
+  {
+    "task_id": "decision-assign-exhibits-to-rated-display-cases",
+    "source_group": "optimization/library-resource-allocation",
+    "reasoning": "Match distinct exhibits to position-specific audiences subject to the latest documented load rating for each case.",
+    "incorrect_behavior": "It uses the highest load ever approved for each case, allowing a superseded inspection to govern a placement.",
+    "title": "Assign two exhibits to display cases with inspection citations"
+  },
+  {
+    "task_id": "decision-cite-operative-leak-handoff",
+    "source_group": "citation/building-maintenance-records",
+    "reasoning": "Resolve the operative posted revision before testing whether it authorizes inspection.",
+    "incorrect_behavior": "Filtering out holds before ranking can reinstate an inspection that a posted hold superseded.",
+    "title": "Find the handoff note that authorizes a ceiling inspection"
+  },
+  {
+    "task_id": "decision-pair-repairs-within-shutdown-window",
+    "source_group": "citation/building-maintenance-records",
+    "reasoning": "Enumerate same-loop repair pairs and optimize their combined savings under a window constraint with a shared setup cost.",
+    "incorrect_behavior": "The feasibility check omits drain and refill time even though the crew consumes that time inside the shutdown window.",
+    "title": "Select two repairs for a shared shutdown"
+  },
+  {
+    "task_id": "decision-export-walkthrough-confirmed-sign-defects",
+    "source_group": "citation/building-maintenance-records",
+    "reasoning": "Require independent rounds for corroboration, select a canonical pair of evidence IDs, and serialize the confirmed defects as quoted CSV.",
+    "incorrect_behavior": "Treating two observation IDs as independent allows duplicate notes from a single walkthrough to confirm a replacement.",
+    "title": "Build the sign shop’s replacement CSV from independent walkthroughs"
+  },
+  {
+    "task_id": "decision-shift-standardized-turnover",
+    "source_group": "data_analysis/workforce-turnover",
+    "reasoning": "Pool exposure within each shift before applying equal shift weights so that the observed staffing mix does not determine the site comparison.",
+    "incorrect_behavior": "Pooling both shifts in the final denominator weights each shift by the site's observed exposure.",
+    "title": "Compare sites using a common shift mix"
+  },
+  {
+    "task_id": "decision-replacement-recruiting-month-close",
+    "source_group": "data_analysis/workforce-turnover",
+    "reasoning": "Allocate subscription costs over service months and placement fees at the start date, then reconcile the expense to independently timed cash payments.",
+    "incorrect_behavior": "The expense calculation recognizes an entire access contract in its first month and misses expense from contracts already in service.",
+    "title": "Reconcile replacement recruiting expense to cash paid"
+  },
+  {
+    "task_id": "decision-reconcile-return-crates-by-model",
+    "source_group": "file_workflow/batch-acknowledgement",
+    "reasoning": "Reconcile two independently aggregated multisets while admitting unexpected models only within planned batches.",
+    "incorrect_behavior": "Set union discards repeated tally lines even though each records additional crates.",
+    "title": "Acknowledge reusable crate returns"
+  },
+  {
+    "task_id": "decision-reserve-proof-press-slot",
+    "source_group": "file_workflow/batch-acknowledgement",
+    "reasoning": "Compare all feasible singles and pairs under a sequence-independent ink changeover cost and a fixed time budget.",
+    "incorrect_behavior": "The booking calculation omits the time needed to switch inks, admitting pairs that overrun the slot.",
+    "title": "Acknowledge the batches booked on a proof press"
+  },
+  {
+    "task_id": "decision-apply-remittance-to-open-invoices",
+    "source_group": "file_workflow/batch-acknowledgement",
+    "reasoning": "Allocate each remittance against an ordered sequence of eligible balances, clipping the marginal payment at the invoice balance.",
+    "incorrect_behavior": "Held balances consume payment capacity in the running total before the query omits their invoices.",
+    "title": "Issue invoice-level cash application acknowledgements"
+  },
+  {
+    "task_id": "decision-cost-project-issues-from-fifo-layers",
+    "source_group": "finance/project-accounting",
+    "reasoning": "Intersect cumulative receipt and issue quantity intervals to price each portion of an issue from the correct FIFO lot.",
+    "incorrect_behavior": "Restarting FIFO consumption for each project lets several projects claim the same early receipt units.",
+    "title": "Trace common-stock material charges to receiving lots"
+  },
+  {
+    "task_id": "decision-export-evidence-backed-accrual-adjustments",
+    "source_group": "finance/project-accounting",
+    "reasoning": "Select the effective dated replacement measurement, reconcile it to cumulative posted cost, and serialize each adjustment with its supporting certificate ID.",
+    "incorrect_behavior": "Giving revision number priority across dates can resurrect an earlier measurement when a newly dated certificate restarts revision numbering.",
+    "title": "Prepare the month-end measured-work adjustment CSV"
+  },
+  {
+    "task_id": "decision-rebalance-chilled-trailer-bays",
+    "source_group": "optimization/temperature-controlled-shipping",
+    "reasoning": "Partition indivisible lots between two capacity-limited bays while minimizing the number of pallets that change bays.",
+    "incorrect_behavior": "It relieves the overload in blue without checking whether gold can receive the displaced pallets.",
+    "title": "Rebalance two chilled trailer bays before departure"
+  },
+  {
+    "task_id": "decision-book-a-coolant-exchange-stop",
+    "source_group": "optimization/temperature-controlled-shipping",
+    "reasoning": "Choose a quoted service stop by checking coolant endurance on each side of the exchange and the delivery deadline across the entire trip.",
+    "incorrect_behavior": "It assumes the original coolant only has to last until depot arrival, leaving the load uncovered during the exchange.",
+    "title": "Book one coolant exchange for a frozen dessert shipment"
+  },
+  {
+    "task_id": "decision-allocate-chilled-crates-to-buyers",
+    "source_group": "optimization/temperature-controlled-shipping",
+    "reasoning": "Optimize integer sales quantities under a shared stock limit and a separate fixed charge for activating each delivery.",
+    "incorrect_behavior": "It deducts a delivery fee for each crate even when several crates share the same buyer delivery.",
+    "title": "Allocate a short shipment of chilled pears"
+  },
+  {
+    "task_id": "decision-replay-clock-at-the-horn",
+    "source_group": "citation/sports-scoring-corrections",
+    "reasoning": "Translate a camera timestamp into an arena-time interval and classify the entire interval against a strict scoring deadline.",
+    "incorrect_behavior": "It treats a release exactly at the horn as timely, changing both the certain and borderline rulings.",
+    "title": "Which baskets can the replay clock settle?"
+  },
+  {
+    "task_id": "decision-allocate-two-review-desks",
+    "source_group": "citation/sports-scoring-corrections",
+    "reasoning": "Evaluate feasible notice pairs under a shared time budget and bout exclusion, then apply a three-level objective.",
+    "incorrect_behavior": "It treats two independent notices about the same bout as two eligible hearings and double-counts their potential impact.",
+    "title": "Assign the last two correction hearings"
+  },
+  {
+    "task_id": "decision-publish-certified-relay-patch",
+    "source_group": "citation/sports-scoring-corrections",
+    "reasoning": "Resolve replacement-card revisions before computing a board delta and serializing the cited changes as import-ready CSV.",
+    "incorrect_behavior": "It drops suspension cards before choosing the latest revision, allowing a suspended score to be published.",
+    "title": "Build the relay scoreboard patch file"
+  },
+  {
+    "task_id": "decision-reconcile-transferred-finish-credits",
+    "source_group": "citation/sports-scoring-corrections",
+    "reasoning": "Reconcile the complete per-ticket lane allocation by netting signed movements against the official award, preserving both sides of a transfer.",
+    "incorrect_behavior": "It balances each ticket as a whole, hiding lane transfers whenever the posted movements sum to the official award.",
+    "title": "Trace finish credits posted to the wrong lane"
+  },
+  {
+    "task_id": "decision-schedule-laundry-with-solar-headroom",
+    "source_group": "data_analysis/household-energy-use",
+    "reasoning": "Evaluate ordered pairs of appliance starts against the transfer deadline and separate hourly import caps before minimizing their combined cost.",
+    "incorrect_behavior": "It pools grid allowances across the two hours, allowing spare capacity during one cycle to cover an overload during the other.",
+    "title": "Schedule a wash and dry cycle under a grid import cap"
+  },
+  {
+    "task_id": "decision-export-corrected-appliance-inventory",
+    "source_group": "data_analysis/household-energy-use",
+    "reasoning": "Resolve withdrawals at the latest revision before serializing the surviving records into a deterministically ordered CSV file.",
+    "incorrect_behavior": "It drops withdrawal records before finding the latest revision, resurrecting the last known rating of a withdrawn asset.",
+    "title": "Build the current appliance-label CSV"
+  },
+  {
+    "task_id": "decision-settle-monthly-solar-export-credit",
+    "source_group": "data_analysis/household-energy-use",
+    "reasoning": "Select the tariff in force for each billing month and cap its export credit against the energy charge before adding the fixed fee.",
+    "incorrect_behavior": "It allows surplus export credit to pay the monthly fixed fee.",
+    "title": "Reconstruct a solar bill with its governing tariff citation"
+  },
+  {
+    "task_id": "decision-assign-festival-crates-to-return-bays",
+    "source_group": "file_workflow/key-remapping",
+    "reasoning": "Evaluate complete two-group assignments jointly because a locally convenient bay can be more valuable to the other group.",
+    "incorrect_behavior": "Giving the alphabetically first group priority for its cheapest route can increase the shift's total carrying distance.",
+    "title": "Choose a feasible return-bay map with minimum carrying distance"
+  },
+  {
+    "task_id": "decision-crosswalk-print-blocks-from-impressions",
+    "source_group": "file_workflow/key-remapping",
+    "reasoning": "Require a one-to-one match on the transcribed physical evidence across both complete catalogs before certifying a requested remap.",
+    "incorrect_behavior": "Limiting drawer evidence to queued blocks hides competing impressions from unqueued drawers.",
+    "title": "Cite matching proof impressions when rekeying print blocks"
+  },
+  {
+    "task_id": "decision-apportion-kiln-fees-after-ledger-merger",
+    "source_group": "file_workflow/key-remapping",
+    "reasoning": "Merge usage before largest-remainder apportionment so each new ledger account competes for residual cents exactly once per firing.",
+    "incorrect_behavior": "Apportioning by old studio before merging can change the cent distribution even though the postings still balance to the run fee.",
+    "title": "Post shared firing fees to merged studio ledger keys"
+  },
+  {
+    "task_id": "decision-month-end-earned-premium-rollforward",
+    "source_group": "finance/insurance-premium-allocation",
+    "reasoning": "Difference two independently rounded, booking-date-aware cumulative closes to recognize catch-up earnings and retain future coverage as unearned premium.",
+    "incorrect_behavior": "The opening balance retrospectively includes November bookings, which removes their pre-November catch-up earnings from the current period.",
+    "title": "Close the November earned-premium ledger"
+  },
+  {
+    "task_id": "decision-allocate-renewal-deposit-budget",
+    "source_group": "finance/insurance-premium-allocation",
+    "reasoning": "Evaluate quote pairs jointly because the cash and retained-exposure limits couple two otherwise independent renewal decisions.",
+    "incorrect_behavior": "Checking each deposit against the entire cash limit lets the two pools spend the same collateral budget twice.",
+    "title": "Allocate a limited renewal deposit across two pools"
+  },
+  {
+    "task_id": "decision-trace-shared-equipment-premium-splits",
+    "source_group": "finance/insurance-premium-allocation",
+    "reasoning": "Resolve effective-dated and revised operating evidence separately for each charge before allocating cents and citing the controlling memo.",
+    "incorrect_behavior": "Treating revision numbers as global precedence allows an older operating schedule to override a newer effective schedule.",
+    "title": "Substantiate equipment premium charges from dated operating memos"
+  },
+  {
+    "task_id": "decision-net-interbranch-premium-settlement-csv",
+    "source_group": "finance/insurance-premium-allocation",
+    "reasoning": "Normalize reciprocal funding entries to one signed balance per branch pair and currency, then serialize the surviving obligations in payment direction.",
+    "incorrect_behavior": "Grouping by the original funding direction leaves reciprocal obligations outstanding, including pairs whose payable should cancel entirely.",
+    "title": "Produce the interbranch premium reimbursement file"
+  },
+  {
+    "task_id": "decision-cover-two-strip-orders-with-opening-fees",
+    "source_group": "optimization/paper-cutting-stock",
+    "reasoning": "Choose bounded pattern multiplicities under two demand floors while accounting for fixed setup charges.",
+    "incorrect_behavior": "It charges the pattern opening fee again on every roll.",
+    "title": "Cover two strip orders with paid pattern setups"
+  },
+  {
+    "task_id": "decision-sequence-three-cutter-jobs-before-dispatch",
+    "source_group": "optimization/paper-cutting-stock",
+    "reasoning": "Evaluate single-machine permutations with sequence-dependent setup times and job-specific weighted tardiness.",
+    "incorrect_behavior": "It treats the initial fence adjustment as free even when the first job requires a different position.",
+    "title": "Sequence cutter jobs around fence changes"
+  },
+  {
+    "task_id": "decision-assign-grain-sensitive-blanks-to-remnants",
+    "source_group": "optimization/paper-cutting-stock",
+    "reasoning": "Match two grain-constrained rectangles to exclusive remnants with a separately priced purchase fallback for each blank.",
+    "incorrect_behavior": "It allows a quarter turn for grain-locked blanks.",
+    "title": "Reserve remnants for two replacement blanks"
+  },
+  {
+    "task_id": "decision-reserve-folio-stock-before-demand-is-known",
+    "source_group": "optimization/paper-cutting-stock",
+    "reasoning": "Choose a capacity-feasible advance lot by weighting shortage charges and surplus credits separately across demand outcomes.",
+    "incorrect_behavior": "It prices the weighted mean demand as a single outcome, allowing surpluses in one scenario to cancel shortages in another before pricing.",
+    "title": "Choose a precut lot under uncertain folio demand"
+  },
+  {
+    "task_id": "decision-receiving-cutoff-at-dispatch",
+    "source_group": "citation/procurement-addenda",
+    "reasoning": "Reconstruct the notice in force at dispatch before comparing the observed arrival with its cited cutoff.",
+    "incorrect_behavior": "Treats dock specificity as permanent precedence, allowing an older local cutoff to survive a later all-dock revision.",
+    "title": "Which receiving cutoff governed each dispatch?"
+  },
+  {
+    "task_id": "decision-paired-lot-award-with-bay-cap",
+    "source_group": "citation/procurement-addenda",
+    "reasoning": "Enumerate complementary offers, eliminate over-capacity pairs and minimize total price after consolidating carrier callouts.",
+    "incorrect_behavior": "Charges a callout per lot even when one carrier delivers both lots.",
+    "title": "Award two display lots within one unloading window"
+  },
+  {
+    "task_id": "decision-cumulative-holdback-on-progress-bills",
+    "source_group": "citation/procurement-addenda",
+    "reasoning": "Calculate the capped cumulative holdback balance and difference consecutive balances to recognize both withholding and releases.",
+    "incorrect_behavior": "Converts each bill's retention to whole cents before accumulating, discarding fractions that count toward the required balance.",
+    "title": "Reconcile progress payments against the holdback addendum"
+  },
+  {
+    "task_id": "decision-packing-label-correction-file",
+    "source_group": "citation/procurement-addenda",
+    "reasoning": "Expand item-level corrections to individual print lines, retain null-aware label changes and serialize the cited records as printer-ready CSV.",
+    "incorrect_behavior": "Equates an unset caption with a deliberately empty caption and suppresses the instruction that would set it.",
+    "title": "Build the printer's cited label-correction CSV"
+  },
+  {
+    "task_id": "decision-matched-store-lift-with-balanced-pairs",
+    "source_group": "data_analysis/retail-trial-attribution",
+    "reasoning": "Difference the weekly changes within complete pairs before averaging across pairs.",
+    "incorrect_behavior": "Weights complete pairs by observation duration, changing the target from the average pair effect.",
+    "title": "Estimate lift across matched store pairs"
+  },
+  {
+    "task_id": "decision-select-noncompeting-replication-sites",
+    "source_group": "data_analysis/retail-trial-attribution",
+    "reasoning": "Evaluate unordered two-shop portfolios under joint spend and catchment constraints with deterministic tie resolution.",
+    "incorrect_behavior": "Treats different shop codes as sufficient separation even if the shops share a catchment.",
+    "title": "Place two replication trials without catchment overlap"
+  },
+  {
+    "task_id": "decision-recover-missing-counter-intervals",
+    "source_group": "file_workflow/schema-drift",
+    "reasoning": "Recover interval quantities through an exact adjacent-hour self-join constrained by counter continuity.",
+    "incorrect_behavior": "Treats the previous recorded reading as the previous hour even across a missing hour.",
+    "title": "Rebuild the hourly belt-count CSV"
+  },
+  {
+    "task_id": "decision-allocate-kiln-shelf-space",
+    "source_group": "file_workflow/schema-drift",
+    "reasoning": "Enumerate feasible singleton and pair loads and rank whole manifests after converting per-piece footprints to lot totals.",
+    "incorrect_behavior": "Charges a legacy lot for only one piece's shelf footprint, admitting an oversized pair.",
+    "title": "Select a firing manifest under two loading limits"
+  },
+  {
+    "task_id": "decision-packing-labor-rate-and-efficiency",
+    "source_group": "finance/budget-variance",
+    "reasoning": "Reconcile actual payroll to a budget flexed for completed output by pricing the actual minutes at the standard rate.",
+    "incorrect_behavior": "Discarding zero-output shifts removes paid downtime from the efficiency variance and can hide an entire lane.",
+    "title": "Explain the packing crew's flexible-budget variance"
+  },
+  {
+    "task_id": "decision-dispatch-recovery-blocks",
+    "source_group": "finance/budget-variance",
+    "reasoning": "Optimize an indivisible two-vendor purchase under simultaneous throughput and crew-hour constraints.",
+    "incorrect_behavior": "Checking the longer individual block against the crew limit allows both vendors to consume the same scarce crew hours.",
+    "title": "Price a feasible dispatch recovery plan"
+  },
+  {
+    "task_id": "decision-prepaid-rental-expense-export",
+    "source_group": "finance/budget-variance",
+    "reasoning": "Allocate prepaid fees by intersecting service intervals with the reporting period and serialize the bay-level close into ordered CSV.",
+    "incorrect_behavior": "Recognizing the full fee whenever any service day falls in June accelerates or carries forward expense from adjacent periods.",
+    "title": "Export June rental expense variances"
+  },
+  {
+    "task_id": "decision-shared-circuit-kiln-dispatch",
+    "source_group": "optimization/machine-assignment",
+    "reasoning": "Compare simultaneous kiln assignments under a shared peak-power limit, ranking feasible pairs by makespan and then price.",
+    "incorrect_behavior": "It checks each kiln individually against a feeder limit that applies to their simultaneous total draw.",
+    "title": "Dispatch two pottery loads on a shared circuit"
+  },
+  {
+    "task_id": "decision-split-an-ordered-label-run",
+    "source_group": "optimization/machine-assignment",
+    "reasoning": "Choose a contiguous queue cut by accumulating machine-specific processing times and charging only ink changes internal to each resulting segment.",
+    "incorrect_behavior": "It balances processing times while omitting the wash required when adjacent batches on the same press use different inks.",
+    "title": "Divide a label queue between two presses"
+  },
+  {
+    "task_id": "decision-staff-a-serial-carton-line",
+    "source_group": "optimization/machine-assignment",
+    "reasoning": "Partition a fixed integer labor pool across serial machines to maximize the throughput of the least productive staffed stage.",
+    "incorrect_behavior": "It chooses staffing by summed stage capacity, counting work at different stages as interchangeable even though each carton requires all three.",
+    "title": "Allocate operators across a carton finishing line"
+  },
+  {
+    "task_id": "decision-shield-bias-from-probe-swap",
+    "source_group": "citation/weather-instrument-logs",
+    "reasoning": "Two contemporaneous contrasts with reversed probe assignments cancel a fixed probe offset while retaining the signed shield effect.",
+    "incorrect_behavior": "It keeps P minus Q after the shields are exchanged, reversing the second shield contrast.",
+    "title": "Isolate a thermometer shield effect with a crossover"
+  },
+  {
+    "task_id": "decision-allocate-two-relay-legs",
+    "source_group": "data_analysis/sports-player-metrics",
+    "reasoning": "Evaluate complete assignments under a shared slot cap and a distinct-runner constraint before ranking them by relay time.",
+    "incorrect_behavior": "It gives each leg the entire squad budget, allowing pairs that jointly exceed six slots.",
+    "title": "Assign the opening and closing relay legs"
+  },
+  {
+    "task_id": "decision-audit-disputed-save-credits",
+    "source_group": "data_analysis/sports-player-metrics",
+    "reasoning": "Resolve the controlling final observation for each credit before interpreting its text and citing the signed source.",
+    "incorrect_behavior": "It discards confirmations before resolving revisions, so a superseded adverse observation can remove a valid credit.",
+    "title": "Document save credits that need to be removed"
+  },
+  {
+    "task_id": "decision-export-rotation-counter-increments",
+    "source_group": "data_analysis/sports-player-metrics",
+    "reasoning": "Difference cumulative readings within device-reset boundaries and serialize the ordered increments into a complete CSV file.",
+    "incorrect_behavior": "It carries the previous rotation's final reading into the next rotation even though the counter resets.",
+    "title": "Build the scorer's touch-count import file"
+  },
+  {
+    "task_id": "decision-reconcile-translated-menu-edits",
+    "source_group": "file_workflow/merging-translations",
+    "reasoning": "Compare both descendants with their common base to distinguish an incoming patch from a conflicting edit or an already incorporated change.",
+    "incorrect_behavior": "Treating absence and intentional blank text as equivalent silently drops valid insertions and removals.",
+    "title": "Merge two edits to a translated menu"
+  },
+  {
+    "task_id": "decision-pack-caption-review-shift",
+    "source_group": "file_workflow/merging-translations",
+    "reasoning": "Evaluate feasible single files and compatible pairs under both review capacity and reel exclusivity, then rank whole manifests.",
+    "incorrect_behavior": "It counts cues from two competing translations of one reel as independently releasable.",
+    "title": "Choose translated caption bundles for one review shift"
+  },
+  {
+    "task_id": "decision-apply-scoped-exhibit-wording-slips",
+    "source_group": "file_workflow/merging-translations",
+    "reasoning": "Resolve terminology by evidence scope and issue precedence, retaining provenance only for labels that require a correction.",
+    "incorrect_behavior": "A newer general slip overrides a room-specific instruction that still governs that exhibit.",
+    "title": "Apply documented wording to exhibit translations"
+  },
+  {
+    "task_id": "decision-audit-placeholder-counts-before-import",
+    "source_group": "file_workflow/merging-translations",
+    "reasoning": "Subtract occurrence counts per message and token across both inventories, preserving duplicates and translation-only tokens.",
+    "incorrect_behavior": "Deduplicating each side checks token presence while losing repeated occurrences that also need repair.",
+    "title": "Identify placeholder repairs before merging message files"
+  },
+  {
+    "task_id": "decision-pooled-freight-booking",
+    "source_group": "finance/cost-sharing-agreement",
+    "reasoning": "Evaluate east–west quote pairs against two pooled limits before minimizing net freight expense with a liquidity tie-break.",
+    "incorrect_behavior": "The cash test spends the rebates before the carriers pay them.",
+    "title": "Choose a freight booking under a pooled cash limit"
+  },
+  {
+    "task_id": "decision-shared-asset-exit-buyout",
+    "source_group": "finance/cost-sharing-agreement",
+    "reasoning": "Resolve the controlling bulletin as of each exit and apply its depreciation floor before valuing the departing fractional stake.",
+    "incorrect_behavior": "The valuation locks in the bulletin in effect when the equipment entered service instead of resolving the bulletin in effect at buyout.",
+    "title": "Value a departing partner’s equipment stake"
+  },
+  {
+    "task_id": "decision-passing-loop-charter-packing",
+    "source_group": "optimization/railway-capacity-reservation",
+    "reasoning": "Compare indivisible single bids and compatible chronological pairs under the daily award cap.",
+    "incorrect_behavior": "Requiring a positive gap excludes a valid handover at the release minute and can change which tied pair wins.",
+    "title": "Pack charter stops into a passing loop"
+  },
+  {
+    "task_id": "decision-diversion-path-insurance",
+    "source_group": "optimization/railway-capacity-reservation",
+    "reasoning": "Choose an affordable advance commitment by minimizing maximum realized cost across mutually exclusive demand scenarios.",
+    "incorrect_behavior": "Selecting by summed scenario costs implicitly weights the scenarios equally and can prefer excessive worst-case exposure.",
+    "title": "Reserve diversion paths before the disruption is known"
+  },
+  {
+    "task_id": "decision-overnight-wagon-block-split",
+    "source_group": "optimization/railway-capacity-reservation",
+    "reasoning": "Match complementary exact-size block tariffs and assess a fixed handling charge only for a two-yard allocation.",
+    "incorrect_behavior": "The handling fee is included on the returned invoice but omitted when comparing feasible reservations.",
+    "title": "Split an overnight wagon block between two yards"
+  },
+  {
+    "task_id": "decision-inspection-possession-displacement",
+    "source_group": "optimization/railway-capacity-reservation",
+    "reasoning": "Exclude windows that displace protected movements and price the remaining windows by distinct affected bookings.",
+    "incorrect_behavior": "It counts canceled bookings correctly but charges a booking again for every additional overlapping movement.",
+    "title": "Reserve an inspection possession across a station throat"
+  },
+  {
+    "task_id": "decision-serialize-confirmed-specimen-labels",
+    "source_group": "citation/scientific-data-release-provenance",
+    "reasoning": "Resolve agreement across independent slips, then serialize the accepted readings and their citations as exact CSV bytes.",
+    "incorrect_behavior": "Treating an observed blank panel as missing evidence can suppress a confirmed blank or hide a disagreement.",
+    "title": "Produce a citation-bearing CSV of confirmed specimen labels"
+  },
+  {
+    "task_id": "decision-merge-sparse-asset-corrections-at-cutoff",
+    "source_group": "file_workflow/asset-catalog-synchronization",
+    "reasoning": "Resolve sparse corrections separately for each field before comparing the reconstructed asset with its snapshot and attributing each net change to its source slip.",
+    "incorrect_behavior": "It treats the latest slip as the complete correction for an asset, so an omitted field can lose an earlier correction that still applies.",
+    "title": "Prepare the prop catalog correction CSV"
+  },
+  {
+    "task_id": "decision-choose-complementary-catalog-import-packs",
+    "source_group": "file_workflow/asset-catalog-synchronization",
+    "reasoning": "Evaluate feasible pack pairs by union coverage under a shared time budget, then credit overlapping assets to the first reader in the winning manifest.",
+    "incorrect_behavior": "It ranks pairs by adding the individual pack counts, which gives shared assets double credit during selection even though the manifest later credits them only once.",
+    "title": "Build the two-reader import manifest"
+  },
+  {
+    "task_id": "decision-budget-one-shift-of-retention-calls",
+    "source_group": "finance/subscription-collections",
+    "reasoning": "Evaluate feasible singles, pairs and the idle shift against a net recovery objective with a shared budget and a desk conflict.",
+    "incorrect_behavior": "It treats outlay solely as a feasibility constraint and ranks feasible portfolios by gross collections.",
+    "title": "Choose a collections shift portfolio"
+  },
+  {
+    "task_id": "decision-price-prepaid-cancellation-credits-from-term-notices",
+    "source_group": "finance/subscription-collections",
+    "reasoning": "Fix the governing evidence at term inception, then prorate prepaid cash over unused service and apply the evidenced deduction before rounding.",
+    "incorrect_behavior": "It selects the notice in force at cancellation, retroactively applying revisions issued during a prepaid term.",
+    "title": "Substantiate cancellation credits for prepaid terms"
+  },
+  {
+    "task_id": "decision-indivisible-racks-on-a-lift-truck",
+    "source_group": "optimization/bike-station-replenishment",
+    "reasoning": "Enumerate feasible singleton and pair loads to maximize the additive benefit of indivisible racks under both floor-space and rack-count limits.",
+    "incorrect_behavior": "Committing to the highest-benefit feasible individual rack can exclude a better pair.",
+    "title": "Choose racks for the last lift-truck run"
+  },
+  {
+    "task_id": "decision-finish-unloading-before-station-handoffs",
+    "source_group": "optimization/bike-station-replenishment",
+    "reasoning": "Propagate the clock through both directed itineraries and check each handoff deadline after its unload.",
+    "incorrect_behavior": "The deadline filter tests van arrival even though the station requires the unloaded van to clear the bay by closing time.",
+    "title": "Sequence two timed station handoffs"
+  },
+  {
+    "task_id": "decision-opening-stock-with-lost-rentals-and-returns",
+    "source_group": "optimization/bike-station-replenishment",
+    "reasoning": "Simulate the bounded inventory path for each opening stock so rejected transactions affect both the immediate penalty and the inventory available at later pulses.",
+    "incorrect_behavior": "Netting demand across the whole shift lets later transactions cancel rentals or returns that the station had already refused.",
+    "title": "Set opening bike stock for a four-dock station"
+  },
+  {
+    "task_id": "decision-stage-a-reserve-trailer-for-worst-case-response",
+    "source_group": "optimization/bike-station-replenishment",
+    "reasoning": "Solve a budget-constrained discrete facility-location problem using the worst zone response as the primary objective and demand-weighted travel as the tiebreaker.",
+    "incorrect_behavior": "Optimizing total forecast travel first can sacrifice the response time of the less frequently served zone.",
+    "title": "Site a reserve bike trailer for two service zones"
+  },
+  {
+    "task_id": "decision-trace-an-excerpt-across-a-splice",
+    "source_group": "citation/audio-recording-provenance",
+    "reasoning": "Intersect the excerpt with each applicable splice interval and translate both clipped boundaries into the cited reel's coordinate system.",
+    "incorrect_behavior": "It preserves the clipped duration but starts every citation at the first source frame of the entire log entry.",
+    "title": "Cite the source spans behind a listening excerpt"
+  },
+  {
+    "task_id": "decision-corroborate-a-room-attribution",
+    "source_group": "citation/audio-recording-provenance",
+    "reasoning": "Collapse transcriptions by observation lineage before testing corroboration and emitting representative citations.",
+    "incorrect_behavior": "It treats each transcription as an independent observation, allowing one box marking to corroborate itself.",
+    "title": "Find independently documented recording rooms"
+  },
+  {
+    "task_id": "decision-fit-transfer-evidence-on-a-display-card",
+    "source_group": "citation/audio-recording-provenance",
+    "reasoning": "Evaluate unordered pairs for joint stage coverage and print capacity before ranking their combined detail.",
+    "incorrect_behavior": "It counts stage mentions across both slips, so duplicate mentions of one stage can stand in for a missing stage.",
+    "title": "Select a citation pair for a transfer-history display"
+  },
+  {
+    "task_id": "decision-four-day-closing-balance-interest",
+    "source_group": "finance/deposit-accounting",
+    "reasoning": "Reconstruct four daily closing balances from signed postings and round interest only after summing the daily exposures.",
+    "incorrect_behavior": "It rounds each day's accrual to whole cents before adding the four days.",
+    "title": "Accrue interest before the four-day ledger closes"
+  },
+  {
+    "task_id": "decision-equipment-deposit-refund-terms",
+    "source_group": "finance/deposit-accounting",
+    "reasoning": "Resolve the historical terms at intake, then apply the damage allowance and deposit cap to determine the refundable liability.",
+    "incorrect_behavior": "It applies the latest fleet notice to every intake, including equipment accepted under earlier terms.",
+    "title": "Settle equipment deposits under the terms in force at intake"
+  },
+  {
+    "task_id": "decision-term-deposit-liquidation-for-payout",
+    "source_group": "finance/deposit-accounting",
+    "reasoning": "Compare feasible whole-deposit redemption plans using net settlement cash for the funding constraint and total penalties for the primary objective.",
+    "incorrect_behavior": "It qualifies plans using gross principal, allowing a redemption whose net cash falls short of the payout.",
+    "title": "Fund a payout with the lowest early redemption charge"
+  },
+  {
+    "task_id": "decision-stage-installation-crew-upgrade",
+    "source_group": "optimization/project-precedence",
+    "reasoning": "Evaluate each bundled crew upgrade against the fork-and-join schedule, allowing the controlling branch to change after the upgrade.",
+    "incorrect_behavior": "It fixes the controlling branch before applying the cuts, so it can schedule inspection while the other branch is still underway.",
+    "title": "Shorten a stage installation within the crew budget"
+  },
+  {
+    "task_id": "decision-park-trail-opening-portfolio",
+    "source_group": "optimization/project-precedence",
+    "reasoning": "Optimize a subset of openings by charging shared prerequisite work once per activated site.",
+    "incorrect_behavior": "It charges the full site preparation effort separately for each selected trail at that site.",
+    "title": "Select trail openings that share preparation work"
+  },
+  {
+    "task_id": "decision-gallery-crate-pickup-release",
+    "source_group": "optimization/project-precedence",
+    "reasoning": "Resolve each prerequisite's authoritative revision independently, intersect both release times with carrier windows, and minimize the feasible booking fee.",
+    "incorrect_behavior": "It treats the latest stated completion hour as authoritative even when a newer note supersedes it.",
+    "title": "Book a crate pickup against revised release notes"
+  },
+  {
+    "task_id": "decision-prism-changes-within-a-traverse",
+    "source_group": "citation/land-survey-field-notes",
+    "reasoning": "Reconstruct the equipment state at exposure time, including an explicit loss of calibration that supersedes an earlier numeric setting.",
+    "incorrect_behavior": "Searching only for numeric corrections carries a retired prism setting through a documented period of uncertainty.",
+    "title": "Recover the correction in force at each shot"
+  },
+  {
+    "task_id": "decision-incompatible-staff-height-bands",
+    "source_group": "citation/land-survey-field-notes",
+    "reasoning": "Test compatibility of independently bounded readings in a common datum and quantify the minimum unresolved discrepancy.",
+    "incorrect_behavior": "Subtracting only the larger tolerance ignores the distance the other reading can also move toward agreement.",
+    "title": "Find height readings that cannot describe the same mark"
+  },
+  {
+    "task_id": "decision-returnable-crate-lifetime-cost",
+    "source_group": "finance/unit-economics",
+    "reasoning": "Pool the entire retired fleet's net lifetime cost, including zero-turn losses, over its realized delivery turns.",
+    "incorrect_behavior": "Dropping individual zero-turn crates before pooling hides the cost of early losses. A zero denominator matters only after pooling by design.",
+    "title": "What did a completed crate turn actually cost?"
+  },
+  {
+    "task_id": "decision-kiln-shift-firing-plan",
+    "source_group": "finance/unit-economics",
+    "reasoning": "Evaluate indivisible pairs of firing plans against two shared resources and rank feasible pairs by contribution after setup.",
+    "incorrect_behavior": "The rank uses margin before setup charges, even though the reported contribution deducts setup. This can select a less profitable plan.",
+    "title": "Choose a profitable firing plan for a shared kiln"
+  },
+  {
+    "task_id": "decision-supplier-rebate-close-file",
+    "source_group": "finance/unit-economics",
+    "reasoning": "Remeasure a retroactive volume rebate at the closing tier and export only the difference from the previously booked accrual.",
+    "incorrect_behavior": "Gross purchases determine tier eligibility in the mistaken calculation. Returns can push an item below a break and reduce the rate on every retained unit.",
+    "title": "Prepare the month-end supplier rebate adjustment CSV"
+  },
+  {
+    "task_id": "decision-contiguous-party-seat-quote",
+    "source_group": "optimization/theater-seating",
+    "reasoning": "Test physical seat intervals for complete sellable coverage before comparing their summed prices.",
+    "incorrect_behavior": "It treats consecutive entries in the sellable inventory as physically adjacent, allowing a party to straddle a gap.",
+    "title": "Quote a party an uninterrupted run of seats"
+  },
+  {
+    "task_id": "decision-two-bank-chair-setup-budget",
+    "source_group": "optimization/theater-seating",
+    "reasoning": "Enumerate one discrete setup level per bank and optimize their combined yield under a shared labor budget.",
+    "incorrect_behavior": "It grants each bank the entire shift allowance independently and can promise more setup time than the crew has.",
+    "title": "Allocate setup time between two folding-chair banks"
+  },
+  {
+    "task_id": "decision-preview-deck-session-scheduling",
+    "source_group": "optimization/theater-seating",
+    "reasoning": "Compare single sessions and time-compatible pairs by duration-weighted seat use after reserving the required turnaround.",
+    "incorrect_behavior": "It checks for overlapping audiences but allows the second audience to enter during the required chair reset.",
+    "title": "Schedule preview audiences on a shared seating deck"
+  },
+  {
+    "task_id": "decision-kiln-simpson-reversal",
+    "source_group": "specified/censored-measurements-and-statistical-associations",
+    "reasoning": "Compare the signs of two stratum-specific rate differences with the sign of the exposure-weighted pooled difference.",
+    "incorrect_behavior": "Gives both tile sizes equal weight within each method, masking a reversal caused by different operating-hour distributions.",
+    "title": "Detect a reversal in kiln output rates across two tile sizes"
+  },
+  {
+    "task_id": "decision-lamp-survival-day-two",
+    "source_group": "specified/censored-measurements-and-statistical-associations",
+    "reasoning": "Form failure-day risk sets with right censoring and multiply their conditional survival probabilities in chronological order.",
+    "incorrect_behavior": "Counts right-censored exits as failures on their exit day, reducing estimated survival whenever observation ends early.",
+    "title": "Estimate lamp survival through day two"
+  },
+  {
+    "task_id": "decision-paired-glaze-weighted-median",
+    "source_group": "specified/censored-measurements-and-statistical-associations",
+    "reasoning": "Substitute left-censoring limits within complete pairs, then locate the first cumulative jar-weight crossing.",
+    "incorrect_behavior": "Counts each complete batch once regardless of how many jars it represents.",
+    "title": "Compute the weighted median from paired glaze measurements"
+  },
+  {
+    "task_id": "decision-post-deposit-after-phased-acceptance",
+    "source_group": "specified/financing-and-deposits",
+    "reasoning": "Accumulate daily acceptance counts for each phase and select the first date the two cumulative thresholds hold together.",
+    "incorrect_behavior": "Pooling both phases permits surplus units from one phase to satisfy the other phase's milestone and trigger a premature credit.",
+    "title": "Post a refundable deposit when both acceptance phases qualify"
+  },
+  {
+    "task_id": "decision-reconcile-split-fifo-lots",
+    "source_group": "specified/financing-and-deposits",
+    "reasoning": "Convert each lot into sale-date units, then use cumulative FIFO quantities to locate the sale within the lots.",
+    "incorrect_behavior": "The sale consumes original acquisition quantities, understating the shares available from pre-split lots.",
+    "title": "Reconcile FIFO lots after a 3-for-2 stock split and a sale"
+  },
+  {
+    "task_id": "decision-settle-capped-royalty-and-advance",
+    "source_group": "specified/financing-and-deposits",
+    "reasoning": "Compute marginal royalties, cap earnings, allocate them to advance recovery, and apply a separate floor to the resulting cash payment.",
+    "incorrect_behavior": "The cash calculation adds the full minimum to residual royalties even when those royalties already satisfy part or all of the guarantee.",
+    "title": "Settle a capped royalty with advance recoupment and a cash minimum"
+  },
+  {
+    "task_id": "decision-bridge-disjoint-route-pair",
+    "source_group": "specified/graph-reachability-and-journeys",
+    "reasoning": "Form unordered pairs of routes and exclude a pair whenever their bridge inventories intersect at any positions.",
+    "incorrect_behavior": "It compares only the first bridge on each route. R1 and R2 both use Y in each dataset, so closing Y would disable both routes.",
+    "title": "Choose the fastest pair of routes that share no bridge"
+  },
+  {
+    "task_id": "decision-earliest-journey-with-transfer",
+    "source_group": "specified/graph-reachability-and-journeys",
+    "reasoning": "Join connecting legs at the transfer stop, enforce the transfer interval, then compare final arrival times.",
+    "incorrect_behavior": "It accepts the seven-minute connection to M1, which arrives earlier but misses the required transfer interval.",
+    "title": "Find the earliest arrival with an eight-minute transfer"
+  },
+  {
+    "task_id": "decision-milestone-order-count",
+    "source_group": "specified/graph-reachability-and-journeys",
+    "reasoning": "Extend each partial sequence by every unused milestone whose prerequisites are present, then count the complete sequences.",
+    "incorrect_behavior": "It requires every initially eligible milestone to finish before any dependent milestone. In the alternate project, independent milestone D can appear anywhere in the chain A, B, C.",
+    "title": "Count valid project milestone sequences"
+  },
+  {
+    "task_id": "decision-railway-junction-removal",
+    "source_group": "specified/graph-reachability-and-journeys",
+    "reasoning": "Compute reachability among the surviving junctions for each possible removal. Count each component once using its smallest junction as its representative.",
+    "incorrect_behavior": "It counts incident tracks as separate surviving components. Neighbors on a cycle can still reach one another after the junction is removed.",
+    "title": "Find the junctions whose removal splits a railway branch"
+  },
+  {
+    "task_id": "decision-bridge-print-spool-roll-ranges",
+    "source_group": "specified/transcription-and-marks",
+    "reasoning": "Join closed integer intervals by overlap and use their intersection as the bridge record.",
+    "incorrect_behavior": "Subtracting the endpoints measures the distance between roll numbers. A shared range from roll 10 through roll 10 contains one roll.",
+    "title": "Build a roll-number bridge between two printing spools"
+  },
+  {
+    "task_id": "decision-canonical-circular-etch",
+    "source_group": "specified/transcription-and-marks",
+    "reasoning": "Enumerate the finite cyclic rotations, compare their full strings, and break periodic ties by offset.",
+    "incorrect_behavior": "Choosing the first occurrence of the smallest letter misses later starts with a smaller continuation. For BACA the two A starts read ACAB and ABAC.",
+    "title": "Read a circular etched mark from its canonical starting point"
+  },
+  {
+    "task_id": "decision-chance-adjusted-transcription-agreement",
+    "source_group": "specified/transcription-and-marks",
+    "reasoning": "Compute paired matches and separate annotator marginals, then apply Cohen's chance correction.",
+    "incorrect_behavior": "Raw agreement counts matching glyphs but omits the agreement expected from the annotators' letter frequencies. It stays positive even when the annotators agree less often than chance predicts.",
+    "title": "Measure chance-adjusted agreement between two transcribers"
+  },
+  {
+    "task_id": "decision-restore-alternating-rail-marker",
+    "source_group": "specified/transcription-and-marks",
+    "reasoning": "Test the ten possible digits against position parity and the complete rail's modular sum.",
+    "incorrect_behavior": "The checksum admits two digits five apart. Taking the smaller one ignores the parity of the missing position.",
+    "title": "Restore a missing rail marker from parity and checksum"
+  },
+  {
+    "task_id": "decision-attribute-signal-with-time-uncertainty",
+    "source_group": "specified/measurement-drift-and-uncertainty",
+    "reasoning": "Join on closed-interval overlap, count compatible intervals per signal, and attribute only singleton matches.",
+    "incorrect_behavior": "It tests only the center time. This falsely attributes primary signal x to A although its possible times also reach B, and misses signal y's endpoint match.",
+    "title": "Attribute a signal only when its timing singles out one interval"
+  },
+  {
+    "task_id": "decision-calibrate-clock-from-paired-punches",
+    "source_group": "specified/measurement-drift-and-uncertainty",
+    "reasoning": "Compute the signed offset at each punch, take the slope of offset versus reference time, and extrapolate the offset back to time zero.",
+    "incorrect_behavior": "It reports the offset at the first punch as the initial offset. Drift has already accumulated by that punch.",
+    "title": "Recover a clock's initial offset and signed drift"
+  },
+  {
+    "task_id": "decision-integrate-drying-sheet-area",
+    "source_group": "specified/measurement-drift-and-uncertainty",
+    "reasoning": "Integrate the product of two linear dimensions on each segment. For duration h, six times the segment integral is h times (2*w0*l0 + w0*l1 + w1*l0 + 2*w1*l1).",
+    "incorrect_behavior": "The trapezoid rule applied to endpoint areas treats area as linear. In the alternate pass both endpoint areas are 12 cm², yet the area exceeds 12 cm² throughout the interior.",
+    "title": "Calculate the exact area-time integral of a drying sheet"
+  },
+  {
+    "task_id": "decision-unwrap-counter-with-signed-log",
+    "source_group": "specified/measurement-drift-and-uncertainty",
+    "reasoning": "Anchor the full count at the time-zero reading and accumulate all signed log entries through each reading, including multiple wraps between observations.",
+    "incorrect_behavior": "It assumes the shortest signed movement between displayed digits. For example, the primary dial moves from 8 to 2 by gaining 14 counts, while the shortest movement gains only 4.",
+    "title": "Recover full dial counts across forward and reverse wraps"
+  },
+  {
+    "task_id": "decision-allocate-freight-overage-with-floor",
+    "source_group": "specified/freight-contracts-and-schedules",
+    "reasoning": "Find a proportional allocation with binding lower bounds, then apportion integer cents by largest remainder.",
+    "incorrect_behavior": "Giving every shipment a 20-cent base before splitting the excess makes the minimum additive. It charges A 24 cents in the first state.",
+    "title": "Split a freight overage subject to shipment minimums"
+  },
+  {
+    "task_id": "decision-plan-two-coupon-redemptions",
+    "source_group": "specified/freight-contracts-and-schedules",
+    "reasoning": "Enumerate two-purchase plans under shared inventory and reciprocal campaign expiration.",
+    "incorrect_behavior": "The inventory check alone permits A followed by B, even though the first redemption expires the second coupon.",
+    "title": "Choose coupons for two successive purchases"
+  },
+  {
+    "task_id": "decision-collapse-color-components",
+    "source_group": "specified/sample-clusters-ballots-and-overheads",
+    "reasoning": "Compute reachability from every sample with a recursive CTE. UNION deduplicates visited pairs so traversal terminates even on cycles.",
+    "incorrect_behavior": "Choosing the smallest immediate neighbor misses the representative when it is several links away.",
+    "title": "Collapse equivalent color samples"
+  },
+  {
+    "task_id": "decision-first-majority-run-with-missing-readings",
+    "source_group": "specified/sample-clusters-ballots-and-overheads",
+    "reasoning": "Test the worst-case assignment for each color, then join consecutive periods on their confirmed color and take the earliest qualifying pair.",
+    "incorrect_behavior": "Dropping missing observations can confirm a run even when one of its periods could have ended in a tie.",
+    "title": "Locate the first confirmed majority run"
+  },
+  {
+    "task_id": "decision-instant-runoff-design-ballot",
+    "source_group": "specified/sample-clusters-ballots-and-overheads",
+    "reasoning": "Tally first choices, use the elimination priority to select the lowest design, and retally transferred ballots. With three complete choices, a tie in round two gives all ballots to the surviving design in round three.",
+    "incorrect_behavior": "Reversing the elimination tie order transfers a different group's ballots and changes the winner.",
+    "title": "Count an anonymous design ballot by instant runoff"
+  },
+  {
+    "task_id": "decision-reciprocal-assembly-overhead",
+    "source_group": "specified/sample-clusters-ballots-and-overheads",
+    "reasoning": "Solve M = m + P/4 and P = p + M/5 for loaded costs M and P from direct costs m and p. Carry both loaded costs over the common denominator 19 until the final station allocation.",
+    "incorrect_behavior": "Applying station shares directly to the ledger omits the reciprocal services and leaves part of the overhead unallocated.",
+    "title": "Allocate reciprocal service costs to assembly stations"
+  },
+  {
+    "task_id": "decision-estimate-paired-crossover-carryover",
+    "source_group": "specified/stratification-and-matched-observations",
+    "reasoning": "Pair the sequence totals within each block. Both totals contain each direct setting effect once, leaving the differential period 2 carryover in their contrast.",
+    "incorrect_behavior": "Contrasting the within-rig changes counts the direct B-minus-A setting effect twice, contaminating the carryover estimate.",
+    "title": "Estimate differential carryover in a paired AB/BA calibration trial"
+  },
+  {
+    "task_id": "decision-check-scoped-reprint-withdrawal",
+    "source_group": "specified/references-and-consent-in-publications",
+    "reasoning": "Apply a dated anti-join on the composite consent scope of item and reprint.",
+    "incorrect_behavior": "Ignoring the reprint extends each withdrawal to uses of the same item in every edition.",
+    "title": "Validate exhibit evidence against reprint-specific consent"
+  },
+  {
+    "task_id": "decision-join-split-page-caption",
+    "source_group": "specified/references-and-consent-in-publications",
+    "reasoning": "Join adjacent half-open intervals using the impression identifier as physical provenance.",
+    "incorrect_behavior": "Checking only the left fragment's provenance allows a right fragment from a different physical impression to complete the caption.",
+    "title": "Recover the caption across a page split"
+  },
+  {
+    "task_id": "decision-trace-common-quote-witnesses",
+    "source_group": "specified/references-and-consent-in-publications",
+    "reasoning": "Trace both editions' quote lineages and intersect their deduplicated original witnesses.",
+    "incorrect_behavior": "Intersecting immediate quotations reports the shared copy Slip and misses originals reached through different documents.",
+    "title": "Locate the two original witnesses shared by two editions"
+  },
+  {
+    "task_id": "decision-verify-conversion-primary",
+    "source_group": "specified/references-and-consent-in-publications",
+    "reasoning": "Compute finite citation reachability with recursive UNION, then require a common terminal primary for both factors.",
+    "incorrect_behavior": "Assigning the first rule's primary to the entire calculation admits a second factor whose citation chain cycles.",
+    "title": "Identify the primary reference behind a packing conversion"
+  },
+  {
+    "task_id": "decision-allocate-fee-at-fixed-effective-yield",
+    "source_group": "specified/cost-rollups-and-currency",
+    "reasoning": "Roll forward amortized cost using rounded effective interest so the first period's fee recognition changes the second period's interest base.",
+    "incorrect_behavior": "Keeps applying the yield to the original net carrying amount after the first period has increased it.",
+    "title": "Allocate a deferred origination fee over two coupon periods"
+  },
+  {
+    "task_id": "decision-balance-invoice-across-directed-quotes",
+    "source_group": "specified/cost-rollups-and-currency",
+    "reasoning": "Price a base sale and a base purchase against independent executable quotes, with leg-specific integer rounding.",
+    "incorrect_behavior": "Inverts desk A's bid to price the top-up, bypassing desk B's executable ask.",
+    "title": "Settle a euro invoice through two quoted trading desks"
+  },
+  {
+    "task_id": "decision-distinct-design-rollup-discrepancy",
+    "source_group": "specified/cost-rollups-and-currency",
+    "reasoning": "Apply the two-set inclusion-exclusion identity at each rollup and isolate its signed local residual.",
+    "incorrect_behavior": "Treats distinct counts as additive and counts designs shared by siblings twice.",
+    "title": "Locate a distinct-design count discrepancy in a catalog rollup"
+  },
+  {
+    "task_id": "decision-kit-cost-with-slot-substitutes",
+    "source_group": "specified/cost-rollups-and-currency",
+    "reasoning": "Select one component per assembly slot before recursively expanding quantities and pricing purchased leaves.",
+    "incorrect_behavior": "Expands every substitute as though it occupied a separately required slot.",
+    "title": "Recover the material cost of one display kit"
+  },
+  {
+    "task_id": "decision-allocate-export-short-names",
+    "source_group": "specified/immutable-export-formats",
+    "reasoning": "Sequential allocation against a shared set of reserved and previously assigned full names.",
+    "incorrect_behavior": "Checks the initial reservations for each file but forgets to occupy names assigned earlier in the export.",
+    "title": "Build an 8.3 filename map for an export"
+  },
+  {
+    "task_id": "decision-order-overlapping-quality-inspections",
+    "source_group": "specified/calibration-and-inspection-order",
+    "reasoning": "Enumerate permutations and weight each detectable scenario by the cumulative cost through its first successful inspection.",
+    "incorrect_behavior": "The negative orders inspections by standalone detection frequency. It ignores both duration and the loss of detection opportunities when an earlier inspection already covers an overlapping scenario.",
+    "title": "Choose the fastest inspection order given a detectable defect"
+  },
+  {
+    "task_id": "decision-schedule-after-business-day-lag",
+    "source_group": "specified/calibration-and-inspection-order",
+    "reasoning": "Filter the planning calendar for weekends and closures before numbering eligible business days separately for each job.",
+    "incorrect_behavior": "The negative adds calendar days first and rolls the result forward to an open date. This counts weekend days toward the lag and schedules the two-business-day job early.",
+    "title": "Schedule releases around weekends and workshop closures"
+  },
+  {
+    "task_id": "decision-station-bias-with-fixed-effects",
+    "source_group": "specified/calibration-and-inspection-order",
+    "reasoning": "Confidence-weighted within-station regression with a separate intercept for each station.",
+    "incorrect_behavior": "The negative gives every station's mode difference equal weight. A station with low confidence in one mode provides less information about the common slope, even when its total confidence matches another station's.",
+    "title": "Estimate the bias introduced by station test mode"
+  },
+  {
+    "task_id": "decision-undo-one-step-receipt-carry",
+    "source_group": "specified/calibration-and-inspection-order",
+    "reasoning": "Sequentially undo each carry using the preceding reconstructed count.",
+    "incorrect_behavior": "Subtracting the preceding scanner total carries an earlier duplicate forward a second time. The error appears on receipt 3 after two consecutive rescan flags.",
+    "title": "Recover original net units from rescanned receipts"
+  },
+  {
+    "task_id": "decision-bin-code-migration-matrix",
+    "source_group": "specified/migration-and-acceptance-sampling",
+    "reasoning": "Pair the union of bin keys across snapshots, then count the pairs against a complete grid of code combinations.",
+    "incorrect_behavior": "An inner join drops bins that appear in only one snapshot, erasing transitions into or out of the unresolved category.",
+    "title": "Build the bin-code migration matrix"
+  },
+  {
+    "task_id": "decision-capped-vendor-credit",
+    "source_group": "specified/migration-and-acceptance-sampling",
+    "reasoning": "Clip each extended line amount before summing, then clip the subtotal at the order ceiling.",
+    "incorrect_behavior": "Applying the line cap to each unit separately allows a multi-unit line to exceed its contractual cap.",
+    "title": "Calculate the maximum payable credit per order"
+  },
+  {
+    "task_id": "decision-close-the-tile-frame",
+    "source_group": "specified/migration-and-acceptance-sampling",
+    "reasoning": "Enumerate each four-tile subset once and test all three ways to pair its tiles into equal opposite sides.",
+    "incorrect_behavior": "Checking only the perimeter admits lengths 1, 2, 4, and 5 cm. They total 12 cm but cannot form two equal pairs of opposite sides.",
+    "title": "Choose four edge tiles that close a 12 cm rectangle"
+  },
+  {
+    "task_id": "decision-double-stage-carton-inspection",
+    "source_group": "specified/migration-and-acceptance-sampling",
+    "reasoning": "Apply early stopping thresholds to the first sample and a cumulative defect threshold to lots requiring the second sample.",
+    "incorrect_behavior": "The final decision compares the second sample alone with the two-sample allowance. A lot with 3 defects followed by 2 is incorrectly accepted.",
+    "title": "Decide carton lot acceptance after sampling"
+  },
+  {
+    "task_id": "decision-interline-through-ticket-change",
+    "source_group": "specified/travel-and-limited-production",
+    "reasoning": "Combine two coupon-level eligibility decisions and fee restrictions before pricing the through fare once.",
+    "incorrect_behavior": "Adding carrier fees charges the passenger twice. On the original data this also makes A appear cheaper than B.",
+    "title": "Price a date change on an interline through-ticket"
+  },
+  {
+    "task_id": "decision-maximize-packed-production-mix",
+    "source_group": "specified/travel-and-limited-production",
+    "reasoning": "Enumerate the bounded integer production mixes and optimize over the intersection of two shared capacity constraints.",
+    "incorrect_behavior": "Checking only packing capacity selects mixes that require more staff minutes than the shift provides.",
+    "title": "Recover the largest feasible mix of two packed products"
+  },
+  {
+    "task_id": "decision-minimize-two-cycle-sensor-drift",
+    "source_group": "specified/travel-and-limited-production",
+    "reasoning": "Enumerate the six permutations and evaluate the three prefix sums in each cycle, offsetting second-cycle prefixes by the first cycle's net drift.",
+    "incorrect_behavior": "Scoring one cycle implicitly resets the drift before cycle two. It reports a peak of 2 microvolts even though every sequence ends its second cycle at 4 microvolts.",
+    "title": "Choose a calibration sequence for two consecutive cycles"
+  },
+  {
+    "task_id": "decision-recover-archived-catalogue-join",
+    "source_group": "specified/travel-and-limited-production",
+    "reasoning": "Identify failed exact joins, expand archived substitutions in both directions, and track the length of the path that repairs each join.",
+    "incorrect_behavior": "Following only the recorded direction leaves the recovered master code, label, and hop count NULL whenever the path requires a reverse substitution.",
+    "title": "Trace an unmatched catalogue code across archived substitutions"
+  },
+  {
+    "task_id": "decision-acoustic-recording-channel-witness-set",
+    "source_group": "specified/art-and-recording-provenance",
+    "reasoning": "Enumerate take subsets in ascending ID order, check full channel coverage and the necessity of each take, then compare qualifying witness strings.",
+    "incorrect_behavior": "Minimizes the number of takes before comparing IDs, choosing D even when an earlier irredundant witness string explains every channel.",
+    "title": "Select the lexicographically first irredundant set of recording witnesses"
+  },
+  {
+    "task_id": "decision-art-print-signed-audit-trail",
+    "source_group": "specified/art-and-recording-provenance",
+    "reasoning": "Follow the print's event links recursively, propagate signs along the chain, and accumulate the signed changes in event order.",
+    "incorrect_behavior": "Treats each link sign as an absolute change, so reversing a cancellation subtracts a second certificate.",
+    "title": "Reconstruct the audit trail of a numbered art print"
+  },
+  {
+    "task_id": "decision-citation-footnote-duplicate-lineages",
+    "source_group": "specified/art-and-recording-provenance",
+    "reasoning": "Compute transitive footnote ancestry, retain distinct terminal ancestors, and test set equality in both directions.",
+    "incorrect_behavior": "Reports any shared original as a duplicate lineage, even when one footnote also descends from another original.",
+    "title": "Find review footnotes with identical citation ancestry"
+  },
+  {
+    "task_id": "decision-map-legend-source-footprints",
+    "source_group": "specified/art-and-recording-provenance",
+    "reasoning": "Filter source sheets by date and scale, clip their footprints to each legend, and resolve competing citations by measured intersection area.",
+    "incorrect_behavior": "Prioritizes the most recently issued eligible sheet even when it covers less of the legend footprint.",
+    "title": "Assign a source citation to each map legend"
+  },
+  {
+    "task_id": "decision-consecutive-stockout-penalty",
+    "source_group": "specified/retention-and-delivery-settlements",
+    "reasoning": "With a complete daily ledger, a day is chargeable exactly when it and its two immediate predecessors for the same item are deficient.",
+    "incorrect_behavior": "Subtracts a single two-day allowance from all deficient days for an item, combining separate runs across recovery days.",
+    "title": "Assess stockout charges after a two-day grace period"
+  },
+  {
+    "task_id": "decision-interval-energy-netting",
+    "source_group": "specified/retention-and-delivery-settlements",
+    "reasoning": "Net signed energy within fixed quarter-hours, apply asymmetric tariffs to interval balances, then sum charges by day.",
+    "incorrect_behavior": "Offsets surplus against shortfall across quarter-hour boundaries by netting an entire day before pricing.",
+    "title": "Invoice energy imbalance within quarter-hour boundaries"
+  },
+  {
+    "task_id": "decision-rotating-closed-bay-allocation",
+    "source_group": "specified/retention-and-delivery-settlements",
+    "reasoning": "A recursive allocation carries priority from the actual winner. Door clearance determines which reservations the scan can consider.",
+    "incorrect_behavior": "Derives priority from the slot number, so a skipped team or an unassigned bay can put later awards out of rotation.",
+    "title": "Assign enclosed loading bays by rotating priority"
+  },
+  {
+    "task_id": "decision-sliding-phase-retention",
+    "source_group": "specified/retention-and-delivery-settlements",
+    "reasoning": "Each invoice creates a phase-rated withholding and a delayed release. Releases from earlier invoices can coincide with new withholding.",
+    "incorrect_behavior": "Pools all retention until two days after the final invoice, delaying releases that have already matured.",
+    "title": "Settle invoices as phase retention rolls off"
+  },
+  {
+    "task_id": "decision-allocate-printer-plates-to-chapter-pockets",
+    "source_group": "reserve/print-collation",
+    "reasoning": "Evaluate paired placements jointly under binding order and a shared handling budget before ranking feasible layouts.",
+    "incorrect_behavior": "It grants each chapter the entire handling allowance, so the selected pair can exceed the shared budget.",
+    "title": "Choose a feasible two-plate binding layout"
+  },
+  {
+    "task_id": "decision-bound-missing-fold-offsets",
+    "source_group": "reserve/print-collation",
+    "reasoning": "Intersect one-sided and two-sided integer constraints after translating each strip into offset coordinates.",
+    "incorrect_behavior": "It turns an absent endpoint into a bound of zero pixels, which can fabricate a conflict or a unique offset.",
+    "title": "Decide which scanner offsets can be restored"
+  },
+  {
+    "task_id": "decision-export-complete-leaf-pairs-at-release",
+    "source_group": "reserve/print-collation",
+    "reasoning": "Reconstruct each face at the release cutoff, apply withdrawals, then serialize complete pairs into an ordered CSV file.",
+    "incorrect_behavior": "It discards withdrawal events before selecting the latest state, allowing a superseded image to reappear in the release.",
+    "title": "Build the paired-image CSV for a collation release"
+  },
+  {
+    "task_id": "decision-recover-signatures-from-conjugate-leaves",
+    "source_group": "reserve/print-collation",
+    "reasoning": "Mirror a physical leaf position within its gathering and select the latest admissible primary observation at that position.",
+    "incorrect_behavior": "It treats a detached insert as evidence of the signature of the original sheet.",
+    "title": "Recover rubbed signatures from the other half of a sheet"
+  },
+  {
+    "task_id": "decision-bound-late-course-tickets",
+    "source_group": "reserve/restaurant-course-tracking",
+    "reasoning": "Use opposite endpoints of the two observation intervals to distinguish unavoidable lateness from possible lateness.",
+    "incorrect_behavior": "Pairing first with first and last with last falsely assumes the two event times move together and can miss feasible duration extremes.",
+    "title": "Bound the number of late kitchen tickets"
+  },
+  {
+    "task_id": "decision-count-menu-options-with-complete-labels",
+    "source_group": "reserve/restaurant-course-tracking",
+    "reasoning": "Test complete coverage of the required label set for each distinct course–dish pair while preserving courses without matches.",
+    "incorrect_behavior": "Checking only for an explicit 'contains' mark counts incomplete and unknown label records as qualifying.",
+    "title": "Count menu options eligible for an allergen-free filter"
+  },
+  {
+    "task_id": "decision-reconcile-course-charges-at-close",
+    "source_group": "reserve/restaurant-course-tracking",
+    "reasoning": "Reduce each charge's reversal chain by parity at the cutoff before aggregating gross, adjustments, and net by table.",
+    "incorrect_behavior": "Treating the first reversal as permanent omits a restored charge when the number of eligible flips is even.",
+    "title": "Reconcile course charges across repeated bill reversals"
+  },
+  {
+    "task_id": "decision-assign-survey-heads-before-simultaneous-readings",
+    "source_group": "reserve/survey-monuments",
+    "reasoning": "Enumerate jointly feasible assignments and minimize worst-pad error before total error and setup time.",
+    "incorrect_behavior": "It budgets the fittings as parallel jobs even though one technician must perform both.",
+    "title": "Choose a feasible instrument swap for two pads"
+  },
+  {
+    "task_id": "decision-separate-monument-drift-from-datum-reset",
+    "source_group": "reserve/survey-monuments",
+    "reasoning": "Pair each monument with itself across visits and subtract the control's change before aggregating signed movements.",
+    "incorrect_behavior": "It checks that both control readings exist but attributes their change to each monument.",
+    "title": "Recover eastward movement across a datum reset"
+  },
+  {
+    "task_id": "decision-triangulate-forward-sight-consensus",
+    "source_group": "reserve/survey-monuments",
+    "reasoning": "Test collinearity and forward orientation independently before finding the maximum consensus over candidate positions.",
+    "incorrect_behavior": "It treats each bearing as an infinite line, counting stakes behind the station.",
+    "title": "Find search stakes supported by directed sights"
+  },
+  {
+    "task_id": "decision-dead-heat-purse-apportionment",
+    "source_group": "reserve/athletic-relay-adjudication",
+    "reasoning": "Pool the prizes for the positions consumed by each dead heat and distribute indivisible cents deterministically.",
+    "incorrect_behavior": "Dense ranking advances just one place after a tie, allowing later finishers to claim positions already included in the tie pool.",
+    "title": "Settle a relay purse through a dead heat"
+  },
+  {
+    "task_id": "decision-midnight-course-hold-credit",
+    "source_group": "reserve/athletic-relay-adjudication",
+    "reasoning": "Unwrap both clock intervals around the race-day boundary and subtract their clipped overlap from each completed leg.",
+    "incorrect_behavior": "Any overlap triggers credit for the entire course hold, including seconds outside the leg.",
+    "title": "Credit only time actually spent under the course hold"
+  },
+  {
+    "task_id": "decision-standing-exchange-disqualifications",
+    "source_group": "reserve/athletic-relay-adjudication",
+    "reasoning": "Reconstruct the ruling in force at a cutoff independently for each incident, preserving the citation for each surviving disqualification.",
+    "incorrect_behavior": "Filtering out clearances before selecting the controlling decision resurrects overturned penalties.",
+    "title": "Which exchange disqualifications still stand?"
+  },
+  {
+    "task_id": "decision-audit-numbering-between-printed-anchors",
+    "source_group": "reserve/theatre-cue-sheets",
+    "reasoning": "Compare the change between successive legible cue numbers with the change in cue-only ordinal position.",
+    "incorrect_behavior": "Counting notes as numbered positions can conceal a gap or create a false discrepancy.",
+    "title": "Find cue-number gaps on a marked-up leaf"
+  },
+  {
+    "task_id": "decision-locate-conductor-handoffs-at-cue-starts",
+    "source_group": "reserve/theatre-cue-sheets",
+    "reasoning": "Resolve overlapping substitution notices at sampled cue starts, then detect transitions between consecutive effective conductors.",
+    "incorrect_behavior": "Treating the release minute as covered attributes a cue at the boundary to an expired notice.",
+    "title": "Mark baton handoffs on the running sheet"
+  },
+  {
+    "task_id": "decision-recover-playtime-from-blank-reprises",
+    "source_group": "reserve/theatre-cue-sheets",
+    "reasoning": "Resolve blank reprises against the latest play or clear in the same reel before aggregating performed time.",
+    "incorrect_behavior": "Looking back only for a nonblank score carries a score across an explicit clear.",
+    "title": "Reconstruct performed seconds by score"
+  },
+  {
+    "task_id": "decision-fund-monthly-guarantee-shortfalls-in-priority-order",
+    "source_group": "reserve/music-royalties",
+    "reasoning": "Each catalog draws against the reserve remaining after higher-priority shortfalls, while its ordinary earnings stay with the catalog.",
+    "incorrect_behavior": "Signed shortfalls let an earlier catalog's excess ordinary earnings inflate the reserve available to later catalogs.",
+    "title": "Allocate a limited guarantee reserve"
+  },
+  {
+    "task_id": "decision-recoup-returns-against-originating-credit-lots",
+    "source_group": "reserve/music-royalties",
+    "reasoning": "Difference the lot's capped cumulative returned quantities at two close dates before valuing and aggregating the April movement.",
+    "incorrect_behavior": "The debit calculation resets each lot's return capacity on April 1, allowing previously recouped credits to be charged again.",
+    "title": "Post the April return debit"
+  },
+  {
+    "task_id": "decision-select-capped-bonus-offers-within-monthly-pool",
+    "source_group": "reserve/music-royalties",
+    "reasoning": "Evaluate whole portfolios using capped cash costs, a shared budget and mutually exclusive offers from the same catalog.",
+    "incorrect_behavior": "Testing feasibility against uncapped earnings rejects portfolios whose actual payable bonuses fit the pool.",
+    "title": "Choose a fundable set of retention bonuses"
+  },
+  {
+    "task_id": "decision-bounded-remainder-barcode",
+    "source_group": "supplement/sets-and-arbitrary-identifiers",
+    "reasoning": "Solve the simultaneous congruences by enumerating each tiny bounded interval, checking every modulus, and counting survivors per barcode.",
+    "incorrect_behavior": "The query accepts a candidate that passes any one check and takes the smallest one without validating uniqueness. It reports 2 for amber in the first state, although 2 fails the modulus-5 check. It also reports mint despite both 0 and 15 passing all its checks.",
+    "title": "Recover missing barcode integers from remainder checks"
+  },
+  {
+    "task_id": "decision-marked-point-hausdorff-distance",
+    "source_group": "supplement/sets-and-arbitrary-identifiers",
+    "reasoning": "Form all cross-set Manhattan distances, minimize separately for each endpoint in each direction, then maximize over both directions.",
+    "incorrect_behavior": "The query checks only A-to-B distances. In the first layout every A mark is 1 cm from B, while the B mark at (4, 5) is 5 cm from its nearest A mark.",
+    "title": "Measure the separation between two sets of floor marks"
+  },
+  {
+    "task_id": "decision-minimum-maintenance-vertex-cover",
+    "source_group": "supplement/sets-and-arbitrary-identifiers",
+    "reasoning": "Enumerate vertex subsets as bitmasks, discard any mask that leaves both endpoints of a link unselected, then minimize cardinality and apply the mask tie-break.",
+    "incorrect_behavior": "Opening every linked valve covers the graph but ignores covers that use pumps. In the first graph the two valves have tie-bit sum 12, while the two pumps cover the same links with sum 3.",
+    "title": "Choose the fewest maintenance access points"
+  }
+]

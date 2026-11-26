@@ -1,0 +1,49 @@
+{
+  "cutoff": "2022-04-29",
+  "sectors": {
+    "2022Q2/retail-2": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000084129",
+          "issuer": "RITE AID CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2022-05-29",
+          "latest_filed_period_end": "2022-02-26",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2022-04-25",
+              "text": "Fiscal 2022 compared to Fiscal 2021: The 6.9% increase in revenue was primarily the result of an increase in same store sales and incremental sales from our Bartell stores of $501.9 million in the current year compared to $101.1 million in the prior year."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2022-04-25",
+              "text": "Gross profit benefitted from higher pharmacy same store sales, including immunizations, and incremental gross profit from our Bartell stores."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2022-04-25",
+              "text": "These amounts were partially offset by increases in pharmacy inventory and the payment of $51.0 million of employer payroll taxes that were previously deferred under the CARES Act."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2022-04-25",
+              "text": "Segment Adjusted EBITDA was driven by increased gross profit, partially offset by an increase in SG&A expenses."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2022-04-25",
+              "text": "For other stores, we perform a recoverability analysis if they have experienced current-period and historical cash flow losses."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

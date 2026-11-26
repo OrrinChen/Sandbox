@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-016",
+    "stage": "submit",
+    "prompt_sha256": "6dcb54b3336e0daddd11dfabf1c3ac7f2481531215d08cc9d8753e516774cb2f",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f2-36f3-7930-819d-51013170b79b",
+    "raw": "{\"sheet-50952\":{\"fills\":[{\"range\":\"G2:G5\",\"formula\":\"=IFERROR(INDEX($A$2:$A$7,MATCH(1,INDEX(ISNUMBER(SEARCH(E2,$B$2:$B$7))*ISNUMBER(SEARCH(F2,$B$2:$B$7)),0),0)),\\\"\\\")\"}],\"formulas\":{}},\"sheet-51249\":{\"formulas\":{\"D1\":\"=IF(AND(B1=\\\"\\\",B2=\\\"\\\"),\\\"\\\",IF(AND(B1<>\\\"\\\",B2<>\\\"\\\"),\\\"Multiple\\\",IF(OR(B1=\\\"Description A\\\",B2=\\\"Description A\\\"),\\\"Single A\\\",IF(OR(B1=\\\"Description B\\\",B2=\\\"Description B\\\"),\\\"Single B\\\",\\\"\\\"))))\",\"D5\":\"=IF(AND(B5=\\\"\\\",B6=\\\"\\\"),\\\"\\\",IF(AND(B5<>\\\"\\\",B6<>\\\"\\\"),\\\"Multiple\\\",IF(OR(B5=\\\"Description A\\\",B6=\\\"Description A\\\"),\\\"Single A\\\",IF(OR(B5=\\\"Description B\\\",B6=\\\"Description B\\\"),\\\"Single B\\\",\\\"\\\"))))\",\"D9\":\"=IF(AND(B9=\\\"\\\",B10=\\\"\\\"),\\\"\\\",IF(AND(B9<>\\\"\\\",B10<>\\\"\\\"),\\\"Multiple\\\",IF(OR(B9=\\\"Description A\\\",B10=\\\"Description A\\\"),\\\"Single A\\\",IF(OR(B9=\\\"Description B\\\",B10=\\\"Description B\\\"),\\\"Single B\\\",\\\"\\\"))))\"}},\"sheet-51262\":{\"fills\":[{\"range\":\"F6:H6\",\"formula\":\"=SUMPRODUCT(($B$6:$B$13>=DATE(YEAR(F5),MONTH(F5),1))*($B$6:$B$13<EDATE(DATE(YEAR(F5),MONTH(F5),1),1))*($C$6:$C$13<>\\\"\\\")*(COUNTIF($F$10:$F$14,$C$6:$C$13)>0)*$D$6:$D$13)\"}],\"formulas\":{}},\"sheet-51807\":{\"fills\":[{\"range\":\"D1:D3\",\"formula\":\"=IF(A1=\\\"\\\",\\\"\\\",\\\"Carton \\\"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\\\"\\\",\\\" Boxes \\\"&MOD(A1,12)))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18535,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 574,
+      "reasoning_output_tokens": 63
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

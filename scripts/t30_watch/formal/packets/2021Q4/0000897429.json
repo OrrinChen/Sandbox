@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q4",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000897429",
+  "issuer": "CHICO'S FAS, INC.",
+  "cutoff": "2021-10-01",
+  "projected_target_start": "2021-10-31",
+  "status": "complete",
+  "period_end": "2021-07-31",
+  "filing_date": "2021-09-01",
+  "text": {
+    "sector": "retail",
+    "cik": "0000897429",
+    "issuer": "CHICO'S FAS, INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-09-01",
+        "text": "For the second quarter, net sales were $472 million compared to $306 million in last year's second quarter."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-09-01",
+        "text": "•Continued exceptional sales growth at Soma: Soma posted a 53% sales increase over last year's second quarter and a 38% comparable sales increase over the second quarter of fiscal 2019."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-09-01",
+        "text": "•Improved gross margin: The gross margin rate improved to 38.4% in the second quarter, the best performance in 13 consecutive quarters, driven by controlled inventories and lower promotional levels."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-09-01",
+        "text": "•Continued cost discipline: Selling, general and administrative (\"SG&A\") expenses declined to a 30.9% rate for the second quarter, an improvement over both the second quarter rates of fiscal 2020 and 2019, reflecting the impact of cost savings initiatives put in place in prior years, continued cost discipline efforts and sales leverage."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-09-01",
+        "text": "Net cash provided by operating activities for the year-to-date period of fiscal 2021 was $34 million compared to net cash used in operating activities of $90 million in last year's year-to-date period."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-05-01",
+        "filed": "2021-06-09",
+        "reported_sales_usd": 387961000,
+        "year_ago_reported_sales_usd": 280264000,
+        "yoy_percent": "38.4270"
+      },
+      {
+        "quarter_end": "2021-07-31",
+        "filed": "2021-09-01",
+        "reported_sales_usd": 472059000,
+        "year_ago_reported_sales_usd": 306174000,
+        "yoy_percent": "54.1800"
+      }
+    ],
+    "status": "complete"
+  }
+}

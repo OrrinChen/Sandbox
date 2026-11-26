@@ -1,0 +1,297 @@
+[
+  {
+    "task_id": "decision-rebate-remittance-balance-file",
+    "tool": "csv.export",
+    "instruction": "Construct the full contents of open_rebates.csv as one text value in a single column named csv_content. Each evidence row approves a separate rebate payable in integer cents. Each transfer event is a complete status snapshot for a payment attempt against one approval. Within an attempt, the greatest event_seq is current and unique, the source_id stays constant, and only a current status of 'posted' reduces the payable by that snapshot's amount_cents. Pending and reversed attempts contribute zero. Subtract the sum of current posted amounts from each approval, treating no posted payments as zero. Include only positive balances, one line per approval in ascending source_id order. Use the literal header source_id,open_cents, a comma separator, unquoted fields, ordinary decimal integers, and LF after every line including the last. Source IDs contain only uppercase letters and digits. All inputs are non-null. Scope includes all supplied events and approvals. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "approval_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "approved_cents INTEGER",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            "R3",
+            4500,
+            "Release a 4500-cent stocking rebate."
+          ],
+          [
+            "R1",
+            9000,
+            "Approve the 9000-cent display allowance."
+          ],
+          [
+            "R2",
+            7000,
+            "Approve 7000 cents for the launch rebate."
+          ]
+        ]
+      },
+      "transfer_event": {
+        "columns": [
+          "attempt_id TEXT",
+          "source_id TEXT",
+          "event_seq INTEGER",
+          "status_code TEXT",
+          "amount_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "T1",
+            "R1",
+            1,
+            "posted",
+            4000
+          ],
+          [
+            "T1",
+            "R1",
+            2,
+            "reversed",
+            4000
+          ],
+          [
+            "T2",
+            "R1",
+            1,
+            "pending",
+            2500
+          ],
+          [
+            "T2",
+            "R1",
+            2,
+            "posted",
+            2500
+          ],
+          [
+            "T3",
+            "R2",
+            1,
+            "posted",
+            7000
+          ],
+          [
+            "T4",
+            "R3",
+            1,
+            "pending",
+            1000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_content"
+    ]
+  },
+  {
+    "task_id": "decision-receiving-cutoff-at-dispatch",
+    "tool": "sqlite.query",
+    "instruction": "Audit every shipment against the receiving addenda available when it left the depot. All times are integer minutes after midnight on the same day. A notice qualifies if its issue minute is at or before dispatch and its dock code is either the shipment's dock or '*', which means all docks. Use the most recently issued qualifying notice. At the same minute prefer the dock-specific notice, then the lexicographically smallest source ID under SQLite BINARY ordering. Each shipment has a qualifying notice. The cutoff is inclusive, so arrival at the cutoff is on time. A null arrival means unconfirmed and must be omitted from the late-shipment report. All other fields are non-null. Return only confirmed late shipments, with columns shipment_id, source_id, late_min (arrival minus governing cutoff in minutes), ordered by shipment_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dock_notice": {
+        "columns": [
+          "source_id TEXT",
+          "dock_code TEXT",
+          "issue_min INTEGER",
+          "cutoff_min INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "D1",
+            "*",
+            400,
+            900,
+            "All docks close receiving at 15:00."
+          ],
+          [
+            "D2",
+            "E",
+            500,
+            930,
+            "East dock will receive until 15:30."
+          ],
+          [
+            "D3",
+            "*",
+            600,
+            870,
+            "From this issue, all docks close at 14:30."
+          ],
+          [
+            "D4",
+            "W",
+            600,
+            915,
+            "West dock alone retains a 15:15 close."
+          ]
+        ]
+      },
+      "shipment": {
+        "columns": [
+          "shipment_id TEXT",
+          "dock_code TEXT",
+          "dispatch_min INTEGER",
+          "arrival_min INTEGER"
+        ],
+        "rows": [
+          [
+            "S1",
+            "E",
+            550,
+            931
+          ],
+          [
+            "S2",
+            "E",
+            600,
+            900
+          ],
+          [
+            "S3",
+            "W",
+            601,
+            915
+          ],
+          [
+            "S4",
+            "W",
+            450,
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shipment_id",
+      "source_id",
+      "late_min"
+    ]
+  },
+  {
+    "task_id": "decision-reciprocal-assembly-overhead",
+    "tool": "sqlite.query",
+    "instruction": "Allocate one period of maintenance and power overhead to assembly stations Bench and Line. The single ledger row gives direct service-department costs in cents. Maintenance sends 20% of its fully loaded cost to Power, 50% to Bench, and 30% to Line. Power sends 25% of its fully loaded cost to Maintenance, 25% to Bench, and 50% to Line. Each department's fully loaded cost equals its direct cost plus the service cost it receives from the other department. Solve those two obligations simultaneously, then allocate the specified station shares. Return station and allocated_cents, in that order, sorted by station ascending. Keep intermediate amounts exact. Both supplied ledgers yield whole cents at each station, so no rounding or residual tie-break is needed. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "service_ledger": {
+        "columns": [
+          "maintenance_cents INTEGER",
+          "power_cents INTEGER"
+        ],
+        "rows": [
+          [
+            900,
+            200
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "station",
+      "allocated_cents"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-between-stock-counts",
+    "tool": "sqlite.query",
+    "instruction": "For each row in stock_counts, reconcile the closing physical count for the same shop and item. Both counts were taken at the end of the stated business day. Start with opening_units and apply posted movements strictly after opening_day through closing_day inclusive. Each movement is a signed number of units. A null posted_day means the movement is pending and contributes nothing. Dates are ISO YYYY-MM-DD text. Each shop and item has one count interval, and all other fields are nonnull. Report every interval, including those with no movements. Return shop, item, book_units, counted_units, shortage_cents in that order. book_units is the calculated closing balance, counted_units is the closing physical count, and shortage_cents values only missing units at the interval's unit_cost_cents. A surplus has zero shortage expense. Sort by shortage_cents descending, breaking ties by shop and then item ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stock_counts": {
+        "columns": [
+          "shop TEXT",
+          "item TEXT",
+          "opening_day TEXT",
+          "closing_day TEXT",
+          "opening_units INTEGER",
+          "closing_units INTEGER",
+          "unit_cost_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "hill",
+            "tea",
+            "2026-04-01",
+            "2026-04-08",
+            20,
+            16,
+            150
+          ],
+          [
+            "quay",
+            "tea",
+            "2026-04-01",
+            "2026-04-08",
+            10,
+            13,
+            150
+          ],
+          [
+            "hill",
+            "cups",
+            "2026-04-03",
+            "2026-04-08",
+            12,
+            11,
+            80
+          ]
+        ]
+      },
+      "stock_postings": {
+        "columns": [
+          "shop TEXT",
+          "item TEXT",
+          "posted_day TEXT",
+          "delta_units INTEGER"
+        ],
+        "rows": [
+          [
+            "hill",
+            "tea",
+            "2026-04-01",
+            7
+          ],
+          [
+            "hill",
+            "tea",
+            "2026-04-04",
+            -5
+          ],
+          [
+            "hill",
+            "tea",
+            "2026-04-08",
+            4
+          ],
+          [
+            "hill",
+            "tea",
+            null,
+            -2
+          ],
+          [
+            "quay",
+            "tea",
+            "2026-04-06",
+            2
+          ],
+          [
+            "hill",
+            "cups",
+            "2026-04-09",
+            -1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shop",
+      "item",
+      "book_units",
+      "counted_units",
+      "shortage_cents"
+    ]
+  }
+]

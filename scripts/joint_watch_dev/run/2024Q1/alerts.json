@@ -1,0 +1,146 @@
+{
+  "origin": "2024Q1",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000949870",
+          "reason": "Slot A puts Boston Beer's annual revenue decline at 3.9%. Lower shipments cost $129.3 million, while price increases recovered $60.2 million. If shipment weakness persists, a smaller pricing benefit could push a coming quarter's decline to 5%."
+        },
+        {
+          "cik": "0001320695",
+          "reason": "Slots A and D say pricing and the coffee acquisition drove 4.1% sales growth, and the 2022 price increases stayed in effect through 2023. Both upcoming quarters face prior-year prices that already include those increases, leaving reported sales more exposed to the shipment disruptions in slot B."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000088941",
+          "reason": "Slot C reports elevated channel inventories, and slot A says distributors accounted for 66% of Semtech's net sales. Distributors can fill orders from stock before buying again. With that much exposure, a near-term cut in replenishment could drive a 5% quarterly decline after the annual growth reported in slot E."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001041061",
+          "reason": "Yum's quarterly revenue growth slowed from 4.15% to 0.84%. Slot A identifies sales pressure across the Middle East, Malaysia and Indonesia. If that pressure persists through a full quarter, it could push consolidated revenue growth to -5% within the next two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001320695",
+          "reason": "TreeHouse's quarterly net sales moved from +3.65% to -4.80%. Slot B identifies a supply disruption that reduced volume, and slot D says the 2022 price increases were already in effect throughout 2023. With those prices in the comparison base, just 0.21 percentage points of further deterioration would cross -5%."
+        },
+        {
+          "cik": "0001046257",
+          "reason": "Ingredion's quarterly net sales moved from +0.49% to -3.32%. Slot B says favorable pricing and customer mix offset lower volumes and unfavorable exchange rates. If those offsets weaken, another 1.68 percentage points of deterioration in either upcoming quarter would reach -5%."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000088941",
+          "reason": "Slot C reports elevated channel inventories, and slot A says distributors accounted for 66% of Semtech's sales. Slot E places Sierra Wireless acquisition costs in fiscal 2023. As upcoming quarters compare against periods that include Sierra, distributors working through excess stock could turn the latest 15.18% reported growth into a decline of 5% or more."
+        },
+        {
+          "cik": "0001039399",
+          "reason": "FormFactor's quarterly revenue recovered from -5.14% to +1.31%. Slot B reports falling unit sales across several major customers, and slot E records the sale of the FRT business. Upcoming quarters will lack FRT sales included a year earlier, increasing the risk of a fresh crossing if customer demand stays weak."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001041061",
+          "reason": "Reported sales YoY 4.15% then 0.84%; linear projections -2.46% and -5.77%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001320695",
+          "reason": "Reported sales YoY 3.65% then -4.80%; linear projections -13.25% and -21.69%."
+        },
+        {
+          "cik": "0000077476",
+          "reason": "Reported sales YoY 6.75% then -0.52%; linear projections -7.79% and -15.06%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

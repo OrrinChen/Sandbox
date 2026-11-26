@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-018",
+    "stage": "inspect-1",
+    "prompt_sha256": "1a508a6836bbf9824ae43bee932f025a19735f83ac00c0c3881c957c69b779bd",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-b9ae-7303-b415-bd8a7a2c0d57"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to resolve the open questions in each workbook and locate the relevant source rows and formulas."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-53167\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B3:E16\"}],\"sheet-53383\":[{\"op\":\"range\",\"sheet\":\"worksheet 1\",\"range\":\"A1:B6\"},{\"op\":\"range\",\"sheet\":\"worksheet2\",\"range\":\"A1:C6\"}],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Result\",\"range\":\"A1:L10\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A5:K20\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 34726,
+          "cached_input_tokens": 29056,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 512,
+          "reasoning_output_tokens": 312
+        }
+      ],
+      "cli_final": "{\"sheet-53167\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B3:E16\"}],\"sheet-53383\":[{\"op\":\"range\",\"sheet\":\"worksheet 1\",\"range\":\"A1:B6\"},{\"op\":\"range\",\"sheet\":\"worksheet2\",\"range\":\"A1:C6\"}],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Result\",\"range\":\"A1:L10\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A5:K20\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-b9ae-7303-b415-bd8a7a2c0d57",
+    "raw": "{\"sheet-53167\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B3:E16\"}],\"sheet-53383\":[{\"op\":\"range\",\"sheet\":\"worksheet 1\",\"range\":\"A1:B6\"},{\"op\":\"range\",\"sheet\":\"worksheet2\",\"range\":\"A1:C6\"}],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Result\",\"range\":\"A1:L10\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A5:K20\"}]}",
+    "usage": {
+      "input_tokens": 34726,
+      "cached_input_tokens": 29056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 512,
+      "reasoning_output_tokens": 312
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

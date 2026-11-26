@@ -1,0 +1,58 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 33598,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 304,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a2036c-5206-7850-a74b-fe9d6a284f16",
+  "packet_sha256": "d04a794c2462be14f483e36b46bb0e33ee3f358584b9078aa99f245b82868fd1",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[\n      {\"cik\":\"0001140215\",\"reason\":\"Reed’s quarterly net sales fell 2% (A). Virgil’s volume fell 22% (B), and tighter supplier credit kept Reed’s from producing enough inventory to meet demand (C). If those pressures persist, the decline could reach 5% within two quarters.\"},\n      {\"cik\":\"0000023217\",\"reason\":\"Conagra’s quarterly net sales were flat (A), but weaker consumption was already reducing volume (B). As fiscal 2023 price increases (D) enter the year-earlier comparison, continued volume weakness could push reported sales down 5% within two quarters.\"}\n    ]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[\n      {\"cik\":\"0000832101\",\"reason\":\"IDEX’s quarterly net sales fell 4% (A), one percentage point short of the threshold. Customers continued reducing inventories (D), and backlog shipments partly cushioned weaker demand in pharma and food markets (C). As that backlog runs down, the decline could reach 5% within two quarters.\"}\n    ]},\n    {\"sector\":\"semiconductors\",\"alerts\":[]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[]},\n    {\"sector\":\"transportation\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0001140215",
+            "reason": "Reed’s quarterly net sales fell 2% (A). Virgil’s volume fell 22% (B), and tighter supplier credit kept Reed’s from producing enough inventory to meet demand (C). If those pressures persist, the decline could reach 5% within two quarters."
+          },
+          {
+            "cik": "0000023217",
+            "reason": "Conagra’s quarterly net sales were flat (A), but weaker consumption was already reducing volume (B). As fiscal 2023 price increases (D) enter the year-earlier comparison, continued volume weakness could push reported sales down 5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0000832101",
+            "reason": "IDEX’s quarterly net sales fell 4% (A), one percentage point short of the threshold. Customers continued reducing inventories (D), and backlog shipments partly cushioned weaker demand in pharma and food markets (C). As that backlog runs down, the decline could reach 5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

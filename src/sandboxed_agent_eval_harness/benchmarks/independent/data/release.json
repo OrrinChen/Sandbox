@@ -1,0 +1,39 @@
+{
+  "version": "independent-tools-1",
+  "counts": {
+    "dev": 100,
+    "test": 500
+  },
+  "domains": {
+    "dev": {
+      "citation": 11,
+      "coding": 18,
+      "data_analysis": 10,
+      "file_workflow": 28,
+      "finance": 12,
+      "optimization": 21
+    },
+    "test": {
+      "citation": 53,
+      "coding": 82,
+      "data_analysis": 59,
+      "file_workflow": 142,
+      "finance": 53,
+      "optimization": 111
+    }
+  },
+  "groups": 340,
+  "assets": {
+    "data/LICENSE.exercism.txt": "e52f804e74f0fbd34e8927962319df346166b8194094309a0aee318693df44df",
+    "data/relational_keys.json": "855a5e3f5282aeb30ab6948ee71c69129cffe23e7e7119a0674c32af9dfd3a5d",
+    "data/relational_tasks.json": "5a1478da4f8c7d831c2bcc46005a21617c26561fdb9e13d21647c3bf7a0a7b4b",
+    "data/repair_keys.json": "a334c9d081f05bcfbb649045dc1fd6171260d08aaaf3034c70f83275bdb7fb1d",
+    "data/repair_tasks.json": "9b9aa4c698e9fc4af386ae5f2df07132584996300ddc8db0868cdfca694e1eee",
+    "sheet_data/LICENSE.txt": "77d18a6932ec65f1390fcd6847466eec124665652d312e37c776574270dbcb51",
+    "sheet_data/curation.json": "d93626edfb86cc43b274b7a03dde7e50c149306620c5fd0d226fae087d1e6c8a",
+    "sheet_data/inputs.zip": "4928170d2395dd5f83330fe778ce8fe7add39822e3d2395bea368f617a8ecee7",
+    "sheet_data/public.json": "570bb682dc089b3c52a22ba8ee249576e1781d165c646d1d2f2f4d59ad314b03",
+    "sheet_data/scorer.json.gz": "dcb3b0b30a4da31e438fa2dcd7b8f0080332853d14d0b6289b660bd9fb551bc0",
+    "sheet_data/scorer_variants.zip": "f19dee12aa12b07fa9ea7a1a68dd289a835d2beab96399d3abfb7741e09102ef"
+  }
+}

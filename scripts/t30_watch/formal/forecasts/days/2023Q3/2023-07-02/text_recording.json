@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22618,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 65,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-d4f0-7fc1-9573-d75585565d5b",
+  "packet_sha256": "b409b963af7efb6e2b23b31203eb5821fd63a4adf2e217f082ef3e2225ad1845",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q3/prepackaged_software-1\",\"alerts\":[]},{\"sector\":\"2023Q3/prepackaged_software-2\",\"alerts\":[]},{\"sector\":\"2023Q3/retail-1\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/retail-1",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-022",
+    "stage": "inspect-2",
+    "prompt_sha256": "ae9db34008069cb6d005401d7834b5116576c25f60eb84a6d9b21f699e4b6492",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-dbbd-7453-a319-a4aed4527f30",
+    "raw": "{\n  \"sheet-57354\": [],\n  \"sheet-58047\": [],\n  \"sheet-58701\": [],\n  \"sheet-59160\": []\n}",
+    "usage": {
+      "input_tokens": 20175,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 38,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

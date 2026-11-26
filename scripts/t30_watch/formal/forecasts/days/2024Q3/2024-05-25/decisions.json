@@ -1,0 +1,54 @@
+{
+  "text": [
+    {
+      "sector": "2024Q3/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q3/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q3/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2024Q3/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q3/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q3/semiconductors-2",
+      "alerts": [
+        {
+          "cik": "0000895419",
+          "reason": "Quarterly revenue fell from $208.4 million to $200.7 million sequentially while the year-ago comparison rose from $173.8 million to $192.6 million. YoY growth narrowed from 19.91% to 4.21%. Strong materials demand and improved output (B) support a forecast that growth stays above -5% in the intervening quarter, but the narrowing sales lead points to a first decline of at least 5% in the target quarter."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2024Q3/food_manufacturing-2",
+      "alerts": [
+        {
+          "cik": "0000802481",
+          "reason": "Reported sales YoY 9.71% then 4.71%. Target is step 2; preceding -0.29% versus target -5.29%."
+        }
+      ]
+    },
+    {
+      "sector": "2024Q3/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q3/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

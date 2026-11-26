@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24444,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 225,
+    "reasoning_output_tokens": 34
+  },
+  "thread": "01a20d8d-864e-7082-bbfc-df855ee5d1bb",
+  "packet_sha256": "a917014edcc9e2b5f48d4459c3f34736dbfd37221a49ff8ccd7ea95a62ab2989",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q1/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q1/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000072333\",\n          \"reason\": \"Nordstrom reported that holiday and occasion shopping supported its core categories (E), while economic pressure affected every customer segment and was strongest among lower-income shoppers (D). I expect holiday demand to keep the fourth-quarter net sales decline under 5% year over year. Once holiday shopping ends, I forecast a decline of at least 5% in the quarter beginning January 29.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q1/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-2",
+        "alerts": [
+          {
+            "cik": "0000072333",
+            "reason": "Nordstrom reported that holiday and occasion shopping supported its core categories (E), while economic pressure affected every customer segment and was strongest among lower-income shoppers (D). I expect holiday demand to keep the fourth-quarter net sales decline under 5% year over year. Once holiday shopping ends, I forecast a decline of at least 5% in the quarter beginning January 29."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q1/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32927,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 191,
+    "reasoning_output_tokens": 16
+  },
+  "thread": "01a2036b-91bc-7b92-b171-b3e6aa90cb21",
+  "packet_sha256": "f9e3a1407e0cff59e460a74535cbb495008f9ea73d7716c26dfa32a0774d2051",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[]},\n    {\"sector\":\"semiconductors\",\"alerts\":[]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[]},\n    {\"sector\":\"transportation\",\"alerts\":[{\"cik\":\"0000003453\",\"reason\":\"“B” reports a 13.0% year-on-year drop in Q4 Hawaii container volume. “D” also cites lower lift volume and terminal revenue. If those pressures persist into Q1 or Q2, fewer shipments and less handling revenue could push consolidated revenue growth to −5% or lower. The packet leaves the Q4 consolidated growth rate unknown.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": []
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": [
+          {
+            "cik": "0000003453",
+            "reason": "“B” reports a 13.0% year-on-year drop in Q4 Hawaii container volume. “D” also cites lower lift volume and terminal revenue. If those pressures persist into Q1 or Q2, fewer shipments and less handling revenue could push consolidated revenue growth to −5% or lower. The packet leaves the Q4 consolidated growth rate unknown."
+          }
+        ]
+      }
+    ]
+  }
+}

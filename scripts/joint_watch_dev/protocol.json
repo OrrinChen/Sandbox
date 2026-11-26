@@ -1,0 +1,55 @@
+{
+  "version": "joint-watch-independent-development-2024-v1",
+  "schedule_sha256": "dbec59d53ef83ddb692f8342b847448fbff51dcbc156fb5d876960bb0d9d8a6a",
+  "companies_sha256": "123546f65ca1ec3b47cc05cab952c87baa526503deeb2880a60b035a9eda5db0",
+  "selection_sha256": "415c07c9287845bf8035863b5a02987f65fd211c1d13f441bb6bd2e727a6c006",
+  "clock": "Each of the four registered calendar quarter ends in 2024 at end of day in America/New_York. Latest actual fiscal quarter publicly filed in an original SEC 10-Q or 10-K by cutoff; latest fiscal period end, then filing date. If report period age exceeds 185 days or filing age exceeds 135 days no fresh anchor, retain cell explicitly. Both following quarters are actual issuer fiscal quarters anchored at that period end.",
+  "outcome": "New crossing to a consolidated reported quarterly GAAP net-sales year-over-year decline of at least 5.00% in either following fiscal quarter, with the immediately preceding quarter above -5.00%. Use consolidated net sales, else total revenue consistently; ratio of current to corresponding year-ago amounts minus one, before rounding. Count reported operations, without calendar, acquisition or currency adjustments. A continued decline already below the threshold is not a new onset. If it recovers then crosses again, that is a new onset.",
+  "first_disclosure": "Earliest dated official issuer public disclosure that unambiguously establishes the threshold for that specific fiscal quarter, including numeric quarterly guidance, preannouncements, and actual results. Exact figures or a range whose entire interval is at or below the threshold qualify; mapped dollar guidance must use the same prior-year base. Full-year projections, comparable sales alone and nonspecific warnings do not qualify. Search issuer earnings releases, intervening public updates, official investor presentations/call transcripts or issuer-furnished SEC exhibits for advance guidance. Record the first verified date, primary URL and evidence plus search coverage. Do not assert the date of the earliest market rumor or universal first mention.",
+  "eligible": "A crossing already explicitly disclosed on or before an origin cutoff earns no early-warning credit at that origin. Retain its row, distinguish known from absent events. Label positive if at least one newly crossing quarter in the horizon was first explicitly disclosed after cutoff. Match the first such quarter in chronological order.",
+  "missing": "Do not silently fill a slot, exclude an issuer, infer an unverified date, or count an unresolved case as negative. Mark unresolved explicitly if historical coverage does not substantiate an outcome or earliest known date.",
+  "arms": [
+    "text",
+    "joint",
+    "trend"
+  ],
+  "budget_per_sector_per_origin": 2,
+  "abstention": true,
+  "public_evidence": "Latest anchor filing. Select five distinct historical operating sentences in filing order, preferably in MD&A. A consolidated revenue or sales; B demand; C balance or capacity; D pricing, cost or margin; E operating results or cash flow. Exclude forecasts, generic definitions, safe harbor, tables of contents and cross-references without substantive facts. Shortest meaningful contiguous source sentence or complete clause preferred, table rows carry headings and units. Fallback first unused historical financial or operating sentence in MD&A, then rest of filing including meaningful tables. If fewer than five available give explicit missing fields. Preserve source words, source URL and locators. Issuer provided filings on EDGAR.",
+  "industry_slots_B_C": {
+    "retail": [
+      "comparable sales, transactions",
+      "inventories"
+    ],
+    "food_manufacturing": [
+      "volume, mix",
+      "inventories"
+    ],
+    "industrial_machinery": [
+      "orders, backlog",
+      "backlog, supply"
+    ],
+    "semiconductors": [
+      "demand, shipments",
+      "inventories"
+    ],
+    "prepackaged_software": [
+      "subscriptions, bookings, retention",
+      "deferred revenue, remaining performance obligations"
+    ],
+    "transportation": [
+      "volume, loads, traffic",
+      "capacity, utilization"
+    ]
+  },
+  "trend": "Mechanical extrapolation from as-of consolidated reported quarterly sales only. For two consecutive anchor-quarter and previous quarter YoY growth rates g and p (percent), project g+(g-p) and g+2*(g-p); flag only a fresh downward crossing from above -5 to at/below -5 in these projections. Rank by lowest projected growth then CIK and take at most 2 issuers per sector. Need both same-quarter year-ago comparisons and aligned anchor, no substitution. May abstain.",
+  "locking": "Seal protocol and sample first. Independently record both readers and the mechanical trend at each cutoff before opening the next forecast. Obtain future quarter outcomes and dates of first qualifying disclosures only after the four-cutoff prediction lock.",
+  "report": "Original outcome and score definitions unchanged. Use actual fiscal period boundaries; cutoff on the quarter start is not pre-start. Report sector breakdown and verifiable case notes. No choice of method, threshold or sample after seeing outcomes.",
+  "parent_protocol_sha256": "62813fc13e64a9eb8b06909ae12ad9df6a85063454ad96dcb939ec5697ecfaf8",
+  "sample": "2020 eligible roster ranks 7–12 within each sector, fixed before inspection. Six issuers per sector, six sectors, four consecutive calendar quarter ends in 2024. No backfill of issuers that later exit.",
+  "readers": "One fresh Codex gpt-6.2-astra session per text/joint arm per cutoff, same original prompt, medium effort, zero tool calls. The joint reader gets the exact text arm packet plus the two most recent consecutive reported fiscal quarters at the anchor, each with sales, as-reported prior-year comparator, dated availability and computed YoY. Mark gaps. Exclude mechanical predictions, rankings, other arms, future data and scorer fields.",
+  "baseline_prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "comparison": "Within the same resolved rows compare joint separately to text and deterministic trend. Count deduplicated issuer-quarter events with a first successful alert strictly before the actual target fiscal quarter starts. For each comparison success requires strictly more such events and no increase in false alerts (counts on the same resolved issuer-cutoffs). Primary joint success requires both comparisons to pass. Report gross paired gains/losses, opportunity counts, unresolved cases and any difference in alert use. Report number of events with at least one eligible cutoff strictly before target quarter start.",
+  "registration_note": "Before any reader run or private label collection, corrected the inherited count of cutoffs in the clock description to agree with the original locked schedule and sample. All selection, evidence, budget, outcome and acceptance criteria are identical.",
+  "initial_registration_sha256": "bb1906b73f33fb027d5f9be2f197f4a8d112622e2a5791b5d4684d772ad09df4"
+}

@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34566,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 503,
+    "reasoning_output_tokens": 28
+  },
+  "thread": "01a2036a-3da5-76b0-981a-df9834a89172",
+  "packet_sha256": "70ab094fa14164bd349b4a4e00a5db6f46b9c9b82eea524c67ff1887610eecb1",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"retail\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000018255\",\n          \"reason\": \"Cato attributes its first-three-quarter sales improvement partly to government stimulus and purchases for reopening and returning to work (A, B). The second quarter in the watch window laps the first quarter of that rebound. If those purchases do not recur, quarterly sales could fall at least 5% year on year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"food_manufacturing\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001005286\",\n          \"reason\": \"Landec is deliberately reducing its legacy vegetable and tray business (A), while Lifecore's $1.3 million CDMO revenue gain was largely offset by a $1.2 million fermentation decline (C). Further planned reductions could take consolidated sales through -5% within two quarters. The latest consolidated rate is unspecified.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"industrial_machinery\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000880266\",\n          \"reason\": \"AGCO says key parts shortages in recent weeks had already forced it to cut production and unit shipments while inventory rose (A). If the shortages persist into the next quarter, fewer units available to ship could pull reported sales down at least 5% year on year. The latest sales growth rate is unspecified.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"semiconductors\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"prepackaged_software\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000718877\",\n          \"reason\": \"Activision Blizzard's consolidated revenue growth slowed to 6% in Q3 from 17% over nine months (A, E). Stay-at-home orders had lifted game demand by giving players more time to play (C). If that lift fades further against the pandemic-era comparisons, quarterly revenue could cross to -5% within two quarters.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"transportation\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Cato attributes its first-three-quarter sales improvement partly to government stimulus and purchases for reopening and returning to work (A, B). The second quarter in the watch window laps the first quarter of that rebound. If those purchases do not recur, quarterly sales could fall at least 5% year on year."
+          }
+        ]
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0001005286",
+            "reason": "Landec is deliberately reducing its legacy vegetable and tray business (A), while Lifecore's $1.3 million CDMO revenue gain was largely offset by a $1.2 million fermentation decline (C). Further planned reductions could take consolidated sales through -5% within two quarters. The latest consolidated rate is unspecified."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0000880266",
+            "reason": "AGCO says key parts shortages in recent weeks had already forced it to cut production and unit shipments while inventory rose (A). If the shortages persist into the next quarter, fewer units available to ship could pull reported sales down at least 5% year on year. The latest sales growth rate is unspecified."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Activision Blizzard's consolidated revenue growth slowed to 6% in Q3 from 17% over nine months (A, E). Stay-at-home orders had lifted game demand by giving players more time to play (C). If that lift fades further against the pandemic-era comparisons, quarterly revenue could cross to -5% within two quarters."
+          }
+        ]
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

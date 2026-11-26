@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-007",
+    "stage": "submit",
+    "prompt_sha256": "32a2ae618a47cc93f172eade82bccec77faec87d29953d577c2cf6f3b642ad7d",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122b-da0e-7e00-8dbb-aae9b9dd8d18"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-39604\":{\"formulas\":{\"C4\":\"=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))\"}},\"sheet-40478\":{\"fills\":[{\"range\":\"B1:B3\",\"formula\":\"=MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1)\"}],\"formulas\":{}},\"sheet-40757\":{\"formulas\":{\"B10\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,7,1),A$3:A$6,\\\"<\\\"&DATE(2022,8,1))\",\"B11\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,8,1),A$3:A$6,\\\"<\\\"&DATE(2022,9,1))\"}},\"sheet-40892\":{\"fills\":[{\"range\":\"B2:B17\",\"formula\":\"=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,ISNUMBER(SEARCH($D$3:$D$8,A2)),0)),\\\"\\\")\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 17253,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 292,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-39604\":{\"formulas\":{\"C4\":\"=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))\"}},\"sheet-40478\":{\"fills\":[{\"range\":\"B1:B3\",\"formula\":\"=MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1)\"}],\"formulas\":{}},\"sheet-40757\":{\"formulas\":{\"B10\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,7,1),A$3:A$6,\\\"<\\\"&DATE(2022,8,1))\",\"B11\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,8,1),A$3:A$6,\\\"<\\\"&DATE(2022,9,1))\"}},\"sheet-40892\":{\"fills\":[{\"range\":\"B2:B17\",\"formula\":\"=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,ISNUMBER(SEARCH($D$3:$D$8,A2)),0)),\\\"\\\")\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122b-da0e-7e00-8dbb-aae9b9dd8d18",
+    "raw": "{\"sheet-39604\":{\"formulas\":{\"C4\":\"=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))\"}},\"sheet-40478\":{\"fills\":[{\"range\":\"B1:B3\",\"formula\":\"=MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1)\"}],\"formulas\":{}},\"sheet-40757\":{\"formulas\":{\"B10\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,7,1),A$3:A$6,\\\"<\\\"&DATE(2022,8,1))\",\"B11\":\"=SUMIFS(B$3:B$6,A$3:A$6,\\\">=\\\"&DATE(2022,8,1),A$3:A$6,\\\"<\\\"&DATE(2022,9,1))\"}},\"sheet-40892\":{\"fills\":[{\"range\":\"B2:B17\",\"formula\":\"=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,ISNUMBER(SEARCH($D$3:$D$8,A2)),0)),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 17253,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 292,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

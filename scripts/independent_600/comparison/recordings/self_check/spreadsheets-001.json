@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "47bbd2584032ab9f303f3a8cbfa4720c84d7b7ef987a098aee623bb22fd8ffaf",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-18935\": {\n    \"fills\": [\n      {\n        \"range\": \"D17:D22\",\n        \"formula\": \"=SUMIFS(INDEX($C$5:$E$10,0,MATCH(B17,$C$4:$E$4,0)),$A$5:$A$10,A17,$B$5:$B$10,C17)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-2212\": {\n    \"fills\": [\n      {\n        \"range\": \"E2:E13\",\n        \"formula\": \"=COUNTIF($B$2:$B$273,\\\">=\\\"&D2)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-31915\": {\n    \"fills\": [\n      {\n        \"range\": \"C2:C11\",\n        \"formula\": \"=IF(AND(A2<>\\\"\\\",COUNTIF($A$2:A2,A2)=1),SUMIF($A$2:$A$11,A2,$B$2:$B$11),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-32255\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D13\",\n        \"formula\": \"=IF(A2=\\\"\\\",\\\"\\\",IF(A2=0,1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-18935": {
+      "fills": [
+        {
+          "range": "D17:D22",
+          "formula": "=SUMIFS(INDEX($C$5:$E$10,0,MATCH(B17,$C$4:$E$4,0)),$A$5:$A$10,A17,$B$5:$B$10,C17)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-2212": {
+      "fills": [
+        {
+          "range": "E2:E13",
+          "formula": "=COUNTIF($B$2:$B$273,\">=\"&D2)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-31915": {
+      "fills": [
+        {
+          "range": "C2:C11",
+          "formula": "=IF(AND(A2<>\"\",COUNTIF($A$2:A2,A2)=1),SUMIF($A$2:$A$11,A2,$B$2:$B$11),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-32255": {
+      "fills": [
+        {
+          "range": "D2:D13",
+          "formula": "=IF(A2=\"\",\"\",IF(A2=0,1,0))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-d529-71b2-89bb-c7b266ba4291",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 28381,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 303,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "4badcde4516376abf0ea04f5fa7f2ed0d3eaa3ec0a5aca36410de7ecd4e5114b",
+    "8e02a0a5da244e745fba403670512c93560f39942f27f748cb877c0185c9331a",
+    "edd3dc5081a200cd5e6e6e69ce095033ebcd8c247a518b27171f544312a8beb8"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-18935",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "submission": {
+        "fills": [
+          {
+            "range": "D17:D22",
+            "formula": "=SUMPRODUCT(($A$5:$A$10=A17)*($B$5:$B$10=C17)*INDEX($C$5:$E$10,0,MATCH(B17,$C$4:$E$4,0)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:E13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:E13",
+            "range_size": 50,
+            "cells": [
+              [
+                "A4",
+                "Work"
+              ],
+              [
+                "B4",
+                "Material"
+              ],
+              [
+                "C4",
+                "Category 1"
+              ],
+              [
+                "D4",
+                "Category 2"
+              ],
+              [
+                "E4",
+                "Category 3"
+              ],
+              [
+                "A5",
+                "1"
+              ],
+              [
+                "B5",
+                "Material 1"
+              ],
+              [
+                "C5",
+                "0"
+              ],
+              [
+                "D5",
+                "0"
+              ],
+              [
+                "E5",
+                "0.75"
+              ],
+              [
+                "A6",
+                "1"
+              ],
+              [
+                "B6",
+                "Material 2"
+              ],
+              [
+                "C6",
+                "0"
+              ],
+              [
+                "D6",
+                "25.43"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "A7",
+                "1"
+              ],
+              [
+                "B7",
+                "Material 3"
+              ],
+              [
+                "C7",
+                "0.72"
+              ],
+              [
+                "D7",
+                "0"
+              ],
+              [
+                "E7",
+                "0"
+              ],
+              [
+                "A8",
+                "2"
+              ],
+              [
+                "B8",
+                "Material 1"
+              ],
+              [
+                "C8",
+                "0"
+              ],
+              [
+                "D8",
+                "5.82"
+              ],
+              [
+                "E8",
+                "0"
+              ],
+              [
+                "A9",
+                "2"
+              ],
+              [
+                "B9",
+                "Material 1"
+              ],
+              [
+                "C9",
+                "0"
+              ],
+              [
+                "D9",
+                "0"
+              ],
+              [
+                "E9",
+                "4.9"
+              ],
+              [
+                "A10",
+                "2"
+              ],
+              [
+                "B10",
+                "Material 2"
+              ],
+              [
+                "C10",
+                "3.89"
+              ],
+              [
+                "D10",
+                "0"
+              ],
+              [
+                "E10",
+                "0"
+              ]
+            ],
+            "total": 35,
+            "truncated": false,
+            "blank_count": 15
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 65326,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 452,
+        "reasoning_output_tokens": 117
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-2212",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "submission": {
+        "fills": [
+          {
+            "range": "E2:E13",
+            "formula": "=COUNTIF($B$2:$B$273,\">=\"&D2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 65326,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 452,
+        "reasoning_output_tokens": 117
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-31915",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(A2=\"\",\"\",IF(COUNTIF($A$2:A2,A2)=1,SUMIF($A$2:$A$11,A2,$B$2:$B$11),\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 65326,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 452,
+        "reasoning_output_tokens": 117
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-32255",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D13",
+            "formula": "=IF(A2=\"\",\"\",IF(A2=0,1,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:D13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:D13",
+            "range_size": 48,
+            "cells": [
+              [
+                "A2",
+                "-1"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "C2",
+                "0"
+              ],
+              [
+                "D2",
+                "0"
+              ],
+              [
+                "A3",
+                "-1"
+              ],
+              [
+                "B3",
+                "1"
+              ],
+              [
+                "C3",
+                "0"
+              ],
+              [
+                "D3",
+                "0"
+              ],
+              [
+                "A4",
+                "-1"
+              ],
+              [
+                "B4",
+                "1"
+              ],
+              [
+                "C4",
+                "0"
+              ],
+              [
+                "D4",
+                "0"
+              ],
+              [
+                "A5",
+                "-1"
+              ],
+              [
+                "B5",
+                "1"
+              ],
+              [
+                "C5",
+                "0"
+              ],
+              [
+                "D5",
+                "0"
+              ],
+              [
+                "A6",
+                "-1"
+              ],
+              [
+                "B6",
+                "1"
+              ],
+              [
+                "C6",
+                "0"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "A7",
+                "0.79"
+              ],
+              [
+                "B7",
+                "0"
+              ],
+              [
+                "C7",
+                "1"
+              ],
+              [
+                "D7",
+                "0"
+              ],
+              [
+                "A8",
+                "0"
+              ],
+              [
+                "B8",
+                "0"
+              ],
+              [
+                "C8",
+                "0"
+              ],
+              [
+                "D8",
+                "1"
+              ],
+              [
+                "A9",
+                "-1"
+              ],
+              [
+                "B9",
+                "1"
+              ],
+              [
+                "C9",
+                "0"
+              ],
+              [
+                "D9",
+                "0"
+              ],
+              [
+                "B10",
+                "0"
+              ],
+              [
+                "C10",
+                "0"
+              ],
+              [
+                "D10",
+                "1"
+              ],
+              [
+                "B11",
+                "0"
+              ],
+              [
+                "C11",
+                "0"
+              ],
+              [
+                "D11",
+                "1"
+              ],
+              [
+                "B12",
+                "0"
+              ],
+              [
+                "C12",
+                "0"
+              ],
+              [
+                "D12",
+                "1"
+              ],
+              [
+                "B13",
+                "0"
+              ],
+              [
+                "C13",
+                "0"
+              ],
+              [
+                "D13",
+                "1"
+              ]
+            ],
+            "total": 44,
+            "truncated": false,
+            "blank_count": 4
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 65326,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 452,
+        "reasoning_output_tokens": 117
+      },
+      "model_calls": 3
+    }
+  ]
+}

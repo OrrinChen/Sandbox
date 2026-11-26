@@ -1,0 +1,146 @@
+{
+  "text": [
+    {
+      "sector": "2023Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/industrial_machinery-1",
+      "alerts": [
+        {
+          "cik": "0001121484",
+          "reason": "Oil States’ Q2 consolidated revenue grew just 1%, while product revenue fell 6% on lower perforating-product demand and shipment timing (A, C). The $338 million offshore backlog could keep Q3 above −5%, but delayed shipments and continued demand weakness could push total revenue growth to −5% or lower in Q4 (B, C)."
+        },
+        {
+          "cik": "0000832101",
+          "reason": "IDEX’s reported net sales grew 6% in Q2 versus 9% for the first half, indicating a slowdown. Pricing supported all segments while weaker Health & Science Technologies volumes partially offset those gains (A, D). I forecast Q3 growth stays above −5%, with a Q4 crossing if volume losses deepen as the benefit from pricing fades."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Black Knight’s EBITDA and margins imply Q2 consolidated revenue of about $324 million versus $339 million a year earlier, a decline of roughly 4.6% (D). Software’s revenue share rose from 86% to 88%, implying a steeper decline outside software (A). I forecast Q3 stays narrowly above −5%, with modest further weakness enough for a Q4 crossing."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Enphase’s Q2 revenue grew 34% as microinverter shipments rose 55%, yet U.S. demand had already slowed and inventory had accumulated at distributors and installers (A–C). I forecast growth stays above −5% in Q3, then falls to −5% or lower in Q4 as customers draw down inventory and cut new orders."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/transportation-1",
+      "alerts": [
+        {
+          "cik": "0001498710",
+          "reason": "Spirit’s Q2 revenue grew 4.8% because traffic rose 13.1% despite a 7.4% yield decline. Capacity grew faster than traffic at 17.4%, and load factor fell 3.1 percentage points (A, B). I forecast traffic growth keeps Q3 above −5%, but continued yield pressure could push Q4 revenue growth to −5% or lower if traffic growth slows."
+        }
+      ]
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/industrial_machinery-1",
+      "alerts": [
+        {
+          "cik": "0000832101",
+          "reason": "Reported net sales growth slowed from 12.55% in March to 6.29% in June (A). Pricing supported sales across all segments, while weaker Health & Science Technologies volumes offset part of that gain (D). Another 6.26 percentage points of deceleration each quarter would put September near flat and December near -6.2%."
+        },
+        {
+          "cik": "0001121484",
+          "reason": "Total revenue growth slowed from 19.60% in March to 0.93% in June (A). Offshore backlog rose to $338 million (B), which could keep September above -5%. Product revenue was already down 6% as some backlog took longer to convert and demand for perforating products fell (C). I forecast that weakness will pull December total revenue at least 5% below the prior year."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Revenue growth slowed from 64.52% in March to 34.12% in June even as June microinverter shipments rose 55% year over year (A). Higher interest rates weakened U.S. demand, leaving distributors and installers with elevated inventory (B, C). I forecast September growth stays above -5%, followed by a December decline of at least 5% as customers draw down inventory and cut orders."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/transportation-1",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Reported revenue fell from $330.9 million in March to $306.2 million in June while the year-ago comparison rose from $151.3 million to $187.8 million. Year-over-year growth narrowed from 118.75% to 63.01%. That leaves a sizable cushion for September, but another two quarters of narrowing at even two-thirds of that pace would put December below -5%. Record B places peak freight demand in the earlier comparison period."
+        },
+        {
+          "cik": "0001498710",
+          "reason": "Revenue growth slowed from 39.54% in March to 4.82% in June. June traffic grew 13.1%, but capacity grew 17.4%, average yield fell 7.4%, and load factor fell 3.1 percentage points (A, B). I forecast traffic growth keeps September above -5%, then offsets less of the yield decline in December, taking reported revenue growth to -5% or lower."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q4/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/industrial_machinery-1",
+      "alerts": [
+        {
+          "cik": "0000832101",
+          "reason": "Reported sales YoY 12.55% then 6.29%. Target is step 2; preceding 0.03% versus target -6.23%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q4/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Reported sales YoY 64.52% then 34.12%. Target is step 2; preceding 3.73% versus target -26.67%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q4/transportation-1",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Reported sales YoY 118.75% then 63.01%. Target is step 2; preceding 7.27% versus target -48.47%."
+        },
+        {
+          "cik": "0000056047",
+          "reason": "Reported sales YoY 22.87% then 11.36%. Target is step 2; preceding -0.15% versus target -11.65%."
+        }
+      ]
+    }
+  ]
+}

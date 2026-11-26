@@ -1,0 +1,142 @@
+{
+  "origin": "2024Q2",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001320695",
+          "reason": "Slot A puts Q1 net sales down 3.9%, just 1.1 percentage points above the threshold. Slot B identifies planned distribution exits in coffee and in-store bakery. A full quarter of lost sales from those exits could widen the decline to 5% in Q2 or Q3."
+        },
+        {
+          "cik": "0000024545",
+          "reason": "Slots A and B show Q1 net sales up 10.7% and volume up 5.7%. Slot C says distributors stocked up ahead of summer and the Fort Worth strike. If they sell through that stock before reordering, shipments pulled into Q1 could push Q2 or Q3 net sales at least 5% below the prior year."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001433660",
+          "reason": "Slot A puts Q1 total revenue growth at 1.0%. Slot B identifies timing pressure on North American warehouse automation orders and continued slow poultry investment. If automation orders slip beyond Q2 or Q3 while poultry orders stay weak, quarterly revenue could cross to a 5% decline."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000050863",
+          "reason": "Slots A and B show Q1 revenue up 9%, led by PC sales against a prior year when customers held excess inventory. Slots C through E show lower server volume and inventory-driven purchase cuts by 5G, Altera and Mobileye customers. If the PC comparison benefit fades in Q2 or Q3, those cuts could pull total revenue down at least 5% year on year."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001320695",
+          "reason": "TreeHouse net sales fell 3.9% (A), just 1.1 percentage points from the threshold. B identifies planned distribution exits in coffee and in-store bakery. Further volume losses from those exits could push the decline to 5% within two quarters."
+        },
+        {
+          "cik": "0000949870",
+          "reason": "Boston Beer returned to 3.9% revenue growth (A), but shipments rose only 0.9% as Truly and other brands declined (B). Shipments exceeded depletions ahead of peak season (C). If wholesalers draw down inventory, orders could fall enough for revenue to cross back to -5%."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0000050863",
+          "reason": "Intel's Q1 revenue grew 8.6%, helped by a PC inventory comparison that favored Q1 (A, B). Server volumes fell (C), and 5G, Altera and Mobileye customers cut purchases to reduce inventories (D, E). If those cuts persist as the PC comparison fades, consolidated revenue could fall 5% year on year in Q2 or Q3."
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "joint",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000702165",
+          "reason": "Norfolk Southern's revenue decline narrowed from 5.07% to 4.09%, placing it back above the threshold. B says higher volumes partly offset lower pricing, fuel surcharges and storage revenue. A slightly smaller volume gain could let those pressures take revenue growth back to -5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000935703",
+          "reason": "Reported sales YoY 11.88% then 4.19%; linear projections -3.49% and -11.18%."
+        },
+        {
+          "cik": "0001041061",
+          "reason": "Reported sales YoY 0.84% then -2.86%; linear projections -6.56% and -10.26%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

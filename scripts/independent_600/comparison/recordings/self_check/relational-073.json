@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "ee6548306f2399414d57dec78c5093f732c4232b0c35894a1026276fb09e7b0f",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-stage-a-reserve-trailer-for-worst-case-response\": \"SELECT q.yard_id, MAX(q.mill_min, q.vale_min) AS worst_minutes, q.mill_min * b.mill_calls + q.vale_min * b.vale_calls AS forecast_minutes, q.source_id AS quote_source, b.source_id AS brief_source FROM yard_quote AS q CROSS JOIN shift_brief AS b WHERE q.fee_cents <= b.budget_cents ORDER BY worst_minutes ASC, forecast_minutes ASC, q.yard_id COLLATE BINARY ASC LIMIT 1\",\n  \"decision-stage-installation-crew-upgrade\": \"SELECT o.offer_id, (p.base_hours - o.base_cut) + MAX(p.light_hours - o.light_cut, p.deck_hours - o.deck_cut) + (p.inspect_hours - o.inspect_cut) AS finish_hour, o.fee_cents FROM crew_offer AS o CROSS JOIN rig_plan AS p WHERE o.fee_cents <= p.budget_cents ORDER BY finish_hour ASC, o.fee_cents ASC, o.offer_id COLLATE BINARY ASC LIMIT 1\",\n  \"decision-standing-exchange-disqualifications\": \"WITH eligible AS (SELECT r.*, ROW_NUMBER() OVER (PARTITION BY meet_code, squad, incident_no ORDER BY bulletin_no DESC) AS decision_rank FROM ruling AS r WHERE meet_code = 'Copper' AND bulletin_no <= 4) SELECT squad, incident_no, source_id, primary_text FROM eligible WHERE decision_rank = 1 AND verdict = 'dq' ORDER BY squad ASC, incident_no ASC\",\n  \"decision-station-bias-with-fixed-effects\": \"WITH centered AS (SELECT confidence, test_mode - SUM(1.0 * confidence * test_mode) OVER w / SUM(1.0 * confidence) OVER w AS dx, reading_mm - SUM(1.0 * confidence * reading_mm) OVER w / SUM(1.0 * confidence) OVER w AS dy FROM station_readings WINDOW w AS (PARTITION BY station)) SELECT ROUND(SUM(confidence * dx * dy) / SUM(confidence * dx * dx), 3) AS bias_mm FROM centered\"\n}",
+  "submissions": {
+    "decision-stage-a-reserve-trailer-for-worst-case-response": "SELECT q.yard_id, MAX(q.mill_min, q.vale_min) AS worst_minutes, q.mill_min * b.mill_calls + q.vale_min * b.vale_calls AS forecast_minutes, q.source_id AS quote_source, b.source_id AS brief_source FROM yard_quote AS q CROSS JOIN shift_brief AS b WHERE q.fee_cents <= b.budget_cents ORDER BY worst_minutes ASC, forecast_minutes ASC, q.yard_id COLLATE BINARY ASC LIMIT 1",
+    "decision-stage-installation-crew-upgrade": "SELECT o.offer_id, (p.base_hours - o.base_cut) + MAX(p.light_hours - o.light_cut, p.deck_hours - o.deck_cut) + (p.inspect_hours - o.inspect_cut) AS finish_hour, o.fee_cents FROM crew_offer AS o CROSS JOIN rig_plan AS p WHERE o.fee_cents <= p.budget_cents ORDER BY finish_hour ASC, o.fee_cents ASC, o.offer_id COLLATE BINARY ASC LIMIT 1",
+    "decision-standing-exchange-disqualifications": "WITH eligible AS (SELECT r.*, ROW_NUMBER() OVER (PARTITION BY meet_code, squad, incident_no ORDER BY bulletin_no DESC) AS decision_rank FROM ruling AS r WHERE meet_code = 'Copper' AND bulletin_no <= 4) SELECT squad, incident_no, source_id, primary_text FROM eligible WHERE decision_rank = 1 AND verdict = 'dq' ORDER BY squad ASC, incident_no ASC",
+    "decision-station-bias-with-fixed-effects": "WITH centered AS (SELECT confidence, test_mode - SUM(1.0 * confidence * test_mode) OVER w / SUM(1.0 * confidence) OVER w AS dx, reading_mm - SUM(1.0 * confidence * reading_mm) OVER w / SUM(1.0 * confidence) OVER w AS dy FROM station_readings WINDOW w AS (PARTITION BY station)) SELECT ROUND(SUM(confidence * dx * dy) / SUM(confidence * dx * dx), 3) AS bias_mm FROM centered"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-136e-7eb1-8123-f7ea1a54aabb",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22677,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 451,
+    "reasoning_output_tokens": 0
+  }
+}

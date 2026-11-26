@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23933,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 222,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8c-6390-70e2-a8fb-57ac41d979ab",
+  "packet_sha256": "de812926d64c68e8e403a19a272b3d9529c183d1d7e7747cfac42e0922599a54",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2021Q2/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000016918\",\n          \"reason\": \"Reported net sales growth slowed from 21.94% in November to 2.63% in February as the January wine and spirits divestiture removed brand sales (A, C). Reduced brewery production earlier in the prior fiscal year (B) should give March–May an easier comparison, helping growth stay above -5.00%. For June–August, I forecast growth of -5.00% or less as that comparison benefit fades and a full quarter of divested brand sales drops out year over year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2021Q2/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2021Q2/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000016918",
+            "reason": "Reported net sales growth slowed from 21.94% in November to 2.63% in February as the January wine and spirits divestiture removed brand sales (A, C). Reduced brewery production earlier in the prior fiscal year (B) should give March–May an easier comparison, helping growth stay above -5.00%. For June–August, I forecast growth of -5.00% or less as that comparison benefit fades and a full quarter of divested brand sales drops out year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

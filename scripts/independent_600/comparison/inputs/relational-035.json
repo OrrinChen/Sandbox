@@ -1,0 +1,277 @@
+[
+  {
+    "task_id": "decision-isolate-trading-working-capital",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the indirect-method operating cash flow adjustment attributable to each depot ledger balance during the reporting period. Return one row per balance with columns balance_id, trading_change_cents, operating_adjustment_cents, ordered by balance_id ascending. Opening and closing balances are positive carrying amounts in cents, including for liabilities. Each movement is signed in the carrying amount's own direction. The closing balance already includes every listed movement. Remove acquisition-date and currency-translation movements, identified by move_kind 'acquired' and 'translation', from the closing-minus-opening change. A 'trade' movement documents ordinary activity already in that change and stays in it. An increase in a trading asset consumes cash and an increase in a trading liability provides cash. An absent movement contributes zero. Balance IDs are unique in depot_balance, all movements belong to a listed balance, repeated movement amounts are separate postings, and no values are null. Include zero adjustments. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "depot_balance": {
+        "columns": [
+          "balance_id TEXT",
+          "balance_side TEXT",
+          "opening_cents INTEGER",
+          "closing_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "parts",
+            "asset",
+            12000,
+            15900
+          ],
+          [
+            "receivables",
+            "asset",
+            9000,
+            8400
+          ],
+          [
+            "suppliers",
+            "liability",
+            7000,
+            9400
+          ]
+        ]
+      },
+      "depot_move": {
+        "columns": [
+          "balance_id TEXT",
+          "move_kind TEXT",
+          "movement_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "parts",
+            "acquired",
+            3000
+          ],
+          [
+            "parts",
+            "translation",
+            -100
+          ],
+          [
+            "parts",
+            "trade",
+            600
+          ],
+          [
+            "suppliers",
+            "acquired",
+            1200
+          ],
+          [
+            "suppliers",
+            "translation",
+            200
+          ],
+          [
+            "suppliers",
+            "translation",
+            200
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "balance_id",
+      "trading_change_cents",
+      "operating_adjustment_cents"
+    ]
+  },
+  {
+    "task_id": "decision-join-split-page-caption",
+    "tool": "sqlite.query",
+    "instruction": "Two scans each show a physical impression of page 7. Find the caption on the impression named in job. The caption occupies the half-open interval [4,12), measured in characters from offset zero along the caption line of the unsplit page. Join one left-scan fragment starting at 4 to one right-scan fragment ending at 12. The fragments must meet at exactly the same offset and both must come from the requested impression. Each fragment contains one character per offset, including spaces, and its stored text is in reading order. Return the distinct reconstructed strings in a single column named caption, sorted in binary text order. Identical reconstructions count once. The supplied fragments yield one physical caption. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "fragment": {
+        "columns": [
+          "impression TEXT",
+          "side TEXT",
+          "lo INTEGER",
+          "hi INTEGER",
+          "piece TEXT"
+        ],
+        "rows": [
+          [
+            "ochre",
+            "L",
+            4,
+            8,
+            "Moss"
+          ],
+          [
+            "slate",
+            "R",
+            8,
+            12,
+            " map"
+          ],
+          [
+            "ochre",
+            "R",
+            8,
+            12,
+            " bed"
+          ],
+          [
+            "slate",
+            "L",
+            4,
+            8,
+            "Fern"
+          ],
+          [
+            "ochre",
+            "R",
+            9,
+            12,
+            "jar"
+          ]
+        ]
+      },
+      "job": {
+        "columns": [
+          "impression TEXT"
+        ],
+        "rows": [
+          [
+            "ochre"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "caption"
+    ]
+  },
+  {
+    "task_id": "decision-kiln-cart-dispatch",
+    "tool": "sqlite.query",
+    "instruction": "At each hourly kiln departure, choose a load from the batches offered for that departure only. Each whole batch occupies one position on a two-position cart. Total mass may be at most 10 kg, inclusive. Batch codes are unique within a departure, masses and avoided delay costs are positive integers, and no input is null. Maximize the sum of avoided delay costs in cents. Break ties by lower total mass, then fewer batches, then the lexicographically smallest sequence of selected batch codes sorted in binary order. An empty load is feasible. Return one row per represented departure ordered by departure_no, with columns departure_no, first_batch, second_batch, load_kg, saved_cents. Use null for each unused position and zero totals for an empty load. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "kiln_offer": {
+        "columns": [
+          "departure_no INTEGER",
+          "batch_code TEXT",
+          "mass_kg INTEGER",
+          "delay_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            8,
+            100
+          ],
+          [
+            1,
+            "B",
+            6,
+            75
+          ],
+          [
+            1,
+            "C",
+            4,
+            45
+          ],
+          [
+            1,
+            "D",
+            5,
+            45
+          ],
+          [
+            2,
+            "E",
+            11,
+            160
+          ],
+          [
+            3,
+            "F",
+            4,
+            50
+          ],
+          [
+            3,
+            "G",
+            7,
+            50
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "departure_no",
+      "first_batch",
+      "second_batch",
+      "load_kg",
+      "saved_cents"
+    ]
+  },
+  {
+    "task_id": "decision-kiln-disagreement-by-exposure-time",
+    "tool": "sqlite.query",
+    "instruction": "For each kiln represented in probe_pairs, report covered_minutes and discordant_minutes during minutes [0,20) of one firing. Each row simultaneously updates both probe readings in whole degrees Celsius. Its state applies from tick_min up to the next update for that kiln, or minute 20 if there is none. An update before minute 0 can establish the opening state. Time before the first update is uncovered. A null reading explicitly makes the pair unavailable until the next update. Count a minute as covered only when both readings are available, and as discordant only when covered and the absolute difference is at least 5 degrees. Each kiln has at most one update per tick. Return columns kiln_code, covered_minutes, discordant_minutes in ascending kiln_code order, including kilns with zero coverage. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "probe_pairs": {
+        "columns": [
+          "kiln_code TEXT",
+          "tick_min INTEGER",
+          "left_c INTEGER",
+          "right_c INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            -3,
+            80,
+            86
+          ],
+          [
+            "A",
+            4,
+            84,
+            85
+          ],
+          [
+            "A",
+            7,
+            null,
+            90
+          ],
+          [
+            "A",
+            15,
+            89,
+            84
+          ],
+          [
+            "A",
+            22,
+            92,
+            92
+          ],
+          [
+            "B",
+            3,
+            75,
+            75
+          ],
+          [
+            "B",
+            18,
+            80,
+            86
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "kiln_code",
+      "covered_minutes",
+      "discordant_minutes"
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "77f7f1835152fcf9d1f4c7d13da649f30dd675de9dc757ab58717de069397c27",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-59196\": {\n    \"fills\": [\n      {\n        \"range\": \"H3:H5\",\n        \"formula\": \"=INDEX($D$2:$G$2,1,MATCH(MAX(D3:G3),D3:G3,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-59224\": {\n    \"fills\": [\n      {\n        \"range\": \"E4:E14\",\n        \"formula\": \"=IF(COUNTIFS(C4:$C$14,\\\"<\\\"&$B$2,D4:$D$14,\\\">\\\"&$B$2)>0,\\\"Select Period\\\",\\\"Do Not Select\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-59259\": {\n    \"fills\": [\n      {\n        \"range\": \"J5:L16\",\n        \"formula\": \"=SUMIFS($E$5:$E$11,$C$5:$C$11,J$4,$F$5:$F$11,\\\">=\\\"&DATE(YEAR($I5),1,1),$F$5:$F$11,\\\"<=\\\"&EOMONTH($I5,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-59358\": {\n    \"fills\": [\n      {\n        \"range\": \"L7:L9\",\n        \"formula\": \"=IFNA(INDEX($F$2:$F$23,MATCH(1,INDEX((($B$2:$B$23&\\\"\\\")=(K7&\\\"\\\"))*($D$2:$D$23=J7),0),0)),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-59196": {
+      "fills": [
+        {
+          "range": "H3:H5",
+          "formula": "=INDEX($D$2:$G$2,1,MATCH(MAX(D3:G3),D3:G3,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-59224": {
+      "fills": [
+        {
+          "range": "E4:E14",
+          "formula": "=IF(COUNTIFS(C4:$C$14,\"<\"&$B$2,D4:$D$14,\">\"&$B$2)>0,\"Select Period\",\"Do Not Select\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-59259": {
+      "fills": [
+        {
+          "range": "J5:L16",
+          "formula": "=SUMIFS($E$5:$E$11,$C$5:$C$11,J$4,$F$5:$F$11,\">=\"&DATE(YEAR($I5),1,1),$F$5:$F$11,\"<=\"&EOMONTH($I5,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-59358": {
+      "fills": [
+        {
+          "range": "L7:L9",
+          "formula": "=IFNA(INDEX($F$2:$F$23,MATCH(1,INDEX((($B$2:$B$23&\"\")=(K7&\"\"))*($D$2:$D$23=J7),0),0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-b83b-7991-81ae-1a58e6a2b97c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27111,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 384,
+    "reasoning_output_tokens": 15
+  }
+}

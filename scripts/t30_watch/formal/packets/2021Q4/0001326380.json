@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q4",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2021-10-01",
+  "projected_target_start": "2021-10-31",
+  "status": "complete",
+  "period_end": "2021-07-31",
+  "filing_date": "2021-09-08",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-09-08",
+        "text": "For the second quarter of 2021, net sales increased $241.4 million or 25.6% compared to the same prior year period and increased $497.2 million or 25.3% for the first half of 2021."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-09-08",
+        "text": "During the second quarter of 2021, net sales in our United States, Canada, and Europe segments increased by 36.1%, 49.9%, and 16.5%, respectively, while net sales in our Australia segment decreased by 12.1% when compared to the same period last year."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-09-08",
+        "text": "The increase in cash used in operations of $173.8 million is primarily due to our efforts in the prior year to optimize our balance sheet that resulted in carrying more efficient levels of inventory and improving the cash conversion cycle."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-09-08",
+        "text": "Gross profit for the second quarter of 2021 reflects the shift in product mix towards higher margin categories as stores reopened to foot traffic."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-09-08",
+        "text": "During the first half of 2021, cash flows from operating activities were an outflow of $30.3 million, compared with an inflow of $143.5 million during the same period last year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-05-01",
+        "filed": "2021-06-09",
+        "reported_sales_usd": 1276800000,
+        "year_ago_reported_sales_usd": 1021000000,
+        "yoy_percent": "25.0539"
+      },
+      {
+        "quarter_end": "2021-07-31",
+        "filed": "2021-09-08",
+        "reported_sales_usd": 1183400000,
+        "year_ago_reported_sales_usd": 942000000,
+        "yoy_percent": "25.6263"
+      }
+    ],
+    "status": "complete"
+  }
+}

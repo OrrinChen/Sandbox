@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "43b7bc90b9539599b87376d194c2f8bafa8c6b3c6193e91ac9680ac9a8c84e78",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-distinct-design-rollup-discrepancy\": \"WITH audit AS (SELECT r.parent, p.designs AS reported_designs, l.designs + h.designs - r.shared_designs AS implied_designs FROM rollups AS r JOIN reports AS p ON p.node = r.parent JOIN reports AS l ON l.node = r.left_child JOIN reports AS h ON h.node = r.right_child) SELECT parent, reported_designs, implied_designs, reported_designs - implied_designs AS delta_designs FROM audit WHERE reported_designs <> implied_designs ORDER BY parent COLLATE BINARY ASC\",\n  \"decision-diversion-path-insurance\": \"WITH outcomes AS (SELECT p.package_id, p.premium_cents, b.bulletin_id, a.auth_id, p.premium_cents + MAX(0, b.need_qty - p.path_qty) * b.short_cents AS cost_cents FROM path_package AS p JOIN path_authority AS a ON p.premium_cents <= a.cap_cents CROSS JOIN demand_bulletin AS b), ranked AS (SELECT outcomes.*, ROW_NUMBER() OVER (PARTITION BY package_id ORDER BY cost_cents DESC, bulletin_id COLLATE BINARY ASC) AS outcome_rank FROM outcomes) SELECT package_id, cost_cents AS worst_cents, bulletin_id, auth_id FROM ranked WHERE outcome_rank = 1 ORDER BY cost_cents ASC, premium_cents ASC, package_id COLLATE BINARY ASC LIMIT 1\",\n  \"decision-double-stage-carton-inspection\": \"SELECT s1.lot_id, CASE WHEN s1.defects <= 1 THEN 'ACCEPT' WHEN s1.defects >= 4 THEN 'REJECT' WHEN s2.stage IS NULL THEN 'AWAIT_STAGE_2' WHEN s1.defects + s2.defects <= 4 THEN 'ACCEPT' ELSE 'REJECT' END AS decision FROM carton_samples AS s1 LEFT JOIN carton_samples AS s2 ON s2.lot_id = s1.lot_id AND s2.stage = 2 WHERE s1.stage = 1 ORDER BY s1.lot_id ASC\",\n  \"decision-dryer-paired-moisture-change\": \"SELECT line_code, COUNT(inlet_bp - outlet_bp) AS paired_trays, AVG(inlet_bp - outlet_bp) AS mean_drop_bp FROM tray_pass GROUP BY line_code ORDER BY line_code COLLATE BINARY ASC\"\n}",
+  "submissions": {
+    "decision-distinct-design-rollup-discrepancy": "WITH audit AS (SELECT r.parent, p.designs AS reported_designs, l.designs + h.designs - r.shared_designs AS implied_designs FROM rollups AS r JOIN reports AS p ON p.node = r.parent JOIN reports AS l ON l.node = r.left_child JOIN reports AS h ON h.node = r.right_child) SELECT parent, reported_designs, implied_designs, reported_designs - implied_designs AS delta_designs FROM audit WHERE reported_designs <> implied_designs ORDER BY parent COLLATE BINARY ASC",
+    "decision-diversion-path-insurance": "WITH outcomes AS (SELECT p.package_id, p.premium_cents, b.bulletin_id, a.auth_id, p.premium_cents + MAX(0, b.need_qty - p.path_qty) * b.short_cents AS cost_cents FROM path_package AS p JOIN path_authority AS a ON p.premium_cents <= a.cap_cents CROSS JOIN demand_bulletin AS b), ranked AS (SELECT outcomes.*, ROW_NUMBER() OVER (PARTITION BY package_id ORDER BY cost_cents DESC, bulletin_id COLLATE BINARY ASC) AS outcome_rank FROM outcomes) SELECT package_id, cost_cents AS worst_cents, bulletin_id, auth_id FROM ranked WHERE outcome_rank = 1 ORDER BY cost_cents ASC, premium_cents ASC, package_id COLLATE BINARY ASC LIMIT 1",
+    "decision-double-stage-carton-inspection": "SELECT s1.lot_id, CASE WHEN s1.defects <= 1 THEN 'ACCEPT' WHEN s1.defects >= 4 THEN 'REJECT' WHEN s2.stage IS NULL THEN 'AWAIT_STAGE_2' WHEN s1.defects + s2.defects <= 4 THEN 'ACCEPT' ELSE 'REJECT' END AS decision FROM carton_samples AS s1 LEFT JOIN carton_samples AS s2 ON s2.lot_id = s1.lot_id AND s2.stage = 2 WHERE s1.stage = 1 ORDER BY s1.lot_id ASC",
+    "decision-dryer-paired-moisture-change": "SELECT line_code, COUNT(inlet_bp - outlet_bp) AS paired_trays, AVG(inlet_bp - outlet_bp) AS mean_drop_bp FROM tray_pass GROUP BY line_code ORDER BY line_code COLLATE BINARY ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-b4ac-7492-8a52-5bed699b21a7",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 21101,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 501,
+    "reasoning_output_tokens": 0
+  }
+}

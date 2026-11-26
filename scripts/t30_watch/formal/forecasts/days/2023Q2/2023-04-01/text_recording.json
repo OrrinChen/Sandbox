@@ -1,0 +1,44 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24123,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 129,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-454d-7a03-9d1c-2dd0f6a336af",
+  "packet_sha256": "83244ec1edaf48c06d1d4d5abb3a39e548406cc2806c0f7306dabcf94a8c4d2e",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2023Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2023Q2/semiconductors-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-3",
+        "alerts": []
+      }
+    ]
+  }
+}

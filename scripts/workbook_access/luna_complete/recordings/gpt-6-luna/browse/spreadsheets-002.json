@@ -1,0 +1,323 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "3432f2bd04910a6743fde1d04e17234148a6085eac233dc9d543053312d6f0f5",
+    "5bdbf2b623bb1ab01120e72509a44246575518ef6ee0a436ec74ad19750b1de5",
+    "404b7210117e8c0383b5914c8e251e602d0b250f6c557738ec491d4c151a3ce6"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-32562",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B21",
+            "formula": "=COUNTIF($A$2:A2,A2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "Item"
+              ],
+              [
+                "B1",
+                "Count Of Item"
+              ],
+              [
+                "A2",
+                "86"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "A3",
+                "503"
+              ],
+              [
+                "B3",
+                "0"
+              ],
+              [
+                "A4",
+                "142"
+              ],
+              [
+                "B4",
+                "0"
+              ],
+              [
+                "A5",
+                "216"
+              ],
+              [
+                "B5",
+                "0"
+              ],
+              [
+                "A6",
+                "125"
+              ],
+              [
+                "B6",
+                "0"
+              ],
+              [
+                "A7",
+                "173"
+              ],
+              [
+                "B7",
+                "0"
+              ],
+              [
+                "A8",
+                "35"
+              ],
+              [
+                "B8",
+                "0"
+              ],
+              [
+                "A9",
+                "434"
+              ],
+              [
+                "B9",
+                "0"
+              ],
+              [
+                "A10",
+                "627"
+              ],
+              [
+                "B10",
+                "0"
+              ],
+              [
+                "A11",
+                "377"
+              ],
+              [
+                "B11",
+                "0"
+              ],
+              [
+                "A12",
+                "508"
+              ],
+              [
+                "B12",
+                "0"
+              ],
+              [
+                "A13",
+                "374"
+              ],
+              [
+                "B13",
+                "0"
+              ],
+              [
+                "A14",
+                "374"
+              ],
+              [
+                "B14",
+                "0"
+              ],
+              [
+                "A15",
+                "374"
+              ],
+              [
+                "B15",
+                "0"
+              ],
+              [
+                "A16",
+                "321"
+              ],
+              [
+                "B16",
+                "0"
+              ],
+              [
+                "A17",
+                "321"
+              ],
+              [
+                "B17",
+                "0"
+              ],
+              [
+                "A18",
+                "321"
+              ],
+              [
+                "B18",
+                "0"
+              ],
+              [
+                "A19",
+                "9"
+              ],
+              [
+                "B19",
+                "0"
+              ],
+              [
+                "A20",
+                "141"
+              ],
+              [
+                "B20",
+                "0"
+              ],
+              [
+                "A21",
+                "109"
+              ],
+              [
+                "B21",
+                "0"
+              ]
+            ],
+            "total": 42,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 109022,
+        "cached_input_tokens": 59136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1650,
+        "reasoning_output_tokens": 1040
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-33157",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "K2:K6",
+            "formula": "=INDEX($B$1:$H$1,1,MATCH(J2,CHOOSE({1,2,3,4},C2,E2,G2,I2),0)*2-1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 109022,
+        "cached_input_tokens": 59136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1650,
+        "reasoning_output_tokens": 1040
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-34033",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "K6:K10",
+            "formula": "=INDEX($A$3:$E$13,MATCH(1,($A$3:$A$13<=J6)*($A$4:$A$14>J6)*($B$3:$B$13=H6),0),MATCH(I6,$A$1:$E$1,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 109022,
+        "cached_input_tokens": 59136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1650,
+        "reasoning_output_tokens": 1040
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-3413",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "G3:G6",
+            "formula": "=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 109022,
+        "cached_input_tokens": 59136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1650,
+        "reasoning_output_tokens": 1040
+      },
+      "model_calls": 3
+    }
+  ]
+}

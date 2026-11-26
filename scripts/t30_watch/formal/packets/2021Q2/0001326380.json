@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2021-04-02",
+  "projected_target_start": "2021-05-02",
+  "status": "complete",
+  "period_end": "2021-01-30",
+  "filing_date": "2021-03-23",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-03-23",
+        "text": "Net sales decreased $1,376.2 million, or 21.3%, in fiscal 2020 compared to fiscal 2019."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-03-23",
+        "text": "However beginning in the first quarter of our fiscal year 2020, as a result of COVID-19 related closures, we excluded stores from the comparable sales base that were closed for 14 consecutive days or more and where curbside delivery was not available to customers."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-03-23",
+        "text": "Improved inventory management drove a significant increase in inventory turns and as a result, in working capital, while an intense focus on organization structure and expense reductions yielded a $408.5 million or 21.2% reduction in reported Selling, General and Administrative costs in fiscal 2020 as compared to fiscal 2019."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-03-23",
+        "text": "During the early stages of the global pandemic and subsequent period of temporary closures, we took steps to continue to serve our customers via our e-commerce platform including, but not limited to enhancing our online capabilities and offering curbside pick-up options while also lowering our purchase and expense levels to correspond with the lower demand."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-03-23",
+        "text": "In fiscal 2020, cash flow from operating activities was an inflow of $123.7 million, an increase of $538.2 million compared to an outflow of $414.5 million during the same period last year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-10-31",
+        "filed": "2020-12-08",
+        "reported_sales_usd": 1004700000,
+        "year_ago_reported_sales_usd": 1438500000,
+        "yoy_percent": "-30.1564"
+      },
+      {
+        "quarter_end": "2021-01-30",
+        "filed": "2021-03-23",
+        "reported_sales_usd": 2122100000,
+        "year_ago_reported_sales_usd": 2194100000,
+        "yoy_percent": "-3.2815"
+      }
+    ],
+    "status": "complete"
+  }
+}

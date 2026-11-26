@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-020",
+    "stage": "submit",
+    "prompt_sha256": "661f4c9f72b1087c3edb3ff31e7509bf0992283eabbcf898086aa7bb242dca6e",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f5-4524-78b1-a1ea-ef9d1bd9509a",
+    "raw": "{\"sheet-56451\":{\"fills\":[{\"range\":\"B2:F7\",\"formula\":\"=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),MATCH(B$1,'Sheet 2'!$A$1:$F$1,0))\"}],\"formulas\":{}},\"sheet-56599\":{\"formulas\":{\"B2\":\"=IF(M5=\\\"\\\",\\\"not found - please re-enter\\\",IFERROR(INDEX(J6:J30,MATCH(1,INDEX((M5>=G6:G30)*(M5<=H6:H30),0),0)),\\\"not found - please re-enter\\\"))\"}},\"sheet-56915\":{\"fills\":[{\"range\":\"B18:B23\",\"formula\":\"=IF(COUNTIF(DATA!$A$1:$A$24,$A18)=0,\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)=\\\"\\\",\\\"\\\",ROUND(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2),2)))\"},{\"range\":\"D18:D23\",\"formula\":\"=IF(COUNTIF(DATA!$A$1:$A$24,$A18)=0,\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)=\\\"\\\",\\\"\\\",ROUND(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2),2)))\"},{\"range\":\"C18:C23\",\"formula\":\"=IF(COUNTIF(DATA!$A$1:$A$24,$A18)=0,\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)=\\\"\\\",\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)<0,\\\"(\\\"&TEXT(ABS(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)),\\\"0.00\\\")&\\\")\\\",TEXT(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2),\\\"0.00\\\"))))\"},{\"range\":\"E18:E23\",\"formula\":\"=IF(COUNTIF(DATA!$A$1:$A$24,$A18)=0,\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)=\\\"\\\",\\\"\\\",IF(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)<0,\\\"(\\\"&TEXT(ABS(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2)),\\\"0.00\\\")&\\\")\\\",TEXT(INDEX(DATA!$B$1:$AC$24,MATCH($A18,DATA!$A$1:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2),\\\"0.00\\\"))))\"}],\"formulas\":{}},\"sheet-56995\":{\"fills\":[{\"range\":\"D2:D5\",\"formula\":\"=IF(B2=\\\"\\\",\\\"Not Attempt\\\",(B2-C2)/B2)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20852,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1177,
+      "reasoning_output_tokens": 118
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

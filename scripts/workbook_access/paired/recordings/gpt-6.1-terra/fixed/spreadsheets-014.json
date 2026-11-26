@@ -1,0 +1,213 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "367b7b321fadef5d33ffae2a4aa51f9ee0f5e39925e0ed428edb95cc16d91c05",
+    "e0ba9bcd185e644b9c69f8bce3f653a4bb8bf411163d2cc0eccd61f4212fe539",
+    "815070a50d5992d5925a8df28441df2889ae764ea57bdf8daa7c3baa0e7a51c2"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-48983",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "M6:S11",
+            "formula": "=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58912,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 169
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49246",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B14",
+            "formula": "=IF(A2=\"\",B1,VLOOKUP(A2,$J$1:$K$4,2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58912,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 169
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49300",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C3",
+            "formula": "=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58912,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 169
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49455",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "formulas": {
+          "H3": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\"\"))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D190:H208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D190:H208",
+            "range_size": 95,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 95
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D70:H85"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D70:H85",
+            "range_size": 80,
+            "cells": [
+              [
+                "D70",
+                "Apple"
+              ],
+              [
+                "H70",
+                "28/10/21"
+              ],
+              [
+                "D71",
+                "Banana"
+              ],
+              [
+                "D72",
+                "Apple"
+              ],
+              [
+                "H72",
+                "21/10/21"
+              ],
+              [
+                "D73",
+                "Apple"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 74
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D140:H155"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D140:H155",
+            "range_size": 80,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 80
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 3,
+      "usage": {
+        "input_tokens": 58912,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 169
+      },
+      "model_calls": 3
+    }
+  ]
+}

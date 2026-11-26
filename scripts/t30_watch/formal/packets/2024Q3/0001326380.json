@@ -1,0 +1,68 @@
+{
+  "wave": "2024Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2024-06-28",
+  "projected_target_start": "2024-07-28",
+  "status": "complete",
+  "period_end": "2024-05-04",
+  "filing_date": "2024-06-11",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2024-06-11",
+        "text": "Net sales decreased $355.3 million or 28.7%, for the three months ended May 4, 2024 compared to the prior year."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2024-06-11",
+        "text": "This includes increased product availability across all channels, faster fulfillment through ship from store offerings, and a further improved customer service experience."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2024-06-11",
+        "text": "Cash used in operating activities during the three months ended May 4, 2024 was primarily due to the impact of our net loss, an increase in merchandise inventory, and a decrease in trade payables, partially offset by a reduction in accounts receivable."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2024-06-11",
+        "text": "The decrease in gross profit is primarily attributable to the decrease in net sales, as further outlined in the net sales commentary, partially offset by $10.8 million, or 38%, decrease in freight expenses from added cost optimizations."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2024-06-11",
+        "text": "During the three months ended May 4, 2024, cash flows from operating activities were an outflow of $109.8 million, compared with an outflow of $102.7 million during the same period last year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2024-02-03",
+        "filed": "2024-03-26",
+        "reported_sales_usd": 1793600000,
+        "year_ago_reported_sales_usd": 2226400000,
+        "yoy_percent": "-19.4395"
+      },
+      {
+        "quarter_end": "2024-05-04",
+        "filed": "2024-06-11",
+        "reported_sales_usd": 881800000,
+        "year_ago_reported_sales_usd": 1237100000,
+        "yoy_percent": "-28.7204"
+      }
+    ],
+    "status": "complete"
+  }
+}

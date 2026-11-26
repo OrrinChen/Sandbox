@@ -47,6 +47,9 @@ class TraceLogger:
     def log_agent_message(self, content: str, metadata: Optional[Mapping[str, Any]] = None) -> TraceEvent:
         return self._append("agent_message", {"content": content}, metadata=metadata)
 
+    def log_final_answer(self, content: str) -> TraceEvent:
+        return self._append("final_answer", {"content": content})
+
     def log_tool_call(
         self,
         tool_name: str,

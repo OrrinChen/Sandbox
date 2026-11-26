@@ -1,0 +1,306 @@
+[
+  {
+    "task_id": "decision-map-legend-source-footprints",
+    "tool": "sqlite.query",
+    "instruction": "Assign one source sheet to each legend using its mapped footprint. Dates are ISO calendar dates. A sheet is eligible if it was issued on or before the legend date, the legend's 1:N scale denominator N falls within the sheet's inclusive denominator range, and their rectangular footprints intersect with positive area. All coordinates are in kilometres on the same projected grid. Compute intersection area as overlapping width times overlapping height in square kilometres. Among eligible sheets choose the greatest overlap area, then the latest issue date, then the smallest sheet ID in binary text order. Return legend_id, sheet_id and overlap_km2 in ascending legend_id order. For a legend without an eligible sheet return NULL for sheet_id and 0 for overlap_km2. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "legends": {
+        "columns": [
+          "legend_id TEXT",
+          "legend_date TEXT",
+          "denom INTEGER",
+          "x0 INTEGER",
+          "x1 INTEGER",
+          "y0 INTEGER",
+          "y1 INTEGER"
+        ],
+        "rows": [
+          [
+            "L1",
+            "2025-06-01",
+            5000,
+            0,
+            8,
+            0,
+            4
+          ],
+          [
+            "L2",
+            "2025-06-01",
+            10000,
+            8,
+            12,
+            0,
+            4
+          ]
+        ]
+      },
+      "sheets": {
+        "columns": [
+          "sheet_id TEXT",
+          "issued TEXT",
+          "min_denom INTEGER",
+          "max_denom INTEGER",
+          "x0 INTEGER",
+          "x1 INTEGER",
+          "y0 INTEGER",
+          "y1 INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "2025-01-01",
+            5000,
+            10000,
+            -2,
+            8,
+            1,
+            4
+          ],
+          [
+            "B",
+            "2025-05-01",
+            5000,
+            10000,
+            5,
+            11,
+            0,
+            4
+          ],
+          [
+            "C",
+            "2025-06-02",
+            5000,
+            10000,
+            0,
+            12,
+            0,
+            4
+          ],
+          [
+            "D",
+            "2025-05-20",
+            6000,
+            9000,
+            0,
+            12,
+            0,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "legend_id",
+      "sheet_id",
+      "overlap_km2"
+    ]
+  },
+  {
+    "task_id": "decision-marginal-volume-rebate-accrual",
+    "tool": "sqlite.query",
+    "instruction": "Compute the Q3 earned rebate in cents for each depot with a Q3 movement. The movement ledger is complete for the quarter. Signed units include returns and corrections, and all units at a depot share one quarterly schedule. Sum the signed units before applying the schedule. The evidence table contains the complete schedule, with distinct lower bounds starting at zero. Each row pays its rate on units strictly above its lower bound, up to and including the next lower bound. The final band has no ceiling. A nonpositive net volume earns zero. Output depot_code, net_units, earned_cents, source_ids ordered by depot_code ascending. Cite the source ID of every band containing at least one earned unit in ascending lower-bound order, separated by commas without spaces. Use an empty string if no band contains an earned unit. All inputs are non-null and all rates are positive integer cents per unit. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "band_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "lower_units INTEGER",
+          "unit_cents INTEGER",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            "V2",
+            100,
+            5,
+            "Units 101 through 200 earn five cents each."
+          ],
+          [
+            "V1",
+            0,
+            2,
+            "The first hundred units earn two cents each."
+          ],
+          [
+            "V3",
+            200,
+            9,
+            "Each unit beyond two hundred earns nine cents."
+          ]
+        ]
+      },
+      "depot_movement": {
+        "columns": [
+          "depot_code TEXT",
+          "period_code TEXT",
+          "signed_units INTEGER"
+        ],
+        "rows": [
+          [
+            "Bay",
+            "Q3",
+            140
+          ],
+          [
+            "Bay",
+            "Q3",
+            -25
+          ],
+          [
+            "Hill",
+            "Q3",
+            100
+          ],
+          [
+            "Mill",
+            "Q3",
+            240
+          ],
+          [
+            "Mill",
+            "Q3",
+            -15
+          ],
+          [
+            "Yard",
+            "Q3",
+            -3
+          ],
+          [
+            "Bay",
+            "Q2",
+            80
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "depot_code",
+      "net_units",
+      "earned_cents",
+      "source_ids"
+    ]
+  },
+  {
+    "task_id": "decision-marked-point-hausdorff-distance",
+    "tool": "sqlite.query",
+    "instruction": "The floor marks belong to two nonempty sets, A and B. Coordinates are integer centimetres. Compute the symmetric Hausdorff distance using Manhattan distance, |x1 − x2| + |y1 − y2|. For each mark, find its distance to the nearest mark in the other set. Return the largest of those nearest distances across both sets. Equally near marks give the same distance and require no tie-break. Return one row with the single integer column hausdorff_cm. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "floor_marks": {
+        "columns": [
+          "set_name TEXT",
+          "mark_id INTEGER",
+          "x_cm INTEGER",
+          "y_cm INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            0,
+            0
+          ],
+          [
+            "A",
+            2,
+            4,
+            0
+          ],
+          [
+            "B",
+            1,
+            0,
+            1
+          ],
+          [
+            "B",
+            2,
+            4,
+            1
+          ],
+          [
+            "B",
+            3,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "hausdorff_cm"
+    ]
+  },
+  {
+    "task_id": "decision-market-stall-repair-pair",
+    "tool": "sqlite.query",
+    "instruction": "The market committee minutes contain one crew estimate per proposed stall repair. Select exactly two distinct repairs for one closure. Their combined cost must fit the spending ceiling in cents and their combined crew time must fit the time ceiling in minutes. Each repair restores a disjoint set of stalls. Maximize total stalls restored, then minimize combined cost, then choose the lexicographically smallest ordered pair of source IDs using SQLite BINARY order. The limits table has exactly one row and at least one pair is feasible. Source IDs are unique and all fields are non-null. Return one row with columns first_source, second_source, restored_stalls, cost_cents, crew_minutes, placing the smaller source ID first. Both IDs must cite the crew estimates used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "closure_limit": {
+        "columns": [
+          "ceiling_cents INTEGER",
+          "available_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            75000,
+            130
+          ]
+        ]
+      },
+      "crew_estimate": {
+        "columns": [
+          "source_id TEXT",
+          "minute_text TEXT",
+          "stall_count INTEGER",
+          "cost_cents INTEGER",
+          "crew_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "M1",
+            "Rehang the east screens to reopen eight stalls.",
+            8,
+            44000,
+            80
+          ],
+          [
+            "M2",
+            "Replace west rail clips to reopen six stalls.",
+            6,
+            30000,
+            65
+          ],
+          [
+            "M3",
+            "Reset the north feet to reopen five stalls.",
+            5,
+            28000,
+            40
+          ],
+          [
+            "M4",
+            "Patch the south canopy to reopen five stalls.",
+            5,
+            26000,
+            50
+          ],
+          [
+            "M5",
+            "Brace the annex frame to reopen nine stalls.",
+            9,
+            66000,
+            95
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_source",
+      "second_source",
+      "restored_stalls",
+      "cost_cents",
+      "crew_minutes"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-018",
+    "stage": "submit",
+    "prompt_sha256": "496a2edd3d59882a0bb5446804f09d3f16d824a23e3e27213a58145d119d7ee4",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d9-c08f-7d53-8872-6cbedc0ef4dc",
+    "raw": "{\n  \"sheet-53167\": {\n    \"fills\": [\n      {\n        \"range\": \"E5:E16\",\n        \"formula\": \"=XLOOKUP(B5,$B$4:B4,$D$4:D4,D5,0,-1)-D5\"\n      }\n    ],\n    \"formulas\": {\n      \"E4\": \"=0\"\n    }\n  },\n  \"sheet-53383\": {\n    \"fills\": [\n      {\n        \"range\": \"C3:C6\",\n        \"formula\": \"=IF(COUNTIFS('worksheet 1'!$A$3:$A$6,A3,'worksheet 1'!$B$3:$B$6,B3)>0,\\\"Matched\\\",\\\"Not Matched\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-54274\": {\n    \"formulas\": {\n      \"G4\": \"=IF(F4<=B4,F4/B4,MIN(F4/B4,IF(F4<C4,1.09,IF(F4=C4,1.1,IF(F4<D4,1.19,1.2)))))\"\n    }\n  },\n  \"sheet-55085\": {\n    \"fills\": [\n      {\n        \"range\": \"G10:L10\",\n        \"formula\": \"=INDEX('Master-RM'!$H$8:$K$20,MATCH(G$2,'Master-RM'!$A$8:$A$20,0),MATCH(G$3,'Master-RM'!$H$6:$K$6,0)+1)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20062,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 808,
+      "reasoning_output_tokens": 454
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

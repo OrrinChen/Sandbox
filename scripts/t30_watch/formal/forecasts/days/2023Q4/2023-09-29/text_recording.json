@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24620,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 217,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-522f-7162-adfe-9bbeb8f45b72",
+  "packet_sha256": "f92a887876e89ca745c2947cc014f75ce1c84e587994a30381405b8523e639cc",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q4/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000813298\",\n          \"reason\": \"Q2 total sales fell 3.18% year over year, from $144.6 million to $140.0 million (A). Gross margin fell from 52.1% to 50.3% (D), and inventory ended 9.5% lower year over year (C). I forecast Q3 sales growth will remain above -5.00% and Q4 will cross to -5.00% or below. The timing is uncertain because Q3 sales were not yet disclosed.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0000813298",
+            "reason": "Q2 total sales fell 3.18% year over year, from $144.6 million to $140.0 million (A). Gross margin fell from 52.1% to 50.3% (D), and inventory ended 9.5% lower year over year (C). I forecast Q3 sales growth will remain above -5.00% and Q4 will cross to -5.00% or below. The timing is uncertain because Q3 sales were not yet disclosed."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

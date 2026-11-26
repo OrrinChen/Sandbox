@@ -72,3 +72,23 @@ validators:
     purpose: validate that trading conclusions cite required artifacts observed in the trace
     failure_types:
       - artifact_grounding_missing
+  - name: rag_grounding
+    purpose: distinguish missing retrieved evidence from an invalid final citation
+    failure_types:
+      - rag_retrieval_miss
+      - rag_invalid_citation
+  - name: a1_rag
+    purpose: score A1 evidence recall, citations, and verdict against the evaluation labels
+    failure_types:
+      - a1_retrieval_miss
+      - a1_invalid_citation
+      - a1_verdict_mismatch
+      - a1_invalid_answer
+  - name: financial_benchmark
+    purpose: score numeric value, verdict, and citations against frozen financial benchmark labels
+    failure_types:
+      - financial_top_k_mismatch
+      - financial_evidence_miss
+      - financial_verdict_mismatch
+      - financial_value_mismatch
+      - financial_citation_mismatch

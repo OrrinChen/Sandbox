@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-004",
+    "stage": "submit",
+    "prompt_sha256": "5b3b1e917d5b520052efaaac0265bcf0e5d9692dc86c4df4c9e6e7a11164aa0f",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e8-0158-73b1-96d8-fb50ec97a8e7",
+    "raw": "{\"sheet-36277\":{\"fills\":[{\"range\":\"I2:I5\",\"formula\":\"=INDEX($A$2:$E$25,MATCH($I$1,$B$2:$B$25,0),MATCH(H2,$A$1:$E$1,0))\"}],\"formulas\":{}},\"sheet-36764\":{\"formulas\":{\"C2\":\"=SUMIF(Sheet2!$A$2:$A$363,A2,Sheet2!$R$2:$R$363)\"}},\"sheet-37228\":{\"fills\":[{\"range\":\"G2:G23\",\"formula\":\"=IFERROR(IF(E2=1,TRIM(LEFT(F2,FIND(\\\"/\\\",F2)-1)),TRIM(MID(F2,FIND(\\\"/\\\",F2)+1,LEN(F2)))),F2)\"}],\"formulas\":{}},\"sheet-37378\":{\"fills\":[{\"range\":\"A2:A6\",\"formula\":\"=IF(B2=\\\"\\\",\\\"\\\",COUNTIF($B$2:B2,\\\"<>\\\"))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18751,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 289,
+      "reasoning_output_tokens": 56
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

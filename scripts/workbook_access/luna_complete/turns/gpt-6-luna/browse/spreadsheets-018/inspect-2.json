@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-018",
+    "stage": "inspect-2",
+    "prompt_sha256": "5cbaa4ab4c984114a1f67b3fb8f08704c9a66522630a48e8ad1e3cc4b5939039",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-fa70-77a3-94a0-2a5efd26432f"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-53167\":[],\"sheet-53383\":[],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A1:K7\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A12:K20\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18969,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1058,
+          "reasoning_output_tokens": 990
+        }
+      ],
+      "cli_final": "{\"sheet-53167\":[],\"sheet-53383\":[],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A1:K7\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A12:K20\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-fa70-77a3-94a0-2a5efd26432f",
+    "raw": "{\"sheet-53167\":[],\"sheet-53383\":[],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A1:K7\"},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A12:K20\"}]}",
+    "usage": {
+      "input_tokens": 18969,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1058,
+      "reasoning_output_tokens": 990
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

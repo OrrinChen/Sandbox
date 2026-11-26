@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-000",
+    "stage": "submit",
+    "prompt_sha256": "2b42b1754d74492521ac926bc6e86d6b80cb4d40bbdb0b2c61681612cf0e406a",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e5-3715-7863-9d98-b645fd9c83b5",
+    "raw": "{\"sheet-14240\":{\"fills\":[{\"range\":\"U4:U75\",\"formula\":\"=SUMPRODUCT(($A$4:$A$75=R4)*($B$4:$B$75=S4)*($C$3:$M$3=T4)*$C$4:$M$75)\"}],\"formulas\":{}},\"sheet-1563\":{\"fills\":[{\"range\":\"B2:B30\",\"formula\":\"=IF(A2<>\\\"\\\",A2,IFERROR(LOOKUP(2,1/($A$2:A2<>\\\"\\\"),$A$2:A2),\\\"\\\"))\"}],\"formulas\":{}},\"sheet-15829\":{\"formulas\":{\"B3\":\"=SUMIFS(I2:I22,F2:F22,B2,G2:G22,\\\"<=\\\"&B1,H2:H22,\\\">=\\\"&B1)\"}},\"sheet-17251\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=COUNTIFS($A$2:$A$11,A2,$B$2:$B$11,\\\"<\\\"&B2)+1\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19915,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 243,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

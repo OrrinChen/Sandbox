@@ -1,0 +1,103 @@
+{
+  "stage": "development sampling frame only",
+  "selection_as_of": "2020-12-31",
+  "inputs": [
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q1.zip",
+      "member": "sub.txt",
+      "sha256": "5c89b0295c403903909c34b9293d9a050f589b0722585f3ee6d6035b16501950"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q2.zip",
+      "member": "sub.txt",
+      "sha256": "98b22c06bef3114129df460122f6bb0dc8dc87e217ab393144e56c815f28b09f"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q3.zip",
+      "member": "sub.txt",
+      "sha256": "bc21f3f831c75fb4f63952f01dc8823c9537db6a44da020aa8a167e663b325fa"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q4.zip",
+      "member": "sub.txt",
+      "sha256": "aa21f0660fed6c25f42ffe6a7b1cb62098bd56f51327aade4884e059a19b5d25"
+    }
+  ],
+  "industry_sic_ranges": {
+    "retail": [
+      [
+        5200,
+        5999
+      ]
+    ],
+    "food_manufacturing": [
+      [
+        2000,
+        2099
+      ]
+    ],
+    "industrial_machinery": [
+      [
+        3500,
+        3569
+      ],
+      [
+        3580,
+        3599
+      ]
+    ],
+    "semiconductors": [
+      [
+        3674,
+        3674
+      ]
+    ],
+    "prepackaged_software": [
+      [
+        7372,
+        7372
+      ]
+    ],
+    "transportation": [
+      [
+        4000,
+        4599
+      ]
+    ]
+  },
+  "seed": "sector-watch-dev-v1",
+  "selection": "Same 2020 eligibility frame and seeded ranking as the first panel. Select ranks 7 through 12 per sector.",
+  "excluded_pilot_ciks": [
+    "0000027419",
+    "0000060667",
+    "0000354950",
+    "0000764478",
+    "0000794367",
+    "0000885639"
+  ],
+  "eligible_issuers_by_sector": {
+    "retail": 137,
+    "food_manufacturing": 46,
+    "industrial_machinery": 67,
+    "semiconductors": 49,
+    "prepackaged_software": 84,
+    "transportation": 42
+  },
+  "selected_by_sector": {
+    "retail": 6,
+    "food_manufacturing": 6,
+    "industrial_machinery": 6,
+    "semiconductors": 6,
+    "prepackaged_software": 6,
+    "transportation": 6
+  },
+  "company_count": 36,
+  "cutoff_count": 4,
+  "scheduled_company_cutoffs": 144,
+  "scope": "All selected companies at four consecutive 2024 calendar quarter ends. No survival filter or replacements.",
+  "outputs_sha256": {
+    "companies.csv": "123546f65ca1ec3b47cc05cab952c87baa526503deeb2880a60b035a9eda5db0",
+    "company_quarters.csv": "dbec59d53ef83ddb692f8342b847448fbff51dcbc156fb5d876960bb0d9d8a6a"
+  },
+  "original_roster_sha256": "68077ff4407a9ac079a3861326552a58f3f77c809fc9490d993e71edc78273e1"
+}

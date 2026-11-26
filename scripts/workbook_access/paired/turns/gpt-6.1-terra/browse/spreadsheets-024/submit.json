@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-024",
+    "stage": "submit",
+    "prompt_sha256": "9184bb4c96f4969fd2337faa26cc729f5af86a22f857c2652c40925676040c20",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f8-db79-7eb0-bf8a-4ca0ffa18e0e",
+    "raw": "{\"sheet-59639\":{\"fills\":[{\"range\":\"D5:K7\",\"formula\":\"=MID($A5,COLUMN()-3,1)\"}],\"formulas\":{}},\"sheet-59794\":{\"fills\":[{\"range\":\"C3:M5\",\"formula\":\"=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",CHAR(1),COLUMN()-2)),FIND(CHAR(1),SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE(\\\"/\\\"&$A3&\\\"/\\\",\\\"/\\\",CHAR(1),COLUMN()-2))-1),\\\"\\\")\"}],\"formulas\":{}},\"sheet-7902\":{\"fills\":[{\"range\":\"D3:J6\",\"formula\":\"=IF(COUNTIFS(Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3)>0,INDEX(Grouping!$C$2:$I$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0),COLUMN()-3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))\"}],\"formulas\":{}},\"sheet-9111\":{\"fills\":[{\"range\":\"D2:D7\",\"formula\":\"=IF(AND(B2=\\\"\\\",C2=\\\"\\\"),\\\"\\\",IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19311,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 635,
+      "reasoning_output_tokens": 240
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

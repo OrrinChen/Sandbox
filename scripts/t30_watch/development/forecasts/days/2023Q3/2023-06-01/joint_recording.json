@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34761,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 345,
+    "reasoning_output_tokens": 27
+  },
+  "thread": "01a20d7e-71d5-7412-b96f-4ab1417fe5b2",
+  "packet_sha256": "84d9fb28b0666610cc06b5bfc3f2f9613410278a5e2f6345250a0209bc519c6b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2023Q3/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q3/prepackaged_software-1\",\"alerts\":[{\"cik\":\"0001627014\",\"reason\":\"Black Knight’s consolidated revenue fell 0.70% year over year in December and 1.29% in March. Software rose from 85% to 88% of revenue (A), implying that other revenue fell roughly 21% while software revenue grew about 2%. I forecast June stays above -5.00%, then September reaches -5.00% or worse as weakness outside software outweighs slower software growth.\"}]},\n    {\"sector\":\"2023Q3/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q3/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q3/transportation-1\",\"alerts\":[{\"cik\":\"0000878927\",\"reason\":\"Old Dominion’s revenue growth swung from +5.76% year over year in December to -3.68% in March. LTL tonnage fell 11.9% in March (A). I forecast June stays above -5.00% while revenue per ton cushions the volume loss, then September crosses to -5.00% or worse as that cushion fades.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Black Knight’s consolidated revenue fell 0.70% year over year in December and 1.29% in March. Software rose from 85% to 88% of revenue (A), implying that other revenue fell roughly 21% while software revenue grew about 2%. I forecast June stays above -5.00%, then September reaches -5.00% or worse as weakness outside software outweighs slower software growth."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000878927",
+            "reason": "Old Dominion’s revenue growth swung from +5.76% year over year in December to -3.68% in March. LTL tonnage fell 11.9% in March (A). I forecast June stays above -5.00% while revenue per ton cushions the volume loss, then September crosses to -5.00% or worse as that cushion fades."
+          }
+        ]
+      }
+    ]
+  }
+}

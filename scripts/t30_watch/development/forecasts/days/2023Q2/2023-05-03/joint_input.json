@@ -1,0 +1,67 @@
+{
+  "cutoff": "2023-05-03",
+  "sectors": {
+    "2023Q2/semiconductors-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000723125",
+          "issuer": "MICRON TECHNOLOGY INC",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-06-02",
+          "latest_filed_period_end": "2023-03-02",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-03-29",
+              "text": "Total Revenue: Total revenue for the second quarter and first six months of 2023 decreased significantly relative to the comparative periods described below as a result of the factors described in the “Industry Conditions” section above."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-03-29",
+              "text": "The memory and storage industry environment deteriorated sharply in the fourth quarter of 2022 through the first six months of 2023 due to reduced demand resulting from customer adjustments to lower elevated inventory levels and weak demand in many end markets combined with global and macroeconomic challenges."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-03-29",
+              "text": "As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-03-29",
+              "text": "•Sales of DRAM products decreased 4% primarily due to an approximate 20 percent decline in average selling prices partially offset by a mid-teens percent range increase in bit shipments."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-03-29",
+              "text": "•CNBU operating income (loss) declined primarily due to declines in average selling prices and lower bit shipments."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-12-01",
+                "filed": "2022-12-22",
+                "reported_sales_usd": 4085000000,
+                "year_ago_reported_sales_usd": 7687000000,
+                "yoy_percent": "-46.8583"
+              },
+              {
+                "quarter_end": "2023-03-02",
+                "filed": "2023-03-29",
+                "reported_sales_usd": 3693000000,
+                "year_ago_reported_sales_usd": 7786000000,
+                "yoy_percent": "-52.5687"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,442 @@
+{
+  "examples": [
+    {
+      "outcome": "browse_only_gain",
+      "task_id": "sheet-38662",
+      "model": "gpt-6.1-terra",
+      "failed_arm": "fixed",
+      "browse_reads": [],
+      "new_cells_returned": [],
+      "difference": {
+        "stage": "recalculated",
+        "input": "public",
+        "sheet": "Sheet1",
+        "cell": "A2",
+        "expected": [
+          "n",
+          "101"
+        ],
+        "actual": [
+          "e",
+          "#N/A"
+        ],
+        "submitted_formula": "=IFNA(INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!C:C,0)),INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!B:B,0)))"
+      },
+      "fixed_formula_at_cell": "=IFNA(INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!C:C,0)),INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!B:B,0)))",
+      "browse_formula_at_cell": "=IFERROR(INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!C:C,0)),INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!B:B,0)))"
+    },
+    {
+      "outcome": "persistent_failure",
+      "task_id": "sheet-49455",
+      "model": "gpt-6.1-terra",
+      "failed_arm": "browse",
+      "browse_reads": [
+        {
+          "op": "range",
+          "sheet": "KPI 1",
+          "range": "D180:H208"
+        },
+        {
+          "op": "range",
+          "sheet": "KPI 1",
+          "range": "H5:H30"
+        },
+        {
+          "op": "range",
+          "sheet": "KPI 1",
+          "range": "D140:H179"
+        },
+        {
+          "op": "range",
+          "sheet": "KPI 1",
+          "range": "D187:H208"
+        }
+      ],
+      "new_cells_returned": [
+        [
+          "KPI 1",
+          "D140"
+        ],
+        [
+          "KPI 1",
+          "D141"
+        ],
+        [
+          "KPI 1",
+          "D142"
+        ],
+        [
+          "KPI 1",
+          "D143"
+        ],
+        [
+          "KPI 1",
+          "D145"
+        ],
+        [
+          "KPI 1",
+          "D146"
+        ],
+        [
+          "KPI 1",
+          "D147"
+        ],
+        [
+          "KPI 1",
+          "D148"
+        ],
+        [
+          "KPI 1",
+          "D150"
+        ],
+        [
+          "KPI 1",
+          "D152"
+        ],
+        [
+          "KPI 1",
+          "D153"
+        ],
+        [
+          "KPI 1",
+          "D154"
+        ],
+        [
+          "KPI 1",
+          "D155"
+        ],
+        [
+          "KPI 1",
+          "D156"
+        ],
+        [
+          "KPI 1",
+          "D157"
+        ],
+        [
+          "KPI 1",
+          "D158"
+        ],
+        [
+          "KPI 1",
+          "D159"
+        ],
+        [
+          "KPI 1",
+          "D160"
+        ],
+        [
+          "KPI 1",
+          "D161"
+        ],
+        [
+          "KPI 1",
+          "D162"
+        ],
+        [
+          "KPI 1",
+          "D163"
+        ],
+        [
+          "KPI 1",
+          "D164"
+        ],
+        [
+          "KPI 1",
+          "D165"
+        ],
+        [
+          "KPI 1",
+          "D166"
+        ],
+        [
+          "KPI 1",
+          "D167"
+        ],
+        [
+          "KPI 1",
+          "D168"
+        ],
+        [
+          "KPI 1",
+          "D169"
+        ],
+        [
+          "KPI 1",
+          "D170"
+        ],
+        [
+          "KPI 1",
+          "D171"
+        ],
+        [
+          "KPI 1",
+          "D172"
+        ],
+        [
+          "KPI 1",
+          "D173"
+        ],
+        [
+          "KPI 1",
+          "D174"
+        ],
+        [
+          "KPI 1",
+          "D176"
+        ],
+        [
+          "KPI 1",
+          "D177"
+        ],
+        [
+          "KPI 1",
+          "D178"
+        ],
+        [
+          "KPI 1",
+          "D179"
+        ],
+        [
+          "KPI 1",
+          "D180"
+        ],
+        [
+          "KPI 1",
+          "D181"
+        ],
+        [
+          "KPI 1",
+          "D182"
+        ],
+        [
+          "KPI 1",
+          "D183"
+        ],
+        [
+          "KPI 1",
+          "D184"
+        ],
+        [
+          "KPI 1",
+          "D185"
+        ],
+        [
+          "KPI 1",
+          "D186"
+        ],
+        [
+          "KPI 1",
+          "H141"
+        ],
+        [
+          "KPI 1",
+          "H142"
+        ],
+        [
+          "KPI 1",
+          "H145"
+        ],
+        [
+          "KPI 1",
+          "H150"
+        ],
+        [
+          "KPI 1",
+          "H151"
+        ],
+        [
+          "KPI 1",
+          "H157"
+        ],
+        [
+          "KPI 1",
+          "H159"
+        ],
+        [
+          "KPI 1",
+          "H160"
+        ],
+        [
+          "KPI 1",
+          "H163"
+        ],
+        [
+          "KPI 1",
+          "H166"
+        ],
+        [
+          "KPI 1",
+          "H169"
+        ],
+        [
+          "KPI 1",
+          "H176"
+        ],
+        [
+          "KPI 1",
+          "H181"
+        ],
+        [
+          "KPI 1",
+          "H186"
+        ]
+      ],
+      "difference": {
+        "stage": "recalculated",
+        "input": "held_out",
+        "sheet": "KPI 1",
+        "cell": "H3",
+        "expected": [
+          "n",
+          "26"
+        ],
+        "actual": [
+          "n",
+          "14"
+        ],
+        "submitted_formula": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\"\"))"
+      },
+      "fixed_formula_at_cell": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\"\"))",
+      "browse_formula_at_cell": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\"\"))"
+    }
+  ],
+  "wheel_sha256": "59ca9397dbae0d95a4c179fd6b92ecb1ac886c47af164a0d4f5664aece96009a",
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "historical_score_sha256": "fa76aa14697109b0f89e6403d2968fbbb4c1f196955ec3d260c3daae48cb61bc",
+  "historical_verdicts_reproduced": 200,
+  "new_verdicts": 400,
+  "failed_submissions_replayed": 116,
+  "failed_candidate_sha256": {
+    "gpt-6.2-sol/fixed": {
+      "sheet-14240": "74a74ef523381344254900f24f7803881b91d0b73d9969771aa1a4f2f55632c5",
+      "sheet-33157": "1b84a3cbe595af34165ee04f64f2d878f1929fc97c48de96058b375fe1ff7051",
+      "sheet-34033": "56f28af048fc0da6c5e80bff8530d4100c9f55e7ee09bba089a314592ce5aa47",
+      "sheet-36236": "a9bb01ad1f6727306bc6635ef9896b8cd9388eb3c8c3e19748cc17fb90faca6d",
+      "sheet-37378": "91e2f3cfb8aab955a2c5d50066a2f22bef265fd25d78b840e80c379e65dedc8f",
+      "sheet-37554": "42fc3d3d0e0a54dd0e509e58e470f77a8bda45027ca5904210bdc65a7dd9c9ea",
+      "sheet-37609": "4b37abdacb6b3fcde434dda8b44f85ffb689030853ddf90e2fc0f9bf9f8f01b4",
+      "sheet-37615": "a73ae09b86e3fced93186a1f49c92fd18d0b1ca47d8b01a359a262e0db0df4b7",
+      "sheet-38662": "51e5cd45bafd0a85a8344d6426f7e19279235acd5f8b600e3cb77f14ac067006",
+      "sheet-40892": "0d288d3ba25584169ce448f8402848f9f77e6c1d7eaef1edafbe607bd8b153b2",
+      "sheet-43406": "88deb555064e49bafe7758a67b148348edefdb3117807976f6abf4a53128761d",
+      "sheet-43436": "709c3892f0e7cd4a79d4cdb98a921a0100c50a2bf5d48537d78eae24baf86883",
+      "sheet-45063": "93fe5b2ad6caa6b7b63d53fd85540711d582086c436da3a55ebe25efdc90991f",
+      "sheet-45937": "2bd4c90ca64dc4b54c2a82f1a3b324b05ac8cb369b174e87f0f61f950b2df13f",
+      "sheet-46897": "4ccc93cef5721c56662282c06243533ff7ad1d95fe26918f128afd6dff55caab",
+      "sheet-47699": "ec477ee0a39c3406b73785399cece02e27ab53e366ed49d473c5d1934aa3aec8",
+      "sheet-48365": "0d17549fdfbce65f11b0468d2eb3af0d01c890e4bb98d8ee20210442a25f332f",
+      "sheet-48588": "e0ddc336e50c19a69723c9aeccae089d3411c1dcb38f9e85c2a069c1c0ecdbfe",
+      "sheet-48608": "4d6e464d28f45658809df564098ff51f28c44397ca8f6082cb76436220e98083",
+      "sheet-49455": "df3306347227d61c56a6cd0589f6b99e943ef8764544e744197a9687e45be006",
+      "sheet-49859": "4ebfe90b33ea67de4a08bc5ad0284a8bd68d57305ca35547e17bf4f21f2e575e",
+      "sheet-50630": "8b1b1d6391e7aca68ad79bcbe105aaf0a5fef1b40e89e117815d6b26b2cecc4d",
+      "sheet-51807": "126f25098a3f668c27045619909cb53c9b2b6f7e0dfb11d19c67957cce62fe2b",
+      "sheet-53167": "f685e34478d3efa2aea068c29d0cdcd12ed11df0299782bf25af43324b79b3be",
+      "sheet-55260": "8d71f4ef6c11de0452d27b724cb656c21d888166ea97c5dbb1ff3a41f9940c3f",
+      "sheet-56427": "02bb3f0103efe934f3cfc4c81f632328a169b5eebc52478789aa2fc2c7fd0c8b",
+      "sheet-56915": "e30b3e10333503cb9736c66b74f6b6c6ebf6afdc286b7a122b516559d96c4eac",
+      "sheet-56995": "45b97700d10bc1ecaffa0adc0c8450917017a7d466c41676d776c3899f79a8e0",
+      "sheet-57105": "8c94bc96f4303ae8430642b029fdb68a93f9293bebcc66a2f6ee05740ff52855",
+      "sheet-57137": "28d260c94aceb8bfa32997321893293847955453c752214791ba755e851e18fa",
+      "sheet-59224": "c98c6f92866dc216d016c837abdd45c697020149d8c0e3ee3e6284cae92fbbe6",
+      "sheet-59259": "cf4fdd916efe67b988d85eb34b3f1c5a642f6467fe63ff2fa9a83d84c0d502f8",
+      "sheet-59358": "cb1d0f696c1e7c2b33edd2dcd22cca4e69b9946aa3fae65f3d85b8f68fcf0d78",
+      "sheet-7902": "4ad601b595b21d5f1da6ddf80afaba570c052129a0506a8850d52c637c253940",
+      "sheet-9111": "5a0ea81e606fbbf59abd1bea5dfeba3475f8a455c56ce3330fa940393bbd645e"
+    },
+    "gpt-6.2-sol/browse": {
+      "sheet-34033": "d8c49d356671e58f9edb86ef46e51fa8073a2bfd01a89a097c4d4c5e0b03fa7d",
+      "sheet-36236": "145a2c9fc626ea56a2b628636e0fa237148e92a7209be19153632ade7daad66c",
+      "sheet-37378": "91e2f3cfb8aab955a2c5d50066a2f22bef265fd25d78b840e80c379e65dedc8f",
+      "sheet-37554": "42fc3d3d0e0a54dd0e509e58e470f77a8bda45027ca5904210bdc65a7dd9c9ea",
+      "sheet-37609": "4b37abdacb6b3fcde434dda8b44f85ffb689030853ddf90e2fc0f9bf9f8f01b4",
+      "sheet-37615": "b2550f433c559213c9fd8d9f26d585897ab251272f1480fc226e502b9dab0af5",
+      "sheet-38662": "51e5cd45bafd0a85a8344d6426f7e19279235acd5f8b600e3cb77f14ac067006",
+      "sheet-40892": "81ba6a66f744988b40d8cbf8b57aebc2cae0b3d1efbe969b87dbad0120a6b5bb",
+      "sheet-43406": "88deb555064e49bafe7758a67b148348edefdb3117807976f6abf4a53128761d",
+      "sheet-43436": "689b1d61daa68d6914343851cb8c108f44c59f23bc4c27aaac3b7362efe544bc",
+      "sheet-45063": "93fe5b2ad6caa6b7b63d53fd85540711d582086c436da3a55ebe25efdc90991f",
+      "sheet-45937": "2bd4c90ca64dc4b54c2a82f1a3b324b05ac8cb369b174e87f0f61f950b2df13f",
+      "sheet-48365": "0d17549fdfbce65f11b0468d2eb3af0d01c890e4bb98d8ee20210442a25f332f",
+      "sheet-48588": "ddc05e20d5f0f78fbe177d2e88627682a8695634a1c6e09270b0bb375ada9f87",
+      "sheet-48608": "dd1cfe079c6d5fc03d7b925a77cb4435f93b36150291d94fafd773607ed7ee83",
+      "sheet-49455": "2aa304a3202b13de62646b95f9f0fb4a978f7e226a647ce621c369a5114599ba",
+      "sheet-49859": "34c80db91aabe54ba2b1116beb3753fa06a5d099bb79b8e40290598697bc8f2a",
+      "sheet-50630": "8b1b1d6391e7aca68ad79bcbe105aaf0a5fef1b40e89e117815d6b26b2cecc4d",
+      "sheet-50952": "a199912796418479d3925f3d2ce80dc1425110dbb45a0ed385ae1ab33d1004f1",
+      "sheet-51807": "126f25098a3f668c27045619909cb53c9b2b6f7e0dfb11d19c67957cce62fe2b",
+      "sheet-53167": "91041781daa9ecbe8098b10a9ae795e1aaedf2477d59bb42da544168de2bc7ef",
+      "sheet-55260": "b31dd95f745f0a9916a443fb506d5170cc52fdc4291fab1b751b198b819bb7d7",
+      "sheet-56427": "02bb3f0103efe934f3cfc4c81f632328a169b5eebc52478789aa2fc2c7fd0c8b",
+      "sheet-56915": "af2a449aba00e747835ad664aed4c9e416d9518b47415087df19551d869c1055",
+      "sheet-56995": "7108826a01e79f09c48dd2ba9d8c9f1a6379543d52a687bb4377fcb030291199",
+      "sheet-57105": "8c94bc96f4303ae8430642b029fdb68a93f9293bebcc66a2f6ee05740ff52855",
+      "sheet-57137": "28d260c94aceb8bfa32997321893293847955453c752214791ba755e851e18fa",
+      "sheet-58701": "b44c9d39e72c1b020cd2bbdf2bb0664150d0ef69f2d673c75c789b4caba60057",
+      "sheet-59224": "c98c6f92866dc216d016c837abdd45c697020149d8c0e3ee3e6284cae92fbbe6",
+      "sheet-59259": "6b2273d8e578889b9f6bb98cf3999beda4647d04d23a7d4f1b3d381a0e8e1dc9",
+      "sheet-59358": "cb1d0f696c1e7c2b33edd2dcd22cca4e69b9946aa3fae65f3d85b8f68fcf0d78",
+      "sheet-7902": "27ca5885269131b95d8469748e20ade8eae50d0845f187fc74d9e4ae8fe83ba4",
+      "sheet-9111": "a26aa8410a8815e5d44977aebc73103a4749c3793dbdd78ce18019111b395d2a"
+    },
+    "gpt-6.1-terra/fixed": {
+      "sheet-34033": "90f3233fc4237e7e62d96d8f9345e92f61ca86109c35ef2a3d3de5f462ab7cb0",
+      "sheet-36236": "04d7c6ae5c0ee9ec10f1bf3943661db0ae52fab97c84e49bfa02eb4963952920",
+      "sheet-37378": "7a4d476bb5bbc88fef2677c92928ce7c5d2c31251ab5c676c304c5a98e9c66d5",
+      "sheet-37554": "a2d3ee27202621d797d4acf870df9ac995d554886d98bdffef9b46f8207f5932",
+      "sheet-37609": "4b37abdacb6b3fcde434dda8b44f85ffb689030853ddf90e2fc0f9bf9f8f01b4",
+      "sheet-37615": "ef64b1dff63cbd9d1d512c36576f72ecd3994afa9af6aee732d27af49ee58a25",
+      "sheet-38662": "cb8f8f237a13da067d7a2fad91284e965672bbf42ea5b0262b1a3fb9e6821e72",
+      "sheet-40757": "50f2b79367ce125c94c8b8a48a17341daab655eb6dbb2248e129f6d0aa59b305",
+      "sheet-43436": "368b5f8a77540a44c77cc6f8ef49ffa7b03763ce1c4a1773af9ab22717a8d5f9",
+      "sheet-44264": "1acb3bb9cc62ce063ce4863bfb0b6eb2820a1a87438e2eaf1a82b6865367f020",
+      "sheet-48365": "1c37f0d9f8e7979d102c91c05f31b767786007b4c20c3e424a50ad86c0f5d70d",
+      "sheet-48588": "57c322c62b06c9716ba79f13ea031dd8281718e2d1254dc6ae07446d96ad4a15",
+      "sheet-49455": "82d3584fc68ca13fbc0c61d8321a503bac437f4b6ffd5121e6b59d7e2e1af7f3",
+      "sheet-49859": "55345bc4a5354fdc7ee1d27ea3c6233c260c97bf16c1853fc4bc6f456a1ac157",
+      "sheet-50630": "782435b39dcd82564b1a74ce436c7a3bb1614ad21f6fca7d34d1d546b7c5d025",
+      "sheet-51807": "126f25098a3f668c27045619909cb53c9b2b6f7e0dfb11d19c67957cce62fe2b",
+      "sheet-56427": "28f0f07570a1c3f44f5be97e39106112983bb216edde400308039a5f851a9a9d",
+      "sheet-56915": "ce4f29c01411ce9d91f2fc21ed8fa749839167c68960ef633cd9c363a305edce",
+      "sheet-56995": "7108826a01e79f09c48dd2ba9d8c9f1a6379543d52a687bb4377fcb030291199",
+      "sheet-57105": "0b7821f26bc498277b45c0ca410cb00740fb2e6403667dfb74a920c0c8711dbc",
+      "sheet-57137": "b65b81f3e464dfa37076a1711541012bc29cc87f95e57466948f1cfbc44ca41a",
+      "sheet-59224": "c98c6f92866dc216d016c837abdd45c697020149d8c0e3ee3e6284cae92fbbe6",
+      "sheet-59259": "3ccd238a69e5ed6f6d82e59cd0843e0fac4b9c114392bf69c5ae076fa486e940",
+      "sheet-59358": "8ef6fe1826f005da20b81bd063e97c4b3d38514949b80420b7a380928dc71404"
+    },
+    "gpt-6.1-terra/browse": {
+      "sheet-34033": "90f3233fc4237e7e62d96d8f9345e92f61ca86109c35ef2a3d3de5f462ab7cb0",
+      "sheet-36236": "04d7c6ae5c0ee9ec10f1bf3943661db0ae52fab97c84e49bfa02eb4963952920",
+      "sheet-37378": "7a4d476bb5bbc88fef2677c92928ce7c5d2c31251ab5c676c304c5a98e9c66d5",
+      "sheet-37554": "a2d3ee27202621d797d4acf870df9ac995d554886d98bdffef9b46f8207f5932",
+      "sheet-37609": "4b37abdacb6b3fcde434dda8b44f85ffb689030853ddf90e2fc0f9bf9f8f01b4",
+      "sheet-37615": "ef64b1dff63cbd9d1d512c36576f72ecd3994afa9af6aee732d27af49ee58a25",
+      "sheet-40757": "aab77b679b04243f36bb7a5b5a32a82ad0c188ea0b47bd0410da412daac11c79",
+      "sheet-43406": "344a59565a4c878e0746ba700f525c27633f342442700488cdfd4956fbd29c03",
+      "sheet-43436": "f38fa691134339315574992dfade11a30b5429203af1e26df0ddea29b020bb04",
+      "sheet-45030": "cab98347e5f223a37004d3bab25e2ea4180be2a95b2dd67bda607598ea2dfa55",
+      "sheet-48365": "4cffc31f6329fe62b9d4f0c2736337840174d0f987f45ba4155955bc82606fd8",
+      "sheet-48588": "00de3b2cefbe7fd398e4aa8083a72657d4069a5d7c91b89f3fc5ec66cb988a75",
+      "sheet-49455": "82d3584fc68ca13fbc0c61d8321a503bac437f4b6ffd5121e6b59d7e2e1af7f3",
+      "sheet-49859": "34c80db91aabe54ba2b1116beb3753fa06a5d099bb79b8e40290598697bc8f2a",
+      "sheet-50630": "ed733da805f2546c47b3949d5458e582e2c99fcdb474d0a83fdbeace2461d61c",
+      "sheet-51807": "126f25098a3f668c27045619909cb53c9b2b6f7e0dfb11d19c67957cce62fe2b",
+      "sheet-56427": "02bb3f0103efe934f3cfc4c81f632328a169b5eebc52478789aa2fc2c7fd0c8b",
+      "sheet-56915": "bb73de3a210380f0c6e71b06933221313249bb156738d12bd11d1b9d84160709",
+      "sheet-56995": "7108826a01e79f09c48dd2ba9d8c9f1a6379543d52a687bb4377fcb030291199",
+      "sheet-57105": "daa92f434cc0f7795a384272848ff66c25ae6511c74a06bec2e2a37de2eb4d53",
+      "sheet-57137": "28d260c94aceb8bfa32997321893293847955453c752214791ba755e851e18fa",
+      "sheet-59224": "6e4a05f38671adc8aa0ded11ff441c533a2db54cc6ae7a88cd98ecd109ef372b",
+      "sheet-59259": "fdddd1309ad7f27b3fa02d7cd83182f17d4311e3efefb497f9922d856ce5062c",
+      "sheet-59358": "8ef6fe1826f005da20b81bd063e97c4b3d38514949b80420b7a380928dc71404"
+    }
+  },
+  "network_barrier": [
+    "/usr/bin/sandbox-exec",
+    "-p",
+    "(version 1)(allow default)(deny network*)"
+  ],
+  "prediction_lock_sha256": "dda2bfaa9a144382d2879b459071dfe2461d9a149fc69013767cc84e71e6f9ee"
+}

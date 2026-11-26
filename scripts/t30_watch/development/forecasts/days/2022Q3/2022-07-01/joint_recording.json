@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21660,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 137,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7d-61a3-7d63-bde4-8536c495ef68",
+  "packet_sha256": "7e64247bf54bbb6ea0f3450abeadaad2dc61f92b2da218af1d2e6ecec9c5c245",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q3/retail-1\",\"alerts\":[{\"cik\":\"0000018255\",\"reason\":\"Reported sales growth slowed from +13.39% in January to −2.99% in April. Newer stores partly offset falling same-store sales (D, E). I forecast that this offset keeps the intervening quarter above −5.00%, but continued pressure on shoppers’ disposable incomes (C) pushes sales growth to −5.00% or below in the quarter starting July 31. The timing is uncertain because intervening-quarter sales are still unknown.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Reported sales growth slowed from +13.39% in January to −2.99% in April. Newer stores partly offset falling same-store sales (D, E). I forecast that this offset keeps the intervening quarter above −5.00%, but continued pressure on shoppers’ disposable incomes (C) pushes sales growth to −5.00% or below in the quarter starting July 31. The timing is uncertain because intervening-quarter sales are still unknown."
+          }
+        ]
+      }
+    ]
+  }
+}

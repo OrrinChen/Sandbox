@@ -1,0 +1,93 @@
+{
+  "cutoff": "2023-07-01",
+  "sectors": {
+    "2023Q3/semiconductors-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001730168",
+          "issuer": "BROADCOM INC.",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-07-31",
+          "latest_filed_period_end": "2023-04-30",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Net revenue from our semiconductor solutions segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods due to strong product demand, primarily for networking, server storage and broadband products, partially offset by lower demand for wireless products."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Net revenue from our infrastructure software segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods primarily due to increases in sales from our mainframe solutions products, partially offset by lower demand for our FC SAN products."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "The increases were primarily due to lower amortization of acquisition-related intangible assets, mainly from our 2016 acquisition of Broadcom Corporation, slightly offset by less favorable margin within our semiconductor solutions segment driven primarily by product mix."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Gross margin was $6,115 million, or 70% of net revenue, for the fiscal quarter ended April 30, 2023 compared to $5,439 million, or 67% of net revenue, for the fiscal quarter ended May 1, 2022, and $12,119 million, or 69% of net revenue, for the two fiscal quarters ended April 30, 2023 compared to $10,488 million, or 66% of net revenue, for the two fiscal quarters ended May 1, 2022."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Operating income from our semiconductor solutions segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods primarily due to higher net revenue from networking, server storage, and broadband products, partially offset by lower net revenue from wireless products."
+            }
+          ]
+        }
+      ]
+    },
+    "2023Q3/semiconductors-3": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0001045810",
+          "issuer": "NVIDIA CORP",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-07-31",
+          "latest_filed_period_end": "2023-04-30",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Data Center revenue was up 14% from a year ago and up 18% sequentially, led by growing demand for generative AI and large language models using GPUs based on our NVIDIA Hopper and Ampere architectures."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, metaverse and 3D internet applications."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "The year-on-year decrease reflects weaker demand due to the macroeconomic slowdown and lower shipments to normalize channel inventory levels."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Gross margin declined from a year earlier and increased sequentially."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "The year-on-year decrease reflects $8.04 billion in stock repurchases, partially offset by operating cash flow generation."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

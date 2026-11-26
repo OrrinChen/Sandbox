@@ -1,0 +1,344 @@
+[
+  {
+    "task_id": "decision-cite-operative-leak-handoff",
+    "tool": "sqlite.query",
+    "instruction": "At the end of shift minute 480, produce the ceiling inspection queue. Each handoff row is a complete instruction for one bay. A posted row takes effect at its shift minute and replaces the previous posted instruction for that bay. Drafts have no effect. Actions are either inspect or hold. For each bay, determine the operative instruction at the cutoff, including minute 480. If two posted rows share a minute, the larger revision number wins. Revision numbers are unique within a bay and minute. Include only bays whose operative action is inspect. Return bay_code, note_id, evidence_text in ascending bay_code order, copying the ID and full text from the operative note. All fields are non-null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "handoff_notes": {
+        "columns": [
+          "note_id TEXT",
+          "bay_code TEXT",
+          "shift_min INTEGER",
+          "revision_no INTEGER",
+          "posting_state TEXT",
+          "bay_action TEXT",
+          "evidence_text TEXT"
+        ],
+        "rows": [
+          [
+            "H1",
+            "A",
+            400,
+            1,
+            "posted",
+            "inspect",
+            "Drip tray is dry. Open the access tile for inspection."
+          ],
+          [
+            "H2",
+            "A",
+            460,
+            1,
+            "posted",
+            "hold",
+            "Fresh drops reached the tray. Keep the tile closed."
+          ],
+          [
+            "H3",
+            "B",
+            480,
+            1,
+            "posted",
+            "hold",
+            "Keep the hatch closed while the drain test runs."
+          ],
+          [
+            "H4",
+            "B",
+            480,
+            2,
+            "posted",
+            "inspect",
+            "Drain test finished. Inspect above the hatch."
+          ],
+          [
+            "H5",
+            "B",
+            490,
+            1,
+            "posted",
+            "hold",
+            "A second drain test needs the hatch closed."
+          ],
+          [
+            "H6",
+            "C",
+            415,
+            1,
+            "posted",
+            "inspect",
+            "Lift the marked tile to trace the old stain."
+          ],
+          [
+            "H7",
+            "C",
+            470,
+            1,
+            "draft",
+            "hold",
+            "Proposed hold while a ladder is moved."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bay_code",
+      "note_id",
+      "evidence_text"
+    ]
+  },
+  {
+    "task_id": "decision-cite-release-slips-at-packing-cutoff",
+    "tool": "sqlite.query",
+    "instruction": "Construct released_files.csv for the single packing run. Each print_file belongs to a batch. Each release_slip is a primary shop-floor instruction with a source_id, batch_code, optional exact file_path, posting tick, and verbatim slip_text. A null slip path covers its entire batch. An exact path covers only that file in that batch. The first word of slip_text is the operative instruction, either RELEASE or HOLD, followed by a space and a reason. At the packing cutoff use only slips posted at or before cutoff_tick. Among applicable slips the latest posting wins, with an exact-file slip winning a same-tick tie against a batch slip, then the lexicographically smallest source_id winning any further tie. Include only files whose winning slip says RELEASE, citing that slip's actual source_id. Files without evidence are omitted. Ticks are integer clock steps on one shared clock. File paths and source IDs are individually unique in their respective inventories, text comparisons use SQLite BINARY order, and only the slip path can be null. Output columns file_path, source_id, sorted by file_path. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "packing_run": {
+        "columns": [
+          "cutoff_tick INTEGER"
+        ],
+        "rows": [
+          [
+            6
+          ]
+        ]
+      },
+      "print_file": {
+        "columns": [
+          "file_path TEXT",
+          "batch_code TEXT"
+        ],
+        "rows": [
+          [
+            "leaf/front",
+            "leaf"
+          ],
+          [
+            "leaf/back",
+            "leaf"
+          ],
+          [
+            "leaf/key",
+            "leaf"
+          ],
+          [
+            "reed/front",
+            "reed"
+          ],
+          [
+            "moss/key",
+            "moss"
+          ]
+        ]
+      },
+      "release_slip": {
+        "columns": [
+          "source_id TEXT",
+          "batch_code TEXT",
+          "file_path TEXT",
+          "posted_tick INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "s1",
+            "leaf",
+            "leaf/front",
+            2,
+            "HOLD Front border needs trimming."
+          ],
+          [
+            "s2",
+            "leaf",
+            null,
+            5,
+            "RELEASE Trim check passed across the batch."
+          ],
+          [
+            "s3",
+            "leaf",
+            "leaf/back",
+            5,
+            "HOLD Back plate still has a streak."
+          ],
+          [
+            "s4",
+            "reed",
+            null,
+            6,
+            "RELEASE Reed proof matches the master."
+          ],
+          [
+            "s5",
+            "leaf",
+            "leaf/key",
+            7,
+            "HOLD Key legend needs another pass."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "file_path",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-close-followup-vendor-ledger",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the day-30 close for vendors pursuing unanswered questionnaires. Each call_work row records one billable completed attempt, even if nobody answered. The vendor earns base_cents on the attempt day and a separate bonus_cents on the day a returned questionnaire is accepted. A NULL acceptance day means the bonus is still unearned. Acceptance cannot precede the attempt. Each cash_log row is a separate payment to the vendor, including possible advances. Use an inclusive cutoff of day 30 for each event independently. Include every vendor with at least one attempt or payment by the cutoff, even if it has only an advance. All amounts are nonnegative integer cents. Only accepted_day may be NULL. Output vendor_code, earned_cents, paid_cents, payable_cents, advance_cents in ascending binary vendor_code order. Net earned charges against payments within each vendor. Show a positive unpaid balance as payable and a positive excess payment as an advance. Both balance columns are zero when settled. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "call_work": {
+        "columns": [
+          "vendor_code TEXT",
+          "attempt_day INTEGER",
+          "base_cents INTEGER",
+          "accepted_day INTEGER",
+          "bonus_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "birch",
+            22,
+            90,
+            30,
+            200
+          ],
+          [
+            "birch",
+            29,
+            90,
+            32,
+            200
+          ],
+          [
+            "elm",
+            30,
+            75,
+            null,
+            150
+          ],
+          [
+            "ash",
+            31,
+            80,
+            33,
+            160
+          ],
+          [
+            "fir",
+            20,
+            60,
+            25,
+            100
+          ]
+        ]
+      },
+      "cash_log": {
+        "columns": [
+          "vendor_code TEXT",
+          "paid_day INTEGER",
+          "cash_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "birch",
+            23,
+            100
+          ],
+          [
+            "birch",
+            30,
+            150
+          ],
+          [
+            "elm",
+            28,
+            120
+          ],
+          [
+            "ash",
+            29,
+            50
+          ],
+          [
+            "fir",
+            31,
+            160
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "vendor_code",
+      "earned_cents",
+      "paid_cents",
+      "payable_cents",
+      "advance_cents"
+    ]
+  },
+  {
+    "task_id": "decision-close-prepaid-update-revenue",
+    "tool": "sqlite.query",
+    "instruction": "Produce period_three_close.csv with columns series_code, earned_cents, deferred_cents, sorted by series_code ascending. Each row of prepaid_term is a distinct prepaid update term. Cash arrives in full at the start of first_period. Allocate fee_cents across span_periods consecutive service periods in whole cents: give every period the integer quotient and give one additional cent to each of the earliest periods until the remainder is exhausted. For each series with any cash received by the end of period 3, report revenue earned in period 3 alone and cash still deferred immediately after period 3 for service in later periods. Include fully earned series even if both amounts are zero. Ignore terms paid after the close. Period numbers start at 1, spans are positive integer period counts, fees are nonnegative integer cents, and all fields are non-NULL. Concurrent terms add independently. Ordering ties cannot occur after aggregation. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "prepaid_term": {
+        "columns": [
+          "term_code TEXT",
+          "series_code TEXT",
+          "first_period INTEGER",
+          "span_periods INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "t1",
+            "Atlas",
+            2,
+            3,
+            101
+          ],
+          [
+            "t2",
+            "Atlas",
+            3,
+            2,
+            5
+          ],
+          [
+            "t3",
+            "Folio",
+            1,
+            2,
+            15
+          ],
+          [
+            "t4",
+            "Index",
+            3,
+            4,
+            2
+          ],
+          [
+            "t5",
+            "Folio",
+            5,
+            2,
+            20
+          ],
+          [
+            "t6",
+            "Plates",
+            4,
+            1,
+            99
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "series_code",
+      "earned_cents",
+      "deferred_cents"
+    ]
+  }
+]

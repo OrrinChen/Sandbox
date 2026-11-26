@@ -1,0 +1,263 @@
+[
+  {
+    "task_id": "decision-post-deposit-after-phased-acceptance",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the posting journal for refundable deposits on kit orders. Each order requires at least 3 accepted units in the fit phase and at least 2 in the finish phase. Acceptance entries are positive incremental unit counts. Sum entries separately by order and phase, combining all entries on the same calendar date before testing the thresholds. Either phase can finish first. On the first date both milestones have been met, post the order's entire deposit once as a positive credit to the refundable-deposit liability. Later entries generate no further posting. Omit orders still awaiting either milestone. Return order_id, posting_date (YYYY-MM-DD), and deposit_credit_cents, sorted by posting_date ascending and then unique order_id ascending for ties. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "acceptance": {
+        "columns": [
+          "order_id TEXT",
+          "accepted_on TEXT",
+          "phase TEXT",
+          "units INTEGER"
+        ],
+        "rows": [
+          [
+            "K",
+            "2026-05-01",
+            "finish",
+            2
+          ],
+          [
+            "K",
+            "2026-05-02",
+            "fit",
+            2
+          ],
+          [
+            "K",
+            "2026-05-04",
+            "fit",
+            1
+          ],
+          [
+            "K",
+            "2026-05-06",
+            "finish",
+            1
+          ],
+          [
+            "L",
+            "2026-05-03",
+            "fit",
+            5
+          ]
+        ]
+      },
+      "kit_orders": {
+        "columns": [
+          "order_id TEXT",
+          "deposit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "K",
+            600
+          ],
+          [
+            "L",
+            450
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "order_id",
+      "posting_date",
+      "deposit_credit_cents"
+    ]
+  },
+  {
+    "task_id": "decision-prepaid-booth-space-close",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the contents of prepaid_close.csv at the end of month 6 for every booking in booth_change. Months are numbered 1 through 12 within one reporting year. Each booking has already been paid in full. Its first revision supplies all three accounting fields. Later revisions are patches, and NULL means the field was omitted. For each field independently, use its last supplied value in ascending rev_no order. Revision numbers are unique within a booking, and physical row order has no meaning. The corrected fee_cents is the total price for span_months consecutive months starting with first_month, inclusive. Recognize the same whole-cent amount in each service month using integer division, and recognize all leftover cents in the final service month. Include bookings that have not started and bookings that have ended. Return booking_code, expense_to_date_cents, prepaid_cents in booking_code order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "booth_change": {
+        "columns": [
+          "booking_code TEXT",
+          "rev_no INTEGER",
+          "fee_cents INTEGER",
+          "first_month INTEGER",
+          "span_months INTEGER"
+        ],
+        "rows": [
+          [
+            "Cove",
+            3,
+            null,
+            5,
+            null
+          ],
+          [
+            "Dune",
+            1,
+            101,
+            4,
+            3
+          ],
+          [
+            "Cove",
+            1,
+            900,
+            4,
+            3
+          ],
+          [
+            "Fern",
+            1,
+            451,
+            7,
+            2
+          ],
+          [
+            "Cove",
+            2,
+            1001,
+            null,
+            null
+          ],
+          [
+            "Dune",
+            2,
+            null,
+            null,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "booking_code",
+      "expense_to_date_cents",
+      "prepaid_cents"
+    ]
+  },
+  {
+    "task_id": "decision-prepaid-rental-expense-export",
+    "tool": "csv.export",
+    "instruction": "Construct the full contents of june_rent.csv as one text cell named csv_text. The header is bay,expense_cents,variance_cents. Emit one data line per budgeted bay in ascending binary bay order, including bays without rentals. Bay codes are unique uppercase ASCII letters requiring no CSV quoting. Use commas, decimal integers without padding, and an LF after every line including the last. Each prepaid rental row covers the half-open day interval from start_day inclusive to stop_day exclusive. June spans days 31 inclusive to 61 exclusive. Recognize the prepaid fee evenly per covered day and sum only the expense earned during June. Variance is June expense less the bay's June budget in cents. Rows represent distinct rentals even if they overlap. All inputs are nonnull, durations are positive, and each fee in cents is exactly divisible by its duration. Only the CSV contents are required. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "bay_budget": {
+        "columns": [
+          "bay TEXT",
+          "plan_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "C",
+            0
+          ],
+          [
+            "A",
+            2200
+          ],
+          [
+            "B",
+            500
+          ]
+        ]
+      },
+      "prepaid_rental": {
+        "columns": [
+          "bay TEXT",
+          "start_day INTEGER",
+          "stop_day INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            21,
+            41,
+            2000
+          ],
+          [
+            "A",
+            51,
+            71,
+            3000
+          ],
+          [
+            "B",
+            20,
+            31,
+            550
+          ],
+          [
+            "B",
+            61,
+            65,
+            400
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-preserve-a-reusable-reel-remnant",
+    "tool": "sqlite.query",
+    "instruction": "Assign three continuous cable runs to two partially used reels. The cut list has exactly one row for each run number 1, 2 and 3. Each run must come entirely from one reel. Each cut consumes its listed length plus the allowance in the single shop bulletin, even when it is the last cut on a reel. All lengths are whole metres. A reel may finish empty but cannot be overdrawn. Maximize the length of the longest single remnant available after all three cuts. Break ties by the lexicographically smallest tuple of reel codes assigned to runs 1, 2 and 3, in that order, using SQLite BINARY ordering. All fields are non-null, reel codes are unique, and a feasible assignment exists. Return one row with ordered columns run_one_reel, run_two_reel, run_three_reel, longest_remnant_m, bulletin_id. Cite the bulletin supplying the allowance. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cut_list": {
+        "columns": [
+          "run_no INTEGER",
+          "finished_m INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            12
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "reel_stock": {
+        "columns": [
+          "reel_code TEXT",
+          "available_m INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            30
+          ],
+          [
+            "B",
+            26
+          ]
+        ]
+      },
+      "shop_bulletin": {
+        "columns": [
+          "bulletin_id TEXT",
+          "allowance_m INTEGER",
+          "bulletin_text TEXT"
+        ],
+        "rows": [
+          [
+            "CUT-7",
+            1,
+            "Reserve one extra metre on every cut for end preparation."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_one_reel",
+      "run_two_reel",
+      "run_three_reel",
+      "longest_remnant_m",
+      "bulletin_id"
+    ]
+  }
+]

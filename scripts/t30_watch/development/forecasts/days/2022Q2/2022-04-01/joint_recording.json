@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22501,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 179,
+    "reasoning_output_tokens": 13
+  },
+  "thread": "01a20d7d-6c74-7df3-94c0-f2df85acdd3a",
+  "packet_sha256": "a6303e465f74b9ce45a9393925e99e0ea5f50b047700dee3a2e7057ce263a44b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},{\"sector\":\"2022Q2/retail-1\",\"alerts\":[{\"cik\":\"0000018255\",\"reason\":\"Sales grew 14.21% and 13.39% year over year in the last two filed quarters, supporting a forecast that the quarter immediately before May 1 stays above -5.00%. The quarter beginning May 1 faces a prior-year comparison lifted by stimulus and reopening during a 34.2% annual sales rebound (A, B). As those benefits fade, inflation pressure on customers’ disposable income and supply disruptions (D) could push target-quarter sales down 5.00% or more.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Sales grew 14.21% and 13.39% year over year in the last two filed quarters, supporting a forecast that the quarter immediately before May 1 stays above -5.00%. The quarter beginning May 1 faces a prior-year comparison lifted by stimulus and reopening during a 34.2% annual sales rebound (A, B). As those benefits fade, inflation pressure on customers’ disposable income and supply disruptions (D) could push target-quarter sales down 5.00% or more."
+          }
+        ]
+      }
+    ]
+  }
+}

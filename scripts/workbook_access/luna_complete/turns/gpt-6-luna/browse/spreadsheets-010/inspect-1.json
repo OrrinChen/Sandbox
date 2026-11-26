@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-010",
+    "stage": "inspect-1",
+    "prompt_sha256": "cc852c4d81c39ce7811d3ed0e3f2e2575f2a11859c7bf355d5e3444b08151909",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122c-c0d7-7152-8202-e607c527d4f3"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to check the ambiguous layouts and formulas, especially where the target range alone doesn’t show how to fill the cells."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-44264\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G4:N9\"}],\"sheet-44266\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"F4:P14\"},{\"op\":\"range\",\"sheet\":\"Lookup\",\"range\":\"A1:B12\"}],\"sheet-44628\":[],\"sheet-45030\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B6:F19\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B20:C28\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 35038,
+          "cached_input_tokens": 29184,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 783,
+          "reasoning_output_tokens": 602
+        }
+      ],
+      "cli_final": "{\"sheet-44264\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G4:N9\"}],\"sheet-44266\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"F4:P14\"},{\"op\":\"range\",\"sheet\":\"Lookup\",\"range\":\"A1:B12\"}],\"sheet-44628\":[],\"sheet-45030\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B6:F19\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B20:C28\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122c-c0d7-7152-8202-e607c527d4f3",
+    "raw": "{\"sheet-44264\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G4:N9\"}],\"sheet-44266\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"F4:P14\"},{\"op\":\"range\",\"sheet\":\"Lookup\",\"range\":\"A1:B12\"}],\"sheet-44628\":[],\"sheet-45030\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B6:F19\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B20:C28\"}]}",
+    "usage": {
+      "input_tokens": 35038,
+      "cached_input_tokens": 29184,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 783,
+      "reasoning_output_tokens": 602
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

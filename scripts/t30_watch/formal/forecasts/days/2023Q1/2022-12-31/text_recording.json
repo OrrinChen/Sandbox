@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22555,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 188,
+    "reasoning_output_tokens": 23
+  },
+  "thread": "01a20d8d-c286-7382-bb9b-97ff3810d37e",
+  "packet_sha256": "bfa38ec1ebd301191e16ccf984e6a46627fe73d2434fa040eb47a91f233004e7",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q1/semiconductors-1\",\"alerts\":[{\"cik\":\"0000006951\",\"reason\":\"Applied estimates that export regulations could reduce fiscal 2023 China net sales by up to $2.5 billion (D). Display customers had also cut equipment investment (A). Together these pressures support a forecast that consolidated net sales growth stays above −5% year over year in the preceding quarter and falls to −5% or worse in the quarter starting January 30. Timing is uncertain because Applied gives only an annual estimate for China.\"}]},{\"sector\":\"2023Q1/semiconductors-2\",\"alerts\":[]},{\"sector\":\"2023Q1/semiconductors-3\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0000006951",
+            "reason": "Applied estimates that export regulations could reduce fiscal 2023 China net sales by up to $2.5 billion (D). Display customers had also cut equipment investment (A). Together these pressures support a forecast that consolidated net sales growth stays above −5% year over year in the preceding quarter and falls to −5% or worse in the quarter starting January 30. Timing is uncertain because Applied gives only an annual estimate for China."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q1/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/semiconductors-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-016",
+    "stage": "inspect-1",
+    "prompt_sha256": "b9f33baf66b8dc0fb1e385ae427fb5919e778b4e5ecdc3e670472e66640289d5",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-e70f-77a3-adca-4bfbf12ddcf5"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the available reads to identify the missing input cells and formulas, especially the parameter lists and row layouts that aren’t visible yet."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B5:H13\"}],\"sheet-51807\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D3\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 52056,
+          "cached_input_tokens": 45312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 795,
+          "reasoning_output_tokens": 614
+        }
+      ],
+      "cli_final": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B5:H13\"}],\"sheet-51807\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D3\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-e70f-77a3-adca-4bfbf12ddcf5",
+    "raw": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B5:H13\"}],\"sheet-51807\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D3\"}]}",
+    "usage": {
+      "input_tokens": 52056,
+      "cached_input_tokens": 45312,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 795,
+      "reasoning_output_tokens": 614
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "food_manufacturing-2",
+  "sector": "food_manufacturing",
+  "cik": "0000007084",
+  "issuer": "ARCHER-DANIELS-MIDLAND CO",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "complete",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-02-18",
+  "text": {
+    "sector": "food_manufacturing",
+    "cik": "0000007084",
+    "issuer": "ARCHER-DANIELS-MIDLAND CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-02-18",
+        "text": "The Company has a 37.5% interest in Olenex Sarl (Olenex), a joint venture between ADM and Wilmar that produces and sells a comprehensive portfolio of edible oils and fats to customers around the globe."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-02-18",
+        "text": "The Company has a 50.0% interest in SoyVen, a joint venture between ADM and Cargill to provide soybean meal and oil for customers in Egypt."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-02-18",
+        "text": "Because the Company has a higher portion of its operations in the northern hemisphere, principally North America and Europe, relative to the southern hemisphere, primarily South America, inventory levels typically peak after the northern hemisphere fall harvest and are generally lower during the northern hemisphere summer months."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-02-18",
+        "text": "Research and development expense during the year ended December 31, 2020, net of reimbursements of government grants, was $160 million."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-02-18",
+        "text": "ADM’s annual voluntary employee turnover rate in 2020 of 7.9% was down from the turnover rate in 2019 of 9.5%, which excluded turnover related to the enhanced early retirement offer in 2019."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-10-30",
+        "reported_sales_usd": 15126000000,
+        "year_ago_reported_sales_usd": 16726000000,
+        "yoy_percent": "-9.5659"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-02-18",
+        "reported_sales_usd": 17978000000,
+        "year_ago_reported_sales_usd": 16329000000,
+        "yoy_percent": "10.0986"
+      }
+    ],
+    "status": "complete"
+  }
+}

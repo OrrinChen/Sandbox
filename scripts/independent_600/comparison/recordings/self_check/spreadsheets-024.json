@@ -1,0 +1,61 @@
+{
+  "binding": {
+    "input_sha256": "eb83e16757f15cdcd1ca989b45acfd83d0458edf11bacad354315cb8e785fe0f",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-59639\": {\n    \"fills\": [\n      {\n        \"range\": \"D5:K7\",\n        \"formula\": \"=MID($A5,COLUMN(A1),1)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-59794\": {\n    \"fills\": [\n      {\n        \"range\": \"C3:C5\",\n        \"formula\": \"=LEFT($A3,FIND(\\\"/\\\",$A3&\\\"/\\\")-1)\"\n      },\n      {\n        \"range\": \"D3:M5\",\n        \"formula\": \"=IFERROR(MID($A3,LEN(TEXTJOIN(\\\"/\\\",FALSE,$C3:C3))+2,FIND(\\\"/\\\",$A3&\\\"/\\\",LEN(TEXTJOIN(\\\"/\\\",FALSE,$C3:C3))+2)-LEN(TEXTJOIN(\\\"/\\\",FALSE,$C3:C3))-2),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-7902\": {\n    \"fills\": [\n      {\n        \"range\": \"D3:J6\",\n        \"formula\": \"=IF(AND($B3<>\\\"\\\",COUNTIFS(Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3)>0),SUMIFS(Grouping!C$2:C$7,Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN(C1),FALSE))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-9111\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D7\",\n        \"formula\": \"=IF(AND(B2=\\\"\\\",C2=\\\"\\\"),\\\"\\\",IFNA(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFNA(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-59639": {
+      "fills": [
+        {
+          "range": "D5:K7",
+          "formula": "=MID($A5,COLUMN(A1),1)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-59794": {
+      "fills": [
+        {
+          "range": "C3:C5",
+          "formula": "=LEFT($A3,FIND(\"/\",$A3&\"/\")-1)"
+        },
+        {
+          "range": "D3:M5",
+          "formula": "=IFERROR(MID($A3,LEN(TEXTJOIN(\"/\",FALSE,$C3:C3))+2,FIND(\"/\",$A3&\"/\",LEN(TEXTJOIN(\"/\",FALSE,$C3:C3))+2)-LEN(TEXTJOIN(\"/\",FALSE,$C3:C3))-2),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-7902": {
+      "fills": [
+        {
+          "range": "D3:J6",
+          "formula": "=IF(AND($B3<>\"\",COUNTIFS(Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3)>0),SUMIFS(Grouping!C$2:C$7,Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN(C1),FALSE))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-9111": {
+      "fills": [
+        {
+          "range": "D2:D7",
+          "formula": "=IF(AND(B2=\"\",C2=\"\"),\"\",IFNA(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFNA(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-bfdb-7bf0-9a52-c6619ac6df78",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27215,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 518,
+    "reasoning_output_tokens": 60
+  }
+}

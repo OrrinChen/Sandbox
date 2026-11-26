@@ -1,0 +1,63 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 34688,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 463,
+    "reasoning_output_tokens": 41
+  },
+  "thread": "01a20399-fdc7-7df2-89b0-1184789e7402",
+  "packet_sha256": "6ef7aaeefc81bb2ee3f87960d721f0e08022c5456651af4ff8afc5f56a4786ae",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"retail\",\"alerts\":[]},\n    {\"sector\":\"food_manufacturing\",\"alerts\":[\n      {\"cik\":\"0001320695\",\"reason\":\"Slot A puts Q1 net sales down 3.9%, just 1.1 percentage points above the threshold. Slot B identifies planned distribution exits in coffee and in-store bakery. A full quarter of lost sales from those exits could widen the decline to 5% in Q2 or Q3.\"},\n      {\"cik\":\"0000024545\",\"reason\":\"Slots A and B show Q1 net sales up 10.7% and volume up 5.7%. Slot C says distributors stocked up ahead of summer and the Fort Worth strike. If they sell through that stock before reordering, shipments pulled into Q1 could push Q2 or Q3 net sales at least 5% below the prior year.\"}\n    ]},\n    {\"sector\":\"industrial_machinery\",\"alerts\":[\n      {\"cik\":\"0001433660\",\"reason\":\"Slot A puts Q1 total revenue growth at 1.0%. Slot B identifies timing pressure on North American warehouse automation orders and continued slow poultry investment. If automation orders slip beyond Q2 or Q3 while poultry orders stay weak, quarterly revenue could cross to a 5% decline.\"}\n    ]},\n    {\"sector\":\"semiconductors\",\"alerts\":[\n      {\"cik\":\"0000050863\",\"reason\":\"Slots A and B show Q1 revenue up 9%, led by PC sales against a prior year when customers held excess inventory. Slots C through E show lower server volume and inventory-driven purchase cuts by 5G, Altera and Mobileye customers. If the PC comparison benefit fades in Q2 or Q3, those cuts could pull total revenue down at least 5% year on year.\"}\n    ]},\n    {\"sector\":\"prepackaged_software\",\"alerts\":[]},\n    {\"sector\":\"transportation\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": [
+          {
+            "cik": "0001320695",
+            "reason": "Slot A puts Q1 net sales down 3.9%, just 1.1 percentage points above the threshold. Slot B identifies planned distribution exits in coffee and in-store bakery. A full quarter of lost sales from those exits could widen the decline to 5% in Q2 or Q3."
+          },
+          {
+            "cik": "0000024545",
+            "reason": "Slots A and B show Q1 net sales up 10.7% and volume up 5.7%. Slot C says distributors stocked up ahead of summer and the Fort Worth strike. If they sell through that stock before reordering, shipments pulled into Q1 could push Q2 or Q3 net sales at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": [
+          {
+            "cik": "0001433660",
+            "reason": "Slot A puts Q1 total revenue growth at 1.0%. Slot B identifies timing pressure on North American warehouse automation orders and continued slow poultry investment. If automation orders slip beyond Q2 or Q3 while poultry orders stay weak, quarterly revenue could cross to a 5% decline."
+          }
+        ]
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": [
+          {
+            "cik": "0000050863",
+            "reason": "Slots A and B show Q1 revenue up 9%, led by PC sales against a prior year when customers held excess inventory. Slots C through E show lower server volume and inventory-driven purchase cuts by 5G, Altera and Mobileye customers. If the PC comparison benefit fades in Q2 or Q3, those cuts could pull total revenue down at least 5% year on year."
+          }
+        ]
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

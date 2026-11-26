@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "fcb5c577d93a59eed8f47183e9f3668f00e219b857d7134ef7785dae74553a48",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-prism-changes-within-a-traverse\": \"SELECT s.shot_id, s.raw_mm + n.delta_mm AS corrected_mm, n.source_id FROM range_shots AS s LEFT JOIN prism_notes AS n ON n.run_id = s.run_id AND n.tick = (SELECT MAX(p.tick) FROM prism_notes AS p WHERE p.run_id = s.run_id AND p.tick <= s.tick) WHERE s.run_id = 'R' ORDER BY s.tick, s.shot_id;\",\n  \"decision-project-unsampled-breakage\": \"WITH samples AS (SELECT grade, SUM(inspected_units) AS sampled_units, SUM(broken_units) AS broken_sample_units FROM carton_audits WHERE broken_units IS NOT NULL GROUP BY grade) SELECT s.grade, s.sampled_units, s.broken_sample_units, (s.broken_sample_units * u.unopened_units * u.unit_cost_cents + s.sampled_units / 2) / s.sampled_units AS reserve_cents FROM samples AS s JOIN unopened_stock AS u ON u.grade = s.grade ORDER BY s.grade;\",\n  \"decision-publish-certified-relay-patch\": \"WITH ranked AS (SELECT club_name, card_pts, card_ref, ROW_NUMBER() OVER (PARTITION BY club_name ORDER BY revision_no DESC) AS rn FROM relay_cards), records AS (SELECT '\\\"' || replace(b.club_name, '\\\"', '\\\"\\\"') || '\\\",' || printf('%d', r.card_pts) || ',' || r.card_ref || char(10) AS line FROM relay_board AS b JOIN ranked AS r ON r.club_name = b.club_name WHERE r.rn = 1 AND r.card_pts <> b.board_pts ORDER BY b.club_name COLLATE BINARY) SELECT 'club,points,source' || char(10) || coalesce(group_concat(line, ''), '') AS csv_body FROM records;\",\n  \"decision-quarterly-tier-close-with-usage-corrections\": \"WITH closes AS (SELECT account_code, SUM(CASE WHEN posting_day < '2026-04-01' THEN signed_units ELSE 0 END) AS opening_units, SUM(signed_units) AS closing_units FROM meter_posting WHERE posting_state = 'posted' AND posting_day BETWEEN '2026-03-01' AND '2026-04-30' GROUP BY account_code HAVING COUNT(CASE WHEN posting_day >= '2026-04-01' THEN 1 END) > 0) SELECT account_code, opening_units, closing_units, 3 * (closing_units - opening_units) + 5 * (MIN(closing_units, 100) - MIN(opening_units, 100)) AS april_revenue_cents FROM closes ORDER BY account_code;\"\n}",
+  "submissions": {
+    "decision-prism-changes-within-a-traverse": "SELECT s.shot_id, s.raw_mm + n.delta_mm AS corrected_mm, n.source_id FROM range_shots AS s LEFT JOIN prism_notes AS n ON n.run_id = s.run_id AND n.tick = (SELECT MAX(p.tick) FROM prism_notes AS p WHERE p.run_id = s.run_id AND p.tick <= s.tick) WHERE s.run_id = 'R' ORDER BY s.tick, s.shot_id;",
+    "decision-project-unsampled-breakage": "WITH samples AS (SELECT grade, SUM(inspected_units) AS sampled_units, SUM(broken_units) AS broken_sample_units FROM carton_audits WHERE broken_units IS NOT NULL GROUP BY grade) SELECT s.grade, s.sampled_units, s.broken_sample_units, (s.broken_sample_units * u.unopened_units * u.unit_cost_cents + s.sampled_units / 2) / s.sampled_units AS reserve_cents FROM samples AS s JOIN unopened_stock AS u ON u.grade = s.grade ORDER BY s.grade;",
+    "decision-publish-certified-relay-patch": "WITH ranked AS (SELECT club_name, card_pts, card_ref, ROW_NUMBER() OVER (PARTITION BY club_name ORDER BY revision_no DESC) AS rn FROM relay_cards), records AS (SELECT '\"' || replace(b.club_name, '\"', '\"\"') || '\",' || printf('%d', r.card_pts) || ',' || r.card_ref || char(10) AS line FROM relay_board AS b JOIN ranked AS r ON r.club_name = b.club_name WHERE r.rn = 1 AND r.card_pts <> b.board_pts ORDER BY b.club_name COLLATE BINARY) SELECT 'club,points,source' || char(10) || coalesce(group_concat(line, ''), '') AS csv_body FROM records;",
+    "decision-quarterly-tier-close-with-usage-corrections": "WITH closes AS (SELECT account_code, SUM(CASE WHEN posting_day < '2026-04-01' THEN signed_units ELSE 0 END) AS opening_units, SUM(signed_units) AS closing_units FROM meter_posting WHERE posting_state = 'posted' AND posting_day BETWEEN '2026-03-01' AND '2026-04-30' GROUP BY account_code HAVING COUNT(CASE WHEN posting_day >= '2026-04-01' THEN 1 END) > 0) SELECT account_code, opening_units, closing_units, 3 * (closing_units - opening_units) + 5 * (MIN(closing_units, 100) - MIN(opening_units, 100)) AS april_revenue_cents FROM closes ORDER BY account_code;"
+  },
+  "attempt": 1,
+  "thread": "01a20e1b-c07d-7ce3-898f-6ee098ec67a8",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22838,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 567,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,3062 @@
+[
+  {
+    "task_id": "financial-5f2d2fe036278ed6",
+    "family": "exact_lookup",
+    "question": "What was Alder Creek Holdings's FY2022 cash balance in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "cash_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-43bc42d270fc050a",
+    "family": "entity_period",
+    "question": "Use Alder Creek Holdings, rather than Alder Creek Industries, and FY2022 rather than FY2021. What was net sales in US dollars?",
+    "company_tickers": [
+      "F01H",
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "net_sales"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-ae227d30fbd132eb",
+    "family": "unit_conversion",
+    "question": "What was Alder Creek Holdings's FY2022 research expense, in millions of US dollars?",
+    "company_tickers": [
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "research_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-5ae8e1bf9e47ff64",
+    "family": "cross_source",
+    "question": "For Alder Creek Holdings in FY2022, subtract capital spending in the investor presentation from cash from operations in the earnings call. Give the difference in US dollars.",
+    "company_tickers": [
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "cash_from_operations",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-8688c6a6461a4c4f",
+    "family": "source_conflict",
+    "question": "What was Alder Creek Holdings's FY2022 adjusted operating income, in millions of US dollars?",
+    "company_tickers": [
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "adjusted_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-bf2d59080122ea2d",
+    "family": "insufficient",
+    "question": "What was Alder Creek Holdings's FY2022 backlog value, in millions of US dollars?",
+    "company_tickers": [
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01H",
+        "period": "FY2022",
+        "metric": "backlog_value"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-f80f6b5e8b4f1ddf",
+    "family": "exact_lookup",
+    "question": "Give FY2022 cash balance for Alder Creek Industries in the annual filing. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "cash_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-c109c5029a7bd8cb",
+    "family": "entity_period",
+    "question": "What was Alder Creek Industries's FY2022 net sales in US dollars? Exclude Alder Creek Holdings's figures and FY2023 figures.",
+    "company_tickers": [
+      "F01I",
+      "F01H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "net_sales"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-899eff19d7d082c7",
+    "family": "unit_conversion",
+    "question": "Give FY2022 research expense for Alder Creek Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "research_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3cb0352187967114",
+    "family": "cross_source",
+    "question": "Calculate Alder Creek Industries's FY2022 cash from operations minus capital spending, in US dollars. Use the earnings call and investor presentation respectively.",
+    "company_tickers": [
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "cash_from_operations",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-3235ef9019c70ce9",
+    "family": "source_conflict",
+    "question": "Give FY2022 adjusted operating income for Alder Creek Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "adjusted_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-2b1896973946e8e3",
+    "family": "insufficient",
+    "question": "Give FY2022 backlog value for Alder Creek Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F01I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F01I",
+        "period": "FY2022",
+        "metric": "backlog_value"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-c14c770b008f2fa3",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much inventory balance did Alder Field Holdings disclose for FY2025 in the annual filing?",
+    "company_tickers": [
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-dc7954ce9679796c",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Alder Field Holdings, FY2025. Report subscription revenue in US dollars, excluding Alder Field Industries and FY2024.",
+    "company_tickers": [
+      "F02H",
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024",
+      "FY2026"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-a2137f781d28a5f0",
+    "family": "unit_conversion",
+    "question": "In US dollars, how much lease payments did Alder Field Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-e314d74aa1053dc4",
+    "family": "cross_source",
+    "question": "What is the difference between Alder Field Holdings's FY2025 capital spending in the earnings call and dividend payments in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-246d5d4cb22ead14",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much foreign exchange impact did Alder Field Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-fdf718aba8aef45b",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much supplier prepayments did Alder Field Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02H",
+        "period": "FY2025",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-25c76379e32b2799",
+    "family": "exact_lookup",
+    "question": "What was Alder Field Industries's FY2025 inventory balance in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-6ae8e19fbacc2518",
+    "family": "entity_period",
+    "question": "Use Alder Field Industries, rather than Alder Field Holdings, and FY2025 rather than FY2024. What was subscription revenue in US dollars?",
+    "company_tickers": [
+      "F02I",
+      "F02H"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024",
+      "FY2026"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-ee82b110ea4c645b",
+    "family": "unit_conversion",
+    "question": "What was Alder Field Industries's FY2025 lease payments, in US dollars?",
+    "company_tickers": [
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-028ae537433ebb2d",
+    "family": "cross_source",
+    "question": "For Alder Field Industries in FY2025, subtract dividend payments in the investor presentation from capital spending in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-b89e096f299fa54c",
+    "family": "source_conflict",
+    "question": "What was Alder Field Industries's FY2025 foreign exchange impact, in millions of US dollars?",
+    "company_tickers": [
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-fdc58f998a4d8178",
+    "family": "insufficient",
+    "question": "What was Alder Field Industries's FY2025 supplier prepayments, in millions of US dollars?",
+    "company_tickers": [
+      "F02I"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F02I",
+        "period": "FY2025",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-dfa7526c060806da",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much deferred revenue did Briar Gate Holdings disclose for FY2024 in the annual filing?",
+    "company_tickers": [
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-dcf679fb374e7d6c",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Briar Gate Holdings, FY2024. Report product revenue in US dollars, excluding Briar Gate Industries and FY2023.",
+    "company_tickers": [
+      "F08H",
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-24710082dfebd6b0",
+    "family": "unit_conversion",
+    "question": "In US dollars, how much tax expense did Briar Gate Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-8ca694a84ed7c63e",
+    "family": "cross_source",
+    "question": "What is the difference between Briar Gate Holdings's FY2024 asset sale proceeds in the earnings call and acquisition spending in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-04730c736c5d86a5",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much interest expense did Briar Gate Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-edd49ad69d10feed",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much grant proceeds did Briar Gate Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08H",
+        "period": "FY2024",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0b3fdca4e5d8994e",
+    "family": "exact_lookup",
+    "question": "What was Briar Gate Industries's FY2024 deferred revenue in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-27351530c3f007b6",
+    "family": "entity_period",
+    "question": "Use Briar Gate Industries, rather than Briar Gate Holdings, and FY2024 rather than FY2023. What was product revenue in US dollars?",
+    "company_tickers": [
+      "F08I",
+      "F08H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-9f01d223cfb3cb2d",
+    "family": "unit_conversion",
+    "question": "What was Briar Gate Industries's FY2024 tax expense, in US dollars?",
+    "company_tickers": [
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-2e1b6a900f486368",
+    "family": "cross_source",
+    "question": "For Briar Gate Industries in FY2024, subtract acquisition spending in the investor presentation from asset sale proceeds in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-59327242d57824fc",
+    "family": "source_conflict",
+    "question": "What was Briar Gate Industries's FY2024 interest expense, in millions of US dollars?",
+    "company_tickers": [
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-307d8292d82f426d",
+    "family": "insufficient",
+    "question": "What was Briar Gate Industries's FY2024 grant proceeds, in millions of US dollars?",
+    "company_tickers": [
+      "F08I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F08I",
+        "period": "FY2024",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-7ef864cc9694f749",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much cash balance did Dovetail Field Holdings disclose for FY2022 in the annual filing?",
+    "company_tickers": [
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "cash_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-a2a85b4cfbfe8b18",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Dovetail Field Holdings, FY2022. Report net sales in US dollars, excluding Dovetail Field Industries and FY2021.",
+    "company_tickers": [
+      "F17H",
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "net_sales"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-6564548948cd5a9a",
+    "family": "unit_conversion",
+    "question": "In millions of US dollars, how much research expense did Dovetail Field Holdings disclose for FY2022?",
+    "company_tickers": [
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "research_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-b52a3d559486cb2f",
+    "family": "cross_source",
+    "question": "What is the difference between Dovetail Field Holdings's FY2022 cash from operations in the earnings call and capital spending in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "cash_from_operations",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-8ea1811fd6e79f80",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much adjusted operating income did Dovetail Field Holdings disclose for FY2022?",
+    "company_tickers": [
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "adjusted_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-dcf0ae7428ddf8d2",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much backlog value did Dovetail Field Holdings disclose for FY2022?",
+    "company_tickers": [
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17H",
+        "period": "FY2022",
+        "metric": "backlog_value"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-e51ff1df9343b50b",
+    "family": "exact_lookup",
+    "question": "What was Dovetail Field Industries's FY2022 cash balance in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "cash_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-a8bd7ada77a1fd32",
+    "family": "entity_period",
+    "question": "Use Dovetail Field Industries, rather than Dovetail Field Holdings, and FY2022 rather than FY2021. What was net sales in US dollars?",
+    "company_tickers": [
+      "F17I",
+      "F17H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "net_sales"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-2c5376ed9520c571",
+    "family": "unit_conversion",
+    "question": "What was Dovetail Field Industries's FY2022 research expense, in millions of US dollars?",
+    "company_tickers": [
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "research_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-e1cd7c1a4b34c734",
+    "family": "cross_source",
+    "question": "For Dovetail Field Industries in FY2022, subtract capital spending in the investor presentation from cash from operations in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "cash_from_operations",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-2c004bb63e9de0bf",
+    "family": "source_conflict",
+    "question": "What was Dovetail Field Industries's FY2022 adjusted operating income, in millions of US dollars?",
+    "company_tickers": [
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "adjusted_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3d2b6058fb062cc9",
+    "family": "insufficient",
+    "question": "What was Dovetail Field Industries's FY2022 backlog value, in millions of US dollars?",
+    "company_tickers": [
+      "F17I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F17I",
+        "period": "FY2022",
+        "metric": "backlog_value"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-5ab1a1fda15715e2",
+    "family": "exact_lookup",
+    "question": "What was Ember Field Holdings's FY2022 inventory balance in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-54a56725c5f567bd",
+    "family": "entity_period",
+    "question": "Use Ember Field Holdings, rather than Ember Field Industries, and FY2022 rather than FY2021. What was subscription revenue in US dollars?",
+    "company_tickers": [
+      "F22H",
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-3d29a8e9cfc937d4",
+    "family": "unit_conversion",
+    "question": "What was Ember Field Holdings's FY2022 lease payments, in US dollars?",
+    "company_tickers": [
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-5ab2558dfb3f03e9",
+    "family": "cross_source",
+    "question": "For Ember Field Holdings in FY2022, subtract dividend payments in the investor presentation from capital spending in the earnings call. Give the difference in US dollars.",
+    "company_tickers": [
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-d5519ef84326fae6",
+    "family": "source_conflict",
+    "question": "What was Ember Field Holdings's FY2022 foreign exchange impact, in millions of US dollars?",
+    "company_tickers": [
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-bdffeefda9c578ce",
+    "family": "insufficient",
+    "question": "What was Ember Field Holdings's FY2022 supplier prepayments, in millions of US dollars?",
+    "company_tickers": [
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22H",
+        "period": "FY2022",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-02e8a215d16158eb",
+    "family": "exact_lookup",
+    "question": "Give FY2022 inventory balance for Ember Field Industries in the annual filing. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-ac34fd195798324f",
+    "family": "entity_period",
+    "question": "What was Ember Field Industries's FY2022 subscription revenue in US dollars? Exclude Ember Field Holdings's figures and FY2023 figures.",
+    "company_tickers": [
+      "F22I",
+      "F22H"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-baafdaa76501066e",
+    "family": "unit_conversion",
+    "question": "Give FY2022 lease payments for Ember Field Industries. Report the figure in US dollars.",
+    "company_tickers": [
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-8b3f363e455c19fe",
+    "family": "cross_source",
+    "question": "Calculate Ember Field Industries's FY2022 capital spending minus dividend payments, in US dollars. Use the earnings call and investor presentation respectively.",
+    "company_tickers": [
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-2750c9eb63b5d5fa",
+    "family": "source_conflict",
+    "question": "Give FY2022 foreign exchange impact for Ember Field Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-801cf0a527a01c0d",
+    "family": "insufficient",
+    "question": "Give FY2022 supplier prepayments for Ember Field Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F22I"
+    ],
+    "fiscal_periods": [
+      "FY2022",
+      "FY2021"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F22I",
+        "period": "FY2022",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-f3ab167ca15d11ff",
+    "family": "exact_lookup",
+    "question": "Give FY2024 deferred revenue for Ember Hill Holdings in the annual filing. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0bff20b31c210245",
+    "family": "entity_period",
+    "question": "What was Ember Hill Holdings's FY2024 product revenue in US dollars? Exclude Ember Hill Industries's figures and FY2025 figures.",
+    "company_tickers": [
+      "F24H",
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-37f71521a7eda98e",
+    "family": "unit_conversion",
+    "question": "Give FY2024 tax expense for Ember Hill Holdings. Report the figure in US dollars.",
+    "company_tickers": [
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-b2974a01336d5dbd",
+    "family": "cross_source",
+    "question": "Calculate Ember Hill Holdings's FY2024 asset sale proceeds minus acquisition spending, in thousands of US dollars. Use the earnings call and investor presentation respectively.",
+    "company_tickers": [
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-efd9a43e18bc18db",
+    "family": "source_conflict",
+    "question": "Give FY2024 interest expense for Ember Hill Holdings. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0071a337987a4cb2",
+    "family": "insufficient",
+    "question": "Give FY2024 grant proceeds for Ember Hill Holdings. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24H",
+        "period": "FY2024",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-1d17fc853d993dae",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much deferred revenue did Ember Hill Industries disclose for FY2024 in the annual filing?",
+    "company_tickers": [
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-ad2204994cab5141",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Ember Hill Industries, FY2024. Report product revenue in US dollars, excluding Ember Hill Holdings and FY2023.",
+    "company_tickers": [
+      "F24I",
+      "F24H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-d8ae6660b61e5c85",
+    "family": "unit_conversion",
+    "question": "In US dollars, how much tax expense did Ember Hill Industries disclose for FY2024?",
+    "company_tickers": [
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-d4eccb68a7294a80",
+    "family": "cross_source",
+    "question": "What is the difference between Ember Hill Industries's FY2024 asset sale proceeds in the earnings call and acquisition spending in the investor presentation, in thousands of US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-8ecfc44546f6c6a6",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much interest expense did Ember Hill Industries disclose for FY2024?",
+    "company_tickers": [
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-c911e0bffd456b47",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much grant proceeds did Ember Hill Industries disclose for FY2024?",
+    "company_tickers": [
+      "F24I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F24I",
+        "period": "FY2024",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3bbbf8575876787c",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much trade receivables did Glimmer Quay Holdings disclose for FY2024 in the annual filing?",
+    "company_tickers": [
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "trade_receivables",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-09e75260ac261da6",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Glimmer Quay Holdings, FY2024. Report service revenue in US dollars, excluding Glimmer Quay Industries and FY2023.",
+    "company_tickers": [
+      "F35H",
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "service_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-b1a1d0bddd461e9e",
+    "family": "unit_conversion",
+    "question": "In millions of US dollars, how much restructuring expense did Glimmer Quay Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "restructuring_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-8cba35a8aa726ab7",
+    "family": "cross_source",
+    "question": "What is the difference between Glimmer Quay Holdings's FY2024 bond issuance in the earnings call and debt repayment in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "bond_issuance",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "debt_repayment",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-d404f9f7a0e37da8",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much segment operating income did Glimmer Quay Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "segment_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-b86a0eab5e43e486",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much warranty reserve did Glimmer Quay Holdings disclose for FY2024?",
+    "company_tickers": [
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35H",
+        "period": "FY2024",
+        "metric": "warranty_reserve"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-496dc2fa7033182b",
+    "family": "exact_lookup",
+    "question": "What was Glimmer Quay Industries's FY2024 trade receivables in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "trade_receivables",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-46d4008025dc29a7",
+    "family": "entity_period",
+    "question": "Use Glimmer Quay Industries, rather than Glimmer Quay Holdings, and FY2024 rather than FY2023. What was service revenue in US dollars?",
+    "company_tickers": [
+      "F35I",
+      "F35H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "service_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-18743351b39be1df",
+    "family": "unit_conversion",
+    "question": "What was Glimmer Quay Industries's FY2024 restructuring expense, in millions of US dollars?",
+    "company_tickers": [
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "restructuring_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-966ae609ef11b7aa",
+    "family": "cross_source",
+    "question": "For Glimmer Quay Industries in FY2024, subtract debt repayment in the investor presentation from bond issuance in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "bond_issuance",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "debt_repayment",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-40c1fde91aa227c0",
+    "family": "source_conflict",
+    "question": "What was Glimmer Quay Industries's FY2024 segment operating income, in millions of US dollars?",
+    "company_tickers": [
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "segment_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-9de90af6bfb5a08b",
+    "family": "insufficient",
+    "question": "What was Glimmer Quay Industries's FY2024 warranty reserve, in millions of US dollars?",
+    "company_tickers": [
+      "F35I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F35I",
+        "period": "FY2024",
+        "metric": "warranty_reserve"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-33a2f250c7a896f4",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much deferred revenue did Ivory Hill Holdings disclose for FY2025 in the annual filing?",
+    "company_tickers": [
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3d0a7fee60ef7fbd",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Ivory Hill Holdings, FY2025. Report product revenue in US dollars, excluding Ivory Hill Industries and FY2024.",
+    "company_tickers": [
+      "F44H",
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024",
+      "FY2026"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-3f665bb33ae5a02c",
+    "family": "unit_conversion",
+    "question": "In US dollars, how much tax expense did Ivory Hill Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-36b1eab87a285a95",
+    "family": "cross_source",
+    "question": "What is the difference between Ivory Hill Holdings's FY2025 asset sale proceeds in the earnings call and acquisition spending in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-b9697edb6670ca6a",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much interest expense did Ivory Hill Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0f3250df2822809b",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much grant proceeds did Ivory Hill Holdings disclose for FY2025?",
+    "company_tickers": [
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44H",
+        "period": "FY2025",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0a5a66ac441d13ae",
+    "family": "exact_lookup",
+    "question": "What was Ivory Hill Industries's FY2025 deferred revenue in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "deferred_revenue",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-4675954b857a631f",
+    "family": "entity_period",
+    "question": "Use Ivory Hill Industries, rather than Ivory Hill Holdings, and FY2025 rather than FY2024. What was product revenue in US dollars?",
+    "company_tickers": [
+      "F44I",
+      "F44H"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024",
+      "FY2026"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "product_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-f21a5e79428699a4",
+    "family": "unit_conversion",
+    "question": "What was Ivory Hill Industries's FY2025 tax expense, in US dollars?",
+    "company_tickers": [
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "tax_expense"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-7c4f565b1b8e53af",
+    "family": "cross_source",
+    "question": "For Ivory Hill Industries in FY2025, subtract acquisition spending in the investor presentation from asset sale proceeds in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "asset_sale_proceeds",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "acquisition_spending",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-224e568f10b35da4",
+    "family": "source_conflict",
+    "question": "What was Ivory Hill Industries's FY2025 interest expense, in millions of US dollars?",
+    "company_tickers": [
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "interest_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-07c07d33abe439d3",
+    "family": "insufficient",
+    "question": "What was Ivory Hill Industries's FY2025 grant proceeds, in millions of US dollars?",
+    "company_tickers": [
+      "F44I"
+    ],
+    "fiscal_periods": [
+      "FY2025",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F44I",
+        "period": "FY2025",
+        "metric": "grant_proceeds"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-0e58e15af541a11c",
+    "family": "exact_lookup",
+    "question": "What was Juniper Creek Holdings's FY2024 inventory balance in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-4fd68763d4f86260",
+    "family": "entity_period",
+    "question": "Use Juniper Creek Holdings, rather than Juniper Creek Industries, and FY2024 rather than FY2023. What was subscription revenue in US dollars?",
+    "company_tickers": [
+      "F46H",
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-7e9cebf81ae356fb",
+    "family": "unit_conversion",
+    "question": "What was Juniper Creek Holdings's FY2024 lease payments, in US dollars?",
+    "company_tickers": [
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-6a10e258d89935ec",
+    "family": "cross_source",
+    "question": "For Juniper Creek Holdings in FY2024, subtract dividend payments in the investor presentation from capital spending in the earnings call. Give the difference in US dollars.",
+    "company_tickers": [
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-88b73924255e5e2b",
+    "family": "source_conflict",
+    "question": "What was Juniper Creek Holdings's FY2024 foreign exchange impact, in millions of US dollars?",
+    "company_tickers": [
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-883db2508ea9092a",
+    "family": "insufficient",
+    "question": "What was Juniper Creek Holdings's FY2024 supplier prepayments, in millions of US dollars?",
+    "company_tickers": [
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46H",
+        "period": "FY2024",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-02595ed98ca214fe",
+    "family": "exact_lookup",
+    "question": "Give FY2024 inventory balance for Juniper Creek Industries in the annual filing. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "inventory_balance",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3af56db05c2e6d5a",
+    "family": "entity_period",
+    "question": "What was Juniper Creek Industries's FY2024 subscription revenue in US dollars? Exclude Juniper Creek Holdings's figures and FY2025 figures.",
+    "company_tickers": [
+      "F46I",
+      "F46H"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "subscription_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-126dbd03331c349f",
+    "family": "unit_conversion",
+    "question": "Give FY2024 lease payments for Juniper Creek Industries. Report the figure in US dollars.",
+    "company_tickers": [
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "lease_payments"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-41f803d63be9cf1a",
+    "family": "cross_source",
+    "question": "Calculate Juniper Creek Industries's FY2024 capital spending minus dividend payments, in US dollars. Use the earnings call and investor presentation respectively.",
+    "company_tickers": [
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "capital_spending",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "dividend_payments",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-c205f8083c57e9eb",
+    "family": "source_conflict",
+    "question": "Give FY2024 foreign exchange impact for Juniper Creek Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "foreign_exchange_impact"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-8cf370a716a24850",
+    "family": "insufficient",
+    "question": "Give FY2024 supplier prepayments for Juniper Creek Industries. Report the figure in millions of US dollars.",
+    "company_tickers": [
+      "F46I"
+    ],
+    "fiscal_periods": [
+      "FY2024",
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F46I",
+        "period": "FY2024",
+        "metric": "supplier_prepayments"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-fcb507667a8fc8c9",
+    "family": "exact_lookup",
+    "question": "In millions of US dollars, how much trade receivables did Juniper Field Holdings disclose for FY2023 in the annual filing?",
+    "company_tickers": [
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "trade_receivables",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-3de8e90f34077e81",
+    "family": "entity_period",
+    "question": "Resolve the company and period first: Juniper Field Holdings, FY2023. Report service revenue in US dollars, excluding Juniper Field Industries and FY2022.",
+    "company_tickers": [
+      "F47H",
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2022",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "service_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-2662c41d9ef068a8",
+    "family": "unit_conversion",
+    "question": "In millions of US dollars, how much restructuring expense did Juniper Field Holdings disclose for FY2023?",
+    "company_tickers": [
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "restructuring_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-2c79873a9305a50e",
+    "family": "cross_source",
+    "question": "What is the difference between Juniper Field Holdings's FY2023 bond issuance in the earnings call and debt repayment in the investor presentation, in US dollars? Subtract the latter from the former.",
+    "company_tickers": [
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "bond_issuance",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "debt_repayment",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-63be2fb07e36dbd8",
+    "family": "source_conflict",
+    "question": "In millions of US dollars, how much segment operating income did Juniper Field Holdings disclose for FY2023?",
+    "company_tickers": [
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "segment_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-9bc1112417effa8b",
+    "family": "insufficient",
+    "question": "In millions of US dollars, how much warranty reserve did Juniper Field Holdings disclose for FY2023?",
+    "company_tickers": [
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47H",
+        "period": "FY2023",
+        "metric": "warranty_reserve"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-6f6d10fa9d5c29f6",
+    "family": "exact_lookup",
+    "question": "What was Juniper Field Industries's FY2023 trade receivables in the annual filing, in millions of US dollars?",
+    "company_tickers": [
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "trade_receivables",
+        "source_type": "sec_filing"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-ac87771942a9cc09",
+    "family": "entity_period",
+    "question": "Use Juniper Field Industries, rather than Juniper Field Holdings, and FY2023 rather than FY2022. What was service revenue in US dollars?",
+    "company_tickers": [
+      "F47I",
+      "F47H"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2022",
+      "FY2024"
+    ],
+    "allowed_source_types": [
+      "sec_xbrl_companyfacts"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "service_revenue"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "financial-4c0374645f827dbd",
+    "family": "unit_conversion",
+    "question": "What was Juniper Field Industries's FY2023 restructuring expense, in millions of US dollars?",
+    "company_tickers": [
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "restructuring_expense"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-f949973a9d7d1f00",
+    "family": "cross_source",
+    "question": "For Juniper Field Industries in FY2023, subtract debt repayment in the investor presentation from bond issuance in the earnings call. Give the difference in thousands of US dollars.",
+    "company_tickers": [
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "bond_issuance",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "debt_repayment",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "financial-98f8e65a66f9b7c3",
+    "family": "source_conflict",
+    "question": "What was Juniper Field Industries's FY2023 segment operating income, in millions of US dollars?",
+    "company_tickers": [
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "segment_operating_income"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "financial-ec474aa7d9ed1560",
+    "family": "insufficient",
+    "question": "What was Juniper Field Industries's FY2023 warranty reserve, in millions of US dollars?",
+    "company_tickers": [
+      "F47I"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "transcript"
+    ],
+    "operation": "lookup",
+    "operands": [
+      {
+        "ticker": "F47I",
+        "period": "FY2023",
+        "metric": "warranty_reserve"
+      }
+    ],
+    "unit": "usd_millions"
+  }
+]

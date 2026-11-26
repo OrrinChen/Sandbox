@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000072333",
+  "issuer": "NORDSTROM INC",
+  "cutoff": "2022-07-01",
+  "projected_target_start": "2022-07-31",
+  "status": "complete",
+  "period_end": "2022-04-30",
+  "filing_date": "2022-06-03",
+  "text": {
+    "sector": "retail",
+    "cik": "0000072333",
+    "issuer": "NORDSTROM INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-06-03",
+        "text": "Our sales are typically higher in our second quarter, which usually includes most of our Anniversary Sale, and in the fourth quarter due to the holidays."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-06-03",
+        "text": "Revenues recognized from our beginning contract liability balance were $128 for the quarter ended April 30, 2022 and $114 for the quarter ended May 1, 2021."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-06-03",
+        "text": "We repurchased no shares of common stock during the first quarter of 2022 and we had $707 remaining in share repurchase capacity as of April 30, 2022."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-06-03",
+        "text": "First quarter net sales increased 19% over the first quarter of 2021."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-06-03",
+        "text": "Nordstrom Rack – Sales grew 10% versus last year, driven by increased store traffic, improved conversion and better in-stock levels."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-01-29",
+        "filed": "2022-03-11",
+        "reported_sales_usd": 4486000000,
+        "year_ago_reported_sales_usd": 3645000000,
+        "yoy_percent": "23.0727"
+      },
+      {
+        "quarter_end": "2022-04-30",
+        "filed": "2022-06-03",
+        "reported_sales_usd": 3569000000,
+        "year_ago_reported_sales_usd": 3009000000,
+        "yoy_percent": "18.6108"
+      }
+    ],
+    "status": "complete"
+  }
+}

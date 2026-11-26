@@ -8,6 +8,7 @@ from dataclasses import dataclass
 import json
 from pathlib import Path
 from typing import Iterable, Optional, Sequence
+from urllib.parse import quote
 
 from sandboxed_agent_eval_harness.agents import AgentBaseline, agent_baseline_by_name, default_agent_baselines
 from sandboxed_agent_eval_harness.sandbox import sandbox_backend_by_name
@@ -16,15 +17,18 @@ from sandboxed_agent_eval_harness.tasks import TaskSuite, default_task_suite, ta
 from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError, ToolRegistry, default_tool_registry
 from sandboxed_agent_eval_harness.tracing import TraceLogger
 from sandboxed_agent_eval_harness.validators import (
+    validate_a1_rag,
     validate_artifact_grounding,
     validate_citations,
     validate_constraints,
     validate_cost_latency,
     validate_cost_inclusion,
+    validate_financial_benchmark,
     validate_lookahead,
     validate_numeric,
     validate_policy,
     validate_pnl_consistency,
+    validate_rag_grounding,
     validate_risk_limits,
     validate_schema,
     validate_state,
@@ -166,7 +170,8 @@ def _run_single_trial(
     task_version: str = "tasks-v1",
 ) -> EvaluationRunRecord:
     run_id = f"{baseline.name}-{task.task_id}-{trial_index:03d}"
-    trace_path = traces_path / f"{run_id}.jsonl"
+    run_filename = quote(run_id, safe="")
+    trace_path = traces_path / f"{run_filename}.jsonl"
     if trace_path.exists():
         trace_path.unlink()
     logger = TraceLogger(
@@ -177,18 +182,21 @@ def _run_single_trial(
             "agent_id": baseline.name,
             "model": baseline.model,
             "prompt_version": baseline.prompt_version,
-            "tool_version": "tools-v1",
+            "tool_version": task.initial_state.get("tool_version", "tools-v1"),
             "tool_execution_mode": "fixture_adapter",
             "sandbox_backend": executor.sandbox_backend_name,
             "task_version": task_version,
             "fixture_version": str(task.initial_state.get("fixture_version", "fixtures-v1")),
+            **({"benchmark_split": task.initial_state["split"]} if "financial_benchmark" in task.validator_list else {}),
         },
     )
 
     plan = baseline.run(task, attempt_index=trial_index)
-    sandbox = executor.create_sandbox(task, workspaces_path / run_id)
+    workspace = workspaces_path / run_filename
+    sandbox = executor.create_sandbox(task, workspace)
     before_state = sandbox.snapshot()
     execution_errors: list[str] = []
+    tool_results: list[TraceEvent] = []
     trace_events: list[TraceEvent] = [
         logger.log_user_message(task.instruction),
         logger.log_agent_message(f"{baseline.name} started task {task.task_id}."),
@@ -197,10 +205,14 @@ def _run_single_trial(
         trace_events.append(logger.log_tool_call(tool_call.tool_name, tool_call.arguments))
         try:
             tool_result = executor.execute(tool_call.tool_name, tool_call.arguments, sandbox)
-            trace_events.append(logger.log_tool_result(tool_call.tool_name, tool_result))
+            result_event = logger.log_tool_result(tool_call.tool_name, tool_result)
+            tool_results.append(result_event)
+            trace_events.append(result_event)
         except ToolExecutionError as exc:
             execution_errors.append(str(exc))
             trace_events.append(logger.log_error("tool_execution_error", str(exc)))
+    plan = baseline.finalize(task, plan, tool_results)
+    trace_events.append(logger.log_final_answer(plan.final_answer))
     state_diff = before_state.diff(sandbox.snapshot()).to_dict()
     trace_events.append(logger.log_state_diff(state_diff))
     if plan.timed_out:
@@ -245,7 +257,7 @@ def _run_single_trial(
         "turns": plan.turns,
         "cost": plan.cost,
         "timed_out": plan.timed_out,
-        "workspace_path": str(workspaces_path / run_id),
+        "workspace_path": str(workspace),
     }
     RunResult(
         run_id=run_id,
@@ -342,6 +354,12 @@ def _validate_plan(
                     required_sources=task.hidden_expected_state.get("required_sources", []),
                 )
             )
+        elif validator_name == "rag_grounding":
+            results.append(validate_rag_grounding(final_answer, trace_events, task.hidden_expected_state["evidence_ids"]))
+        elif validator_name == "a1_rag":
+            results.append(validate_a1_rag(task.task_id, final_answer, trace_events))
+        elif validator_name == "financial_benchmark":
+            results.append(validate_financial_benchmark(task, final_answer, trace_events))
     return results
 
 

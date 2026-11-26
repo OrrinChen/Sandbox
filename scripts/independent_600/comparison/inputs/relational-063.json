@@ -1,0 +1,339 @@
+[
+  {
+    "task_id": "decision-returnable-crate-lifetime-cost",
+    "tool": "sqlite.query",
+    "instruction": "Report lifetime packaging cost per completed delivery turn for each crate design with at least one turn across its retired crates. Each crate row describes one physical asset. Purchase and repair amounts are lifetime costs in cents, recovery is cash received at disposal in cents, and turns counts successful deliveries. A null recovery means zero proceeds. Use the cited retirement policy to determine the population and how to treat a crate lost before its first delivery. Pool costs and turns within each design, then round cents per turn to the nearest whole cent, with half cents rounded up. All net lifetime costs are nonnegative. Return design_code, net_cost_cents, completed_turns, cents_per_turn, source_id in ascending binary design_code order. The retirement policy has exactly one evidence row. All fields except recovery_cents are nonnull. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crate_assets": {
+        "columns": [
+          "crate_code TEXT",
+          "design_code TEXT",
+          "asset_state TEXT",
+          "buy_cents INTEGER",
+          "repair_cents INTEGER",
+          "recovery_cents INTEGER",
+          "turns INTEGER"
+        ],
+        "rows": [
+          [
+            "C1",
+            "fold",
+            "retired",
+            900,
+            100,
+            200,
+            8
+          ],
+          [
+            "C2",
+            "fold",
+            "retired",
+            600,
+            0,
+            null,
+            0
+          ],
+          [
+            "C3",
+            "fold",
+            "active",
+            800,
+            80,
+            null,
+            20
+          ],
+          [
+            "C4",
+            "rigid",
+            "retired",
+            1000,
+            120,
+            100,
+            12
+          ],
+          [
+            "C5",
+            "rigid",
+            "retired",
+            400,
+            0,
+            30,
+            4
+          ],
+          [
+            "C6",
+            "slim",
+            "retired",
+            500,
+            0,
+            null,
+            0
+          ]
+        ]
+      },
+      "retirement_policy": {
+        "columns": [
+          "source_id TEXT",
+          "scope_state TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "RP-4",
+            "retired",
+            "Close the cost study at retirement. Charge each closed crate's purchase and repairs less disposal receipts to its design, even when the crate made no deliveries."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "design_code",
+      "net_cost_cents",
+      "completed_turns",
+      "cents_per_turn",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-reverse-bundle-credit-allocations",
+    "tool": "sqlite.query",
+    "instruction": "Produce credit_reversal.csv for a wholesale stationery ledger. Each bundle has a credit of credit_cents to allocate over unit_count units numbered from 1. The ledger gives each unit the integer quotient of credit_cents divided by unit_count, plus one cent on each of the first remainder units. A partial import booked the prefix through posted_units inclusive. Its audit file lists rejected unit numbers individually, sometimes more than once. For each distinct rejected unit in the booked prefix, reverse its actual booked credit. Ignore null, zero, negative and unposted unit numbers. Output bundle_key, reversed_units, reversal_cents ordered by bundle_key ascending, with a negative amount for removing credit. Include a bundle whenever any booked unit is rejected, even if its allocation was zero. bundle_key is unique in bundle_book, every audit key identifies a bundle, and only unit_no can be null. All money and counts are whole numbers, credit is nonnegative, unit_count is positive and posted_units is between zero and unit_count. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bundle_book": {
+        "columns": [
+          "bundle_key TEXT",
+          "credit_cents INTEGER",
+          "unit_count INTEGER",
+          "posted_units INTEGER"
+        ],
+        "rows": [
+          [
+            "folio",
+            103,
+            5,
+            4
+          ],
+          [
+            "pad",
+            2,
+            5,
+            5
+          ],
+          [
+            "roll",
+            60,
+            3,
+            0
+          ]
+        ]
+      },
+      "unit_audit": {
+        "columns": [
+          "bundle_key TEXT",
+          "unit_no INTEGER"
+        ],
+        "rows": [
+          [
+            "folio",
+            2
+          ],
+          [
+            "folio",
+            2
+          ],
+          [
+            "folio",
+            4
+          ],
+          [
+            "folio",
+            5
+          ],
+          [
+            "pad",
+            4
+          ],
+          [
+            "roll",
+            1
+          ],
+          [
+            "pad",
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bundle_key",
+      "reversed_units",
+      "reversal_cents"
+    ]
+  },
+  {
+    "task_id": "decision-rotating-closed-bay-allocation",
+    "tool": "sqlite.query",
+    "instruction": "Allocate one closed-sided loading bay per slot. Process slots in ascending slot_no, starting at 1. Slot numbers are unique and consecutive. Reservations belong only to their stated slot, with at most one per team per slot. The three teams rotate in the order A, B, C, A. Start slot 1 with A first. Scan from the current first team, wrapping once, and award the bay to the first team with a reservation whose load width fits through the bay door. Widths are in centimeters, and an exact fit qualifies. Skip absent and oversized reservations. After an award, start the next slot with the team immediately after the winner. If nobody qualifies, leave the bay unassigned and keep the same first team for the next slot. Equal widths confer no priority. Return slot_no and awarded_team in that order, including NULL for an unassigned bay, sorted by ascending slot_no. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bay_slot": {
+        "columns": [
+          "slot_no INTEGER",
+          "door_cm INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            100
+          ],
+          [
+            2,
+            100
+          ],
+          [
+            3,
+            80
+          ],
+          [
+            4,
+            100
+          ]
+        ]
+      },
+      "reservation": {
+        "columns": [
+          "slot_no INTEGER",
+          "team TEXT",
+          "load_cm INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            110
+          ],
+          [
+            1,
+            "B",
+            100
+          ],
+          [
+            2,
+            "B",
+            90
+          ],
+          [
+            2,
+            "C",
+            90
+          ],
+          [
+            3,
+            "C",
+            85
+          ],
+          [
+            4,
+            "A",
+            100
+          ],
+          [
+            4,
+            "B",
+            90
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "slot_no",
+      "awarded_team"
+    ]
+  },
+  {
+    "task_id": "decision-rotation-restore-exceptions",
+    "tool": "csv.export",
+    "instruction": "Produce the contents of restore_exceptions.csv for the rotations listed in sealed_roll. A row in copy_check is the final inspection of one archive copy. A usable copy must have the rotation's exact byte count and content tag together on that same copy. A NULL observation means the check did not establish that value. Tags are case-sensitive opaque text, and a zero-byte rotation is valid. Report each listed rotation lacking a usable copy, including rotations with no inspections. Ignore inspections of unlisted rotations. Output roll_id, required_bytes, inspected_copies in that order, counting all inspected copies of the rotation. Sort by required_bytes descending, then roll_id ascending. Roll IDs are unique in the inventory and copy IDs are unique in the inspections. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "copy_check": {
+        "columns": [
+          "copy_id TEXT",
+          "roll_id TEXT",
+          "seen_bytes INTEGER",
+          "seen_tag TEXT"
+        ],
+        "rows": [
+          [
+            "c1",
+            "r1",
+            90,
+            "fir"
+          ],
+          [
+            "c2",
+            "r1",
+            89,
+            "elm"
+          ],
+          [
+            "c3",
+            "r2",
+            90,
+            "ash"
+          ],
+          [
+            "c4",
+            "r2",
+            null,
+            "ash"
+          ],
+          [
+            "c5",
+            "r3",
+            0,
+            "nil"
+          ],
+          [
+            "c6",
+            "old",
+            60,
+            "oak"
+          ]
+        ]
+      },
+      "sealed_roll": {
+        "columns": [
+          "roll_id TEXT",
+          "required_bytes INTEGER",
+          "content_tag TEXT"
+        ],
+        "rows": [
+          [
+            "r1",
+            90,
+            "elm"
+          ],
+          [
+            "r2",
+            90,
+            "ash"
+          ],
+          [
+            "r3",
+            0,
+            "nil"
+          ],
+          [
+            "r4",
+            60,
+            "oak"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "roll_id",
+      "required_bytes",
+      "inspected_copies"
+    ]
+  }
+]

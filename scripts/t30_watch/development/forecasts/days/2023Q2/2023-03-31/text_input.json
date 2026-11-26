@@ -1,0 +1,49 @@
+{
+  "cutoff": "2023-03-31",
+  "sectors": {
+    "2023Q2/retail-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000018255",
+          "issuer": "CATO CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2023-04-30",
+          "latest_filed_period_end": "2023-01-28",
+          "records": [
+            {
+              "id": "A",
+              "title": "FORM 10K",
+              "date": "2023-03-23",
+              "text": "Retail sales decreased by 1.2% to $752.4 million in fiscal 2022 compared to $761.4 million in fiscal 2021."
+            },
+            {
+              "id": "B",
+              "title": "FORM 10K",
+              "date": "2023-03-23",
+              "text": "The decrease in retail sales in fiscal 2022 was primarily due to a 1% decrease in same-store sales and sales from closed stores in 2021, partially offset by stores opened in 2022."
+            },
+            {
+              "id": "C",
+              "title": "FORM 10K",
+              "date": "2023-03-23",
+              "text": "The decrease of $46.4 million for fiscal 2022 compared to fiscal 2021 is primarily due to lower net operating income and a decrease in accounts payable and accrued bonus and benefits, partially offset by lower accounts receivable and merchandise inventories."
+            },
+            {
+              "id": "D",
+              "title": "FORM 10K",
+              "date": "2023-03-23",
+              "text": "The current high inflationary environment continues to impact the Company through higher operating costs, including costs to ship our products to stores and customers, operating supplies, wages, and fuel."
+            },
+            {
+              "id": "E",
+              "title": "FORM 10K",
+              "date": "2023-03-23",
+              "text": "Cash provided by operating activities during fiscal 2022 was $13.4 million as compared to $59.8 million provided in fiscal 2021 and $30.7 million used in fiscal 2020."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,349 @@
+[
+  {
+    "task_id": "decision-interline-through-ticket-change",
+    "tool": "sqlite.query",
+    "instruction": "Price a date change for one passenger flying the two coupons of ticket T together. Each offer is a complete replacement itinerary covering both coupons. Its through fare is the price for the entire trip in cents. Both carriers' change rules must permit the change. For an eligible offer, the passenger pays the positive increase over the original through fare, or zero if the fare fell, plus the larger of the two carriers' change fees. Charge that fee once per ticket. Choose the offer with the lowest amount due, breaking ties by offer_id in ascending binary text order. Return one row with offer_id, fare_increase_cents, change_fee_cents, and due_cents in that order. Each offer has exactly one rule for each of its two carriers, and at least one offer is eligible. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "coupon_rule": {
+        "columns": [
+          "offer_id TEXT",
+          "carrier TEXT",
+          "change_allowed INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "Elm",
+            1,
+            300
+          ],
+          [
+            "A",
+            "Fir",
+            1,
+            400
+          ],
+          [
+            "B",
+            "Elm",
+            1,
+            700
+          ],
+          [
+            "B",
+            "Fir",
+            1,
+            800
+          ],
+          [
+            "C",
+            "Elm",
+            1,
+            100
+          ],
+          [
+            "C",
+            "Fir",
+            0,
+            0
+          ]
+        ]
+      },
+      "offer": {
+        "columns": [
+          "offer_id TEXT",
+          "ticket_id TEXT",
+          "through_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "T",
+            10600
+          ],
+          [
+            "B",
+            "T",
+            9900
+          ],
+          [
+            "C",
+            "T",
+            9500
+          ]
+        ]
+      },
+      "ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "original_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "T",
+            10000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "offer_id",
+      "fare_increase_cents",
+      "change_fee_cents",
+      "due_cents"
+    ]
+  },
+  {
+    "task_id": "decision-interval-energy-netting",
+    "tool": "sqlite.query",
+    "instruction": "Calculate each operating day's imbalance invoice. Each reading gives a signed deviation in whole kWh and an integer minute from midnight (0 through 1439). Positive means surplus and negative means shortfall. The permitted netting intervals start at midnight and last 15 minutes each. Minute 15 begins the second interval. Sum all deviations in the same day and interval, including readings tied on minute. Charge 2 cents per net surplus kWh and 5 cents per net shortfall kWh. An empty or balanced interval costs zero. Add the interval charges for each day with readings. Return day_no and penalty_cents in that order, one row per day sorted by ascending day_no. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "reading": {
+        "columns": [
+          "day_no INTEGER",
+          "minute_no INTEGER",
+          "deviation_kwh INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            0,
+            8
+          ],
+          [
+            1,
+            14,
+            -3
+          ],
+          [
+            1,
+            15,
+            -6
+          ],
+          [
+            2,
+            10,
+            4
+          ],
+          [
+            2,
+            10,
+            -4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "day_no",
+      "penalty_cents"
+    ]
+  },
+  {
+    "task_id": "decision-inventory-step-up-by-production-stage",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the acquisition-date fair value and signed carrying-value adjustment for each acquired inventory lot. Quantities are units. All monetary inputs are integer cents per unit. For RAW lots, use the replacement cost in the applicable supplier quote. For FIN and WIP lots, start with the quoted selling price of one finished unit, deduct selling costs and the profit allowance for selling effort, and also deduct the lot's remaining completion cost and profit allowance for completion effort. FIN lots have zero remaining completion amounts. Multiply by quantity before subtracting the lot's total carrying value. For each lot use the newest quote for its item and required quote kind (REPLACE for RAW, SELL otherwise) dated on or before the common valuation date of 2026-03-31. Dates are ISO calendar dates. For same-day ties choose the lexicographically smallest source_id under binary ordering. Each lot has an eligible quote. The evidence text is the supplier's or buyer's original price statement, and unit_cents is its numeric transcription. Cite the selected statement by its actual source_id. A null selling cost or selling profit allowance means zero. There are no other nulls. Output lot_id, source_id, fair_value_cents, adjustment_cents in ascending binary lot_id order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "price_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "item_code TEXT",
+          "quote_kind TEXT",
+          "quote_day TEXT",
+          "unit_cents INTEGER",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            "Q1",
+            "reed",
+            "REPLACE",
+            "2026-03-20",
+            90,
+            "We can replenish reed at 90 cents per unit."
+          ],
+          [
+            "Q2",
+            "reed",
+            "SELL",
+            "2026-03-30",
+            115,
+            "We will buy reed at 115 cents per unit."
+          ],
+          [
+            "Q3",
+            "tray",
+            "SELL",
+            "2026-03-12",
+            450,
+            "We bid 450 cents per finished tray."
+          ],
+          [
+            "Q4",
+            "tray",
+            "SELL",
+            "2026-03-31",
+            480,
+            "We offer 480 cents per finished tray."
+          ],
+          [
+            "Q5",
+            "tray",
+            "SELL",
+            "2026-03-31",
+            510,
+            "Our bid is 510 cents per finished tray."
+          ],
+          [
+            "Q6",
+            "tray",
+            "SELL",
+            "2026-04-01",
+            520,
+            "We now offer 520 cents per finished tray."
+          ]
+        ]
+      },
+      "stock_lot": {
+        "columns": [
+          "lot_id TEXT",
+          "item_code TEXT",
+          "stage_code TEXT",
+          "qty INTEGER",
+          "book_unit INTEGER",
+          "finish_cost INTEGER",
+          "finish_profit INTEGER",
+          "sell_cost INTEGER",
+          "sell_profit INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "reed",
+            "RAW",
+            8,
+            95,
+            0,
+            0,
+            null,
+            null
+          ],
+          [
+            "B",
+            "tray",
+            "FIN",
+            5,
+            350,
+            0,
+            0,
+            28,
+            12
+          ],
+          [
+            "C",
+            "tray",
+            "WIP",
+            4,
+            270,
+            80,
+            20,
+            28,
+            12
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "lot_id",
+      "source_id",
+      "fair_value_cents",
+      "adjustment_cents"
+    ]
+  },
+  {
+    "task_id": "decision-isolate-main-with-overlapping-outages",
+    "tool": "sqlite.query",
+    "instruction": "A main has exactly two independent feed paths, east and west. Close exactly one candidate valve on each path to isolate the main. Closing a valve interrupts every service block listed for it in valve_effect. A block affected by both closures experiences one outage. Minimize the number of distinct service connections interrupted, then minimize the sum of the two valves’ turn_minutes (minutes of operator work), then prefer the alphabetically first east valve code followed by the alphabetically first west valve code under SQLite BINARY ordering. Return one row with columns east_valve, west_valve, connections_out, work_minutes. Valve codes and block codes are unique in their respective catalogs. Effect pairs are unique and reference those catalogs. A valve with no effect rows interrupts zero service connections. All values are non-null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "service_block": {
+        "columns": [
+          "block_code TEXT",
+          "connections INTEGER"
+        ],
+        "rows": [
+          [
+            "mill",
+            8
+          ],
+          [
+            "dock",
+            5
+          ],
+          [
+            "yard",
+            6
+          ]
+        ]
+      },
+      "valve_effect": {
+        "columns": [
+          "valve_code TEXT",
+          "block_code TEXT"
+        ],
+        "rows": [
+          [
+            "E1",
+            "mill"
+          ],
+          [
+            "E2",
+            "dock"
+          ],
+          [
+            "W1",
+            "mill"
+          ],
+          [
+            "W2",
+            "yard"
+          ]
+        ]
+      },
+      "valve_option": {
+        "columns": [
+          "valve_code TEXT",
+          "feed_path TEXT",
+          "turn_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "E1",
+            "east",
+            3
+          ],
+          [
+            "E2",
+            "east",
+            2
+          ],
+          [
+            "W1",
+            "west",
+            3
+          ],
+          [
+            "W2",
+            "west",
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_valve",
+      "west_valve",
+      "connections_out",
+      "work_minutes"
+    ]
+  }
+]

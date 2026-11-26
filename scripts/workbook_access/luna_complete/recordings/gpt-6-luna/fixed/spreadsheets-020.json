@@ -1,0 +1,931 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "ed3e03059a80526254576b2946495f17a7c6a480d4638a3b9047f89616c84218",
+    "fd566d72623d61e3673aa860ac14dbcbc14e7f139e23558c29cdd32be2cc538c",
+    "0f8dcc93bad48bb2944113aa2be6f28d6e113d0c94c55972fc519890277bcd73"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-56451",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:F7",
+            "formula": "=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),COLUMN()-COLUMN($A$1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:F7",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "NAME"
+              ],
+              [
+                "B1",
+                "transport"
+              ],
+              [
+                "C1",
+                "weight"
+              ],
+              [
+                "D1",
+                "location"
+              ],
+              [
+                "E1",
+                "food"
+              ],
+              [
+                "F1",
+                "height"
+              ],
+              [
+                "A2",
+                "John "
+              ],
+              [
+                "B2",
+                "bike"
+              ],
+              [
+                "C2",
+                "bike"
+              ],
+              [
+                "D2",
+                "bike"
+              ],
+              [
+                "E2",
+                "bike"
+              ],
+              [
+                "F2",
+                "bike"
+              ],
+              [
+                "A3",
+                "Mary"
+              ],
+              [
+                "B3",
+                "car"
+              ],
+              [
+                "C3",
+                "car"
+              ],
+              [
+                "D3",
+                "car"
+              ],
+              [
+                "E3",
+                "car"
+              ],
+              [
+                "F3",
+                "car"
+              ],
+              [
+                "A4",
+                "Todd"
+              ],
+              [
+                "B4",
+                "walk"
+              ],
+              [
+                "C4",
+                "walk"
+              ],
+              [
+                "D4",
+                "walk"
+              ],
+              [
+                "E4",
+                "walk"
+              ],
+              [
+                "F4",
+                "walk"
+              ],
+              [
+                "A5",
+                "Alex"
+              ],
+              [
+                "B5",
+                "0"
+              ],
+              [
+                "C5",
+                "0"
+              ],
+              [
+                "D5",
+                "0"
+              ],
+              [
+                "E5",
+                "0"
+              ],
+              [
+                "F5",
+                "0"
+              ],
+              [
+                "A6",
+                "Sam"
+              ],
+              [
+                "B6",
+                "bike"
+              ],
+              [
+                "C6",
+                "bike"
+              ],
+              [
+                "D6",
+                "bike"
+              ],
+              [
+                "E6",
+                "bike"
+              ],
+              [
+                "F6",
+                "bike"
+              ],
+              [
+                "A7",
+                "Rob"
+              ],
+              [
+                "B7",
+                "bike"
+              ],
+              [
+                "C7",
+                "bike"
+              ],
+              [
+                "D7",
+                "bike"
+              ],
+              [
+                "E7",
+                "bike"
+              ],
+              [
+                "F7",
+                "bike"
+              ]
+            ],
+            "total": 42,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet 2",
+            "range": "A1:F7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet 2",
+            "range": "A1:F7",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "NAME"
+              ],
+              [
+                "B1",
+                "transport"
+              ],
+              [
+                "C1",
+                "weight"
+              ],
+              [
+                "D1",
+                "location"
+              ],
+              [
+                "E1",
+                "food"
+              ],
+              [
+                "F1",
+                "height"
+              ],
+              [
+                "A2",
+                "John "
+              ],
+              [
+                "B2",
+                "bike"
+              ],
+              [
+                "C2",
+                "150"
+              ],
+              [
+                "D2",
+                "north"
+              ],
+              [
+                "E2",
+                "high"
+              ],
+              [
+                "F2",
+                "180"
+              ],
+              [
+                "A3",
+                "Mary"
+              ],
+              [
+                "B3",
+                "car"
+              ],
+              [
+                "D3",
+                "south"
+              ],
+              [
+                "E3",
+                "high"
+              ],
+              [
+                "F3",
+                "176"
+              ],
+              [
+                "A4",
+                "Todd"
+              ],
+              [
+                "B4",
+                "walk"
+              ],
+              [
+                "C4",
+                "170"
+              ],
+              [
+                "D4",
+                "east"
+              ],
+              [
+                "E4",
+                "low"
+              ],
+              [
+                "F4",
+                "189"
+              ],
+              [
+                "A5",
+                "Alex"
+              ],
+              [
+                "C5",
+                "170"
+              ],
+              [
+                "D5",
+                "south"
+              ],
+              [
+                "E5",
+                "high"
+              ],
+              [
+                "F5",
+                "145"
+              ],
+              [
+                "A6",
+                "Sam"
+              ],
+              [
+                "B6",
+                "bike"
+              ],
+              [
+                "C6",
+                "120"
+              ],
+              [
+                "D6",
+                "east"
+              ],
+              [
+                "F6",
+                "177"
+              ],
+              [
+                "A7",
+                "Rob"
+              ],
+              [
+                "B7",
+                "bike"
+              ],
+              [
+                "C7",
+                "190"
+              ],
+              [
+                "D7",
+                "north"
+              ],
+              [
+                "E7",
+                "moderate"
+              ],
+              [
+                "F7",
+                "187"
+              ]
+            ],
+            "total": 39,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 97425,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1476,
+        "reasoning_output_tokens": 887
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56599",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "formulas": {
+          "B2": "=IF(M5=\"\",\"not found - please re-enter\",IFERROR(INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=M5)*($H$6:$H$30>=M5),0),0)),\"not found - please re-enter\")"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:M6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:M6",
+            "range_size": 78,
+            "cells": [
+              [
+                "G5",
+                "Slip fm"
+              ],
+              [
+                "H5",
+                "slip to"
+              ],
+              [
+                "I5",
+                "total slips in book"
+              ],
+              [
+                "J5",
+                "BookNo"
+              ],
+              [
+                "G6",
+                "5871001"
+              ],
+              [
+                "H6",
+                "5871010"
+              ],
+              [
+                "I6",
+                "10"
+              ],
+              [
+                "J6",
+                "477101"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 70
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:J5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:J5",
+            "range_size": 50,
+            "cells": [
+              [
+                "G5",
+                "Slip fm"
+              ],
+              [
+                "H5",
+                "slip to"
+              ],
+              [
+                "I5",
+                "total slips in book"
+              ],
+              [
+                "J5",
+                "BookNo"
+              ]
+            ],
+            "total": 4,
+            "truncated": false,
+            "blank_count": 46
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "find",
+            "sheet": "Sheet1",
+            "text": "slip",
+            "exact": false
+          },
+          "result": {
+            "ok": true,
+            "op": "find",
+            "sheet": "Sheet1",
+            "cells": [
+              [
+                "G5",
+                "Slip fm"
+              ],
+              [
+                "H5",
+                "slip to"
+              ],
+              [
+                "I5",
+                "total slips in book"
+              ]
+            ],
+            "total": 3,
+            "truncated": false
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 3,
+      "usage": {
+        "input_tokens": 97425,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1476,
+        "reasoning_output_tokens": 887
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56915",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "B18:E23",
+            "formula": "=IFERROR(ROUND(INDEX(DATA!$B$14:$AC$24,MATCH($A18,DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$1)),2),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A12:AC13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A12:AC13",
+            "range_size": 58,
+            "cells": [
+              [
+                "A12",
+                " "
+              ],
+              [
+                "B12",
+                "Total"
+              ],
+              [
+                "F12",
+                "V - 6666"
+              ],
+              [
+                "J12",
+                "D - 1111"
+              ],
+              [
+                "N12",
+                "D - 2222"
+              ],
+              [
+                "R12",
+                "D - 3333"
+              ],
+              [
+                "V12",
+                "D - 4444"
+              ],
+              [
+                "Z12",
+                "D - 5555"
+              ],
+              [
+                "A13",
+                " "
+              ],
+              [
+                "B13",
+                "January"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 48
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A14:I23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A14:I23",
+            "range_size": 90,
+            "cells": [
+              [
+                "A23",
+                "        STUFF 2"
+              ],
+              [
+                "B23",
+                "-3390.80544821547"
+              ],
+              [
+                "C23",
+                "-0.00179393773197299"
+              ],
+              [
+                "D23",
+                "-3390.80544821547"
+              ],
+              [
+                "E23",
+                "-0.00179393773197299"
+              ],
+              [
+                "F23",
+                "-95.6776850726545"
+              ],
+              [
+                "G23",
+                "-0.00170506181217196"
+              ],
+              [
+                "H23",
+                "-95.6776850726545"
+              ],
+              [
+                "I23",
+                "-0.00170506181217196"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 81
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A14:I24"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A14:I24",
+            "range_size": 99,
+            "cells": [
+              [
+                "A23",
+                "        STUFF 2"
+              ],
+              [
+                "B23",
+                "-3390.80544821547"
+              ],
+              [
+                "C23",
+                "-0.00179393773197299"
+              ],
+              [
+                "D23",
+                "-3390.80544821547"
+              ],
+              [
+                "E23",
+                "-0.00179393773197299"
+              ],
+              [
+                "F23",
+                "-95.6776850726545"
+              ],
+              [
+                "G23",
+                "-0.00170506181217196"
+              ],
+              [
+                "H23",
+                "-95.6776850726545"
+              ],
+              [
+                "I23",
+                "-0.00170506181217196"
+              ],
+              [
+                "A24",
+                "        STUFF 3"
+              ],
+              [
+                "B24",
+                "128564.289829883"
+              ],
+              [
+                "C24",
+                "0.0680181549877828"
+              ],
+              [
+                "D24",
+                "128564.289829883"
+              ],
+              [
+                "E24",
+                "0.0680181549877828"
+              ],
+              [
+                "F24",
+                "3658.20212926082"
+              ],
+              [
+                "G24",
+                "0.0651924296357323"
+              ],
+              [
+                "H24",
+                "3658.20212926082"
+              ],
+              [
+                "I24",
+                "0.0651924296357323"
+              ]
+            ],
+            "total": 18,
+            "truncated": false,
+            "blank_count": 81
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "COVER",
+            "range": "A18:E23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "COVER",
+            "range": "A18:E23",
+            "range_size": 30,
+            "cells": [
+              [
+                "A18",
+                "    TOTAL: REVENUE"
+              ],
+              [
+                "B18",
+                "#N/A"
+              ],
+              [
+                "C18",
+                "#N/A"
+              ],
+              [
+                "D18",
+                "#N/A"
+              ],
+              [
+                "E18",
+                "#N/A"
+              ],
+              [
+                "A19",
+                "    COST OF GOODS SOLD"
+              ],
+              [
+                "A20",
+                "      STUFF"
+              ],
+              [
+                "A21",
+                "        STUFF 1"
+              ],
+              [
+                "B21",
+                "1705.6561549394"
+              ],
+              [
+                "C21",
+                "#N/A"
+              ],
+              [
+                "D21",
+                "#N/A"
+              ],
+              [
+                "E21",
+                "#N/A"
+              ],
+              [
+                "A22",
+                "        STUFF 2"
+              ],
+              [
+                "B22",
+                "-95.6776850726545"
+              ],
+              [
+                "C22",
+                "#N/A"
+              ],
+              [
+                "D22",
+                "#N/A"
+              ],
+              [
+                "E22",
+                "#N/A"
+              ],
+              [
+                "A23",
+                "        STUFF 3"
+              ],
+              [
+                "B23",
+                "3658.20212926082"
+              ],
+              [
+                "C23",
+                "#N/A"
+              ],
+              [
+                "D23",
+                "#N/A"
+              ],
+              [
+                "E23",
+                "#N/A"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 8
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 97425,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1476,
+        "reasoning_output_tokens": 887
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56995",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D5",
+            "formula": "=IF(B2=\"\",\"Not Attempt\",1-C2/B2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 97425,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1476,
+        "reasoning_output_tokens": 887
+      },
+      "model_calls": 3
+    }
+  ]
+}

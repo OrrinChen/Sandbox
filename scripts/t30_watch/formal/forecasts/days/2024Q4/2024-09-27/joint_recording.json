@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25070,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 188,
+    "reasoning_output_tokens": 10
+  },
+  "thread": "01a20d90-71c4-7b12-bd94-81bad7d5d229",
+  "packet_sha256": "4f9974c6a89a089f049481639b0a76d6b4336e5de959e7f44bf300997b0757aa",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q4/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/retail-3\",\"alerts\":[{\"cik\":\"0001634117\",\"reason\":\"July revenue fell just 0.28% year over year. Higher comparable-store sales and 32% growth in First Day programs helped offset store closures (A, B). I expect those gains to keep the intervening quarter above -5%. For the quarter starting October 27, I forecast a decline of at least 5% if fewer stores and tighter inventory funding erode that offset. Lower borrowing availability had already delayed vendor payments for inventory purchases (C).\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-3",
+        "alerts": [
+          {
+            "cik": "0001634117",
+            "reason": "July revenue fell just 0.28% year over year. Higher comparable-store sales and 32% growth in First Day programs helped offset store closures (A, B). I expect those gains to keep the intervening quarter above -5%. For the quarter starting October 27, I forecast a decline of at least 5% if fewer stores and tighter inventory funding erode that offset. Lower borrowing availability had already delayed vendor payments for inventory purchases (C)."
+          }
+        ]
+      }
+    ]
+  }
+}

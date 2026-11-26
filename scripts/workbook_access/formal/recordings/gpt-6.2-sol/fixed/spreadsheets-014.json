@@ -1,0 +1,812 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "82b087786316d2b950cd5135257922cec1e9420db049814a7a18f4a545df58ad",
+    "e79b4d6c24565b217da3b9206fc9bfea2623fc95b5c790ca8b028535a5792068",
+    "41aee1d6ba8176f959194a8d3e55129900f990813c153684ea9c2f26b1fdedf4"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-48983",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "M6:S11",
+            "formula": "=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "L5:S11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "L5:S11",
+            "range_size": 56,
+            "cells": [
+              [
+                "M5",
+                "TWC"
+              ],
+              [
+                "N5",
+                "LAD"
+              ],
+              [
+                "O5",
+                "HDW"
+              ],
+              [
+                "P5",
+                "ADW"
+              ],
+              [
+                "Q5",
+                "FFI"
+              ],
+              [
+                "R5",
+                "SPD"
+              ],
+              [
+                "S5",
+                "HDD"
+              ],
+              [
+                "L6",
+                "Persil"
+              ],
+              [
+                "L7",
+                "Silan"
+              ],
+              [
+                "L8",
+                "Pur"
+              ],
+              [
+                "L9",
+                "Bref"
+              ],
+              [
+                "L10",
+                "Bloo"
+              ],
+              [
+                "L11",
+                "Clin"
+              ]
+            ],
+            "total": 13,
+            "truncated": false,
+            "blank_count": 43
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "B5:I14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "B5:I14",
+            "range_size": 80,
+            "cells": [
+              [
+                "C5",
+                "HDD"
+              ],
+              [
+                "D5",
+                "SPD"
+              ],
+              [
+                "E5",
+                "FFI"
+              ],
+              [
+                "F5",
+                "ADW"
+              ],
+              [
+                "G5",
+                "HDW"
+              ],
+              [
+                "H5",
+                "LAD"
+              ],
+              [
+                "I5",
+                "TWC"
+              ],
+              [
+                "B6",
+                "Persil"
+              ],
+              [
+                "E6",
+                "2005"
+              ],
+              [
+                "B7",
+                "Bref"
+              ],
+              [
+                "C7",
+                "730"
+              ],
+              [
+                "H7",
+                "4575"
+              ],
+              [
+                "B8",
+                "Cif"
+              ],
+              [
+                "C8",
+                "3772"
+              ],
+              [
+                "H8",
+                "3867"
+              ],
+              [
+                "I8",
+                "3121"
+              ],
+              [
+                "B9",
+                "Clin"
+              ],
+              [
+                "I9",
+                "2269"
+              ],
+              [
+                "B10",
+                "Coccolino"
+              ],
+              [
+                "E10",
+                "678"
+              ],
+              [
+                "B11",
+                "Domestos"
+              ],
+              [
+                "C11",
+                "25"
+              ],
+              [
+                "H11",
+                "8416"
+              ],
+              [
+                "B12",
+                "Finish"
+              ],
+              [
+                "F12",
+                "7647"
+              ],
+              [
+                "B13",
+                "Jar"
+              ],
+              [
+                "F13",
+                "5922"
+              ],
+              [
+                "G13",
+                "2903"
+              ],
+              [
+                "B14",
+                "Lenor"
+              ],
+              [
+                "E14",
+                "7636"
+              ]
+            ],
+            "total": 30,
+            "truncated": false,
+            "blank_count": 50
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "B15:I19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "B15:I19",
+            "range_size": 40,
+            "cells": [
+              [
+                "B15",
+                "Pur"
+              ],
+              [
+                "G15",
+                "8913"
+              ],
+              [
+                "B16",
+                "Silan"
+              ],
+              [
+                "E16",
+                "5531"
+              ],
+              [
+                "B17",
+                "TS"
+              ],
+              [
+                "G17",
+                "2502"
+              ],
+              [
+                "H17",
+                "7343"
+              ],
+              [
+                "B18",
+                "Dylon"
+              ],
+              [
+                "H18",
+                "18217"
+              ],
+              [
+                "B19",
+                "Bloo"
+              ],
+              [
+                "I19",
+                "1230"
+              ]
+            ],
+            "total": 11,
+            "truncated": false,
+            "blank_count": 29
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 3,
+      "usage": {
+        "input_tokens": 65124,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1973,
+        "reasoning_output_tokens": 1257
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49246",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "B3:B14",
+            "formula": "=IF(A3=\"\",B2,VLOOKUP(A3,$J$2:$K$4,2,0))"
+          }
+        ],
+        "formulas": {
+          "B2": "=IF(A2=\"\",\"\",VLOOKUP(A2,$J$2:$K$4,2,0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:B14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:B14",
+            "range_size": 26,
+            "cells": [
+              [
+                "A2",
+                "1062929"
+              ],
+              [
+                "B2",
+                "Restaurant A"
+              ],
+              [
+                "B3",
+                "#N/A"
+              ],
+              [
+                "B4",
+                "#N/A"
+              ],
+              [
+                "B5",
+                "#N/A"
+              ],
+              [
+                "A6",
+                "7195746"
+              ],
+              [
+                "B6",
+                "Restaurant B"
+              ],
+              [
+                "B7",
+                "#N/A"
+              ],
+              [
+                "B8",
+                "#N/A"
+              ],
+              [
+                "B9",
+                "#N/A"
+              ],
+              [
+                "B10",
+                "#N/A"
+              ],
+              [
+                "A11",
+                "7195753"
+              ],
+              [
+                "B11",
+                "Restaurant C"
+              ],
+              [
+                "B12",
+                "#N/A"
+              ],
+              [
+                "B13",
+                "#N/A"
+              ],
+              [
+                "B14",
+                "#N/A"
+              ]
+            ],
+            "total": 16,
+            "truncated": false,
+            "blank_count": 10
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 65124,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1973,
+        "reasoning_output_tokens": 1257
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49300",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C3",
+            "formula": "=1*INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Data",
+            "range": "B2:N4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Data",
+            "range": "B2:N4",
+            "range_size": 39,
+            "cells": [
+              [
+                "C2",
+                "1"
+              ],
+              [
+                "D2",
+                "2"
+              ],
+              [
+                "E2",
+                "3"
+              ],
+              [
+                "F2",
+                "4"
+              ],
+              [
+                "G2",
+                "5"
+              ],
+              [
+                "H2",
+                "6"
+              ],
+              [
+                "I2",
+                "7"
+              ],
+              [
+                "J2",
+                "8"
+              ],
+              [
+                "K2",
+                "9"
+              ],
+              [
+                "L2",
+                "10"
+              ],
+              [
+                "M2",
+                "11"
+              ],
+              [
+                "N2",
+                "12"
+              ],
+              [
+                "B3",
+                "BM"
+              ],
+              [
+                "C3",
+                "5"
+              ],
+              [
+                "D3",
+                "10"
+              ],
+              [
+                "E3",
+                "15"
+              ],
+              [
+                "F3",
+                "20"
+              ],
+              [
+                "G3",
+                "20"
+              ],
+              [
+                "H3",
+                "25"
+              ],
+              [
+                "I3",
+                "30"
+              ],
+              [
+                "J3",
+                "31"
+              ],
+              [
+                "K3",
+                "32"
+              ],
+              [
+                "L3",
+                "33"
+              ],
+              [
+                "M3",
+                "34"
+              ],
+              [
+                "N3",
+                "35"
+              ]
+            ],
+            "total": 25,
+            "truncated": false,
+            "blank_count": 14
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "find",
+            "sheet": "Data",
+            "text": "DM",
+            "exact": true
+          },
+          "result": {
+            "ok": true,
+            "op": "find",
+            "sheet": "Data",
+            "cells": [],
+            "total": 0,
+            "truncated": false
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Data",
+            "range": "B4:AY4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Data",
+            "range": "B4:AY4",
+            "range_size": 50,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 50
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 3,
+      "usage": {
+        "input_tokens": 65124,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1973,
+        "reasoning_output_tokens": 1257
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49455",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "formulas": {
+          "H3": "=SUMPRODUCT(--($D$6:$D$208<>\"\"),--ISNUMBER(MATCH($D$6:$D$208,$K$1:$K$9,0)),--((ISNUMBER($H$6:$H$208)*($H$6:$H$208>=1)*($H$6:$H$208<2958466)+ISNUMBER(IFERROR(DATEVALUE($H$6:$H$208),DATEVALUE(MID($H$6:$H$208,4,2)&\"/\"&LEFT($H$6:$H$208,2)&\"/\"&MID($H$6:$H$208,7,4)))))>0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "H5:H208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "H5:H208",
+            "range_size": 204,
+            "cells": [
+              [
+                "H5",
+                "End Date"
+              ],
+              [
+                "H7",
+                "07/10/21"
+              ],
+              [
+                "H8",
+                "04/10/21"
+              ],
+              [
+                "H10",
+                "12/10/21"
+              ],
+              [
+                "H11",
+                "26/10/21"
+              ],
+              [
+                "H13",
+                "28/10/21"
+              ],
+              [
+                "H15",
+                "19/10/21"
+              ],
+              [
+                "H24",
+                "20/10/21"
+              ],
+              [
+                "H30",
+                "05/10/21"
+              ],
+              [
+                "H31",
+                "28/10/21"
+              ],
+              [
+                "H33",
+                "27/10/21"
+              ],
+              [
+                "H35",
+                "06/10/21"
+              ],
+              [
+                "H37",
+                "21/10/21"
+              ],
+              [
+                "H39",
+                "19/10/21"
+              ],
+              [
+                "H44",
+                "20/10/21"
+              ],
+              [
+                "H45",
+                "21/10/21"
+              ],
+              [
+                "H48",
+                "19/10/21"
+              ],
+              [
+                "H52",
+                "28/10/21"
+              ],
+              [
+                "H54",
+                "27/10/21"
+              ],
+              [
+                "H55",
+                "14/10/21"
+              ],
+              [
+                "H57",
+                "26/10/21"
+              ],
+              [
+                "H58",
+                "05/10/21"
+              ],
+              [
+                "H62",
+                "06/10/21"
+              ],
+              [
+                "H63",
+                "07/10/21"
+              ],
+              [
+                "H67",
+                "27/10/21"
+              ],
+              [
+                "H68",
+                "19/10/21"
+              ],
+              [
+                "H70",
+                "28/10/21"
+              ],
+              [
+                "H72",
+                "21/10/21"
+              ]
+            ],
+            "total": 28,
+            "truncated": false,
+            "blank_count": 176
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C198:K208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C198:K208",
+            "range_size": 99,
+            "cells": [
+              [
+                "C207",
+                "224161"
+              ],
+              [
+                "C208",
+                "221405"
+              ]
+            ],
+            "total": 2,
+            "truncated": false,
+            "blank_count": 97
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 65124,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1973,
+        "reasoning_output_tokens": 1257
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000815556",
+  "issuer": "FASTENAL CO",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "complete",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-02-08",
+  "text": {
+    "sector": "retail",
+    "cik": "0000815556",
+    "issuer": "FASTENAL CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-02-08",
+        "text": "Net sales increased $313.7, or 5.9%, in 2020 relative to 2019."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-02-08",
+        "text": "The increase in net sales noted above for 2020 was a function primarily of higher unit sales for safety products, specifically pandemic-related sales of PPE."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-02-08",
+        "text": "Second, in the third and fourth quarters of 2020 certain pandemic related products became oversupplied, and profits on our inventory fell (masks) while other products were in such short supply that cost rose (gloves)."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-02-08",
+        "text": "The effect of higher prices during the period were not material."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-02-08",
+        "text": "During 2020 and 2019, net earnings increased, primarily due to stronger sales and higher operating profits, and were only partly offset by an increase in income tax expense."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-10-16",
+        "reported_sales_usd": 1413300000,
+        "year_ago_reported_sales_usd": 1379100000,
+        "yoy_percent": "2.4799"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-02-08",
+        "reported_sales_usd": 1358000000,
+        "year_ago_reported_sales_usd": 1276900000,
+        "yoy_percent": "6.3513"
+      }
+    ],
+    "status": "complete"
+  }
+}

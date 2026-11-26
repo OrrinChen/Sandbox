@@ -1,0 +1,413 @@
+{
+  "scope": "SEC image-only issues for the ten specified post-lock case windows; 13 distinct exhibits, all page occurrences transcribed. Focused visual inspection of the numeric disclosures on Cerence p8, Marten p4 and Big Lots p7. Filing dates describe indexed exhibits, not proof of first public dissemination. Conference calls, prior earnings materials and outside communications require the separate source audit.",
+  "distinct_exhibits": 13,
+  "distinct_page_urls": 256,
+  "distinct_exhibits_page_occurrences": 256,
+  "case_count": 10,
+  "study_predictions_accessed": false,
+  "cases": [
+    {
+      "case_id": "0000047111_2025-03-30",
+      "issuer": "HERSHEY CO",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 53,
+      "net_sales_threshold_usd": "3090111550.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2024-05-06",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/47111/000004711124000027/exhibit991-2024asmpresenta.htm",
+          "page": 16,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/47111/000004711124000027/slide16a.jpg",
+          "image_sha256": "fc4133d0372fac139a4360bd01f895e1fd2963b495d84f0999e4ee8c4217f653"
+        },
+        {
+          "exhibit_filed": "2024-05-06",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/47111/000004711124000027/exhibit991-2024asmpresenta.htm",
+          "page": 35,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/47111/000004711124000027/slide35a.jpg",
+          "image_sha256": "76297d17567c4a28786d939bd3aa3978667665c3751d82d5ca5323957854c106"
+        }
+      ],
+      "findings": "The May 2024 annual-meeting slides address portfolio strategy, segments and long-run price/volume and capital policies. Page 35 gives long-term principles. These pages contain no consolidated Q1 2025 sales bound. They cannot settle the later prepared-remarks interpretation.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0000768835_2021-07-31",
+      "issuer": "BIG LOTS INC",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 22,
+      "net_sales_threshold_usd": "1561987150.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 7,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262007.jpg",
+          "image_sha256": "ec45fc596321f2884db41fa06dbd7f0220d4f3bd2448617c5e45f2410eca9f60"
+        },
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 16,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262016.jpg",
+          "image_sha256": "acdebea780a28397c57a72f2639489e4bfd6784fcf04f29dfe493ca439629ba1"
+        },
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 17,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262017.jpg",
+          "image_sha256": "d18bf4c3e3cd7bad340283df1b016bd8af0a9f6dc1f59d7bfe054d84c0ea8beb"
+        }
+      ],
+      "findings": "The Q2 results exhibit reports net sales of $1,457.374m versus $1,644.197m, down 11.4%, on page 7. The May 28 earnings-call versus Aug 27 actuals question precedes the Aug 31 filing. Page 16 addresses Q3 comparable sales, page 17 full-year comparable sales. The image does not date any prior warning or displace either candidate.",
+      "first_qualifying_image_in_reviewed_filings": [
+        "2021-08-31",
+        "actual",
+        1457374000
+      ],
+      "corroborating_primary_document": [
+        "2021-08-27",
+        "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/exhibit991-earningsrelease.htm",
+        "earnings release separately dates actual revenue before the filing date of the graphic; this does not settle the May 28 guidance question"
+      ],
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0000768835_2022-04-30",
+      "issuer": "BIG LOTS INC",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 22,
+      "net_sales_threshold_usd": "1544274400.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 7,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262007.jpg",
+          "image_sha256": "ec45fc596321f2884db41fa06dbd7f0220d4f3bd2448617c5e45f2410eca9f60"
+        },
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 16,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262016.jpg",
+          "image_sha256": "acdebea780a28397c57a72f2639489e4bfd6784fcf04f29dfe493ca439629ba1"
+        },
+        {
+          "exhibit_filed": "2021-08-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262.htm",
+          "page": 17,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/768835/000076883521000099/bl_2ndqtrxearningsx08262017.jpg",
+          "image_sha256": "d18bf4c3e3cd7bad340283df1b016bd8af0a9f6dc1f59d7bfe054d84c0ea8beb"
+        }
+      ],
+      "findings": "The Aug 2021 deck reports existing Q2 FY2021 results. Page 16 targets Q3 FY2021 comparable sales and page 17 FY2021 comparable sales and earnings. Neither supplies FY2022 Q1 consolidated revenue guidance. The subsequent Q1 FY2022 earnings-call question remains for the primary investigation.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0000785956_2025-12-27",
+      "issuer": "J&J SNACK FOODS CORP",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 4,
+      "net_sales_threshold_usd": "344468100.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2024-11-21",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/ex_750671.htm",
+          "page": 1,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/a01.jpg",
+          "image_sha256": "5fed481ac821e506dcea9f3f435161138a486c0a7424a7f64317b0fe577dfb7a"
+        },
+        {
+          "exhibit_filed": "2024-11-21",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/ex_750671.htm",
+          "page": 2,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/a02.jpg",
+          "image_sha256": "7f3d58dcd1e22e6344a3c60eda428eab3eaa4c2e2c6f7643c7ad451abece437c"
+        },
+        {
+          "exhibit_filed": "2024-11-21",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/ex_750671.htm",
+          "page": 3,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/a03.jpg",
+          "image_sha256": "6be440604617cb1fdec9165b754773e7cb883dd13eac1860e92121d0dc2901ca"
+        },
+        {
+          "exhibit_filed": "2024-11-21",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/ex_750671.htm",
+          "page": 4,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/785956/000143774924035909/a04.jpg",
+          "image_sha256": "81097e404a4a769338794d6034c64ef7419b0363dd1e26e2bf63b46cbeda7a64"
+        }
+      ],
+      "findings": "The November 2024 exhibit is an employment offer and describes pay, terms and benefits. All four pages were transcribed. It supplies no quarterly consolidated sales figures or forecast and cannot resolve the other source gaps.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0000799167_2023-06-30",
+      "issuer": "MARTEN TRANSPORT LTD",
+      "n_exhibits": 6,
+      "examined_page_occurrences": 107,
+      "net_sales_threshold_usd": "313086750.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2022-04-19",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922009211/ex_358946.htm",
+          "page": 3,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922009211/a03.jpg",
+          "image_sha256": "125f61b17df462b3e460d1c3d6c6db2469635d5bf0aa394919381f2aee973ccc"
+        },
+        {
+          "exhibit_filed": "2022-07-18",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922017256/ex_395042.htm",
+          "page": 3,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922017256/a03.jpg",
+          "image_sha256": "d2d9025b16fd626ee8fc25cb189ecb6bcbb1edf16e6bd17523963e1a1502231b"
+        },
+        {
+          "exhibit_filed": "2022-10-17",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922024236/ex_431861.htm",
+          "page": 3,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774922024236/a03.jpg",
+          "image_sha256": "a95a8923a5c882dacc810aae4c61307b01ae18bad35a9cf8b497c73af5edcdde"
+        },
+        {
+          "exhibit_filed": "2023-01-24",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923001674/ex_465100.htm",
+          "page": 3,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923001674/pic3.jpg",
+          "image_sha256": "ce49a85b0c222a243a16a2a53c9d86bcaf7f437d4853c976b99d450b339166b2"
+        },
+        {
+          "exhibit_filed": "2023-04-18",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923010548/ex_501351.htm",
+          "page": 4,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923010548/slide04.jpg",
+          "image_sha256": "f755374d23a80b98a1d5741b9b2cd623a0f319d2e1ad4541e8b7500fde14d4a1"
+        },
+        {
+          "exhibit_filed": "2023-07-19",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923020225/ex_544766.htm",
+          "page": 4,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/799167/000143774923020225/a04.jpg",
+          "image_sha256": "a48df5f86dad62d2cd842c4d3c930043613ca7143b9ebf801d6641f715ec97a0"
+        }
+      ],
+      "findings": "The first five investor decks show historical operating metrics and segment growth. The April 18 deck gives first-quarter performance. Page 4 of the July 19 deck reports the June quarter actual change in consolidated operating revenue of -13.3%; the separate net-of-fuel-surcharge line is -7.6%. This directly corroborates the dated July 19 disclosure. No earlier deck quantified target-quarter total revenue.",
+      "first_qualifying_image_in_reviewed_filings": [
+        "2023-07-19",
+        "actual_yoy_pct",
+        "-13.3"
+      ],
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0001287213_2023-09-30",
+      "issuer": "DOUGLAS DYNAMICS, INC",
+      "n_exhibits": 2,
+      "examined_page_occurrences": 26,
+      "net_sales_threshold_usd": "157795000.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2023-09-20",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/ex_571519.htm",
+          "page": 15,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/pic15.jpg",
+          "image_sha256": "973b7fd5b8fd711b2b223c97a86b205e35e39def65b046ff9d88a8041368c9f7"
+        },
+        {
+          "exhibit_filed": "2023-09-20",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/ex_571519.htm",
+          "page": 16,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/pic16.jpg",
+          "image_sha256": "efe1a89fa9b4f2b6c41c42bdfb3eb93b8727f859f45c3205313aa1a6e49b1a62"
+        },
+        {
+          "exhibit_filed": "2023-10-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/ex_588310.htm",
+          "page": 5,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/dd05.jpg",
+          "image_sha256": "b74a292978e5732271a6f4fd7e2c58ed6236240e7f176647f3f2a372660f5005"
+        },
+        {
+          "exhibit_filed": "2023-10-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/ex_588310.htm",
+          "page": 6,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/dd06.jpg",
+          "image_sha256": "2073b07fcaf9ced61aac45b9e333de04514d75cfc17981b518783c0787175f7d"
+        }
+      ],
+      "findings": "The Sept 20 presentation reports Q2 sales on p15 and long-run segment targets on p16. The October 31 deck treats segment trends and FY2023 guidance and is later than the October 30 results release. No pre-October 30 target-quarter consolidated bound was found in these slides.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": [
+        "2023-10-30",
+        "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029427/ex_587227.htm",
+        "consolidated net sales of $144.1m versus $166.1m; this precedes the Oct 31 deck"
+      ],
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0001287213_2024-09-30",
+      "issuer": "DOUGLAS DYNAMICS, INC",
+      "n_exhibits": 2,
+      "examined_page_occurrences": 26,
+      "net_sales_threshold_usd": "136914950.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2023-09-20",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/ex_571519.htm",
+          "page": 15,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/pic15.jpg",
+          "image_sha256": "973b7fd5b8fd711b2b223c97a86b205e35e39def65b046ff9d88a8041368c9f7"
+        },
+        {
+          "exhibit_filed": "2023-09-20",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/ex_571519.htm",
+          "page": 16,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923026432/pic16.jpg",
+          "image_sha256": "efe1a89fa9b4f2b6c41c42bdfb3eb93b8727f859f45c3205313aa1a6e49b1a62"
+        },
+        {
+          "exhibit_filed": "2023-10-31",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/ex_588310.htm",
+          "page": 6,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1287213/000143774923029452/dd06.jpg",
+          "image_sha256": "2073b07fcaf9ced61aac45b9e333de04514d75cfc17981b518783c0787175f7d"
+        }
+      ],
+      "findings": "The Sept 2023 financial slide concerns Q2 2023 and long-run segment targets. The Oct 31 presentation forecasts possible full-year 2024 guidance and adjusted EPS; it contains no Q3 2024 consolidated revenue bound. These are the two image exhibits in this window; remaining sources determine the earliest date.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0001341766_2025-03-31",
+      "issuer": "CELSIUS HOLDINGS, INC.",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 27,
+      "net_sales_threshold_usd": "337922600.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2025-02-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992.htm",
+          "page": 1,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992001.jpg",
+          "image_sha256": "dc0500603352c2e5b589335828b24da494a281c1c3e5d9df66a9b85e112727d0"
+        },
+        {
+          "exhibit_filed": "2025-02-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992.htm",
+          "page": 21,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992021.jpg",
+          "image_sha256": "54e26228980590d71849103f82994f80a2d235427a03434a69c3d4d0adffa7da"
+        },
+        {
+          "exhibit_filed": "2025-02-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992.htm",
+          "page": 23,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992023.jpg",
+          "image_sha256": "fb758609dc001acf6d9ddd2ed184fd18fa76a1c35506f0ec06ca4128bc4d9e17"
+        },
+        {
+          "exhibit_filed": "2025-02-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992.htm",
+          "page": 26,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1341766/000134176625000014/celhexhibit992026.jpg",
+          "image_sha256": "25d1b76b02ea2911a5ed3825597ba144f1a866eb42f7aa860d1f18a3a22a3718"
+        }
+      ],
+      "findings": "The Feb 7 exhibit is a shareholder derivative settlement and accompanying corporate-governance and disclosure-committee terms. Its references to earnings guidance describe disclosure procedures rather than Q1 2025 sales, and do not supply a numeric forecast.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": null,
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0001768267_2025-06-30",
+      "issuer": "CERENCE INC.",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 17,
+      "net_sales_threshold_usd": "67012050.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 1,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s1.jpg",
+          "image_sha256": "4b4a5d9120e293d600dc2f3784cf986d1e886384e5349ffe67cf6b2f986719a1"
+        },
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 8,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s8.jpg",
+          "image_sha256": "f3ef6d162ffd8d416d56b75ca4914ed300893a64332664010e35eeb6455b8442"
+        },
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 17,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s17.jpg",
+          "image_sha256": "e6e1d3fe320971b538d841ab07c6b0d08c8191ed19a4d4c00656d8786e20bb3b"
+        }
+      ],
+      "findings": "The May 7 earnings presentation p8 explicitly puts fiscal Q3 FY25 total revenue at $52m-$56m, separate from full-year guidance. The top of the range is below $67.01205m. The same-day EX-99.1 confirms the June 30 target period and range. This substantiates a qualifying May 7 warning. Nothing in this image set documents an earlier date.",
+      "first_qualifying_image_in_reviewed_filings": [
+        "2025-05-07",
+        "guidance_upper_usd",
+        56000000
+      ],
+      "corroborating_primary_document": [
+        "2025-05-07",
+        "https://investors.cerence.com/sec-filings/all-sec-filings/content/0000950170-25-065725/crnc-ex99_1.htm",
+        "issuance of $52m to $56m June-quarter total revenue guidance"
+      ],
+      "earlier_than_known_primary_candidate": false
+    },
+    {
+      "case_id": "0001768267_2026-03-31",
+      "issuer": "CERENCE INC.",
+      "n_exhibits": 1,
+      "examined_page_occurrences": 17,
+      "net_sales_threshold_usd": "74109500.00",
+      "related_pages": [
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 1,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s1.jpg",
+          "image_sha256": "4b4a5d9120e293d600dc2f3784cf986d1e886384e5349ffe67cf6b2f986719a1"
+        },
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 8,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s8.jpg",
+          "image_sha256": "f3ef6d162ffd8d416d56b75ca4914ed300893a64332664010e35eeb6455b8442"
+        },
+        {
+          "exhibit_filed": "2025-05-07",
+          "exhibit_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2.htm",
+          "page": 17,
+          "page_url": "https://www.sec.gov/Archives/edgar/data/1768267/000095017025065725/crnc-ex99_2s17.jpg",
+          "image_sha256": "e6e1d3fe320971b538d841ab07c6b0d08c8191ed19a4d4c00656d8786e20bb3b"
+        }
+      ],
+      "findings": "The May 2025 exhibit forecasts Q3 FY25 and FY25; neither forecast covers Q2 FY26. Separately the Feb 4, 2026 company release gives March-quarter revenue of $58m\u2013$62m, wholly below $74.1095m. The older graphic supplies no earlier warning for this target.",
+      "first_qualifying_image_in_reviewed_filings": null,
+      "corroborating_primary_document": [
+        "2026-02-04",
+        "https://investors.cerence.com/sec-filings/all-sec-filings/content/0001628280-26-005491/q1fy26cerenceaipressrele.htm",
+        "issuance of $58m to $62m March-quarter total revenue guidance"
+      ],
+      "earlier_than_known_primary_candidate": false
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-014",
+    "stage": "submit",
+    "prompt_sha256": "390589599c04233f39f4f23f18c191c614e3a15fb8c2dbc079e939fb96b58d90",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-c0ec-7580-a423-d29b5031342c"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-48983\":{\"fills\":[{\"range\":\"M6:S19\",\"formula\":\"=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))\"}],\"formulas\":{}},\"sheet-49246\":{\"fills\":[{\"range\":\"B2:B14\",\"formula\":\"=VLOOKUP(IF(A2=\\\"\\\",LOOKUP(2,1/($A$2:A2<>\\\"\\\"),$A$2:A2),A2),$J$2:$K$4,2,FALSE)\"}],\"formulas\":{}},\"sheet-49300\":{\"fills\":[{\"range\":\"C2:C3\",\"formula\":\"=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))\"}],\"formulas\":{}},\"sheet-49455\":{\"formulas\":{\"H3\":\"=SUMPRODUCT(COUNTIF(D6:D208,K1:K9),--(H6:H208<>\\\"\\\"))\"}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20912,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 256,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-48983\":{\"fills\":[{\"range\":\"M6:S19\",\"formula\":\"=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))\"}],\"formulas\":{}},\"sheet-49246\":{\"fills\":[{\"range\":\"B2:B14\",\"formula\":\"=VLOOKUP(IF(A2=\\\"\\\",LOOKUP(2,1/($A$2:A2<>\\\"\\\"),$A$2:A2),A2),$J$2:$K$4,2,FALSE)\"}],\"formulas\":{}},\"sheet-49300\":{\"fills\":[{\"range\":\"C2:C3\",\"formula\":\"=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))\"}],\"formulas\":{}},\"sheet-49455\":{\"formulas\":{\"H3\":\"=SUMPRODUCT(COUNTIF(D6:D208,K1:K9),--(H6:H208<>\\\"\\\"))\"}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-c0ec-7580-a423-d29b5031342c",
+    "raw": "{\"sheet-48983\":{\"fills\":[{\"range\":\"M6:S19\",\"formula\":\"=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))\"}],\"formulas\":{}},\"sheet-49246\":{\"fills\":[{\"range\":\"B2:B14\",\"formula\":\"=VLOOKUP(IF(A2=\\\"\\\",LOOKUP(2,1/($A$2:A2<>\\\"\\\"),$A$2:A2),A2),$J$2:$K$4,2,FALSE)\"}],\"formulas\":{}},\"sheet-49300\":{\"fills\":[{\"range\":\"C2:C3\",\"formula\":\"=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))\"}],\"formulas\":{}},\"sheet-49455\":{\"formulas\":{\"H3\":\"=SUMPRODUCT(COUNTIF(D6:D208,K1:K9),--(H6:H208<>\\\"\\\"))\"}}}",
+    "usage": {
+      "input_tokens": 20912,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 256,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

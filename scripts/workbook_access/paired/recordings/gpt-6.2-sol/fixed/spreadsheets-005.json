@@ -1,0 +1,461 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "005ce53a9a22436f2e38146aae4a1bee15f31d7fd02b079af880f7e438c66249",
+    "e3c9839132397ec94b4699abfaf781407d57355f063ffc6d85e18314248e2c83",
+    "5ed23c9eefd655d4ad67e6fa0a68ceb029c3f5465e96f738293ba7abf146f4a7"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-37554",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F17",
+            "formula": "=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61539,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 576,
+        "reasoning_output_tokens": 186
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37609",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(OR(A2=\"U\",B2=\"U\"),\"-\",IF(OR(N(A2)>=7,N(B2)>=7),\"e\",\"-\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:C11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:C11",
+            "range_size": 33,
+            "cells": [
+              [
+                "A1",
+                "Column 1"
+              ],
+              [
+                "B1",
+                "Column 2"
+              ],
+              [
+                "C1",
+                "E/-"
+              ],
+              [
+                "A2",
+                "6"
+              ],
+              [
+                "B2",
+                "5"
+              ],
+              [
+                "C2",
+                "-"
+              ],
+              [
+                "A3",
+                "7"
+              ],
+              [
+                "B3",
+                "4"
+              ],
+              [
+                "C3",
+                "e"
+              ],
+              [
+                "A4",
+                "5"
+              ],
+              [
+                "B4",
+                "4"
+              ],
+              [
+                "C4",
+                "-"
+              ],
+              [
+                "A5",
+                "5"
+              ],
+              [
+                "B5",
+                "7"
+              ],
+              [
+                "C5",
+                "e"
+              ],
+              [
+                "A6",
+                "U"
+              ],
+              [
+                "B6",
+                "5"
+              ],
+              [
+                "C6",
+                "e"
+              ],
+              [
+                "A7",
+                "U"
+              ],
+              [
+                "B7",
+                "7"
+              ],
+              [
+                "C7",
+                "e"
+              ],
+              [
+                "A8",
+                "U"
+              ],
+              [
+                "B8",
+                "U"
+              ],
+              [
+                "C8",
+                "e"
+              ],
+              [
+                "A9",
+                "4"
+              ],
+              [
+                "B9",
+                "4"
+              ],
+              [
+                "C9",
+                "-"
+              ],
+              [
+                "A10",
+                "2"
+              ],
+              [
+                "B10",
+                "3"
+              ],
+              [
+                "C10",
+                "-"
+              ],
+              [
+                "A11",
+                "7"
+              ],
+              [
+                "B11",
+                "7"
+              ],
+              [
+                "C11",
+                "e"
+              ]
+            ],
+            "total": 33,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61539,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 576,
+        "reasoning_output_tokens": 186
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37615",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F7:F37",
+            "formula": "=IF(D7>0,IF(ROUND(D7*24,10)>4,$D$42,$D$43),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F13",
+            "range_size": 24,
+            "cells": [
+              [
+                "D6",
+                "Total Hours"
+              ],
+              [
+                "E6",
+                "Days Billed"
+              ],
+              [
+                "F6",
+                "$ Amount"
+              ],
+              [
+                "D7",
+                "8:00:00"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "D8",
+                "3:00:00"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "D9",
+                "0:00:00"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "D10",
+                "0:00:00"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "D11",
+                "8:15:00"
+              ],
+              [
+                "E11",
+                "1"
+              ],
+              [
+                "D12",
+                "3:50:00"
+              ],
+              [
+                "E12",
+                "1"
+              ],
+              [
+                "D13",
+                "5:00:00"
+              ],
+              [
+                "E13",
+                "1"
+              ]
+            ],
+            "total": 17,
+            "truncated": false,
+            "blank_count": 7
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "A38:F44"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "A38:F44",
+            "range_size": 42,
+            "cells": [
+              [
+                "D42",
+                "57.2"
+              ],
+              [
+                "F42",
+                "0"
+              ],
+              [
+                "D43",
+                "28.6"
+              ],
+              [
+                "F43",
+                "0"
+              ],
+              [
+                "E44",
+                "Total invoice:"
+              ],
+              [
+                "F44",
+                "0"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 36
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 61539,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 576,
+        "reasoning_output_tokens": 186
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-38462",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C1:C2",
+            "formula": "=ROUNDUP(ROUND(B1*24,9),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C2",
+            "range_size": 6,
+            "cells": [
+              [
+                "A1",
+                "DEE"
+              ],
+              [
+                "B1",
+                "2046 days, 17:30:00"
+              ],
+              [
+                "C1",
+                "49122"
+              ],
+              [
+                "A2",
+                "DEF"
+              ],
+              [
+                "B2",
+                "2055 days, 11:58:00"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61539,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 576,
+        "reasoning_output_tokens": 186
+      },
+      "model_calls": 3
+    }
+  ]
+}

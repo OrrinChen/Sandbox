@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping, Optional
+from typing import Mapping, Optional, Sequence
 
-from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
+from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec, TraceEvent
 
 
 @dataclass(frozen=True)
@@ -38,6 +38,10 @@ class AgentBaseline:
 
     def run(self, task: TaskSpec, attempt_index: int = 0) -> AgentRunPlan:
         raise NotImplementedError
+
+    def finalize(self, task: TaskSpec, plan: AgentRunPlan, tool_results: Sequence[TraceEvent]) -> AgentRunPlan:
+        """Return the final response after the runner executes the planned tools."""
+        return plan
 
 
 class OracleToolSelectionAgent(AgentBaseline):

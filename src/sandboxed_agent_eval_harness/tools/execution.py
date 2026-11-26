@@ -9,6 +9,9 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Mapping, Optional
 
+from sandboxed_agent_eval_harness.benchmarks.financial_evidence.full_data import load_full_corpus
+from sandboxed_agent_eval_harness.benchmarks.financial_evidence.methods import METHODS, search_full
+from sandboxed_agent_eval_harness.benchmarks.financial_evidence.retrieval import load_corpus, search
 from sandboxed_agent_eval_harness.sandbox import FileSystemSandbox, LocalWorkspaceBackend, SandboxBackendError, SandboxTimeoutError
 from sandboxed_agent_eval_harness.schemas import JsonDict, TaskSpec
 from sandboxed_agent_eval_harness.tools.registry import ToolRegistry, default_tool_registry
@@ -47,6 +50,8 @@ class FixtureToolExecutor:
         validated_arguments = self.registry.validate_input(tool_name, arguments)
         if tool_name == "financial_statement.lookup":
             result = self._financial_statement_lookup(validated_arguments)
+        elif tool_name == "rag.search":
+            result = self._rag_search(validated_arguments)
         elif tool_name == "transcript.search":
             result = self._transcript_search(validated_arguments)
         elif tool_name == "csv.read":
@@ -72,6 +77,50 @@ class FixtureToolExecutor:
         else:
             raise ToolExecutionError(f"no executable fixture adapter for tool: {tool_name}")
         return self.registry.validate_output(tool_name, result)
+
+    def _rag_search(self, arguments: JsonDict) -> JsonDict:
+        top_k = arguments["top_k"]
+        if top_k <= 0:
+            raise ToolExecutionError("rag.search top_k must be positive")
+        method = arguments.get("method")
+        if method is not None:
+            if method not in (*METHODS, "hybrid_split"):
+                raise ToolExecutionError(f"unknown rag.search method: {method}")
+            filters = {field: arguments.get(field, []) for field in ("tickers", "fiscal_periods", "source_types")}
+            if any(not isinstance(item, str) for values in filters.values() for item in values):
+                raise ToolExecutionError("rag.search filters must contain strings")
+            corpus_name = arguments.get("corpus", "a1")
+            from sandboxed_agent_eval_harness.benchmarks.financial_benchmark.data import CROSS_SOURCE_SPLITS, load_corpus as load_financial_corpus
+
+            if corpus_name in {"financial-benchmark", "financial-challenge", *CROSS_SOURCE_SPLITS}:
+                split = {"financial-benchmark": "", "financial-challenge": "challenge"}.get(corpus_name, corpus_name)
+                corpus = load_financial_corpus(split=split)
+            elif corpus_name == "a1":
+                corpus = load_full_corpus()
+            else:
+                raise ToolExecutionError(f"unknown rag.search corpus: {corpus_name}")
+            result = {
+                "method": method,
+                "corpus_version": corpus["version"],
+                "top_k": top_k,
+            }
+            if method == "hybrid_split":
+                from sandboxed_agent_eval_harness.benchmarks.financial_benchmark.subqueries import search_split, split_query
+
+                if top_k != 5 or corpus_name not in CROSS_SOURCE_SPLITS:
+                    raise ToolExecutionError("hybrid_split requires a cross-source corpus and top_k=5")
+                result["subqueries"] = [{"text": branch.text, "source_type": branch.source_type}
+                                        for branch in split_query(arguments["query"])]
+                result["hits"] = search_split(arguments["query"], top_k, corpus["documents"], **filters)
+            else:
+                result["hits"] = search_full(method, arguments["query"], top_k, corpus["documents"], **filters)
+            return result
+        corpus = load_corpus()
+        return {
+            "corpus_version": corpus["version"],
+            "top_k": top_k,
+            "hits": search(arguments["query"], top_k, corpus["documents"]),
+        }
 
     def _financial_statement_lookup(self, arguments: Mapping[str, Any]) -> JsonDict:
         for fixture_path in sorted((self.fixture_root / "fixtures" / "finance").glob("*.json")):

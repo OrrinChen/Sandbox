@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000878726",
+  "issuer": "TUESDAY MORNING CORP/DE",
+  "cutoff": "2022-06-01",
+  "projected_target_start": "2022-07-01",
+  "status": "complete",
+  "period_end": "2022-04-02",
+  "filing_date": "2022-05-12",
+  "text": {
+    "sector": "retail",
+    "cik": "0000878726",
+    "issuer": "TUESDAY MORNING CORP/DE",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-05-12",
+        "text": "Net sales for the three months ended April 2, 2022 were $159.6 million, an increase of $6.3 million or 4.1%, compared to $153.3 million for the three months ended March 31, 2021."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-05-12",
+        "text": "Comparable store sales for the three and nine months ended April 2, 2022, increased 0.6% and 18.1%, respectively."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-05-12",
+        "text": "Inventory levels increased by $39.3 million at April 2, 2022 to $176.6 million from $137.4 million at March 31, 2021."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-05-12",
+        "text": "Gross margin for the three months ended April 2, 2022 was 24.4%, compared to 31.4% for the three months ended March 31, 2021."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-05-12",
+        "text": "The COVID-19 pandemic has had an adverse effect on our business operations, store traffic, employee availability, financial conditions, results of operations, liquidity and cash flow."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-03",
+        "reported_sales_usd": 251382000,
+        "year_ago_reported_sales_usd": 198625000,
+        "yoy_percent": "26.5611"
+      },
+      {
+        "quarter_end": "2022-04-02",
+        "filed": "2022-05-12",
+        "reported_sales_usd": 159621000,
+        "year_ago_reported_sales_usd": 153345000,
+        "yoy_percent": "4.0927"
+      }
+    ],
+    "status": "complete"
+  }
+}

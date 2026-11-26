@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000018255",
+  "issuer": "CATO CORP",
+  "cutoff": "2021-12-31",
+  "projected_target_start": "2022-01-30",
+  "status": "complete",
+  "period_end": "2021-10-30",
+  "filing_date": "2021-11-19",
+  "text": {
+    "sector": "retail",
+    "cik": "0000018255",
+    "issuer": "CATO CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-Q",
+        "date": "2021-11-19",
+        "text": "Through the first three quarters of 2021, the Company saw significant improvements in sales compared to 2020."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-Q",
+        "date": "2021-11-19",
+        "text": "This improvement was primarily attributable to government stimulus, increased customer traffic, states lifting capacity limits as more people were vaccinated, consumers’ increasing comfort level with venturing out to social events and customers’ preparing to return to work."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-Q",
+        "date": "2021-11-19",
+        "text": "As of October 30, 2021 and January 30, 2021, there was $12,323,000 and $10,550,000, respectively, of total unrecognized compensation expense related to nonvested restricted stock awards, which had a remaining weighted-average vesting period of 2.5 years and 2.1 years, respectively."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-Q",
+        "date": "2021-11-19",
+        "text": "The total compensation expense during the three and nine months ended October 30, 2021 was $1,088,000 and $2,968,000, respectively, compared to $1,082,000 and $2,941,000, respectively, for the three and nine months ended October 31, 2020."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-Q",
+        "date": "2021-11-19",
+        "text": "The compensation expense recognized for the 15% discount given under the Employee Stock Purchase Plan was approximately $31,000 and $69,000 for the nine months ended October 30, 2021 and October 31, 2020, respectively."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-07-31",
+        "filed": "2021-08-25",
+        "reported_sales_usd": 207746000,
+        "year_ago_reported_sales_usd": 168170000,
+        "yoy_percent": "23.5333"
+      },
+      {
+        "quarter_end": "2021-10-30",
+        "filed": "2021-11-19",
+        "reported_sales_usd": 172213000,
+        "year_ago_reported_sales_usd": 150791000,
+        "yoy_percent": "14.2064"
+      }
+    ],
+    "status": "complete"
+  }
+}

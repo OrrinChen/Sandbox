@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "2a00d695e821af2ff1d8999f9f2ca0ae296cdc1befe230e123817e3590f1026e",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-darts\": \"from math import sqrt\\n\\n\\ndef score(x, y):\\n    dart_location = sqrt(x * x + y * y)\\n    if dart_location <= 1.0:\\n        return 10\\n    if dart_location <= 5.0:\\n        return 5\\n    if dart_location <= 10.0:\\n        return 1\\n    return 0\\n\",\n  \"repair-diamond\": \"def rows(letter):\\n    lines = ord(letter) - ord('A') + 1\\n    columns = lines * 2 - 1\\n    half = make_half(lines, columns)\\n    return half + half[-2::-1]\\n\\n\\ndef make_half(lines, columns):\\n    diamond_half = []\\n    for number in range(lines):\\n        row = [' '] * columns\\n        letter = chr(ord('A') + number)\\n        row[lines - 1 - number] = letter\\n        row[lines - 1 + number] = letter\\n        diamond_half.append(''.join(row))\\n    return diamond_half\\n\",\n  \"repair-eliuds-eggs\": \"def egg_count(display_value):\\n    eggs = 0\\n    while display_value:\\n        eggs += display_value % 2\\n        display_value //= 2\\n    return eggs\\n\",\n  \"repair-flatten-array\": \"def is_iterable(thing):\\n    try:\\n        iter(thing)\\n    except TypeError:\\n        return False\\n    return True\\n\\n\\ndef flatten(iterable):\\n    \\\"\\\"\\\"Flatten nested iterables in order, omitting None values.\\\"\\\"\\\"\\n    flattened = []\\n    stack = [iter(iterable)]\\n    while stack:\\n        try:\\n            item = next(stack[-1])\\n        except StopIteration:\\n            stack.pop()\\n            continue\\n        if item is None:\\n            continue\\n        if isinstance(item, (str, bytes)):\\n            flattened.append(item)\\n            continue\\n        try:\\n            nested = iter(item)\\n        except TypeError:\\n            flattened.append(item)\\n        else:\\n            stack.append(nested)\\n    return flattened\\n\"\n}",
+  "submissions": {
+    "repair-darts": "from math import sqrt\n\n\ndef score(x, y):\n    dart_location = sqrt(x * x + y * y)\n    if dart_location <= 1.0:\n        return 10\n    if dart_location <= 5.0:\n        return 5\n    if dart_location <= 10.0:\n        return 1\n    return 0\n",
+    "repair-diamond": "def rows(letter):\n    lines = ord(letter) - ord('A') + 1\n    columns = lines * 2 - 1\n    half = make_half(lines, columns)\n    return half + half[-2::-1]\n\n\ndef make_half(lines, columns):\n    diamond_half = []\n    for number in range(lines):\n        row = [' '] * columns\n        letter = chr(ord('A') + number)\n        row[lines - 1 - number] = letter\n        row[lines - 1 + number] = letter\n        diamond_half.append(''.join(row))\n    return diamond_half\n",
+    "repair-eliuds-eggs": "def egg_count(display_value):\n    eggs = 0\n    while display_value:\n        eggs += display_value % 2\n        display_value //= 2\n    return eggs\n",
+    "repair-flatten-array": "def is_iterable(thing):\n    try:\n        iter(thing)\n    except TypeError:\n        return False\n    return True\n\n\ndef flatten(iterable):\n    \"\"\"Flatten nested iterables in order, omitting None values.\"\"\"\n    flattened = []\n    stack = [iter(iterable)]\n    while stack:\n        try:\n            item = next(stack[-1])\n        except StopIteration:\n            stack.pop()\n            continue\n        if item is None:\n            continue\n        if isinstance(item, (str, bytes)):\n            flattened.append(item)\n            continue\n        try:\n            nested = iter(item)\n        except TypeError:\n            flattened.append(item)\n        else:\n            stack.append(nested)\n    return flattened\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-88b7-7b93-8ff7-4087e75fe959",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 23278,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 486,
+    "reasoning_output_tokens": 0
+  }
+}

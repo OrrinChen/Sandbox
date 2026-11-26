@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q4",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000813298",
+  "issuer": "DESTINATION XL GROUP, INC.",
+  "cutoff": "2023-09-29",
+  "projected_target_start": "2023-10-29",
+  "status": "complete",
+  "period_end": "2023-07-29",
+  "filing_date": "2023-08-24",
+  "text": {
+    "sector": "retail",
+    "cik": "0000813298",
+    "issuer": "DESTINATION XL GROUP, INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2023-08-24",
+        "text": "Total sales for the second quarter of fiscal 2023 were $140.0 million, as compared to $144.6 million in the second quarter of fiscal 2022."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2023-08-24",
+        "text": "Stores that have been open for at least 13 months are included in comparable sales."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2023-08-24",
+        "text": "Our inventory was in a healthy position at quarter-end, down 9.5% as compared to July 30, 2022."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2023-08-24",
+        "text": "For the second quarter of fiscal 2023, our gross margin rate, inclusive of occupancy costs, was 50.3% as compared to a gross margin rate of 52.1% for the second quarter of fiscal 2022."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2023-08-24",
+        "text": "For the second quarter and first six months of fiscal 2022, we recognized a tax benefit of $35.1 million and $35.0 million, respectively, which reflects the release of approximately $35.5 million, or $0.53 per diluted share, in valuation allowance against our deferred tax assets, partially offset by income tax expense of $0.4 million and $0.5 million, respectively, in states where our usage of net operating losses (\"NOL\") is limited."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-04-29",
+        "filed": "2023-05-25",
+        "reported_sales_usd": 125442000,
+        "year_ago_reported_sales_usd": 127655000,
+        "yoy_percent": "-1.7336"
+      },
+      {
+        "quarter_end": "2023-07-29",
+        "filed": "2023-08-24",
+        "reported_sales_usd": 140043000,
+        "year_ago_reported_sales_usd": 144634000,
+        "yoy_percent": "-3.1742"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": "independent-tools-1",
+  "unit": "A distinct source problem with its own substantive decision, reproducible input and independently scoreable output. Repeats, changed filenames, extra test vectors, and trials do not add tasks.",
+  "target": {"dev": 100, "test": 500},
+  "development": "Audit a first 60 development cases before scaling; keep these inside the 100 development tasks. Tune tooling on development cases only.",
+  "split": "Assign source families to a single split before evaluating solver performance. A source group, related original scenario, or derivative exercise may never appear on both sides.",
+  "acceptance": "Require a runnable reference, a plausible executable incorrect submission rejected on the same inputs, grading of actual artifacts or outputs, and disjoint public and scorer packets. The release command verifies integrity and refuses incomplete splits.",
+  "adapters": ["original relational decisions and CSV workflows", "independent Python repair problems from Exercism", "workbook transformations from SpreadsheetBench"],
+  "attribution": "Record original/externally sourced provenance per item and separate reproducibility controls from model performance. Public upstream tasks may have been seen in training. This lock protects the local evaluation protocol, not benchmark secrecy."
+}

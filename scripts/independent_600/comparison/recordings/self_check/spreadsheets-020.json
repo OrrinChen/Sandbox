@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "69058df04710dd5950984f3a52a5b4b2726a256177653736fe1ec71c8032a7fa",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-56451\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:F7\",\n        \"formula\": \"=INDEX('Sheet 2'!$B$2:$F$7,MATCH($A2,'Sheet 2'!$A$2:$A$7,0),MATCH(B$1,'Sheet 2'!$B$1:$F$1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56599\": {\n    \"formulas\": {\n      \"B2\": \"=IFERROR(IF(OR(M5=\\\"\\\",--M5<>INT(--M5)),\\\"not found - please re-enter\\\",INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=--M5)*($H$6:$H$30>=--M5),0),0))),\\\"not found - please re-enter\\\")\"\n    }\n  },\n  \"sheet-56915\": {\n    \"fills\": [\n      {\n        \"range\": \"B18:E23\",\n        \"formula\": \"=IFERROR(IF(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\\\"TOTAL: REVENUE\\\",\\\"*TOTAL*REVENUE*\\\",\\\"*\\\"&TRIM($A18)&\\\"*\\\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))=\\\"\\\",\\\"\\\",IF(B$13=\\\"% age\\\",TEXT(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\\\"TOTAL: REVENUE\\\",\\\"*TOTAL*REVENUE*\\\",\\\"*\\\"&TRIM($A18)&\\\"*\\\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),\\\"[<0](0.00);0.00\\\"),ROUND(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\\\"TOTAL: REVENUE\\\",\\\"*TOTAL*REVENUE*\\\",\\\"*\\\"&TRIM($A18)&\\\"*\\\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),2))),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56995\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D5\",\n        \"formula\": \"=IF(OR(B2=\\\"\\\",B2=0),\\\"Not Attempt\\\",(B2-C2)/B2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-56451": {
+      "fills": [
+        {
+          "range": "B2:F7",
+          "formula": "=INDEX('Sheet 2'!$B$2:$F$7,MATCH($A2,'Sheet 2'!$A$2:$A$7,0),MATCH(B$1,'Sheet 2'!$B$1:$F$1,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-56599": {
+      "formulas": {
+        "B2": "=IFERROR(IF(OR(M5=\"\",--M5<>INT(--M5)),\"not found - please re-enter\",INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=--M5)*($H$6:$H$30>=--M5),0),0))),\"not found - please re-enter\")"
+      }
+    },
+    "sheet-56915": {
+      "fills": [
+        {
+          "range": "B18:E23",
+          "formula": "=IFERROR(IF(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\"TOTAL: REVENUE\",\"*TOTAL*REVENUE*\",\"*\"&TRIM($A18)&\"*\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))=\"\",\"\",IF(B$13=\"% age\",TEXT(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\"TOTAL: REVENUE\",\"*TOTAL*REVENUE*\",\"*\"&TRIM($A18)&\"*\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),\"[<0](0.00);0.00\"),ROUND(INDEX(DATA!$B$14:$AC$24,MATCH(IF(TRIM($A18)=\"TOTAL: REVENUE\",\"*TOTAL*REVENUE*\",\"*\"&TRIM($A18)&\"*\"),DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),2))),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-56995": {
+      "fills": [
+        {
+          "range": "D2:D5",
+          "formula": "=IF(OR(B2=\"\",B2=0),\"Not Attempt\",(B2-C2)/B2)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-9620-71e2-9127-1a50b9cbed14",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27647,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 757,
+    "reasoning_output_tokens": 133
+  }
+}

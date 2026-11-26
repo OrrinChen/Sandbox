@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-007",
+    "stage": "submit",
+    "prompt_sha256": "26863a0232f83ea8856aa8f7bf307bd618947e698389d7723113f54754c8b133",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211ea-c5da-7123-93f4-ec76100fa4b6",
+    "raw": "{\"sheet-39604\":{\"formulas\":{\"C4\":\"=IF(B4<=20,0,IF(B3*1000<22000,B4-20,B4-30))\"}},\"sheet-40478\":{\"fills\":[{\"range\":\"B1:B3\",\"formula\":\"=TRIM(MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1))\"}],\"formulas\":{}},\"sheet-40757\":{\"fills\":[{\"range\":\"B10:B11\",\"formula\":\"=SUMPRODUCT((TEXT($A$3:$A$6,\\\"mmmm\\\")=A10)*$B$3:$B$6)\"}],\"formulas\":{}},\"sheet-40892\":{\"fills\":[{\"range\":\"B2:B17\",\"formula\":\"=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,ISNUMBER(SEARCH($D$3:$D$8,A2)),0)),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 17077,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 323,
+      "reasoning_output_tokens": 84
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

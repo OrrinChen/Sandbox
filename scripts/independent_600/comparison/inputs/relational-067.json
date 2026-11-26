@@ -1,0 +1,234 @@
+[
+  {
+    "task_id": "decision-sequence-field-heat-removal",
+    "tool": "sqlite.query",
+    "instruction": "Sequence all three freshly picked lots through one cooling tunnel. Each primary lot ticket gives the uninterrupted treatment duration in hours, a hard completion deadline in hours after shift start, and the lot's exposure charge in cents per hour from shift start through completion, including its own treatment. Start at hour zero, run one lot at a time, and leave no idle gaps. Completion exactly at the deadline is allowed. Minimize the sum of the three exposure charges over schedules meeting every deadline. Break ties by lexicographic order of the three ticket IDs in processing order, using SQLite BINARY ordering. Each ticket identifies one lot, IDs are unique, all fields are non-null, durations and rates are positive integers, and a feasible schedule exists. Return exactly one row with columns first_ticket, second_ticket, third_ticket, exposure_cents in that order, using the actual ticket IDs. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "tunnel_ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "run_hours INTEGER",
+          "due_hour INTEGER",
+          "hourly_cents INTEGER",
+          "ticket_text TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            2,
+            5,
+            200,
+            "Cool for two hours and finish by hour five. Exposure accrues at 200 cents hourly."
+          ],
+          [
+            "B",
+            3,
+            6,
+            600,
+            "Cool for three hours and finish by hour six. Exposure accrues at 600 cents hourly."
+          ],
+          [
+            "C",
+            1,
+            5,
+            100,
+            "Cool for one hour and finish by hour five. Exposure accrues at 100 cents hourly."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_ticket",
+      "second_ticket",
+      "third_ticket",
+      "exposure_cents"
+    ]
+  },
+  {
+    "task_id": "decision-sequence-leak-repairs-before-refill",
+    "tool": "sqlite.query",
+    "instruction": "One crew must complete exactly two distinct leak repairs during a 60-minute refill window. At minute zero it can start at any site with no initial travel. After finishing the first repair it drives directly to the second site and immediately repairs it. Only the directed trips in crew_trip are available. Missing trips cannot be used, and each ordered pair appears at most once. Both repairs must finish by minute 60 inclusive. A leak loses its full litres_per_min until its repair finishes, then loses nothing for the remainder of the window. Maximize total litres saved during the window relative to doing neither repair. Break ties by earlier second completion, then first site code, then second site code in SQLite BINARY order. Return one row with columns first_site, second_site, finish_min, saved_litres. Site codes are unique, trips reference listed sites, durations and rates are positive integers, all values are non-null, and at least one pair is feasible. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crew_trip": {
+        "columns": [
+          "origin_code TEXT",
+          "dest_code TEXT",
+          "drive_min INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "B",
+            5
+          ],
+          [
+            "B",
+            "A",
+            5
+          ],
+          [
+            "B",
+            "C",
+            4
+          ],
+          [
+            "C",
+            "B",
+            3
+          ],
+          [
+            "A",
+            "C",
+            20
+          ]
+        ]
+      },
+      "leak_site": {
+        "columns": [
+          "site_code TEXT",
+          "repair_min INTEGER",
+          "litres_per_min INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            30,
+            9
+          ],
+          [
+            "B",
+            10,
+            6
+          ],
+          [
+            "C",
+            15,
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_site",
+      "second_site",
+      "finish_min",
+      "saved_litres"
+    ]
+  },
+  {
+    "task_id": "decision-sequence-single-dock-refills",
+    "tool": "sqlite.query",
+    "instruction": "Schedule all three trailer unloads on one replenishment dock, starting no earlier than minute zero. Each dispatch ticket supplies the trailer's earliest start minute, uninterrupted unloading duration in minutes, due minute for completion, and penalty points per minute late. Only one trailer can unload at a time. For any chosen order, start each trailer as soon as both it and the dock are available. You may put a later arrival first and leave the dock idle waiting for it. Minimize the sum of penalties, counting only minutes completed after each due minute. Break ties by the lexicographically smallest sequence of trailer IDs. Return one row with columns first_ticket, second_ticket, third_ticket, penalty_points, citing the source ticket IDs in service order. Trailer IDs and ticket IDs are each unique. All fields are non-null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dispatch_ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "trailer_id TEXT",
+          "ready_min INTEGER",
+          "work_min INTEGER",
+          "due_min INTEGER",
+          "late_rate INTEGER",
+          "ticket_text TEXT"
+        ],
+        "rows": [
+          [
+            "T7",
+            "A",
+            0,
+            3,
+            6,
+            1,
+            "Dry goods are at the dock. Allow three minutes to unload."
+          ],
+          [
+            "T2",
+            "B",
+            1,
+            1,
+            2,
+            9,
+            "Priority refill arrives at minute one and is due off the trailer by minute two."
+          ],
+          [
+            "T9",
+            "C",
+            0,
+            2,
+            5,
+            2,
+            "Carton stock is ready now for a two-minute unload."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_ticket",
+      "second_ticket",
+      "third_ticket",
+      "penalty_points"
+    ]
+  },
+  {
+    "task_id": "decision-sequence-three-cutter-jobs-before-dispatch",
+    "tool": "sqlite.query",
+    "instruction": "Schedule all three available paper-stack jobs once each on one cutter, starting at minute zero and running without idle time. The single setup card specifies the fence position at minute zero and the minutes required before any job whose fence position differs from the current one. The fence stays at the last job's position. Each job's cut_minutes excludes setup. A job completed after its due_minute incurs late_rate cents per minute of positive tardiness. Minimize total penalty, then the last completion minute, then the sequence of job IDs in ascending binary lexical order. All fields are non-null and job IDs are unique. Return one row with columns card_id, first_job, second_job, third_job, penalty_cents, finish_minute, citing the card used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cutter_job": {
+        "columns": [
+          "job_id TEXT",
+          "fence_pos TEXT",
+          "cut_minutes INTEGER",
+          "due_minute INTEGER",
+          "late_rate INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "short",
+            3,
+            7,
+            2
+          ],
+          [
+            "B",
+            "long",
+            2,
+            5,
+            5
+          ],
+          [
+            "C",
+            "short",
+            2,
+            12,
+            1
+          ]
+        ]
+      },
+      "setup_card": {
+        "columns": [
+          "card_id TEXT",
+          "card_text TEXT",
+          "initial_pos TEXT",
+          "change_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "FC-2",
+            "Fence parked short. Allow three minutes per position change.",
+            "short",
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "card_id",
+      "first_job",
+      "second_job",
+      "third_job",
+      "penalty_cents",
+      "finish_minute"
+    ]
+  }
+]

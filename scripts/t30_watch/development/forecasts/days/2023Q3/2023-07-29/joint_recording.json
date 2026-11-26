@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22368,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 154,
+    "reasoning_output_tokens": 20
+  },
+  "thread": "01a20d7f-c8cc-7800-b100-5ab998fb0da9",
+  "packet_sha256": "a4ea8d2c7b5af445e7c49b626a0e0492ada6f21e8f95a823924371c1c56c876f",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q3/food_manufacturing-1\",\"alerts\":[{\"cik\":\"0000023217\",\"reason\":\"Reported net sales growth slowed from +5.93% YoY in February to +2.18% in May. If that pace of slowing persists, growth would be about -1.6% in the intervening quarter and -5.3% in the target quarter, crossing the threshold. Fiscal 2023 volume fell 9% even as net sales rose (A, B), leaving sales exposed if pricing support fades.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000023217",
+            "reason": "Reported net sales growth slowed from +5.93% YoY in February to +2.18% in May. If that pace of slowing persists, growth would be about -1.6% in the intervening quarter and -5.3% in the target quarter, crossing the threshold. Fiscal 2023 volume fell 9% even as net sales rose (A, B), leaving sales exposed if pricing support fades."
+          }
+        ]
+      }
+    ]
+  }
+}

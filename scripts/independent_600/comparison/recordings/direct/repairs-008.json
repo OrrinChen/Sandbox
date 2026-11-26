@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "58821febe8b65231319a7af2f2a1e30f4ca1dffd4acc834badf2180b1f15b087",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-original-cache-eviction-pinned-bytes\": \"def solve(data):\\n    entries = data['entries']\\n    remaining = sum(entry['size'] for entry in entries)\\n    eligible = [entry for entry in entries if not entry['pinned']]\\n    eligible.sort(key=lambda entry: (entry['last_used'], entry['id']))\\n    evicted = []\\n    for entry in eligible:\\n        if remaining <= data['capacity']:\\n            break\\n        evicted.append(entry['id'])\\n        remaining -= entry['size']\\n    return {'evicted': evicted, 'remaining_bytes': remaining}\\n\",\n  \"repair-original-cap-net-cancellation-refund\": \"def solve(data):\\n    if data['booking_state'] != 'cancelled':\\n        return 0\\n    charges = sum(row['cents'] for row in data['charges'] if row['state'] == 'posted')\\n    concessions = sum(row['cents'] for row in data['concessions'] if row['state'] == 'posted')\\n    hours = data['hours_notice']\\n    if hours >= 48:\\n        allowance = charges\\n    elif hours >= 24:\\n        allowance = charges // 2\\n    else:\\n        return 0\\n    return min(data['cap_cents'], max(0, allowance - concessions))\\n\",\n  \"repair-original-compact-print-color-runs\": \"def solve(data):\\n    result = []\\n    for run in data['runs']:\\n        if run['state'] == 'deleted':\\n            continue\\n        color = run['color']\\n        if result and result[-1]['color'] == color:\\n            result[-1]['pixels'] += run['pixels']\\n        else:\\n            result.append({'color': color, 'pixels': run['pixels']})\\n    return result\\n\",\n  \"repair-original-deduplicate-upload-names\": \"import unicodedata\\n\\n\\ndef solve(data):\\n    seen = set()\\n    kept = []\\n    for name in data['names']:\\n        key = unicodedata.normalize('NFC', name)\\n        if key not in seen:\\n            seen.add(key)\\n            kept.append(name)\\n    return kept\\n\"\n}",
+  "submissions": {
+    "repair-original-cache-eviction-pinned-bytes": "def solve(data):\n    entries = data['entries']\n    remaining = sum(entry['size'] for entry in entries)\n    eligible = [entry for entry in entries if not entry['pinned']]\n    eligible.sort(key=lambda entry: (entry['last_used'], entry['id']))\n    evicted = []\n    for entry in eligible:\n        if remaining <= data['capacity']:\n            break\n        evicted.append(entry['id'])\n        remaining -= entry['size']\n    return {'evicted': evicted, 'remaining_bytes': remaining}\n",
+    "repair-original-cap-net-cancellation-refund": "def solve(data):\n    if data['booking_state'] != 'cancelled':\n        return 0\n    charges = sum(row['cents'] for row in data['charges'] if row['state'] == 'posted')\n    concessions = sum(row['cents'] for row in data['concessions'] if row['state'] == 'posted')\n    hours = data['hours_notice']\n    if hours >= 48:\n        allowance = charges\n    elif hours >= 24:\n        allowance = charges // 2\n    else:\n        return 0\n    return min(data['cap_cents'], max(0, allowance - concessions))\n",
+    "repair-original-compact-print-color-runs": "def solve(data):\n    result = []\n    for run in data['runs']:\n        if run['state'] == 'deleted':\n            continue\n        color = run['color']\n        if result and result[-1]['color'] == color:\n            result[-1]['pixels'] += run['pixels']\n        else:\n            result.append({'color': color, 'pixels': run['pixels']})\n    return result\n",
+    "repair-original-deduplicate-upload-names": "import unicodedata\n\n\ndef solve(data):\n    seen = set()\n    kept = []\n    for name in data['names']:\n        key = unicodedata.normalize('NFC', name)\n        if key not in seen:\n            seen.add(key)\n            kept.append(name)\n    return kept\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-ea41-7541-8621-e01dd5b13ca8",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22208,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 509,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "45a31c454fa7a1fef59a0049b4aa0b2f73055175205ca79e21500978b2ed48d3",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-39604\": {\n    \"formulas\": {\n      \"C4\": \"=IF(B4<=20,0,IF(B3*1000<22000,B4-20,B4-30))\"\n    }\n  },\n  \"sheet-40478\": {\n    \"fills\": [\n      {\n        \"range\": \"B1:B3\",\n        \"formula\": \"=TRIM(MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-40757\": {\n    \"fills\": [\n      {\n        \"range\": \"B10:B11\",\n        \"formula\": \"=SUMPRODUCT(--($A$3:$A$6<>0),--(TEXT($A$3:$A$6,\\\"mmmm\\\")=A10),$B$3:$B$6)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-40892\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B17\",\n        \"formula\": \"=IFERROR(INDEX($D$3:$D$8,MATCH(1,INDEX(($D$3:$D$8<>\\\"\\\")*ISNUMBER(SEARCH($D$3:$D$8,A2)),0),0)),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-39604": {
+      "formulas": {
+        "C4": "=IF(B4<=20,0,IF(B3*1000<22000,B4-20,B4-30))"
+      }
+    },
+    "sheet-40478": {
+      "fills": [
+        {
+          "range": "B1:B3",
+          "formula": "=TRIM(MID(A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1,FIND(\"-\",A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1)-FIND(\" \",A1,FIND(\" \",A1)+1)-1))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-40757": {
+      "fills": [
+        {
+          "range": "B10:B11",
+          "formula": "=SUMPRODUCT(--($A$3:$A$6<>0),--(TEXT($A$3:$A$6,\"mmmm\")=A10),$B$3:$B$6)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-40892": {
+      "fills": [
+        {
+          "range": "B2:B17",
+          "formula": "=IFERROR(INDEX($D$3:$D$8,MATCH(1,INDEX(($D$3:$D$8<>\"\")*ISNUMBER(SEARCH($D$3:$D$8,A2)),0),0)),\"\")"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-157d-7ec2-a952-d616269dacb2",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 25018,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 346,
+    "reasoning_output_tokens": 0
+  }
+}

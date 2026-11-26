@@ -1,0 +1,264 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "6b68be164c1b5cb26a40c3d10800184ffbc790d0a78e2982760076bc5c656f3e",
+    "f3e4725bab2da45b57aca58cb2d244c6c6e0d41186486ccefd7d294e0da5efa1",
+    "5f92b7fa851bd34287fab95d986fcf292d4a8350c3cec844e86aaf4ca0dcd000"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-39604",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 98850,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1431,
+        "reasoning_output_tokens": 849
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40478",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B1:B3",
+            "formula": "=MID(A1,FIND(\" \",A1,FIND(\" \",A1)+1)+1,FIND(\"-\",A1)-FIND(\" \",A1,FIND(\" \",A1)+1)-1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 98850,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1431,
+        "reasoning_output_tokens": 849
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40757",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "B10": "=SUMIFS(B3:B5,A3:A5,\">=\"&DATEVALUE(\"1 \"&A10),A3:A5,\"<\"&EDATE(DATEVALUE(\"1 \"&A10),1))",
+          "B11": "=SUMIFS(B3:B5,A3:A5,\">=\"&DATEVALUE(\"1 \"&A11),A3:A5,\"<\"&EDATE(DATEVALUE(\"1 \"&A11),1))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 98850,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1431,
+        "reasoning_output_tokens": 849
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40892",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B17",
+            "formula": "=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,INDEX(ISNUMBER(SEARCH($D$3:$D$8,A2)),0),0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D17",
+            "range_size": 68,
+            "cells": [
+              [
+                "A1",
+                "Product Name"
+              ],
+              [
+                "B1",
+                "Needs to return value from list when A2 etc matches "
+              ],
+              [
+                "D1",
+                "List"
+              ],
+              [
+                "A2",
+                "Dress with red details"
+              ],
+              [
+                "B2",
+                "Red"
+              ],
+              [
+                "D2",
+                "Colour"
+              ],
+              [
+                "A3",
+                "Jumper Gold"
+              ],
+              [
+                "B3",
+                "Gold"
+              ],
+              [
+                "D3",
+                "Red"
+              ],
+              [
+                "A4",
+                "Red Jumper"
+              ],
+              [
+                "B4",
+                "Red"
+              ],
+              [
+                "D4",
+                "Gold"
+              ],
+              [
+                "A5",
+                "Blue Jumper"
+              ],
+              [
+                "D5",
+                "Red"
+              ],
+              [
+                "A6",
+                "Black Trousers"
+              ],
+              [
+                "D6",
+                "Blue"
+              ],
+              [
+                "A7",
+                "Dress with Red detail"
+              ],
+              [
+                "D7",
+                "Black"
+              ],
+              [
+                "A8",
+                "Orange Jumpsuits"
+              ],
+              [
+                "D8",
+                "Red"
+              ],
+              [
+                "A9",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A10",
+                "Purple Scarf"
+              ],
+              [
+                "A11",
+                "Top Red"
+              ],
+              [
+                "A12",
+                "Trousers Black "
+              ],
+              [
+                "A13",
+                "Orange Jumpsuits"
+              ],
+              [
+                "A14",
+                "Yellow Jumpsuit"
+              ],
+              [
+                "A15",
+                "Purple Scarf"
+              ],
+              [
+                "A16",
+                "Top Red"
+              ],
+              [
+                "A17",
+                "Trousers Black "
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 39
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 98850,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1431,
+        "reasoning_output_tokens": 849
+      },
+      "model_calls": 3
+    }
+  ]
+}

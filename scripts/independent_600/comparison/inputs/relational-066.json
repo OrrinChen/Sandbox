@@ -1,0 +1,312 @@
+[
+  {
+    "task_id": "decision-select-noncompeting-replication-sites",
+    "tool": "sqlite.query",
+    "instruction": "Select exactly two candidate shops to replicate a retail trial. To keep attributed baskets from competing for the same catchment, the two shops must be in different zones. Their combined setup spend must be at most 10000 cents. Among feasible pairs maximize the sum of forecast incremental baskets over the trial week. Break ties by lower combined setup spend, then by the lexicographically smallest ordered pair of shop codes using binary text order. Shop codes are unique, all fields are nonnull, and at least one pair is feasible. Output the single winning pair with columns first_shop, second_shop, forecast_baskets, setup_cents, placing the smaller code first. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "shop_bid": {
+        "columns": [
+          "shop_code TEXT",
+          "zone_code TEXT",
+          "spend_cents INTEGER",
+          "basket_gain INTEGER"
+        ],
+        "rows": [
+          [
+            "a",
+            "north",
+            6000,
+            42
+          ],
+          [
+            "b",
+            "north",
+            4000,
+            39
+          ],
+          [
+            "c",
+            "west",
+            4500,
+            38
+          ],
+          [
+            "d",
+            "east",
+            4000,
+            34
+          ],
+          [
+            "e",
+            "south",
+            6000,
+            40
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_shop",
+      "second_shop",
+      "forecast_baskets",
+      "setup_cents"
+    ]
+  },
+  {
+    "task_id": "decision-select-outage-resilient-charging-layout",
+    "tool": "sqlite.query",
+    "instruction": "Choose one installable layout for a workshop's tool-battery charging stations. layout_bid lists the complete choices and their installation fees in cents. The single site_memo sets the fee ceiling and is the evidence to cite. Each circuit_feed row gives one circuit's contribution in kW to a layout, with at most one row per layout and circuit. An omitted circuit contributes zero. All fields are non-NULL. Exactly one circuit may fail, disabling every station on it while leaving all other circuits at their listed outputs. For each affordable layout, determine the least surviving total kW across possible single-circuit failures. Maximize this guaranteed output, then minimize the fee, then choose the alphabetically earliest layout_code. Return one row with columns source_id, layout_code, guaranteed_kw, fee_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "circuit_feed": {
+        "columns": [
+          "layout_code TEXT",
+          "circuit_code TEXT",
+          "feed_kw INTEGER"
+        ],
+        "rows": [
+          [
+            "Fan",
+            "A",
+            12
+          ],
+          [
+            "Fan",
+            "B",
+            2
+          ],
+          [
+            "Split",
+            "A",
+            6
+          ],
+          [
+            "Split",
+            "C",
+            6
+          ],
+          [
+            "Ring",
+            "A",
+            5
+          ],
+          [
+            "Ring",
+            "B",
+            5
+          ],
+          [
+            "Ring",
+            "C",
+            5
+          ]
+        ]
+      },
+      "layout_bid": {
+        "columns": [
+          "layout_code TEXT",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Fan",
+            850
+          ],
+          [
+            "Split",
+            900
+          ],
+          [
+            "Ring",
+            950
+          ]
+        ]
+      },
+      "site_memo": {
+        "columns": [
+          "source_id TEXT",
+          "memo_text TEXT",
+          "ceiling_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "W2",
+            "Spend at most 900 cents on the temporary charging layout.",
+            900
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "source_id",
+      "layout_code",
+      "guaranteed_kw",
+      "fee_cents"
+    ]
+  },
+  {
+    "task_id": "decision-select-overlap-aware-purge-runs",
+    "tool": "sqlite.query",
+    "instruction": "Construct purge_window.csv containing the best feasible pair of distinct offline purge runs. The window has exactly two run slots to fill and a shared limit of 8 whole minutes. Run durations add even when targets overlap. run_targets lists the pending deletion-ledger entries each run would clear. Each entry counts once across the whole window. Run codes are unique, each run-entry mapping is unique, all values are non-null, and a feasible pair exists. Maximize the number of distinct entries cleared, then minimize total minutes, then choose the binary-lexicographically smallest (first_run, second_run) with the two codes already in ascending binary order. Output one row with columns first_run, second_run, entries_cleared, total_minutes. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "purge_runs": {
+        "columns": [
+          "run_code TEXT",
+          "run_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            5
+          ],
+          [
+            "B",
+            3
+          ],
+          [
+            "C",
+            3
+          ],
+          [
+            "D",
+            5
+          ]
+        ]
+      },
+      "run_targets": {
+        "columns": [
+          "run_code TEXT",
+          "entry_code TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "oak"
+          ],
+          [
+            "A",
+            "fir"
+          ],
+          [
+            "B",
+            "oak"
+          ],
+          [
+            "B",
+            "fir"
+          ],
+          [
+            "C",
+            "ash"
+          ],
+          [
+            "D",
+            "elm"
+          ],
+          [
+            "D",
+            "yew"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_run",
+      "second_run",
+      "entries_cleared",
+      "total_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-separate-monument-drift-from-datum-reset",
+    "tool": "sqlite.query",
+    "instruction": "For each sector, estimate movement between visits 1 and 2 using the same monuments at both visits. An east reading is in millimetres and includes a common additive offset specific to its sector and visit. The sector's fixed control has true east coordinate zero, so subtract its reading from each monument reading at that visit. Each sector has one control, and each point has at most one row per visit. NULL means no usable reading. Include a monument only when its own reading and its sector's control reading exist and are usable at both visits. Report the numerator and denominator of the sector's mean signed eastward movement: sector, paired_count, net_east_mm, where net_east_mm is the sum of corrected visit-2 minus corrected visit-1 movements. Westward movement is negative. Omit sectors with no eligible pair. Order by sector using SQLite's default binary text order. Equal movements from different monuments count separately. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "control_reading": {
+        "columns": [
+          "sector TEXT",
+          "visit_no INTEGER",
+          "east_mm INTEGER"
+        ],
+        "rows": [
+          [
+            "Fen",
+            1,
+            10
+          ],
+          [
+            "Fen",
+            2,
+            16
+          ],
+          [
+            "Rim",
+            1,
+            -3
+          ],
+          [
+            "Rim",
+            2,
+            null
+          ]
+        ]
+      },
+      "monument_reading": {
+        "columns": [
+          "sector TEXT",
+          "point_id TEXT",
+          "visit_no INTEGER",
+          "east_mm INTEGER"
+        ],
+        "rows": [
+          [
+            "Fen",
+            "A",
+            1,
+            100
+          ],
+          [
+            "Fen",
+            "A",
+            2,
+            113
+          ],
+          [
+            "Fen",
+            "B",
+            1,
+            40
+          ],
+          [
+            "Fen",
+            "B",
+            2,
+            43
+          ],
+          [
+            "Fen",
+            "C",
+            2,
+            80
+          ],
+          [
+            "Rim",
+            "D",
+            1,
+            21
+          ],
+          [
+            "Rim",
+            "D",
+            2,
+            35
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "sector",
+      "paired_count",
+      "net_east_mm"
+    ]
+  }
+]

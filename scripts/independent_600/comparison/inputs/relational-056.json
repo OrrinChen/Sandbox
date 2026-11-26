@@ -1,0 +1,286 @@
+[
+  {
+    "task_id": "decision-reconcile-independent-carton-witnesses",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the evidence index for a boxed software release whose shortcut insert may be missing. Each carton_note records one desk's observation about one identified carton. A carton qualifies when at least two distinct desks report an absent insert and no desk reports a present insert. An unclear finding neither supports nor contradicts omission. Repeated notes from a desk count as one witness. Cite exactly two supporting notes: use the alphabetically first two supporting desk codes, and within each use the lexicographically smallest supporting note ID. IDs are unique, all comparisons use binary text order, no values are null, and counts are in desks. Return carton_code, witness_count, first_note, second_note ordered by carton_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "carton_note": {
+        "columns": [
+          "note_id TEXT",
+          "carton_code TEXT",
+          "desk_code TEXT",
+          "finding TEXT",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "N4",
+            "amber",
+            "dock",
+            "absent",
+            "Tray lifted; the insert pocket was empty."
+          ],
+          [
+            "N1",
+            "amber",
+            "dock",
+            "absent",
+            "Recount found only the disc sleeve."
+          ],
+          [
+            "N6",
+            "amber",
+            "pack",
+            "absent",
+            "No shortcut sheet beneath the sleeve."
+          ],
+          [
+            "N2",
+            "birch",
+            "dock",
+            "absent",
+            "Only the booklet was in the tray."
+          ],
+          [
+            "N3",
+            "birch",
+            "dock",
+            "absent",
+            "Second look found no loose sheet."
+          ],
+          [
+            "N5",
+            "cedar",
+            "pack",
+            "present",
+            "Shortcut insert lay inside the booklet."
+          ],
+          [
+            "N7",
+            "amber",
+            "sort",
+            "unclear",
+            "Folded material could not be identified."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "carton_code",
+      "witness_count",
+      "first_note",
+      "second_note"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-return-crates-by-model",
+    "tool": "csv.export",
+    "instruction": "Construct return_ack.csv with columns batch_code, model_code, expected_qty, counted_qty, variance_qty in that order. For each batch appearing in return_plan, report every crate model with a discrepancy, including unexpected models unloaded in that batch. Plan lines specify crates due and unload lines record crates physically counted. Each line is a separate contribution, even when all its values match another line. Sum each side independently by batch and model. An absent side contributes zero. A null crate_qty on an unload line means the tally was voided and contributes zero. Quantities are in whole crates. Calculate variance as counted minus expected and omit zero variances. Ignore unloads for batches outside the plan. Sort by batch_code and then model_code in ascending binary text order. Each output key occurs once, so there are no residual ties. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "return_plan": {
+        "columns": [
+          "batch_code TEXT",
+          "model_code TEXT",
+          "crate_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            "fold",
+            3
+          ],
+          [
+            "R1",
+            "fold",
+            3
+          ],
+          [
+            "R1",
+            "rigid",
+            2
+          ],
+          [
+            "R2",
+            "mesh",
+            4
+          ]
+        ]
+      },
+      "unload_line": {
+        "columns": [
+          "batch_code TEXT",
+          "model_code TEXT",
+          "crate_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            "fold",
+            2
+          ],
+          [
+            "R1",
+            "fold",
+            2
+          ],
+          [
+            "R1",
+            "mesh",
+            1
+          ],
+          [
+            "R1",
+            "rigid",
+            2
+          ],
+          [
+            "R2",
+            "mesh",
+            null
+          ],
+          [
+            "R9",
+            "mesh",
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "batch_code",
+      "model_code",
+      "expected_qty",
+      "counted_qty",
+      "variance_qty"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-split-fifo-lots",
+    "tool": "sqlite.query",
+    "instruction": "Report the whole shares remaining in each acquisition lot after the sale on 2026-04-20. At the opening of 2026-04-10, a 3-for-2 split converted every 2 shares already held into 3 shares. Quantities in lots acquired on or after that date are already in post-split shares. All pre-split quantities are even. The single sale is stated in post-split shares, occurs after all acquisitions, and does not exceed inventory. Apply the split first, then consume shares from lots in ascending acquisition date, breaking date ties by ascending lot_id. Return lot_id and remaining_shares in that same order, including fully consumed lots with zero shares. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stock_lots": {
+        "columns": [
+          "lot_id TEXT",
+          "acquired_on TEXT",
+          "acquired_shares INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "2026-04-01",
+            8
+          ],
+          [
+            "C",
+            "2026-04-10",
+            9
+          ],
+          [
+            "B",
+            "2026-04-10",
+            6
+          ]
+        ]
+      },
+      "stock_sale": {
+        "columns": [
+          "sold_shares INTEGER"
+        ],
+        "rows": [
+          [
+            15
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "lot_id",
+      "remaining_shares"
+    ]
+  },
+  {
+    "task_id": "decision-reconcile-transferred-finish-credits",
+    "tool": "sqlite.query",
+    "instruction": "Reconcile the fictional Shoal Meet finish ledger by ticket. Each official finish slip awards its full positive integer points value to exactly one lane. The posting journal contains signed integer point movements, including reversals and split postings. For every official ticket, compare the intended allocation with the net posted allocation separately for its official lane and every lane mentioned in its journal entries. An absent posting contributes zero. Ignore journal tickets without an official slip. Return only lane balances that require a nonzero adjustment, with ticket_id, lane_id, adjustment_pts, slip_ref in binary ascending ticket_id then lane_id order. A positive adjustment adds points and a negative adjustment removes them. Cite the official slip that establishes the correct allocation, including on rows that remove points from another lane. All fields are non-NULL. Journal entries are individual movements, so equal amounts can legitimately recur. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "finish_slips": {
+        "columns": [
+          "ticket_id TEXT",
+          "lane_id TEXT",
+          "award_pts INTEGER",
+          "slip_ref TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "T1",
+            "L2",
+            5,
+            "F8",
+            "Finish ticket one awards all five points to lane two."
+          ],
+          [
+            "T2",
+            "L3",
+            4,
+            "F4",
+            "Four points credited to the third lane on ticket two."
+          ],
+          [
+            "T3",
+            "L1",
+            2,
+            "F6",
+            "First lane earns the two-point finish on ticket three."
+          ]
+        ]
+      },
+      "posting_journal": {
+        "columns": [
+          "ticket_id TEXT",
+          "lane_id TEXT",
+          "movement_pts INTEGER"
+        ],
+        "rows": [
+          [
+            "T1",
+            "L1",
+            5
+          ],
+          [
+            "T1",
+            "L1",
+            -2
+          ],
+          [
+            "T1",
+            "L2",
+            2
+          ],
+          [
+            "T2",
+            "L3",
+            2
+          ],
+          [
+            "T2",
+            "L3",
+            2
+          ],
+          [
+            "T9",
+            "L4",
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "ticket_id",
+      "lane_id",
+      "adjustment_pts",
+      "slip_ref"
+    ]
+  }
+]

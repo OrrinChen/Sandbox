@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21933,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 154,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-23a8-7593-8d24-9aa571db8e57",
+  "packet_sha256": "4cf5b6f50d43ab6ceb11d57cab1a3dbd72fbe23ff6d87f79ca42953567249e09",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q4/semiconductors-3\",\"alerts\":[{\"cik\":\"0000867773\",\"reason\":\"Revenue growth slowed from 25.87% to 11.03% year over year. California’s April NEM 2.0 deadline pulled demand forward, while higher installation capacity helped sustain second-quarter volume (A, B). I expect installations from pre-deadline demand to keep the intervening quarter above −5.00%, then taper enough for revenue to fall at least 5.00% year over year in the quarter starting October 2. The timing is uncertain because the records do not quantify remaining pre-deadline orders.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/semiconductors-3",
+        "alerts": [
+          {
+            "cik": "0000867773",
+            "reason": "Revenue growth slowed from 25.87% to 11.03% year over year. California’s April NEM 2.0 deadline pulled demand forward, while higher installation capacity helped sustain second-quarter volume (A, B). I expect installations from pre-deadline demand to keep the intervening quarter above −5.00%, then taper enough for revenue to fall at least 5.00% year over year in the quarter starting October 2. The timing is uncertain because the records do not quantify remaining pre-deadline orders."
+          }
+        ]
+      }
+    ]
+  }
+}

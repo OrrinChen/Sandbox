@@ -1,0 +1,105 @@
+{
+  "command": "python3 scripts/run_dense_lsa_experiment.py --config configs/dense_lsa.yaml --json-out experiments/dense_lsa/dense_lsa_rerank_ablation.json --markdown-out reports/dense_lsa/dense_lsa_rerank_ablation.md",
+  "evidence_recall_at_1": {
+    "bm25": "0.3",
+    "bm25_metadata_rerank": "0.3",
+    "dense_lsa": "0.3",
+    "dense_lsa_metadata_rerank": "0.3",
+    "dense_proxy": "0.3"
+  },
+  "evidence_recall_at_1_hits": {
+    "bm25": 60,
+    "bm25_metadata_rerank": 60,
+    "dense_lsa": 60,
+    "dense_lsa_metadata_rerank": 60,
+    "dense_proxy": 60
+  },
+  "evidence_recall_hits": {
+    "bm25": 199,
+    "bm25_metadata_rerank": 199,
+    "dense_lsa": 200,
+    "dense_lsa_metadata_rerank": 200,
+    "dense_proxy": 184
+  },
+  "evidence_recall_total": {
+    "bm25": 200,
+    "bm25_metadata_rerank": 200,
+    "dense_lsa": 200,
+    "dense_lsa_metadata_rerank": 200,
+    "dense_proxy": 200
+  },
+  "experiment_id": "dense_lsa_rerank_ablation",
+  "method_notes": {
+    "bm25": "BM25EvidenceRetriever, top_k=5, no metadata rerank. Same retriever class as the published BM25 verdict baseline.",
+    "bm25_metadata_rerank": "BM25 scores on up to 30 positive-score candidates, then MetadataBoostReranker, truncated to top_k=5. Boosts are added to raw BM25 scores.",
+    "dense_lsa": "Cosine over corpus TF-IDF singular vectors, dimension requested 32, 15 subspace iterations, no metadata rerank.",
+    "dense_lsa_metadata_rerank": "Same TF-IDF singular-vector cosine scores on up to 30 candidates, then MetadataBoostReranker, truncated to top_k. Boosts are added to cosine scores.",
+    "dense_proxy": "Existing DeterministicTokenEmbeddingProvider dimension 64: one hashed bucket per token, no IDF. Offline dense proxy, not a neural embedding, and not the published 66.7% verdict accuracy."
+  },
+  "method_order": [
+    "bm25",
+    "bm25_metadata_rerank",
+    "dense_proxy",
+    "dense_lsa",
+    "dense_lsa_metadata_rerank"
+  ],
+  "metrics_omitted_note": "This ablation does not report verdict accuracy, numeric correctness, contradiction detection, unsupported-claim rate, answer faithfulness, memo usefulness, latency, or cost. Predictions are marked not_scored. The published full-engine 83.3% and BM25 66.7% figures are verdict accuracies from the existing benchmark, not outputs of this run.",
+  "reported_metrics": {
+    "bm25": {
+      "citation_exactness": "0.995",
+      "entity_correctness": "0.9666666666666666666666666667",
+      "evidence_recall_at_k": "0.995",
+      "fiscal_period_correctness": "0.93"
+    },
+    "bm25_metadata_rerank": {
+      "citation_exactness": "0.995",
+      "entity_correctness": "0.9666666666666666666666666667",
+      "evidence_recall_at_k": "0.995",
+      "fiscal_period_correctness": "0.93"
+    },
+    "dense_lsa": {
+      "citation_exactness": "1",
+      "entity_correctness": "0.8033333333333333333333333333",
+      "evidence_recall_at_k": "1",
+      "fiscal_period_correctness": "0.9933333333333333333333333333"
+    },
+    "dense_lsa_metadata_rerank": {
+      "citation_exactness": "1",
+      "entity_correctness": "0.8066666666666666666666666667",
+      "evidence_recall_at_k": "1",
+      "fiscal_period_correctness": "0.9933333333333333333333333333"
+    },
+    "dense_proxy": {
+      "citation_exactness": "0.92",
+      "entity_correctness": "0.7766666666666666666666666667",
+      "evidence_recall_at_k": "0.92",
+      "fiscal_period_correctness": "0.9433333333333333333333333333"
+    }
+  },
+  "setup": {
+    "candidate_pool_multiplier": 6,
+    "candidate_pool_size_cap": 30,
+    "corpus_construction": "Same constructed benchmark corpus as the published verdict benchmark: gold evidence specifications plus known distractors. Claim text is copied into both gold and distractor document text.",
+    "corpus_document_count": 320,
+    "corpus_mode": "benchmark",
+    "embedding": "Sublinear TF-IDF fit on benchmark document text only, then a 15-step subspace iteration toward the leading right singular vectors. Query and document vectors are the L2-normalized projections, rounded to 8 decimal places. This is not a LAPACK SVD and not a neural embedding.",
+    "fitted_dimension": 32,
+    "idf_formula": "ln((document_count + 1) / (document_frequency + 1)) + 1",
+    "implementation": "Pure Python float arithmetic. No BLAS and no neural model.",
+    "max_features": 2000,
+    "min_df": 2,
+    "provider_id": "corpus-tfidf-svd-subspace-v1",
+    "proxy_dimension": 64,
+    "proxy_provider_id": "deterministic-token-v1",
+    "recall_at_1_note": "evidence_recall_at_1 is the same ranked list cut to the first hit. It is a second cutoff, not a separate retrieval system. Recall@5 can sit near the ceiling because top_k is 5 and the task set has 200 gold evidence rows across 60 tasks.",
+    "requested_dimension": 32,
+    "reranker": "MetadataBoostReranker adds company +0.15, fiscal period +0.15, allowed source type +0.12, and metric +0.12 to the base retrieval score inside the positive-score candidate pool, then truncates to top_k.",
+    "subspace_iterations": 15,
+    "task_count": 60,
+    "task_set_id": "phase6_seed_multimodal_due_diligence",
+    "tf_formula": "1 + ln(term_count) for term_count > 0",
+    "top_k": 5,
+    "vocabulary_size": 201
+  },
+  "status": "ran"
+}

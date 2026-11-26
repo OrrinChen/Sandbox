@@ -1,0 +1,79 @@
+{
+  "command": "FINANCIAL_EVIDENCE_ENABLE_LOCAL_EMBEDDINGS=1 python3 scripts/run_sentence_transformer_baseline.py --config configs/dense_sentence_transformer.yaml",
+  "evidence_recall_at_1": {
+    "bm25": "0.3",
+    "bm25_metadata_rerank": "0.3",
+    "dense_minilm": "0.25",
+    "dense_minilm_metadata_rerank": "0.3"
+  },
+  "evidence_recall_at_1_hits": {
+    "bm25": 60,
+    "bm25_metadata_rerank": 60,
+    "dense_minilm": 50,
+    "dense_minilm_metadata_rerank": 60
+  },
+  "evidence_recall_hits": {
+    "bm25": 199,
+    "bm25_metadata_rerank": 199,
+    "dense_minilm": 192,
+    "dense_minilm_metadata_rerank": 200
+  },
+  "evidence_recall_total": {
+    "bm25": 200,
+    "bm25_metadata_rerank": 200,
+    "dense_minilm": 200,
+    "dense_minilm_metadata_rerank": 200
+  },
+  "experiment_id": "dense_sentence_transformer_rerank_ablation",
+  "method_order": [
+    "bm25",
+    "bm25_metadata_rerank",
+    "dense_minilm",
+    "dense_minilm_metadata_rerank"
+  ],
+  "metrics_omitted_note": "This ablation does not report verdict accuracy, numeric correctness, contradiction detection, unsupported-claim rate, answer faithfulness, memo usefulness, latency, or cost. Predictions are marked not_scored. The published full-engine 83.3% and BM25 66.7% figures are verdict accuracies from the existing benchmark, not outputs of this run.",
+  "reported_metrics": {
+    "bm25": {
+      "citation_exactness": "0.995",
+      "entity_correctness": "0.9666666666666666666666666667",
+      "evidence_recall_at_k": "0.995",
+      "fiscal_period_correctness": "0.93"
+    },
+    "bm25_metadata_rerank": {
+      "citation_exactness": "0.995",
+      "entity_correctness": "0.9666666666666666666666666667",
+      "evidence_recall_at_k": "0.995",
+      "fiscal_period_correctness": "0.93"
+    },
+    "dense_minilm": {
+      "citation_exactness": "0.96",
+      "entity_correctness": "0.93",
+      "evidence_recall_at_k": "0.96",
+      "fiscal_period_correctness": "0.91"
+    },
+    "dense_minilm_metadata_rerank": {
+      "citation_exactness": "1",
+      "entity_correctness": "0.9733333333333333333333333333",
+      "evidence_recall_at_k": "1",
+      "fiscal_period_correctness": "0.9366666666666666666666666667"
+    }
+  },
+  "setup": {
+    "candidate_pool_multiplier": 6,
+    "candidate_pool_size_cap": 30,
+    "corpus_construction": "Same constructed benchmark corpus as the published verdict benchmark: gold evidence specifications plus known distractors. Claim text is copied into both gold and distractor document text.",
+    "corpus_document_count": 320,
+    "corpus_mode": "benchmark",
+    "device": "cpu",
+    "embedding": "sentence-transformers encode with normalize_embeddings=True, then cosine retrieval through EmbeddingEvidenceRetriever. Metadata rerank uses the existing MetadataBoostReranker on up to top_k * candidate_pool_multiplier candidates. Not the published verdict-accuracy benchmark.",
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "provider_id": "local-sentence-transformer:sentence-transformers/all-MiniLM-L6-v2",
+    "sentence_transformers_version": "6.2.0",
+    "task_count": 60,
+    "task_set_id": "phase6_seed_multimodal_due_diligence",
+    "top_k": 5,
+    "torch_version": "2.15.0+cpu",
+    "weights": "Downloaded at run time from the model id above. Weights are not committed."
+  },
+  "status": "ran"
+}

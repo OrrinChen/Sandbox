@@ -1,0 +1,284 @@
+{
+  "generator_id": "hard-benchmark-v1",
+  "methods": {
+    "bm25": {
+      "dev": {
+        "ndcg_at_10": "0.0870633370",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.0725028412",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.03333333333333333333333333333",
+        "recall_at_10": "0.1333333333333333333333333333",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "0.1",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.5555555555555555555555555556",
+        "verdict_correct": 10
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.1155721313",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.0976213145",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.01136363636363636363636363636",
+        "recall_at_10": "0.2045454545454545454545454545",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.1590909090909090909090909091",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.3829787234042553191489361702",
+        "verdict_correct": 18
+      }
+    },
+    "bm25_metadata_rerank": {
+      "dev": {
+        "ndcg_at_10": "0.0888546977",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.0742942019",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.03333333333333333333333333333",
+        "recall_at_10": "0.1333333333333333333333333333",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "0.1",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.5555555555555555555555555556",
+        "verdict_correct": 10
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.1264957364",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.1074094181",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.01136363636363636363636363636",
+        "recall_at_10": "0.2272727272727272727272727273",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.1818181818181818181818181818",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.3829787234042553191489361702",
+        "verdict_correct": 18
+      }
+    },
+    "dense_lsa": {
+      "dev": {
+        "ndcg_at_10": "0.1127193877",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.0771279001",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.03333333333333333333333333333",
+        "recall_at_10": "0.2",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "0.1",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.5",
+        "verdict_correct": 9
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.1766743302",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.1388823989",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.06818181818181818181818181818",
+        "recall_at_10": "0.2840909090909090909090909091",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.1818181818181818181818181818",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.3191489361702127659574468085",
+        "verdict_correct": 15
+      }
+    },
+    "dense_lsa_metadata_rerank": {
+      "dev": {
+        "ndcg_at_10": "0.5569715792",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.4902062991",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.1333333333333333333333333333",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "0.8",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.5555555555555555555555555556",
+        "verdict_correct": 10
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.5827590502",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.5259237652",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.1704545454545454545454545455",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.8181818181818181818181818182",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.4042553191489361702127659574",
+        "verdict_correct": 19
+      }
+    },
+    "dense_minilm": {
+      "dev": {
+        "ndcg_at_10": "0.2994391732",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.1469588115",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0",
+        "recall_at_10": "0.7666666666666666666666666667",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "0.3333333333333333333333333333",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.4444444444444444444444444444",
+        "verdict_correct": 8
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.3408556855",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.2056573066",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0",
+        "recall_at_10": "0.8295454545454545454545454545",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.4659090909090909090909090909",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.1914893617021276595744680851",
+        "verdict_correct": 9
+      }
+    },
+    "dense_minilm_metadata_rerank": {
+      "dev": {
+        "ndcg_at_10": "0.8716246371",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "0.8716246371",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.6",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "1",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "0.7222222222222222222222222222",
+        "verdict_correct": 13
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "0.8774120525",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "0.8641760412",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.6136363636363636363636363636",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "0.9659090909090909090909090909",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "0.7021276595744680851063829787",
+        "verdict_correct": 33
+      }
+    },
+    "full_engine": {
+      "dev": {
+        "ndcg_at_10": "1.0000000000",
+        "ndcg_at_10_tasks": 15,
+        "ndcg_at_5": "1.0000000000",
+        "ndcg_at_5_tasks": 15,
+        "recall_at_1": "0.9333333333333333333333333333",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 15,
+        "recall_at_1_tasks": 15,
+        "recall_at_5": "1",
+        "recall_at_5_tasks": 15,
+        "task_count": 18,
+        "verdict_accuracy": "1",
+        "verdict_correct": 18
+      },
+      "status": "ran",
+      "test": {
+        "ndcg_at_10": "1.0000000000",
+        "ndcg_at_10_tasks": 44,
+        "ndcg_at_5": "1.0000000000",
+        "ndcg_at_5_tasks": 44,
+        "recall_at_1": "0.8977272727272727272727272727",
+        "recall_at_10": "1",
+        "recall_at_10_tasks": 44,
+        "recall_at_1_tasks": 44,
+        "recall_at_5": "1",
+        "recall_at_5_tasks": 44,
+        "task_count": 47,
+        "verdict_accuracy": "1",
+        "verdict_correct": 47
+      }
+    }
+  },
+  "provenance": {
+    "canonical_fact_count": 72,
+    "construction": "synthetic-and-labeled",
+    "document_count": 156,
+    "edgar_text_reproduced": false,
+    "families": {
+      "calendar_trap_contradict": 12,
+      "cross_company": 5,
+      "margin_multihop": 6,
+      "missing_fact_insufficient": 6,
+      "paraphrase_support": 12,
+      "prior_year_contradict": 12,
+      "scale_trap_contradict": 12
+    },
+    "issuers": "Fictional legal names and tickers. Amounts are invented.",
+    "license": "Benchmark generator and labels are part of this repository and covered by its MIT license. The passages are not SEC filings, not EDGAR excerpts, and not factual financial statements.",
+    "real_filings_used": false,
+    "split": "sha256(task_id) first byte < 77 is dev (about 30 percent); the remainder is test. The reported table is the test split. The dev split was not used to choose a retriever, a cutoff, or a validator.",
+    "splits": {
+      "dev": 18,
+      "test": 47
+    },
+    "task_count": 65,
+    "verdicts": {
+      "contradict": 41,
+      "insufficient": 6,
+      "support": 18
+    }
+  },
+  "setup": {
+    "candidate_pool": 50,
+    "dense_encoder": "ran sentence-transformers/all-MiniLM-L6-v2; sentence-transformers 6.2.0; torch 2.15.0+cpu; device cpu; normalize_embeddings=True. Weights are not committed.",
+    "ndcg": "Macro-average nDCG with grades 2 (required filing) and 0 (everything else), log base 2.",
+    "query": "Paraphrased claim text only. Company and fiscal-period fields are not appended to the query.",
+    "recall": "Macro-average over test tasks that have at least one grade-2 document. Grade 2 is a required canonical filing.",
+    "reranker": "Existing MetadataBoostReranker on the candidate pool, using due-diligence target company, fiscal period, sec_filing source, and metric.",
+    "split_reported": "test",
+    "svd": "Same TF-IDF subspace settings as the 60-task CPU run: dimension 32, min_df 2, 15 iterations.",
+    "tie_break": "Higher score, then higher document_id. is_distractor is false for every row.",
+    "top_ks": [
+      1,
+      5,
+      10
+    ],
+    "verdict": "Among the method's top 5 documents, keep rows whose extracted company, fiscal period, and metric match the subclaim, take the best-ranked remaining row, then run FiscalPeriodValidator and NumericValidator. Comparison and margin tasks use the best-ranked extracted amounts for each required fact. full_engine ranks the whole corpus by those metadata fields before the same validators."
+  },
+  "status": "ran",
+  "task_set_id": "hard-benchmark-v1"
+}

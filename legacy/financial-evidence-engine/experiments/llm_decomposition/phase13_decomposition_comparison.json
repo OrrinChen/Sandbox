@@ -1,0 +1,45 @@
+{
+  "complex_claim_count": 5,
+  "examples": [
+    {
+      "claim_id": "complex:msft_cloud_offset",
+      "llm_subclaims": 4,
+      "rejected_subclaims": 0,
+      "rule_based_subclaims": 1,
+      "text": "Microsoft's FY2024 cloud growth was strong enough to offset weakness in other segments."
+    },
+    {
+      "claim_id": "complex:nvda_data_center_driver",
+      "llm_subclaims": 4,
+      "rejected_subclaims": 0,
+      "rule_based_subclaims": 1,
+      "text": "NVIDIA's FY2024 revenue growth was mainly driven by data center demand."
+    },
+    {
+      "claim_id": "complex:aapl_services_margin",
+      "llm_subclaims": 4,
+      "rejected_subclaims": 0,
+      "rule_based_subclaims": 2,
+      "text": "Apple's FY2024 margin improvement came from Services mix rather than one-time cost cuts."
+    },
+    {
+      "claim_id": "complex:amzn_aws_offset",
+      "llm_subclaims": 3,
+      "rejected_subclaims": 0,
+      "rule_based_subclaims": 1,
+      "text": "Amazon's FY2024 AWS growth offset retail margin pressure."
+    },
+    {
+      "claim_id": "complex:jpm_rate_benefit",
+      "llm_subclaims": 4,
+      "rejected_subclaims": 0,
+      "rule_based_subclaims": 2,
+      "text": "JPMorgan's FY2024 earnings strength was primarily caused by net interest income rather than credit releases."
+    }
+  ],
+  "llm_subclaim_count": 19,
+  "recorded_llm_provider": "recorded_llm",
+  "rejected_subclaim_count": 0,
+  "rule_based_provider": "rule_based",
+  "rule_based_subclaim_count": 7
+}

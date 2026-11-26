@@ -1,0 +1,532 @@
+{
+  "canonical_document_ids": [
+    "d0001",
+    "d0002",
+    "d0003",
+    "d0004",
+    "d0005",
+    "d0006",
+    "d0007",
+    "d0008",
+    "d0009",
+    "d0010",
+    "d0011",
+    "d0012",
+    "d0013",
+    "d0014",
+    "d0015",
+    "d0016",
+    "d0017",
+    "d0018",
+    "d0019",
+    "d0020",
+    "d0021",
+    "d0022",
+    "d0023",
+    "d0024",
+    "d0025",
+    "d0026",
+    "d0027",
+    "d0028",
+    "d0029",
+    "d0030",
+    "d0031",
+    "d0032",
+    "d0033",
+    "d0034",
+    "d0035",
+    "d0036",
+    "d0037",
+    "d0038",
+    "d0039",
+    "d0040",
+    "d0041",
+    "d0042",
+    "d0043",
+    "d0044",
+    "d0045",
+    "d0046",
+    "d0047",
+    "d0048",
+    "d0049",
+    "d0050",
+    "d0051",
+    "d0052",
+    "d0053",
+    "d0054",
+    "d0055",
+    "d0056",
+    "d0057",
+    "d0058",
+    "d0059",
+    "d0060",
+    "d0061",
+    "d0062",
+    "d0063",
+    "d0064",
+    "d0065",
+    "d0066",
+    "d0067",
+    "d0068",
+    "d0069",
+    "d0070",
+    "d0071",
+    "d0072"
+  ],
+  "tasks": [
+    {
+      "evidence": [
+        "d0007"
+      ],
+      "task_id": "paraphrase_support-ARCA-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0007"
+      ],
+      "task_id": "prior_year_contradict-ARCA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0007"
+      ],
+      "task_id": "scale_trap_contradict-ARCA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0007"
+      ],
+      "task_id": "calendar_trap_contradict-ARCA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0010"
+      ],
+      "task_id": "paraphrase_support-ARCA-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0010"
+      ],
+      "task_id": "prior_year_contradict-ARCA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0010"
+      ],
+      "task_id": "scale_trap_contradict-ARCA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0010"
+      ],
+      "task_id": "calendar_trap_contradict-ARCA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0010",
+        "d0011"
+      ],
+      "task_id": "margin-ARCA-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0019"
+      ],
+      "task_id": "paraphrase_support-BREL-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0019"
+      ],
+      "task_id": "prior_year_contradict-BREL-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0019"
+      ],
+      "task_id": "scale_trap_contradict-BREL-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0019"
+      ],
+      "task_id": "calendar_trap_contradict-BREL-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0022"
+      ],
+      "task_id": "paraphrase_support-BREL-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0022"
+      ],
+      "task_id": "prior_year_contradict-BREL-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0022"
+      ],
+      "task_id": "scale_trap_contradict-BREL-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0022"
+      ],
+      "task_id": "calendar_trap_contradict-BREL-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0022",
+        "d0023"
+      ],
+      "task_id": "margin-BREL-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0031"
+      ],
+      "task_id": "paraphrase_support-CIND-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0031"
+      ],
+      "task_id": "prior_year_contradict-CIND-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0031"
+      ],
+      "task_id": "scale_trap_contradict-CIND-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0031"
+      ],
+      "task_id": "calendar_trap_contradict-CIND-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0034"
+      ],
+      "task_id": "paraphrase_support-CIND-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0034"
+      ],
+      "task_id": "prior_year_contradict-CIND-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0034"
+      ],
+      "task_id": "scale_trap_contradict-CIND-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0034"
+      ],
+      "task_id": "calendar_trap_contradict-CIND-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0034",
+        "d0035"
+      ],
+      "task_id": "margin-CIND-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0043"
+      ],
+      "task_id": "paraphrase_support-DORA-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0043"
+      ],
+      "task_id": "prior_year_contradict-DORA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0043"
+      ],
+      "task_id": "scale_trap_contradict-DORA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0043"
+      ],
+      "task_id": "calendar_trap_contradict-DORA-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0046"
+      ],
+      "task_id": "paraphrase_support-DORA-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0046"
+      ],
+      "task_id": "prior_year_contradict-DORA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0046"
+      ],
+      "task_id": "scale_trap_contradict-DORA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0046"
+      ],
+      "task_id": "calendar_trap_contradict-DORA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0046",
+        "d0047"
+      ],
+      "task_id": "margin-DORA-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0055"
+      ],
+      "task_id": "paraphrase_support-ELAN-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0055"
+      ],
+      "task_id": "prior_year_contradict-ELAN-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0055"
+      ],
+      "task_id": "scale_trap_contradict-ELAN-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0055"
+      ],
+      "task_id": "calendar_trap_contradict-ELAN-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0058"
+      ],
+      "task_id": "paraphrase_support-ELAN-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0058"
+      ],
+      "task_id": "prior_year_contradict-ELAN-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0058"
+      ],
+      "task_id": "scale_trap_contradict-ELAN-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0058"
+      ],
+      "task_id": "calendar_trap_contradict-ELAN-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0058",
+        "d0059"
+      ],
+      "task_id": "margin-ELAN-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0067"
+      ],
+      "task_id": "paraphrase_support-FOLD-2023",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0067"
+      ],
+      "task_id": "prior_year_contradict-FOLD-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0067"
+      ],
+      "task_id": "scale_trap_contradict-FOLD-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0067"
+      ],
+      "task_id": "calendar_trap_contradict-FOLD-2023",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0070"
+      ],
+      "task_id": "paraphrase_support-FOLD-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0070"
+      ],
+      "task_id": "prior_year_contradict-FOLD-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0070"
+      ],
+      "task_id": "scale_trap_contradict-FOLD-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0070"
+      ],
+      "task_id": "calendar_trap_contradict-FOLD-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0070",
+        "d0071"
+      ],
+      "task_id": "margin-FOLD-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0010",
+        "d0022"
+      ],
+      "task_id": "cross-ARCA-BREL-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0034",
+        "d0022"
+      ],
+      "task_id": "cross-CIND-BREL-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0046",
+        "d0010"
+      ],
+      "task_id": "cross-DORA-ARCA-2024",
+      "verdict": "support"
+    },
+    {
+      "evidence": [
+        "d0058",
+        "d0070"
+      ],
+      "task_id": "cross-ELAN-FOLD-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [
+        "d0070",
+        "d0034"
+      ],
+      "task_id": "cross-FOLD-CIND-2024",
+      "verdict": "contradict"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-ARCA-oncology",
+      "verdict": "insufficient"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-BREL-oncology",
+      "verdict": "insufficient"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-CIND-oncology",
+      "verdict": "insufficient"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-DORA-oncology",
+      "verdict": "insufficient"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-ELAN-oncology",
+      "verdict": "insufficient"
+    },
+    {
+      "evidence": [],
+      "task_id": "missing-FOLD-oncology",
+      "verdict": "insufficient"
+    }
+  ]
+}

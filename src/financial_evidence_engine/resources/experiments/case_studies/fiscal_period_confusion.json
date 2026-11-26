@@ -1,0 +1,509 @@
+{
+  "case_id": "fiscal_period_confusion",
+  "claim": "Apple's FY2024 revenue grew versus FY2023.",
+  "expected_verdict": "support",
+  "failure_mode": "period_confusion",
+  "final_full_engine_verdict": "support",
+  "gold_evidence": [
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:single_company_trend:ev1",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "modality": "xbrl",
+      "role": "current revenue fact",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:single_company_trend:ev2",
+      "fiscal_period": "FY2023",
+      "metric": "revenue",
+      "modality": "xbrl",
+      "role": "prior revenue fact",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:single_company_trend:ev3",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "modality": "text",
+      "role": "MD&A revenue discussion",
+      "source_type": "sec_filing"
+    }
+  ],
+  "memo_snippet": "Full engine verdict: support. Expected verdict: support. The memo cites 5 retrieved evidence units and separates retrieval output from validator judgment. Limitation: No validator failure was detected for the full-engine method on this case.",
+  "method_results": {
+    "bm25_real": {
+      "answer_text": "bm25_real retrieved 5 evidence units for phase6:aapl:single_company_trend; top evidence: phase6:aapl:single_company_trend:ev2, phase6:aapl:single_company_trend:ev3, phase6:aapl:single_company_trend:ev1; numeric_status=fail.",
+      "failure_reasons": [
+        "period_confusion: Retrieved evidence uses a non-target fiscal period.",
+        "entity_mismatch: Retrieved evidence belongs to the wrong company.",
+        "numeric_validation_gap: Numeric validation did not pass for this task."
+      ],
+      "method": "bm25_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:dist1",
+          "fiscal_period": "Q4 FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:single_company_trend:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:single_company_trend:num1=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "fail",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "fail",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "dense_real": {
+      "answer_text": "dense_real retrieved 5 evidence units for phase6:aapl:single_company_trend; top evidence: phase6:aapl:single_company_trend:ev2, phase6:aapl:single_company_trend:ev1, phase6:aapl:single_company_trend:ev3; numeric_status=fail.",
+      "failure_reasons": [
+        "period_confusion: Retrieved evidence uses a non-target fiscal period.",
+        "entity_mismatch: Retrieved evidence belongs to the wrong company.",
+        "numeric_validation_gap: Numeric validation did not pass for this task."
+      ],
+      "method": "dense_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:dist1",
+          "fiscal_period": "Q4 FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "WMT",
+          "evidence_key": "phase6:wmt:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:single_company_trend:num1=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "fail",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "fail",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "full_engine_real": {
+      "answer_text": "full_engine_real retrieved 5 evidence units for phase6:aapl:single_company_trend; top evidence: phase6:aapl:single_company_trend:ev2, phase6:aapl:single_company_trend:ev1, phase6:aapl:single_company_trend:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "full_engine_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:msft:single_company_trend:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:guidance_vs_actuals:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:single_company_trend:num1=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "graph_real": {
+      "answer_text": "graph_real retrieved 5 evidence units for phase6:aapl:single_company_trend; top evidence: phase6:aapl:single_company_trend:ev2, phase6:aapl:single_company_trend:ev1, phase6:aapl:single_company_trend:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "graph_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:msft:single_company_trend:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:guidance_vs_actuals:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:single_company_trend:num1=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "hybrid_real": {
+      "answer_text": "hybrid_real retrieved 5 evidence units for phase6:aapl:single_company_trend; top evidence: phase6:aapl:single_company_trend:ev2, phase6:aapl:single_company_trend:ev1, phase6:aapl:single_company_trend:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "period_confusion: Retrieved evidence uses a non-target fiscal period.",
+        "entity_mismatch: Retrieved evidence belongs to the wrong company."
+      ],
+      "method": "hybrid_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:single_company_trend:dist1",
+          "fiscal_period": "Q4 FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "WMT",
+          "evidence_key": "phase6:wmt:single_company_trend:ev2",
+          "fiscal_period": "FY2023",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:single_company_trend:num1=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "fail",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "fail",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    }
+  },
+  "task_id": "phase6:aapl:single_company_trend",
+  "title": "Fiscal-Period Confusion"
+}

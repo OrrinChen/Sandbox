@@ -45,6 +45,20 @@ jobs:
       - name: Verify the installed financial benchmark
         run: python scripts/smoke_rag_wheel.py --financial
 
+      - name: Run the installed evidence engine outside the checkout
+        run: |
+          wheelhouse="$RUNNER_TEMP/evidence-wheels"
+          engine_env="$RUNNER_TEMP/evidence-venv"
+          python -m pip wheel --no-build-isolation --wheel-dir "$wheelhouse" .
+          python -m venv "$engine_env"
+          "$engine_env/bin/python" -m pip install --no-index --find-links "$wheelhouse" sandboxed-agent-eval-harness
+          cd "$RUNNER_TEMP"
+          "$engine_env/bin/financial-evidence" verify-claim --claim 'Apple FY2024 revenue was $391.035 billion.'
+          "$engine_env/bin/financial-evidence" build-corpus --corpus raw
+          "$engine_env/bin/financial-evidence" serve-demo --dry-run
+          "$engine_env/bin/financial-evidence" hard-benchmark --output-dir "$RUNNER_TEMP/claim-study"
+          "$engine_env/bin/sandboxed-agent-eval" --version
+
       - name: Upload evaluation artifacts
         if: always()
         uses: actions/upload-artifact@v4

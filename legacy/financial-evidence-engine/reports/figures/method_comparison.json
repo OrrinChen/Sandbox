@@ -1,0 +1,13 @@
+{
+  "figure_id": "method_comparison",
+  "figure_type": "bar",
+  "insight": "Validator-augmented retrieval outperforms retrieval-only methods on verdict accuracy.",
+  "title": "Method comparison",
+  "values": {
+    "bm25_real": "0.6666666666666666666666666667",
+    "dense_real": "0.6666666666666666666666666667",
+    "full_engine_real": "0.8333333333333333333333333333",
+    "graph_real": "0.8333333333333333333333333333",
+    "hybrid_real": "0.6666666666666666666666666667"
+  }
+}

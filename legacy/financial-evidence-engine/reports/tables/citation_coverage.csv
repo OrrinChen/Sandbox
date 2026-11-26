@@ -1,0 +1,6 @@
+method,corpus_mode,task_count,predictions_with_citation,retrieved_evidence_count,cited_evidence_count,coverage_rate,citation_exactness,evidence_recall_at_k,claim_boundary
+bm25_real,benchmark,60,60,300,300,1.0000,0.9950,0.9950,local deterministic evidence coverage; not broad SEC-scale ingestion
+dense_real,benchmark,60,60,300,300,1.0000,0.9600,0.9600,local deterministic evidence coverage; not broad SEC-scale ingestion
+full_engine_real,benchmark,60,60,300,300,1.0000,1.0000,1.0000,local deterministic evidence coverage; not broad SEC-scale ingestion
+graph_real,benchmark,60,60,300,300,1.0000,1.0000,1.0000,local deterministic evidence coverage; not broad SEC-scale ingestion
+hybrid_real,benchmark,60,60,300,300,1.0000,1.0000,1.0000,local deterministic evidence coverage; not broad SEC-scale ingestion

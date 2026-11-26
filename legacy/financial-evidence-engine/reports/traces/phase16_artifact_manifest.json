@@ -1,0 +1,126 @@
+{
+  "artifact_manifests": [
+    {
+      "artifact_paths": [
+        "experiments/case_studies/fiscal_period_confusion.json",
+        "reports/case_studies/fiscal_period_confusion.md"
+      ],
+      "config_hash": "290598c6696e333a69aed0e0c56586fc3aa346411a5647da0c94c2757d632ef4",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "run_id": "trace:fiscal_period_confusion:290598c6696e",
+      "trace_database_path": "experiments/traces/phase16_trace.sqlite"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/numeric_unit_mismatch.json",
+        "reports/case_studies/numeric_unit_mismatch.md"
+      ],
+      "config_hash": "24f3d93a041da6d247d05537f7decf4ac6681367316a9d7e918348bf1e0b0065",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "run_id": "trace:numeric_unit_mismatch:24f3d93a041d",
+      "trace_database_path": "experiments/traces/phase16_trace.sqlite"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/unsupported_narrative_claim.json",
+        "reports/case_studies/unsupported_narrative_claim.md"
+      ],
+      "config_hash": "cd54debc90fb27c83b3a5493f5cdc91c79b7bfc162f0af08c88639f3bd80f78e",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "run_id": "trace:unsupported_narrative_claim:cd54debc90fb",
+      "trace_database_path": "experiments/traces/phase16_trace.sqlite"
+    }
+  ],
+  "corpus_version": "benchmark:60-tasks:320-documents",
+  "integrity_summary": {
+    "artifact_manifests": 3,
+    "artifact_paths": 6,
+    "evidence_traces": 3,
+    "memo_traces": 3,
+    "retrieval_traces": 3,
+    "retrieved_chunks": 15,
+    "run_manifests": 3,
+    "trace_integrity": true,
+    "validator_results": 18,
+    "verification_traces": 3
+  },
+  "regenerated_case_studies": [
+    {
+      "artifact_paths": [
+        "experiments/case_studies/fiscal_period_confusion.json",
+        "reports/case_studies/fiscal_period_confusion.md"
+      ],
+      "case_id": "fiscal_period_confusion",
+      "final_verdict": "support",
+      "method": "full_engine_real",
+      "run_id": "trace:fiscal_period_confusion:290598c6696e",
+      "task_id": "phase6:aapl:single_company_trend"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/numeric_unit_mismatch.json",
+        "reports/case_studies/numeric_unit_mismatch.md"
+      ],
+      "case_id": "numeric_unit_mismatch",
+      "final_verdict": "support",
+      "method": "full_engine_real",
+      "run_id": "trace:numeric_unit_mismatch:24f3d93a041d",
+      "task_id": "phase6:aapl:cross_company_comparison"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/unsupported_narrative_claim.json",
+        "reports/case_studies/unsupported_narrative_claim.md"
+      ],
+      "case_id": "unsupported_narrative_claim",
+      "final_verdict": "insufficient",
+      "method": "full_engine_real",
+      "run_id": "trace:unsupported_narrative_claim:cd54debc90fb",
+      "task_id": "phase6:aapl:management_claim_verification"
+    }
+  ],
+  "run_count": 3,
+  "runs": [
+    {
+      "artifact_paths": [
+        "experiments/case_studies/fiscal_period_confusion.json",
+        "reports/case_studies/fiscal_period_confusion.md"
+      ],
+      "config_hash": "290598c6696e333a69aed0e0c56586fc3aa346411a5647da0c94c2757d632ef4",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "method": "full_engine_real",
+      "run_id": "trace:fiscal_period_confusion:290598c6696e",
+      "runtime_ms": 26,
+      "started_at": "2026-05-02T00:00:00Z",
+      "task_id": "phase6:aapl:single_company_trend"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/numeric_unit_mismatch.json",
+        "reports/case_studies/numeric_unit_mismatch.md"
+      ],
+      "config_hash": "24f3d93a041da6d247d05537f7decf4ac6681367316a9d7e918348bf1e0b0065",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "method": "full_engine_real",
+      "run_id": "trace:numeric_unit_mismatch:24f3d93a041d",
+      "runtime_ms": 27,
+      "started_at": "2026-05-02T00:00:00Z",
+      "task_id": "phase6:aapl:cross_company_comparison"
+    },
+    {
+      "artifact_paths": [
+        "experiments/case_studies/unsupported_narrative_claim.json",
+        "reports/case_studies/unsupported_narrative_claim.md"
+      ],
+      "config_hash": "cd54debc90fb27c83b3a5493f5cdc91c79b7bfc162f0af08c88639f3bd80f78e",
+      "corpus_version": "benchmark:60-tasks:320-documents",
+      "method": "full_engine_real",
+      "run_id": "trace:unsupported_narrative_claim:cd54debc90fb",
+      "runtime_ms": 28,
+      "started_at": "2026-05-02T00:00:00Z",
+      "task_id": "phase6:aapl:management_claim_verification"
+    }
+  ],
+  "trace_db_path": "experiments/traces/phase16_trace.sqlite",
+  "trace_integrity": true
+}

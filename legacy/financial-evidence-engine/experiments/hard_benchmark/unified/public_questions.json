@@ -1,0 +1,1217 @@
+[
+  {
+    "claim_text": "Did Arcadia Devices Inc. bring in about forty-four billion dollars of top-line sales for the fiscal year that closed in September 2023?",
+    "claimed_value_usd": "44000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "paraphrase_support-ARCA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. bring in about forty billion dollars of top-line sales for the fiscal year that closed in September 2023?",
+    "claimed_value_usd": "40000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-ARCA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Arcadia Devices Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "44120000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-ARCA-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. take in about forty billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "40000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-ARCA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. bring in about forty-eight billion dollars of top-line sales for the fiscal year that closed in September 2024?",
+    "claimed_value_usd": "48000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-ARCA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. bring in about forty-four billion dollars of top-line sales for the fiscal year that closed in September 2024?",
+    "claimed_value_usd": "44000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-ARCA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Arcadia Devices Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "48090000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-ARCA-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. take in about forty-four billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "44000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-ARCA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Arcadia Devices Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "test",
+    "task_id": "margin-ARCA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. bring in about twenty-four billion dollars of top-line sales for the fiscal year that closed in June 2023?",
+    "claimed_value_usd": "24000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-BREL-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. bring in about twenty-one billion dollars of top-line sales for the fiscal year that closed in June 2023?",
+    "claimed_value_usd": "21000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-BREL-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Boreal Software Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "24070000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "scale_trap_contradict-BREL-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. take in about twenty-one billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "21000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "calendar_trap_contradict-BREL-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. bring in about twenty-eight billion dollars of top-line sales for the fiscal year that closed in June 2024?",
+    "claimed_value_usd": "28000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. bring in about twenty-four billion dollars of top-line sales for the fiscal year that closed in June 2024?",
+    "claimed_value_usd": "24000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "prior_year_contradict-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Boreal Software Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "28060000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "scale_trap_contradict-BREL-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. take in about twenty-four billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "24000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Boreal Software Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "test",
+    "task_id": "margin-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. bring in about twenty-two billion dollars of top-line sales for the fiscal year that closed in January 2023?",
+    "claimed_value_usd": "22000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-CIND-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. bring in about seventeen billion dollars of top-line sales for the fiscal year that closed in January 2023?",
+    "claimed_value_usd": "17000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "prior_year_contradict-CIND-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Cinder Compute Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "22040000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "scale_trap_contradict-CIND-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. take in about seventeen billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "17000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "calendar_trap_contradict-CIND-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. bring in about thirty-two billion dollars of top-line sales for the fiscal year that closed in January 2024?",
+    "claimed_value_usd": "32000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-CIND-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. bring in about twenty-two billion dollars of top-line sales for the fiscal year that closed in January 2024?",
+    "claimed_value_usd": "22000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-CIND-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Cinder Compute Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "32110000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "scale_trap_contradict-CIND-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. take in about twenty-two billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "22000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-CIND-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Cinder Compute Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "test",
+    "task_id": "margin-CIND-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. bring in about fifty-seven billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "57000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-DORA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. bring in about fifty-four billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "54000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-DORA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Dora Retail Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "57040000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-DORA-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. take in about fifty-four billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "54000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-DORA-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. bring in about sixty-one billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "61000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "paraphrase_support-DORA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. bring in about fifty-seven billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "57000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-DORA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Dora Retail Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "61080000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-DORA-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. take in about fifty-seven billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "57000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "calendar_trap_contradict-DORA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Dora Retail Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "dev",
+    "task_id": "margin-DORA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. bring in about ten billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "10000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-ELAN-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. bring in about nine billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "9000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-ELAN-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Elan Payments Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "10040000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-ELAN-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. take in about nine billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "9000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-ELAN-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. bring in about twelve billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "12000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-ELAN-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. bring in about ten billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "10000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "prior_year_contradict-ELAN-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Elan Payments Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "12070000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "scale_trap_contradict-ELAN-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. take in about ten billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "10000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-ELAN-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Elan Payments Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "test",
+    "task_id": "margin-ELAN-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. bring in about seventeen billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "17000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-FOLD-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. bring in about fifteen billion dollars of top-line sales for the fiscal year that closed in December 2023?",
+    "claimed_value_usd": "15000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-FOLD-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Folding Health Inc.'s fiscal 2023 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "17080000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-FOLD-2023",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. take in about fifteen billion dollars during calendar 2023, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "15000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2023"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-FOLD-2023",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. bring in about nineteen billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "19000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "paraphrase_support-FOLD-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. bring in about seventeen billion dollars of top-line sales for the fiscal year that closed in December 2024?",
+    "claimed_value_usd": "17000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "prior_year_contradict-FOLD-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Is Folding Health Inc.'s fiscal 2024 top-line total the thousands-denominated reading rather than the millions line in the audited statement?",
+    "claimed_value_usd": "19040000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "scale_trap_contradict-FOLD-2024",
+    "tolerance_usd": "1"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. take in about seventeen billion dollars during calendar 2024, and is that the fiscal-year top-line total?",
+    "claimed_value_usd": "17000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "calendar_trap_contradict-FOLD-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "After operating costs, Folding Health Inc. kept more than a fifth of fiscal 2024 sales.",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "margin",
+    "margin_threshold": "0.20",
+    "metric": "operating_income",
+    "split": "test",
+    "task_id": "margin-FOLD-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Arcadia Devices Inc. booked more fiscal 2024 top-line sales than Boreal Software Inc..",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "ARCA",
+      "BREL"
+    ],
+    "comparison_left": [
+      "ARCA",
+      "FY2024",
+      "revenue"
+    ],
+    "comparison_right": [
+      "BREL",
+      "FY2024",
+      "revenue"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "comparison",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "cross-ARCA-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Cinder Compute Inc. booked more fiscal 2024 top-line sales than Boreal Software Inc..",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "CIND",
+      "BREL"
+    ],
+    "comparison_left": [
+      "CIND",
+      "FY2024",
+      "revenue"
+    ],
+    "comparison_right": [
+      "BREL",
+      "FY2024",
+      "revenue"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "comparison",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "cross-CIND-BREL-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Dora Retail Inc. booked more fiscal 2024 top-line sales than Arcadia Devices Inc..",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "DORA",
+      "ARCA"
+    ],
+    "comparison_left": [
+      "DORA",
+      "FY2024",
+      "revenue"
+    ],
+    "comparison_right": [
+      "ARCA",
+      "FY2024",
+      "revenue"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "comparison",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "cross-DORA-ARCA-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Elan Payments Inc. booked more fiscal 2024 top-line sales than Folding Health Inc..",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "ELAN",
+      "FOLD"
+    ],
+    "comparison_left": [
+      "ELAN",
+      "FY2024",
+      "revenue"
+    ],
+    "comparison_right": [
+      "FOLD",
+      "FY2024",
+      "revenue"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "comparison",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "dev",
+    "task_id": "cross-ELAN-FOLD-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Folding Health Inc. booked more fiscal 2024 top-line sales than Cinder Compute Inc..",
+    "claimed_value_usd": null,
+    "company_tickers": [
+      "FOLD",
+      "CIND"
+    ],
+    "comparison_left": [
+      "FOLD",
+      "FY2024",
+      "revenue"
+    ],
+    "comparison_right": [
+      "CIND",
+      "FY2024",
+      "revenue"
+    ],
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "comparison",
+    "margin_threshold": null,
+    "metric": "revenue",
+    "split": "test",
+    "task_id": "cross-FOLD-CIND-2024",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Arcadia Devices Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "ARCA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "dev",
+    "task_id": "missing-ARCA-oncology",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Boreal Software Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "BREL"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "test",
+    "task_id": "missing-BREL-oncology",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Cinder Compute Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "CIND"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "dev",
+    "task_id": "missing-CIND-oncology",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Dora Retail Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "DORA"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "test",
+    "task_id": "missing-DORA-oncology",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Elan Payments Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "ELAN"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "test",
+    "task_id": "missing-ELAN-oncology",
+    "tolerance_usd": "250000000"
+  },
+  {
+    "claim_text": "Did Folding Health Inc. disclose fiscal 2024 oncology segment sales above about five billion dollars?",
+    "claimed_value_usd": "5000000000",
+    "company_tickers": [
+      "FOLD"
+    ],
+    "comparison_left": null,
+    "comparison_right": null,
+    "fiscal_periods": [
+      "FY2024"
+    ],
+    "kind": "single_fact",
+    "margin_threshold": null,
+    "metric": "oncology_segment_revenue",
+    "split": "dev",
+    "task_id": "missing-FOLD-oncology",
+    "tolerance_usd": "250000000"
+  }
+]

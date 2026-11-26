@@ -1,0 +1,61 @@
+{
+  "active_encoder": "sentence-transformers/all-MiniLM-L6-v2; weights SHA-256 53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db; sentence-transformers 6.2.0; torch 2.15.0; device cpu; normalize_embeddings=True.",
+  "active_methods_with_changed_metrics": [],
+  "active_results_sha256": "ca405b1ef516db10db65ca68db99ba532e479fea6f772a637035cb1dcdb5dff0",
+  "archived_results_sha256": "bf4a15b93ce30d953cb7256ec40e6eabe588b34dd0f5227865f1338f49403954",
+  "changed_tasks_by_method": {
+    "bm25": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "bm25_metadata_rerank": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "dense_lsa": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "dense_lsa_metadata_rerank": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "dense_minilm": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "dense_minilm_metadata_rerank": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    },
+    "full_engine": {
+      "predicted_verdict": [],
+      "ranking_sha256": [],
+      "top_10": []
+    }
+  },
+  "historical_encoder": "sentence-transformers/all-MiniLM-L6-v2; weights SHA-256 53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db; sentence-transformers 6.2.0; torch 2.15.0; device cpu; normalize_embeddings=True.",
+  "historical_replay_sha256": "cda280b37ca6b265f622ef437773afc249a52fc0dfab158c71891d29ae0aba7d",
+  "inputs_sha256": {
+    "public_documents.json": "4c987c507e57c7cf859645e57f028303ee947b1488df0efcf95885689d590eb7",
+    "public_questions.json": "b381020e1a7130de72fef74e168d10ec0b78bff86aed69816b67fb04c43d2f5c",
+    "scorer_labels.json": "3453b1b74fd01e81ca19a8d7d23ab7fe258d983fa64c806cdc76ce5680546ef6"
+  },
+  "matched_task_method_pairs": 455,
+  "methods_matching_original_on_both_splits": [
+    "bm25",
+    "bm25_metadata_rerank",
+    "dense_lsa",
+    "dense_lsa_metadata_rerank",
+    "dense_minilm",
+    "dense_minilm_metadata_rerank",
+    "full_engine"
+  ],
+  "upstream_commit": "bf52440cc3f36b898a0c69ab5d0b25f5a5cea8f8"
+}

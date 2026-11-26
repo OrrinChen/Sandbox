@@ -1,0 +1,514 @@
+{
+  "case_id": "numeric_unit_mismatch",
+  "claim": "Apple's FY2024 operating margin exceeded Microsoft's FY2024 operating margin.",
+  "expected_verdict": "support",
+  "failure_mode": "numeric_validation_gap",
+  "final_full_engine_verdict": "support",
+  "gold_evidence": [
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+      "fiscal_period": "FY2024",
+      "metric": "operating_income",
+      "modality": "xbrl",
+      "role": "subject operating income fact",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "modality": "xbrl",
+      "role": "subject revenue fact",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "MSFT",
+      "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+      "fiscal_period": "FY2024",
+      "metric": "operating_income",
+      "modality": "xbrl",
+      "role": "peer operating income fact",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "MSFT",
+      "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "modality": "table",
+      "role": "peer income statement table",
+      "source_type": "sec_filing"
+    }
+  ],
+  "memo_snippet": "Full engine verdict: support. Expected verdict: support. The memo cites 5 retrieved evidence units and separates retrieval output from validator judgment. Limitation: No validator failure was detected for the full-engine method on this case.",
+  "method_results": {
+    "bm25_real": {
+      "answer_text": "bm25_real retrieved 5 evidence units for phase6:aapl:cross_company_comparison; top evidence: phase6:aapl:cross_company_comparison:ev2, phase6:aapl:cross_company_comparison:ev1, phase6:aapl:cross_company_comparison:ev4; numeric_status=fail.",
+      "failure_reasons": [
+        "numeric_validation_gap: Numeric validation did not pass for this task."
+      ],
+      "method": "bm25_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "table",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "net_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:cross_company_comparison:num1=fail, phase6:aapl:cross_company_comparison:num2=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "dense_real": {
+      "answer_text": "dense_real retrieved 5 evidence units for phase6:aapl:cross_company_comparison; top evidence: phase6:aapl:cross_company_comparison:ev3, phase6:aapl:cross_company_comparison:ev1, phase6:aapl:cross_company_comparison:dist1; numeric_status=fail.",
+      "failure_reasons": [
+        "numeric_validation_gap: Numeric validation did not pass for this task."
+      ],
+      "method": "dense_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "net_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "table",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:cross_company_comparison:num1=fail, phase6:aapl:cross_company_comparison:num2=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "full_engine_real": {
+      "answer_text": "full_engine_real retrieved 5 evidence units for phase6:aapl:cross_company_comparison; top evidence: phase6:aapl:cross_company_comparison:ev1, phase6:aapl:cross_company_comparison:ev2, phase6:aapl:cross_company_comparison:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "full_engine_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "table",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:nflx:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:cross_company_comparison:num1=pass, phase6:aapl:cross_company_comparison:num2=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "graph_real": {
+      "answer_text": "graph_real retrieved 5 evidence units for phase6:aapl:cross_company_comparison; top evidence: phase6:aapl:cross_company_comparison:ev1, phase6:aapl:cross_company_comparison:ev2, phase6:aapl:cross_company_comparison:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "graph_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "table",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:nflx:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:cross_company_comparison:num1=pass, phase6:aapl:cross_company_comparison:num2=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "hybrid_real": {
+      "answer_text": "hybrid_real retrieved 5 evidence units for phase6:aapl:cross_company_comparison; top evidence: phase6:aapl:cross_company_comparison:ev1, phase6:aapl:cross_company_comparison:ev2, phase6:aapl:cross_company_comparison:ev3; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "hybrid_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "MSFT",
+          "evidence_key": "phase6:aapl:cross_company_comparison:ev4",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "modality": "table",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:nflx:cross_company_comparison:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_income",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:cross_company_comparison:num1=pass, phase6:aapl:cross_company_comparison:num2=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "skip",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    }
+  },
+  "task_id": "phase6:aapl:cross_company_comparison",
+  "title": "Numeric / Unit Mismatch"
+}

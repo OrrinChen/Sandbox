@@ -1,0 +1,15 @@
+# Deferred until Phase 4 evidence graph construction.
+node_types:
+  - Company
+  - Document
+  - FiscalPeriod
+  - Metric
+  - Claim
+  - EvidenceUnit
+edge_types:
+  - reported_in
+  - supports
+  - contradicts
+  - mentions
+  - same_metric_as
+  - same_period_as

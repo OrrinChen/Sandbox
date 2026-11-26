@@ -1,0 +1,23 @@
+{
+  "case_study_count": 3,
+  "figure_paths": [
+    "reports/figures/method_comparison.json",
+    "reports/figures/failure_mode_breakdown.json",
+    "reports/figures/validator_coverage.json",
+    "reports/figures/case_study_flow.json",
+    "reports/figures/chart_evidence_reconciliation.json"
+  ],
+  "includes_limitations": true,
+  "includes_reproducibility": true,
+  "manifest_path": "reports/portfolio_report_manifest.json",
+  "markdown_path": "reports/final_report.md",
+  "page_count": 10,
+  "pdf_path": "reports/final_report.pdf",
+  "resume_bullet": "Built a multimodal financial due-diligence evidence engine for claim-level verification over SEC/XBRL filings, earnings transcripts, and investor-deck evidence; benchmarked BM25, dense-proxy, hybrid, graph, and validator-augmented retrieval on 60 due-diligence tasks and 120 adversarial cases, generating auditable memos with numeric reconciliation, citation validation, fiscal-period checks, contradiction detection, and reproducible evidence traces.",
+  "resume_bullet_path": "reports/resume_bullet.txt",
+  "table_paths": [
+    "reports/tables/case_study_summary.json",
+    "reports/tables/deck_reconciliation.json",
+    "reports/tables/reproducibility_commands.json"
+  ]
+}

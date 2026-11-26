@@ -1,0 +1,48 @@
+# Initial narrow universe for the first vertical slice.
+# Keep this at three companies until SEC/XBRL ingestion and validators work.
+universe_name: phase0_initial_large_cap_tech
+fiscal_year: 2024
+scope:
+  companies: 3
+  fiscal_years: 1
+  claim_tasks: 10
+  first_sources:
+    - SEC 10-K
+    - SEC XBRL company facts
+companies:
+  - ticker: AAPL
+    name: Apple Inc.
+    cik: "0000320193"
+    sector: Technology Hardware
+    fiscal_year: 2024
+    required_documents:
+      - 10-K
+      - XBRL company facts
+    priority_claim_families:
+      - revenue growth
+      - margin trend
+      - cash flow quality
+  - ticker: MSFT
+    name: Microsoft Corporation
+    cik: "0000789019"
+    sector: Software
+    fiscal_year: 2024
+    required_documents:
+      - 10-K
+      - XBRL company facts
+    priority_claim_families:
+      - revenue growth
+      - margin trend
+      - cash flow quality
+  - ticker: NVDA
+    name: NVIDIA Corporation
+    cik: "0001045810"
+    sector: Semiconductors
+    fiscal_year: 2024
+    required_documents:
+      - 10-K
+      - XBRL company facts
+    priority_claim_families:
+      - revenue growth
+      - margin trend
+      - cash flow quality

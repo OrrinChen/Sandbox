@@ -1,0 +1,10 @@
+# Deferred until Phase 1 data ingestion.
+sec:
+  submissions_base_url: https://data.sec.gov/submissions/
+  companyfacts_base_url: https://data.sec.gov/api/xbrl/companyfacts/
+  required_user_agent_env: SEC_USER_AGENT
+fmp:
+  enabled: false
+  api_key_env: FMP_API_KEY
+ir_documents:
+  enabled: false

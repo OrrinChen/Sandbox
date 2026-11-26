@@ -18,6 +18,8 @@ Recorded-study context, unchanged: 6 domains, 10 deterministic validators (+5 tr
 
 Sandbox also packages the A1 financial RAG regression and 500 held-out independent tool-use tasks. On the independent tasks, direct submissions passed 469/500 and self-checked submissions passed 465/500. All 30 shared failures were workbooks. A follow-up gave three models read-only access to those 100 frozen workbooks and recorded which cells each model chose to inspect. [Benchmark results, task sources and offline replay](BENCHMARKS.md)
 
+The same distribution includes the Financial Evidence Engine, its Streamlit demo and the separate 65-claim retrieval benchmark. [Engine and migration guide](legacy/financial-evidence-engine/MIGRATION.md)
+
 ## Problem
 
 Final-answer-only grading misses silent failures: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, constraint violations, non-replayable traces, timeouts, and cost regressions.
@@ -66,6 +68,17 @@ make ci
 ```
 
 `make ci` runs pytest, config validation, the oracle smoke evaluation, the strict regression gate, the recorded silent-failure study, report generation, and the CPU Agentic RL smoke. It does not download model weights or call a live API.
+
+### Financial Evidence Engine
+
+```bash
+python -m pip install '.[demo]'
+financial-evidence verify-claim --claim 'Apple FY2024 revenue was $391.035 billion.'
+financial-evidence hard-benchmark --output-dir artifacts/claim-benchmark
+financial-evidence serve-demo
+```
+
+The hard benchmark runs the deterministic baselines locally. The optional dense extra and local MiniLM weights enable the neural baseline. [Benchmark guide](BENCHMARKS.md)
 
 ## Key Result
 

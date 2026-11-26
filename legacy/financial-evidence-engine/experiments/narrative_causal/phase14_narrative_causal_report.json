@@ -1,0 +1,114 @@
+{
+  "memo": {
+    "evidence_supported_numeric_trends": [
+      "NVIDIA FY2024 total revenue grew.",
+      "Data center revenue accounted for the dominant growth contribution.",
+      "Microsoft cloud revenue grew in FY2024.",
+      "Cloud growth exceeded the reported drag from weaker segments.",
+      "Apple FY2024 operating margin improved.",
+      "Services revenue mix increased.",
+      "AWS revenue grew in FY2024.",
+      "Retail margin pressure remained visible.",
+      "JPMorgan FY2024 net income was strong.",
+      "Net interest income increased.",
+      "Reported FY2024 revenue is inside the cited range.",
+      "Management guidance range is contemporaneous with the period.",
+      "Deck margin chart shows margin progress.",
+      "Filing operating margin reconciles to the deck direction.",
+      "Cloud guidance improved in management commentary.",
+      "Cloud revenue grew in FY2024."
+    ],
+    "inferences": [
+      "Data center contribution is a supported inference from segment share evidence.",
+      "Cloud offset is supported by segment contribution and management discussion.",
+      "Services mix is a plausible inference, but not a fully supported causal conclusion.",
+      "AWS growth and retail pressure are both supported numeric facts.",
+      "Net interest income contribution is supported as a component of earnings strength.",
+      "The guidance narrative is supported because actuals reconcile to the cited range.",
+      "Deck chart and filing metric support margin progress.",
+      "Cloud guidance and cloud revenue growth are supported."
+    ],
+    "memo_id": "memo:phase14_narrative_causal",
+    "section_names": [
+      "Evidence-supported numeric trend",
+      "Inference",
+      "Unsupported causal attribution"
+    ],
+    "title": "Narrative and Causal Claim Verification Memo",
+    "unsupported_causal_attributions": [
+      "Demand was the primary causal driver, but no direct demand evidence is present.",
+      "Services mix causality is not directly supported against the one-time cost-cut alternative.",
+      "Primary-cause wording is unsupported without a driver attribution bridge.",
+      "Automation-driven causality is unsupported by the extracted deck evidence.",
+      "AI demand as the cause of guidance improvement remains insufficiently supported."
+    ]
+  },
+  "ordinary_rag_overclaim_cases": 8,
+  "ordinary_rag_overclaim_rate": "0.8",
+  "overclaim_examples": [
+    {
+      "claim_text": "NVIDIA's FY2024 revenue growth was mainly driven by data center demand.",
+      "failure_reason": "numeric or narrative evidence exists, but causal attribution is not directly supported",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:nvda:data_center_driver",
+      "validator_gated_verdict": "insufficient_causal_support"
+    },
+    {
+      "claim_text": "Apple's FY2024 margin improvement came from Services mix rather than one-time cost cuts.",
+      "failure_reason": "numeric or narrative evidence exists, but causal attribution is not directly supported",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:aapl:services_margin",
+      "validator_gated_verdict": "insufficient_causal_support"
+    },
+    {
+      "claim_text": "Amazon's FY2024 AWS growth was strong while retail margins remained pressured.",
+      "failure_reason": "ordinary RAG overstates the level of support",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:amzn:aws_offset",
+      "validator_gated_verdict": "support_numeric_only"
+    },
+    {
+      "claim_text": "JPMorgan's FY2024 earnings strength was primarily caused by net interest income rather than credit releases.",
+      "failure_reason": "numeric or narrative evidence exists, but causal attribution is not directly supported",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:jpm:rate_benefit",
+      "validator_gated_verdict": "insufficient_causal_support"
+    },
+    {
+      "claim_text": "Tesla's FY2024 operating margin improved versus FY2023.",
+      "failure_reason": "ordinary RAG accepts narrative language despite a numeric contradiction",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:tsla:margin_improvement",
+      "validator_gated_verdict": "contradict_numeric"
+    },
+    {
+      "claim_text": "Meta's FY2024 AI infrastructure risk exposure materially decreased.",
+      "failure_reason": "ordinary RAG accepts optimistic language despite contradictory filed narrative evidence",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:meta:risk_reduced",
+      "validator_gated_verdict": "contradict_narrative"
+    },
+    {
+      "claim_text": "Walmart's FY2024 investor deck showed margin progress driven by automation.",
+      "failure_reason": "numeric or narrative evidence exists, but causal attribution is not directly supported",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:wmt:deck_margin",
+      "validator_gated_verdict": "insufficient_causal_support"
+    },
+    {
+      "claim_text": "Alphabet's FY2024 cloud guidance improved because AI demand accelerated.",
+      "failure_reason": "numeric or narrative evidence exists, but causal attribution is not directly supported",
+      "ordinary_rag_verdict": "support_narrative",
+      "task_id": "phase14:googl:guidance_ai",
+      "validator_gated_verdict": "insufficient_causal_support"
+    }
+  ],
+  "partial_verdict_counts": {
+    "contradict_narrative": 1,
+    "contradict_numeric": 1,
+    "insufficient_causal_support": 5,
+    "support_narrative": 2,
+    "support_numeric_only": 1
+  },
+  "task_count": 10
+}

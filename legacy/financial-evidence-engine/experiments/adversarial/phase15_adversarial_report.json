@@ -1,0 +1,1139 @@
+{
+  "explainable_failure_rate": "1",
+  "failure_mode_count": 12,
+  "failure_mode_counts": {
+    "claim_with_no_evidence": 10,
+    "deck_only_claim": 10,
+    "irrelevant_citation_section": 10,
+    "stale_filing": 10,
+    "structured_fact_contradiction": 10,
+    "transcript_only_claim": 10,
+    "wrong_company_alias": 10,
+    "wrong_currency": 10,
+    "wrong_fiscal_year": 10,
+    "wrong_quarter": 10,
+    "wrong_segment": 10,
+    "wrong_unit_scale": 10
+  },
+  "full_engine_accuracy": "0.75",
+  "perfect_accuracy_required": false,
+  "results": [
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Apple task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Apple task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Apple task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:aapl:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Apple task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:aapl:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Apple task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:aapl:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Apple task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Apple task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Apple task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:aapl:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Apple task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:aapl:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:aapl:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:aapl:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Microsoft task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Microsoft task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Microsoft task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:msft:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Microsoft task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:msft:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Microsoft task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:msft:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Microsoft task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Microsoft task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Microsoft task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:msft:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Microsoft task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:msft:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:msft:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:msft:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "NVIDIA task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "NVIDIA task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "NVIDIA task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nvda:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "NVIDIA task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nvda:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "NVIDIA task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nvda:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "NVIDIA task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "NVIDIA task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "NVIDIA task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nvda:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "NVIDIA task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nvda:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nvda:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nvda:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Amazon task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Amazon task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Amazon task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:amzn:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Amazon task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:amzn:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Amazon task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:amzn:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Amazon task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Amazon task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Amazon task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:amzn:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Amazon task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:amzn:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:amzn:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:amzn:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Alphabet task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Alphabet task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Alphabet task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:googl:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Alphabet task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:googl:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Alphabet task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:googl:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Alphabet task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Alphabet task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Alphabet task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:googl:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Alphabet task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:googl:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:googl:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:googl:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Meta task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Meta task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Meta task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:meta:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Meta task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:meta:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Meta task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:meta:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Meta task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Meta task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Meta task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:meta:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Meta task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:meta:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:meta:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:meta:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "JPMorgan task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "JPMorgan task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "JPMorgan task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:jpm:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "JPMorgan task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:jpm:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "JPMorgan task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:jpm:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "JPMorgan task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "JPMorgan task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "JPMorgan task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:jpm:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "JPMorgan task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:jpm:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:jpm:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:jpm:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Walmart task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Walmart task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Walmart task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:wmt:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Walmart task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:wmt:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Walmart task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:wmt:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Walmart task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Walmart task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Walmart task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:wmt:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Walmart task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:wmt:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:wmt:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:wmt:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Tesla task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Tesla task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Tesla task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:tsla:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Tesla task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:tsla:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Tesla task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:tsla:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Tesla task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Tesla task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Tesla task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:tsla:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Tesla task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:tsla:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:tsla:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:tsla:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_fiscal_year",
+      "failure_reason": "Netflix task should trigger wrong_fiscal_year because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:wrong_fiscal_year",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_quarter",
+      "failure_reason": "Netflix task should trigger wrong_quarter because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:wrong_quarter",
+      "validator": "fiscal_period_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_company_alias",
+      "failure_reason": "Netflix task should trigger wrong_company_alias because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:wrong_company_alias",
+      "validator": "entity_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "wrong_segment",
+      "failure_reason": "Missed wrong_segment; validator owner remains segment_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nflx:wrong_segment",
+      "validator": "segment_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_currency",
+      "failure_reason": "Netflix task should trigger wrong_currency because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nflx:wrong_currency",
+      "validator": "currency_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "wrong_unit_scale",
+      "failure_reason": "Netflix task should trigger wrong_unit_scale because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nflx:wrong_unit_scale",
+      "validator": "unit_scale_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "stale_filing",
+      "failure_reason": "Netflix task should trigger stale_filing because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:stale_filing",
+      "validator": "stale_filing_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "irrelevant_citation_section",
+      "failure_reason": "Netflix task should trigger irrelevant_citation_section because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:irrelevant_citation_section",
+      "validator": "citation_validator"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "claim_with_no_evidence",
+      "failure_reason": "Netflix task should trigger claim_with_no_evidence because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "insufficient",
+      "task_id": "phase15:nflx:claim_with_no_evidence",
+      "validator": "unsupported_claim_detector"
+    },
+    {
+      "detected": true,
+      "expected_failure_mode": "structured_fact_contradiction",
+      "failure_reason": "Netflix task should trigger structured_fact_contradiction because the cited evidence violates the validator-owned constraint.",
+      "full_engine_verdict": "contradict",
+      "task_id": "phase15:nflx:structured_fact_contradiction",
+      "validator": "structured_fact_contradiction_detector"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "deck_only_claim",
+      "failure_reason": "Missed deck_only_claim; validator owner remains deck_gap_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nflx:deck_only_claim",
+      "validator": "deck_gap_validator"
+    },
+    {
+      "detected": false,
+      "expected_failure_mode": "transcript_only_claim",
+      "failure_reason": "Missed transcript_only_claim; validator owner remains transcript_source_validator.",
+      "full_engine_verdict": "support",
+      "task_id": "phase15:nflx:transcript_only_claim",
+      "validator": "transcript_source_validator"
+    }
+  ],
+  "task_count": 120,
+  "validator_coverage_matrix": {
+    "citation_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 10,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "currency_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 10,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "deck_gap_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 10,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "entity_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 10,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "fiscal_period_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 10,
+      "wrong_quarter": 10,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "segment_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 10,
+      "wrong_unit_scale": 0
+    },
+    "stale_filing_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 10,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "structured_fact_contradiction_detector": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 10,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "transcript_source_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 10,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    },
+    "unit_scale_validator": {
+      "claim_with_no_evidence": 0,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 10
+    },
+    "unsupported_claim_detector": {
+      "claim_with_no_evidence": 10,
+      "deck_only_claim": 0,
+      "irrelevant_citation_section": 0,
+      "stale_filing": 0,
+      "structured_fact_contradiction": 0,
+      "transcript_only_claim": 0,
+      "wrong_company_alias": 0,
+      "wrong_currency": 0,
+      "wrong_fiscal_year": 0,
+      "wrong_quarter": 0,
+      "wrong_segment": 0,
+      "wrong_unit_scale": 0
+    }
+  }
+}

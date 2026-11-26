@@ -4,17 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sandboxed-agent-eval-harness"
-version = "0.1.0"
-description = "Sandboxed evaluation harness for silent failures in tool-using agents, with an Agentic RL environment and GRPO loop."
+version = "0.2.0"
+description = "Tool-use and financial evidence benchmarks with deterministic scoring, trace replay and an Agentic RL environment."
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = ["PyYAML>=6.0"]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8",
     "openpyxl==3.1.5",
 ]
+demo = ["streamlit>=1.32", "Pillow>=9"]
+dense = ["sentence-transformers==6.2.0"]
 ai-integrations = [
     "langchain>=1,<2; python_version >= '3.10'",
     "langgraph>=1,<2; python_version >= '3.10'",
@@ -32,15 +34,17 @@ agentic-rl = [
 
 [project.scripts]
 sandboxed-agent-eval = "sandboxed_agent_eval_harness.cli:main"
+financial-evidence = "financial_evidence_engine.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
+"financial_evidence_engine" = ["resources/fixtures/*/*", "resources/experiments/case_studies/*.json", "resources/reports/figures/*.json", "resources/configs/*.yaml"]
 "sandboxed_agent_eval_harness.benchmarks.financial_evidence" = ["corpus.json", "a1_*.json"]
 "sandboxed_agent_eval_harness.benchmarks.financial_benchmark" = ["data/*.json"]
 "sandboxed_agent_eval_harness.benchmarks.independent" = ["data/*", "sheet_data/*"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "legacy/financial-evidence-engine/tests"]
 pythonpath = ["src"]

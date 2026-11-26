@@ -1,0 +1,9 @@
+check_id,check_type,passed_count,total_count,pass_rate,source,notes
+fiscal_period_chunk_coverage,fiscal_period_normalization,482,482,1.0000,raw_corpus,Every raw chunk keeps an explicit fiscal period for retrieval filtering.
+unit_currency_numeric_chunk_coverage,unit_normalization,51,51,1.0000,raw_corpus,Numeric chunks keep unit and currency when a value is present.
+metric_mapped_chunk_coverage,metric_normalization,381,482,0.7905,raw_corpus,Metric names are normalized where the local fixture exposes metric intent.
+numeric_check_unit_coverage,unit_normalization,0,80,0.0000,task_set,Gold numeric checks carry expected units when the task requires numeric reconciliation.
+full_engine_fiscal_period_correctness,fiscal_period_normalization,,,1.0000,real_retrieval_evaluation,Full-engine retrieved evidence matches task fiscal periods.
+full_engine_entity_correctness,entity_normalization,,,1.0000,real_retrieval_evaluation,Full-engine retrieved evidence matches task companies.
+full_engine_numeric_correctness,numeric_reconciliation,,,0.8750,real_retrieval_evaluation,Full-engine numeric checks pass when structured evidence is available.
+full_engine_citation_exactness,citation_validation,,,1.0000,real_retrieval_evaluation,Matched evidence is cited rather than used as decorative text.

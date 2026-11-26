@@ -8,16 +8,16 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_package_imports_and_exposes_version():
     package = importlib.import_module("sandboxed_agent_eval_harness")
 
-    assert package.__version__ == "0.1.0"
+    assert package.__version__ == "0.2.0"
 
 
 def test_pyproject_declares_phase1_package_metadata():
     pyproject = (ROOT / "pyproject.toml").read_text()
 
     assert 'name = "sandboxed-agent-eval-harness"' in pyproject
-    assert 'version = "0.1.0"' in pyproject
+    assert 'version = "0.2.0"' in pyproject
     assert 'sandboxed-agent-eval = "sandboxed_agent_eval_harness.cli:main"' in pyproject
-    assert 'testpaths = ["tests"]' in pyproject
+    assert 'testpaths = ["tests", "legacy/financial-evidence-engine/tests"]' in pyproject
 
 
 def test_config_stubs_exist_and_include_current_domains():
@@ -64,4 +64,4 @@ def test_phase1_cli_stub_reports_package_version(capsys):
     exit_code = main([])
 
     assert exit_code == 0
-    assert capsys.readouterr().out.strip() == "sandboxed-agent-eval-harness 0.1.0"
+    assert capsys.readouterr().out.strip() == "sandboxed-agent-eval-harness 0.2.0"

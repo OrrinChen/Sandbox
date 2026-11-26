@@ -1,0 +1,293 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type/Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 10 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 432 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Problem: ordinary RAG is unsafe for financial due diligence) Tj
+T*
+(Ordinary RAG can return fluent financial answers while mixing fiscal periods, units,) Tj
+T*
+(sources, or unsupported management narratives.) Tj
+T*
+(This project frames due diligence as claim-level evidence verification rather than chatbot) Tj
+T*
+(answer generation.) Tj
+T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 412 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(System overview) Tj
+T*
+(Pipeline: claim decomposition -> retrieval -> evidence graph linking -> financial) Tj
+T*
+(normalization -> validator gates -> auditable memo.) Tj
+T*
+(The local corpus covers SEC/XBRL facts, filings, transcripts, tables, raw chunks,) Tj
+T*
+(investor-deck pages, and chart evidence fixtures.) Tj
+T*
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 409 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Evidence graph and validators) Tj
+T*
+(Evidence nodes are tied to company, period, source type, modality, metric, and provenance.) Tj
+T*
+(Validators check citation support, fiscal periods, entity/source consistency, numeric) Tj
+T*
+(reconciliation, unsupported claims, contradictions, and red-team failure modes.) Tj
+T*
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 379 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Real retrieval benchmark) Tj
+T*
+(Real retrieval benchmark: `60` tasks over `320` benchmark documents.) Tj
+T*
+(BM25 verdict accuracy: `0.6666666666666666666666666667`.) Tj
+T*
+(Full engine verdict accuracy: `0.8333333333333333333333333333` with `346` surfaced failure) Tj
+T*
+(cases.) Tj
+T*
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 364 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Three failure case studies) Tj
+T*
+(- `fiscal_period_confusion`: `period_confusion`, verdict `support`) Tj
+T*
+(- `numeric_unit_mismatch`: `numeric_validation_gap`, verdict `support`) Tj
+T*
+(- `unsupported_narrative_claim`: `unsupported_claim`, verdict `insufficient`) Tj
+T*
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 379 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Investor deck and chart extraction case) Tj
+T*
+(Claim: NVIDIA FY2024 Data Center revenue was $47.5 billion.) Tj
+T*
+(Deck pages: `1`, chart evidence: `1`, reconciliation rows: `1`.) Tj
+T*
+(Verdict: `support` for NVIDIA FY2024 Data Center revenue after chart-to-XBRL reconciliation.) Tj
+T*
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 522 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Ablation results) Tj
+T*
+(- `without_graph` verdict accuracy `1`) Tj
+T*
+(- `without_numeric_validator` verdict accuracy `0.6666666666666666666666666667`) Tj
+T*
+(- `without_fiscal_period_validator` verdict accuracy `1`) Tj
+T*
+(- `without_chart_table_extraction` verdict accuracy `1`) Tj
+T*
+(- `without_contradiction_detector` verdict accuracy `0.8333333333333333333333333333`) Tj
+T*
+(- `without_reranker` verdict accuracy `1`) Tj
+T*
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 537 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Limitations) Tj
+T*
+(The raw corpus is still a deterministic local fixture, not a broad live SEC paragraph index.) Tj
+T*
+(Dense retrieval defaults to an offline deterministic proxy; optional real embedding) Tj
+T*
+(providers are skipped unless available.) Tj
+T*
+(The chart extraction slice is narrow and text-extractable; broad chart parsing remains) Tj
+T*
+(future work.) Tj
+T*
+(Red-team detection accuracy is `0.75`, not perfect by design.) Tj
+T*
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 375 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Reproducibility) Tj
+T*
+(One-command portfolio report generation: `python3 scripts/build_portfolio_report.py`.) Tj
+T*
+(Trace reproduction: `python3 scripts/smoke_trace_reproducibility.py`.) Tj
+T*
+(Full local validation remains offline and deterministic; no API key is required.) Tj
+T*
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 604 >>
+stream
+BT
+/F1 10 Tf
+50 760 Td
+13 TL
+(Multimodal Financial Due-Diligence Evidence Engine) Tj
+T*
+(Resume bullet) Tj
+T*
+(Built a multimodal financial due-diligence evidence engine for claim-level verification) Tj
+T*
+(over SEC/XBRL filings, earnings transcripts, and investor-deck evidence; benchmarked BM25,) Tj
+T*
+(dense-proxy, hybrid, graph, and validator-augmented retrieval on 60 due-diligence tasks and) Tj
+T*
+(120 adversarial cases, generating auditable memos with numeric reconciliation, citation) Tj
+T*
+(validation, fiscal-period checks, contradiction detection, and reproducible evidence traces.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 24
+0000000000 65535 f
+0000000009 00000 n
+0000000058 00000 n
+0000000176 00000 n
+0000000246 00000 n
+0000000372 00000 n
+0000000855 00000 n
+0000000981 00000 n
+0000001444 00000 n
+0000001570 00000 n
+0000002030 00000 n
+0000002158 00000 n
+0000002589 00000 n
+0000002717 00000 n
+0000003133 00000 n
+0000003261 00000 n
+0000003692 00000 n
+0000003820 00000 n
+0000004394 00000 n
+0000004522 00000 n
+0000005111 00000 n
+0000005239 00000 n
+0000005666 00000 n
+0000005794 00000 n
+trailer
+<< /Size 24 /Root 1 0 R >>
+startxref
+6450
+%%EOF

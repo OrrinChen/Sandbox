@@ -1,0 +1,9 @@
+# Optional neural dense baseline. Not part of the default test run.
+# Status stays "not yet run" until sentence-transformers and the model weights
+# are installed locally. No API key is used.
+experiment_id: dense_sentence_transformer_rerank_ablation
+corpus_mode: benchmark
+top_k: 5
+candidate_pool_multiplier: 6
+model_name: sentence-transformers/all-MiniLM-L6-v2
+require_env: FINANCIAL_EVIDENCE_ENABLE_LOCAL_EMBEDDINGS

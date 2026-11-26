@@ -1,0 +1,15 @@
+# CPU dense retrieval baseline and metadata-rerank ablation.
+# Corpus is the constructed 60-task benchmark (gold specs plus distractors).
+# This run reports evidence-retrieval ratios. It does not replace the published
+# verdict accuracies (full engine 83.3%, BM25 66.7%).
+experiment_id: dense_lsa_rerank_ablation
+corpus_mode: benchmark
+top_k: 5
+candidate_pool_multiplier: 6
+proxy_dimension: 64
+lsa:
+  provider_id: corpus-tfidf-svd-subspace-v1
+  dimension: 32
+  max_features: 2000
+  min_df: 2
+  subspace_iterations: 15

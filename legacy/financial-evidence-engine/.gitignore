@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Local data and generated artifacts
+data/raw/
+data/cache/
+data/interim/
+data/processed/
+reports/generated/
+notebooks/.ipynb_checkpoints/
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/

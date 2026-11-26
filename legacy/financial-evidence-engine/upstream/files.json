@@ -1,0 +1,977 @@
+{
+  "source_repository": "https://github.com/OrrinChen/multimodal_FEE",
+  "commit": "bf52440cc3f36b898a0c69ab5d0b25f5a5cea8f8",
+  "hash_format": "git-blob-sha1",
+  "files": [
+    {
+      "source": ".github/workflows/ci.yml",
+      "blob": "d38f9060380a1d260c9492bc3a268585bfe99887",
+      "destination": "legacy/financial-evidence-engine/upstream/ci.yml"
+    },
+    {
+      "source": ".gitignore",
+      "blob": "454443647f0a170670ce7e42869c9e80baa95ece",
+      "destination": "legacy/financial-evidence-engine/.gitignore"
+    },
+    {
+      "source": "LICENSE",
+      "blob": "db0fea300358a5bf678402529555a744178d39c0",
+      "destination": "legacy/financial-evidence-engine/LICENSE"
+    },
+    {
+      "source": "Makefile",
+      "blob": "66f246f2b313d6e7630b79d9adf83543aa805a5e",
+      "destination": "legacy/financial-evidence-engine/Makefile"
+    },
+    {
+      "source": "PORTFOLIO.md",
+      "blob": "43bfbc229dfec9e81a11a340ea183927db4b660b",
+      "destination": "legacy/financial-evidence-engine/PORTFOLIO.md"
+    },
+    {
+      "source": "README.md",
+      "blob": "b09e807e486a24be8773d1bda35dfbdff30cfe2d",
+      "destination": "legacy/financial-evidence-engine/README.md"
+    },
+    {
+      "source": "VALIDATION.md",
+      "blob": "0f38c6d1ab8d594d6348e6eb10c6439d01e838d8",
+      "destination": "legacy/financial-evidence-engine/VALIDATION.md"
+    },
+    {
+      "source": "app.py",
+      "blob": "165efc4d2b46ea0be89636e7c0b87b115da1438f",
+      "destination": "legacy/financial-evidence-engine/app.py"
+    },
+    {
+      "source": "configs/companies.yaml",
+      "blob": "851bb76253a8e55c116cf8d251dbd42ecd09c8a2",
+      "destination": "legacy/financial-evidence-engine/configs/companies.yaml"
+    },
+    {
+      "source": "configs/dense_lsa.yaml",
+      "blob": "24f4f957aee78fc25d711d080e0d093edad4fdd1",
+      "destination": "legacy/financial-evidence-engine/configs/dense_lsa.yaml"
+    },
+    {
+      "source": "configs/dense_sentence_transformer.yaml",
+      "blob": "161fc06eeb635c32f81eccd74e47e1a3ebbeb4f8",
+      "destination": "legacy/financial-evidence-engine/configs/dense_sentence_transformer.yaml"
+    },
+    {
+      "source": "configs/document_sources.yaml",
+      "blob": "663724e4e224111f1c01c72bc9b5a0af5a983308",
+      "destination": "legacy/financial-evidence-engine/configs/document_sources.yaml"
+    },
+    {
+      "source": "configs/evaluation.yaml",
+      "blob": "70aa9060fc62ba95aca0af335d468472f0321121",
+      "destination": "legacy/financial-evidence-engine/configs/evaluation.yaml"
+    },
+    {
+      "source": "configs/extraction.yaml",
+      "blob": "035bd3be8c735c8bbd62ad3458ff92c29dd48517",
+      "destination": "legacy/financial-evidence-engine/configs/extraction.yaml"
+    },
+    {
+      "source": "configs/graph.yaml",
+      "blob": "29d54eb0078ba14192a1ff81f6d79f4bdaf2a3b4",
+      "destination": "legacy/financial-evidence-engine/configs/graph.yaml"
+    },
+    {
+      "source": "configs/retrieval.yaml",
+      "blob": "5b09fad5af9d358fbf47b6b8d8aa1aea532b5665",
+      "destination": "legacy/financial-evidence-engine/configs/retrieval.yaml"
+    },
+    {
+      "source": "configs/validators.yaml",
+      "blob": "9e863b9fcd3a58dde0ba24f77b53a8e001c142c6",
+      "destination": "legacy/financial-evidence-engine/configs/validators.yaml"
+    },
+    {
+      "source": "docs/assets/case_study_replay.png",
+      "blob": "a43e33bf537af7c3b580a62fccef498e67a1641a",
+      "destination": "legacy/financial-evidence-engine/docs/assets/case_study_replay.png"
+    },
+    {
+      "source": "docs/assets/claim_verification_demo.png",
+      "blob": "21a0f2f4bc85efde53833d46a6e239da0f074f3d",
+      "destination": "legacy/financial-evidence-engine/docs/assets/claim_verification_demo.png"
+    },
+    {
+      "source": "docs/assets/killer_metrics.png",
+      "blob": "02def909b71b0a1a4d42285c24bc9e3535b5558a",
+      "destination": "legacy/financial-evidence-engine/docs/assets/killer_metrics.png"
+    },
+    {
+      "source": "docs/assets/memo_trace_demo.png",
+      "blob": "9a0151a5ef95bf8b2ee7d4b3d3113c6e3a0d7ecb",
+      "destination": "legacy/financial-evidence-engine/docs/assets/memo_trace_demo.png"
+    },
+    {
+      "source": "docs/data_platform_framing.md",
+      "blob": "2ac6f4c5547aa0d536dd0f0c15977fdd7e7596ca",
+      "destination": "legacy/financial-evidence-engine/docs/data_platform_framing.md"
+    },
+    {
+      "source": "docs/demo_script.md",
+      "blob": "505813a37bd49c746841410c8830f8e259f91022",
+      "destination": "legacy/financial-evidence-engine/docs/demo_script.md"
+    },
+    {
+      "source": "docs/failure_modes.md",
+      "blob": "405c602746e89a6abb7d3e19f9ab7102591641a0",
+      "destination": "legacy/financial-evidence-engine/docs/failure_modes.md"
+    },
+    {
+      "source": "docs/hard_benchmark.md",
+      "blob": "a7ff08d3a4f255022d02bbccdf4509bc5ed18fee",
+      "destination": "legacy/financial-evidence-engine/docs/hard_benchmark.md"
+    },
+    {
+      "source": "docs/interview_story.md",
+      "blob": "ed6add7caa5af547c4cd04011f1c5d2e0cfe85fb",
+      "destination": "legacy/financial-evidence-engine/docs/interview_story.md"
+    },
+    {
+      "source": "docs/resume_bullets.md",
+      "blob": "94bf583d6596c812f3b9a003f53c099e77e3ef77",
+      "destination": "legacy/financial-evidence-engine/docs/resume_bullets.md"
+    },
+    {
+      "source": "docs/sixty_second_pitch.md",
+      "blob": "8a637c6c68a24a1987729a88147bd6c87733def8",
+      "destination": "legacy/financial-evidence-engine/docs/sixty_second_pitch.md"
+    },
+    {
+      "source": "docs/system_design_notes.md",
+      "blob": "c7eb44f4f406db2ceed0283268d5e8ae102fe6ed",
+      "destination": "legacy/financial-evidence-engine/docs/system_design_notes.md"
+    },
+    {
+      "source": "experiments/adversarial/phase15_adversarial_report.json",
+      "blob": "fad4e4fb66a0b9b9ecf52a22de58b8c111420e5b",
+      "destination": "legacy/financial-evidence-engine/experiments/adversarial/phase15_adversarial_report.json"
+    },
+    {
+      "source": "experiments/case_studies/fiscal_period_confusion.json",
+      "blob": "7b7fac121456b7b2b495857d7170ae7fedb5093e",
+      "destination": "legacy/financial-evidence-engine/experiments/case_studies/fiscal_period_confusion.json"
+    },
+    {
+      "source": "experiments/case_studies/numeric_unit_mismatch.json",
+      "blob": "901ff8a45594a69c8706595db765603ca7ffbe1e",
+      "destination": "legacy/financial-evidence-engine/experiments/case_studies/numeric_unit_mismatch.json"
+    },
+    {
+      "source": "experiments/case_studies/unsupported_narrative_claim.json",
+      "blob": "2cf7c2d89ffc9c2a141c8b1920c2df0126790940",
+      "destination": "legacy/financial-evidence-engine/experiments/case_studies/unsupported_narrative_claim.json"
+    },
+    {
+      "source": "experiments/dense_lsa/dense_lsa_rerank_ablation.json",
+      "blob": "406f55aef8eb3595ad0a625f1359204bdd9524ff",
+      "destination": "legacy/financial-evidence-engine/experiments/dense_lsa/dense_lsa_rerank_ablation.json"
+    },
+    {
+      "source": "experiments/dense_sentence_transformer/dense_sentence_transformer_rerank_ablation.json",
+      "blob": "ba295a6553b6195ee9b1652a6c441602511951ab",
+      "destination": "legacy/financial-evidence-engine/experiments/dense_sentence_transformer/dense_sentence_transformer_rerank_ablation.json"
+    },
+    {
+      "source": "experiments/hard_benchmark/hard_benchmark.json",
+      "blob": "446f20dbce40a22973c937ad78263f31d6d5865c",
+      "destination": "legacy/financial-evidence-engine/experiments/hard_benchmark/hard_benchmark.json"
+    },
+    {
+      "source": "experiments/llm_decomposition/phase13_decomposition_comparison.json",
+      "blob": "90abb13d814855c41f5eb4531c80b18f03bfbdb0",
+      "destination": "legacy/financial-evidence-engine/experiments/llm_decomposition/phase13_decomposition_comparison.json"
+    },
+    {
+      "source": "experiments/narrative_causal/phase14_narrative_causal_report.json",
+      "blob": "5a71d3416cae1971c58ae3783fdf1b5205e43491",
+      "destination": "legacy/financial-evidence-engine/experiments/narrative_causal/phase14_narrative_causal_report.json"
+    },
+    {
+      "source": "experiments/traces/phase16_trace.sqlite",
+      "blob": "8d5db2aefe4000c82b1c94df335f1a1201fcf17c",
+      "destination": "legacy/financial-evidence-engine/experiments/traces/phase16_trace.sqlite"
+    },
+    {
+      "source": "pyproject.toml",
+      "blob": "5081b6ee0d47ab95cb55902f6fabccd406c9bcf4",
+      "destination": "legacy/financial-evidence-engine/upstream/pyproject.toml.txt"
+    },
+    {
+      "source": "reports/adversarial/phase15_adversarial_report.md",
+      "blob": "4f7cf4328c8f63a55cfb6ad15a13f534d0b1884d",
+      "destination": "legacy/financial-evidence-engine/reports/adversarial/phase15_adversarial_report.md"
+    },
+    {
+      "source": "reports/case_studies/fiscal_period_confusion.md",
+      "blob": "661a9f91b4f32aa51e817d2ed9f3a6a42ff4bcba",
+      "destination": "legacy/financial-evidence-engine/reports/case_studies/fiscal_period_confusion.md"
+    },
+    {
+      "source": "reports/case_studies/index.md",
+      "blob": "20a486b61af37bd6844f5d3c56af3b0d8c77272d",
+      "destination": "legacy/financial-evidence-engine/reports/case_studies/index.md"
+    },
+    {
+      "source": "reports/case_studies/numeric_unit_mismatch.md",
+      "blob": "4d8f4bd3a4f2e97bc6828800cc7ddae22fcae2af",
+      "destination": "legacy/financial-evidence-engine/reports/case_studies/numeric_unit_mismatch.md"
+    },
+    {
+      "source": "reports/case_studies/unsupported_narrative_claim.md",
+      "blob": "ab03ef433bdec31a66ba9a8f5f03d7b6c626dcec",
+      "destination": "legacy/financial-evidence-engine/reports/case_studies/unsupported_narrative_claim.md"
+    },
+    {
+      "source": "reports/dense_lsa/dense_lsa_rerank_ablation.md",
+      "blob": "30e8fa1571a5e0c8e06aa28cd7f10bd4913d3c57",
+      "destination": "legacy/financial-evidence-engine/reports/dense_lsa/dense_lsa_rerank_ablation.md"
+    },
+    {
+      "source": "reports/dense_sentence_transformer/dense_sentence_transformer_rerank_ablation.md",
+      "blob": "b136b07c03ccf6bca8fdffdd09bf04f477d73abd",
+      "destination": "legacy/financial-evidence-engine/reports/dense_sentence_transformer/dense_sentence_transformer_rerank_ablation.md"
+    },
+    {
+      "source": "reports/figures/case_study_flow.json",
+      "blob": "8428bd425841140251580fb11b00510da9a1b140",
+      "destination": "legacy/financial-evidence-engine/reports/figures/case_study_flow.json"
+    },
+    {
+      "source": "reports/figures/chart_evidence_reconciliation.json",
+      "blob": "4f4bb181fd75a805b2515db42df89cb0a48baa64",
+      "destination": "legacy/financial-evidence-engine/reports/figures/chart_evidence_reconciliation.json"
+    },
+    {
+      "source": "reports/figures/failure_mode_breakdown.json",
+      "blob": "949c941793364be6f4fccd277bc8bf3710e49e24",
+      "destination": "legacy/financial-evidence-engine/reports/figures/failure_mode_breakdown.json"
+    },
+    {
+      "source": "reports/figures/method_comparison.json",
+      "blob": "c6ee27dfa6a0748676dec60cd9eb48a0988a26b3",
+      "destination": "legacy/financial-evidence-engine/reports/figures/method_comparison.json"
+    },
+    {
+      "source": "reports/figures/validator_coverage.json",
+      "blob": "de82b0fa5af7cf4d71ce5d23ada99fba32e5e010",
+      "destination": "legacy/financial-evidence-engine/reports/figures/validator_coverage.json"
+    },
+    {
+      "source": "reports/final_report.md",
+      "blob": "9156244b206c46e54f066a70d93334d9dbd8d342",
+      "destination": "legacy/financial-evidence-engine/reports/final_report.md"
+    },
+    {
+      "source": "reports/final_report.pdf",
+      "blob": "e2036a21b96337c27f1c30747f2ddea55bb9beff",
+      "destination": "legacy/financial-evidence-engine/reports/final_report.pdf"
+    },
+    {
+      "source": "reports/hard_benchmark/hard_benchmark.md",
+      "blob": "a651ad5390502d63186ddb3afe25fd8866892edb",
+      "destination": "legacy/financial-evidence-engine/reports/hard_benchmark/hard_benchmark.md"
+    },
+    {
+      "source": "reports/llm_decomposition/phase13_decomposition_comparison.md",
+      "blob": "13732a1d1ce53c890462976169b16d949f297d0c",
+      "destination": "legacy/financial-evidence-engine/reports/llm_decomposition/phase13_decomposition_comparison.md"
+    },
+    {
+      "source": "reports/narrative_causal/phase14_narrative_causal_report.md",
+      "blob": "3c09c635777ced547560f8ce2b7edd75770561ee",
+      "destination": "legacy/financial-evidence-engine/reports/narrative_causal/phase14_narrative_causal_report.md"
+    },
+    {
+      "source": "reports/portfolio_report_manifest.json",
+      "blob": "15761e39078cb5db6493c98f6ce80f84e2a68f22",
+      "destination": "legacy/financial-evidence-engine/reports/portfolio_report_manifest.json"
+    },
+    {
+      "source": "reports/resume_bullet.txt",
+      "blob": "ecba0f5f1d85c756262dc0c0b5ba11d261c91cda",
+      "destination": "legacy/financial-evidence-engine/reports/resume_bullet.txt"
+    },
+    {
+      "source": "reports/tables/case_study_summary.json",
+      "blob": "12234e7ea0245b36238c7c78d7e55024fec7aeaf",
+      "destination": "legacy/financial-evidence-engine/reports/tables/case_study_summary.json"
+    },
+    {
+      "source": "reports/tables/chunks.csv",
+      "blob": "99fc1f17b78d8757920bacbc3b47cd7fe2c68dd7",
+      "destination": "legacy/financial-evidence-engine/reports/tables/chunks.csv"
+    },
+    {
+      "source": "reports/tables/citation_coverage.csv",
+      "blob": "a96ad736db47566a3dc0a0f539b9bc957d2e7b2e",
+      "destination": "legacy/financial-evidence-engine/reports/tables/citation_coverage.csv"
+    },
+    {
+      "source": "reports/tables/claims.csv",
+      "blob": "df688dec153bb4853da60ea140f4cddf4a8fe80a",
+      "destination": "legacy/financial-evidence-engine/reports/tables/claims.csv"
+    },
+    {
+      "source": "reports/tables/deck_reconciliation.json",
+      "blob": "2423a84caac30889477e746e50b61edb30ec993f",
+      "destination": "legacy/financial-evidence-engine/reports/tables/deck_reconciliation.json"
+    },
+    {
+      "source": "reports/tables/document_metadata.csv",
+      "blob": "84ee0cf640869a84d4b08a42ebd56002b77168c9",
+      "destination": "legacy/financial-evidence-engine/reports/tables/document_metadata.csv"
+    },
+    {
+      "source": "reports/tables/evidence_units.csv",
+      "blob": "13d45bd4e96933655a174af52c9472d974ad253b",
+      "destination": "legacy/financial-evidence-engine/reports/tables/evidence_units.csv"
+    },
+    {
+      "source": "reports/tables/normalization_quality_checks.csv",
+      "blob": "3494109db2e68badb2a0369771fd145b2a9419de",
+      "destination": "legacy/financial-evidence-engine/reports/tables/normalization_quality_checks.csv"
+    },
+    {
+      "source": "reports/tables/reproducibility_commands.json",
+      "blob": "61e9bf0d918f03fc51d43313f593978ee475fe20",
+      "destination": "legacy/financial-evidence-engine/reports/tables/reproducibility_commands.json"
+    },
+    {
+      "source": "reports/traces/phase16_artifact_manifest.json",
+      "blob": "020b31958611de52576dc6cc348d3fdc7a784baa",
+      "destination": "legacy/financial-evidence-engine/reports/traces/phase16_artifact_manifest.json"
+    },
+    {
+      "source": "scripts/build_data_platform_artifacts.py",
+      "blob": "9202804cc71a9cd4de72a5232aeaeab4a4622531",
+      "destination": "legacy/financial-evidence-engine/scripts/build_data_platform_artifacts.py"
+    },
+    {
+      "source": "scripts/build_portfolio_report.py",
+      "blob": "741452d138d56651e36931e94207ef0f2fa34a45",
+      "destination": "legacy/financial-evidence-engine/scripts/build_portfolio_report.py"
+    },
+    {
+      "source": "scripts/build_portfolio_screenshots.py",
+      "blob": "2bdeadb64fee523adaeef94b7e02fc7e42ba3217",
+      "destination": "legacy/financial-evidence-engine/scripts/build_portfolio_screenshots.py"
+    },
+    {
+      "source": "scripts/run_dense_lsa_experiment.py",
+      "blob": "26f9b7faf4f507a87c8ef89bbf396f16b6165294",
+      "destination": "legacy/financial-evidence-engine/scripts/run_dense_lsa_experiment.py"
+    },
+    {
+      "source": "scripts/run_hard_benchmark.py",
+      "blob": "6c87677c9c61409085d50fcee5c2dadddcba890a",
+      "destination": "legacy/financial-evidence-engine/scripts/run_hard_benchmark.py"
+    },
+    {
+      "source": "scripts/run_sentence_transformer_baseline.py",
+      "blob": "b979a773f1037fb574a6872b670544e118559afc",
+      "destination": "legacy/financial-evidence-engine/scripts/run_sentence_transformer_baseline.py"
+    },
+    {
+      "source": "scripts/smoke_adversarial_evaluation.py",
+      "blob": "f9ef71a525748dd94b139d1e5a93e3ba4a3d68fd",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_adversarial_evaluation.py"
+    },
+    {
+      "source": "scripts/smoke_case_studies.py",
+      "blob": "8af8ff4c14933e67e258e5811248df9ef4fa237d",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_case_studies.py"
+    },
+    {
+      "source": "scripts/smoke_cli_workflow.py",
+      "blob": "41db5fb1f74edae43a2787c05340ed90fa332240",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_cli_workflow.py"
+    },
+    {
+      "source": "scripts/smoke_data_platform_artifacts.py",
+      "blob": "2061e922779dee0a39c6a7da5af87378cb909ad4",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_data_platform_artifacts.py"
+    },
+    {
+      "source": "scripts/smoke_deck_chart_extraction.py",
+      "blob": "ad9aeeedf69bded11140fed65ceb422477eea43c",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_deck_chart_extraction.py"
+    },
+    {
+      "source": "scripts/smoke_demo_ui.py",
+      "blob": "120332aa3e622f18d4d6a231cb84a0d4d2a593ec",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_demo_ui.py"
+    },
+    {
+      "source": "scripts/smoke_embedding_backend.py",
+      "blob": "d3feb150524d00c2f18d4fad3801cba8e9658e34",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_embedding_backend.py"
+    },
+    {
+      "source": "scripts/smoke_final_report_package.py",
+      "blob": "2a9a7a479ee7ad13f37c7da436775499ae1035a5",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_final_report_package.py"
+    },
+    {
+      "source": "scripts/smoke_interview_packaging.py",
+      "blob": "ec4a9d9f936ea17d612c269f30aa1a9bdb63fc67",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_interview_packaging.py"
+    },
+    {
+      "source": "scripts/smoke_llm_decomposition.py",
+      "blob": "c2730be9168891c0b5ffebab00f77117c8698ac1",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_llm_decomposition.py"
+    },
+    {
+      "source": "scripts/smoke_narrative_causal.py",
+      "blob": "44ff7f8b1b9aad61f014c327c50835b7ffa0989b",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_narrative_causal.py"
+    },
+    {
+      "source": "scripts/smoke_phase1_registry.py",
+      "blob": "fb78bc43929301254eb9dfc71edadef44ebda66b",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase1_registry.py"
+    },
+    {
+      "source": "scripts/smoke_phase2_extraction.py",
+      "blob": "7db9aab4bc626e431d1b67cc875f5b162a037e89",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase2_extraction.py"
+    },
+    {
+      "source": "scripts/smoke_phase3_normalization.py",
+      "blob": "d3ce53f9f585c06c97fca9b861d95b4b9e85a7aa",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase3_normalization.py"
+    },
+    {
+      "source": "scripts/smoke_phase4_evidence_graph.py",
+      "blob": "12c5526c9e744556b7f276934dcb51385f9af992",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase4_evidence_graph.py"
+    },
+    {
+      "source": "scripts/smoke_phase5_claim_verification.py",
+      "blob": "10bb601b89919a7894731364f57061e9305a5b66",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase5_claim_verification.py"
+    },
+    {
+      "source": "scripts/smoke_phase6_task_set.py",
+      "blob": "f56eb4db656f2ac7b4a34110a4a4935ab15e662b",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase6_task_set.py"
+    },
+    {
+      "source": "scripts/smoke_phase7_evaluation.py",
+      "blob": "cf4245e48c31d662521b8ad0f4fe5811e311b1f4",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase7_evaluation.py"
+    },
+    {
+      "source": "scripts/smoke_phase8_memo.py",
+      "blob": "a46f5b1155b575cfe7c7530761bc9685fcf3fd39",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_phase8_memo.py"
+    },
+    {
+      "source": "scripts/smoke_raw_corpus.py",
+      "blob": "18ca6faf5cdbd286d8efccb54a7ecf84228164a3",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_raw_corpus.py"
+    },
+    {
+      "source": "scripts/smoke_real_retrieval_evaluation.py",
+      "blob": "db5c526fbadd342f1c2d6c37e3ec4c8741c6aadd",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_real_retrieval_evaluation.py"
+    },
+    {
+      "source": "scripts/smoke_streamlit_start.py",
+      "blob": "a7bb0d08a4a5742fcaaa59071f5e826247338786",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_streamlit_start.py"
+    },
+    {
+      "source": "scripts/smoke_trace_reproducibility.py",
+      "blob": "de43e34445ba3c872fccfb09ef74c79e0362893d",
+      "destination": "legacy/financial-evidence-engine/scripts/smoke_trace_reproducibility.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/__init__.py",
+      "blob": "90fd07af54ad9fd7a1423aac25cad9a32cfc13c9",
+      "destination": "src/financial_evidence_engine/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/case_studies/__init__.py",
+      "blob": "b064d491a905e019bb9b837e8855c7d7143ce82c",
+      "destination": "src/financial_evidence_engine/case_studies/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/case_studies/portfolio.py",
+      "blob": "e995d008efc4953afce692b803d016ceaa620e23",
+      "destination": "src/financial_evidence_engine/case_studies/portfolio.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/cli.py",
+      "blob": "c2680eb30fe82e7ed6102462af80bb8b68b15688",
+      "destination": "src/financial_evidence_engine/cli.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/config.py",
+      "blob": "706a9a9d16668fdfc06fee6bb572132ff1bc296e",
+      "destination": "src/financial_evidence_engine/config.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/__init__.py",
+      "blob": "ab59cc91b3e25fe930a5c31bc736ffbe9475ace9",
+      "destination": "src/financial_evidence_engine/data/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/cache.py",
+      "blob": "34df89a1aed1e8208478e024cd50524b2e5ae442",
+      "destination": "src/financial_evidence_engine/data/cache.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/document_registry.py",
+      "blob": "2b6aace473dc097ac9e2f30cc747c3c9c2b9d6a9",
+      "destination": "src/financial_evidence_engine/data/document_registry.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/ingestion.py",
+      "blob": "90d7820e583ce98072ef43b7e3f5cebee1a4d1c9",
+      "destination": "src/financial_evidence_engine/data/ingestion.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/models.py",
+      "blob": "c6ce31d18703cb9286effdddc4dd123901be264f",
+      "destination": "src/financial_evidence_engine/data/models.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/data/sec_client.py",
+      "blob": "137a852a3da075c40061f0cf14325f740276dfec",
+      "destination": "src/financial_evidence_engine/data/sec_client.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/demo.py",
+      "blob": "4f639a644caba7b618d1190f5d69bb15b11b8c72",
+      "destination": "src/financial_evidence_engine/demo.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/__init__.py",
+      "blob": "dec0e487ee26ad4c36390eec54dfb834a9026018",
+      "destination": "src/financial_evidence_engine/evaluation/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/adversarial.py",
+      "blob": "6d92fa937d4a00b55ef2e016883795f95b1dd562",
+      "destination": "src/financial_evidence_engine/evaluation/adversarial.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/baselines.py",
+      "blob": "1ba83c86c2d08a2377cd9713406724092d9b7867",
+      "destination": "src/financial_evidence_engine/evaluation/baselines.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/gold_builder.py",
+      "blob": "f3f9f3b3a648e3760cfda8a4ba906ef82497d806",
+      "destination": "src/financial_evidence_engine/evaluation/gold_builder.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/hard_benchmark.py",
+      "blob": "227c0edecd1c32ca2e685d2746ffec6ccac498f3",
+      "destination": "src/financial_evidence_engine/evaluation/hard_benchmark.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/metrics.py",
+      "blob": "e380b26d226039f4bf2c65e8b607c94bd5ef5a4a",
+      "destination": "src/financial_evidence_engine/evaluation/metrics.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evaluation/task_set.py",
+      "blob": "d0a6ff0f1a5d2c80590a4931b9b84e623dc4a361",
+      "destination": "src/financial_evidence_engine/evaluation/task_set.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/__init__.py",
+      "blob": "af50c28b543f7bd6c5c6e85ea4543bdcfe28fbeb",
+      "destination": "src/financial_evidence_engine/evidence_graph/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/claim_graph.py",
+      "blob": "18e9ac73b81f2156e0c969b483de89472cf8c168",
+      "destination": "src/financial_evidence_engine/evidence_graph/claim_graph.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/edges.py",
+      "blob": "958204c99f6a148909e90028bcd1547283475c4e",
+      "destination": "src/financial_evidence_engine/evidence_graph/edges.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/graph.py",
+      "blob": "69d4021f179fa8eb4e8779fc18e1ac7073ae7ffa",
+      "destination": "src/financial_evidence_engine/evidence_graph/graph.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/graph_builder.py",
+      "blob": "a01b67438b08818feacefc0eb68236dc2ec55a26",
+      "destination": "src/financial_evidence_engine/evidence_graph/graph_builder.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/evidence_graph/nodes.py",
+      "blob": "beda68df9fc5b3a93504a1bb99b63f0aebd33edf",
+      "destination": "src/financial_evidence_engine/evidence_graph/nodes.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/__init__.py",
+      "blob": "250da40d2f487486e3945d28419d5ed317aab411",
+      "destination": "src/financial_evidence_engine/extraction/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/deck_chart_extractor.py",
+      "blob": "b90fc95a3b5a56567741a5b83a2f84bfb886c8d1",
+      "destination": "src/financial_evidence_engine/extraction/deck_chart_extractor.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/metrics.py",
+      "blob": "909e855ea2bdf8fc7739eaa2875804adb943bca0",
+      "destination": "src/financial_evidence_engine/extraction/metrics.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/models.py",
+      "blob": "1a512061fff3ab14fea6ae4b1244092d5cf2f916",
+      "destination": "src/financial_evidence_engine/extraction/models.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/table_extractor.py",
+      "blob": "4adcf6122a6be01b881a8d0f240dfecc3a1cbe98",
+      "destination": "src/financial_evidence_engine/extraction/table_extractor.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/text_extractor.py",
+      "blob": "296bbab5c8da8c9d2d764f49d3c906727853908d",
+      "destination": "src/financial_evidence_engine/extraction/text_extractor.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/transcript_parser.py",
+      "blob": "5d1743e228e821de3bf2d8f3f11cfce780ac036f",
+      "destination": "src/financial_evidence_engine/extraction/transcript_parser.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/extraction/xbrl_extractor.py",
+      "blob": "939c5e6e2100b8df9f5a470d25fc1e8704b43a1e",
+      "destination": "src/financial_evidence_engine/extraction/xbrl_extractor.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/__init__.py",
+      "blob": "7a2c6afb47aee02d0c9bb9dc6a98d88af2f2d9be",
+      "destination": "src/financial_evidence_engine/normalization/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/currency_normalizer.py",
+      "blob": "c7bcecfd0f3afc775a10aa7a69123b2ffaa0fbc9",
+      "destination": "src/financial_evidence_engine/normalization/currency_normalizer.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/entity_linking.py",
+      "blob": "ddf992ef0b3cd51d614ea04bafa4f1af256a7def",
+      "destination": "src/financial_evidence_engine/normalization/entity_linking.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/fiscal_period_resolver.py",
+      "blob": "06ca2856da06ce564f90e1b12319422bab19b11a",
+      "destination": "src/financial_evidence_engine/normalization/fiscal_period_resolver.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/guardrails.py",
+      "blob": "055c3d052fab3c89cc45dbc84ddc5de6f07d0970",
+      "destination": "src/financial_evidence_engine/normalization/guardrails.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/metric_mapper.py",
+      "blob": "dc7340a9ba4a77a43b9716741c0ea00c9d31683f",
+      "destination": "src/financial_evidence_engine/normalization/metric_mapper.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/models.py",
+      "blob": "c4f95c39fb86ed469d4ba86f4d28c607eb31e94d",
+      "destination": "src/financial_evidence_engine/normalization/models.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/normalization/unit_normalizer.py",
+      "blob": "054cccc567362f52a5ec611d61ed1cd9f2217d00",
+      "destination": "src/financial_evidence_engine/normalization/unit_normalizer.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/production.py",
+      "blob": "19691674fbab61ef6836bc36535c66c06420c4f8",
+      "destination": "src/financial_evidence_engine/production.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/__init__.py",
+      "blob": "fd76b0a2d99576253d5fa1dc44a75be19feb8640",
+      "destination": "src/financial_evidence_engine/reasoning/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/claim_decomposer.py",
+      "blob": "672c9a904c6bfeed8be58f2151fdee684da5baa1",
+      "destination": "src/financial_evidence_engine/reasoning/claim_decomposer.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/claim_verifier.py",
+      "blob": "224cc2aac22ad1323e919b7cf388ec1fa05a691e",
+      "destination": "src/financial_evidence_engine/reasoning/claim_verifier.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/contradiction_detector.py",
+      "blob": "a8d2e83a50c7c6475c42d2d1fba28926f37f2aa5",
+      "destination": "src/financial_evidence_engine/reasoning/contradiction_detector.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/evidence_selector.py",
+      "blob": "c1a2b8a36d782d0baa7e90fe0e19dbd3fa6d8248",
+      "destination": "src/financial_evidence_engine/reasoning/evidence_selector.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/llm_decomposition.py",
+      "blob": "d874c3cf640e74e965a09be876f4bae64698ac8f",
+      "destination": "src/financial_evidence_engine/reasoning/llm_decomposition.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/models.py",
+      "blob": "113683b1011ade7e7993c80b5f85b75fdf09b09e",
+      "destination": "src/financial_evidence_engine/reasoning/models.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reasoning/narrative_causal.py",
+      "blob": "8271d0eac6663944b074fb878b0a8157a84781fe",
+      "destination": "src/financial_evidence_engine/reasoning/narrative_causal.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reports/__init__.py",
+      "blob": "3540f070dd538410020f56b822432094e877ac19",
+      "destination": "src/financial_evidence_engine/reports/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reports/data_platform.py",
+      "blob": "64ea4d6ddc3db794e4f72c501fb3ac4bb680b68b",
+      "destination": "src/financial_evidence_engine/reports/data_platform.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reports/final_report.py",
+      "blob": "d2551fc56e8063991a51e082a816bcf106d4e91b",
+      "destination": "src/financial_evidence_engine/reports/final_report.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reports/memo.py",
+      "blob": "455ab20b7a5fa9035cc84d8075c7c3a8f9a34821",
+      "destination": "src/financial_evidence_engine/reports/memo.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/reports/portfolio_report.py",
+      "blob": "e3acc16c61b148c77fcb358e183b23d193e11864",
+      "destination": "src/financial_evidence_engine/reports/portfolio_report.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/retrieval/__init__.py",
+      "blob": "c104819d1c92cff9972bd66a8aac392947fc09ae",
+      "destination": "src/financial_evidence_engine/retrieval/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/retrieval/dense_lsa.py",
+      "blob": "b5ab997f3b1d760f4bffa6ecd0ae400ccf70d5cd",
+      "destination": "src/financial_evidence_engine/retrieval/dense_lsa.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/retrieval/embeddings.py",
+      "blob": "3e8169a0b26dc7fa3499b9f3e15cb94b52a0c935",
+      "destination": "src/financial_evidence_engine/retrieval/embeddings.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/retrieval/raw_corpus.py",
+      "blob": "52901980ad9a9704335311952eff4cb336b1c011",
+      "destination": "src/financial_evidence_engine/retrieval/raw_corpus.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/retrieval/real_baselines.py",
+      "blob": "eaa23a1eef6e5664b65120c4dd8c4da264052ffb",
+      "destination": "src/financial_evidence_engine/retrieval/real_baselines.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/traceability.py",
+      "blob": "6475237f7ab46f1da881a2c36a43241e8840f0a2",
+      "destination": "src/financial_evidence_engine/traceability.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/__init__.py",
+      "blob": "c6194d03e953c64b8b271904ad178b26340c3ee8",
+      "destination": "src/financial_evidence_engine/validators/__init__.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/citation_validator.py",
+      "blob": "576f4f45ea02dc67d043d965ae8911e50cf4ff17",
+      "destination": "src/financial_evidence_engine/validators/citation_validator.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/fiscal_period_validator.py",
+      "blob": "ea7bc5ba9dd3995c9a75e9ce105091ec4179203c",
+      "destination": "src/financial_evidence_engine/validators/fiscal_period_validator.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/numeric_validator.py",
+      "blob": "60790ac7f12e4a4ddfad92e06484da631eb3e5de",
+      "destination": "src/financial_evidence_engine/validators/numeric_validator.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/source_consistency_validator.py",
+      "blob": "1cef29307de0810737d72c1ad6efdf7b8d87450c",
+      "destination": "src/financial_evidence_engine/validators/source_consistency_validator.py"
+    },
+    {
+      "source": "src/financial_evidence_engine/validators/unsupported_claim_detector.py",
+      "blob": "bebae6ade9c80e066c844a8751264e6013449b03",
+      "destination": "src/financial_evidence_engine/validators/unsupported_claim_detector.py"
+    },
+    {
+      "source": "tests/fixtures/investor_decks/nvda_fy2024_data_center_chart.pdf",
+      "blob": "5bee2f596e6bfb0e32f5bd871aa000240ea0e72a",
+      "destination": "legacy/financial-evidence-engine/tests/fixtures/investor_decks/nvda_fy2024_data_center_chart.pdf"
+    },
+    {
+      "source": "tests/fixtures/llm_decompositions/recorded_claim_decompositions.json",
+      "blob": "535744e15e540b2dc63fd9458783ba8fb25f4b54",
+      "destination": "legacy/financial-evidence-engine/tests/fixtures/llm_decompositions/recorded_claim_decompositions.json"
+    },
+    {
+      "source": "tests/test_adversarial_evaluation.py",
+      "blob": "f8dbd8e9ab7cb5071107ea17e1397a510e9a5c1c",
+      "destination": "legacy/financial-evidence-engine/tests/test_adversarial_evaluation.py"
+    },
+    {
+      "source": "tests/test_case_studies.py",
+      "blob": "d03f92896b295ed041651b8f8fec9672fbb9657d",
+      "destination": "legacy/financial-evidence-engine/tests/test_case_studies.py"
+    },
+    {
+      "source": "tests/test_cli_workflow.py",
+      "blob": "09a612e5392d79a33586117b4ee839c1d0459d21",
+      "destination": "legacy/financial-evidence-engine/tests/test_cli_workflow.py"
+    },
+    {
+      "source": "tests/test_data_platform_artifacts.py",
+      "blob": "9cd98308e2fa31f94d15dba0f570ad312698871e",
+      "destination": "legacy/financial-evidence-engine/tests/test_data_platform_artifacts.py"
+    },
+    {
+      "source": "tests/test_deck_chart_extraction.py",
+      "blob": "ab4799fe2a97ff1122756a4355375ea05ab07890",
+      "destination": "legacy/financial-evidence-engine/tests/test_deck_chart_extraction.py"
+    },
+    {
+      "source": "tests/test_demo_ui.py",
+      "blob": "e209cedb5dd244d65e348822ed720e77d3195daa",
+      "destination": "legacy/financial-evidence-engine/tests/test_demo_ui.py"
+    },
+    {
+      "source": "tests/test_dense_retrieval_experiments.py",
+      "blob": "0255233b215c07fefcdf4b7c89dd584700d54223",
+      "destination": "legacy/financial-evidence-engine/tests/test_dense_retrieval_experiments.py"
+    },
+    {
+      "source": "tests/test_embedding_backend.py",
+      "blob": "5f42d826ce9f8833b352cc31d3029632132eccf2",
+      "destination": "legacy/financial-evidence-engine/tests/test_embedding_backend.py"
+    },
+    {
+      "source": "tests/test_final_report_package.py",
+      "blob": "23fd74010327113b4f646188472c5e914bb355e7",
+      "destination": "legacy/financial-evidence-engine/tests/test_final_report_package.py"
+    },
+    {
+      "source": "tests/test_hard_benchmark.py",
+      "blob": "1c874e56f7b04f44e18f992d49705007a4054e90",
+      "destination": "legacy/financial-evidence-engine/tests/test_hard_benchmark.py"
+    },
+    {
+      "source": "tests/test_interview_packaging.py",
+      "blob": "9a531c12fd165e22a7d2d765126f3aa68fe0cdfb",
+      "destination": "legacy/financial-evidence-engine/tests/test_interview_packaging.py"
+    },
+    {
+      "source": "tests/test_llm_decomposition.py",
+      "blob": "8ecb5258058acd54bcfa7bcbf23bad8217cb8b6c",
+      "destination": "legacy/financial-evidence-engine/tests/test_llm_decomposition.py"
+    },
+    {
+      "source": "tests/test_narrative_causal_verification.py",
+      "blob": "a33467e7ba499f16ca4a5ebeb1491089f746476b",
+      "destination": "legacy/financial-evidence-engine/tests/test_narrative_causal_verification.py"
+    },
+    {
+      "source": "tests/test_phase0_skeleton.py",
+      "blob": "2e7b9ae5fafe38bef476d422e557de0d156ca701",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase0_skeleton.py"
+    },
+    {
+      "source": "tests/test_phase1_document_registry.py",
+      "blob": "b7908a2c838b13625c210fba3dd12a1048bf7ab6",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase1_document_registry.py"
+    },
+    {
+      "source": "tests/test_phase2_extraction.py",
+      "blob": "b6aeb4789a51835e6be33ccf96399b12600407a0",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase2_extraction.py"
+    },
+    {
+      "source": "tests/test_phase3_normalization.py",
+      "blob": "af33e5c0110716af6021f344ae267a85e3702653",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase3_normalization.py"
+    },
+    {
+      "source": "tests/test_phase4_evidence_graph.py",
+      "blob": "66c2ecd78e59ec308241b8443d8888d3b69809a2",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase4_evidence_graph.py"
+    },
+    {
+      "source": "tests/test_phase5_claim_verification.py",
+      "blob": "7fa44f48eb2e9a97394ad5f785f03b9df085606a",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase5_claim_verification.py"
+    },
+    {
+      "source": "tests/test_phase6_task_set.py",
+      "blob": "c731debb20fee822da044eb8d0b79b0f08c5e9d7",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase6_task_set.py"
+    },
+    {
+      "source": "tests/test_phase7_evaluation.py",
+      "blob": "e7e4825b85400d0313634732a688aaa9d46b4c9f",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase7_evaluation.py"
+    },
+    {
+      "source": "tests/test_phase8_memo.py",
+      "blob": "0f0745dadfeccfb040998a0af1711edfcf288bb2",
+      "destination": "legacy/financial-evidence-engine/tests/test_phase8_memo.py"
+    },
+    {
+      "source": "tests/test_portfolio_report.py",
+      "blob": "db8a9248d74a1187735638ae38a88aa18bf04884",
+      "destination": "legacy/financial-evidence-engine/tests/test_portfolio_report.py"
+    },
+    {
+      "source": "tests/test_public_portfolio_packaging.py",
+      "blob": "7d62ac6a4ccaf68ea6208904e78747d989bde08c",
+      "destination": "legacy/financial-evidence-engine/tests/test_public_portfolio_packaging.py"
+    },
+    {
+      "source": "tests/test_raw_corpus.py",
+      "blob": "ea93a2411af48979938d5f6e3ddb2af6fd9c1974",
+      "destination": "legacy/financial-evidence-engine/tests/test_raw_corpus.py"
+    },
+    {
+      "source": "tests/test_real_retrieval_evaluation.py",
+      "blob": "c41d05b86abd5b9375b04d25007bb9daa272e6b2",
+      "destination": "legacy/financial-evidence-engine/tests/test_real_retrieval_evaluation.py"
+    },
+    {
+      "source": "tests/test_trace_reproducibility.py",
+      "blob": "48966ad0ed89302c29537cf335e00c0e27979fa8",
+      "destination": "legacy/financial-evidence-engine/tests/test_trace_reproducibility.py"
+    }
+  ]
+}

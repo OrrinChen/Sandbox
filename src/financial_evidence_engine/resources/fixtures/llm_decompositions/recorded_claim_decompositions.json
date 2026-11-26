@@ -1,0 +1,194 @@
+[
+  {
+    "claim_id": "complex:msft_cloud_offset",
+    "text": "Microsoft's FY2024 cloud growth was strong enough to offset weakness in other segments.",
+    "company_ticker": "MSFT",
+    "fiscal_period": "FY2024",
+    "subclaims": [
+      {
+        "text": "Microsoft FY2024 cloud revenue grew.",
+        "company_ticker": "MSFT",
+        "fiscal_period": "FY2024",
+        "metric": "cloud_revenue",
+        "required_evidence_type": "numeric",
+        "required_terms": ["cloud_revenue", "growth"]
+      },
+      {
+        "text": "Microsoft FY2024 non-cloud segments weakened.",
+        "company_ticker": "MSFT",
+        "fiscal_period": "FY2024",
+        "metric": "segment_weakness",
+        "required_evidence_type": "text",
+        "required_terms": ["segment", "weakness"]
+      },
+      {
+        "text": "Microsoft FY2024 cloud growth offset non-cloud weakness.",
+        "company_ticker": "MSFT",
+        "fiscal_period": "FY2024",
+        "metric": "offset_relationship",
+        "required_evidence_type": "text",
+        "required_terms": ["offset", "cloud_revenue"]
+      },
+      {
+        "text": "The offset conclusion is causal and requires evidence beyond numeric growth.",
+        "company_ticker": "MSFT",
+        "fiscal_period": "FY2024",
+        "metric": "causal_attribution",
+        "required_evidence_type": "text",
+        "required_terms": ["causal_attribution"]
+      }
+    ]
+  },
+  {
+    "claim_id": "complex:nvda_data_center_driver",
+    "text": "NVIDIA's FY2024 revenue growth was mainly driven by data center demand.",
+    "company_ticker": "NVDA",
+    "fiscal_period": "FY2024",
+    "subclaims": [
+      {
+        "text": "NVIDIA FY2024 total revenue grew.",
+        "company_ticker": "NVDA",
+        "fiscal_period": "FY2024",
+        "metric": "revenue",
+        "required_evidence_type": "numeric",
+        "required_terms": ["revenue", "growth"]
+      },
+      {
+        "text": "NVIDIA FY2024 data center revenue grew.",
+        "company_ticker": "NVDA",
+        "fiscal_period": "FY2024",
+        "metric": "data_center_revenue",
+        "required_evidence_type": "numeric",
+        "required_terms": ["data_center_revenue"]
+      },
+      {
+        "text": "Data center growth contributed the main share of NVIDIA FY2024 growth.",
+        "company_ticker": "NVDA",
+        "fiscal_period": "FY2024",
+        "metric": "segment_contribution",
+        "required_evidence_type": "numeric",
+        "required_terms": ["segment_contribution"]
+      },
+      {
+        "text": "Demand was the driver of the data center increase.",
+        "company_ticker": "NVDA",
+        "fiscal_period": "FY2024",
+        "metric": "causal_attribution",
+        "required_evidence_type": "text",
+        "required_terms": ["demand", "causal_attribution"]
+      }
+    ]
+  },
+  {
+    "claim_id": "complex:aapl_services_margin",
+    "text": "Apple's FY2024 margin improvement came from Services mix rather than one-time cost cuts.",
+    "company_ticker": "AAPL",
+    "fiscal_period": "FY2024",
+    "subclaims": [
+      {
+        "text": "Apple FY2024 margin improved.",
+        "company_ticker": "AAPL",
+        "fiscal_period": "FY2024",
+        "metric": "operating_margin",
+        "required_evidence_type": "numeric",
+        "required_terms": ["operating_margin"]
+      },
+      {
+        "text": "Apple FY2024 Services mix increased.",
+        "company_ticker": "AAPL",
+        "fiscal_period": "FY2024",
+        "metric": "segment_revenue",
+        "required_evidence_type": "numeric",
+        "required_terms": ["services", "segment_revenue"]
+      },
+      {
+        "text": "Services mix contributed to Apple FY2024 margin improvement.",
+        "company_ticker": "AAPL",
+        "fiscal_period": "FY2024",
+        "metric": "segment_contribution",
+        "required_evidence_type": "text",
+        "required_terms": ["services", "margin"]
+      },
+      {
+        "text": "One-time cost cuts were not the main source of Apple FY2024 margin improvement.",
+        "company_ticker": "AAPL",
+        "fiscal_period": "FY2024",
+        "metric": "one_time_item",
+        "required_evidence_type": "text",
+        "required_terms": ["one_time_item"]
+      }
+    ]
+  },
+  {
+    "claim_id": "complex:amzn_aws_offset",
+    "text": "Amazon's FY2024 AWS growth offset retail margin pressure.",
+    "company_ticker": "AMZN",
+    "fiscal_period": "FY2024",
+    "subclaims": [
+      {
+        "text": "Amazon FY2024 AWS revenue grew.",
+        "company_ticker": "AMZN",
+        "fiscal_period": "FY2024",
+        "metric": "cloud_revenue",
+        "required_evidence_type": "numeric",
+        "required_terms": ["aws", "cloud_revenue"]
+      },
+      {
+        "text": "Amazon FY2024 retail margin was under pressure.",
+        "company_ticker": "AMZN",
+        "fiscal_period": "FY2024",
+        "metric": "operating_margin",
+        "required_evidence_type": "numeric",
+        "required_terms": ["retail", "margin"]
+      },
+      {
+        "text": "AWS growth offset retail margin pressure at Amazon in FY2024.",
+        "company_ticker": "AMZN",
+        "fiscal_period": "FY2024",
+        "metric": "offset_relationship",
+        "required_evidence_type": "text",
+        "required_terms": ["offset", "aws"]
+      }
+    ]
+  },
+  {
+    "claim_id": "complex:jpm_rate_benefit",
+    "text": "JPMorgan's FY2024 earnings strength was primarily caused by net interest income rather than credit releases.",
+    "company_ticker": "JPM",
+    "fiscal_period": "FY2024",
+    "subclaims": [
+      {
+        "text": "JPMorgan FY2024 earnings were strong.",
+        "company_ticker": "JPM",
+        "fiscal_period": "FY2024",
+        "metric": "net_income",
+        "required_evidence_type": "numeric",
+        "required_terms": ["net_income"]
+      },
+      {
+        "text": "JPMorgan FY2024 net interest income increased.",
+        "company_ticker": "JPM",
+        "fiscal_period": "FY2024",
+        "metric": "net_interest_income",
+        "required_evidence_type": "numeric",
+        "required_terms": ["net_interest_income"]
+      },
+      {
+        "text": "JPMorgan FY2024 credit releases were not the primary driver.",
+        "company_ticker": "JPM",
+        "fiscal_period": "FY2024",
+        "metric": "credit_loss_provision",
+        "required_evidence_type": "numeric",
+        "required_terms": ["credit_loss_provision"]
+      },
+      {
+        "text": "The primary-cause conclusion requires causal support from management or filing evidence.",
+        "company_ticker": "JPM",
+        "fiscal_period": "FY2024",
+        "metric": "causal_attribution",
+        "required_evidence_type": "text",
+        "required_terms": ["causal_attribution"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,201 @@
+evidence_id,task_id,evidence_role,company_ticker,source_type,modality,fiscal_period,page_or_section,normalized_metric,min_count,expected_verdict,requires_citation
+phase6:aapl:single_company_trend:ev1,phase6:aapl:single_company_trend,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:aapl:single_company_trend:ev2,phase6:aapl:single_company_trend,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:aapl:single_company_trend:ev3,phase6:aapl:single_company_trend,gold_requirement,AAPL,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:aapl:cross_company_comparison:ev1,phase6:aapl:cross_company_comparison,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:aapl:cross_company_comparison:ev2,phase6:aapl:cross_company_comparison,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:aapl:cross_company_comparison:ev3,phase6:aapl:cross_company_comparison,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:aapl:cross_company_comparison:ev4,phase6:aapl:cross_company_comparison,gold_requirement,MSFT,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:aapl:management_claim_verification:ev1,phase6:aapl:management_claim_verification,gold_requirement,AAPL,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:aapl:management_claim_verification:ev2,phase6:aapl:management_claim_verification,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:aapl:management_claim_verification:ev3,phase6:aapl:management_claim_verification,gold_requirement,AAPL,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:aapl:risk_contradiction:ev1,phase6:aapl:risk_contradiction,gold_requirement,AAPL,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:aapl:risk_contradiction:ev2,phase6:aapl:risk_contradiction,gold_requirement,AAPL,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:aapl:risk_contradiction:ev3,phase6:aapl:risk_contradiction,gold_requirement,AAPL,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:aapl:risk_contradiction:ev4,phase6:aapl:risk_contradiction,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:aapl:guidance_vs_actuals:ev1,phase6:aapl:guidance_vs_actuals,gold_requirement,AAPL,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:aapl:guidance_vs_actuals:ev2,phase6:aapl:guidance_vs_actuals,gold_requirement,AAPL,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:aapl:guidance_vs_actuals:ev3,phase6:aapl:guidance_vs_actuals,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:aapl:chart_table_reconciliation:ev1,phase6:aapl:chart_table_reconciliation,gold_requirement,AAPL,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:aapl:chart_table_reconciliation:ev2,phase6:aapl:chart_table_reconciliation,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:aapl:chart_table_reconciliation:ev3,phase6:aapl:chart_table_reconciliation,gold_requirement,AAPL,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:msft:single_company_trend:ev1,phase6:msft:single_company_trend,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:msft:single_company_trend:ev2,phase6:msft:single_company_trend,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:msft:single_company_trend:ev3,phase6:msft:single_company_trend,gold_requirement,MSFT,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:msft:cross_company_comparison:ev1,phase6:msft:cross_company_comparison,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:msft:cross_company_comparison:ev2,phase6:msft:cross_company_comparison,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:msft:cross_company_comparison:ev3,phase6:msft:cross_company_comparison,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:msft:cross_company_comparison:ev4,phase6:msft:cross_company_comparison,gold_requirement,NVDA,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:msft:management_claim_verification:ev1,phase6:msft:management_claim_verification,gold_requirement,MSFT,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:msft:management_claim_verification:ev2,phase6:msft:management_claim_verification,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:msft:management_claim_verification:ev3,phase6:msft:management_claim_verification,gold_requirement,MSFT,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:msft:risk_contradiction:ev1,phase6:msft:risk_contradiction,gold_requirement,MSFT,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:msft:risk_contradiction:ev2,phase6:msft:risk_contradiction,gold_requirement,MSFT,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:msft:risk_contradiction:ev3,phase6:msft:risk_contradiction,gold_requirement,MSFT,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:msft:risk_contradiction:ev4,phase6:msft:risk_contradiction,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:msft:guidance_vs_actuals:ev1,phase6:msft:guidance_vs_actuals,gold_requirement,MSFT,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:msft:guidance_vs_actuals:ev2,phase6:msft:guidance_vs_actuals,gold_requirement,MSFT,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:msft:guidance_vs_actuals:ev3,phase6:msft:guidance_vs_actuals,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:msft:chart_table_reconciliation:ev1,phase6:msft:chart_table_reconciliation,gold_requirement,MSFT,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:msft:chart_table_reconciliation:ev2,phase6:msft:chart_table_reconciliation,gold_requirement,MSFT,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:msft:chart_table_reconciliation:ev3,phase6:msft:chart_table_reconciliation,gold_requirement,MSFT,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:nvda:single_company_trend:ev1,phase6:nvda:single_company_trend,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:nvda:single_company_trend:ev2,phase6:nvda:single_company_trend,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:nvda:single_company_trend:ev3,phase6:nvda:single_company_trend,gold_requirement,NVDA,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:nvda:cross_company_comparison:ev1,phase6:nvda:cross_company_comparison,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:nvda:cross_company_comparison:ev2,phase6:nvda:cross_company_comparison,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:nvda:cross_company_comparison:ev3,phase6:nvda:cross_company_comparison,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:nvda:cross_company_comparison:ev4,phase6:nvda:cross_company_comparison,gold_requirement,AMZN,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:nvda:management_claim_verification:ev1,phase6:nvda:management_claim_verification,gold_requirement,NVDA,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:nvda:management_claim_verification:ev2,phase6:nvda:management_claim_verification,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:nvda:management_claim_verification:ev3,phase6:nvda:management_claim_verification,gold_requirement,NVDA,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:nvda:risk_contradiction:ev1,phase6:nvda:risk_contradiction,gold_requirement,NVDA,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:nvda:risk_contradiction:ev2,phase6:nvda:risk_contradiction,gold_requirement,NVDA,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:nvda:risk_contradiction:ev3,phase6:nvda:risk_contradiction,gold_requirement,NVDA,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:nvda:risk_contradiction:ev4,phase6:nvda:risk_contradiction,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:nvda:guidance_vs_actuals:ev1,phase6:nvda:guidance_vs_actuals,gold_requirement,NVDA,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:nvda:guidance_vs_actuals:ev2,phase6:nvda:guidance_vs_actuals,gold_requirement,NVDA,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:nvda:guidance_vs_actuals:ev3,phase6:nvda:guidance_vs_actuals,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:nvda:chart_table_reconciliation:ev1,phase6:nvda:chart_table_reconciliation,gold_requirement,NVDA,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:nvda:chart_table_reconciliation:ev2,phase6:nvda:chart_table_reconciliation,gold_requirement,NVDA,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:nvda:chart_table_reconciliation:ev3,phase6:nvda:chart_table_reconciliation,gold_requirement,NVDA,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:amzn:single_company_trend:ev1,phase6:amzn:single_company_trend,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:amzn:single_company_trend:ev2,phase6:amzn:single_company_trend,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:amzn:single_company_trend:ev3,phase6:amzn:single_company_trend,gold_requirement,AMZN,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:amzn:cross_company_comparison:ev1,phase6:amzn:cross_company_comparison,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:amzn:cross_company_comparison:ev2,phase6:amzn:cross_company_comparison,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:amzn:cross_company_comparison:ev3,phase6:amzn:cross_company_comparison,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:amzn:cross_company_comparison:ev4,phase6:amzn:cross_company_comparison,gold_requirement,GOOGL,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:amzn:management_claim_verification:ev1,phase6:amzn:management_claim_verification,gold_requirement,AMZN,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:amzn:management_claim_verification:ev2,phase6:amzn:management_claim_verification,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:amzn:management_claim_verification:ev3,phase6:amzn:management_claim_verification,gold_requirement,AMZN,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:amzn:risk_contradiction:ev1,phase6:amzn:risk_contradiction,gold_requirement,AMZN,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:amzn:risk_contradiction:ev2,phase6:amzn:risk_contradiction,gold_requirement,AMZN,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:amzn:risk_contradiction:ev3,phase6:amzn:risk_contradiction,gold_requirement,AMZN,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:amzn:risk_contradiction:ev4,phase6:amzn:risk_contradiction,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:amzn:guidance_vs_actuals:ev1,phase6:amzn:guidance_vs_actuals,gold_requirement,AMZN,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:amzn:guidance_vs_actuals:ev2,phase6:amzn:guidance_vs_actuals,gold_requirement,AMZN,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:amzn:guidance_vs_actuals:ev3,phase6:amzn:guidance_vs_actuals,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:amzn:chart_table_reconciliation:ev1,phase6:amzn:chart_table_reconciliation,gold_requirement,AMZN,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:amzn:chart_table_reconciliation:ev2,phase6:amzn:chart_table_reconciliation,gold_requirement,AMZN,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:amzn:chart_table_reconciliation:ev3,phase6:amzn:chart_table_reconciliation,gold_requirement,AMZN,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:googl:single_company_trend:ev1,phase6:googl:single_company_trend,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:googl:single_company_trend:ev2,phase6:googl:single_company_trend,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:googl:single_company_trend:ev3,phase6:googl:single_company_trend,gold_requirement,GOOGL,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:googl:cross_company_comparison:ev1,phase6:googl:cross_company_comparison,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:googl:cross_company_comparison:ev2,phase6:googl:cross_company_comparison,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:googl:cross_company_comparison:ev3,phase6:googl:cross_company_comparison,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:googl:cross_company_comparison:ev4,phase6:googl:cross_company_comparison,gold_requirement,META,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:googl:management_claim_verification:ev1,phase6:googl:management_claim_verification,gold_requirement,GOOGL,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:googl:management_claim_verification:ev2,phase6:googl:management_claim_verification,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:googl:management_claim_verification:ev3,phase6:googl:management_claim_verification,gold_requirement,GOOGL,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:googl:risk_contradiction:ev1,phase6:googl:risk_contradiction,gold_requirement,GOOGL,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:googl:risk_contradiction:ev2,phase6:googl:risk_contradiction,gold_requirement,GOOGL,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:googl:risk_contradiction:ev3,phase6:googl:risk_contradiction,gold_requirement,GOOGL,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:googl:risk_contradiction:ev4,phase6:googl:risk_contradiction,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:googl:guidance_vs_actuals:ev1,phase6:googl:guidance_vs_actuals,gold_requirement,GOOGL,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:googl:guidance_vs_actuals:ev2,phase6:googl:guidance_vs_actuals,gold_requirement,GOOGL,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:googl:guidance_vs_actuals:ev3,phase6:googl:guidance_vs_actuals,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:googl:chart_table_reconciliation:ev1,phase6:googl:chart_table_reconciliation,gold_requirement,GOOGL,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:googl:chart_table_reconciliation:ev2,phase6:googl:chart_table_reconciliation,gold_requirement,GOOGL,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:googl:chart_table_reconciliation:ev3,phase6:googl:chart_table_reconciliation,gold_requirement,GOOGL,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:meta:single_company_trend:ev1,phase6:meta:single_company_trend,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:meta:single_company_trend:ev2,phase6:meta:single_company_trend,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:meta:single_company_trend:ev3,phase6:meta:single_company_trend,gold_requirement,META,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:meta:cross_company_comparison:ev1,phase6:meta:cross_company_comparison,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:meta:cross_company_comparison:ev2,phase6:meta:cross_company_comparison,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:meta:cross_company_comparison:ev3,phase6:meta:cross_company_comparison,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:meta:cross_company_comparison:ev4,phase6:meta:cross_company_comparison,gold_requirement,JPM,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:meta:management_claim_verification:ev1,phase6:meta:management_claim_verification,gold_requirement,META,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:meta:management_claim_verification:ev2,phase6:meta:management_claim_verification,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:meta:management_claim_verification:ev3,phase6:meta:management_claim_verification,gold_requirement,META,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:meta:risk_contradiction:ev1,phase6:meta:risk_contradiction,gold_requirement,META,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:meta:risk_contradiction:ev2,phase6:meta:risk_contradiction,gold_requirement,META,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:meta:risk_contradiction:ev3,phase6:meta:risk_contradiction,gold_requirement,META,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:meta:risk_contradiction:ev4,phase6:meta:risk_contradiction,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:meta:guidance_vs_actuals:ev1,phase6:meta:guidance_vs_actuals,gold_requirement,META,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:meta:guidance_vs_actuals:ev2,phase6:meta:guidance_vs_actuals,gold_requirement,META,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:meta:guidance_vs_actuals:ev3,phase6:meta:guidance_vs_actuals,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:meta:chart_table_reconciliation:ev1,phase6:meta:chart_table_reconciliation,gold_requirement,META,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:meta:chart_table_reconciliation:ev2,phase6:meta:chart_table_reconciliation,gold_requirement,META,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:meta:chart_table_reconciliation:ev3,phase6:meta:chart_table_reconciliation,gold_requirement,META,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:jpm:single_company_trend:ev1,phase6:jpm:single_company_trend,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:jpm:single_company_trend:ev2,phase6:jpm:single_company_trend,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:jpm:single_company_trend:ev3,phase6:jpm:single_company_trend,gold_requirement,JPM,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:jpm:cross_company_comparison:ev1,phase6:jpm:cross_company_comparison,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:jpm:cross_company_comparison:ev2,phase6:jpm:cross_company_comparison,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:jpm:cross_company_comparison:ev3,phase6:jpm:cross_company_comparison,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:jpm:cross_company_comparison:ev4,phase6:jpm:cross_company_comparison,gold_requirement,WMT,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:jpm:management_claim_verification:ev1,phase6:jpm:management_claim_verification,gold_requirement,JPM,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:jpm:management_claim_verification:ev2,phase6:jpm:management_claim_verification,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:jpm:management_claim_verification:ev3,phase6:jpm:management_claim_verification,gold_requirement,JPM,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:jpm:risk_contradiction:ev1,phase6:jpm:risk_contradiction,gold_requirement,JPM,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:jpm:risk_contradiction:ev2,phase6:jpm:risk_contradiction,gold_requirement,JPM,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:jpm:risk_contradiction:ev3,phase6:jpm:risk_contradiction,gold_requirement,JPM,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:jpm:risk_contradiction:ev4,phase6:jpm:risk_contradiction,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:jpm:guidance_vs_actuals:ev1,phase6:jpm:guidance_vs_actuals,gold_requirement,JPM,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:jpm:guidance_vs_actuals:ev2,phase6:jpm:guidance_vs_actuals,gold_requirement,JPM,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:jpm:guidance_vs_actuals:ev3,phase6:jpm:guidance_vs_actuals,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:jpm:chart_table_reconciliation:ev1,phase6:jpm:chart_table_reconciliation,gold_requirement,JPM,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:jpm:chart_table_reconciliation:ev2,phase6:jpm:chart_table_reconciliation,gold_requirement,JPM,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:jpm:chart_table_reconciliation:ev3,phase6:jpm:chart_table_reconciliation,gold_requirement,JPM,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:wmt:single_company_trend:ev1,phase6:wmt:single_company_trend,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:wmt:single_company_trend:ev2,phase6:wmt:single_company_trend,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:wmt:single_company_trend:ev3,phase6:wmt:single_company_trend,gold_requirement,WMT,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:wmt:cross_company_comparison:ev1,phase6:wmt:cross_company_comparison,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:wmt:cross_company_comparison:ev2,phase6:wmt:cross_company_comparison,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:wmt:cross_company_comparison:ev3,phase6:wmt:cross_company_comparison,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:wmt:cross_company_comparison:ev4,phase6:wmt:cross_company_comparison,gold_requirement,TSLA,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:wmt:management_claim_verification:ev1,phase6:wmt:management_claim_verification,gold_requirement,WMT,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:wmt:management_claim_verification:ev2,phase6:wmt:management_claim_verification,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:wmt:management_claim_verification:ev3,phase6:wmt:management_claim_verification,gold_requirement,WMT,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:wmt:risk_contradiction:ev1,phase6:wmt:risk_contradiction,gold_requirement,WMT,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:wmt:risk_contradiction:ev2,phase6:wmt:risk_contradiction,gold_requirement,WMT,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:wmt:risk_contradiction:ev3,phase6:wmt:risk_contradiction,gold_requirement,WMT,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:wmt:risk_contradiction:ev4,phase6:wmt:risk_contradiction,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:wmt:guidance_vs_actuals:ev1,phase6:wmt:guidance_vs_actuals,gold_requirement,WMT,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:wmt:guidance_vs_actuals:ev2,phase6:wmt:guidance_vs_actuals,gold_requirement,WMT,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:wmt:guidance_vs_actuals:ev3,phase6:wmt:guidance_vs_actuals,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:wmt:chart_table_reconciliation:ev1,phase6:wmt:chart_table_reconciliation,gold_requirement,WMT,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:wmt:chart_table_reconciliation:ev2,phase6:wmt:chart_table_reconciliation,gold_requirement,WMT,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:wmt:chart_table_reconciliation:ev3,phase6:wmt:chart_table_reconciliation,gold_requirement,WMT,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:tsla:single_company_trend:ev1,phase6:tsla:single_company_trend,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:tsla:single_company_trend:ev2,phase6:tsla:single_company_trend,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:tsla:single_company_trend:ev3,phase6:tsla:single_company_trend,gold_requirement,TSLA,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:tsla:cross_company_comparison:ev1,phase6:tsla:cross_company_comparison,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:tsla:cross_company_comparison:ev2,phase6:tsla:cross_company_comparison,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:tsla:cross_company_comparison:ev3,phase6:tsla:cross_company_comparison,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:tsla:cross_company_comparison:ev4,phase6:tsla:cross_company_comparison,gold_requirement,NFLX,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:tsla:management_claim_verification:ev1,phase6:tsla:management_claim_verification,gold_requirement,TSLA,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:tsla:management_claim_verification:ev2,phase6:tsla:management_claim_verification,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:tsla:management_claim_verification:ev3,phase6:tsla:management_claim_verification,gold_requirement,TSLA,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:tsla:risk_contradiction:ev1,phase6:tsla:risk_contradiction,gold_requirement,TSLA,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:tsla:risk_contradiction:ev2,phase6:tsla:risk_contradiction,gold_requirement,TSLA,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:tsla:risk_contradiction:ev3,phase6:tsla:risk_contradiction,gold_requirement,TSLA,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:tsla:risk_contradiction:ev4,phase6:tsla:risk_contradiction,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:tsla:guidance_vs_actuals:ev1,phase6:tsla:guidance_vs_actuals,gold_requirement,TSLA,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:tsla:guidance_vs_actuals:ev2,phase6:tsla:guidance_vs_actuals,gold_requirement,TSLA,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:tsla:guidance_vs_actuals:ev3,phase6:tsla:guidance_vs_actuals,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:tsla:chart_table_reconciliation:ev1,phase6:tsla:chart_table_reconciliation,gold_requirement,TSLA,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:tsla:chart_table_reconciliation:ev2,phase6:tsla:chart_table_reconciliation,gold_requirement,TSLA,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:tsla:chart_table_reconciliation:ev3,phase6:tsla:chart_table_reconciliation,gold_requirement,TSLA,sec_filing,table,FY2024,filing table value,revenue,1,support,True
+phase6:nflx:single_company_trend:ev1,phase6:nflx:single_company_trend,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,current revenue fact,revenue,1,support,True
+phase6:nflx:single_company_trend:ev2,phase6:nflx:single_company_trend,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2023,prior revenue fact,revenue,1,support,True
+phase6:nflx:single_company_trend:ev3,phase6:nflx:single_company_trend,gold_requirement,NFLX,sec_filing,text,FY2024,MD&A revenue discussion,revenue,1,support,True
+phase6:nflx:cross_company_comparison:ev1,phase6:nflx:cross_company_comparison,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,subject operating income fact,operating_income,1,support,True
+phase6:nflx:cross_company_comparison:ev2,phase6:nflx:cross_company_comparison,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,subject revenue fact,revenue,1,support,True
+phase6:nflx:cross_company_comparison:ev3,phase6:nflx:cross_company_comparison,gold_requirement,AAPL,sec_xbrl_companyfacts,xbrl,FY2024,peer operating income fact,operating_income,1,support,True
+phase6:nflx:cross_company_comparison:ev4,phase6:nflx:cross_company_comparison,gold_requirement,AAPL,sec_filing,table,FY2024,peer income statement table,revenue,1,support,True
+phase6:nflx:management_claim_verification:ev1,phase6:nflx:management_claim_verification,gold_requirement,NFLX,transcript,transcript,FY2024,management operating leverage statement,operating_margin,1,insufficient,True
+phase6:nflx:management_claim_verification:ev2,phase6:nflx:management_claim_verification,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,current margin numerator and denominator,operating_margin,1,insufficient,True
+phase6:nflx:management_claim_verification:ev3,phase6:nflx:management_claim_verification,gold_requirement,NFLX,sec_filing,text,FY2024,cost structure disclosure,operating_expense,1,insufficient,True
+phase6:nflx:risk_contradiction:ev1,phase6:nflx:risk_contradiction,gold_requirement,NFLX,sec_filing,text,FY2024,risk factor disclosure,risk_exposure,1,contradict,True
+phase6:nflx:risk_contradiction:ev2,phase6:nflx:risk_contradiction,gold_requirement,NFLX,sec_filing,text,FY2023,prior-year risk factor disclosure,risk_exposure,1,contradict,True
+phase6:nflx:risk_contradiction:ev3,phase6:nflx:risk_contradiction,gold_requirement,NFLX,transcript,transcript,FY2024,management risk commentary,risk_exposure,1,contradict,True
+phase6:nflx:risk_contradiction:ev4,phase6:nflx:risk_contradiction,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,exposure-related financial fact,revenue,1,contradict,True
+phase6:nflx:guidance_vs_actuals:ev1,phase6:nflx:guidance_vs_actuals,gold_requirement,NFLX,transcript,transcript,FY2024,management guidance statement,revenue_guidance,1,support,True
+phase6:nflx:guidance_vs_actuals:ev2,phase6:nflx:guidance_vs_actuals,gold_requirement,NFLX,analyst_estimates,estimate,FY2024,consensus range cross-check,revenue_estimate,1,support,True
+phase6:nflx:guidance_vs_actuals:ev3,phase6:nflx:guidance_vs_actuals,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,reported revenue actual,revenue,1,support,True
+phase6:nflx:chart_table_reconciliation:ev1,phase6:nflx:chart_table_reconciliation,gold_requirement,NFLX,investor_deck,chart,FY2024,deck chart value,revenue,1,support,True
+phase6:nflx:chart_table_reconciliation:ev2,phase6:nflx:chart_table_reconciliation,gold_requirement,NFLX,sec_xbrl_companyfacts,xbrl,FY2024,reported XBRL fact,revenue,1,support,True
+phase6:nflx:chart_table_reconciliation:ev3,phase6:nflx:chart_table_reconciliation,gold_requirement,NFLX,sec_filing,table,FY2024,filing table value,revenue,1,support,True

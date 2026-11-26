@@ -1,0 +1,122 @@
+{
+  "columns": [
+    "step",
+    "command"
+  ],
+  "rows": [
+    {
+      "command": "python3 -m compileall src scripts",
+      "step": 1
+    },
+    {
+      "command": "python3 -m pytest",
+      "step": 2
+    },
+    {
+      "command": "python3 scripts/smoke_phase1_registry.py",
+      "step": 3
+    },
+    {
+      "command": "python3 scripts/smoke_phase2_extraction.py",
+      "step": 4
+    },
+    {
+      "command": "python3 scripts/smoke_phase3_normalization.py",
+      "step": 5
+    },
+    {
+      "command": "python3 scripts/smoke_phase4_evidence_graph.py",
+      "step": 6
+    },
+    {
+      "command": "python3 scripts/smoke_phase5_claim_verification.py",
+      "step": 7
+    },
+    {
+      "command": "python3 scripts/smoke_phase6_task_set.py",
+      "step": 8
+    },
+    {
+      "command": "python3 scripts/smoke_phase7_evaluation.py",
+      "step": 9
+    },
+    {
+      "command": "python3 scripts/smoke_real_retrieval_evaluation.py",
+      "step": 10
+    },
+    {
+      "command": "python3 scripts/smoke_case_studies.py",
+      "step": 11
+    },
+    {
+      "command": "python3 scripts/smoke_deck_chart_extraction.py",
+      "step": 12
+    },
+    {
+      "command": "python3 scripts/smoke_raw_corpus.py",
+      "step": 13
+    },
+    {
+      "command": "python3 scripts/smoke_adversarial_evaluation.py",
+      "step": 14
+    },
+    {
+      "command": "python3 scripts/smoke_embedding_backend.py",
+      "step": 15
+    },
+    {
+      "command": "python3 scripts/smoke_llm_decomposition.py",
+      "step": 16
+    },
+    {
+      "command": "python3 scripts/smoke_narrative_causal.py",
+      "step": 17
+    },
+    {
+      "command": "python3 scripts/smoke_phase8_memo.py",
+      "step": 18
+    },
+    {
+      "command": "python3 scripts/smoke_trace_reproducibility.py",
+      "step": 19
+    },
+    {
+      "command": "python3 scripts/build_portfolio_report.py",
+      "step": 20
+    },
+    {
+      "command": "python3 scripts/smoke_demo_ui.py",
+      "step": 21
+    },
+    {
+      "command": "python3 scripts/smoke_streamlit_start.py",
+      "step": 22
+    },
+    {
+      "command": "python3 scripts/smoke_cli_workflow.py",
+      "step": 23
+    },
+    {
+      "command": "python3 scripts/smoke_interview_packaging.py",
+      "step": 24
+    },
+    {
+      "command": "make portfolio-demo",
+      "step": 25
+    },
+    {
+      "command": "python3 scripts/build_portfolio_screenshots.py",
+      "step": 26
+    },
+    {
+      "command": "python3 -m pytest tests/test_public_portfolio_packaging.py -q",
+      "step": 27
+    },
+    {
+      "command": "python3 scripts/smoke_final_report_package.py",
+      "step": 28
+    }
+  ],
+  "table_id": "reproducibility_commands",
+  "title": "Reproducibility commands"
+}

@@ -1,0 +1,11 @@
+{
+  "encoder_snapshot": "sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "encoder_weights_sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db",
+  "execution": "Installed sandboxed-agent-eval-harness 0.2.0 wheel, CPU. Active and historical runs ran in separate interpreter processes outside the checkout.",
+  "kernel_network_barrier": "macOS sandbox-exec deny network*",
+  "perturbation": "Invert every is_canonical flag; empty all gold_document_ids; replace every expected_verdict, family and lexical_trap_id; set left_should_exceed and margin_should_exceed to false.",
+  "perturbed_correct_verdicts_all_methods_test_and_dev": 0,
+  "predictions_digest_sorted_keys_indent_2_sha256": "a341d0c3e1c433842b6ef9acfcd557632ead55cf93d09a5586c6b153269d4b64",
+  "task_method_pairs_with_identical_ranking_hash_top_10_and_predicted_verdict": 455,
+  "upstream_snapshot": "bf52440cc3f36b898a0c69ab5d0b25f5a5cea8f8"
+}

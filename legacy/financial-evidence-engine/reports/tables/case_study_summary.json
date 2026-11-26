@@ -1,0 +1,30 @@
+{
+  "columns": [
+    "case_id",
+    "failure_mode",
+    "task_id",
+    "final_verdict"
+  ],
+  "rows": [
+    {
+      "case_id": "fiscal_period_confusion",
+      "failure_mode": "period_confusion",
+      "final_verdict": "support",
+      "task_id": "phase6:aapl:single_company_trend"
+    },
+    {
+      "case_id": "numeric_unit_mismatch",
+      "failure_mode": "numeric_validation_gap",
+      "final_verdict": "support",
+      "task_id": "phase6:aapl:cross_company_comparison"
+    },
+    {
+      "case_id": "unsupported_narrative_claim",
+      "failure_mode": "unsupported_claim",
+      "final_verdict": "insufficient",
+      "task_id": "phase6:aapl:management_claim_verification"
+    }
+  ],
+  "table_id": "case_study_summary",
+  "title": "Case study summary"
+}

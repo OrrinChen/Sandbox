@@ -1,0 +1,508 @@
+{
+  "case_id": "unsupported_narrative_claim",
+  "claim": "Apple's FY2024 margin expansion was driven by durable operating leverage.",
+  "expected_verdict": "insufficient",
+  "failure_mode": "unsupported_claim",
+  "final_full_engine_verdict": "insufficient",
+  "gold_evidence": [
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+      "fiscal_period": "FY2024",
+      "metric": "operating_margin",
+      "modality": "transcript",
+      "role": "management operating leverage statement",
+      "source_type": "transcript"
+    },
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+      "fiscal_period": "FY2024",
+      "metric": "operating_margin",
+      "modality": "xbrl",
+      "role": "current margin numerator and denominator",
+      "source_type": "sec_xbrl_companyfacts"
+    },
+    {
+      "cited": null,
+      "company_ticker": "AAPL",
+      "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+      "fiscal_period": "FY2024",
+      "metric": "operating_expense",
+      "modality": "text",
+      "role": "cost structure disclosure",
+      "source_type": "sec_filing"
+    }
+  ],
+  "memo_snippet": "Full engine verdict: insufficient. Expected verdict: insufficient. The memo cites 5 retrieved evidence units and separates retrieval output from validator judgment. Limitation: No validator failure was detected for the full-engine method on this case.",
+  "method_results": {
+    "bm25_real": {
+      "answer_text": "bm25_real retrieved 5 evidence units for phase6:aapl:management_claim_verification; top evidence: phase6:aapl:management_claim_verification:ev1, phase6:aapl:management_claim_verification:ev3, phase6:aapl:management_claim_verification:ev2; numeric_status=fail.",
+      "failure_reasons": [
+        "numeric_validation_gap: Numeric validation did not pass for this task.",
+        "unsupported_claim: The method over-supported an insufficient claim."
+      ],
+      "method": "bm25_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "one_time_charge",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:management_claim_verification:num1=fail, phase6:aapl:management_claim_verification:num2=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "fail",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "dense_real": {
+      "answer_text": "dense_real retrieved 5 evidence units for phase6:aapl:management_claim_verification; top evidence: phase6:aapl:management_claim_verification:ev1, phase6:aapl:management_claim_verification:dist1, phase6:aapl:management_claim_verification:ev2; numeric_status=fail.",
+      "failure_reasons": [
+        "entity_mismatch: Retrieved evidence belongs to the wrong company.",
+        "numeric_validation_gap: Numeric validation did not pass for this task.",
+        "unsupported_claim: The method over-supported an insufficient claim."
+      ],
+      "method": "dense_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "WMT",
+          "evidence_key": "phase6:wmt:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:management_claim_verification:num1=fail, phase6:aapl:management_claim_verification:num2=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "fail",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "fail",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "full_engine_real": {
+      "answer_text": "full_engine_real retrieved 5 evidence units for phase6:aapl:management_claim_verification; top evidence: phase6:aapl:management_claim_verification:ev1, phase6:aapl:management_claim_verification:ev3, phase6:aapl:management_claim_verification:ev2; numeric_status=pass.",
+      "failure_reasons": [
+        "No failure detected for this method on this case."
+      ],
+      "method": "full_engine_real",
+      "predicted_verdict": "insufficient",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "one_time_charge",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:management_claim_verification:num1=pass, phase6:aapl:management_claim_verification:num2=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "pass",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "graph_real": {
+      "answer_text": "graph_real retrieved 5 evidence units for phase6:aapl:management_claim_verification; top evidence: phase6:aapl:management_claim_verification:ev1, phase6:aapl:management_claim_verification:ev3, phase6:aapl:management_claim_verification:ev2; numeric_status=fail.",
+      "failure_reasons": [
+        "numeric_validation_gap: Numeric validation did not pass for this task.",
+        "unsupported_claim: The method over-supported an insufficient claim."
+      ],
+      "method": "graph_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "one_time_charge",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:management_claim_verification:num1=fail, phase6:aapl:management_claim_verification:num2=fail",
+          "status": "fail",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "fail",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    },
+    "hybrid_real": {
+      "answer_text": "hybrid_real retrieved 5 evidence units for phase6:aapl:management_claim_verification; top evidence: phase6:aapl:management_claim_verification:ev1, phase6:aapl:management_claim_verification:ev3, phase6:aapl:management_claim_verification:ev2; numeric_status=pass.",
+      "failure_reasons": [
+        "unsupported_claim: The method over-supported an insufficient claim."
+      ],
+      "method": "hybrid_real",
+      "predicted_verdict": "support",
+      "retrieved_evidence": [
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev3",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "modality": "text",
+          "role": "",
+          "source_type": "sec_filing"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:ev2",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "xbrl",
+          "role": "",
+          "source_type": "sec_xbrl_companyfacts"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist1",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        },
+        {
+          "cited": true,
+          "company_ticker": "AAPL",
+          "evidence_key": "phase6:aapl:management_claim_verification:dist2",
+          "fiscal_period": "FY2024",
+          "metric": "one_time_charge",
+          "modality": "transcript",
+          "role": "",
+          "source_type": "transcript"
+        }
+      ],
+      "validator_checks": [
+        {
+          "detail": "phase6:aapl:management_claim_verification:num1=pass, phase6:aapl:management_claim_verification:num2=pass",
+          "status": "pass",
+          "validator": "numeric_reconciliation"
+        },
+        {
+          "detail": "Checks whether retrieved evidence periods match the target fiscal period.",
+          "status": "pass",
+          "validator": "fiscal_period_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence belongs to the target company universe.",
+          "status": "pass",
+          "validator": "entity_validator"
+        },
+        {
+          "detail": "Checks whether retrieved evidence covers all expected evidence roles.",
+          "status": "pass",
+          "validator": "citation_validator"
+        },
+        {
+          "detail": "Checks whether an insufficient claim was over-supported.",
+          "status": "fail",
+          "validator": "unsupported_claim_detector"
+        },
+        {
+          "detail": "Checks whether contradiction-labeled tasks receive a contradiction verdict.",
+          "status": "skip",
+          "validator": "contradiction_detector"
+        }
+      ]
+    }
+  },
+  "task_id": "phase6:aapl:management_claim_verification",
+  "title": "Unsupported Narrative Claim"
+}

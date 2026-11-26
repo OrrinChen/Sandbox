@@ -1,0 +1,313 @@
+[
+  {
+    "task_id": "decision-limit-cable-exposure-in-one-duct",
+    "tool": "sqlite.query",
+    "instruction": "Choose one complete proposed route between the same two cabinets. Each route_piece row is a separate installed length in whole metres. A route may leave and re-enter the same duct. The single works brief caps the total metres of the chosen route that could require replacement if any one duct were removed. Aggregate every occurrence of a duct within a route, including identical rows. Among qualifying routes choose the shortest total installed length, breaking ties by route code in ascending SQLite BINARY order. All fields are non-null, lengths are positive, and at least one route qualifies. Return one row with ordered columns route_code, installed_m, worst_duct_m, brief_id. Cite the brief setting the limit. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "route_piece": {
+        "columns": [
+          "route_code TEXT",
+          "duct_code TEXT",
+          "piece_m INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            "X",
+            6
+          ],
+          [
+            "P",
+            "X",
+            6
+          ],
+          [
+            "P",
+            "Y",
+            3
+          ],
+          [
+            "Q",
+            "X",
+            8
+          ],
+          [
+            "Q",
+            "Y",
+            9
+          ],
+          [
+            "R",
+            "X",
+            10
+          ],
+          [
+            "R",
+            "Y",
+            8
+          ]
+        ]
+      },
+      "works_brief": {
+        "columns": [
+          "brief_id TEXT",
+          "duct_cap_m INTEGER",
+          "brief_text TEXT"
+        ],
+        "rows": [
+          [
+            "DUCT-4",
+            10,
+            "Removing any one duct may require replacing at most ten metres of this route."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "route_code",
+      "installed_m",
+      "worst_duct_m",
+      "brief_id"
+    ]
+  },
+  {
+    "task_id": "decision-loan-podiums-with-current-confirmations",
+    "tool": "sqlite.query",
+    "instruction": "Choose one design for the tournament podium. A design needs its listed number of matching risers, all from the same depot. Each evidence row records a depot's complete confirmation for one design, with the confirmed unit count transcribed from its note. Only the highest revision for that depot and design is current, even when an earlier note promised more. A missing confirmation supplies zero units. Maximize the feasible design's sightline score, then minimize its surplus confirmed units above requirement, then choose the lexicographically smallest design ID and depot ID in binary order. Revisions are unique within each depot/design pair. All requirements are positive, no fields are null, and at least one option is feasible. Return one row with columns design_id, depot_id, surplus_units, source_id, citing the actual current confirmation supporting the choice. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "loan_note": {
+        "columns": [
+          "source_id TEXT",
+          "depot_id TEXT",
+          "design_id TEXT",
+          "revision_no INTEGER",
+          "confirmed_units INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "East",
+            "Arc",
+            1,
+            6,
+            "Six Arc risers are set aside."
+          ],
+          [
+            "N2",
+            "East",
+            "Arc",
+            2,
+            2,
+            "Recount complete. We can send two Arc risers."
+          ],
+          [
+            "N3",
+            "West",
+            "Arc",
+            1,
+            3,
+            "Three Arc risers are packed here."
+          ],
+          [
+            "N4",
+            "East",
+            "Step",
+            1,
+            4,
+            "Four Step risers are ready for collection."
+          ],
+          [
+            "N5",
+            "West",
+            "Deck",
+            1,
+            4,
+            "All four Deck risers are on the cart."
+          ]
+        ]
+      },
+      "podium_design": {
+        "columns": [
+          "design_id TEXT",
+          "required_units INTEGER",
+          "sightline_score INTEGER"
+        ],
+        "rows": [
+          [
+            "Arc",
+            5,
+            90
+          ],
+          [
+            "Step",
+            3,
+            78
+          ],
+          [
+            "Deck",
+            4,
+            78
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "design_id",
+      "depot_id",
+      "surplus_units",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-locate-conductor-handoffs-at-cue-starts",
+    "tool": "sqlite.query",
+    "instruction": "For one performance, determine which observed cue starts need a handoff annotation. Times are whole minutes from curtain. Cue IDs and cue start times are each unique. DESK is the default conductor code. A substitution covers start_min inclusive to stop_min exclusive, with null stop_min meaning through the end of the show. Among covering substitutions choose the greatest notice_no, a unique integer revision number. Compare the effective code at each cue start with the effective code at the immediately preceding cue start. Omit the first cue and omit unchanged codes, even when the winning notice changes. Return cue_id, prior_code, next_code in ascending cue start time. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "baton_notice": {
+        "columns": [
+          "notice_no INTEGER",
+          "start_min INTEGER",
+          "stop_min INTEGER",
+          "baton_code TEXT"
+        ],
+        "rows": [
+          [
+            2,
+            2,
+            10,
+            "AMBER"
+          ],
+          [
+            5,
+            4,
+            6,
+            "BLUE"
+          ],
+          [
+            3,
+            5,
+            7,
+            "AMBER"
+          ]
+        ]
+      },
+      "cue_start": {
+        "columns": [
+          "cue_id TEXT",
+          "at_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Q1",
+            0
+          ],
+          [
+            "Q2",
+            2
+          ],
+          [
+            "Q3",
+            4
+          ],
+          [
+            "Q4",
+            6
+          ],
+          [
+            "Q5",
+            7
+          ],
+          [
+            "Q6",
+            10
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "cue_id",
+      "prior_code",
+      "next_code"
+    ]
+  },
+  {
+    "task_id": "decision-loom-calibration-cutover-slot",
+    "tool": "sqlite.query",
+    "instruction": "Choose one offered calibration slot for adopting a weave standard at a mill. Each signed offer gives the adoption day and the number of loom-hours available that day. A pending run participates exactly when its inclusive ready_day through last_day window contains the adoption day. Every participating run must be calibrated in full in that slot. Discard slots whose total required loom-hours exceed the offered hours. Among feasible slots maximize the total rolls from participating runs, breaking ties by earlier adoption day and then lexicographically smaller source_id. A slot with no participating runs needs zero hours and yields zero rolls. Each offer is an independent alternative even on the same day. Dates are ISO calendar days, hours and rolls are positive integers, IDs are unique within their tables, and nothing is null. Return a single row with adoption_day, covered_rolls, used_hours, source_id, or no rows if every slot is infeasible. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "slot_offer": {
+        "columns": [
+          "source_id TEXT",
+          "adoption_day TEXT",
+          "loom_hours INTEGER",
+          "excerpt TEXT"
+        ],
+        "rows": [
+          [
+            "L1",
+            "2034-08-02",
+            5,
+            "The fitting crew offers five loom-hours on 2 August."
+          ],
+          [
+            "L2",
+            "2034-08-03",
+            6,
+            "Six loom-hours are reserved for the 3 August change."
+          ],
+          [
+            "L3",
+            "2034-08-04",
+            7,
+            "The crew can supply seven loom-hours on 4 August."
+          ],
+          [
+            "L4",
+            "2034-08-05",
+            7,
+            "The same seven-hour slot is available on 5 August."
+          ]
+        ]
+      },
+      "weave_run": {
+        "columns": [
+          "run_code TEXT",
+          "ready_day TEXT",
+          "last_day TEXT",
+          "need_hours INTEGER",
+          "roll_count INTEGER"
+        ],
+        "rows": [
+          [
+            "Plain",
+            "2034-08-02",
+            "2034-08-03",
+            4,
+            40
+          ],
+          [
+            "Twill",
+            "2034-08-03",
+            "2034-08-05",
+            3,
+            45
+          ],
+          [
+            "Cord",
+            "2034-08-04",
+            "2034-08-05",
+            3,
+            25
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "adoption_day",
+      "covered_rolls",
+      "used_hours",
+      "source_id"
+    ]
+  }
+]

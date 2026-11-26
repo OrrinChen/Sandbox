@@ -1,0 +1,67 @@
+{
+  "cutoff": "2021-07-30",
+  "sectors": {
+    "2021Q3/retail-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000084129",
+          "issuer": "RITE AID CORP",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2021-08-29",
+          "latest_filed_period_end": "2021-05-29",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2021-07-06",
+              "text": "Revenues increased 2.2% for the thirteen weeks ended May 29, 2021, compared to an increase of 12.2% for the thirteen weeks ended May 30, 2020."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2021-07-06",
+              "text": "Adjusted EBITDA increased $31.9 million in the Retail Pharmacy segment due primarily to an increase in gross profit resulting from higher pharmacy same store sales, partially offset by pharmacy reimbursement rate pressures that were not fully offset by generic drug cost reductions and a decline in front end gross profit as we cycled the impact of the prior year’s COVID-19 buying surge."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2021-07-06",
+              "text": "Operating cash flow was positively impacted by the timing of payments to Elixir’s pharmacy network, a reduction of manufacturer rebates receivables, increases in operating expense accruals and inventory reductions."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2021-07-06",
+              "text": "These benefits were partially offset by litigation settlements in the current quarter, a lower LIFO credit, and an increase in income tax expense."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2021-07-06",
+              "text": "The impact of the sale of the distribution center and related assets resulted in a pre-tax gain of $12,690, which was included in the results of operations and cash flows of discontinued operations during the thirteen week period ended May 30, 2020."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-02-27",
+                "filed": "2021-04-27",
+                "reported_sales_usd": 5916856000,
+                "year_ago_reported_sales_usd": 5727242000,
+                "yoy_percent": "3.3107"
+              },
+              {
+                "quarter_end": "2021-05-29",
+                "filed": "2021-07-06",
+                "reported_sales_usd": 6160985000,
+                "year_ago_reported_sales_usd": 6027376000,
+                "yoy_percent": "2.2167"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

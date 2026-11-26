@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "45fdbaa425d9c0edb2e1b62d8cbf2a3bf397abf2717716393e3bb1e0468e1bd0",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-37554\": {\n    \"fills\": [{\"range\": \"F2:F17\", \"formula\": \"=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)\"}],\n    \"formulas\": {}\n  },\n  \"sheet-37609\": {\n    \"fills\": [{\"range\": \"C2:C11\", \"formula\": \"=IF(AND(A2<>\\\"U\\\",B2<>\\\"U\\\",MAX(N(A2),N(B2))>=7),\\\"e\\\",\\\"-\\\")\"}],\n    \"formulas\": {}\n  },\n  \"sheet-37615\": {\n    \"fills\": [{\"range\": \"F7:F37\", \"formula\": \"=IF(D7<=0,0,IF(ROUND(D7*86400,6)>14400,$D$42,$D$43))\"}],\n    \"formulas\": {}\n  },\n  \"sheet-38462\": {\n    \"fills\": [{\"range\": \"C1:C2\", \"formula\": \"=ROUNDUP(B1*24,0)\"}],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-37554": {
+      "fills": [
+        {
+          "range": "F2:F17",
+          "formula": "=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-37609": {
+      "fills": [
+        {
+          "range": "C2:C11",
+          "formula": "=IF(AND(A2<>\"U\",B2<>\"U\",MAX(N(A2),N(B2))>=7),\"e\",\"-\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-37615": {
+      "fills": [
+        {
+          "range": "F7:F37",
+          "formula": "=IF(D7<=0,0,IF(ROUND(D7*86400,6)>14400,$D$42,$D$43))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-38462": {
+      "fills": [
+        {
+          "range": "C1:C2",
+          "formula": "=ROUNDUP(B1*24,0)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-fdaf-7fd0-b56f-3d8654fcc01c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 25532,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 240,
+    "reasoning_output_tokens": 0
+  }
+}

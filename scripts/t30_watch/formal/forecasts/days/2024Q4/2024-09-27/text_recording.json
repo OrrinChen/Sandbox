@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24128,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 250,
+    "reasoning_output_tokens": 26
+  },
+  "thread": "01a20d90-71a8-76c3-9d89-4fcf3cb22c37",
+  "packet_sha256": "c069817f8f1163930aa6790a096f9631a330f720c4823be9c0c8b211b06a4642",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2024Q4/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2024Q4/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2024Q4/retail-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001634117\",\n          \"reason\": \"First-quarter revenue fell just 0.3% as 32% growth in BNC First Day programs helped offset sales lost to store closures (A, B). I expect course-material demand at the start of the academic term to keep the intervening quarter above −5%. In the quarter beginning October 27, I expect a smaller contribution from those programs to leave enough lost store sales uncovered for revenue to fall at least 5% year over year. The timing is an inference from the programs’ focus on course materials (D).\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-3",
+        "alerts": [
+          {
+            "cik": "0001634117",
+            "reason": "First-quarter revenue fell just 0.3% as 32% growth in BNC First Day programs helped offset sales lost to store closures (A, B). I expect course-material demand at the start of the academic term to keep the intervening quarter above −5%. In the quarter beginning October 27, I expect a smaller contribution from those programs to leave enough lost store sales uncovered for revenue to fall at least 5% year over year. The timing is an inference from the programs’ focus on course materials (D)."
+          }
+        ]
+      }
+    ]
+  }
+}

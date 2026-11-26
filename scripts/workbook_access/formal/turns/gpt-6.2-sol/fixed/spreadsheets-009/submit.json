@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-009",
+    "stage": "submit",
+    "prompt_sha256": "e6f0fd42bf513e05c854cf98ad6a09fd55516256c467ecae5e1804e37c595c8a",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d6-e79f-7660-a7e0-38c1db1eb548",
+    "raw": "{\n  \"sheet-43406\": {\n    \"fills\": [\n      {\n        \"range\": \"C7:C20\",\n        \"formula\": \"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",COUNTIF($D$7:D7,\\\"H\\\")+COUNTIF(INDEX($D$7:D7,IFERROR(XMATCH(\\\"H\\\",$D$7:D7,0,-1),1)):D7,\\\"S\\\")/10,\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43436\": {\n    \"fills\": [\n      {\n        \"range\": \"I2:K6\",\n        \"formula\": \"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<>\\\",$C$2:$C$12,\\\"<\\\"&EDATE(DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,99)),1),$D$2:$D$12,\\\"\\\")+COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<>\\\",$C$2:$C$12,\\\"<\\\"&EDATE(DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,99)),1),$D$2:$D$12,\\\">=\\\"&DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,99)))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43589\": {\n    \"formulas\": {\n      \"B2\": \"=VALUE(TRIM(MID(A2,SEARCH(\\\"to\\\",A2)+2,LEN(A2))))-VALUE(TRIM(LEFT(A2,SEARCH(\\\"to\\\",A2)-1)))+1\"\n    }\n  },\n  \"sheet-43775\": {\n    \"formulas\": {\n      \"I6\": \"=IF(H3=\\\"\\\",\\\"\\\",H3)\",\n      \"M6\": \"=IF(I3=\\\"\\\",\\\"\\\",I3)\",\n      \"Q6\": \"=IF(J3=\\\"\\\",\\\"\\\",J3)\",\n      \"U6\": \"=IF(K3=\\\"\\\",\\\"\\\",K3)\",\n      \"Y6\": \"=IF(L3=\\\"\\\",\\\"\\\",L3)\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 20009,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1185,
+      "reasoning_output_tokens": 674
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

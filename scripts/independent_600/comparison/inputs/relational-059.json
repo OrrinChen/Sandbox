@@ -1,0 +1,358 @@
+[
+  {
+    "task_id": "decision-release-cleared-caption-masters",
+    "tool": "sqlite.query",
+    "instruction": "Construct the contents of caption_handoff.csv for the duplication desk. Each caption_files row identifies a complete master for one reel. Revision numbers are positive integers unique within a reel. Each inspection_log row is a signed desk entry about the named file, with its source ID, short primary text, and recorded disposition. The greatest entry_no for a file is its current entry, even if an earlier entry cleared it. A file is eligible only when its current entry says 'clear'. For each reel with an eligible file, hand off the highest eligible revision and cite the source ID and exact text of the entry that currently clears that file. Omit reels with no eligible file. There are no nulls, entry numbers are unique, and revision and entry numbers are ordinal, with no physical units. Return reel_code, file_id, source_id, source_text in ascending reel_code order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "caption_files": {
+        "columns": [
+          "reel_code TEXT",
+          "rev_no INTEGER",
+          "file_id TEXT"
+        ],
+        "rows": [
+          [
+            "Dune",
+            1,
+            "d1"
+          ],
+          [
+            "Dune",
+            2,
+            "d2"
+          ],
+          [
+            "Dune",
+            3,
+            "d3"
+          ],
+          [
+            "Foam",
+            1,
+            "f1"
+          ],
+          [
+            "Foam",
+            2,
+            "f2"
+          ],
+          [
+            "Glen",
+            1,
+            "g1"
+          ]
+        ]
+      },
+      "inspection_log": {
+        "columns": [
+          "entry_no INTEGER",
+          "source_id TEXT",
+          "file_id TEXT",
+          "disposition TEXT",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "L1",
+            "d1",
+            "clear",
+            "End titles align."
+          ],
+          [
+            2,
+            "L2",
+            "d2",
+            "clear",
+            "Opening cues align."
+          ],
+          [
+            3,
+            "L3",
+            "d2",
+            "hold",
+            "Last cue ends early."
+          ],
+          [
+            4,
+            "L4",
+            "f2",
+            "hold",
+            "Line break clips a word."
+          ],
+          [
+            5,
+            "L5",
+            "f2",
+            "clear",
+            "Recheck shows both lines fit."
+          ],
+          [
+            6,
+            "L6",
+            "f1",
+            "clear",
+            "Timing passes throughout."
+          ],
+          [
+            7,
+            "L7",
+            "g1",
+            "hold",
+            "Last title is missing."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "reel_code",
+      "file_id",
+      "source_id",
+      "source_text"
+    ]
+  },
+  {
+    "task_id": "decision-release-manifest-after-corrections",
+    "tool": "csv.export",
+    "instruction": "Construct the full contents of one CSV file for shift 6 from the supplier's certificate notices. Each notice describes the complete state of one lot. First consider only notices issued by shift 6 inclusive. For each lot use the greatest integer revision, breaking a revision tie by greatest source ID in BINARY order. Include lots whose selected notice has disposition 'release'. A NULL bin label means an empty field. Return one row with the single column csv_contents. The exact header is lot,bin,source. Sort data records by lot code in BINARY order. Double-quote every data field, double any embedded double quote, and terminate every record including the header and last record with one LF. The source field must cite the selected notice. No input text contains a line break. Issue shifts and revisions are unitless integers, and only bin labels can be NULL. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "cert_notice": {
+        "columns": [
+          "source_id TEXT",
+          "lot_code TEXT",
+          "rev_no INTEGER",
+          "issue_shift INTEGER",
+          "disposition TEXT",
+          "bin_label TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "A7",
+            1,
+            2,
+            "release",
+            "North",
+            "Release A7 to North."
+          ],
+          [
+            "N2",
+            "A7",
+            2,
+            5,
+            "hold",
+            null,
+            "Hold A7 pending a recount."
+          ],
+          [
+            "N3",
+            "B2",
+            1,
+            3,
+            "release",
+            "Bay, 4",
+            "Release B2 to Bay, 4."
+          ],
+          [
+            "N4",
+            "B2",
+            2,
+            7,
+            "hold",
+            null,
+            "Suspend release of B2."
+          ],
+          [
+            "N5",
+            "C8",
+            1,
+            6,
+            "release",
+            "Rack \"K\"",
+            "Release C8 to Rack \"K\"."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_contents"
+    ]
+  },
+  {
+    "task_id": "decision-reopened-carton-deletions",
+    "tool": "sqlite.query",
+    "instruction": "Construct open_cartons.csv for a warehouse that deletes empty carton diagrams. queue_file lists one row per queued carton and the first eligible log tick. For each queued carton, consider only ticket notes at or after that tick. Each note records a full decision for its carton. Use the latest tick, breaking a same-tick tie by the larger integer note_id. A clear decision closes the queue entry and a reopen decision leaves it open. A carton with no eligible note stays open. Output carton_code, open_reason, source_id, in carton_code order using binary text ordering. Use the reason reopened with the actual controlling note_id, or no_note with SQL NULL for source_id (an empty CSV field). All inputs are non-null. Ticks are integer clock units on one shared clock. Ignore notes for unqueued cartons. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "queue_file": {
+        "columns": [
+          "carton_code TEXT",
+          "start_tick INTEGER"
+        ],
+        "rows": [
+          [
+            "B",
+            10
+          ],
+          [
+            "A",
+            5
+          ],
+          [
+            "D",
+            3
+          ],
+          [
+            "C",
+            8
+          ]
+        ]
+      },
+      "ticket_notes": {
+        "columns": [
+          "note_id INTEGER",
+          "carton_code TEXT",
+          "log_tick INTEGER",
+          "decision_code TEXT",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            10,
+            "A",
+            5,
+            "clear",
+            "Empty diagram removed."
+          ],
+          [
+            12,
+            "A",
+            6,
+            "reopen",
+            "Inspection found a retained panel."
+          ],
+          [
+            13,
+            "B",
+            9,
+            "clear",
+            "Prior carton diagram removed."
+          ],
+          [
+            14,
+            "C",
+            8,
+            "reopen",
+            "Fold detail still present."
+          ],
+          [
+            15,
+            "C",
+            8,
+            "clear",
+            "Second inspection confirmed removal."
+          ],
+          [
+            16,
+            "X",
+            11,
+            "reopen",
+            "Side flap drawing remains."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "carton_code",
+      "open_reason",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-repair-sparse-bin-updates",
+    "tool": "csv.export",
+    "instruction": "Construct the data rows of bin_repairs.csv with columns item_code, bin_code, ordered by item_code ascending using binary text order. The export_base file gives each item's bin at sequence 10. Replay bin_patch records after sequence 10 through sequence 20 inclusive, for base items only. Sequence numbers are unique per item. A bin_written value of 1 means the record assigns the supplied bin_code, including NULL for an explicitly cleared bin. A value of 0 means the change concerned another field and its bin_code cell carries no information. Emit one row only when the final bin differs from the base bin, treating two NULLs as equal. Return a cleared bin as SQL NULL for the CSV writer to serialize as an empty cell. Item and bin codes are unitless text identifiers, and sequence numbers are integer stream positions. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "bin_patch": {
+        "columns": [
+          "item_code TEXT",
+          "seq_no INTEGER",
+          "bin_written INTEGER",
+          "bin_code TEXT"
+        ],
+        "rows": [
+          [
+            "peg",
+            20,
+            "1",
+            "R2"
+          ],
+          [
+            "coil",
+            12,
+            1,
+            null
+          ],
+          [
+            "disk",
+            10,
+            1,
+            "D0"
+          ],
+          [
+            "peg",
+            15,
+            1,
+            "R8"
+          ],
+          [
+            "coil",
+            18,
+            0,
+            null
+          ],
+          [
+            "disk",
+            19,
+            1,
+            "D3"
+          ],
+          [
+            "tile",
+            21,
+            1,
+            null
+          ]
+        ]
+      },
+      "export_base": {
+        "columns": [
+          "item_code TEXT",
+          "bin_code TEXT"
+        ],
+        "rows": [
+          [
+            "coil",
+            "B4"
+          ],
+          [
+            "disk",
+            null
+          ],
+          [
+            "peg",
+            "R2"
+          ],
+          [
+            "tile",
+            "T1"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "item_code",
+      "bin_code"
+    ]
+  }
+]

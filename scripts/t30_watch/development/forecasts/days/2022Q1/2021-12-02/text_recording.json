@@ -1,0 +1,59 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32209,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 471,
+    "reasoning_output_tokens": 16
+  },
+  "thread": "01a20d7d-105e-73c2-836b-42aa324a618e",
+  "packet_sha256": "3ace360dd9e94306862aec629ddf50572420b6ef33800a004b34bb9002e2106e",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q1/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q1/industrial_machinery-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000880266\",\n          \"reason\": \"Key component shortages had begun cutting both production and unit shipments in recent weeks, while inventory rose (A). The timing supports a forecast that year-over-year net sales growth stays above -5% in the December quarter, then falls to -5% or below if the shipment cuts persist for the full March quarter.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q1/prepackaged_software-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000718877\",\n          \"reason\": \"Consolidated revenue growth slowed to 6% in the September quarter versus 17% over nine months (A, E). King's $116 million bookings increase supports a December quarter above -5% (B), but the slowdown and the earlier stay-at-home boost to game demand (C) point to a year-over-year revenue decline of at least 5% in the March quarter as that boost fades.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q1/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q1/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"Higher industrial unit sales outside China still outweighed falling Chinese unit sales and lower average selling prices in the September quarter (B), supporting a December quarter above -5%. With inventory up $16.2 million (C), I forecast that continued price and volume pressure will outweigh growth elsewhere and push March-quarter consolidated revenue down at least 5% year over year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q1/transportation-1\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000880266",
+            "reason": "Key component shortages had begun cutting both production and unit shipments in recent weeks, while inventory rose (A). The timing supports a forecast that year-over-year net sales growth stays above -5% in the December quarter, then falls to -5% or below if the shipment cuts persist for the full March quarter."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q1/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Consolidated revenue growth slowed to 6% in the September quarter versus 17% over nine months (A, E). King's $116 million bookings increase supports a December quarter above -5% (B), but the slowdown and the earlier stay-at-home boost to game demand (C) point to a year-over-year revenue decline of at least 5% in the March quarter as that boost fades."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "Higher industrial unit sales outside China still outweighed falling Chinese unit sales and lower average selling prices in the September quarter (B), supporting a December quarter above -5%. With inventory up $16.2 million (C), I forecast that continued price and volume pressure will outweigh growth elsewhere and push March-quarter consolidated revenue down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q1/transportation-1",
+        "alerts": []
+      }
+    ]
+  }
+}

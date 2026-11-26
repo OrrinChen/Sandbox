@@ -1,0 +1,421 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "862d3f718b7f2c3c9d467865c7a114613319d917e4a58e54aad6f8b0fc6f4f12",
+    "f9d194669f73a237ece14d10f88dae576531568d09ac442c39518cc8f8a54c7a",
+    "23f31f9bfc2d745f8127b820d3ad1e3ad31d23da3e9770c92c5dbce47d6d7121"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-52220",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "submission": {
+        "formulas": {
+          "C2": "=IF(AND(A2<>\"\",B2<>\"\"),A2+B2,\"\")",
+          "C3": "=IF(AND(A3<>\"\",B3<>\"\"),A3+B3,\"\")"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C3",
+            "range_size": 9,
+            "cells": [
+              [
+                "A1",
+                "Last intervention"
+              ],
+              [
+                "B1",
+                "hours for injection"
+              ],
+              [
+                "C1",
+                "next revision"
+              ],
+              [
+                "A2",
+                "2021-07-20 00:00:00"
+              ],
+              [
+                "B2",
+                "1900-01-11 11:14:10"
+              ],
+              [
+                "B3",
+                "1900-01-11 11:14:10"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 103986,
+        "cached_input_tokens": 86016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1761,
+        "reasoning_output_tokens": 1215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-52233",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "submission": {
+        "formulas": {
+          "B7": "=SUM(INDEX(B$3:E$5,0,MATCH(A7,$B$2:$E$2,0)))",
+          "B8": "=SUM(INDEX(B$3:E$5,0,MATCH(A8,$B$2:$E$2,0)))",
+          "B9": "=SUM(INDEX(B$3:E$5,0,MATCH(A9,$B$2:$E$2,0)))",
+          "B10": "=SUM(INDEX(B$3:E$5,0,MATCH(A10,$B$2:$E$2,0)))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:E10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:E10",
+            "range_size": 45,
+            "cells": [
+              [
+                "B2",
+                "Company A"
+              ],
+              [
+                "C2",
+                "Company EF"
+              ],
+              [
+                "D2",
+                "Company EG"
+              ],
+              [
+                "E2",
+                "Company H"
+              ],
+              [
+                "B3",
+                "500"
+              ],
+              [
+                "C3",
+                "150"
+              ],
+              [
+                "D3",
+                "600"
+              ],
+              [
+                "E3",
+                "200"
+              ],
+              [
+                "B4",
+                "200"
+              ],
+              [
+                "C4",
+                "200"
+              ],
+              [
+                "D4",
+                "450"
+              ],
+              [
+                "E4",
+                "750"
+              ],
+              [
+                "B5",
+                "300"
+              ],
+              [
+                "C5",
+                "350"
+              ],
+              [
+                "D5",
+                "350"
+              ],
+              [
+                "E5",
+                "600"
+              ],
+              [
+                "A7",
+                "Company A"
+              ],
+              [
+                "B7",
+                "1000"
+              ],
+              [
+                "A8",
+                "Company EF"
+              ],
+              [
+                "B8",
+                "#REF!"
+              ],
+              [
+                "A9",
+                "Company EG"
+              ],
+              [
+                "B9",
+                "#REF!"
+              ],
+              [
+                "A10",
+                "Company H"
+              ],
+              [
+                "B10",
+                "#REF!"
+              ]
+            ],
+            "total": 24,
+            "truncated": false,
+            "blank_count": 21
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 103986,
+        "cached_input_tokens": 86016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1761,
+        "reasoning_output_tokens": 1215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-52532",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:H8",
+            "formula": "=SUMPRODUCT(--($B2:$G2=MAX(B$2:G$8)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 103986,
+        "cached_input_tokens": 86016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1761,
+        "reasoning_output_tokens": 1215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-52917",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "submission": {
+        "fills": [
+          {
+            "range": "J2:J9",
+            "formula": "=DATE(C2,B2,A2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "whole date",
+            "range": "A1:C9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "whole date",
+            "range": "A1:C9",
+            "range_size": 27,
+            "cells": [
+              [
+                "A1",
+                "Day"
+              ],
+              [
+                "B1",
+                "Month"
+              ],
+              [
+                "C1",
+                "Year"
+              ],
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "C2",
+                "2021"
+              ],
+              [
+                "A3",
+                "2"
+              ],
+              [
+                "B3",
+                "1"
+              ],
+              [
+                "C3",
+                "2021"
+              ],
+              [
+                "A4",
+                "3"
+              ],
+              [
+                "B4",
+                "1"
+              ],
+              [
+                "C4",
+                "2021"
+              ],
+              [
+                "A5",
+                "4"
+              ],
+              [
+                "B5",
+                "1"
+              ],
+              [
+                "C5",
+                "2021"
+              ],
+              [
+                "A6",
+                "5"
+              ],
+              [
+                "B6",
+                "1"
+              ],
+              [
+                "C6",
+                "2021"
+              ],
+              [
+                "A7",
+                "6"
+              ],
+              [
+                "B7",
+                "1"
+              ],
+              [
+                "C7",
+                "2021"
+              ],
+              [
+                "A8",
+                "7"
+              ],
+              [
+                "B8",
+                "1"
+              ],
+              [
+                "C8",
+                "2021"
+              ],
+              [
+                "A9",
+                "8"
+              ],
+              [
+                "B9",
+                "1"
+              ],
+              [
+                "C9",
+                "2021"
+              ]
+            ],
+            "total": 27,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 103986,
+        "cached_input_tokens": 86016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1761,
+        "reasoning_output_tokens": 1215
+      },
+      "model_calls": 3
+    }
+  ]
+}

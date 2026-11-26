@@ -1,0 +1,36 @@
+{
+  "wheel": "sandboxed_agent_eval_harness-0.1.0-py3-none-any.whl",
+  "wheel_sha256": "59ca9397dbae0d95a4c179fd6b92ecb1ac886c47af164a0d4f5664aece96009a",
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "calibration_sha256": "63ee983a4595cb1e8cfd5a23baaf1e7f73d5b249d4081262685bfbf03412bd08",
+  "python": "3.11.15",
+  "platform": "Darwin",
+  "calc": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "network_barrier": [
+    "/usr/bin/sandbox-exec",
+    "-p",
+    "(version 1)(allow default)(deny network*)"
+  ],
+  "installed_outside_checkout": true,
+  "repair_failure_replay": "submission in restrictive network-denied OS sandbox",
+  "split": {
+    "test": 500,
+    "dev": 100
+  },
+  "accepted_references": 600,
+  "rejected_controls": 600,
+  "replayed_failures": {
+    "relational": {
+      "task": "decision-acoustic-recording-channel-witness-set",
+      "sha256": "1155050d3f015cd7dc9d9c8118e3e67010f65f44a852abdecb23a74ab4d8f149"
+    },
+    "repairs": {
+      "task": "repair-all-your-base",
+      "sha256": "a7abd5a0bd38043b2b273c4a7cb61f0312a191c83ed79818da38d843f5d4486e"
+    },
+    "spreadsheets": {
+      "task": "sheet-14240",
+      "sha256": "14c6e21c791a791e5d78ee32269e28a65aabc7b3a940b31bc20a0504b21cb95f"
+    }
+  }
+}

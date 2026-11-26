@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-022",
+    "stage": "submit",
+    "prompt_sha256": "9bc0fd6299f725e714a9c2ca9ef109233b946ed01ccee730d05b9d10c9582d04",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f7-1bbb-74c2-99ee-50749226e17e",
+    "raw": "{\"sheet-57354\":{\"formulas\":{\"B3\":\"=SUMIF($F$2:$XFD$2,B2,$F3:$XFD3)\",\"C3\":\"=SUMIF($F$2:$XFD$2,C2,$F3:$XFD3)\",\"D3\":\"=SUMIF($F$2:$XFD$2,D2,$F3:$XFD3)\",\"E3\":\"=SUMIF($F$2:$XFD$2,E2,$F3:$XFD3)\"}},\"sheet-58047\":{\"fills\":[{\"range\":\"H2:H30\",\"formula\":\"=IF(G2<>\\\"\\\",G2,IF(A2=A1,H1,0))\"}],\"formulas\":{}},\"sheet-58701\":{\"fills\":[{\"range\":\"E2:E3\",\"formula\":\"=IFERROR(VLOOKUP(B2,'Table Tab'!$A:$B,2,FALSE),\\\"\\\")\"}],\"formulas\":{}},\"sheet-59160\":{\"formulas\":{\"D3\":\"=COUNTIFS($A:$A,D$1,$B:$B,D2)\",\"E3\":\"=COUNTIFS($A:$A,D$1,$B:$B,E2)\",\"F3\":\"=COUNTIFS($A:$A,F$1,$B:$B,F2)\",\"G3\":\"=COUNTIFS($A:$A,F$1,$B:$B,G2)\"}}}",
+    "usage": {
+      "input_tokens": 18533,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 382,
+      "reasoning_output_tokens": 75
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

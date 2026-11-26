@@ -1,0 +1,195 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "7110fc86007f96ee3bc74ca60f8cd3e42a68e1105084f579b68ba0a460796f34",
+    "d0c33d229c729a65958789b8c4e5a65f04fcbcd8e791674c642ebbb299b7e05a",
+    "e4777d2d0d2143c629e14bb573f9aa5eff230b51bc47eb912a003bc3cf968682"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-57029",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "submission": {
+        "fills": [
+          {
+            "range": "C1:C5",
+            "formula": "=ISNUMBER(SEARCH(B1,A1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57902,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 652,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-57105",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "submission": {
+        "fills": [
+          {
+            "range": "C4:C15",
+            "formula": "=SUMIFS($M$4:$M$57,$L$4:$L$57,\">=\"&B4,$L$4:$L$57,\"<\"&EOMONTH(B4,0)+1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57902,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 652,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-57137",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D16",
+            "formula": "=IF(AND(OR(C2=\"system\",COUNTIFS($A$2:$A$16,A2,$B$2:$B$16,B2,$C$2:$C$16,\"system\")=0),COUNTIFS($A$2:A2,A2,$B$2:B2,B2,$C$2:C2,C2)=1),\"Accepted\",\"Rejected\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57902,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 652,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-57262",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "submission": {
+        "fills": [
+          {
+            "range": "T7:T15",
+            "formula": "=E7*$Y$13+F7*$Y$14+G7*$Y$15+H7*$Y$16+I7*$Y$17+J7*$Y$18+K7*$Y$19"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E7:K15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E7:K15",
+            "range_size": 63,
+            "cells": [
+              [
+                "G7",
+                "1"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "J9",
+                "1"
+              ],
+              [
+                "F10",
+                "1"
+              ],
+              [
+                "J11",
+                "1"
+              ],
+              [
+                "F12",
+                "1"
+              ],
+              [
+                "I12",
+                "1"
+              ],
+              [
+                "F13",
+                "1"
+              ],
+              [
+                "I14",
+                "1"
+              ],
+              [
+                "F15",
+                "4"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 53
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57902,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 652,
+        "reasoning_output_tokens": 277
+      },
+      "model_calls": 3
+    }
+  ]
+}

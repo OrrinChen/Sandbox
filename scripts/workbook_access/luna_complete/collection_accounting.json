@@ -1,0 +1,2254 @@
+{
+  "slots": [
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 37057,
+        "cached_input_tokens": 30208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 583,
+        "reasoning_output_tokens": 406
+      },
+      "thread_id": "01a21228-dcaf-7a51-bb32-988413f52403",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20770,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 965,
+        "reasoning_output_tokens": 917
+      },
+      "thread_id": "01a21229-2406-7591-9074-97d4eed23a31",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-000",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 21002,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 225,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-85ee-7472-a970-db33db120f0e",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 37066,
+        "cached_input_tokens": 30208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1327,
+        "reasoning_output_tokens": 1145
+      },
+      "thread_id": "01a21228-dcaf-7f70-a39a-ff561c45868c",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20213,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 667,
+        "reasoning_output_tokens": 607
+      },
+      "thread_id": "01a21229-5c0e-7482-889e-5abf450b8bb2",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-000",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20315,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 236,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-9ffa-79e3-8741-ff47370502ab",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-001",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 41409,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 511,
+        "reasoning_output_tokens": 301
+      },
+      "thread_id": "01a21228-dcaf-70c0-acc6-bdcc0e9ebff1",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-001",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 22174,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-21bf-7521-9f9b-ee8822272c58",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-001",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 22282,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 242,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-38f7-7ed2-89b5-37e3e63099d6",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 62540,
+        "cached_input_tokens": 52992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 334
+      },
+      "thread_id": "01a21228-dcaf-7ad1-96fb-22e81e8d0b5d",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 21572,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 928,
+        "reasoning_output_tokens": 897
+      },
+      "thread_id": "01a21229-36fb-7721-af6f-7fee5949f2f9",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-001",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 21678,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 226,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-8c9b-7b53-8e0a-8ddf22395415",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 53411,
+        "cached_input_tokens": 47104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 530,
+        "reasoning_output_tokens": 324
+      },
+      "thread_id": "01a21229-649f-76c0-be2d-5cb50af36b8b",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19144,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 709,
+        "reasoning_output_tokens": 678
+      },
+      "thread_id": "01a21229-a847-7ac1-afb8-08466ec4e996",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19249,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 541,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21229-f02c-7371-9c4e-aa1c0098b5f6",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 73089,
+        "cached_input_tokens": 35328,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 356,
+        "reasoning_output_tokens": 103
+      },
+      "thread_id": "01a21229-a966-72d3-8c48-db750ae4e3eb",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17755,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 985,
+        "reasoning_output_tokens": 937
+      },
+      "thread_id": "01a21229-ef15-7912-b30c-cad2f624f91b",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-002",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18178,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 309,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-4e4a-7ab0-8683-7894acc33997",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 58915,
+        "cached_input_tokens": 19072,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1311,
+        "reasoning_output_tokens": 1108
+      },
+      "thread_id": "01a21229-b73d-7442-b277-985350b93c57",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 40391,
+        "cached_input_tokens": 19968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 75,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-3aca-7331-a46c-2a33f1281a02",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-003",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20215,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 197,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-5ca9-7031-ae12-9156aabc14fa",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 38694,
+        "cached_input_tokens": 30976,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 408,
+        "reasoning_output_tokens": 293
+      },
+      "thread_id": "01a21229-cc05-7313-be91-0be94786db42",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20276,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-052c-79f0-9c32-e40842c0445f",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20383,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1121,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-1c2d-7543-a474-9039810bb204",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17971,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 581,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a2122a-2dfe-7aa1-8e58-215cd057ac39",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 37503,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 814,
+        "reasoning_output_tokens": 694
+      },
+      "thread_id": "01a2122a-7160-7c43-bc8c-0b2ca8a9426f",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18803,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 371,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-d439-7f00-84a7-0dc17c07a631",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36046,
+        "cached_input_tokens": 17792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 834,
+        "reasoning_output_tokens": 635
+      },
+      "thread_id": "01a2122a-78f2-7933-a8c4-20539a27c4f7",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 38758,
+        "cached_input_tokens": 31104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 977,
+        "reasoning_output_tokens": 874
+      },
+      "thread_id": "01a2122a-d1ec-7610-896a-743a94becffd",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19435,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 230,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122b-377e-72d3-b4b4-1e0b9c4564b2",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35964,
+        "cached_input_tokens": 29696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 503,
+        "reasoning_output_tokens": 347
+      },
+      "thread_id": "01a2122a-8254-76a0-9e91-dad29bbdfe0e",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 40098,
+        "cached_input_tokens": 31744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 86,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-cb31-7e52-bc46-2957cd707faa",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-005",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20096,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 644,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-f0d4-7282-843f-4a620c5c9a6b",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17953,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 203,
+        "reasoning_output_tokens": 105
+      },
+      "thread_id": "01a2122a-8917-7ca1-92c1-fa25ebaa614e",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19319,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 533,
+        "reasoning_output_tokens": 452
+      },
+      "thread_id": "01a2122a-b05a-7630-8e2d-3a05bbd57e88",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19789,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 618,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122a-edc5-7b71-a688-f99000e884d7",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-006",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17312,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 599,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a2122b-05df-7142-802f-f14ebb8ce36b",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-006",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36137,
+        "cached_input_tokens": 29696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 896,
+        "reasoning_output_tokens": 762
+      },
+      "thread_id": "01a2122b-48f8-71f1-bc23-5f8227e7b750",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-006",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18103,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 284,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122b-a511-7b43-bbee-70f3e0fdc6c1",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-006",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 52233,
+        "cached_input_tokens": 46336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 278,
+        "reasoning_output_tokens": 37
+      },
+      "thread_id": "01a2122b-323f-7410-b30a-7158a0fcadf6",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-006",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 37895,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1066,
+        "reasoning_output_tokens": 937
+      },
+      "thread_id": "01a2122b-63e4-7fc3-8685-bdcf381e2061",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-006",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18989,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 351,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122b-cb5e-7861-8e17-9ac5e8163fb8",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 32697,
+        "cached_input_tokens": 28032,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 746,
+        "reasoning_output_tokens": 624
+      },
+      "thread_id": "01a2122b-3323-7d62-ba54-15a3b22b7f64",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 49412,
+        "cached_input_tokens": 44288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 392,
+        "reasoning_output_tokens": 225
+      },
+      "thread_id": "01a2122b-8471-7dc0-b58e-bde1d522fb21",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-007",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16741,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 293,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122b-be06-7d72-85b1-1d099f4dfbd5",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 32891,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 514,
+        "reasoning_output_tokens": 247
+      },
+      "thread_id": "01a2122b-5e7b-7f63-8400-6f03860b1f88",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17067,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 538,
+        "reasoning_output_tokens": 490
+      },
+      "thread_id": "01a2122b-9fdf-7a40-bb39-21bdff206088",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17253,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 292,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122b-da0e-7e00-8dbb-aae9b9dd8d18",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-008",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 34855,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 484,
+        "reasoning_output_tokens": 304
+      },
+      "thread_id": "01a2122b-cde6-7053-b408-beb74c16b738",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-008",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18878,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1319,
+        "reasoning_output_tokens": 1220
+      },
+      "thread_id": "01a2122c-0d5e-7cd2-8013-b3f748eeee53",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-008",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20435,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 204,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122c-7ddd-7093-8746-8f62b3cb313e",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 52417,
+        "cached_input_tokens": 46336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 665,
+        "reasoning_output_tokens": 471
+      },
+      "thread_id": "01a2122b-e76b-77c1-9649-e257fb0fd9e3",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36868,
+        "cached_input_tokens": 18176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 963,
+        "reasoning_output_tokens": 839
+      },
+      "thread_id": "01a2122c-3450-7cd1-8940-67360fef233e",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19088,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 459,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122c-933b-7cb2-8173-825b4eeb5c37",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-009",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16821,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 559,
+        "reasoning_output_tokens": 443
+      },
+      "thread_id": "01a2122b-f998-7c91-a8cf-8a14f27376ec",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-009",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18159,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 195,
+        "reasoning_output_tokens": 164
+      },
+      "thread_id": "01a2122c-36ae-7a42-9ac6-79e035b87b38",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-009",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18265,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1086,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122c-5b26-7aa0-b299-6f6ac55f551c",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16821,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 269,
+        "reasoning_output_tokens": 185
+      },
+      "thread_id": "01a2122c-0517-7e32-b456-703e1a8d7a11",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35982,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1080,
+        "reasoning_output_tokens": 973
+      },
+      "thread_id": "01a2122c-30dc-7630-943f-64e226cf7a59",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-009",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18043,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 508,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122c-9cdd-7733-93ca-830037e8682b",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-010",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35042,
+        "cached_input_tokens": 29184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 903,
+        "reasoning_output_tokens": 673
+      },
+      "thread_id": "01a2122c-a2da-7fb2-b4a8-65789b1dc399",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-010",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36877,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1436,
+        "reasoning_output_tokens": 1276
+      },
+      "thread_id": "01a2122c-ffed-7370-82f7-2045dd65cfe0",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-010",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18967,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 737,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122d-80bd-7811-99d8-f14daacd9547",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35038,
+        "cached_input_tokens": 29184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 783,
+        "reasoning_output_tokens": 602
+      },
+      "thread_id": "01a2122c-c0d7-7152-8202-e607c527d4f3",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19006,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1066,
+        "reasoning_output_tokens": 1002
+      },
+      "thread_id": "01a2122d-13d3-7ce2-8582-44d254d2808f",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19360,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 516,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122d-744f-71a0-b3a6-de80d7478532",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 51066,
+        "cached_input_tokens": 45440,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 893,
+        "reasoning_output_tokens": 629
+      },
+      "thread_id": "01a2122c-c73b-7793-a338-182b0305173c",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16874,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 480,
+        "reasoning_output_tokens": 449
+      },
+      "thread_id": "01a2122d-280d-7961-8c60-49b1a5bb45e3",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-011",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16979,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 176,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122d-5e31-70c2-bde9-fa39a6a7fb46",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 34034,
+        "cached_input_tokens": 28544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 482,
+        "reasoning_output_tokens": 337
+      },
+      "thread_id": "01a2122c-d382-7a31-b536-83631f94bef2",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 53446,
+        "cached_input_tokens": 46208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 325,
+        "reasoning_output_tokens": 185
+      },
+      "thread_id": "01a2122d-15ac-7fd3-bd70-b83a7c88c51f",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17383,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 180,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122d-4aaf-7833-87c0-eeb667e086c1",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 54458,
+        "cached_input_tokens": 46848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 692,
+        "reasoning_output_tokens": 557
+      },
+      "thread_id": "01a2122d-6a12-7aa1-9300-fb6f869dfd88",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35441,
+        "cached_input_tokens": 29440,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 695,
+        "reasoning_output_tokens": 510
+      },
+      "thread_id": "01a2122d-bc7e-7e43-b6e7-882cd63424c7",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-012",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19212,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-0851-7542-885b-546b087bcd1f",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35328,
+        "cached_input_tokens": 29312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 670,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a2122d-7f73-73c1-b589-2046f3df23b9",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18508,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 547,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a2122d-cc1d-7530-8f42-79fbc8ed1993",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-012",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18618,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 221,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-09d1-7321-9a9f-10ed2821550a",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-013",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 55892,
+        "cached_input_tokens": 47872,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 549,
+        "reasoning_output_tokens": 355
+      },
+      "thread_id": "01a2122d-ac24-7561-a61e-e9ebd6a96021",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-013",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 39519,
+        "cached_input_tokens": 31488,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122d-f653-7e10-aec6-1fc1fa603cd4",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-013",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19833,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 215,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-1532-7433-b45d-437b9094bb14",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 55839,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 577,
+        "reasoning_output_tokens": 389
+      },
+      "thread_id": "01a2122d-ceac-78b0-9986-b72bb963c479",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 39885,
+        "cached_input_tokens": 19712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1051,
+        "reasoning_output_tokens": 957
+      },
+      "thread_id": "01a2122e-274c-77b0-b090-6ca7334ac772",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20001,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 195,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-8a1b-7a23-b11b-95adf9406ef0",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 57301,
+        "cached_input_tokens": 49408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 736,
+        "reasoning_output_tokens": 343
+      },
+      "thread_id": "01a2122e-2c0a-7e70-83e0-27f4a102cc66",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20740,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 644,
+        "reasoning_output_tokens": 597
+      },
+      "thread_id": "01a2122e-7d8d-7981-8fb1-48a54683a19c",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20912,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 256,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-c0ec-7580-a423-d29b5031342c",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 37761,
+        "cached_input_tokens": 30592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1036,
+        "reasoning_output_tokens": 938
+      },
+      "thread_id": "01a2122e-2e63-7743-9b70-6ea9eec69387",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 58250,
+        "cached_input_tokens": 49408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 579,
+        "reasoning_output_tokens": 376
+      },
+      "thread_id": "01a2122e-938b-7fa3-bac7-414724e8d0d9",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20079,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 339,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-d8b8-72d1-880c-f0cdea0d2be4",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36378,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 604,
+        "reasoning_output_tokens": 482
+      },
+      "thread_id": "01a2122e-3b6e-74e0-bb69-d4323ad94e3b",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18344,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 46,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-82dd-7791-9836-f28ab811801b",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18608,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 241,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122e-9d84-7810-ab50-c1d060f184f1",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36377,
+        "cached_input_tokens": 29824,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 723,
+        "reasoning_output_tokens": 568
+      },
+      "thread_id": "01a2122e-ac43-76c2-8024-f8387afa3b95",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18828,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 490,
+        "reasoning_output_tokens": 442
+      },
+      "thread_id": "01a2122f-0840-7cb0-94d9-56e0c3f639e6",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19288,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 260,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-41b2-7fd2-ab71-772e10f2a948",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-016",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 50963,
+        "cached_input_tokens": 40704,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 566,
+        "reasoning_output_tokens": 212
+      },
+      "thread_id": "01a2122e-c875-7983-8531-a9d5eb24943b",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-016",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36820,
+        "cached_input_tokens": 30080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 783,
+        "reasoning_output_tokens": 659
+      },
+      "thread_id": "01a2122f-1a1a-7442-8b7f-b5a61002ac5d",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-016",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18545,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 803,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-6d31-7af1-98af-102dc5c249c8",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 52056,
+        "cached_input_tokens": 45312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 795,
+        "reasoning_output_tokens": 614
+      },
+      "thread_id": "01a2122e-e70f-77a3-adca-4bfbf12ddcf5",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17466,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-4259-79d3-8ce3-ad4a542b60a7",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17570,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 786,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-5c85-75f2-93b6-821724855c32",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 51706,
+        "cached_input_tokens": 45056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 347,
+        "reasoning_output_tokens": 181
+      },
+      "thread_id": "01a2122f-0d3a-7152-a902-ad838bb3b967",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 34816,
+        "cached_input_tokens": 29056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1137,
+        "reasoning_output_tokens": 1034
+      },
+      "thread_id": "01a2122f-444a-7ce3-9350-0058b768d6fd",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-017",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17464,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 277,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-adc5-7e61-9441-4acb6c4c0de4",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-017",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16714,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656,
+        "reasoning_output_tokens": 625
+      },
+      "thread_id": "01a2122f-68ca-7f52-801b-23d0f6d170ef",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-017",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16766,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 116,
+        "reasoning_output_tokens": 85
+      },
+      "thread_id": "01a2122f-ab52-72f2-9d0b-5f8113d7f4e8",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-017",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 16871,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 199,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-caf6-7133-9d78-db029b2a3d32",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 17311,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 308
+      },
+      "thread_id": "01a2122f-ad53-7251-9606-2b41af6af44d",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18761,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-e0b3-7792-82b9-5742121d6d56",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-018",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18867,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1029,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a2122f-f5e4-7940-b43a-857805357d37",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 34726,
+        "cached_input_tokens": 29056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 512,
+        "reasoning_output_tokens": 312
+      },
+      "thread_id": "01a2122f-b9ae-7303-b415-bd8a7a2c0d57",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18969,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1058,
+        "reasoning_output_tokens": 990
+      },
+      "thread_id": "01a2122f-fa70-77a3-94a0-2a5efd26432f",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-018",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19617,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 263,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-5a4e-7781-a565-3d110464295c",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 55134,
+        "cached_input_tokens": 47360,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1595,
+        "reasoning_output_tokens": 1399
+      },
+      "thread_id": "01a2122f-d51c-72e1-a8f4-639a1cd2c64a",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19247,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 63,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-62b3-7690-bd5e-4ecbbd9ebc8f",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19754,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 250,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-82e8-7df3-8e99-dd9c80ba6d9a",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35802,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1542,
+        "reasoning_output_tokens": 1340
+      },
+      "thread_id": "01a2122f-eec2-7e01-a8b8-3badb6020a28",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 39142,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 262,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-769a-7511-a362-6e57e9d3b5e1",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20190,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 314,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-ad81-7f52-9b81-f7fc29a0cbf3",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 57619,
+        "cached_input_tokens": 49024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 617,
+        "reasoning_output_tokens": 444
+      },
+      "thread_id": "01a21230-5616-79e0-b5a5-45e2d22b3f4f",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19187,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 575,
+        "reasoning_output_tokens": 443
+      },
+      "thread_id": "01a21230-a94e-7a93-ba51-7a72d07940dc",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-020",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20619,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 284,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21230-eaf1-7f31-b997-cb9fbad9c7f9",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 57660,
+        "cached_input_tokens": 49024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 659,
+        "reasoning_output_tokens": 465
+      },
+      "thread_id": "01a21230-8287-7652-ba48-5574e4ffe756",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 39264,
+        "cached_input_tokens": 31360,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 685,
+        "reasoning_output_tokens": 491
+      },
+      "thread_id": "01a21230-da71-7ba1-9bc8-a0b40d1cde94",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 21038,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 259,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-256a-7972-ac62-48ffe6ca70c8",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 57063,
+        "cached_input_tokens": 36864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1246,
+        "reasoning_output_tokens": 951
+      },
+      "thread_id": "01a21230-aefe-7e40-9f97-c9df6b79a52d",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19456,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1344,
+        "reasoning_output_tokens": 1296
+      },
+      "thread_id": "01a21231-261d-7272-986c-18b820986027",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-021",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19622,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 299,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-98d5-7cf1-9cab-afdc8b835dc2",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-021",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18561,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 445,
+        "reasoning_output_tokens": 313
+      },
+      "thread_id": "01a21230-d953-7e02-bb86-afb01be5ed02",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-021",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20179,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-0e02-7c50-9765-3c5da393f968",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-021",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20283,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 271,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-251d-70f1-98c4-291d1ce8ffb6",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 35596,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 627,
+        "reasoning_output_tokens": 458
+      },
+      "thread_id": "01a21231-146d-7f13-84f2-3b0cb73c8207",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19625,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-5f28-7d70-8da4-97cbf3464f37",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19725,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 281,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-7876-7ca3-9c44-910a2bc4f46c",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 53531,
+        "cached_input_tokens": 47104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1076,
+        "reasoning_output_tokens": 905
+      },
+      "thread_id": "01a21231-4b4d-7113-b1f5-9fedc902ea94",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "stage": "inspect-2",
+      "status": "protocol_rejected",
+      "usage": {
+        "input_tokens": 36919,
+        "cached_input_tokens": 30080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 654,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a21231-bde3-7761-8c26-5da4fd4e1a81",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18523,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 327,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21232-1092-70a2-b652-15b7bf8b7a69",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 18198,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 453,
+        "reasoning_output_tokens": 371
+      },
+      "thread_id": "01a21231-51d6-74e3-897c-32b48e650979",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19086,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-8422-7303-a7c7-b8ceffe83fc4",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-023",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19188,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 344,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-9aa0-70e0-80cf-7c6652a57033",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36550,
+        "cached_input_tokens": 29952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 880,
+        "reasoning_output_tokens": 691
+      },
+      "thread_id": "01a21231-a120-73e1-8e53-b7784611d6f9",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20005,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21231-fae7-76a3-b9cd-ff920eaaf83c",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 20107,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 277,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21232-1022-71e1-a5af-1cd7bd1102a4",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36694,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 894,
+        "reasoning_output_tokens": 744
+      },
+      "thread_id": "01a21231-c0b2-7bc1-8d78-3b078a0df413",
+      "message_count": 2
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19142,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 987,
+        "reasoning_output_tokens": 923
+      },
+      "thread_id": "01a21232-1c72-7560-8c7e-cdcc007a1982",
+      "message_count": 1
+    },
+    {
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19377,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 365,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21232-7753-7af2-b1c3-dce9bfd89703",
+      "message_count": 1
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "stage": "inspect-1",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 36687,
+        "cached_input_tokens": 30080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 791,
+        "reasoning_output_tokens": 631
+      },
+      "thread_id": "01a21231-c93c-7880-a67e-af16659b7389",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "stage": "inspect-2",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 38491,
+        "cached_input_tokens": 30848,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 726,
+        "reasoning_output_tokens": 516
+      },
+      "thread_id": "01a21232-1c22-7ad3-ac13-bd4d739ce3fb",
+      "message_count": 2
+    },
+    {
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "stage": "submit",
+      "status": "accepted",
+      "usage": {
+        "input_tokens": 19189,
+        "cached_input_tokens": 11904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 342,
+        "reasoning_output_tokens": 0
+      },
+      "thread_id": "01a21232-6d0e-7870-8be5-5a8ee436f09b",
+      "message_count": 1
+    }
+  ]
+}

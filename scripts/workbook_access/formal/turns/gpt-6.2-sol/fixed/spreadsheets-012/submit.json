@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-012",
+    "stage": "submit",
+    "prompt_sha256": "8ead1aeaf9ae547cd6dd1826239a29fba27c049d4d4a3625bcc800602759bec2",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d7-bf60-7833-bc51-6e1bde25bb64",
+    "raw": "{\n  \"sheet-46897\": {\n    \"formulas\": {\n      \"I3\": \"=COUNTIF(INDEX($A$2:$D$1048576,0,XMATCH($I$1,$A$1:$D$1,0)),IF(ISTEXT($I$2),\\\"=\\\"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE($I$2,\\\"~\\\",\\\"~~\\\"),\\\"*\\\",\\\"~*\\\"),\\\"?\\\",\\\"~?\\\"),$I$2))\"\n    }\n  },\n  \"sheet-47699\": {\n    \"formulas\": {\n      \"D1\": \"=COUNTIF(A:A,FALSE)\"\n    }\n  },\n  \"sheet-48354\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D6\",\n        \"formula\": \"=IF(ISNUMBER(SEARCH(\\\"domestic\\\",B2)),\\\"D\\\",IF(ISNUMBER(SEARCH(\\\"international\\\",B2)),\\\"I\\\",\\\"N/A\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-48365\": {\n    \"formulas\": {\n      \"C4\": \"=IF(COUNTIF($C$11:$C$13,\\\"All\\\")>0,SUMIF(Data!$A:$A,$C$2,Data!$C:$C),IF($C$11=\\\"\\\",0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$11))+IF(OR($C$12=\\\"\\\",$C$12=$C$11),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$12))+IF(OR($C$13=\\\"\\\",$C$13=$C$11,$C$13=$C$12),0,SUMIFS(Data!$C:$C,Data!$A:$A,$C$2,Data!$B:$B,$C$13)))\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 20145,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1205,
+      "reasoning_output_tokens": 770
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

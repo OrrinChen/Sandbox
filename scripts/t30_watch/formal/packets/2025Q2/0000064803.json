@@ -1,0 +1,68 @@
+{
+  "wave": "2025Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000064803",
+  "issuer": "CVS HEALTH CORP",
+  "cutoff": "2025-03-02",
+  "projected_target_start": "2025-04-01",
+  "status": "complete",
+  "period_end": "2024-12-31",
+  "filing_date": "2025-02-12",
+  "text": {
+    "sector": "retail",
+    "cik": "0000064803",
+    "issuer": "CVS HEALTH CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2025-02-12",
+        "text": "•Total revenues increased $15.0 billion, or 4.2%, in 2024 compared to 2023."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2025-02-12",
+        "text": "(3)Same store sales and prescription volume represent the change in revenues and prescriptions filled in the Company’s retail pharmacy stores that have been operating for greater than one year and digital sales initiated online or through mobile applications and fulfilled through the Company’s distribution centers, expressed as a percentage that indicates the increase or decrease relative to the comparable prior period."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2025-02-12",
+        "text": "The value of ending inventory is reduced for estimated inventory losses that have occurred during the interim period between physical inventory counts."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2025-02-12",
+        "text": "•Operating expenses increased $1.8 billion, or 4.5%, in 2024 compared to 2023."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2025-02-12",
+        "text": "•Operating income decreased $5.2 billion, or 38.0%, in 2024 compared to 2023."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2024-09-30",
+        "filed": "2024-11-06",
+        "reported_sales_usd": 95428000000,
+        "year_ago_reported_sales_usd": 89764000000,
+        "yoy_percent": "6.3099"
+      },
+      {
+        "quarter_end": "2024-12-31",
+        "filed": "2025-02-12",
+        "reported_sales_usd": 97710000000,
+        "year_ago_reported_sales_usd": 93813000000,
+        "yoy_percent": "4.1540"
+      }
+    ],
+    "status": "complete"
+  }
+}

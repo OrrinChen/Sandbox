@@ -1,0 +1,310 @@
+[
+  {
+    "task_id": "decision-assemble-verified-night-handoff-csv",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of handoff.csv in one result cell named csv_text. A plate qualifies only if its unique inspection slip has verdict 'pass' and its unique archive receipt exists. Either record may be absent. The receipt supplies shelf_mark. The slip supplies field_label, which may be NULL and must then serialize as an empty string. Other values are populated. Start with the literal unquoted header plate_id,field_label,shelf_mark,slip_id,receipt_id. Append one record per qualifying plate in ascending BINARY plate_id order, including the two evidence IDs. Quote every data field with double quotes, doubling every embedded double quote. Preserve all other characters verbatim. Use one LF after every record, including the header and final record. There are no numeric quantities or ties in this export. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "archive_receipts": {
+        "columns": [
+          "receipt_id TEXT",
+          "plate_id TEXT",
+          "shelf_mark TEXT",
+          "entry_text TEXT"
+        ],
+        "rows": [
+          [
+            "R2",
+            "B",
+            "K2",
+            "Arc plate deposited in bay K2."
+          ],
+          [
+            "R3",
+            "C",
+            "K3",
+            "Scratched plate stored pending review."
+          ],
+          [
+            "R1",
+            "A",
+            "K1",
+            "Rim plate deposited in bay K1."
+          ]
+        ]
+      },
+      "inspection_slips": {
+        "columns": [
+          "slip_id TEXT",
+          "plate_id TEXT",
+          "field_label TEXT",
+          "verdict TEXT",
+          "entry_text TEXT"
+        ],
+        "rows": [
+          [
+            "I3",
+            "C",
+            "Loop",
+            "hold",
+            "Emulsion scratch crosses the guide star."
+          ],
+          [
+            "I2",
+            "B",
+            "Arc \"West\"",
+            "pass",
+            "Western arc image cleared inspection."
+          ],
+          [
+            "I1",
+            "A",
+            "Rim, north",
+            "pass",
+            "Northern rim plate is clean."
+          ],
+          [
+            "I4",
+            "D",
+            "Spur",
+            "pass",
+            "Spur plate cleared for transfer."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-assign-exhibits-to-rated-display-cases",
+    "tool": "sqlite.query",
+    "instruction": "Install one indivisible exhibit in each of the library's two display cases, east and west, for the coming exhibit cycle. An exhibit may be installed at most once. Its load_kg is its mounted mass in kilograms. The inspection_note table contains signed-off primary inspection records. For each case use the record with the greatest revision_no, even when an older record allowed more weight. Its rated_kg is the structured load limit stated in its finding_text. An exhibit fits if its mass is at most that limit. Forecast visits are specific to the exhibit's placement and add across cases. Maximize combined forecast visits, breaking ties by ascending east exhibit code and then west exhibit code in binary text order. Exhibit codes, source IDs, and case/revision pairs are unique. All fields are nonnull. Return one row with columns east_exhibit, west_exhibit, forecast_visits, east_source, west_source. Cite the actual source_id of the governing inspection for each chosen placement. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "exhibit": {
+        "columns": [
+          "exhibit_code TEXT",
+          "load_kg INTEGER",
+          "east_visits INTEGER",
+          "west_visits INTEGER"
+        ],
+        "rows": [
+          [
+            "atlas",
+            8,
+            90,
+            80
+          ],
+          [
+            "binding",
+            5,
+            82,
+            72
+          ],
+          [
+            "folio",
+            6,
+            78,
+            79
+          ],
+          [
+            "press",
+            10,
+            110,
+            100
+          ]
+        ]
+      },
+      "inspection_note": {
+        "columns": [
+          "source_id TEXT",
+          "case_code TEXT",
+          "revision_no INTEGER",
+          "rated_kg INTEGER",
+          "finding_text TEXT"
+        ],
+        "rows": [
+          [
+            "E1",
+            "east",
+            1,
+            10,
+            "Installed shelf passed the 10 kg load check."
+          ],
+          [
+            "W1",
+            "west",
+            1,
+            6,
+            "Mounted tray passed at 6 kg."
+          ],
+          [
+            "E2",
+            "east",
+            2,
+            6,
+            "Replacement shelf approved for 6 kg per exhibit."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_exhibit",
+      "west_exhibit",
+      "forecast_visits",
+      "east_source",
+      "west_source"
+    ]
+  },
+  {
+    "task_id": "decision-assign-festival-crates-to-return-bays",
+    "tool": "sqlite.query",
+    "instruction": "Build return_bays.csv to replace two old crate-group keys with return-bay keys for one festival shift. Each group must go wholly to one bay, and each bay may receive at most one group. A route row lists an allowed group and bay pairing and the one-way carrying distance in whole metres for one crate. Each crate makes one trip. Bay capacity is in crates and must cover the entire assigned group. Among feasible complete maps minimize total crate-metres across both groups. On equal totals choose the lexicographically smallest pair of bay keys in ascending group_key order, using SQLite binary text order. There are exactly two distinct groups, unique group and bay master keys, at most one route per pair, no nulls, and at least one feasible complete map. Output group_key, bay_key, crate_metres (the contribution of that group) in ascending group_key order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "carry_route": {
+        "columns": [
+          "group_key TEXT",
+          "bay_key TEXT",
+          "metres INTEGER"
+        ],
+        "rows": [
+          [
+            "Drum",
+            "A",
+            1
+          ],
+          [
+            "Drum",
+            "B",
+            3
+          ],
+          [
+            "Flag",
+            "A",
+            2
+          ],
+          [
+            "Flag",
+            "B",
+            8
+          ],
+          [
+            "Flag",
+            "C",
+            1
+          ]
+        ]
+      },
+      "crate_group": {
+        "columns": [
+          "group_key TEXT",
+          "crate_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "Drum",
+            3
+          ],
+          [
+            "Flag",
+            5
+          ]
+        ]
+      },
+      "return_bay": {
+        "columns": [
+          "bay_key TEXT",
+          "crate_limit INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            5
+          ],
+          [
+            "B",
+            5
+          ],
+          [
+            "C",
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "group_key",
+      "bay_key",
+      "crate_metres"
+    ]
+  },
+  {
+    "task_id": "decision-assign-grain-sensitive-blanks-to-remnants",
+    "tool": "sqlite.query",
+    "instruction": "Fill the two one-blank requests, slots 1 and 2. For either slot, buy a fresh blank for buy_cents or cut it free from one listed remnant. Each remnant can supply at most one slot, even if material would remain. All dimensions are millimetres. A direct fit requires both remnant dimensions to meet or exceed the corresponding blank dimensions. A quarter turn swaps the blank dimensions and is allowed only when turn_ok is 1. Each cut slip is primary evidence for the grain constraint in its row. Inputs are non-null. Minimize purchase cents, then the number of remnants consumed, then the pair of source IDs in slot order using ascending binary lexical order. Represent a purchase by the literal BUY for this comparison and in the output. Remnant IDs are unique and never BUY. Return one row with columns slip_one, source_one, slip_two, source_two, purchase_cents, citing both cut slips. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cut_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "slip_text TEXT",
+          "slot_no INTEGER",
+          "blank_w INTEGER",
+          "blank_h INTEGER",
+          "turn_ok INTEGER",
+          "buy_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "CS-11",
+            "Tab insert may run across grain.",
+            1,
+            8,
+            4,
+            1,
+            70
+          ],
+          [
+            "CS-12",
+            "Cover grain must follow the marked orientation.",
+            2,
+            9,
+            5,
+            0,
+            120
+          ]
+        ]
+      },
+      "paper_remnant": {
+        "columns": [
+          "remnant_id TEXT",
+          "sheet_w INTEGER",
+          "sheet_h INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            9,
+            5
+          ],
+          [
+            "R2",
+            4,
+            8
+          ],
+          [
+            "R3",
+            5,
+            9
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "slip_one",
+      "source_one",
+      "slip_two",
+      "source_two",
+      "purchase_cents"
+    ]
+  }
+]

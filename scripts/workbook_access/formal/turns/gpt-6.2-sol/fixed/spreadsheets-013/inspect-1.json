@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-013",
+    "stage": "inspect-1",
+    "prompt_sha256": "aacf8d38ca51c71cdc0779d016d2982a5c3137f4b46076654d3a7149031edb51",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d7-e41b-7102-9382-8b840f3e3e13",
+    "raw": "{\n  \"sheet-48588\": [],\n  \"sheet-48608\": [\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E1:G8\"},\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C8\"}\n  ],\n  \"sheet-48643\": [\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:H10\"},\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G11:H40\"}\n  ],\n  \"sheet-48969\": [\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"I2:N5\"},\n    {\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A7:G10\"}\n  ]\n}",
+    "usage": {
+      "input_tokens": 20129,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 152,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

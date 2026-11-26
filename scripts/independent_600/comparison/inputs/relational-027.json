@@ -1,0 +1,288 @@
+[
+  {
+    "task_id": "decision-export-corrected-appliance-inventory",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of appliance_labels.csv for a household energy audit. Each asset has a history of full replacement records. Use the greatest revision_no for each asset_id. A null rated_w in that revision withdraws the asset, even if it had a rating earlier. A zero rating is valid. Revision numbers are unique per asset. Only rated_w may be null. Return one row and one TEXT column named csv_text. Start the file with the literal header asset_id,label,rated_w. Append one record per current asset in ascending binary asset_id order. Asset IDs contain only uppercase ASCII letters and digits. Write IDs and whole watts unquoted. Always double-quote the label and double each embedded double quote. Labels can contain commas and quotes but no line breaks. Use LF after every line, including the last. An empty inventory produces just the header line. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "asset_revision": {
+        "columns": [
+          "asset_id TEXT",
+          "revision_no INTEGER",
+          "label_text TEXT",
+          "rated_w INTEGER"
+        ],
+        "rows": [
+          [
+            "B",
+            1,
+            "Lamp",
+            9
+          ],
+          [
+            "A",
+            2,
+            "Fan, loft",
+            45
+          ],
+          [
+            "C",
+            1,
+            "Pump \"S\"",
+            80
+          ],
+          [
+            "A",
+            1,
+            "Fan",
+            50
+          ],
+          [
+            "B",
+            2,
+            "Lamp",
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-export-evidence-backed-accrual-adjustments",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of the September 30 measured-work accrual import as one TEXT value named csv_content in one output row. For each work item, find its latest signed field certificate dated on or before 2026-09-30. Dates are ISO calendar dates. A NULL signed_on means draft. On the same date, the greater revision_no wins, and the date/revision pair is unique per work item among signed records. Each certificate replaces the item's entire earlier cumulative measurement. measured_units is the whole-unit measurement recorded in its primary field note. Multiply the chosen measurement by rate_cents per unit, then subtract booked_cents, the cumulative cost already posted. Retain negative adjustments, omit zero adjustments, and omit items with no qualifying certificate. All fields except signed_on are non-NULL. Use the chosen certificate's actual source_id as the supporting citation. The CSV header must be exactly work_code,source_id,adjustment_cents. Sort data records by work_code ascending in SQLite binary text order. Double-quote both text fields, doubling each embedded double quote. Print the signed integer cents in decimal without quotes or a leading plus. Use LF after every record including the header and final record. Codes and IDs have no line breaks. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "field_certificate": {
+        "columns": [
+          "source_id TEXT",
+          "work_code TEXT",
+          "signed_on TEXT",
+          "revision_no INTEGER",
+          "measured_units INTEGER",
+          "field_note TEXT"
+        ],
+        "rows": [
+          [
+            "B1",
+            "Bay,2",
+            "2026-09-20",
+            1,
+            12,
+            "Counted twelve installed panels."
+          ],
+          [
+            "B\"2",
+            "Bay,2",
+            "2026-09-20",
+            2,
+            10,
+            "Recount excludes two staged panels; ten installed."
+          ],
+          [
+            "D1",
+            "Deck",
+            "2026-09-28",
+            1,
+            5,
+            "Five deck sections passed measurement."
+          ],
+          [
+            "D2",
+            "Deck",
+            null,
+            2,
+            9,
+            "Draft tally includes four proposed sections."
+          ],
+          [
+            "G1",
+            "Gate",
+            "2026-09-30",
+            1,
+            3,
+            "Three posts seated and measured."
+          ],
+          [
+            "L1",
+            "Loft",
+            "2026-10-01",
+            1,
+            4,
+            "Four beams installed this morning."
+          ]
+        ]
+      },
+      "work_account": {
+        "columns": [
+          "work_code TEXT",
+          "rate_cents INTEGER",
+          "booked_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Bay,2",
+            125,
+            1000
+          ],
+          [
+            "Deck",
+            80,
+            560
+          ],
+          [
+            "Gate",
+            50,
+            150
+          ],
+          [
+            "Loft",
+            60,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_content"
+    ]
+  },
+  {
+    "task_id": "decision-export-page-specific-caption-errata",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of caption_errata.csv for the fictional Sedge Arcade Register's bound volume. A printed caption is identified by numeric page and panel code together. A matching mount card supplies the intended caption verbatim. Include a record only when the card has a nonnull intended caption and it differs exactly from the printed caption. A missing card or null intended caption means the archive cannot establish a correction. Each table has at most one row per page and panel, card IDs are unique, and all other fields are nonnull. Return one row with one TEXT column named csv_body. Start the file with the literal header page,panel,caption,source_id. Sort data records by numeric page then binary panel code ascending. Write page as a decimal integer, and double-quote every text field, doubling each embedded double quote. Use one LF after every record including the header and last record. The source_id field must cite the matching card. All input text is free of line breaks. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "mount_card": {
+        "columns": [
+          "source_id TEXT",
+          "page_num INTEGER",
+          "panel_code TEXT",
+          "intended_caption TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "K8",
+            10,
+            "A",
+            "South room, winter",
+            "Winter proof mounted under the caption South room, winter."
+          ],
+          [
+            "K2",
+            2,
+            "A",
+            "Loom room",
+            "Loom room caption approved as set."
+          ],
+          [
+            "K3",
+            2,
+            "B",
+            "The \"Tin\" shelf",
+            "Display label reads The \"Tin\" shelf."
+          ],
+          [
+            "K4",
+            4,
+            "A",
+            null,
+            "Caption strip missing from mount."
+          ]
+        ]
+      },
+      "printed_panel": {
+        "columns": [
+          "page_num INTEGER",
+          "panel_code TEXT",
+          "printed_caption TEXT"
+        ],
+        "rows": [
+          [
+            10,
+            "A",
+            "South room"
+          ],
+          [
+            2,
+            "B",
+            "Tin samples"
+          ],
+          [
+            2,
+            "A",
+            "Loom room"
+          ],
+          [
+            4,
+            "A",
+            "Untitled"
+          ],
+          [
+            5,
+            "C",
+            "Orchard"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-export-paired-counter-exceptions",
+    "tool": "csv.export",
+    "instruction": "A depot ran a shadow counter beside its incumbent counter for the same parcel bursts. Each row is a report from one counter for a burst, with at most one row per burst and counter. A missing row or NULL parcel_count means unknown. Zero is a measured count. Construct the complete text of the reconciliation file in one result row with one column named csv_contents. Include each observed burst except those with two known equal counts. Begin with the exact header burst,incumbent,shadow. Sort records by burst_tag in ascending SQLite BINARY order; tags uniquely identify bursts and contain no line breaks. Always enclose the tag in double quotes and double any double quote inside it. Render known nonnegative integer counts as unquoted decimal integers and unknown counts as empty fields. Use a comma between fields and one LF after every record, including the header and final record. If there are no exceptions, emit just the header and LF. Only parcel_count may be NULL. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "counter_reports": {
+        "columns": [
+          "burst_tag TEXT",
+          "counter_kind TEXT",
+          "parcel_count INTEGER"
+        ],
+        "rows": [
+          [
+            "Bay,2",
+            "shadow",
+            7
+          ],
+          [
+            "A\"1",
+            "shadow",
+            0
+          ],
+          [
+            "Even",
+            "incumbent",
+            5
+          ],
+          [
+            "Bay,2",
+            "incumbent",
+            6
+          ],
+          [
+            "Even",
+            "shadow",
+            5
+          ],
+          [
+            "Solo",
+            "incumbent",
+            null
+          ],
+          [
+            "Zero",
+            "incumbent",
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_contents"
+    ]
+  }
+]

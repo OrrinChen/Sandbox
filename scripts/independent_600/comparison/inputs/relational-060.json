@@ -1,0 +1,291 @@
+[
+  {
+    "task_id": "decision-replacement-recruiting-month-close",
+    "tool": "sqlite.query",
+    "instruction": "Close month 4 for replacement recruiting. Each row is a separate vendor charge assigned to one team. Month numbers are consecutive integers. For an access charge, recognize equal monthly expense starting in start_month for term_months consecutive months. Its total_cents is exactly divisible by its positive term_months. For a placement charge, recognize the full amount once, in start_month when the replacement starts. Its term_months is 1. For either kind, the vendor receives the full amount in paid_month. A null paid_month means unpaid, and all other fields are non-null. For every team appearing anywhere in the ledger, return team_code, expense_cents recognized in month 4, cash_cents paid in month 4, and gap_cents calculated as expense minus cash. Use zero for an empty component and order by team_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "vendor_charge": {
+        "columns": [
+          "team_code TEXT",
+          "charge_kind TEXT",
+          "start_month INTEGER",
+          "term_months INTEGER",
+          "total_cents INTEGER",
+          "paid_month INTEGER"
+        ],
+        "rows": [
+          [
+            "loom",
+            "access",
+            2,
+            4,
+            1200,
+            2
+          ],
+          [
+            "loom",
+            "placement",
+            4,
+            1,
+            700,
+            5
+          ],
+          [
+            "loom",
+            "placement",
+            3,
+            1,
+            500,
+            4
+          ],
+          [
+            "kiln",
+            "access",
+            4,
+            2,
+            600,
+            4
+          ],
+          [
+            "kiln",
+            "placement",
+            4,
+            1,
+            200,
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "team_code",
+      "expense_cents",
+      "cash_cents",
+      "gap_cents"
+    ]
+  },
+  {
+    "task_id": "decision-replay-clock-at-the-horn",
+    "tool": "sqlite.query",
+    "instruction": "Audit every disputed basket in the fictional Lantern Cup. Each basket has one replay mark and one matching horn certificate. Both clocks count upward in integer milliseconds at the same rate. At synchronization, the camera read cam_sync and the arena clock read arena_sync. The certified error bound applies to the translated release time in either direction, inclusively. A basket counts only if release was strictly before the arena horn. Return 'count' if every possible release qualifies, 'void' if none qualify, and 'review' otherwise. A NULL error bound means the offset was uncertified and requires review. All other fields are present. Return basket_id, earliest_ms, latest_ms, ruling, replay_ref, horn_ref in ascending basket_id order. Use NULL for both endpoints when uncertified. Cite the actual replay and horn records for each ruling. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "horn_certificates": {
+        "columns": [
+          "period_id TEXT",
+          "cam_sync INTEGER",
+          "arena_sync INTEGER",
+          "horn_ms INTEGER",
+          "error_ms INTEGER",
+          "horn_ref TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            500,
+            600,
+            1100,
+            5,
+            "H4",
+            "Sync flash reads 500 camera and 600 arena, within five milliseconds. Horn at arena 1100."
+          ],
+          [
+            "P2",
+            800,
+            790,
+            1000,
+            0,
+            "H8",
+            "Exact paired ticks 800 camera and 790 arena. Horn at arena 1000."
+          ],
+          [
+            "P3",
+            500,
+            500,
+            1300,
+            2,
+            "H6",
+            "Third-period horn at 1300. Clock alignment within two milliseconds."
+          ]
+        ]
+      },
+      "replay_marks": {
+        "columns": [
+          "basket_id TEXT",
+          "period_id TEXT",
+          "cam_release INTEGER",
+          "replay_ref TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "B1",
+            "P1",
+            970,
+            "R7",
+            "Ball clears the rim-side shooter's hand at camera tick 970."
+          ],
+          [
+            "B2",
+            "P1",
+            995,
+            "R3",
+            "Release frame carries camera tick 995."
+          ],
+          [
+            "B3",
+            "P2",
+            1010,
+            "R9",
+            "First clear separation is at camera tick 1010."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "basket_id",
+      "earliest_ms",
+      "latest_ms",
+      "ruling",
+      "replay_ref",
+      "horn_ref"
+    ]
+  },
+  {
+    "task_id": "decision-replay-surviving-catalog-cell-edits",
+    "tool": "csv.export",
+    "instruction": "Produce catalog_patch.csv after a partial catalog import named spill. The cell_edit log starts with an absolute seed assignment for every recorded (item_key, field_key) and contains every assignment actually applied afterward. tick is a unique integer sequence number. The current value is the last assignment to the cell. Reconstruct the value the cell would have if all spill assignments were removed and all other assignments kept their order. Include only cells whose current value differs from that reconstruction. Null in cell_value explicitly clears a cell, and two nulls count as equal. Emit item_key, field_key, edit_action, new_value ordered by item_key then field_key in binary ascending order. Use clear and an SQL null for a restored null, or set and the exact text for any other restoration. The CSV writer renders SQL null as an empty field. All other input columns are non-null. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "cell_edit": {
+        "columns": [
+          "tick INTEGER",
+          "item_key TEXT",
+          "field_key TEXT",
+          "origin_key TEXT",
+          "cell_value TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "cup",
+            "finish",
+            "seed",
+            "matte"
+          ],
+          [
+            2,
+            "cup",
+            "label",
+            "seed",
+            null
+          ],
+          [
+            3,
+            "cup",
+            "finish",
+            "spill",
+            "gloss"
+          ],
+          [
+            4,
+            "cup",
+            "label",
+            "spill",
+            "sample"
+          ],
+          [
+            5,
+            "cup",
+            "finish",
+            "desk",
+            "satin"
+          ],
+          [
+            6,
+            "cup",
+            "label",
+            "spill",
+            "trial"
+          ],
+          [
+            7,
+            "cup",
+            "finish",
+            "spill",
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "item_key",
+      "field_key",
+      "edit_action",
+      "new_value"
+    ]
+  },
+  {
+    "task_id": "decision-reserve-a-sorter-service-window",
+    "tool": "sqlite.query",
+    "instruction": "Choose a two-hour maintenance window for the library's only returns sorter on the single day represented. A row describes the hour beginning at hour_no on a 24-hour clock. A window needs rows for both consecutive clock hours, with crew_ready equal to 1 in each. A missing hour, a null in either count, or crew_ready equal to 0 rules out that hour. For each hour, divert up to hand_capacity items from forecast_items to a manual station. The remaining items wait for reopening. Counts are nonnegative items per hour, hour numbers are unique, and only the two count columns may be null. Among feasible windows, minimize the larger of the two hourly counts of newly delayed items, then minimize their sum, then choose the earliest start. Return one row with columns start_hour, peak_delayed, total_delayed. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "sorter_hour": {
+        "columns": [
+          "hour_no INTEGER",
+          "forecast_items INTEGER",
+          "hand_capacity INTEGER",
+          "crew_ready INTEGER"
+        ],
+        "rows": [
+          [
+            8,
+            10,
+            10,
+            1
+          ],
+          [
+            9,
+            18,
+            10,
+            1
+          ],
+          [
+            10,
+            9,
+            4,
+            1
+          ],
+          [
+            11,
+            12,
+            7,
+            1
+          ],
+          [
+            12,
+            3,
+            8,
+            0
+          ],
+          [
+            14,
+            4,
+            null,
+            1
+          ],
+          [
+            15,
+            1,
+            5,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "start_hour",
+      "peak_delayed",
+      "total_delayed"
+    ]
+  }
+]

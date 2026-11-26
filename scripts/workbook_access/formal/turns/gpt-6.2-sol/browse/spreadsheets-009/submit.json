@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-009",
+    "stage": "submit",
+    "prompt_sha256": "6c99c428c044c37a30aa7419c7c4df8ff561742e89d36a4dc55677132475f67b",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d6-fdfd-7ed2-a1d3-23e3fd2b28c3",
+    "raw": "{\n  \"sheet-43406\": {\n    \"fills\": [\n      {\n        \"range\": \"C7:C20\",\n        \"formula\": \"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",COUNTIF($D$7:D7,\\\"H\\\")+COUNTIF(INDEX($D$7:D7,IFERROR(XMATCH(\\\"H\\\",$D$7:D7,0,-1),1)):D7,\\\"S\\\")/10,\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43436\": {\n    \"fills\": [\n      {\n        \"range\": \"I2:K6\",\n        \"formula\": \"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\">0\\\",$C$2:$C$12,\\\"<\\\"&(EOMONTH(DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,LEN(I$1))),0)+1),$D$2:$D$12,\\\"\\\")+COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\">0\\\",$C$2:$C$12,\\\"<\\\"&(EOMONTH(DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,LEN(I$1))),0)+1),$D$2:$D$12,\\\">=\\\"&DATEVALUE(\\\"1 \\\"&MID(I$1,SEARCH(\\\"end of \\\",I$1)+7,LEN(I$1))))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43589\": {\n    \"formulas\": {\n      \"B2\": \"=IF(A2=\\\"\\\",\\\"\\\",VALUE(MID(A2,SEARCH(\\\"to\\\",A2)+2,LEN(A2)))-VALUE(LEFT(A2,SEARCH(\\\"to\\\",A2)-1))+1)\"\n    }\n  },\n  \"sheet-43775\": {\n    \"fills\": [\n      {\n        \"range\": \"G6:Z6\",\n        \"formula\": \"=IF(MOD(COLUMNS($G6:G6),4)=3,INDEX($H$3:$L$3,1,QUOTIENT(COLUMNS($G6:G6),4)+1),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 19519,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 984,
+      "reasoning_output_tokens": 458
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

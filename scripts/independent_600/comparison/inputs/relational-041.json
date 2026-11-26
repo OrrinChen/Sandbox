@@ -1,0 +1,380 @@
+[
+  {
+    "task_id": "decision-measure-reclaimable-folder-bytes",
+    "tool": "sqlite.query",
+    "instruction": "Construct folder_cleanup.csv with one row per listed folder. Each directory_entry is one distinct file name directly inside a listed folder. Several names may refer to the same stored object, including several names in one folder. The inventory lists every name referring to each object. Object IDs are unique in stored_object, and byte_count is its nonnegative integer allocation in bytes. For each folder considered independently, report how many bytes would be reclaimed by removing all its entries while keeping every other folder intact. Count an object's allocation once if removing the folder eliminates its last name. Also report the number of names removed, including names for zero-byte objects. Include empty folders with two zeros. Folder codes are unique in folder_list, all references resolve, and every field is non-null. Output columns folder_code, names_removed, bytes_reclaimed in ascending SQLite BINARY order of folder_code. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "directory_entry": {
+        "columns": [
+          "folder_code TEXT",
+          "entry_name TEXT",
+          "object_id TEXT"
+        ],
+        "rows": [
+          [
+            "kiln",
+            "tile",
+            "o1"
+          ],
+          [
+            "kiln",
+            "tile-copy",
+            "o1"
+          ],
+          [
+            "kiln",
+            "palette",
+            "o2"
+          ],
+          [
+            "glaze",
+            "swatches",
+            "o2"
+          ],
+          [
+            "glaze",
+            "cover",
+            "o3"
+          ],
+          [
+            "glaze",
+            "label",
+            "o4"
+          ]
+        ]
+      },
+      "folder_list": {
+        "columns": [
+          "folder_code TEXT"
+        ],
+        "rows": [
+          [
+            "kiln"
+          ],
+          [
+            "glaze"
+          ],
+          [
+            "spare"
+          ]
+        ]
+      },
+      "stored_object": {
+        "columns": [
+          "object_id TEXT",
+          "byte_count INTEGER"
+        ],
+        "rows": [
+          [
+            "o1",
+            40
+          ],
+          [
+            "o2",
+            90
+          ],
+          [
+            "o3",
+            12
+          ],
+          [
+            "o4",
+            12
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "folder_code",
+      "names_removed",
+      "bytes_reclaimed"
+    ]
+  },
+  {
+    "task_id": "decision-measure-warranty-top-up-after-prior-service",
+    "tool": "sqlite.query",
+    "instruction": "At close, measure the unpaid provision for each unit with at least one pending repair. Each service_line belongs to one unit, whose serial_no is constant across its lines. Prior paid lines record actual warranty payments. Pending lines record approved repair costs before application of the unit's lifetime allowance. Sum each type of line separately by unit. The printed warranty cards in card_evidence define the inclusive serial ranges and lifetime caps in cents, transcribed as serial_low, serial_high and cap_cents. Each unit matches at least one card. A higher card_rank overrides a lower rank wherever their ranges overlap, and ranks are unique. The outstanding provision is pending cost limited to the unused lifetime allowance, floored at zero even if past payments exceeded the applicable cap. Include pending units with zero provision. Return unit_code, provision_cents, source_id in ascending unit_code order, citing the actual controlling card ID for each unit. There are no nulls. All amounts are nonnegative integer cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "card_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "card_rank INTEGER",
+          "serial_low INTEGER",
+          "serial_high INTEGER",
+          "cap_cents INTEGER",
+          "card_text TEXT"
+        ],
+        "rows": [
+          [
+            "BASE",
+            1,
+            100,
+            199,
+            12000,
+            "Serials 100 through 199 carry a lifetime service allowance of 12000 cents per unit."
+          ],
+          [
+            "INSERT",
+            2,
+            150,
+            179,
+            9000,
+            "For serials 150 through 179 this insert revises the lifetime allowance to 9000 cents."
+          ]
+        ]
+      },
+      "service_line": {
+        "columns": [
+          "unit_code TEXT",
+          "serial_no INTEGER",
+          "line_state TEXT",
+          "cost_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "K",
+            150,
+            "paid",
+            4000
+          ],
+          [
+            "K",
+            150,
+            "pending",
+            3500
+          ],
+          [
+            "K",
+            150,
+            "pending",
+            3000
+          ],
+          [
+            "N",
+            179,
+            "paid",
+            10000
+          ],
+          [
+            "N",
+            179,
+            "pending",
+            800
+          ],
+          [
+            "R",
+            180,
+            "pending",
+            4200
+          ],
+          [
+            "Z",
+            111,
+            "paid",
+            2000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "unit_code",
+      "provision_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-merge-sparse-asset-corrections-at-cutoff",
+    "tool": "sqlite.query",
+    "instruction": "Construct the complete contents of prop_corrections.csv for the close of catalog day 20. The scope is the assets in catalog_snapshot. Its bin_code and finish_code are the starting values, and either can be NULL. Each correction_slip is a primary record with a unique integer slip_no, an effective_day in whole catalog days, and a short slip_text describing the correction. The structured fields give the exact codes to apply. On a slip, NULL means the field was omitted, while the empty string explicitly clears that field to NULL. For each asset and each field independently, use the latest slip that mentions the field and has effective_day at most 20. On the same day, the larger slip_no wins. Keep the starting value when no eligible slip mentions the field. Emit one row only if at least one final value differs from the starting value, treating two NULLs as equal. Include both final values. For each field whose final value changed, cite its winning slip_no, including for a clear. Leave the citation NULL for a field whose final value equals its starting value. Return the CSV data rows with columns asset_code, bin_code, finish_code, bin_slip_no, finish_slip_no in that order, sorted by asset_code in ascending binary text order. SQL NULL represents a blank output cell. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "catalog_snapshot": {
+        "columns": [
+          "asset_code TEXT",
+          "bin_code TEXT",
+          "finish_code TEXT"
+        ],
+        "rows": [
+          [
+            "arch",
+            "B2",
+            "matte"
+          ],
+          [
+            "disc",
+            "D4",
+            null
+          ],
+          [
+            "plinth",
+            "P1",
+            "wax"
+          ]
+        ]
+      },
+      "correction_slip": {
+        "columns": [
+          "slip_no INTEGER",
+          "asset_code TEXT",
+          "effective_day INTEGER",
+          "bin_code TEXT",
+          "finish_code TEXT",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            41,
+            "arch",
+            18,
+            "B7",
+            null,
+            "Arch moved to bin B7."
+          ],
+          [
+            43,
+            "arch",
+            20,
+            null,
+            "satin",
+            "Arch finish checked against the satin sample."
+          ],
+          [
+            44,
+            "arch",
+            20,
+            null,
+            "",
+            "Second inspection withdrew the arch finish code."
+          ],
+          [
+            48,
+            "arch",
+            21,
+            "B9",
+            null,
+            "Arch transfer to B9 takes effect on day 21."
+          ],
+          [
+            50,
+            "disc",
+            19,
+            null,
+            "",
+            "Disc has no recorded finish."
+          ],
+          [
+            52,
+            "plinth",
+            16,
+            "P3",
+            null,
+            "Plinth transferred to P3."
+          ],
+          [
+            53,
+            "plinth",
+            20,
+            "P1",
+            null,
+            "Plinth returned to P1."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "asset_code",
+      "bin_code",
+      "finish_code",
+      "bin_slip_no",
+      "finish_slip_no"
+    ]
+  },
+  {
+    "task_id": "decision-meter-reset-production-depreciation",
+    "tool": "sqlite.query",
+    "instruction": "Calculate current-period depreciation for every line in line_basis. Costs, residuals, opening accumulated depreciation and rates are in cents, with the rate stated per unit produced. Each meter slip documents one nonoverlapping interval within this period. Use only approved slips. Readings are cumulative within a physical meter, but a replacement meter can start at any reading. Subtract the start from the end on each approved slip before combining intervals. Multiply total production by the rate and limit the charge to the remaining depreciable amount at opening. A line with no approved slip has zero production and charge. Return line_code, produced_units, charge_cents, source_ids in ascending binary line_code order. Cite every approved slip ID for the line, joined by commas in ascending binary ID order, or NULL if none. IDs contain no commas. Inputs are nonnull, readings never decrease within a slip, and opening carrying value is at least residual value. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "line_basis": {
+        "columns": [
+          "line_code TEXT",
+          "cost_cents INTEGER",
+          "residual_cents INTEGER",
+          "opening_dep INTEGER",
+          "unit_rate INTEGER"
+        ],
+        "rows": [
+          [
+            "GLAZE",
+            20000,
+            2000,
+            17600,
+            8
+          ],
+          [
+            "PRESS",
+            50000,
+            5000,
+            10000,
+            6
+          ],
+          [
+            "TRIM",
+            9500,
+            500,
+            2000,
+            3
+          ]
+        ]
+      },
+      "meter_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "line_code TEXT",
+          "start_read INTEGER",
+          "end_read INTEGER",
+          "approved INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "P9",
+            "PRESS",
+            890,
+            920,
+            1,
+            "Removed old counter at 920."
+          ],
+          [
+            "P2",
+            "PRESS",
+            10,
+            34,
+            1,
+            "Replacement counter advanced from its bench reading of 10."
+          ],
+          [
+            "G4",
+            "GLAZE",
+            300,
+            370,
+            1,
+            "Shift supervisor confirmed 70 pieces."
+          ],
+          [
+            "T1",
+            "TRIM",
+            100,
+            120,
+            0,
+            "Bench test only, excluded from production."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "line_code",
+      "produced_units",
+      "charge_cents",
+      "source_ids"
+    ]
+  }
+]

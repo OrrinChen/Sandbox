@@ -1,0 +1,316 @@
+[
+  {
+    "task_id": "decision-fund-monthly-guarantee-shortfalls-in-priority-order",
+    "tool": "sqlite.query",
+    "instruction": "Close the 2026-04 subscription royalty waterfall. Each row in guarantee_terms represents one catalog covered that month. Its earned_cents are ordinary royalties already funded outside the reserve. The floor is a guarantee on total royalties for that catalog. Use the single April reserve to cover shortfalls, processing lower pay_rank first and breaking rank ties by catalog_id in ascending binary text order. A catalog can receive a partial top-up. Ordinary royalties above one catalog's floor belong to that catalog. Report every covered catalog, including those receiving zero reserve funds. All inputs are non-null, amounts are nonnegative integer cents, catalog IDs are unique, and monthly_reserves has one row per listed month. Return catalog_id, topup_cents, payable_cents, unmet_cents in processing order. Payable includes ordinary royalties and the funded top-up. Unmet is the portion of the floor still unfunded. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "guarantee_terms": {
+        "columns": [
+          "catalog_id TEXT",
+          "pay_rank INTEGER",
+          "floor_cents INTEGER",
+          "earned_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "C",
+            2,
+            700,
+            250
+          ],
+          [
+            "A",
+            1,
+            600,
+            800
+          ],
+          [
+            "D",
+            3,
+            400,
+            320
+          ],
+          [
+            "B",
+            2,
+            500,
+            200
+          ]
+        ]
+      },
+      "monthly_reserves": {
+        "columns": [
+          "month_key TEXT",
+          "reserve_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "2026-03",
+            900
+          ],
+          [
+            "2026-04",
+            620
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "catalog_id",
+      "topup_cents",
+      "payable_cents",
+      "unmet_cents"
+    ]
+  },
+  {
+    "task_id": "decision-gallery-crate-pickup-release",
+    "tool": "sqlite.query",
+    "instruction": "Choose one indivisible pickup slot for a gallery crate. Both packing and hoist setup must be complete by the slot start, with equality allowed. Each evidence row is a primary crew note. Its ready_hour is the completion time stated in note_text, in whole hours from project start. For each of the two operations use the note with the greatest revision, even when a correction moves completion earlier. Revisions are unique within each operation. Slots list their start and arrival hours from the same origin and their total fee in cents. Arrival after hour 18 is unacceptable. Among feasible slots minimize fee, then arrival hour, then slot_id in ascending binary text order. At least one slot qualifies. All fields are non-null, and slot and source IDs are unique within their tables. Return one row with columns slot_id, fee_cents, packing_source, hoist_source. Cite the actual controlling source ID for each operation. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pickup_slot": {
+        "columns": [
+          "slot_id TEXT",
+          "start_hour INTEGER",
+          "arrival_hour INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "early",
+            9,
+            15,
+            2100
+          ],
+          [
+            "direct",
+            10,
+            16,
+            3200
+          ],
+          [
+            "pooled",
+            11,
+            18,
+            2800
+          ],
+          [
+            "late",
+            14,
+            19,
+            1900
+          ],
+          [
+            "reserve",
+            12,
+            17,
+            4000
+          ]
+        ]
+      },
+      "release_note": {
+        "columns": [
+          "source_id TEXT",
+          "operation_name TEXT",
+          "revision INTEGER",
+          "ready_hour INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "packing",
+            1,
+            12,
+            "Foam fitting puts packing completion at hour 12."
+          ],
+          [
+            "H1",
+            "hoist",
+            1,
+            7,
+            "Hoist setup finishes at hour 7."
+          ],
+          [
+            "P2",
+            "packing",
+            2,
+            8,
+            "Prefitted foam brings packing completion forward to hour 8."
+          ],
+          [
+            "H2",
+            "hoist",
+            2,
+            10,
+            "A beam adjustment delays hoist readiness to hour 10."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "slot_id",
+      "fee_cents",
+      "packing_source",
+      "hoist_source"
+    ]
+  },
+  {
+    "task_id": "decision-hold-a-pulse-for-feeder-groups",
+    "tool": "sqlite.query",
+    "instruction": "Choose one departure option for the outbound bus. All times are integer minutes after 08:00. Each feeder group needs walk_min minutes after arrival to reach the outbound bay. It connects if it is ready by departure and its wait from readiness through departure is at most max_wait_min, with both endpoints inclusive. A NULL arrival means the feeder is cancelled. Every connecting group boards in full, so reject options where connecting riders exceed the seats left after through riders. Maximize connecting riders, then minimize total rider-minutes waited by those who connect, then choose the earlier departure. Departure minutes are unique. Return the single winning row with columns depart_min, riders, rider_wait_min, source_id. Cite the seat notice attached to the winning option. The numeric seat limit transcribes its notice. All other fields are non-NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "feeder_group": {
+        "columns": [
+          "group_code TEXT",
+          "arrival_min INTEGER",
+          "walk_min INTEGER",
+          "max_wait_min INTEGER",
+          "group_size INTEGER"
+        ],
+        "rows": [
+          [
+            "ash",
+            2,
+            2,
+            4,
+            5
+          ],
+          [
+            "bay",
+            5,
+            2,
+            4,
+            4
+          ],
+          [
+            "elm",
+            8,
+            1,
+            4,
+            6
+          ],
+          [
+            "fir",
+            null,
+            1,
+            8,
+            9
+          ]
+        ]
+      },
+      "pulse_option": {
+        "columns": [
+          "depart_min INTEGER",
+          "seat_limit INTEGER",
+          "source_id TEXT",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            6,
+            10,
+            "P6",
+            "Ten seats remain on the early departure."
+          ],
+          [
+            8,
+            9,
+            "P8",
+            "Nine transfer seats remain at minute eight."
+          ],
+          [
+            10,
+            9,
+            "P10",
+            "Through bookings leave nine transfer seats."
+          ],
+          [
+            12,
+            8,
+            "P12",
+            "Eight seats remain on the late departure."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "depart_min",
+      "riders",
+      "rider_wait_min",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-incompatible-staff-height-bands",
+    "tool": "sqlite.query",
+    "instruction": "Audit every unordered pair of field slips for the same mark measured against the same datum. A slip gives a height estimate in millimetres and its own symmetric tolerance in millimetres. Treat both endpoints of each permitted height interval as included. Report a pair only if the intervals are disjoint. Give the positive distance between their nearest endpoints as gap_mm. Different datums have unrelated zeros. A NULL tolerance means the interval is unknown, so omit pairs involving that slip. Tolerances otherwise are nonnegative, source IDs are unique, and all remaining fields are non-NULL. Return mark_id, first_source, second_source, gap_mm with the smaller source ID first under BINARY ordering. Sort by descending gap_mm, then ascending mark_id, first_source, second_source. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "height_slips": {
+        "columns": [
+          "source_id TEXT",
+          "mark_id TEXT",
+          "datum_id TEXT",
+          "height_mm INTEGER",
+          "tolerance_mm INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "H1",
+            "Lip",
+            "Pad",
+            100,
+            3,
+            "Lip above pad zero reads 100 mm, within 3 mm."
+          ],
+          [
+            "H2",
+            "Lip",
+            "Pad",
+            107,
+            4,
+            "Repeat at lip reads 107 mm on pad scale, within 4 mm."
+          ],
+          [
+            "H3",
+            "Lip",
+            "Pad",
+            114,
+            1,
+            "Fine staff at lip reads 114 mm above pad, within 1 mm."
+          ],
+          [
+            "H4",
+            "Lip",
+            "Sill",
+            180,
+            1,
+            "Lip reads 180 mm from sill zero, within 1 mm."
+          ],
+          [
+            "H5",
+            "Lip",
+            "Pad",
+            160,
+            null,
+            "Lip reads 160 mm from pad. Staff rocked, bound unknown."
+          ],
+          [
+            "H6",
+            "Toe",
+            "Pad",
+            115,
+            0,
+            "Toe at 115 mm on pad scale. Treated as exact for check."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "mark_id",
+      "first_source",
+      "second_source",
+      "gap_mm"
+    ]
+  }
+]

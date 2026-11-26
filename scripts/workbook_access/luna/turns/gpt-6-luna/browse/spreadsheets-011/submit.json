@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-011",
+    "stage": "submit",
+    "prompt_sha256": "f8336b1f1ad4b0d975612d3cf15cb04b73f64d09286fb96fbe11cc41a92d08c0",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121f-b60c-70b0-b53f-e34337a57b53",
+    "raw": "{\"sheet-45063\":{\"formulas\":{\"B2\":\"=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\\\"\\\")\",\"B3\":\"=IFERROR(VLOOKUP(A3,Sheet2!$A:$B,2,FALSE),\\\"\\\")\",\"B4\":\"=IFERROR(VLOOKUP(A4,Sheet2!$A:$B,2,FALSE),\\\"\\\")\",\"B5\":\"=IFERROR(VLOOKUP(A5,Sheet2!$A:$B,2,FALSE),\\\"\\\")\",\"B6\":\"=IFERROR(VLOOKUP(A6,Sheet2!$A:$B,2,FALSE),\\\"\\\")\"}},\"sheet-45300\":{\"fills\":[{\"range\":\"B1:B4\",\"formula\":\"=IFERROR(LEFT(A1,FIND(\\\"FT\\\",A1)-1),A1)\"}],\"formulas\":{}},\"sheet-45937\":{\"formulas\":{\"E7\":\"=IFERROR(INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\\\"\\\")\",\"E8\":\"=IFERROR(INDEX($J$20:$N$22,MATCH(C8,$H$20:$H$22,1),MATCH(D8,$J$18:$N$18,0)),\\\"\\\")\",\"E9\":\"=IFERROR(INDEX($J$20:$N$22,MATCH(C9,$H$20:$H$22,1),MATCH(D9,$J$18:$N$18,0)),\\\"\\\")\"}},\"sheet-46167\":{\"formulas\":{\"D2\":\"=SUMIF(A2:A12,111111,B2:B12)\"}}}",
+    "usage": {
+      "input_tokens": 17309,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 375,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

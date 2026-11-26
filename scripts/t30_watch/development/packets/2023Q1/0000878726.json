@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000878726",
+  "issuer": "TUESDAY MORNING CORP/DE",
+  "cutoff": "2022-12-02",
+  "projected_target_start": "2023-01-01",
+  "status": "complete",
+  "period_end": "2022-10-01",
+  "filing_date": "2022-11-22",
+  "text": {
+    "sector": "retail",
+    "cik": "0000878726",
+    "issuer": "TUESDAY MORNING CORP/DE",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-11-22",
+        "text": "Net sales for the three months ended October 1, 2022 were $157.1 million, a decrease of $19.8 million or 11.2%, compared to $176.9 million for the three months ended September 30, 2021."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-11-22",
+        "text": "Comparable store sales for the three months ended October 1, 2022, decreased 10.4% due to 13.1% decrease in customer transactions offset by a 3.9% increase in average ticket primarily due to incremental inflationary pressures."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-11-22",
+        "text": "Inventory levels decreased by $16.0 million at October 1, 2022 to $132.5 million from $148.5 million at July 2, 2022."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-11-22",
+        "text": "Since the Company’s emergence from bankruptcy in December 2020, the Company’s results of operations have been negatively impacted by a variety of factors, including pandemic-related disruptions to supply chains and higher supply chain costs resulting from higher freight costs and other supply chain conditions, and reduced store traffic and sales as a result of increased fuel prices."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-11-22",
+        "text": "The COVID-19 pandemic has had an adverse effect on our business operations, store traffic, employee availability, financial conditions, results of operations, liquidity and cash flow."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-07-02",
+        "filed": "2022-09-28",
+        "reported_sales_usd": 161934000,
+        "year_ago_reported_sales_usd": 177274000,
+        "yoy_percent": "-8.6533"
+      },
+      {
+        "quarter_end": "2022-10-01",
+        "filed": "2022-11-22",
+        "reported_sales_usd": 157105000,
+        "year_ago_reported_sales_usd": 176872000,
+        "yoy_percent": "-11.1759"
+      }
+    ],
+    "status": "complete"
+  }
+}

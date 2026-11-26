@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000072333",
+  "issuer": "NORDSTROM INC",
+  "cutoff": "2022-04-01",
+  "projected_target_start": "2022-05-01",
+  "status": "complete",
+  "period_end": "2022-01-29",
+  "filing_date": "2022-03-11",
+  "text": {
+    "sector": "retail",
+    "cik": "0000072333",
+    "issuer": "NORDSTROM INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-03-11",
+        "text": "While net sales decreased 5% compared with 2019, we saw sequential improvement in sales each quarter after taking into account an approximately 200 basis point impact due to the timing shift of this year’s Anniversary Sale between the second and third quarter."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-03-11",
+        "text": "In 2021, remote selling sales volume increased 63% versus last year."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-03-11",
+        "text": "Ending inventory as of January 29, 2022 increased 23% versus a 23% increase in sales in the fourth quarter of 2021 compared with 2020."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-03-11",
+        "text": "While many retailers are dealing with macro-related supply chain disruptions, Nordstrom Rack faces a heightened challenge as off-price procurement of the same top brands we carry at Nordstrom is particularly difficult in the current environment with lower levels of clearance product."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-03-11",
+        "text": "Net cash used in investing activities increased $174 between 2021 and 2020 primarily due to increased spend for technology, the payment of the majority of our final installment related to Nordstrom NYC and our investment in ASOS.com Ltd."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-10-30",
+        "filed": "2021-12-03",
+        "reported_sales_usd": 3637000000,
+        "year_ago_reported_sales_usd": 3089000000,
+        "yoy_percent": "17.7404"
+      },
+      {
+        "quarter_end": "2022-01-29",
+        "filed": "2022-03-11",
+        "reported_sales_usd": 4486000000,
+        "year_ago_reported_sales_usd": 3645000000,
+        "yoy_percent": "23.0727"
+      }
+    ],
+    "status": "complete"
+  }
+}

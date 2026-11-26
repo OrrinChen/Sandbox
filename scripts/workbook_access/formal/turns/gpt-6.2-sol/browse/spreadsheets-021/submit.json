@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-021",
+    "stage": "submit",
+    "prompt_sha256": "545b34befa31d25b64ae5214949422bf1323ff0d019b5bd4cd62954466aa9f1e",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-7b91-7e70-8708-1e0124af72b4",
+    "raw": "{\n  \"sheet-57029\": {\n    \"fills\": [\n      {\n        \"range\": \"C1:C5\",\n        \"formula\": \"=AND(B1<>\\\"\\\",ISNUMBER(FIND(LOWER(B1),LOWER(A1))))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57105\": {\n    \"fills\": [\n      {\n        \"range\": \"C4:C15\",\n        \"formula\": \"=SUMIFS($M$4:$M$57,$L$4:$L$57,\\\">=\\\"&(EOMONTH($B4,-1)+1),$L$4:$L$57,\\\"<\\\"&(EOMONTH($B4,0)+1))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57137\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D16\",\n        \"formula\": \"=IF(COUNTIFS($A$2:$A$16,A2,$B$2:$B$16,B2,$C$2:$C$16,\\\"system\\\")>0,IF(AND(C2=\\\"system\\\",COUNTIFS($A$2:A2,A2,$B$2:B2,B2,$C$2:C2,\\\"system\\\")=1),\\\"Accepted\\\",\\\"Rejected\\\"),IF(COUNTIFS($A$2:A2,A2,$B$2:B2,B2)=1,\\\"Accepted\\\",\\\"Rejected\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57262\": {\n    \"fills\": [\n      {\n        \"range\": \"T7:T15\",\n        \"formula\": \"=E7*$Y$13+F7*$Y$14+G7*$Y$15+H7*$Y$16+I7*$Y$17+J7*$Y$18+K7*$Y$19\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 21891,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 663,
+      "reasoning_output_tokens": 246
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

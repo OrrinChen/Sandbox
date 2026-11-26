@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "a84b4d6570eca26a274e4f53083e1a4f8d6ac30e68286842a3167bcc9b8f432f",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-capacity-constrained-rebate-elections\": \"WITH candidates(election_ids, pallets_used, rebate_cents) AS (SELECT source_id, pallets, rebate_cents FROM offer_evidence WHERE pallets <= 10 UNION ALL SELECT a.source_id || ',' || b.source_id, a.pallets + b.pallets, a.rebate_cents + b.rebate_cents FROM offer_evidence AS a JOIN offer_evidence AS b ON a.source_id COLLATE BINARY < b.source_id AND a.supplier_code <> b.supplier_code WHERE a.pallets + b.pallets <= 10) SELECT election_ids, pallets_used, rebate_cents FROM candidates ORDER BY rebate_cents DESC, pallets_used ASC, election_ids COLLATE BINARY ASC LIMIT 1\",\n  \"decision-capped-vendor-credit\": \"WITH line_totals AS (SELECT order_id, SUM(MIN(affected_units * unit_credit_cents, item_cap_cents)) AS capped_sum FROM credit_items GROUP BY order_id) SELECT o.order_id, MIN(o.order_cap_cents, COALESCE(t.capped_sum, 0)) AS payable_cents FROM orders AS o LEFT JOIN line_totals AS t ON t.order_id = o.order_id ORDER BY o.order_id ASC\",\n  \"decision-catalogue-freeze-correction-trail\": \"SELECT f.edition_code, n.adoption_day, n.source_id FROM edition_freeze AS f JOIN editorial_notice AS n ON n.standard_code = f.standard_code AND n.issue_day <= f.freeze_day WHERE NOT EXISTS (SELECT 1 FROM editorial_notice AS correction WHERE correction.replaces_id = n.source_id AND correction.issue_day <= f.freeze_day) ORDER BY f.edition_code ASC\",\n  \"decision-chance-adjusted-transcription-agreement\": \"WITH counts AS (SELECT COUNT(*) AS n, SUM(left_reading = right_reading) AS matches, SUM(left_reading = 'A') AS left_a, SUM(right_reading = 'A') AS right_a FROM transcriptions), chance AS (SELECT n, matches, left_a * right_a + (n - left_a) * (n - right_a) AS expected FROM counts), fraction AS (SELECT (matches * n - expected) * 1000000 AS numerator, n * n - expected AS denominator FROM chance) SELECT (numerator + CASE WHEN numerator < 0 THEN -(denominator / 2) ELSE denominator / 2 END) / denominator AS kappa_ppm FROM fraction\"\n}",
+  "submissions": {
+    "decision-capacity-constrained-rebate-elections": "WITH candidates(election_ids, pallets_used, rebate_cents) AS (SELECT source_id, pallets, rebate_cents FROM offer_evidence WHERE pallets <= 10 UNION ALL SELECT a.source_id || ',' || b.source_id, a.pallets + b.pallets, a.rebate_cents + b.rebate_cents FROM offer_evidence AS a JOIN offer_evidence AS b ON a.source_id COLLATE BINARY < b.source_id AND a.supplier_code <> b.supplier_code WHERE a.pallets + b.pallets <= 10) SELECT election_ids, pallets_used, rebate_cents FROM candidates ORDER BY rebate_cents DESC, pallets_used ASC, election_ids COLLATE BINARY ASC LIMIT 1",
+    "decision-capped-vendor-credit": "WITH line_totals AS (SELECT order_id, SUM(MIN(affected_units * unit_credit_cents, item_cap_cents)) AS capped_sum FROM credit_items GROUP BY order_id) SELECT o.order_id, MIN(o.order_cap_cents, COALESCE(t.capped_sum, 0)) AS payable_cents FROM orders AS o LEFT JOIN line_totals AS t ON t.order_id = o.order_id ORDER BY o.order_id ASC",
+    "decision-catalogue-freeze-correction-trail": "SELECT f.edition_code, n.adoption_day, n.source_id FROM edition_freeze AS f JOIN editorial_notice AS n ON n.standard_code = f.standard_code AND n.issue_day <= f.freeze_day WHERE NOT EXISTS (SELECT 1 FROM editorial_notice AS correction WHERE correction.replaces_id = n.source_id AND correction.issue_day <= f.freeze_day) ORDER BY f.edition_code ASC",
+    "decision-chance-adjusted-transcription-agreement": "WITH counts AS (SELECT COUNT(*) AS n, SUM(left_reading = right_reading) AS matches, SUM(left_reading = 'A') AS left_a, SUM(right_reading = 'A') AS right_a FROM transcriptions), chance AS (SELECT n, matches, left_a * right_a + (n - left_a) * (n - right_a) AS expected FROM counts), fraction AS (SELECT (matches * n - expected) * 1000000 AS numerator, n * n - expected AS denominator FROM chance) SELECT (numerator + CASE WHEN numerator < 0 THEN -(denominator / 2) ELSE denominator / 2 END) / denominator AS kappa_ppm FROM fraction"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-4510-70e1-8df4-9d1573a6291e",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22607,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 521,
+    "reasoning_output_tokens": 0
+  }
+}

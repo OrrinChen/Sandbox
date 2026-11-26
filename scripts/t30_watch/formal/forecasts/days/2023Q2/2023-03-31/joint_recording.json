@@ -1,0 +1,42 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25491,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 308,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-04e1-7453-b074-db0db65b07c2",
+  "packet_sha256": "7ff436b40afe4da55ccbc998cc335188c4b8b6a5d893402779e8387d7f718d91",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q2/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000897429\",\n          \"reason\": \"Quarterly net sales growth slowed from 14.26% to 5.60%. A further slowdown of the same size would put the intervening quarter near -3.1%, still above -5.00%. Fiscal 2022 net sales grew 18.3% (A), leaving a strong prior-year comparison. I forecast that growth falls to -5.00% or below in the quarter starting April 30.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q2/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000072333\",\n          \"reason\": \"Quarterly net sales growth slipped from -2.50% to -3.72%. Another 1.22 percentage-point drop would leave the intervening quarter near -4.94%, just above the threshold. Demand weakened through the holidays (B), and markdowns exceeded plan (C). I forecast that continued demand weakness takes net sales growth to -5.00% or below in the quarter starting April 30.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q2/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000897429",
+            "reason": "Quarterly net sales growth slowed from 14.26% to 5.60%. A further slowdown of the same size would put the intervening quarter near -3.1%, still above -5.00%. Fiscal 2022 net sales grew 18.3% (A), leaving a strong prior-year comparison. I forecast that growth falls to -5.00% or below in the quarter starting April 30."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/retail-2",
+        "alerts": [
+          {
+            "cik": "0000072333",
+            "reason": "Quarterly net sales growth slipped from -2.50% to -3.72%. Another 1.22 percentage-point drop would leave the intervening quarter near -4.94%, just above the threshold. Demand weakened through the holidays (B), and markdowns exceeded plan (C). I forecast that continued demand weakness takes net sales growth to -5.00% or below in the quarter starting April 30."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

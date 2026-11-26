@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22989,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 216,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8c-a6bf-77c1-9642-c269cd601f41",
+  "packet_sha256": "a29359fd756b38b8a13af76a6691850920fbab23e556d685edd489638c6f4656",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q2/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000802481\",\n          \"reason\": \"Reported net sales growth slowed from 16.76% year over year in September to 2.19% in December. The volume recovery described in B supports a forecast that March stays above -5.00%. Rapidly rising cold-storage inventories and commodity chicken prices near the low end of their five-year range (C) point to sustained pricing pressure. I forecast that consolidated net sales first fall at least 5.00% year over year in the quarter starting March 27.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q2/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q2/semiconductors-2\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000802481",
+            "reason": "Reported net sales growth slowed from 16.76% year over year in September to 2.19% in December. The volume recovery described in B supports a forecast that March stays above -5.00%. Rapidly rising cold-storage inventories and commodity chicken prices near the low end of their five-year range (C) point to sustained pricing pressure. I forecast that consolidated net sales first fall at least 5.00% year over year in the quarter starting March 27."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

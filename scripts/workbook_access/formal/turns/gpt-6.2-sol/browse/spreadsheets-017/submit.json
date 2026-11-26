@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-017",
+    "stage": "submit",
+    "prompt_sha256": "8f4d4ef2275e23f90cc494e1a4e7fdb300f85a10fb141e4c79893fd2f63cb25f",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d9-4ca9-7441-8814-80669556ddd0",
+    "raw": "{\n  \"sheet-52220\": {\n    \"fills\": [\n      {\"range\": \"C2:C3\", \"formula\": \"=IF(AND(A2<>\\\"\\\",B2<>\\\"\\\"),A2+B2,\\\"\\\")\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-52233\": {\n    \"fills\": [\n      {\"range\": \"B7:B10\", \"formula\": \"=SUM(INDEX($B$3:$Z$5,0,MATCH(A7,$B$2:$Z$2,0)))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-52532\": {\n    \"fills\": [\n      {\"range\": \"H2:H8\", \"formula\": \"=AND(ISNUMBER(B2),B2=MAX(B$2:B$8))+AND(ISNUMBER(C2),C2=MAX(C$2:C$8))+AND(ISNUMBER(D2),D2=MAX(D$2:D$8))+AND(ISNUMBER(E2),E2=MAX(E$2:E$8))+AND(ISNUMBER(F2),F2=MAX(F$2:F$8))+AND(ISNUMBER(G2),G2=MAX(G$2:G$8))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-52917\": {\n    \"fills\": [\n      {\"range\": \"J2:J9\", \"formula\": \"=DATE(C2,B2,A2)\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 18913,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 382,
+      "reasoning_output_tokens": 63
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

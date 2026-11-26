@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-011",
+    "stage": "inspect-2",
+    "prompt_sha256": "5cccbc414ed03118e928b028cfbf67465f70d8356d1fab2169877e8331aeb9de",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211ed-7774-7992-a4b9-8e10e22ddc8d",
+    "raw": "{\"sheet-45063\":[],\"sheet-45300\":[],\"sheet-45937\":[],\"sheet-46167\":[]}",
+    "usage": {
+      "input_tokens": 17501,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 49,
+      "reasoning_output_tokens": 18
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

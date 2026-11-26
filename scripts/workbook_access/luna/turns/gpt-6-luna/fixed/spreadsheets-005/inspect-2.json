@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-005",
+    "stage": "inspect-2",
+    "prompt_sha256": "38e8898d9830833dae579bbc16057c42700f75372988a59fe3823952adeb3193",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121d-60ea-7e92-bbb6-51b955de8ed3",
+    "raw": "{\"sheet-37554\":[],\"sheet-37609\":[],\"sheet-37615\":[{\"op\":\"range\",\"sheet\":\"Example\",\"range\":\"D6:F15\"}],\"sheet-38462\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C2\"}]}",
+    "usage": {
+      "input_tokens": 55984,
+      "cached_input_tokens": 18176,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 831,
+      "reasoning_output_tokens": 716
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

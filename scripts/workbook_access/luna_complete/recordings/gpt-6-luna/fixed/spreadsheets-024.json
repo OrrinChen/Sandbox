@@ -1,0 +1,503 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "b4e7944046237f6b550bfe1db98551f827dbe93741fd91e420f55edc0a56a3b6",
+    "861ee34fbe37c2f2107c126f58952fef669428dd99362bc324cacdb72a08104d",
+    "668fd334d3284662701eec5be3f2d1dc34de78a40770b480ef683e06b5f0500c"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59639",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D5:K7",
+            "formula": "=IFERROR(MID($A5,COLUMN()-3,1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:K7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:K7",
+            "range_size": 44,
+            "cells": [
+              [
+                "A4",
+                "abcdefgh"
+              ],
+              [
+                "D4",
+                "a"
+              ],
+              [
+                "E4",
+                "b"
+              ],
+              [
+                "F4",
+                "c"
+              ],
+              [
+                "G4",
+                "d"
+              ],
+              [
+                "H4",
+                "e"
+              ],
+              [
+                "I4",
+                "f"
+              ],
+              [
+                "J4",
+                "g"
+              ],
+              [
+                "K4",
+                "h"
+              ],
+              [
+                "A5",
+                "ABCDEFGH"
+              ],
+              [
+                "A6",
+                "pqrst"
+              ],
+              [
+                "A7",
+                "xyz"
+              ]
+            ],
+            "total": 12,
+            "truncated": false,
+            "blank_count": 32
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 75213,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2246,
+        "reasoning_output_tokens": 1667
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59794",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:M5",
+            "formula": "=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-2))+1,FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-2))-1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "A1:M5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "A1:M5",
+            "range_size": 65,
+            "cells": [
+              [
+                "A1",
+                "EXAMPLE OF WHAT WHAT INFORMATION I CURRENTLY HAVE*"
+              ],
+              [
+                "C1",
+                "FINAL INFORMATION - EXAMPLE OF WHAT INFORMATION I WOULD LIKE TO HAVE*"
+              ],
+              [
+                "A2",
+                "INITIAL INFORMATION Column1"
+              ],
+              [
+                "C2",
+                "Column1"
+              ],
+              [
+                "D2",
+                "Column2"
+              ],
+              [
+                "E2",
+                "Column3"
+              ],
+              [
+                "F2",
+                "Column4"
+              ],
+              [
+                "G2",
+                "Column5"
+              ],
+              [
+                "H2",
+                "Column6"
+              ],
+              [
+                "I2",
+                "Column7"
+              ],
+              [
+                "J2",
+                "Column8"
+              ],
+              [
+                "K2",
+                "Column9"
+              ],
+              [
+                "A3",
+                "WORD1XXXX/WORD2/WORD3/WORD4/-/-/WORD5/WORD6XX/-/-/2019 - 2020"
+              ],
+              [
+                "C3",
+                "WORD1XXXX"
+              ],
+              [
+                "D3",
+                "WORD2"
+              ],
+              [
+                "E3",
+                "WORD3"
+              ],
+              [
+                "A4",
+                "WORD1XXXX/WORD2/WORD3XXX/WORD4/-/-/WORD5/WORD6/-/-/2019 - 2020"
+              ],
+              [
+                "C4",
+                "WORD1XXXX"
+              ],
+              [
+                "D4",
+                "WORD2"
+              ],
+              [
+                "E4",
+                "WORD3XXX"
+              ],
+              [
+                "A5",
+                "WORD1/WORD2/WORD3/WORD4/-/-/WORD5XXX/WORD6/-/-/2019 - 2020"
+              ],
+              [
+                "C5",
+                "WORD1"
+              ],
+              [
+                "D5",
+                "WORD2"
+              ],
+              [
+                "E5",
+                "WORD3"
+              ]
+            ],
+            "total": 24,
+            "truncated": false,
+            "blank_count": 41
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "L2:M5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "L2:M5",
+            "range_size": 8,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 8
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 75213,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2246,
+        "reasoning_output_tokens": 1667
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-7902",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:J6",
+            "formula": "=IF($B3=\"\",VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE),IFERROR(VLOOKUP($B3,Grouping!$B$2:$I$7,COLUMN()-1,FALSE),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B2:J6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B2:J6",
+            "range_size": 45,
+            "cells": [
+              [
+                "B2",
+                "Material"
+              ],
+              [
+                "C2",
+                "Main Group"
+              ],
+              [
+                "D2",
+                "0 to 6 Month"
+              ],
+              [
+                "E2",
+                "6 Month to 1 Year"
+              ],
+              [
+                "F2",
+                "1 to 2 Year"
+              ],
+              [
+                "G2",
+                "2 to 3 Year"
+              ],
+              [
+                "H2",
+                "3 to 4 Year"
+              ],
+              [
+                "I2",
+                "4 to 5 Year"
+              ],
+              [
+                "J2",
+                "More than 5 Year"
+              ],
+              [
+                "C3",
+                "Group A"
+              ],
+              [
+                "D3",
+                "0"
+              ],
+              [
+                "E3",
+                "0"
+              ],
+              [
+                "F3",
+                "0.5"
+              ],
+              [
+                "G3",
+                "0.5"
+              ],
+              [
+                "B4",
+                "Material X"
+              ],
+              [
+                "C4",
+                "Group B"
+              ],
+              [
+                "D4",
+                "0.12"
+              ],
+              [
+                "E4",
+                "0.13"
+              ],
+              [
+                "F4",
+                "0.5"
+              ],
+              [
+                "G4",
+                "0.5"
+              ],
+              [
+                "C5",
+                "Group C"
+              ],
+              [
+                "D5",
+                "0.05"
+              ],
+              [
+                "E5",
+                "0.1"
+              ],
+              [
+                "F5",
+                "0.1"
+              ],
+              [
+                "G5",
+                "0.1"
+              ],
+              [
+                "B6",
+                "Material Z"
+              ],
+              [
+                "C6",
+                "Group D"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "0.1"
+              ],
+              [
+                "G6",
+                "0.1"
+              ]
+            ],
+            "total": 31,
+            "truncated": false,
+            "blank_count": 14
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "H3:J6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "H3:J6",
+            "range_size": 12,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 12
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 75213,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2246,
+        "reasoning_output_tokens": 1667
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-9111",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D7",
+            "formula": "=IF(AND(B2=\"\",C2=\"\"),\"\",IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 75213,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2246,
+        "reasoning_output_tokens": 1667
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "ea2b42e60552a8e6a100aa278ee6802586977be36021ad37cde0128db262fe3a",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-grade-school\": \"class School:\\n    def __init__(self):\\n        self.db = {}\\n        self.add = []\\n\\n    def added(self):\\n        result = self.add\\n        self.add = []\\n        return result\\n\\n    def add_student(self, name, grade):\\n        if name in self.db:\\n            self.add.append(False)\\n            return\\n        self.db[name] = grade\\n        self.add.append(True)\\n\\n    def roster(self, grade=None):\\n        if grade is not None:\\n            return self.grade(grade)\\n        return sorted(self.db, key=lambda name: (self.db[name], name))\\n\\n    def grade(self, grade_number):\\n        return sorted(name for name, grade in self.db.items() if grade == grade_number)\\n\",\n  \"repair-grains\": \"def square(number):\\n    if not 1 <= number <= 64:\\n        raise ValueError('square must be between 1 and 64')\\n    return 2 ** (number - 1)\\n\\n\\ndef total():\\n    return 2 ** 64 - 1\\n\",\n  \"repair-high-scores\": \"class HighScores:\\n    def __init__(self, scores):\\n        self.scores = scores\\n\\n    def latest(self):\\n        return self.scores[-1]\\n\\n    def personal_best(self):\\n        return max(self.scores)\\n\\n    def personal_top_three(self):\\n        return sorted(self.scores, reverse=True)[:3]\\n\",\n  \"repair-isbn-verifier\": \"def is_valid(isbn):\\n    chars = isbn.replace('-', '')\\n    digits = '0123456789'\\n    if len(chars) != 10 or any(char not in digits for char in chars[:9]):\\n        return False\\n    if chars[-1] not in digits + 'X':\\n        return False\\n    check = 10 if chars[-1] == 'X' else int(chars[-1])\\n    total = sum(int(char) * (10 - index) for index, char in enumerate(chars[:9]))\\n    return (total + check) % 11 == 0\\n\"\n}",
+  "submissions": {
+    "repair-grade-school": "class School:\n    def __init__(self):\n        self.db = {}\n        self.add = []\n\n    def added(self):\n        result = self.add\n        self.add = []\n        return result\n\n    def add_student(self, name, grade):\n        if name in self.db:\n            self.add.append(False)\n            return\n        self.db[name] = grade\n        self.add.append(True)\n\n    def roster(self, grade=None):\n        if grade is not None:\n            return self.grade(grade)\n        return sorted(self.db, key=lambda name: (self.db[name], name))\n\n    def grade(self, grade_number):\n        return sorted(name for name, grade in self.db.items() if grade == grade_number)\n",
+    "repair-grains": "def square(number):\n    if not 1 <= number <= 64:\n        raise ValueError('square must be between 1 and 64')\n    return 2 ** (number - 1)\n\n\ndef total():\n    return 2 ** 64 - 1\n",
+    "repair-high-scores": "class HighScores:\n    def __init__(self, scores):\n        self.scores = scores\n\n    def latest(self):\n        return self.scores[-1]\n\n    def personal_best(self):\n        return max(self.scores)\n\n    def personal_top_three(self):\n        return sorted(self.scores, reverse=True)[:3]\n",
+    "repair-isbn-verifier": "def is_valid(isbn):\n    chars = isbn.replace('-', '')\n    digits = '0123456789'\n    if len(chars) != 10 or any(char not in digits for char in chars[:9]):\n        return False\n    if chars[-1] not in digits + 'X':\n        return False\n    check = 10 if chars[-1] == 'X' else int(chars[-1])\n    total = sum(int(char) * (10 - index) for index, char in enumerate(chars[:9]))\n    return (total + check) % 11 == 0\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-9aff-7c63-b121-e30554e54432",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 23368,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 495,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "tool": "sqlite.query",
+    "task": "decision-bounded-remainder-barcode",
+    "policy": "direct",
+    "recording": "recordings/direct/relational-012.json",
+    "difference": {
+      "input": "public",
+      "expected": [
+        [
+          "amber",
+          8
+        ]
+      ],
+      "obtained": [
+        [
+          "amber",
+          8
+        ],
+        [
+          "mint",
+          0
+        ]
+      ],
+      "expected_rows": 1,
+      "obtained_rows": 2
+    }
+  },
+  {
+    "tool": "spreadsheet.edit_formulas",
+    "task": "sheet-34033",
+    "policy": "direct",
+    "recording": "recordings/direct/spreadsheets-002.json",
+    "difference": {
+      "input": "gold",
+      "cell": "K10",
+      "formula": "=IFERROR(INDEX($C$3:$E$13,MATCH(1,INDEX(($B$3:$B$13=H10)*($A$3:$A$13=MAXIFS($A$3:$A$13,$B$3:$B$13,H10,$A$3:$A$13,\"<=\"&J10)),0),0),MATCH(I10,$C$1:$E$1,0)),\"\")",
+      "obtained": null,
+      "expected": [
+        "n",
+        "95"
+      ]
+    }
+  }
+]

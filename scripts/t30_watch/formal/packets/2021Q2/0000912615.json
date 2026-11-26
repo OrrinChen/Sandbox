@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000912615",
+  "issuer": "URBAN OUTFITTERS INC",
+  "cutoff": "2021-04-01",
+  "projected_target_start": "2021-05-01",
+  "status": "complete",
+  "period_end": "2021-01-31",
+  "filing_date": "2021-04-01",
+  "text": {
+    "sector": "retail",
+    "cik": "0000912615",
+    "issuer": "URBAN OUTFITTERS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-04-01",
+        "text": "The Company did not remove stores that were closed due to the COVID-19 pandemic from the comparable stores net sales calculations."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-04-01",
+        "text": "However, during the fourth quarter of fiscal 2021 and into the first quarter of fiscal 2022, our store operations have been impacted by temporary store closures, primarily in Europe, and reduced customer traffic in reopened store locations globally due in part to local government guidelines that have imposed certain operating restrictions, including capacity limits."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-04-01",
+        "text": "The Company assessed the value of its inventory in the Retail and Wholesale segments and recorded an increase in inventory obsolescence reserves during the first quarter of fiscal 2021, and as a result of disciplined inventory control and better than planned product performance, during the remainder of fiscal 2021, the Company decreased a portion of its inventory obsolescence reserves."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-04-01",
+        "text": "Benefits related to the programs implemented by the U.K. and other European countries were recorded as an offset to store occupancy expenses in cost of sales during fiscal 2021."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-04-01",
+        "text": "Income from operations was 0.1% of net sales, or $4.0 million, for fiscal 2021 compared to 5.8% of net sales, or $231.9 million, for fiscal 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-10-31",
+        "filed": "2020-12-10",
+        "reported_sales_usd": 969607000,
+        "year_ago_reported_sales_usd": 987469000,
+        "yoy_percent": "-1.8089"
+      },
+      {
+        "quarter_end": "2021-01-31",
+        "filed": "2021-04-01",
+        "reported_sales_usd": 1088393000,
+        "year_ago_reported_sales_usd": 1169578000,
+        "yoy_percent": "-6.9414"
+      }
+    ],
+    "status": "complete"
+  }
+}

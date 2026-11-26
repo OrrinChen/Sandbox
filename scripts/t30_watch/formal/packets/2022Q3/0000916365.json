@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000916365",
+  "issuer": "TRACTOR SUPPLY CO /DE/",
+  "cutoff": "2022-05-27",
+  "projected_target_start": "2022-06-26",
+  "status": "complete",
+  "period_end": "2022-03-26",
+  "filing_date": "2022-05-05",
+  "text": {
+    "sector": "retail",
+    "cik": "0000916365",
+    "issuer": "TRACTOR SUPPLY CO /DE/",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q TRACTOR SUPPLY COMPANY",
+        "date": "2022-05-05",
+        "text": "Net sales for the first quarter of fiscal 2022 increased 8.3% to $3.02 billion from $2.79 billion for the first quarter of fiscal 2021."
+      },
+      {
+        "id": "B",
+        "title": "10-Q TRACTOR SUPPLY COMPANY",
+        "date": "2022-05-05",
+        "text": "Comparable store sales for the first quarter of fiscal 2022 were $2.94 billion, a 5.2% increase as compared to the first quarter of fiscal 2021."
+      },
+      {
+        "id": "C",
+        "title": "10-Q TRACTOR SUPPLY COMPANY",
+        "date": "2022-05-05",
+        "text": "We usually experience our highest inventory and accounts payable balances during our first fiscal quarter for purchases of seasonal products to support the higher sales volume of the spring selling season, and again during our third fiscal quarter to support the higher sales volume of the cold weather selling season."
+      },
+      {
+        "id": "D",
+        "title": "10-Q TRACTOR SUPPLY COMPANY",
+        "date": "2022-05-05",
+        "text": "As a percent of net sales, gross margin in the first quarter of fiscal 2022 decreased 29 basis points to 34.9% from 35.2%"
+      },
+      {
+        "id": "E",
+        "title": "10-Q TRACTOR SUPPLY COMPANY",
+        "date": "2022-05-05",
+        "text": "Operating income for the first quarter of fiscal 2022 increased 6.0% to $244.3 million compared to $230.5 million in the first quarter of fiscal 2021."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-12-25",
+        "filed": "2022-02-17",
+        "reported_sales_usd": 3319284000,
+        "year_ago_reported_sales_usd": 2878265000,
+        "yoy_percent": "15.3224"
+      },
+      {
+        "quarter_end": "2022-03-26",
+        "filed": "2022-05-05",
+        "reported_sales_usd": 3024132000,
+        "year_ago_reported_sales_usd": 2792336000,
+        "yoy_percent": "8.3012"
+      }
+    ],
+    "status": "complete"
+  }
+}

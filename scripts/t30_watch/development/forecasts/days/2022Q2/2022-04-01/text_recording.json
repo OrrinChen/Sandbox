@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22189,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 202,
+    "reasoning_output_tokens": 9
+  },
+  "thread": "01a20d7d-6c28-78d0-92e0-2d401ed624ad",
+  "packet_sha256": "b93b33b888c0a25415ef92140b7cb7f5f540bc475e25e1f6efda2a1641753a37",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q2/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q2/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000018255\",\n          \"reason\": \"Cato attributed its 34.2% fiscal 2021 retail sales rebound partly to stimulus, reopening and renewed demand for social and work clothing (A, B). I expect the quarter beginning May 1 to face a tougher reopening comparison than the preceding quarter. With inflation also threatening customers’ disposable income (D), I forecast year-over-year sales growth above -5% in the preceding quarter and at or below -5% in the target quarter. The timing is inferred from annual figures.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Cato attributed its 34.2% fiscal 2021 retail sales rebound partly to stimulus, reopening and renewed demand for social and work clothing (A, B). I expect the quarter beginning May 1 to face a tougher reopening comparison than the preceding quarter. With inflation also threatening customers’ disposable income (D), I forecast year-over-year sales growth above -5% in the preceding quarter and at or below -5% in the target quarter. The timing is inferred from annual figures."
+          }
+        ]
+      }
+    ]
+  }
+}

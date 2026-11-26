@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24545,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 171,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-00bb-72f1-8d20-8caa4981c7f2",
+  "packet_sha256": "2f4891ff014c542a5177ef307ea70e94d43a6328b13101cee81fca195a41dcb3",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2024Q1/retail-1\",\"alerts\":[{\"cik\":\"0000897429\",\"reason\":\"Chico’s Q3 net sales fell 2.5% year over year, with comparable sales down 2.7% (A, B). Inventory rose 12.7% year over year (C), raising the risk that markdowns will weigh on selling prices. I forecast a Q4 net sales decline of less than 5%, followed by a decline of at least 5% in the target Q1. The timing is uncertain because Q4 sales were undisclosed.\"}]},{\"sector\":\"2024Q1/retail-2\",\"alerts\":[]},{\"sector\":\"2024Q1/retail-3\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q1/retail-1",
+        "alerts": [
+          {
+            "cik": "0000897429",
+            "reason": "Chico’s Q3 net sales fell 2.5% year over year, with comparable sales down 2.7% (A, B). Inventory rose 12.7% year over year (C), raising the risk that markdowns will weigh on selling prices. I forecast a Q4 net sales decline of less than 5%, followed by a decline of at least 5% in the target Q1. The timing is uncertain because Q4 sales were undisclosed."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "39b7e782344bc8e0a5e3c9a752cef6c0a18d919721e0bb3a3377dcd829c03481",
+    "27eedd58eb9a927c3a67aaafc4ec2a853720fc1c4139b59093ccfc337acd69ae",
+    "af9587216cde5999c985a518b90d340c49ee2744d5ded9023d2da75e19585838"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-55260",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "formulas": {
+          "C1": "=IF(MOD(B1,5)<=2.5,FLOOR.MATH(B1,5),CEILING.MATH(B1,5))",
+          "C2": "=IF(MOD(B2,5)<=2.5,FLOOR.MATH(B2,5),CEILING.MATH(B2,5))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61369,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 757,
+        "reasoning_output_tokens": 247
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55535",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "A1:A17",
+            "formula": "=IF(B1=\"\",\"\",\"KC-GPGY-\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,\"?*\"),\"0000\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B17",
+            "range_size": 34,
+            "cells": [
+              [
+                "A1",
+                "KC-GPGY-210001"
+              ],
+              [
+                "B1",
+                "21BC000104"
+              ],
+              [
+                "A2",
+                "KC-GPGY-210002"
+              ],
+              [
+                "B2",
+                "21BC001005"
+              ],
+              [
+                "A3",
+                "KC-GPGY-210003"
+              ],
+              [
+                "B3",
+                "21BC004573"
+              ],
+              [
+                "A4",
+                "KC-GPGY-210004"
+              ],
+              [
+                "B4",
+                "21BC005500"
+              ],
+              [
+                "A5",
+                "KC-GPGY-200005"
+              ],
+              [
+                "B5",
+                "20BC007572"
+              ],
+              [
+                "A6",
+                "KC-GPGY-210006"
+              ],
+              [
+                "B6",
+                "21BC006000"
+              ],
+              [
+                "A7",
+                "KC-GPGY-210007"
+              ],
+              [
+                "B7",
+                "21BC008759"
+              ],
+              [
+                "A8",
+                "KC-GPGY-210008"
+              ],
+              [
+                "B8",
+                "21BC009145"
+              ],
+              [
+                "B9",
+                "20BC010010"
+              ],
+              [
+                "B10",
+                "21BC009200"
+              ],
+              [
+                "B11",
+                "21BC009578"
+              ],
+              [
+                "B12",
+                "21BC009912"
+              ],
+              [
+                "B13",
+                "20BC006824"
+              ],
+              [
+                "B14",
+                "20BC003482"
+              ],
+              [
+                "B15",
+                "20BC010425"
+              ],
+              [
+                "B16",
+                "20BC010987"
+              ],
+              [
+                "B17",
+                "20BC011234"
+              ]
+            ],
+            "total": 25,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61369,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 757,
+        "reasoning_output_tokens": 247
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55609",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:M8",
+            "formula": "=INDEX($D12:$M12,1,MATCH(D$2,$D$11:$M$11,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61369,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 757,
+        "reasoning_output_tokens": 247
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56427",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:S28",
+            "formula": "=IF(AND($B2=1,COLUMNS($H2:H2)<=$C2),IF(INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)=\"\",\"\",INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "B12:G28"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "B12:G28",
+            "range_size": 102,
+            "cells": [
+              [
+                "B12",
+                "6"
+              ],
+              [
+                "G12",
+                "11.6"
+              ],
+              [
+                "B13",
+                "7"
+              ],
+              [
+                "B14",
+                "8"
+              ],
+              [
+                "G14",
+                "50.1"
+              ],
+              [
+                "B15",
+                "1"
+              ],
+              [
+                "C15",
+                "14"
+              ],
+              [
+                "D15",
+                "8"
+              ],
+              [
+                "E15",
+                "1200m"
+              ],
+              [
+                "F15",
+                "5 - 3 - 7 - 8"
+              ],
+              [
+                "G15",
+                "8.0"
+              ],
+              [
+                "B16",
+                "2"
+              ],
+              [
+                "B17",
+                "3"
+              ],
+              [
+                "G17",
+                "9.9"
+              ],
+              [
+                "B18",
+                "4"
+              ],
+              [
+                "G18",
+                "46.3"
+              ],
+              [
+                "B19",
+                "5"
+              ],
+              [
+                "G19",
+                "1.6"
+              ],
+              [
+                "B20",
+                "6"
+              ],
+              [
+                "B21",
+                "7"
+              ],
+              [
+                "G21",
+                "35.9"
+              ],
+              [
+                "B22",
+                "8"
+              ],
+              [
+                "G22",
+                "13.7"
+              ],
+              [
+                "B23",
+                "9"
+              ],
+              [
+                "G23",
+                "5.6"
+              ],
+              [
+                "B24",
+                "10"
+              ],
+              [
+                "B25",
+                "11"
+              ],
+              [
+                "G25",
+                "31.7"
+              ],
+              [
+                "B26",
+                "12"
+              ],
+              [
+                "B27",
+                "13"
+              ],
+              [
+                "B28",
+                "14"
+              ]
+            ],
+            "total": 31,
+            "truncated": false,
+            "blank_count": 71
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:U15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:U15",
+            "range_size": 196,
+            "cells": [
+              [
+                "H2",
+                "1.3"
+              ],
+              [
+                "I2",
+                "5.5"
+              ],
+              [
+                "J2",
+                "21.5"
+              ],
+              [
+                "K2",
+                "5.5"
+              ],
+              [
+                "L2",
+                "28.4"
+              ],
+              [
+                "H7",
+                "11.4"
+              ],
+              [
+                "I7",
+                "7.8"
+              ],
+              [
+                "J7",
+                "1.6"
+              ],
+              [
+                "K7",
+                "4.7"
+              ],
+              [
+                "L7",
+                "60.2"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 186
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 61369,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 757,
+        "reasoning_output_tokens": 247
+      },
+      "model_calls": 3
+    }
+  ]
+}

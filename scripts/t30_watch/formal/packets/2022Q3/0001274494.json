@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "semiconductors-2",
+  "sector": "semiconductors",
+  "cik": "0001274494",
+  "issuer": "FIRST SOLAR, INC.",
+  "cutoff": "2022-06-01",
+  "projected_target_start": "2022-07-01",
+  "status": "complete",
+  "period_end": "2022-03-31",
+  "filing_date": "2022-04-29",
+  "text": {
+    "sector": "semiconductors",
+    "cik": "0001274494",
+    "issuer": "FIRST SOLAR, INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "FORM 10-Q",
+        "date": "2022-04-29",
+        "text": "•Net sales for the three months ended March 31, 2022 decreased by 54% to $367.0 million compared to $803.4 million for the same period in 2021."
+      },
+      {
+        "id": "B",
+        "title": "FORM 10-Q",
+        "date": "2022-04-29",
+        "text": "For example, the price of polysilicon has significantly increased in recent months, reaching its highest level in the last 10 years due to higher energy prices and reduced operating capacities of silicon metal production in China and rising global demand for polysilicon."
+      },
+      {
+        "id": "C",
+        "title": "FORM 10-Q",
+        "date": "2022-04-29",
+        "text": "•Gross profit for the three months ended March 31, 2022 decreased 19.9 percentage points to 3.1% from 23.0% for the same period in 2021."
+      },
+      {
+        "id": "D",
+        "title": "FORM 10-Q",
+        "date": "2022-04-29",
+        "text": "The decrease was primarily driven by sales of certain projects in the United States in the prior period, a decrease in the volume of modules sold to third parties, and a lower average selling price per watt."
+      },
+      {
+        "id": "E",
+        "title": "FORM 10-Q",
+        "date": "2022-04-29",
+        "text": "The decrease in net cash used in operating activities was primarily driven by higher cash receipts from module sales and higher operating expenditures in the prior period, partially offset by certain advance payments for raw materials in the current period."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-03-01",
+        "reported_sales_usd": 907319000,
+        "year_ago_reported_sales_usd": 609232000,
+        "yoy_percent": "48.9283"
+      },
+      {
+        "quarter_end": "2022-03-31",
+        "filed": "2022-04-29",
+        "reported_sales_usd": 367040000,
+        "year_ago_reported_sales_usd": 803374000,
+        "yoy_percent": "-54.3127"
+      }
+    ],
+    "status": "complete"
+  }
+}

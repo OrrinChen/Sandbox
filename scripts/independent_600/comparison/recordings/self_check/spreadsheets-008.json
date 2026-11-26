@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "b2f8de51930220cf3ac3883e889dda5dfa8ba558ad1f3d8421e7c26efe79942c",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-41680\": {\n    \"fills\": [\n      {\"range\": \"F2:F18\", \"formula\": \"=IF(LEFT(E2,1)=\\\" \\\",REPLACE(E2,1,1,\\\"\\\"),E2&\\\"\\\")\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-41969\": {\n    \"fills\": [\n      {\"range\": \"A6:C6\", \"formula\": \"=COUNTBLANK(OFFSET($A$3,0,3*(COLUMN()-COLUMN($A$6)),1,3))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-42515\": {\n    \"fills\": [\n      {\"range\": \"F5:F19\", \"formula\": \"=B5/SUMIFS($B$5:$B$19,$A$5:$A$19,\\\"GBP-EUR\\\",$C$5:$C$19,G5)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-42526\": {\n    \"fills\": [\n      {\"range\": \"B2:B16\", \"formula\": \"=IF(A2=0,0,ROUND(5*A2/IF(A2>0,MAX($A$2:$A$16),ABS(MIN($A$2:$A$16))),11))\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-41680": {
+      "fills": [
+        {
+          "range": "F2:F18",
+          "formula": "=IF(LEFT(E2,1)=\" \",REPLACE(E2,1,1,\"\"),E2&\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-41969": {
+      "fills": [
+        {
+          "range": "A6:C6",
+          "formula": "=COUNTBLANK(OFFSET($A$3,0,3*(COLUMN()-COLUMN($A$6)),1,3))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-42515": {
+      "fills": [
+        {
+          "range": "F5:F19",
+          "formula": "=B5/SUMIFS($B$5:$B$19,$A$5:$A$19,\"GBP-EUR\",$C$5:$C$19,G5)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-42526": {
+      "fills": [
+        {
+          "range": "B2:B16",
+          "formula": "=IF(A2=0,0,ROUND(5*A2/IF(A2>0,MAX($A$2:$A$16),ABS(MIN($A$2:$A$16))),11))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-1912-7cb2-818b-f30bffc8c841",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 24845,
+    "cached_input_tokens": 18816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 292,
+    "reasoning_output_tokens": 0
+  }
+}

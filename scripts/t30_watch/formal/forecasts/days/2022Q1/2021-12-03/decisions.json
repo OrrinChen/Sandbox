@@ -1,0 +1,82 @@
+{
+  "text": [
+    {
+      "sector": "2022Q1/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2022Q1/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2022Q1/food_manufacturing-2",
+      "alerts": [
+        {
+          "cik": "0000100493",
+          "reason": "Reported sales YoY 24.51% then 11.79%. Target is step 2; preceding -0.93% versus target -13.65%."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-2",
+      "alerts": [
+        {
+          "cik": "0000067887",
+          "reason": "Reported sales YoY 7.58% then 2.46%. Target is step 2; preceding -2.66% versus target -7.77%."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

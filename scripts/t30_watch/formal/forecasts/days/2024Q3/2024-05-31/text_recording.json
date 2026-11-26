@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24711,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 252,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8f-9932-78d3-b4e3-22ee477a1ff5",
+  "packet_sha256": "ab9cfb696bb8213769d57d75ba5ebc2076621d09983c9ad946def96f588b27df",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q3/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"VIAVI’s March-quarter net revenue fell 0.7% year over year (A). Stronger OSP demand partly offset weakness among service-provider and enterprise customers (B), supporting a forecast that the June-quarter change stays above -5%. With end-market demand still volatile (C), I forecast that persistent customer weakness outweighs that offset in the quarter beginning June 30, taking reported revenue to a year-over-year decline of at least 5%.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q3/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "VIAVI’s March-quarter net revenue fell 0.7% year over year (A). Stronger OSP demand partly offset weakness among service-provider and enterprise customers (B), supporting a forecast that the June-quarter change stays above -5%. With end-market demand still volatile (C), I forecast that persistent customer weakness outweighs that offset in the quarter beginning June 30, taking reported revenue to a year-over-year decline of at least 5%."
+          }
+        ]
+      }
+    ]
+  }
+}

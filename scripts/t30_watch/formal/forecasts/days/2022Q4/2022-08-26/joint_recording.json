@@ -1,0 +1,36 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23836,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 79,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8c-376a-7f81-ac08-2729e1d4314d",
+  "packet_sha256": "488f5c1405cd665b93d7f90b1e68401860728190da0ce1e5ab9f7818f4cf65a0",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q4/food_manufacturing-3\",\"alerts\":[]},{\"sector\":\"2022Q4/retail-2\",\"alerts\":[]},{\"sector\":\"2022Q4/retail-3\",\"alerts\":[]},{\"sector\":\"2022Q4/semiconductors-1\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-1",
+        "alerts": []
+      }
+    ]
+  }
+}

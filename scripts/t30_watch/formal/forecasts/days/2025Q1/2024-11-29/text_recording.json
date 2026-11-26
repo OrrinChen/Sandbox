@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24679,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 243,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8f-cf93-7230-8a5d-c24d07d8628e",
+  "packet_sha256": "d00e8914ba4ca47e3d2cee7f070ab6af5c145cde329bec8c9db5611b7becd188",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2025Q1/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2025Q1/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"September net revenue fell 3.9% year over year, 1.1 percentage points above the threshold (A). I forecast OSP strength will keep the December quarter above −5.00%, but persistent spending cuts by wireless equipment makers and weakness among North American service providers and enterprise customers will push consolidated revenue growth to −5.00% or below in the quarter beginning December 29 (B, C).\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q1/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q1/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "September net revenue fell 3.9% year over year, 1.1 percentage points above the threshold (A). I forecast OSP strength will keep the December quarter above −5.00%, but persistent spending cuts by wireless equipment makers and weakness among North American service providers and enterprise customers will push consolidated revenue growth to −5.00% or below in the quarter beginning December 29 (B, C)."
+          }
+        ]
+      }
+    ]
+  }
+}

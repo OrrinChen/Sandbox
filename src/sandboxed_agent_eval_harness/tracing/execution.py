@@ -2,14 +2,15 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field, replace
 from pathlib import Path
-from typing import Any, Mapping, Optional
+from typing import Any, Mapping, Optional, Sequence
 
-from sandboxed_agent_eval_harness.schemas import JsonDict, TraceEvent
+from sandboxed_agent_eval_harness.schemas import JsonDict, SchemaValidationError, TaskSpec, TraceEvent
 from sandboxed_agent_eval_harness.tasks import TaskSuite, known_task_suites
-from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError
+from sandboxed_agent_eval_harness.tools import FixtureToolExecutor, ToolExecutionError, ToolRegistryError
 from sandboxed_agent_eval_harness.tracing.jsonl import TraceReplay
+from sandboxed_agent_eval_harness.validators import validate_a1_rag, validate_financial_benchmark, validate_rag_grounding
 
 
 class TraceReplayExecutionError(RuntimeError):
@@ -27,6 +28,7 @@ class TraceReplayExecutionResult:
     state_diff_matches: bool
     divergences: list[JsonDict]
     workspace_path: Path
+    validator_results: list[JsonDict] = field(default_factory=list)
 
     @property
     def passed(self) -> bool:
@@ -43,6 +45,7 @@ class TraceReplayExecutionResult:
             "state_diff_matches": self.state_diff_matches,
             "divergences": [dict(item) for item in self.divergences],
             "workspace_path": str(self.workspace_path),
+            "validator_results": self.validator_results,
             "passed": self.passed,
         }
 
@@ -54,26 +57,37 @@ class TraceReplayExecutor:
         self,
         suite: Optional[TaskSuite] = None,
         executor: Optional[FixtureToolExecutor] = None,
+        *,
+        additional_suites: Sequence[TaskSuite] = (),
     ) -> None:
         self.suites = [suite] if suite is not None else known_task_suites()
+        self.suites.extend(additional_suites)
         self.executor = executor or FixtureToolExecutor()
 
     def replay(self, trace_path: Path | str, workspace: Path | str) -> TraceReplayExecutionResult:
         path = Path(trace_path)
         replay = TraceReplay.from_jsonl(path)
         task_id = _task_id_from_replay(replay)
-        task = self._task_for(task_id)
+        task, suite_version = self._task_for(task_id)
         sandbox = self.executor.create_sandbox(task, workspace)
         before_state = sandbox.snapshot()
 
         comparisons: list[JsonDict] = []
         divergences: list[JsonDict] = []
         events = replay.events
+        revalidate_rag = bool({"rag_grounding", "a1_rag", "financial_benchmark"}.intersection(task.validator_list))
+        replayed_results: list[TraceEvent] = []
         tool_call_count = 0
         index = 0
         while index < len(events):
             event = events[index]
             if event.event_type != "tool_call":
+                index += 1
+                continue
+            tool_name = event.payload.get("tool_name")
+            if (not isinstance(tool_name, str) or not isinstance(event.payload.get("arguments"), dict)
+                    or (revalidate_rag and tool_name not in task.available_tools)):
+                divergences.append({"type": "invalid_tool_call", "tool_name": tool_name, "sequence": event.sequence})
                 index += 1
                 continue
             tool_call_count += 1
@@ -90,6 +104,11 @@ class TraceReplayExecutor:
                 continue
             comparison = self._execute_and_compare(event, recorded_result_event, sandbox)
             comparisons.append(comparison)
+            if revalidate_rag and comparison["execution_error"] is None:
+                replayed_results.append(replace(recorded_result_event, payload={
+                    "tool_name": comparison["tool_name"],
+                    "result": comparison["replayed"],
+                }))
             if not comparison["matches"]:
                 divergences.append(
                     {
@@ -114,6 +133,16 @@ class TraceReplayExecutor:
                 }
             )
 
+        validator_results = []
+        if revalidate_rag:
+            versions = {"task_version": suite_version, "fixture_version": task.initial_state["fixture_version"]}
+            if "tool_version" in task.initial_state:
+                versions["tool_version"] = task.initial_state["tool_version"]
+            for key, expected in versions.items():
+                if replay.metadata.get(key) != expected:
+                    divergences.append({"type": "version_mismatch", "field": key, "recorded": replay.metadata.get(key), "expected": expected})
+            validator_results = _replay_rag_validation(task, replay, replayed_results, divergences)
+
         return TraceReplayExecutionResult(
             trace_path=path,
             task_id=task_id,
@@ -124,6 +153,7 @@ class TraceReplayExecutor:
             state_diff_matches=state_diff_matches,
             divergences=divergences,
             workspace_path=Path(workspace),
+            validator_results=validator_results,
         )
 
     def _execute_and_compare(
@@ -134,14 +164,18 @@ class TraceReplayExecutor:
     ) -> JsonDict:
         tool_name = tool_call_event.payload["tool_name"]
         arguments = tool_call_event.payload["arguments"]
-        recorded_result = dict(recorded_result_event.payload.get("result", {}))
+        recorded_result = recorded_result_event.payload.get("result")
         try:
             replayed_result = self.executor.execute(tool_name, arguments, sandbox)
             execution_error = None
-        except ToolExecutionError as exc:
+        except (ToolExecutionError, ToolRegistryError, SchemaValidationError) as exc:
             replayed_result = {}
             execution_error = str(exc)
-        matches = execution_error is None and recorded_result == replayed_result
+        matches = (
+            execution_error is None
+            and recorded_result_event.payload.get("tool_name") == tool_name
+            and recorded_result == replayed_result
+        )
         return {
             "tool_name": tool_name,
             "tool_call_sequence": tool_call_event.sequence,
@@ -152,12 +186,67 @@ class TraceReplayExecutor:
             "execution_error": execution_error,
         }
 
-    def _task_for(self, task_id: str) -> Any:
+    def _task_for(self, task_id: str) -> tuple[TaskSpec, str]:
         for suite in self.suites:
             for task in suite.tasks:
                 if task.task_id == task_id:
-                    return task
+                    return task, suite.version
         raise TraceReplayExecutionError(f"trace references unknown task_id: {task_id}")
+
+
+def _replay_rag_validation(
+    task: TaskSpec,
+    replay: TraceReplay,
+    replayed_results: list[TraceEvent],
+    divergences: list[JsonDict],
+) -> list[JsonDict]:
+    answers = replay.events_by_type("final_answer")
+    if (len(answers) != 1 or not isinstance(answers[0].payload.get("content"), str)
+            or any(event.sequence >= answers[0].sequence for event in replayed_results)):
+        divergences.append({"type": "invalid_final_answer_event"})
+        return []
+    final_answer = answers[0].payload["content"]
+    if "financial_benchmark" in task.validator_list:
+        final_answer = _replay_financial_reader(task, replay, replayed_results, final_answer, divergences)
+        result = validate_financial_benchmark(task, final_answer, replayed_results).to_dict()
+    elif "a1_rag" in task.validator_list:
+        result = validate_a1_rag(task.task_id, final_answer, replayed_results).to_dict()
+    else:
+        result = validate_rag_grounding(
+            final_answer, replayed_results, task.hidden_expected_state["evidence_ids"],
+        ).to_dict()
+    recorded = [event.payload for event in replay.events_by_type("validator_result")]
+    if recorded != [result]:
+        divergences.append({"type": "validator_result_mismatch", "recorded": recorded, "replayed": [result]})
+    return [result]
+
+
+def _replay_financial_reader(
+    task: TaskSpec,
+    replay: TraceReplay,
+    replayed_results: list[TraceEvent],
+    final_answer: str,
+    divergences: list[JsonDict],
+) -> str:
+    from sandboxed_agent_eval_harness.benchmarks.financial_benchmark.benchmark import comparison_baseline
+
+    try:
+        baseline = comparison_baseline(replay.metadata)
+    except ValueError as exc:
+        divergences.append({"type": "invalid_reader_comparison_metadata", "message": str(exc)})
+        return final_answer
+    if baseline is None:
+        return final_answer
+    plan = baseline.run(task)
+    recorded_calls = [event.payload for event in replay.events_by_type("tool_call")]
+    expected_calls = [{"tool_name": call.tool_name, "arguments": call.arguments} for call in plan.tool_calls]
+    if recorded_calls != expected_calls or len(replayed_results) != len(expected_calls):
+        divergences.append({"type": "reader_comparison_tool_call_mismatch"})
+        return final_answer
+    regenerated_answer = baseline.finalize(task, plan, replayed_results).final_answer
+    if final_answer != regenerated_answer:
+        divergences.append({"type": "reader_answer_mismatch", "recorded": final_answer, "replayed": regenerated_answer})
+    return regenerated_answer
 
 
 def _task_id_from_replay(replay: TraceReplay) -> str:

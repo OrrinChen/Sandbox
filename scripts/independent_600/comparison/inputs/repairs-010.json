@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "repair-original-fabric-repeat-cuts",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data). Input has limit_cm, a positive integer maximum length per cut, and lines, an ordered list of objects with fabric (string), state ('approved' or 'draft'), need_cm (nonnegative integer), and repeat_cm (positive integer no greater than limit_cm). All lengths are centimetres. For each approved line, supply the smallest whole number of pattern repeats covering at least need_cm. Split that quantity into cuts of whole repeats, each at or below the inclusive length limit. Fill earlier cuts as much as possible. Return a flat list of objects with fabric and cut_cm, in input line order and then cutting order. Process repeated fabric lines independently. Draft and zero-length lines produce no cuts.",
+    "observation": "def solve(data):\n    cuts = []\n    for line in data['lines']:\n        if line['state'] != 'approved':\n            continue\n        repeat = line['repeat_cm']\n        remaining = line['need_cm'] // repeat\n        capacity = data['limit_cm'] // repeat\n        while remaining:\n            count = min(remaining, capacity)\n            cuts.append({'fabric': line['fabric'], 'cut_cm': count * repeat})\n            remaining -= count\n    return cuts"
+  },
+  {
+    "task_id": "repair-original-fair-package-promotion",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for one loading run. capacity is a nonnegative integer in rack slots. Each entry in packages has a unique string id, a size of S, M, or L (costing 1, 2, or 3 slots respectively), a state of waiting, loaded, or held, and a nonnegative integer arrival in minutes since opening. Only waiting packages are eligible. At each promotion consider every remaining eligible package whose cost is at most the unused capacity. Choose the package whose size class has received the fewest promotions in this run, breaking ties by earliest arrival and then lexicographically smallest id. All classes start at zero. Deduct the package cost and repeat until no candidate fits. Return the promoted IDs in selection order. The capacity field is the free capacity already available at the start; loaded and held packages do not reduce it again.",
+    "observation": "def solve(data):\n    cost = {'S': 1, 'M': 2, 'L': 3}\n    count = dict.fromkeys(cost, 0)\n    left = data['capacity']\n    waiting = [p for p in data['packages'] if p['state'] == 'waiting']\n    result = []\n    while waiting:\n        fits = [p for p in waiting if cost[p['size']] <= left]\n        if not fits:\n            break\n        pick = min(fits, key=lambda p: (p['arrival'], count[p['size']], p['id']))\n        waiting.remove(pick)\n        result.append(pick['id'])\n        count[pick['size']] += 1\n        left -= cost[pick['size']]\n    return result"
+  },
+  {
+    "task_id": "repair-original-gate-dispatch-sequence-rollover",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data). last is the nonnegative integer ticket number most recently issued, or 0 before the first issue. threshold is a positive integer ticket number. Process events in array order, including repeated events. 'issue' increments the counter by one and emits the new number. 'rollover' marks a shift boundary. At that event, reset the counter to 0 only if its current value is strictly greater than threshold. Reaching or passing threshold during an issue never triggers a reset by itself. 'void' records a cancellation without changing the counter or removing an emitted number. These are the only event values. Return {'issued': the emitted numbers in order, 'last': the final counter}.",
+    "observation": "def solve(data):\n    last = data['last']\n    issued = []\n    for event in data['events']:\n        if event == 'issue':\n            last += 1\n            issued.append(last)\n        elif event == 'rollover' and last >= data['threshold']:\n            last = 0\n    return {'issued': issued, 'last': last}\n"
+  },
+  {
+    "task_id": "repair-original-incremental-shipment-checksum",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for one update to a shipment scanner's byte checksum. state is the running sum modulo 256 from earlier chunks, an integer from 0 through 255 (0 for a new shipment). chunk is an ordered list of byte values from 0 through 255 and may be empty. last is a boolean marking the final chunk. Add all bytes to state and reduce modulo 256. For last=false, return {\"state\": running_sum} so the next call can resume. For last=true, return {\"checksum\": check_byte}, where check_byte is the unique byte that makes running_sum + check_byte divisible by 256. An empty final chunk still finalizes the prior state.",
+    "observation": "def solve(data):\n    running_sum = (data['state'] + sum(data['chunk'])) % 256\n    check_byte = (-running_sum) % 256\n    if data['last']:\n        return {'checksum': check_byte}\n    return {'state': check_byte}"
+  }
+]

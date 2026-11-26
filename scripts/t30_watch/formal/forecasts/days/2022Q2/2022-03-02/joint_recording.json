@@ -1,0 +1,107 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 59335,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 817,
+    "reasoning_output_tokens": 118
+  },
+  "thread": "01a20d8a-3e3b-7b11-8d82-f2aa97d21236",
+  "packet_sha256": "bcfbac3ee66490ad8a5bdbd611120f4cc635d3cf315dfef470f9a4b9aff3a6ec",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-2\",\"alerts\":[{\"cik\":\"0001287213\",\"reason\":\"Douglas Dynamics’ net sales fell 4.58% year over year in September and 3.30% in December. The annual totals in A and the quarterly figures imply first-half 2021 sales of about $261 million, up 39%. The 2020 shutdown began March 18 and disrupted second-quarter shipments (B, C), and dealers released pent-up demand in 2021 (D). I expect March to stay above −5% and the comparison with the spring 2021 rebound to push June to −5% or worse.\"}]},\n    {\"sector\":\"2022Q2/industrial_machinery-3\",\"alerts\":[{\"cik\":\"0000097134\",\"reason\":\"Tennant’s year-over-year sales growth slowed from 3.86% in September to 1.25% in December. Annual sales in A and the quarterly figures imply first-half 2021 growth of about 16%. Pricing supported sales (D), but component shortages persisted into 2022 while backlog reached three to five times its usual size (B, C). I expect March growth to remain above −5% and delayed shipments against the stronger prior-year base to push June to −5% or worse.\"}]},\n    {\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0001768267\",\"reason\":\"Cerence’s quarterly revenue fell from $98.1 million in September to $94.4 million in December while the corresponding prior-year figure rose from $91.2 million to $93.6 million. Year-over-year growth narrowed from 7.49% to 0.84% (A). I expect its multiyear customer contracts (B) to cushion the slowdown enough to keep March above −5%, with further erosion taking June to −5% or worse.\"}]},\n    {\"sector\":\"2022Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0001287213",
+            "reason": "Douglas Dynamics’ net sales fell 4.58% year over year in September and 3.30% in December. The annual totals in A and the quarterly figures imply first-half 2021 sales of about $261 million, up 39%. The 2020 shutdown began March 18 and disrupted second-quarter shipments (B, C), and dealers released pent-up demand in 2021 (D). I expect March to stay above −5% and the comparison with the spring 2021 rebound to push June to −5% or worse."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000097134",
+            "reason": "Tennant’s year-over-year sales growth slowed from 3.86% in September to 1.25% in December. Annual sales in A and the quarterly figures imply first-half 2021 growth of about 16%. Pricing supported sales (D), but component shortages persisted into 2022 while backlog reached three to five times its usual size (B, C). I expect March growth to remain above −5% and delayed shipments against the stronger prior-year base to push June to −5% or worse."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0001768267",
+            "reason": "Cerence’s quarterly revenue fell from $98.1 million in September to $94.4 million in December while the corresponding prior-year figure rose from $91.2 million to $93.6 million. Year-over-year growth narrowed from 7.49% to 0.84% (A). I expect its multiyear customer contracts (B) to cushion the slowdown enough to keep March above −5%, with further erosion taking June to −5% or worse."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

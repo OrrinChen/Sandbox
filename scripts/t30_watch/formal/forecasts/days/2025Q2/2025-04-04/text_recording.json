@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23087,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 80,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d91-4da1-7e63-a342-93186fde60c3",
+  "packet_sha256": "1c8d505b16bd0074086ee3fc79fd3f8216137ed8b2712cdd8cf840e16e1f04b6",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\": \"2025Q2/retail-1\", \"alerts\": []},\n    {\"sector\": \"2025Q2/retail-2\", \"alerts\": []},\n    {\"sector\": \"2025Q2/retail-3\", \"alerts\": []}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q2/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

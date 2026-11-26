@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-020",
+    "stage": "inspect-1",
+    "prompt_sha256": "4a507c10cfcd597d627b81d3ae15b34af2b17eaa137dbe577fb832d77b624ddf",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-8287-7652-ba48-5574e4ffe756"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to clarify the layouts and boundary cases that affect the formulas, especially the COVER data columns and the quiz scoring example."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-56451\":[],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"M5:M5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A12:I18\"},{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A18:I24\"}],\"sheet-56995\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 57660,
+          "cached_input_tokens": 49024,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 659,
+          "reasoning_output_tokens": 465
+        }
+      ],
+      "cli_final": "{\"sheet-56451\":[],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"M5:M5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A12:I18\"},{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A18:I24\"}],\"sheet-56995\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-8287-7652-ba48-5574e4ffe756",
+    "raw": "{\"sheet-56451\":[],\"sheet-56599\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B5\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"M5:M5\"}],\"sheet-56915\":[{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A12:I18\"},{\"op\":\"range\",\"sheet\":\"DATA\",\"range\":\"A18:I24\"}],\"sheet-56995\":[]}",
+    "usage": {
+      "input_tokens": 57660,
+      "cached_input_tokens": 49024,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 659,
+      "reasoning_output_tokens": 465
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

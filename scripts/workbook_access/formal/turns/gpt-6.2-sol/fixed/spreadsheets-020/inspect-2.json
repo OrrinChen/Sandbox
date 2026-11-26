@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-020",
+    "stage": "inspect-2",
+    "prompt_sha256": "5ac441b61767b69593b43793ab40d5f9f1eddc2704d5b119edf991cb692410f4",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-1a8b-7702-9c0c-24c08677e5ab",
+    "raw": "{\n  \"sheet-56451\": [],\n  \"sheet-56599\": [],\n  \"sheet-56915\": [\n    {\"op\":\"range\",\"sheet\":\"COVER\",\"range\":\"A12:E23\"},\n    {\"op\":\"find\",\"sheet\":\"DATA\",\"text\":\"TOTAL: REVENUE\",\"exact\":false}\n  ],\n  \"sheet-56995\": []\n}",
+    "usage": {
+      "input_tokens": 21213,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 80,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

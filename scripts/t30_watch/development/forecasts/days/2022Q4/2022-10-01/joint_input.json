@@ -1,0 +1,67 @@
+{
+  "cutoff": "2022-10-01",
+  "sectors": {
+    "2022Q4/retail-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001701758",
+          "issuer": "LOVESAC CO",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2022-10-31",
+          "latest_filed_period_end": "2022-07-31",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2022-09-09",
+              "text": "We continue to experience growth as our net sales increased $92.6 million, or 49.9% to $277.9 million for the twenty-six weeks ended July 31, 2022, compared to $185.4 million for the twenty-six weeks ended August 1, 2021."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2022-09-09",
+              "text": "This increase was due in large part to comparable net sales increase of $19.9 million, or 36.8%, to $74.0 million in the thirteen weeks ended July 31, 2022, compared to $54.1 million in the thirteen weeks ended August 1, 2021, related to higher point of sales transactions, strong promotional campaigns and the addition of 35 new showrooms, 14 kiosks and 2 mobile concierges."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2022-09-09",
+              "text": "Other net sales, which include pop-up-shop sales, shop-in-shop sales, and barter inventory transactions increased $10.2 million, or 98.3%, to $20.6 million in the thirteen weeks ended July 31, 2022 as compared to $10.4 million in the thirteen weeks ended August 1, 2021."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2022-09-09",
+              "text": "There were no other non-recurring expenses in the thirteen weeks ended August 1, 2021."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2022-09-09",
+              "text": "In the twenty-six weeks ended July 31, 2022, net cash used in operating activities was $59.4 million and consisted of changes in operating assets and liabilities of $87.8 million, net income of $9.0 million, and adjustments to reconcile net income to cash provided by operating activities of $19.5 million."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-05-01",
+                "filed": "2022-06-08",
+                "reported_sales_usd": 129380000,
+                "year_ago_reported_sales_usd": 82915000,
+                "yoy_percent": "56.0393"
+              },
+              {
+                "quarter_end": "2022-07-31",
+                "filed": "2022-09-09",
+                "reported_sales_usd": 148534000,
+                "year_ago_reported_sales_usd": 102448000,
+                "yoy_percent": "44.9848"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

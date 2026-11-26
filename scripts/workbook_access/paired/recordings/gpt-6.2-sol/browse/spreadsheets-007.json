@@ -1,0 +1,256 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "e2e71aa7f10b3b8b8aa7177a83fe2f02a4ab3c770dc35d188cab79658df863fa",
+    "cdb081fcdafbc9bbd2e749dfe7916bb8c57816c2f99b2104086ba2d7f8836d4a",
+    "d88163be53356ecb5a444edce633c985dc7ad7caee265480f5c9e5905887080c"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-39604",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "formulas": {
+          "C4": "=IF(B4<=20,0,IF(B3*1000<22000,B4-20,B4-30))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 55809,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 881,
+        "reasoning_output_tokens": 289
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40478",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B1:B3",
+            "formula": "=IFERROR(TRIM(LEFT(MID(TRIM(A1),FIND(CHAR(1),SUBSTITUTE(TRIM(A1),\" \",CHAR(1),2))+1,LEN(A1)),FIND(\"-\",MID(TRIM(A1),FIND(CHAR(1),SUBSTITUTE(TRIM(A1),\" \",CHAR(1),2))+1,LEN(A1)))-1)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 55809,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 881,
+        "reasoning_output_tokens": 289
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40757",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B10:B11",
+            "formula": "=IF(SUMPRODUCT(--($A$3:$A$8<>\"\"),--(TEXT($A$3:$A$8,\"mmmm\")=A10),$B$3:$B$8)=0,\"\",SUMPRODUCT(--($A$3:$A$8<>\"\"),--(TEXT($A$3:$A$8,\"mmmm\")=A10),$B$3:$B$8))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:B11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A2:B11",
+            "range_size": 20,
+            "cells": [
+              [
+                "A2",
+                "Date"
+              ],
+              [
+                "B2",
+                "Amount"
+              ],
+              [
+                "A3",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "B3",
+                "2"
+              ],
+              [
+                "A4",
+                "2022-07-22 00:00:00"
+              ],
+              [
+                "B4",
+                "2"
+              ],
+              [
+                "A5",
+                "2022-08-15 00:00:00"
+              ],
+              [
+                "B5",
+                "3"
+              ],
+              [
+                "A6",
+                "2022-08-19 00:00:00"
+              ],
+              [
+                "B6",
+                "3"
+              ],
+              [
+                "B9",
+                "Result"
+              ],
+              [
+                "A10",
+                "July"
+              ],
+              [
+                "A11",
+                "August"
+              ]
+            ],
+            "total": 13,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 55809,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 881,
+        "reasoning_output_tokens": 289
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-40892",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-007",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B17",
+            "formula": "=XLOOKUP(1,($D$3:$D$8<>\"\")*ISNUMBER(SEARCH(\" \"&TRIM($D$3:$D$8)&\" \",\" \"&TRIM(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(A2,\",\",\" \"),\".\",\" \"),\"-\",\" \"),\"/\",\" \"),\"(\",\" \"),\")\",\" \"),\";\",\" \"))&\" \")),$D$3:$D$8,\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "D1:D17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "D1:D17",
+            "range_size": 17,
+            "cells": [
+              [
+                "D1",
+                "List"
+              ],
+              [
+                "D2",
+                "Colour"
+              ],
+              [
+                "D3",
+                "Red"
+              ],
+              [
+                "D4",
+                "Gold"
+              ],
+              [
+                "D5",
+                "Red"
+              ],
+              [
+                "D6",
+                "Blue"
+              ],
+              [
+                "D7",
+                "Black"
+              ],
+              [
+                "D8",
+                "Red"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 55809,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 881,
+        "reasoning_output_tokens": 289
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-007",
+    "stage": "submit",
+    "prompt_sha256": "3e091c1655c6b84234b4a5ef87f8142d80e06c3af4dc3e18544fb0873ca61d0d",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121e-a146-7892-8635-92a482ede403",
+    "raw": "{\"sheet-39604\":{\"formulas\":{\"C4\":\"=IF(B4<=20,0,IF((B3*1000)<22000,B4-20,B4-30))\"}},\"sheet-40478\":{\"fills\":[{\"range\":\"B1:B3\",\"formula\":\"=MID(A1,FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)+1,FIND(\\\"-\\\",A1)-FIND(\\\" \\\",A1,FIND(\\\" \\\",A1)+1)-1)\"}],\"formulas\":{}},\"sheet-40757\":{\"formulas\":{\"B10\":\"=SUMIFS($B$3:$B$6,$A$3:$A$6,\\\">=\\\"&DATEVALUE(\\\"1 \\\"&A10),$A$3:$A$6,\\\"<\\\"&EDATE(DATEVALUE(\\\"1 \\\"&A10),1))\",\"B11\":\"=SUMIFS($B$3:$B$6,$A$3:$A$6,\\\">=\\\"&DATEVALUE(\\\"1 \\\"&A11),$A$3:$A$6,\\\"<\\\"&EDATE(DATEVALUE(\\\"1 \\\"&A11),1))\"}},\"sheet-40892\":{\"fills\":[{\"range\":\"B2:B17\",\"formula\":\"=IFERROR(INDEX($D$3:$D$8,MATCH(TRUE,INDEX(ISNUMBER(SEARCH($D$3:$D$8,A2)),0),0)),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 16636,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 317,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

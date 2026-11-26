@@ -1,0 +1,6 @@
+{
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "score_sha256": "fa76aa14697109b0f89e6403d2968fbbb4c1f196955ec3d260c3daae48cb61bc",
+  "reproduced_submissions": 1000,
+  "network_isolation": "Calc and SQLite ran under OS network denial. Each Python submission ran in its own network-blocked OS sandbox. The driver compared sealed local files."
+}

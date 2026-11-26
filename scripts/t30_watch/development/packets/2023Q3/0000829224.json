@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000829224",
+  "issuer": "STARBUCKS CORP",
+  "cutoff": "2023-06-03",
+  "projected_target_start": "2023-07-03",
+  "status": "complete",
+  "period_end": "2023-04-02",
+  "filing_date": "2023-05-02",
+  "text": {
+    "sector": "retail",
+    "cik": "0000829224",
+    "issuer": "STARBUCKS CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2023-05-02",
+        "text": "Consolidated net revenues increased 14% to $8.7 billion in the second quarter of fiscal 2023 compared to $7.6 billion in the second quarter of fiscal 2022, primarily driven by strength in our U.S. business and growth in our international licensed markets and the beginning of a recovery from COVID-19 pandemic-related business interruptions in China."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2023-05-02",
+        "text": "Stores that are temporarily closed or operating at reduced hours due to the COVID-19 pandemic remain in comparable store sales while stores identified for permanent closure have been removed."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2023-05-02",
+        "text": "During the quarter ended April 2, 2023, our global comparable store sales grew 11%, primarily driven by 12% growth in the U.S. market and 7% growth internationally, as evidenced by the strength of the Starbucks brand in global markets."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2023-05-02",
+        "text": "Consolidated operating margin increased 280 basis points from the prior year to 15.2%, primarily driven by sales leverage, pricing, productivity improvement and the gain from sale of our Seattle's Best Coffee brand."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2023-05-02",
+        "text": "North America operating income for the second quarter of fiscal 2023 increased 31% to $1.2 billion, compared to $0.9 billion in the second quarter of fiscal 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-01-01",
+        "filed": "2023-02-02",
+        "reported_sales_usd": 8713900000,
+        "year_ago_reported_sales_usd": 8050400000,
+        "yoy_percent": "8.2418"
+      },
+      {
+        "quarter_end": "2023-04-02",
+        "filed": "2023-05-02",
+        "reported_sales_usd": 8719800000,
+        "year_ago_reported_sales_usd": 7635600000,
+        "yoy_percent": "14.1993"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-astra",
+    "arm": "fixed",
+    "batch": "spreadsheets-000",
+    "stage": "inspect-1",
+    "prompt_sha256": "e0c5a07029994b56ea32b2ffb653ee87489da4ca37dac3a354f054a02688c6c8",
+    "registration_sha256": "5f3cae21310af4df04a15fa97e18ccf2be7c157092b366f9f1e98b83291db985"
+  },
+  "response": {
+    "model": "gpt-6-astra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211dd-1b98-71b0-b2cd-1bc7fd2dd79a",
+    "raw": "{\"sheet-14240\":[],\"sheet-1563\":[],\"sheet-15829\":[],\"sheet-17251\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A7:C11\"}]}",
+    "usage": {
+      "input_tokens": 19115,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 70,
+      "reasoning_output_tokens": 22
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

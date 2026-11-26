@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "05cdc42a4e1124ea974cf88ecbb4dbbfcd8d09f483c11a8beb786e27902349aa",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-lamp-survival-day-two\": \"WITH RECURSIVE failure_days AS (SELECT exit_day, COUNT(*) AS failures FROM lamp_exits WHERE outcome = 'failed' AND exit_day <= 2 GROUP BY exit_day), steps AS (SELECT ROW_NUMBER() OVER (ORDER BY f.exit_day) AS step, f.failures, (SELECT COUNT(*) FROM lamp_exits AS e WHERE e.exit_day >= f.exit_day) AS at_risk FROM failure_days AS f), survival(step, probability) AS (SELECT 0, 1.0 UNION ALL SELECT s.step, p.probability * (s.at_risk - s.failures) / s.at_risk FROM survival AS p JOIN steps AS s ON s.step = p.step + 1) SELECT ROUND(probability, 6) AS survival_day_2 FROM survival ORDER BY step DESC LIMIT 1\",\n  \"decision-last-confirmed-shelf-before-inventory\": \"SELECT c.holding_code, n.shelf_code, n.slip_no FROM inventory_close AS c JOIN shelf_note AS n ON n.slip_no = (SELECT s.slip_no FROM shelf_note AS s WHERE s.holding_code = c.holding_code AND s.note_kind = 'sighted' AND s.note_day <= c.close_day ORDER BY s.note_day DESC, s.slip_no DESC LIMIT 1) ORDER BY c.holding_code ASC\",\n  \"decision-least-cost-dual-dealer-funding\": \"SELECT a.ticket_code AS a_code, b.ticket_code AS b_code, a.price_cents + b.price_cents AS cost_cents, a.hold_cents + b.hold_cents AS hold_cents FROM funding_request AS r CROSS JOIN dealer_ticket AS a CROSS JOIN dealer_ticket AS b WHERE a.desk_code = 'A' AND b.desk_code = 'B' AND a.buy_units + b.buy_units = r.need_units AND a.delivery_day <= r.cutoff_day AND b.delivery_day <= r.cutoff_day AND a.hold_cents + b.hold_cents <= r.cap_cents ORDER BY cost_cents, a.ticket_code COLLATE BINARY, b.ticket_code COLLATE BINARY LIMIT 1\",\n  \"decision-least-cost-two-stage-finish\": \"SELECT s.source_id AS sand_source, w.source_id AS wax_source, s.sand_cents + w.wax_cents + s.handling_cents + CASE WHEN s.source_id COLLATE BINARY = w.source_id THEN 0 ELSE w.handling_cents END AS total_cents, s.sand_hours + w.wax_hours AS total_hours FROM finish_quote AS s CROSS JOIN finish_quote AS w WHERE s.sand_cents IS NOT NULL AND w.wax_cents IS NOT NULL AND s.sand_hours + w.wax_hours <= 8 ORDER BY total_cents, total_hours, s.source_id COLLATE BINARY, w.source_id COLLATE BINARY LIMIT 1\"\n}",
+  "submissions": {
+    "decision-lamp-survival-day-two": "WITH RECURSIVE failure_days AS (SELECT exit_day, COUNT(*) AS failures FROM lamp_exits WHERE outcome = 'failed' AND exit_day <= 2 GROUP BY exit_day), steps AS (SELECT ROW_NUMBER() OVER (ORDER BY f.exit_day) AS step, f.failures, (SELECT COUNT(*) FROM lamp_exits AS e WHERE e.exit_day >= f.exit_day) AS at_risk FROM failure_days AS f), survival(step, probability) AS (SELECT 0, 1.0 UNION ALL SELECT s.step, p.probability * (s.at_risk - s.failures) / s.at_risk FROM survival AS p JOIN steps AS s ON s.step = p.step + 1) SELECT ROUND(probability, 6) AS survival_day_2 FROM survival ORDER BY step DESC LIMIT 1",
+    "decision-last-confirmed-shelf-before-inventory": "SELECT c.holding_code, n.shelf_code, n.slip_no FROM inventory_close AS c JOIN shelf_note AS n ON n.slip_no = (SELECT s.slip_no FROM shelf_note AS s WHERE s.holding_code = c.holding_code AND s.note_kind = 'sighted' AND s.note_day <= c.close_day ORDER BY s.note_day DESC, s.slip_no DESC LIMIT 1) ORDER BY c.holding_code ASC",
+    "decision-least-cost-dual-dealer-funding": "SELECT a.ticket_code AS a_code, b.ticket_code AS b_code, a.price_cents + b.price_cents AS cost_cents, a.hold_cents + b.hold_cents AS hold_cents FROM funding_request AS r CROSS JOIN dealer_ticket AS a CROSS JOIN dealer_ticket AS b WHERE a.desk_code = 'A' AND b.desk_code = 'B' AND a.buy_units + b.buy_units = r.need_units AND a.delivery_day <= r.cutoff_day AND b.delivery_day <= r.cutoff_day AND a.hold_cents + b.hold_cents <= r.cap_cents ORDER BY cost_cents, a.ticket_code COLLATE BINARY, b.ticket_code COLLATE BINARY LIMIT 1",
+    "decision-least-cost-two-stage-finish": "SELECT s.source_id AS sand_source, w.source_id AS wax_source, s.sand_cents + w.wax_cents + s.handling_cents + CASE WHEN s.source_id COLLATE BINARY = w.source_id THEN 0 ELSE w.handling_cents END AS total_cents, s.sand_hours + w.wax_hours AS total_hours FROM finish_quote AS s CROSS JOIN finish_quote AS w WHERE s.sand_cents IS NOT NULL AND w.wax_cents IS NOT NULL AND s.sand_hours + w.wax_hours <= 8 ORDER BY total_cents, total_hours, s.source_id COLLATE BINARY, w.source_id COLLATE BINARY LIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1a-b895-7ca0-9ff7-6f943d8b2cf3",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22767,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 614,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,5 +1,15 @@
 # Default tool declarations mirror default_tool_specs().
 tools:
+  - tool_name: rag.search
+    domain: financial_evidence
+    backing: fixture
+    permissions:
+      - read_fixture
+    side_effects: []
+    failure_modes:
+      - invalid_top_k
+      - invalid_search_method
+      - invalid_search_filters
   - tool_name: financial_statement.lookup
     domain: finance
     backing: fixture

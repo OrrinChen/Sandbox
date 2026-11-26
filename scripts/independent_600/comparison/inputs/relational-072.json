@@ -1,0 +1,241 @@
+[
+  {
+    "task_id": "decision-split-an-ordered-label-run",
+    "tool": "sqlite.query",
+    "instruction": "A pallet conveyor permits one split in a queue of label batches. Assign a nonempty prefix in ascending batch_no to the west press and the nonempty remaining suffix to the east press. Each press starts at minute zero, preserves order and needs no setup for its own first batch. west_min and east_min are the processing minutes for the entire batch on the respective press. On a press, add the single wash_card's wash_min between consecutive batches whose ink_code differs. Minimize the time until both presses finish, breaking ties by smaller last west batch number. All fields are non-null and batch numbers are unique. Return one row with columns last_west_batch, west_minutes, east_minutes, finish_minutes, source_id, citing the applicable wash card. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "label_batches": {
+        "columns": [
+          "batch_no INTEGER",
+          "ink_code TEXT",
+          "west_min INTEGER",
+          "east_min INTEGER"
+        ],
+        "rows": [
+          [
+            10,
+            "x",
+            4,
+            3
+          ],
+          [
+            20,
+            "x",
+            4,
+            3
+          ],
+          [
+            30,
+            "y",
+            3,
+            4
+          ],
+          [
+            40,
+            "y",
+            3,
+            4
+          ]
+        ]
+      },
+      "wash_card": {
+        "columns": [
+          "source_id TEXT",
+          "wash_min INTEGER",
+          "card_text TEXT"
+        ],
+        "rows": [
+          [
+            "WC-6",
+            6,
+            "Both presses arrive clean. Allow six minutes to wash a press when changing ink."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "last_west_batch",
+      "west_minutes",
+      "east_minutes",
+      "finish_minutes",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-split-irregular-equipment-loan-payments",
+    "tool": "sqlite.query",
+    "instruction": "For each equipment loan, split its single period-end cash remittance into operating interest and financing principal under the workshop's reporting policy. Return loan_id, operating_interest_cents, financing_principal_cents in ascending loan_id order, with cash outflows shown as positive magnitudes. All monetary inputs are nonnegative integer cents. Accrue simple interest on unchanged opening principal for elapsed_days at annual_bp basis points per year, using 10,000 basis points per unit rate and a 360-day year. Round that accrual once to the nearest cent, with an exact half-cent rounded up. Add opening unpaid interest, which itself earns no interest. Apply the remittance to total interest due first, then principal. Unpaid interest produces no cash flow. Each loan_id is unique, no input is null, and no remittance exceeds total interest due plus opening principal. Include loans with no remittance. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "loan_remit": {
+        "columns": [
+          "loan_id TEXT",
+          "opening_principal INTEGER",
+          "annual_bp INTEGER",
+          "elapsed_days INTEGER",
+          "opening_interest INTEGER",
+          "remitted_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "dryer",
+            60000,
+            900,
+            30,
+            75,
+            2000
+          ],
+          [
+            "lathe",
+            20000,
+            900,
+            1,
+            17,
+            20
+          ],
+          [
+            "press",
+            45000,
+            800,
+            10,
+            0,
+            0
+          ],
+          [
+            "welder",
+            20000,
+            900,
+            1,
+            0,
+            100
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "loan_id",
+      "operating_interest_cents",
+      "financing_principal_cents"
+    ]
+  },
+  {
+    "task_id": "decision-split-reading-kits-between-branches",
+    "tool": "sqlite.query",
+    "instruction": "Distribute all available identical reading kits between the two branch programs, alder and birch. The dispatch_option table lists the approved whole-kit quantities that may be sent to alder, including zero when approved. Birch gets the remainder of the single stockroom's available_kits. Discard a split if either shipment is negative or exceeds the receiving branch's uncovered classes. Each kit covers one additional class. For each branch compute its final coverage as whole percent of all its classes, rounding down separately. Maximize the lower of the two percentages, then minimize the sum of shipment costs in cents, then choose the smaller alder shipment. Costs apply only to new kits. Branch codes and options are unique, class counts are positive, covered_classes is between zero and class_count inclusive, and all fields are nonnull. Return one row with columns alder_kits, birch_kits, floor_coverage_pct, shipping_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "branch_program": {
+        "columns": [
+          "branch_code TEXT",
+          "class_count INTEGER",
+          "covered_classes INTEGER",
+          "kit_shipping_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "alder",
+            10,
+            3,
+            45
+          ],
+          [
+            "birch",
+            20,
+            12,
+            15
+          ]
+        ]
+      },
+      "dispatch_option": {
+        "columns": [
+          "alder_qty INTEGER"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ]
+      },
+      "stockroom": {
+        "columns": [
+          "available_kits INTEGER"
+        ],
+        "rows": [
+          [
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "alder_kits",
+      "birch_kits",
+      "floor_coverage_pct",
+      "shipping_cents"
+    ]
+  },
+  {
+    "task_id": "decision-staff-a-serial-carton-line",
+    "tool": "sqlite.query",
+    "instruction": "Assign all operators on the single shift_ticket to the fold, trim and pack machines for the whole shift. Every finished carton passes through all three machines once. At each machine assign a whole crew of one to four operators. Each operator adds the machine's rate_per_hour in cartons per hour to that machine's capacity. With steady flow and intermediate buffers, maximize the sustainable finished cartons per hour, which every machine must be able to handle. Among ties use the smallest fold crew, then the smallest trim crew. All fields are non-null, there is one rate for each named machine and the roster permits a feasible allocation. Return one row with columns fold_crew, trim_crew, pack_crew, cartons_per_hour, source_id. Cite the shift ticket establishing crew availability. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "machine_rates": {
+        "columns": [
+          "machine_code TEXT",
+          "rate_per_hour INTEGER"
+        ],
+        "rows": [
+          [
+            "fold",
+            5
+          ],
+          [
+            "trim",
+            4
+          ],
+          [
+            "pack",
+            6
+          ]
+        ]
+      },
+      "shift_ticket": {
+        "columns": [
+          "source_id TEXT",
+          "operators INTEGER",
+          "ticket_text TEXT"
+        ],
+        "rows": [
+          [
+            "ST-6",
+            6,
+            "Six operators are assigned to carton finishing for this shift."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "fold_crew",
+      "trim_crew",
+      "pack_crew",
+      "cartons_per_hour",
+      "source_id"
+    ]
+  }
+]

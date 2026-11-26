@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25930,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 297,
+    "reasoning_output_tokens": 27
+  },
+  "thread": "01a20d8f-b03c-7c62-81d2-fa50b896daab",
+  "packet_sha256": "bced48e1f15bbf47a44e12fd15d3c3a6de821d76b8d52be0b911bcb3bbfb7d99",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q4/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q4/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"VIAVI’s reported quarterly revenue growth slowed from -0.73% year over year in March to -4.40% in June. I forecast the September quarter will stay just above -5.00% and the quarter beginning September 29 will cross to -5.00% or below. Customers were spending conservatively (A), and major North American service providers were largely buying field instruments for maintenance as network upgrades remained absent (B). The timing is uncertain because June was already just 0.60 percentage points above the threshold.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q4/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "VIAVI’s reported quarterly revenue growth slowed from -0.73% year over year in March to -4.40% in June. I forecast the September quarter will stay just above -5.00% and the quarter beginning September 29 will cross to -5.00% or below. Customers were spending conservatively (A), and major North American service providers were largely buying field instruments for maintenance as network upgrades remained absent (B). The timing is uncertain because June was already just 0.60 percentage points above the threshold."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-006",
+    "stage": "submit",
+    "prompt_sha256": "8e60146ac3b37a4c121377a224fff111d8e59dabbf85631f99c07f55a4a94a13",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d6-5f59-7c22-a583-8a33bfc3f552",
+    "raw": "{\n  \"sheet-38537\": {\n    \"fills\": [\n      {\n        \"range\": \"A3:A36\",\n        \"formula\": \"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(9+COUNTIF($B$3:B3,\\\"<>\\\"),\\\"000\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-38662\": {\n    \"formulas\": {\n      \"A2\": \"=INDEX('Job Code Table'!A:A,IFNA(MATCH(B2,'Job Code Table'!C:C,0),MATCH(B2,'Job Code Table'!B:B,0)))\"\n    }\n  },\n  \"sheet-38969\": {\n    \"fills\": [\n      {\n        \"range\": \"R2:R20\",\n        \"formula\": \"=IF(IFERROR(S2=\\\"#N/A\\\",TRUE),\\\"Upload\\\",IF(AND(U2>=-1,U2<=1),\\\"Do not Upload\\\",\\\"to Check\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-39432\": {\n    \"fills\": [\n      {\n        \"range\": \"M2:M5\",\n        \"formula\": \"=IF(L2<=0,0,(MIN(L2,J2)*K2+MAX(0,MIN(H2,L2-SUM(J2)))*I2+MAX(0,MIN(F2,L2-SUM(H2,J2)))*G2+MAX(0,MIN(D2,L2-SUM(F2,H2,J2)))*E2+MAX(0,MIN(B2,L2-SUM(D2,F2,H2,J2)))*C2)/L2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20578,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 586,
+      "reasoning_output_tokens": 207
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

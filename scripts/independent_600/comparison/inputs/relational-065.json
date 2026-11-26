@@ -1,0 +1,231 @@
+[
+  {
+    "task_id": "decision-schedule-laundry-with-solar-headroom",
+    "tool": "sqlite.query",
+    "instruction": "Choose one listed hour for a 2 kWh wash and a later listed hour for a 3 kWh dry. Each cycle occupies its full hour. The dryer must start one or two clock hours after the washer starts. Each row describes an hour of the same day. spare_solar_kwh is solar energy left after other loads and cannot carry over. grid_room_kwh is the remaining grid import allowance for that hour. The cycle draws its energy first from spare solar at zero cost and then from the grid at price_cents per kWh. Grid draw must fit the allowance in each chosen hour. Minimize total incremental cost in cents, breaking ties by earlier wash and then earlier dry. Hour identifiers are unique integers, all quantities are nonnegative, no fields are null, and at least one feasible pair exists. Return the single winning row with columns wash_hour, dry_hour, cost_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "hour_offer": {
+        "columns": [
+          "start_hour INTEGER",
+          "spare_solar_kwh INTEGER",
+          "grid_room_kwh INTEGER",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            8,
+            2,
+            0,
+            12
+          ],
+          [
+            9,
+            0,
+            2,
+            1
+          ],
+          [
+            10,
+            1,
+            2,
+            8
+          ],
+          [
+            11,
+            0,
+            3,
+            9
+          ],
+          [
+            13,
+            3,
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "wash_hour",
+      "dry_hour",
+      "cost_cents"
+    ]
+  },
+  {
+    "task_id": "decision-schedule-reset-checks-before-dispatch",
+    "tool": "sqlite.query",
+    "instruction": "Choose the best nonempty plan of at most two meter reset checks for today's single crew. Each unique job has a fixed start and finish in minutes after shift start, a consumables cost in cents, and a forecast number of rejected packages the check would prevent. Benefits and costs add. The crew has 90 cents and cannot perform overlapping checks. It can start another check at the exact minute one finishes, with no travel time. Maximize packages prevented, then minimize cost, then choose the lexicographically smallest pair of job codes after sorting the codes within each plan. For this last comparison a missing second code sorts first. Inputs have no nulls and at least one job is individually feasible. Return the winning row with columns first_job, second_job, saved_packages, cost_cents. Use null for the second job in a singleton. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "reset_job": {
+        "columns": [
+          "job_code TEXT",
+          "start_min INTEGER",
+          "finish_min INTEGER",
+          "kit_cents INTEGER",
+          "saved_count INTEGER"
+        ],
+        "rows": [
+          [
+            "a",
+            0,
+            30,
+            50,
+            12
+          ],
+          [
+            "b",
+            10,
+            40,
+            35,
+            11
+          ],
+          [
+            "c",
+            30,
+            50,
+            40,
+            10
+          ],
+          [
+            "d",
+            40,
+            55,
+            60,
+            16
+          ],
+          [
+            "e",
+            0,
+            60,
+            90,
+            21
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_job",
+      "second_job",
+      "saved_packages",
+      "cost_cents"
+    ]
+  },
+  {
+    "task_id": "decision-score-slip-print-order",
+    "tool": "sqlite.query",
+    "instruction": "Prepare a single order for exactly the two offered pack formats, narrow and wide. Either quantity may be zero. Buy whole packs up to the listed stock of each format, which is between zero and six packs inclusive. The total number of slips must meet the required quantity without exceeding the cabinet capacity, both given in slips by the single print_job row. Each format used incurs its setup charge once in addition to its per-pack price. All money is in cents. Minimize total cost, then total slips, then narrow packs. Inputs contain no nulls and a feasible order exists. Return one row with columns narrow_packs, wide_packs, total_slips, cost_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pack_offer": {
+        "columns": [
+          "format_id TEXT",
+          "slips INTEGER",
+          "pack_cents INTEGER",
+          "setup_cents INTEGER",
+          "stock INTEGER"
+        ],
+        "rows": [
+          [
+            "narrow",
+            8,
+            90,
+            20,
+            5
+          ],
+          [
+            "wide",
+            13,
+            115,
+            100,
+            3
+          ]
+        ]
+      },
+      "print_job": {
+        "columns": [
+          "need_slips INTEGER",
+          "capacity_slips INTEGER"
+        ],
+        "rows": [
+          [
+            29,
+            34
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "narrow_packs",
+      "wide_packs",
+      "total_slips",
+      "cost_cents"
+    ]
+  },
+  {
+    "task_id": "decision-select-capped-bonus-offers-within-monthly-pool",
+    "tool": "sqlite.query",
+    "instruction": "Allocate the single monthly subscription bonus pool among the listed campaign offers. Each offer must be funded in full or skipped. Its payable cost is the smaller of its earned bonus and its individual ceiling, both in integer cents. Fund at most one offer per catalog and spend at most the pool's budget_cents. Choose the feasible set with the greatest sum of projected retained subscriptions. Break ties by lowest total payable cost, then lowest sum of the selected offer_bit values. Each offer_bit is a distinct power of two from 1 through 64, so every set has a unique sum. The empty set is feasible. All offers and the one pool row concern the same month. All fields are non-null, costs are positive and retained counts are nonnegative integers. Return one row for the winning set with selected_bits (the sum of its offer_bit values), retained_total, payout_cents, in that column order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bonus_pool": {
+        "columns": [
+          "budget_cents INTEGER"
+        ],
+        "rows": [
+          [
+            100
+          ]
+        ]
+      },
+      "campaign_offers": {
+        "columns": [
+          "offer_bit INTEGER",
+          "catalog_id TEXT",
+          "earned_cents INTEGER",
+          "ceiling_cents INTEGER",
+          "retained_count INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "Amber",
+            110,
+            80,
+            12
+          ],
+          [
+            2,
+            "Amber",
+            50,
+            60,
+            9
+          ],
+          [
+            4,
+            "Birch",
+            75,
+            50,
+            9
+          ],
+          [
+            8,
+            "Clay",
+            20,
+            30,
+            3
+          ],
+          [
+            16,
+            "Dusk",
+            150,
+            130,
+            24
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "selected_bits",
+      "retained_total",
+      "payout_cents"
+    ]
+  }
+]

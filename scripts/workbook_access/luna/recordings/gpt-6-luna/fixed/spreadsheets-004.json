@@ -1,0 +1,432 @@
+{
+  "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49",
+  "turns_sha256": [
+    "6fa92745cb361699a630b340afc60fa6d622acf132587f7a76c0b71196449dbb",
+    "34b0518f007df372b0ba684c3e1d68575e5194ec8c1530984f1b2824e76442c3",
+    "1fbc939bf1c9a47b472b73fe962349ebd3eb547f4ef8fd804a47a50ba5058ace"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-36277",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "I2:I5",
+            "formula": "=INDEX($A$2:$E$25,ROW()-1,MATCH($H2,$A$1:$E$1,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:I10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:I10",
+            "range_size": 90,
+            "cells": [
+              [
+                "A1",
+                "Category"
+              ],
+              [
+                "B1",
+                "Name"
+              ],
+              [
+                "C1",
+                "Type"
+              ],
+              [
+                "D1",
+                "Revenue"
+              ],
+              [
+                "E1",
+                "Profit"
+              ],
+              [
+                "H1",
+                "Name"
+              ],
+              [
+                "I1",
+                "H"
+              ],
+              [
+                "A2",
+                "Game"
+              ],
+              [
+                "B2",
+                "A"
+              ],
+              [
+                "C2",
+                "Purchase"
+              ],
+              [
+                "D2",
+                "100"
+              ],
+              [
+                "E2",
+                "200"
+              ],
+              [
+                "H2",
+                "Category"
+              ],
+              [
+                "I2",
+                "Social Media"
+              ],
+              [
+                "A3",
+                "Game"
+              ],
+              [
+                "B3",
+                "B"
+              ],
+              [
+                "C3",
+                "Purchase"
+              ],
+              [
+                "D3",
+                "300"
+              ],
+              [
+                "E3",
+                "400"
+              ],
+              [
+                "H3",
+                "Type"
+              ],
+              [
+                "I3",
+                "Free"
+              ],
+              [
+                "A4",
+                "Game"
+              ],
+              [
+                "B4",
+                "C"
+              ],
+              [
+                "C4",
+                "Purchase"
+              ],
+              [
+                "D4",
+                "500"
+              ],
+              [
+                "E4",
+                "600"
+              ],
+              [
+                "H4",
+                "Revenue"
+              ],
+              [
+                "A5",
+                "Game"
+              ],
+              [
+                "B5",
+                "D"
+              ],
+              [
+                "C5",
+                "Purchase"
+              ],
+              [
+                "D5",
+                "700"
+              ],
+              [
+                "E5",
+                "800"
+              ],
+              [
+                "H5",
+                "Profit"
+              ],
+              [
+                "A6",
+                "Productivity"
+              ],
+              [
+                "B6",
+                "E"
+              ],
+              [
+                "C6",
+                "Free"
+              ],
+              [
+                "D6",
+                "900"
+              ],
+              [
+                "E6",
+                "1000"
+              ],
+              [
+                "A7",
+                "Productivity"
+              ],
+              [
+                "B7",
+                "F"
+              ],
+              [
+                "C7",
+                "Free"
+              ],
+              [
+                "D7",
+                "1100"
+              ],
+              [
+                "E7",
+                "1200"
+              ],
+              [
+                "A8",
+                "Productivity"
+              ],
+              [
+                "B8",
+                "G"
+              ],
+              [
+                "C8",
+                "Free"
+              ],
+              [
+                "D8",
+                "1300"
+              ],
+              [
+                "E8",
+                "1400"
+              ],
+              [
+                "A9",
+                "Social Media"
+              ],
+              [
+                "B9",
+                "H"
+              ],
+              [
+                "C9",
+                "Free"
+              ],
+              [
+                "D9",
+                "1500"
+              ],
+              [
+                "E9",
+                "1600"
+              ],
+              [
+                "A10",
+                "Social Media"
+              ],
+              [
+                "B10",
+                "I"
+              ],
+              [
+                "C10",
+                "Free"
+              ],
+              [
+                "D10",
+                "1700"
+              ],
+              [
+                "E10",
+                "1800"
+              ]
+            ],
+            "total": 58,
+            "truncated": false,
+            "blank_count": 32
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 55185,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1877,
+        "reasoning_output_tokens": 1556
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-36764",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "formulas": {
+          "C2": "=SUMIF(Sheet2!$A$2:$A$363,$A2,Sheet2!$R$2:$R$363)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 55185,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1877,
+        "reasoning_output_tokens": 1556
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37228",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "G2:G23",
+            "formula": "=IF(E2=1,LEFT(F2,SEARCH(\" / \",F2&\" / \")-1),IFERROR(MID(F2,SEARCH(\" / \",F2)+3,LEN(F2)),F2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 55185,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1877,
+        "reasoning_output_tokens": 1556
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37378",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "A2:A6",
+            "formula": "=IF(B2<>\"\",COUNTIF($B$2:B2,\"<>\"),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B8",
+            "range_size": 16,
+            "cells": [
+              [
+                "A1",
+                "#"
+              ],
+              [
+                "B1",
+                "A"
+              ],
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "2252"
+              ],
+              [
+                "A3",
+                "2"
+              ],
+              [
+                "B3",
+                "A"
+              ],
+              [
+                "B4",
+                "25"
+              ]
+            ],
+            "total": 7,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 55185,
+        "cached_input_tokens": 23808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1877,
+        "reasoning_output_tokens": 1556
+      },
+      "model_calls": 3
+    }
+  ]
+}

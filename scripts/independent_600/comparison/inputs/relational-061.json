@@ -1,0 +1,285 @@
+[
+  {
+    "task_id": "decision-reserve-a-weather-resilient-pick-plan",
+    "tool": "sqlite.query",
+    "instruction": "Reserve exactly one indivisible pick plan before learning which weather state will occur. The field trial log contains one primary observation per plan and weather state. Every plan covers the same two states. Each observation records bulk bins needing immediate cooling and saleable cartons projected after sorting. The single room record gives vacant bulk-bin spaces. A plan must fit the room in every state. Among feasible plans, maximize guaranteed cartons, defined as the minimum carton count across its states. Break plan ties by ascending plan_code. For the chosen plan cite the actual trial_id witnessing its guarantee, choosing the smallest trial_id if both states attain the minimum. Text comparisons use SQLite BINARY ordering. All fields are non-null, trial IDs are unique, and a feasible plan exists. Return one row with columns plan_code, guaranteed_cartons, trial_id in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cool_room": {
+        "columns": [
+          "vacant_spaces INTEGER"
+        ],
+        "rows": [
+          [
+            5
+          ]
+        ]
+      },
+      "field_trial": {
+        "columns": [
+          "trial_id TEXT",
+          "plan_code TEXT",
+          "weather_state TEXT",
+          "bulk_bins INTEGER",
+          "sale_cartons INTEGER",
+          "trial_text TEXT"
+        ],
+        "rows": [
+          [
+            "R1",
+            "ridge",
+            "dry",
+            5,
+            18,
+            "Dry ridge pick packed 18 cartons from five bins."
+          ],
+          [
+            "R2",
+            "ridge",
+            "wet",
+            4,
+            6,
+            "Wet ridge pick yielded six cartons from four bins."
+          ],
+          [
+            "G1",
+            "grove",
+            "dry",
+            5,
+            12,
+            "Dry grove run delivered twelve cartons from five bins."
+          ],
+          [
+            "G2",
+            "grove",
+            "wet",
+            5,
+            11,
+            "Wet grove run delivered eleven cartons from five bins."
+          ],
+          [
+            "F1",
+            "flat",
+            "dry",
+            6,
+            16,
+            "Dry flat run sent six bins to cooling and packed sixteen cartons."
+          ],
+          [
+            "F2",
+            "flat",
+            "wet",
+            5,
+            14,
+            "Wet flat run packed fourteen cartons from five bins."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "plan_code",
+      "guaranteed_cartons",
+      "trial_id"
+    ]
+  },
+  {
+    "task_id": "decision-reserve-an-unbroken-charging-window",
+    "tool": "sqlite.query",
+    "instruction": "Reserve exactly two consecutive ten-minute charger slots for one bus. Slot starts are unique integer minutes after 10:00. A slot is usable only if it finishes by the duty card's pullout_min and both its delivered energy in kWh and its flat price in cents are non-NULL. A missing row is unavailable. The bus is present from minute zero. For each pair, add the two energy deliveries to initial_kwh. Reject a pair if the resulting charge exceeds capacity_kwh or falls below required_kwh, the minimum at pullout. Energy deliveries are positive and indivisible, and there is no energy use during the layover. Minimize total price, then choose the earliest start. Return one row with columns start_min, final_kwh, cost_cents, source_id, citing the single duty card that sets the energy and timetable limits. Only slot energy or price may be NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "charger_slot": {
+        "columns": [
+          "start_min INTEGER",
+          "delivery_kwh INTEGER",
+          "price_cents INTEGER"
+        ],
+        "rows": [
+          [
+            0,
+            3,
+            30
+          ],
+          [
+            10,
+            4,
+            42
+          ],
+          [
+            20,
+            5,
+            10
+          ],
+          [
+            30,
+            6,
+            8
+          ],
+          [
+            40,
+            2,
+            28
+          ],
+          [
+            50,
+            5,
+            1
+          ]
+        ]
+      },
+      "duty_card": {
+        "columns": [
+          "source_id TEXT",
+          "card_text TEXT",
+          "initial_kwh INTEGER",
+          "required_kwh INTEGER",
+          "capacity_kwh INTEGER",
+          "pullout_min INTEGER"
+        ],
+        "rows": [
+          [
+            "D4",
+            "Start at 12 kWh. Leave at minute 50 with at least 20 kWh. Battery holds 22 kWh.",
+            12,
+            20,
+            22,
+            50
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "start_min",
+      "final_kwh",
+      "cost_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-reserve-folio-stock-before-demand-is-known",
+    "tool": "sqlite.query",
+    "instruction": "Before the order count is known, reserve exactly one offered lot of precut folio sheets. Its fee is payable in every demand scenario. The single press memo sets a hard staging limit in sheets, the cost in cents to rush-cut each sheet short, and the credit in cents for repulping each surplus sheet. Demand outcomes are mutually exclusive. Their positive integer weights sum to 100 and express probabilities in percent. Minimize expected net cost among lots within the staging limit, then prefer fewer staged sheets, then the lexically smallest offer ID under binary ordering. All inputs are non-null and at least one lot fits. Return one row with columns memo_id, offer_id, staged_sheets, cost_hundredths_cent. Report expected cost in hundredths of a cent as an exact integer and cite the operative press memo. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "demand_outcome": {
+        "columns": [
+          "need_sheets INTEGER",
+          "weight_pct INTEGER"
+        ],
+        "rows": [
+          [
+            4,
+            50
+          ],
+          [
+            8,
+            50
+          ]
+        ]
+      },
+      "folio_offer": {
+        "columns": [
+          "offer_id TEXT",
+          "lot_sheets INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "L4",
+            4,
+            32
+          ],
+          [
+            "L6",
+            6,
+            50
+          ],
+          [
+            "L8",
+            8,
+            63
+          ],
+          [
+            "BULK",
+            10,
+            58
+          ]
+        ]
+      },
+      "press_memo": {
+        "columns": [
+          "memo_id TEXT",
+          "memo_text TEXT",
+          "stage_cap INTEGER",
+          "rush_cents INTEGER",
+          "pulp_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "PM-4",
+            "Stage up to eight sheets. Rush cuts cost 20 cents each. Pulp returns 2 cents per sheet.",
+            8,
+            20,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "memo_id",
+      "offer_id",
+      "staged_sheets",
+      "cost_hundredths_cent"
+    ]
+  },
+  {
+    "task_id": "decision-reserve-proof-press-slot",
+    "tool": "sqlite.query",
+    "instruction": "Construct press_booking_ack.csv for one 12-minute press slot. Select one or two distinct proof batches from proof_queue. A single batch takes its run_min in minutes. Two batches take the sum of their run times plus 3 minutes if their ink_code values differ. The slot limit includes changeover. A null run_min means the estimate is pending and the batch is ineligible. All other fields are populated, batch codes are unique, and at least one single batch fits. Maximize the sum of service_points, then minimize occupied minutes. Break remaining ties by the ascending binary-text tuple of selected batch codes, sorting each pair internally and placing a shorter tuple first when it is a prefix. Emit one booking row with columns first_batch, second_batch, total_points, occupied_min. Leave second_batch null for a single booking. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "proof_queue": {
+        "columns": [
+          "batch_code TEXT",
+          "ink_code TEXT",
+          "run_min INTEGER",
+          "service_points INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "amber",
+            7,
+            10
+          ],
+          [
+            "B",
+            "blue",
+            5,
+            9
+          ],
+          [
+            "C",
+            "amber",
+            5,
+            7
+          ],
+          [
+            "D",
+            "blue",
+            4,
+            6
+          ],
+          [
+            "E",
+            "red",
+            null,
+            30
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_batch",
+      "second_batch",
+      "total_points",
+      "occupied_min"
+    ]
+  }
+]

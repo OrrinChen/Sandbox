@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-006",
+    "stage": "submit",
+    "prompt_sha256": "ab52a459085bb85e05dd711c069c0e80008bb3e2ec1da3a4248f773ef2365e7f",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211ea-aa59-7423-a548-6d6bd20124d6",
+    "raw": "{\"sheet-38537\":{\"fills\":[{\"range\":\"A3:A36\",\"formula\":\"=IF(B3=\\\"\\\",\\\"\\\",$B$2&\\\"-02-\\\"&TEXT(COUNTA($B$3:B3)+9,\\\"000\\\"))\"}],\"formulas\":{}},\"sheet-38662\":{\"formulas\":{\"A2\":\"=IFERROR(INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!C:C,0)),INDEX('Job Code Table'!A:A,MATCH(B2,'Job Code Table'!B:B,0)))\"}},\"sheet-38969\":{\"fills\":[{\"range\":\"R2:R20\",\"formula\":\"=IF(ISERROR(S2),\\\"Upload\\\",IF(AND(U2>=-1,U2<=1),\\\"Do not Upload\\\",\\\"to Check\\\"))\"}],\"formulas\":{}},\"sheet-39432\":{\"fills\":[{\"range\":\"M2:M5\",\"formula\":\"=IF(L2<=0,0,(MIN(L2,J2)*K2+MIN(MAX(L2-J2,0),H2)*I2+MIN(MAX(L2-J2-H2,0),F2)*G2+MIN(MAX(L2-J2-H2-F2,0),D2)*E2+MIN(MAX(L2-J2-H2-F2-D2,0),B2)*C2)/L2)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19145,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 350,
+      "reasoning_output_tokens": 44
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

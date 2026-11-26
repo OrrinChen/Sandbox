@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-002",
+    "stage": "submit",
+    "prompt_sha256": "c212753dc5af5f9ecc6a195e6e38e3779ad7abbfdb4edfff836a3e76b94b040d",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d5-63ae-7bc2-8dba-7cc099204046",
+    "raw": "{\n  \"sheet-32562\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B21\",\n        \"formula\": \"=IF(A2=\\\"\\\",\\\"\\\",COUNTIF($A$2:A2,A2))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-33157\": {\n    \"fills\": [\n      {\n        \"range\": \"K2:K6\",\n        \"formula\": \"=IF(J2=\\\"\\\",\\\"\\\",IF(J2=C2,$B$1,IF(J2=E2,$D$1,IF(J2=G2,$F$1,IF(J2=I2,$H$1,\\\"\\\")))))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-34033\": {\n    \"fills\": [\n      {\n        \"range\": \"K6:K10\",\n        \"formula\": \"=IF(OR(H6=\\\"\\\",J6=\\\"\\\"),\\\"\\\",IFERROR(INDEX($C$3:$E$13,MATCH(1,($B$3:$B$13=H6)*($A$3:$A$13=MAXIFS($A$3:$A$13,$B$3:$B$13,H6,$A$3:$A$13,\\\"<=\\\"&J6))*($A$3:$A$13<>\\\"\\\"),0),MATCH(I6,$C$1:$E$1,0)),\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-3413\": {\n    \"fills\": [\n      {\n        \"range\": \"G3:G6\",\n        \"formula\": \"=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20994,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 635,
+      "reasoning_output_tokens": 187
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

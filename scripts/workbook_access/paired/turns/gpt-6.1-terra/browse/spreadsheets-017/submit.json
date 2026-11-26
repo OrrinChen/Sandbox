@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-017",
+    "stage": "submit",
+    "prompt_sha256": "8f4d4ef2275e23f90cc494e1a4e7fdb300f85a10fb141e4c79893fd2f63cb25f",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f8-03f9-7ab0-9539-2e92ca39b7a0",
+    "raw": "{\"sheet-52220\":{\"fills\":[{\"range\":\"C2:C3\",\"formula\":\"=IF(AND(A2<>\\\"\\\",B2<>\\\"\\\"),A2+B2,\\\"\\\")\"}],\"formulas\":{}},\"sheet-52233\":{\"fills\":[{\"range\":\"B7:B10\",\"formula\":\"=SUM(INDEX($B$3:$E$5,0,MATCH(A7,$B$2:$E$2,0)))\"}],\"formulas\":{}},\"sheet-52532\":{\"fills\":[{\"range\":\"H2:H8\",\"formula\":\"=--(B2=MAX(B$2:B$8))+--(C2=MAX(C$2:C$8))+--(D2=MAX(D$2:D$8))+--(E2=MAX(E$2:E$8))+--(F2=MAX(F$2:F$8))+--(G2=MAX(G$2:G$8))\"}],\"formulas\":{}},\"sheet-52917\":{\"fills\":[{\"range\":\"J2:J9\",\"formula\":\"=DATE(C2,B2,A2)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 17500,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 244,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

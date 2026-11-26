@@ -1,0 +1,268 @@
+[
+  {
+    "task_id": "decision-distinct-design-rollup-discrepancy",
+    "tool": "sqlite.query",
+    "instruction": "Each catalog node reports its distinct design count. Each parent covers exactly the union of its two named children. shared_designs is the verified count of designs present in both children. Audit each parent locally using the reported counts of its immediate children, even when a child has its own discrepancy. Return only parents whose report differs from the implied union count. Output parent, reported_designs, implied_designs, and delta_designs, where delta is reported minus implied. All counts are in distinct designs. Order by parent in ascending binary text order. Each parent has one rollup row and each node has one report. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "reports": {
+        "columns": [
+          "node TEXT",
+          "designs INTEGER"
+        ],
+        "rows": [
+          [
+            "catalog",
+            17
+          ],
+          [
+            "paper",
+            12
+          ],
+          [
+            "wood",
+            8
+          ],
+          [
+            "folded",
+            7
+          ],
+          [
+            "flat",
+            6
+          ]
+        ]
+      },
+      "rollups": {
+        "columns": [
+          "parent TEXT",
+          "left_child TEXT",
+          "right_child TEXT",
+          "shared_designs INTEGER"
+        ],
+        "rows": [
+          [
+            "catalog",
+            "paper",
+            "wood",
+            3
+          ],
+          [
+            "paper",
+            "folded",
+            "flat",
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "parent",
+      "reported_designs",
+      "implied_designs",
+      "delta_designs"
+    ]
+  },
+  {
+    "task_id": "decision-diversion-path-insurance",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly one diversion package before learning which demand bulletin will apply. A package buys the stated whole number of paths for a fixed premium in cents, within the single authorization's premium ceiling. Each bulletin is a separate possible outcome, with required paths and a charge in cents per uncovered path. In each outcome pay the premium plus the uncovered-path charge. Unused paths have no value. Minimize the largest outcome cost, breaking ties by lower premium and then binary ascending package ID. Cite the bulletin producing the winning package's largest cost, breaking equal-cost bulletin ties by binary ascending bulletin ID. IDs are unique in their tables, all inputs are non-null, quantities are nonnegative, and at least one package is affordable. Return one row with ordered columns package_id, worst_cents, bulletin_id, auth_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "demand_bulletin": {
+        "columns": [
+          "bulletin_id TEXT",
+          "need_qty INTEGER",
+          "short_cents INTEGER",
+          "bulletin_text TEXT"
+        ],
+        "rows": [
+          [
+            "Fog",
+            3,
+            4000,
+            "Fog working requires three paths. Each missing path costs 4000 cents."
+          ],
+          [
+            "Slide",
+            6,
+            1200,
+            "The slope diversion needs six paths at 1200 cents per shortfall."
+          ],
+          [
+            "Clear",
+            0,
+            0,
+            "Normal working requires no diversion paths."
+          ]
+        ]
+      },
+      "path_authority": {
+        "columns": [
+          "auth_id TEXT",
+          "cap_cents INTEGER",
+          "auth_text TEXT"
+        ],
+        "rows": [
+          [
+            "DA3",
+            7000,
+            "Advance premiums may total at most 7000 cents."
+          ]
+        ]
+      },
+      "path_package": {
+        "columns": [
+          "package_id TEXT",
+          "path_qty INTEGER",
+          "premium_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Flex",
+            2,
+            3000
+          ],
+          [
+            "Deep",
+            4,
+            6100
+          ],
+          [
+            "Bare",
+            0,
+            0
+          ],
+          [
+            "Full",
+            6,
+            7100
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "package_id",
+      "worst_cents",
+      "bulletin_id",
+      "auth_id"
+    ]
+  },
+  {
+    "task_id": "decision-double-stage-carton-inspection",
+    "tool": "sqlite.query",
+    "instruction": "Apply the following inspection plan to each carton lot. Each recorded stage samples 10 distinct cartons, and defects counts the cartons in that sample with a crooked label. At stage 1, accept immediately with 0 or 1 defective cartons and reject immediately with 4 or more. With 2 or 3, inspect a second sample. If that sample is pending, report 'AWAIT_STAGE_2'. Once both samples are available, accept if their combined defective count is at most 4 and reject otherwise. There is one stage 1 row per lot and at most one stage 2 row. Output lot_id and decision, using 'ACCEPT' or 'REJECT' for final decisions. Sort by unique lot_id ascending. All threshold equalities follow the inclusive limits above. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "carton_samples": {
+        "columns": [
+          "lot_id TEXT",
+          "stage INTEGER",
+          "defects INTEGER"
+        ],
+        "rows": [
+          [
+            "L1",
+            1,
+            1
+          ],
+          [
+            "L2",
+            1,
+            3
+          ],
+          [
+            "L2",
+            2,
+            2
+          ],
+          [
+            "L3",
+            1,
+            2
+          ],
+          [
+            "L3",
+            2,
+            2
+          ],
+          [
+            "L4",
+            1,
+            4
+          ],
+          [
+            "L5",
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "lot_id",
+      "decision"
+    ]
+  },
+  {
+    "task_id": "decision-dryer-paired-moisture-change",
+    "tool": "sqlite.query",
+    "instruction": "For each dryer line represented in the ten-minute sampling log, estimate the mean moisture drop across sampled trays. Each row represents one scheduled tray pass, with at most one row per line and tick. Both readings are moisture in integer basis points. A null means the probe missed that reading. Give each tray with both readings equal weight and calculate inlet minus outlet, retaining negative drops. Return every represented line, including lines with no complete tray. Output line_code, paired_trays, mean_drop_bp in ascending binary line_code order. Return the mean as a real number without rounding, or null when there are no complete trays. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "tray_pass": {
+        "columns": [
+          "line_code TEXT",
+          "tick_no INTEGER",
+          "inlet_bp INTEGER",
+          "outlet_bp INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            420,
+            350
+          ],
+          [
+            "A",
+            2,
+            360,
+            370
+          ],
+          [
+            "A",
+            3,
+            540,
+            null
+          ],
+          [
+            "A",
+            4,
+            null,
+            300
+          ],
+          [
+            "B",
+            1,
+            310,
+            null
+          ],
+          [
+            "B",
+            2,
+            null,
+            280
+          ],
+          [
+            "C",
+            1,
+            400,
+            400
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "line_code",
+      "paired_trays",
+      "mean_drop_bp"
+    ]
+  }
+]

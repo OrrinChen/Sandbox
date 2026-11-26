@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 36501,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 368,
+    "reasoning_output_tokens": 24
+  },
+  "thread": "01a20d7e-4220-71d3-a0f2-c6c8ef4dd48d",
+  "packet_sha256": "bfee1a301a63c3343a2d03509c3fed8b2afffa5b0d8dc2b45bd7310990a04eb6",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2023Q1/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/prepackaged_software-1\",\"alerts\":[{\"cik\":\"0001627014\",\"reason\":\"Black Knight’s reported revenue growth slowed from 9.19% year over year in June to 2.30% in September. Repeating that 6.89-point slowdown would put December near -4.59%, just above the threshold. I forecast a crossing in January–March as the company begins comparing against 2022 quarters that benefited from higher foreclosure transaction revenue after the moratorium expired (B, C).\"}]},\n    {\"sector\":\"2023Q1/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2023Q1/transportation-1\",\"alerts\":[{\"cik\":\"0000878927\",\"reason\":\"Old Dominion’s reported revenue fell from $1.667 billion in June to $1.604 billion in September while the corresponding year-ago revenue rose from $1.319 billion to $1.400 billion. Year-over-year growth slowed from 26.38% to 14.55%. If that 11.83-point quarterly slowdown persists, growth would be about 2.7% in October–December and -9.1% in January–March, placing the first crossing in the target quarter.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001627014",
+            "reason": "Black Knight’s reported revenue growth slowed from 9.19% year over year in June to 2.30% in September. Repeating that 6.89-point slowdown would put December near -4.59%, just above the threshold. I forecast a crossing in January–March as the company begins comparing against 2022 quarters that benefited from higher foreclosure transaction revenue after the moratorium expired (B, C)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000878927",
+            "reason": "Old Dominion’s reported revenue fell from $1.667 billion in June to $1.604 billion in September while the corresponding year-ago revenue rose from $1.319 billion to $1.400 billion. Year-over-year growth slowed from 26.38% to 14.55%. If that 11.83-point quarterly slowdown persists, growth would be about 2.7% in October–December and -9.1% in January–March, placing the first crossing in the target quarter."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001701758",
+  "issuer": "LOVESAC CO",
+  "cutoff": "2023-04-01",
+  "projected_target_start": "2023-05-01",
+  "status": "complete",
+  "period_end": "2023-01-29",
+  "filing_date": "2023-03-29",
+  "text": {
+    "sector": "retail",
+    "cik": "0001701758",
+    "issuer": "LOVESAC CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2023-03-29",
+        "text": "Net sales are historically higher in the fourth fiscal quarter due primarily to the impact of the holiday selling season."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2023-03-29",
+        "text": "Showroom net sales increased $$99.5 million, or 33.3%, to $398.5 million in fiscal 2023 as compared to $299.0 million in fiscal 2022, principally related to higher point of sales transactions in all showrooms with slightly higher promotional discounting."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2023-03-29",
+        "text": "Other sales, which include pop-up-shop sales, barter inventory transactions and shop-in-shop sales, increased $27.9 million, or 57.4%, to $76.5 million in fiscal 2023 as compared to $48.6 million in fiscal 2022."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2023-03-29",
+        "text": "Our recent revenue growth has been accompanied by increased selling, general and administrative expenses."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2023-03-29",
+        "text": "In fiscal 2023, net cash used in operating activities was $21.4 million and consisted of changes in operating assets and liabilities of $90.8 million, net income of $28.2 million, and non-cash items of $41.2 million."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-10-30",
+        "filed": "2022-12-08",
+        "reported_sales_usd": 134784000,
+        "year_ago_reported_sales_usd": 116678000,
+        "yoy_percent": "15.5179"
+      },
+      {
+        "quarter_end": "2023-01-29",
+        "filed": "2023-03-29",
+        "reported_sales_usd": 238847000,
+        "year_ago_reported_sales_usd": 196198000,
+        "yoy_percent": "21.7377"
+      }
+    ],
+    "status": "complete"
+  }
+}

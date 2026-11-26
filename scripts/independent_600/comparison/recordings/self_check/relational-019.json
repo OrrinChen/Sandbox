@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "a37b2b710c254c95d3756b68163f0ad16ae0d8e4b5a00c0ebfaa2eb4e8d30be7",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-consecutive-stockout-penalty\": \"WITH days AS (SELECT item_code, COUNT(CASE WHEN closing_units < 5 THEN 1 END) OVER (PARTITION BY item_code ORDER BY day_no ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS deficient_in_last_three FROM stock_day) SELECT item_code, SUM(deficient_in_last_three = 3) AS charged_days, 70 * SUM(deficient_in_last_three = 3) AS penalty_cents FROM days GROUP BY item_code ORDER BY item_code COLLATE BINARY ASC\",\n  \"decision-consolidate-inbound-lot-fees\": \"SELECT a.lot_id AS first_lot, b.lot_id AS second_lot, a.lot_cents + b.lot_cents + na.fee_cents + CASE WHEN a.supplier_id = b.supplier_id THEN 0 ELSE nb.fee_cents END AS landed_cents, na.notice_id AS first_notice, nb.notice_id AS second_notice FROM stock_lot AS a JOIN stock_lot AS b ON a.lot_id COLLATE BINARY < b.lot_id AND a.cartons + b.cartons = 10 JOIN supplier_notice AS na ON na.supplier_id = a.supplier_id JOIN supplier_notice AS nb ON nb.supplier_id = b.supplier_id ORDER BY landed_cents, first_lot COLLATE BINARY, second_lot COLLATE BINARY LIMIT 1\",\n  \"decision-contiguous-party-seat-quote\": \"SELECT p.slip_id, s.seat_no AS first_seat, MAX(c.seat_no) AS last_seat, SUM(c.price_cents) AS total_cents FROM party_slip AS p CROSS JOIN row_chair AS s JOIN row_chair AS c ON c.seat_no BETWEEN s.seat_no AND s.seat_no + (p.party_size - 1) GROUP BY p.slip_id, p.party_size, s.seat_no HAVING COUNT(c.price_cents) = p.party_size ORDER BY total_cents, first_seat LIMIT 1\",\n  \"decision-corroborate-a-room-attribution\": \"WITH citations AS (SELECT take_id, room_id, MIN(card_id COLLATE BINARY) AS card_id FROM room_card WHERE room_id IS NOT NULL GROUP BY take_id, room_id, origin_id), counted AS (SELECT take_id, room_id, COUNT(*) OVER (PARTITION BY take_id, room_id) AS origin_count, card_id FROM citations) SELECT take_id, room_id, origin_count, card_id FROM counted WHERE origin_count >= 2 ORDER BY take_id, room_id, card_id\"\n}",
+  "submissions": {
+    "decision-consecutive-stockout-penalty": "WITH days AS (SELECT item_code, COUNT(CASE WHEN closing_units < 5 THEN 1 END) OVER (PARTITION BY item_code ORDER BY day_no ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS deficient_in_last_three FROM stock_day) SELECT item_code, SUM(deficient_in_last_three = 3) AS charged_days, 70 * SUM(deficient_in_last_three = 3) AS penalty_cents FROM days GROUP BY item_code ORDER BY item_code COLLATE BINARY ASC",
+    "decision-consolidate-inbound-lot-fees": "SELECT a.lot_id AS first_lot, b.lot_id AS second_lot, a.lot_cents + b.lot_cents + na.fee_cents + CASE WHEN a.supplier_id = b.supplier_id THEN 0 ELSE nb.fee_cents END AS landed_cents, na.notice_id AS first_notice, nb.notice_id AS second_notice FROM stock_lot AS a JOIN stock_lot AS b ON a.lot_id COLLATE BINARY < b.lot_id AND a.cartons + b.cartons = 10 JOIN supplier_notice AS na ON na.supplier_id = a.supplier_id JOIN supplier_notice AS nb ON nb.supplier_id = b.supplier_id ORDER BY landed_cents, first_lot COLLATE BINARY, second_lot COLLATE BINARY LIMIT 1",
+    "decision-contiguous-party-seat-quote": "SELECT p.slip_id, s.seat_no AS first_seat, MAX(c.seat_no) AS last_seat, SUM(c.price_cents) AS total_cents FROM party_slip AS p CROSS JOIN row_chair AS s JOIN row_chair AS c ON c.seat_no BETWEEN s.seat_no AND s.seat_no + (p.party_size - 1) GROUP BY p.slip_id, p.party_size, s.seat_no HAVING COUNT(c.price_cents) = p.party_size ORDER BY total_cents, first_seat LIMIT 1",
+    "decision-corroborate-a-room-attribution": "WITH citations AS (SELECT take_id, room_id, MIN(card_id COLLATE BINARY) AS card_id FROM room_card WHERE room_id IS NOT NULL GROUP BY take_id, room_id, origin_id), counted AS (SELECT take_id, room_id, COUNT(*) OVER (PARTITION BY take_id, room_id) AS origin_count, card_id FROM citations) SELECT take_id, room_id, origin_count, card_id FROM counted WHERE origin_count >= 2 ORDER BY take_id, room_id, card_id"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-a2fb-71e2-8709-63cffaa8394f",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22493,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 553,
+    "reasoning_output_tokens": 0
+  }
+}

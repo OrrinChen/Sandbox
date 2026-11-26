@@ -1,0 +1,128 @@
+{
+  "origin": "2022Q4",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000003453",
+          "reason": "Matson’s Q3 Ocean Transportation revenue rose 6.4% (A), but Hawaii container volume fell 7.1% (B). The filing cites “lower retail-related demand” after a prior-year pandemic spike (C). If that weakness persists and spreads across ocean services, consolidated revenue growth could cross to −5% or lower within two quarters. The packet gives only segment figures for Q3."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001701758",
+          "reason": "Reported sales YoY 44.98% then 15.52%; linear projections -13.95% and -43.42%."
+        },
+        {
+          "cik": "0000829224",
+          "reason": "Reported sales YoY 8.72% then 3.28%; linear projections -2.15% and -7.59%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000057515",
+          "reason": "Reported sales YoY 17.34% then 8.54%; linear projections -0.26% and -9.06%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Reported sales YoY 9.19% then 2.30%; linear projections -4.59% and -11.47%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000003453",
+          "reason": "Reported sales YoY 44.14% then 4.03%; linear projections -36.08% and -76.19%."
+        },
+        {
+          "cik": "0001158463",
+          "reason": "Reported sales YoY 63.11% then 29.92%; linear projections -3.27% and -36.46%."
+        }
+      ]
+    }
+  ]
+}

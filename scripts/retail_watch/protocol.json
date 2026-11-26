@@ -1,0 +1,28 @@
+{
+  "id": "retail-watch-development-v1",
+  "companies": {"BBY":"Best Buy","HD":"The Home Depot","KSS":"Kohl's","LOW":"Lowe's","M":"Macy's","TGT":"Target"},
+  "origins": [
+    {"id":"2022Q1","cutoff":"2022-05-31","period_end_month":"2022-04/05"},
+    {"id":"2022Q2","cutoff":"2022-08-31","period_end_month":"2022-07/08"},
+    {"id":"2022Q3","cutoff":"2022-11-30","period_end_month":"2022-10/11"},
+    {"id":"2022Q4","cutoff":"2023-03-31","period_end_month":"2023-01/02"}
+  ],
+  "clock":"End of cutoff day in America/New_York. Quarter ids use retail season, irrespective of issuer fiscal-year naming. Starting after each observed fiscal quarter, resolve the following two actual issuer fiscal quarters. Full dates on all records.",
+  "slots_per_origin":2,
+  "arms":["text","metadata"],
+  "evidence_rule":[
+    "Primary document is the routine quarterly results release for this quarter, including its accompanying financial tables. Use issuer IR or the same release furnished to the SEC. If a slot is absent use the contemporaneous 10-Q or 10-K filed by cutoff; if still absent use the first actual quarterly operating-metric row not already used, in statement order. Never substitute an event-driven news release. Record source, original headline, first publication date, URL and table/paragraph locator.",
+    "A. First consolidated current-quarter net sales or total revenue row (prefer net sales); include the amount and year-ago amount where presented.",
+    "B. Consolidated current-quarter gross profit or gross margin row. If unavailable use cost of sales row. Prefer dollar row, then margin rate, then historical sentence.",
+    "C. Merchandise inventories / inventories row at quarter end; keep the comparison period as actually published.",
+    "D. Consolidated GAAP operating income/loss (income from operations) row, not adjusted operating income.",
+    "E. First historical sentence or table row stating the company's overall comparable sales result for the just-ended quarter, excluding guidance, category-only and future-quarter statements. If unavailable use first historical consolidated sales-change statement.",
+    "Use the shortest contiguous source span carrying the slot's information. Normalize whitespace only; table values are data and may be contiguous cells with neutral original column headings/units supplied separately. Do not add model-written analysis. Title-only gets exactly the original titles and dates for these five slots, including repetitions, plus the identical public company roster, cutoff, target and budget. No URLs, headings, financial fields or numerical excerpts in this arm."
+  ],
+  "outcome":"New crossing to a consolidated reported quarterly GAAP net-sales year-over-year decline of at least 5.00% in either following fiscal quarter, with the immediately preceding quarter above -5.00%. Use consolidated net sales, else total revenue consistently; ratio of current to corresponding year-ago amounts minus one, before rounding. Count reported operations, without calendar, acquisition or currency adjustments. A continued decline already below the threshold is not a new onset. If it recovers then crosses again, that is a new onset.",
+  "first_disclosure":"Earliest dated official issuer public disclosure that unambiguously establishes the threshold for that specific fiscal quarter, including numeric quarterly guidance, preannouncements, and actual results. Exact figures or a range whose entire interval is at or below the threshold qualify; mapped dollar guidance must use the same prior-year base. Full-year projections, comparable sales alone and nonspecific warnings do not qualify. Search issuer earnings releases, intervening public updates, official investor presentations/call transcripts or issuer-furnished SEC exhibits for advance guidance. Record the first verified date, primary URL and evidence plus search coverage. Do not assert the date of the earliest market rumor or universal first mention.",
+  "eligible":"A crossing already explicitly disclosed on or before an origin cutoff earns no early-warning credit at that origin. Retain its row, distinguish known from absent events. Label positive if at least one newly crossing quarter in the horizon was first explicitly disclosed after cutoff. Match the first such quarter in chronological order.",
+  "scoring":"Per company-origin hits=alert+positive; false alarms=alert+no eligible event; misses=no alert+positive; correct negatives=no alert+no eligible event. Every row retained. Elapsed calendar days from cutoff to first verified explicit disclosure for a hit; no lead time for false alarms. Also report distinct events, first successful eligible alert per event, and recall/precision denominators (undefined when zero). Overlapping origins are dependent.",
+  "execution":"At each origin build and hash the 30 excerpts and the title/date projection. Readers are fresh inherited Codex contexts per arm per origin, one call, same common prompt, up to 2 company alerts (zero allowed), requested limit 600 output tokens, no lookup, calculation tools, earlier forecasts, or labels. Seal both arms before requesting the next origin's new records. After sealing all alerts, obtain outcome records and score. No cell is removed after observing its outcome. Historical company recognition remains possible.",
+  "missing":"Do not silently fill a slot, exclude an issuer, infer an unverified date, or count an unresolved case as negative. Mark unresolved explicitly if historical coverage does not substantiate an outcome or earliest known date."
+}

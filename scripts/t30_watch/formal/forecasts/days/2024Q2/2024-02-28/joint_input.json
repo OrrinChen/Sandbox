@@ -1,0 +1,67 @@
+{
+  "cutoff": "2024-02-28",
+  "sectors": {
+    "2024Q2/food_manufacturing-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000880117",
+          "issuer": "SANFILIPPO JOHN B & SON INC",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2024-03-29",
+          "latest_filed_period_end": "2023-12-28",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2024-02-01",
+              "text": "Our net sales of $291.2 million for the second quarter of fiscal 2024 increased $16.9 million, or 6.2%, from our net sales of $274.3 million for the second quarter of fiscal 2023."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2024-02-01",
+              "text": "While we have seen stabilization in truckload capacity and volume at U.S. ports and improvements with driver hiring, there are still warehouse and dock staff shortages and fuel and energy concerns due to continued unrest abroad coupled with persistent inflation."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2024-02-01",
+              "text": "We have remained agile by proactively identifying risks, modifying inventory plans and diversifying our supplier base to mitigate risk of customer order shortages and maintain our supply chain."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2024-02-01",
+              "text": "Due to the current inflationary environment, we have seen higher selling prices at retail."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2024-02-01",
+              "text": "Due to the factors discussed above, income from operations was $27.6 million, or 9.5% of net sales, for the second quarter of fiscal 2024 compared to $24.5 million, or 8.9% of net sales, for the second quarter of fiscal 2023."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2023-09-28",
+                "filed": "2023-11-02",
+                "reported_sales_usd": 234105000,
+                "year_ago_reported_sales_usd": 252601000,
+                "yoy_percent": "-7.3222"
+              },
+              {
+                "quarter_end": "2023-12-28",
+                "filed": "2024-02-01",
+                "reported_sales_usd": 291222000,
+                "year_ago_reported_sales_usd": 274328000,
+                "yoy_percent": "6.1583"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

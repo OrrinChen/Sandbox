@@ -1,0 +1,281 @@
+[
+  {
+    "task_id": "decision-export-rotation-counter-increments",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of touches.csv as a single TEXT value in one row named csv_body. A player's device counts touches cumulatively within a rotation, starting at zero each time a rotation begins. Each row is a successful reading. Subtract the immediately preceding reading for the same player and rotation, using zero before the first reading. Include every reading, even a zero increment. Rotation numbers and tick numbers are positive integers, ticks increase within a rotation, and the player/rotation/tick triple is unique. Counts are nonnegative and never decrease within a rotation. Player codes are uppercase ASCII letters, all fields are non-null, and there is at least one reading. Use the literal header player,rotation,tick,new_touches followed by records ordered by player code in ascending BINARY order, then numeric rotation and numeric tick ascending. Use commas, unquoted fields, base-ten integers without padding, and one LF after every line including the last. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "touch_readings": {
+        "columns": [
+          "player_code TEXT",
+          "rotation_no INTEGER",
+          "tick_no INTEGER",
+          "touch_count INTEGER"
+        ],
+        "rows": [
+          [
+            "V",
+            2,
+            1,
+            2
+          ],
+          [
+            "A",
+            1,
+            10,
+            5
+          ],
+          [
+            "V",
+            1,
+            4,
+            6
+          ],
+          [
+            "A",
+            1,
+            2,
+            3
+          ],
+          [
+            "V",
+            2,
+            3,
+            2
+          ],
+          [
+            "V",
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-export-trip-advance-clearing-csv",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of a CSV file for closed trip accounts. Each trip_account has a unique trip_code and an opening cash advance in cents. Each trip_entry has a unique entry_id and belongs to one trip. An expense adds approved spending and a return records advance cash already handed back. The signed amount still payable to the traveler is approved spending plus cash returned minus the opening advance. Include closed trips with no entries, treating missing totals as zero. Omit zero balances and open trips. Emit positive balances as PAY and negative balances as COLLECT, with the absolute balance in integer cents and no leading zeros. Return one row with one TEXT column named csv_body. Its first line must be trip_code,direction,amount_cents. Sort data lines by the original trip_code using SQLite BINARY order. Always double-quote the trip code and escape each embedded double quote by doubling it. Leave the other fields unquoted. Use a single LF after every line including the last. All input fields are non-null, amounts are nonnegative, codes contain no line breaks, and distinct codes resolve all ordering ties. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "trip_account": {
+        "columns": [
+          "trip_code TEXT",
+          "phase TEXT",
+          "advance_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A,1",
+            "closed",
+            5000
+          ],
+          [
+            "B\"2",
+            "closed",
+            3000
+          ],
+          [
+            "C",
+            "closed",
+            900
+          ],
+          [
+            "D",
+            "open",
+            2000
+          ],
+          [
+            "E",
+            "closed",
+            700
+          ]
+        ]
+      },
+      "trip_entry": {
+        "columns": [
+          "entry_id TEXT",
+          "trip_code TEXT",
+          "entry_kind TEXT",
+          "amount_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "T1",
+            "A,1",
+            "expense",
+            4300
+          ],
+          [
+            "T2",
+            "A,1",
+            "return",
+            500
+          ],
+          [
+            "T3",
+            "B\"2",
+            "expense",
+            3300
+          ],
+          [
+            "T4",
+            "E",
+            "expense",
+            450
+          ],
+          [
+            "T5",
+            "E",
+            "return",
+            250
+          ],
+          [
+            "T6",
+            "D",
+            "expense",
+            2400
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-export-unfulfilled-partner-kit-orders",
+    "tool": "csv.export",
+    "instruction": "Produce the contents of the packing CSV for promotional kits going to acquisition partners. Each kit_request row is a distinct order with a unique request_id, a partner label and a positive number of kits. Each kit_dispatch row records an additional positive quantity already shipped against one existing order. Compute outstanding kits separately for each order, flooring at zero because extra kits already sent for one order cannot fulfill another. Sum outstanding kits by exact partner label and omit zero totals. Return one row with one TEXT column named csv_contents. Its first line must be partner,kits. Write one data line per included partner, ordered by the original label under SQLite BINARY ordering. Always double-quote the partner field and double each embedded double quote. Write the integer kit count in decimal without quotes or padding. Use a comma between fields, LF after every line including the final line, and no other whitespace. Labels contain no line breaks. All inputs are nonnull. If nothing is outstanding, return just the header with its LF. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "kit_dispatch": {
+        "columns": [
+          "request_id INTEGER",
+          "kits_sent INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      "kit_request": {
+        "columns": [
+          "request_id INTEGER",
+          "partner_label TEXT",
+          "kits_ordered INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "Arc, West",
+            5
+          ],
+          [
+            2,
+            "Arc, West",
+            3
+          ],
+          [
+            3,
+            "Bay \"B\"",
+            7
+          ],
+          [
+            4,
+            "Dune",
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_contents"
+    ]
+  },
+  {
+    "task_id": "decision-export-walkthrough-confirmed-sign-defects",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of sign_replacements.csv as one text cell named csv_content. A replacement requires two defect observations for the same sign code from different walkthrough rounds. Duplicate observations in one round do not independently confirm a defect. A clear observation provides no defect evidence and does not cancel other observations. For each qualifying sign, cite the lexicographically smallest ordered pair of observation IDs among eligible pairs, putting the smaller ID first. Sort data records by sign code ascending using SQLite's binary text order. Use the exact unquoted header sign_code,first_obs,second_obs. Double-quote every data field and double each embedded double quote. Use commas between fields and one LF after every record including the header and last data record. For no qualifying signs return just the header with its LF. Observation IDs are unique. Input fields are non-null text without CR or LF. The single output row needs no sorting. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "sign_observations": {
+        "columns": [
+          "obs_id TEXT",
+          "sign_code TEXT",
+          "round_code TEXT",
+          "finding TEXT",
+          "field_text TEXT"
+        ],
+        "rows": [
+          [
+            "N2",
+            "L,2",
+            "am",
+            "defect",
+            "Arrow film is lifting at the corner."
+          ],
+          [
+            "N1",
+            "L,2",
+            "am",
+            "defect",
+            "Second view shows the same loose arrow."
+          ],
+          [
+            "N5",
+            "L,2",
+            "pm",
+            "defect",
+            "Arrow edge still curls away from the board."
+          ],
+          [
+            "N3",
+            "B\"7",
+            "am",
+            "defect",
+            "Bay numeral has lost its top stroke."
+          ],
+          [
+            "N4",
+            "B\"7",
+            "pm",
+            "defect",
+            "Missing stroke visible from the aisle."
+          ],
+          [
+            "N6",
+            "Z9",
+            "am",
+            "defect",
+            "Door legend appears faded."
+          ],
+          [
+            "N7",
+            "Z9",
+            "am",
+            "defect",
+            "Close view of the faded door legend."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_content"
+    ]
+  }
+]

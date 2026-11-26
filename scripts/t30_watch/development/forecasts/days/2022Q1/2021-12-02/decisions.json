@@ -1,0 +1,119 @@
+{
+  "text": [
+    {
+      "sector": "2022Q1/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-1",
+      "alerts": [
+        {
+          "cik": "0000880266",
+          "reason": "Key component shortages had begun cutting both production and unit shipments in recent weeks, while inventory rose (A). The timing supports a forecast that year-over-year net sales growth stays above -5% in the December quarter, then falls to -5% or below if the shipment cuts persist for the full March quarter."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Consolidated revenue growth slowed to 6% in the September quarter versus 17% over nine months (A, E). King's $116 million bookings increase supports a December quarter above -5% (B), but the slowdown and the earlier stay-at-home boost to game demand (C) point to a year-over-year revenue decline of at least 5% in the March quarter as that boost fades."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0001124796",
+          "reason": "Higher industrial unit sales outside China still outweighed falling Chinese unit sales and lower average selling prices in the September quarter (B), supporting a December quarter above -5%. With inventory up $16.2 million (C), I forecast that continued price and volume pressure will outweigh growth elsewhere and push March-quarter consolidated revenue down at least 5% year over year."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/transportation-1",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2022Q1/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-1",
+      "alerts": [
+        {
+          "cik": "0000880266",
+          "reason": "AGCO’s reported net sales growth slowed from 43.48% in June to 9.11% in September. Key component shortages had recently forced AGCO to cut production and unit shipments even as inventory rose (A). I forecast December sales growth stays above -5%, but persistent shipment cuts push March-quarter sales at least 5% below the prior year."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Activision’s reported revenue growth slowed from 18.84% in June to 5.94% in September (A). The $116 million increase in King bookings supports a December forecast above -5% (B). The nine-month total (E) less June and September revenue implies roughly $2.23 billion for March 2021. As stay-at-home demand fades (C), I forecast March 2022 revenue at least 5% below that base, around $2.12 billion or less."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/transportation-1",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2022Q1/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q1/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0001124796",
+          "reason": "Reported sales YoY 32.56% then 17.01%. Target is step 2; preceding 1.47% versus target -14.07%."
+        },
+        {
+          "cik": "0001463101",
+          "reason": "Reported sales YoY 151.76% then 96.93%. Target is step 2; preceding 42.09% versus target -12.75%."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q1/transportation-1",
+      "alerts": [
+        {
+          "cik": "0001158463",
+          "reason": "Reported sales YoY 597.21% then 300.81%. Target is step 2; preceding 4.42% versus target -291.98%."
+        }
+      ]
+    }
+  ]
+}

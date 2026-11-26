@@ -1,0 +1,67 @@
+{
+  "cutoff": "2021-06-26",
+  "sectors": {
+    "2021Q3/semiconductors-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000006951",
+          "issuer": "APPLIED MATERIALS INC /DE",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2021-07-26",
+          "latest_filed_period_end": "2021-05-02",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2021-05-27",
+              "text": "Applied’s display and adjacent markets revenue increased in the three and six months ended May 2, 2021 compared to the same periods in the prior year due to increased investment in display manufacturing equipment for TVs."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2021-05-27",
+              "text": "The timing of customer investment in manufacturing equipment is also affected by the timing of next-generation process development, and the timing of capacity expansion to meet end-market demand."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2021-05-27",
+              "text": "Even with the ongoing challenges faced during the pandemic, semiconductor equipment customers continued to make strategic investments in new technology transitions during the three and six months ended May 2, 2021."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2021-05-27",
+              "text": "Gross margin in the three and six months ended May 2, 2021 increased compared to the same periods in the prior year primarily due to the increase in net sales and favorable changes in customer and product mix, partially offset by higher freight costs and higher personnel costs due to increase in headcount to provide manufacturing capacity and flexibility."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2021-05-27",
+              "text": "Cash provided by operating activities increased in the first six months of fiscal 2021 compared to the same period in the prior year primarily due to higher net income, partially offset by higher payments to suppliers and variable compensation."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-01-31",
+                "filed": "2021-02-25",
+                "reported_sales_usd": 5162000000,
+                "year_ago_reported_sales_usd": 4162000000,
+                "yoy_percent": "24.0269"
+              },
+              {
+                "quarter_end": "2021-05-02",
+                "filed": "2021-05-27",
+                "reported_sales_usd": 5582000000,
+                "year_ago_reported_sales_usd": 3957000000,
+                "yoy_percent": "41.0665"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

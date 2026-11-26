@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0001599617",
+  "issuer": "NOW INC.",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "complete",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-02-17",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0001599617",
+    "issuer": "NOW INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-02-17",
+        "text": "Revenue decreased for the year ended December 31, 2020 by $1,332 million, or 45.1%, when compared to the corresponding period of 2019."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-02-17",
+        "text": "The average price of Hot-Rolled Coil declined 7.4% (from $620.53 per short ton to $574.67 per short ton) in 2020 compared to 2019."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-02-17",
+        "text": "The price for WTI crude was $52.28 per barrel at January 22, 2021, up 33.3% from the 2020 average."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-02-17",
+        "text": "The average price of WTI crude declined 31.2% (from $56.98 per barrel to $39.23 per barrel), and natural gas prices declined 20.6% (from $2.57 per MMBtu to $2.04 per MMBtu) in 2020 compared to 2019."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-02-17",
+        "text": "For the year ended December 31, 2020, operating loss was $420 million compared to operating loss of $83 million for the corresponding period of 2019."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-11-04",
+        "reported_sales_usd": 326000000,
+        "year_ago_reported_sales_usd": 751000000,
+        "yoy_percent": "-56.5912"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-02-17",
+        "reported_sales_usd": 319000000,
+        "year_ago_reported_sales_usd": 639000000,
+        "yoy_percent": "-50.0782"
+      }
+    ],
+    "status": "complete"
+  }
+}

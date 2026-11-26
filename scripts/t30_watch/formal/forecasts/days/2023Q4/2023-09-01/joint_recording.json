@@ -1,0 +1,130 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 62447,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1336,
+    "reasoning_output_tokens": 38
+  },
+  "thread": "01a20d8d-95da-7431-a37c-556f357de300",
+  "packet_sha256": "e20b5e71f8fe5eef772362de14490f9c7858ff3a7f2cbf0331a00255fe00e6c0",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q4/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001644406\",\n          \"reason\": \"June revenue grew 3.5% because price and mix added 10.4 percentage points against a 6.9-point volume decline (A, B). I expect earlier price increases to keep September above -5%. If the volume drag persists, a price and mix contribution of 1.9 points or less would put the December quarter at or below -5% (B, D).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000100493\",\n          \"reason\": \"Tyson's consolidated sales moved from +0.12% in April to -2.63% in July, largely because pork sales fell (A). Higher chicken volume helped keep the overall volume contribution positive by $47 million, but volumes fell in beef, pork and prepared foods (B). I expect chicken to cushion the September quarter and leveling protein prices to leave sales down at least 5% in the quarter beginning October 1 (D).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/food_manufacturing-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/industrial_machinery-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001599617\",\n          \"reason\": \"Revenue growth slowed from 23.47% in March to 10.20% in June, leaving room for September growth to slow further while staying above -5% (A). Second-quarter natural gas prices fell 18.5% sequentially and crude fell 3.0% (D). I expect weaker energy prices to weigh on customer purchases with a lag, taking December revenue down at least 5% year over year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/industrial_machinery-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000918541\",\n          \"reason\": \"Higher customer prices helped hold NN's June sales decline to 0.12%. The Taunton and Irvine closures had already reduced shipment volume (A, B). I expect pricing to keep September above -5%, with the lost volume taking the December decline to at least 5% as the year-over-year pricing benefit fades.\"\n        },\n        {\n          \"cik\": \"0001287213\",\n          \"reason\": \"March sales fell 19.55%, and June's 10.5% rebound left first-half sales down 0.1% (A, C). Higher pricing and more preseason orders shipped supported June (B). I expect preseason shipments to keep September above -5%, then leave fewer orders to ship in December, pushing that quarter's sales down at least 5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/industrial_machinery-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000792987\",\n          \"reason\": \"Sales growth slowed from 19.47% in March to 10.0% in June. At June's sales level of $350.0 million, the $688.8 million backlog represented roughly two quarters of sales, but it was $148.6 million smaller than a year earlier (A–C). I expect existing orders to keep September above -5% and the smaller order book to pull December sales down at least 5%.\"\n        },\n        {\n          \"cik\": \"0001401257\",\n          \"reason\": \"Revenue growth slowed from 21.77% in March to 7.67% in June. Consumables and activity-based equipment supplied about 65% of first-half revenue, and second-quarter natural gas prices fell 71.2% year over year (A, C). I expect the June growth cushion to keep September above -5%, with weaker customer activity pushing December revenue down at least 5%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/prepackaged_software-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/prepackaged_software-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/retail-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/semiconductors-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/semiconductors-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/semiconductors-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/transportation-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000793074\",\n          \"reason\": \"Werner's June operating revenue fell 3.01%. Strong logistics volume cushioned a $41.9 million year-over-year loss of trucking fuel surcharge revenue (A, B, D). I expect logistics to keep September above -5%, but competitive freight rates alongside lower surcharges to push December's consolidated decline to at least 5% (D, E).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q4/transportation-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q4/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0001644406",
+            "reason": "June revenue grew 3.5% because price and mix added 10.4 percentage points against a 6.9-point volume decline (A, B). I expect earlier price increases to keep September above -5%. If the volume drag persists, a price and mix contribution of 1.9 points or less would put the December quarter at or below -5% (B, D)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000100493",
+            "reason": "Tyson's consolidated sales moved from +0.12% in April to -2.63% in July, largely because pork sales fell (A). Higher chicken volume helped keep the overall volume contribution positive by $47 million, but volumes fell in beef, pork and prepared foods (B). I expect chicken to cushion the September quarter and leveling protein prices to leave sales down at least 5% in the quarter beginning October 1 (D)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0001599617",
+            "reason": "Revenue growth slowed from 23.47% in March to 10.20% in June, leaving room for September growth to slow further while staying above -5% (A). Second-quarter natural gas prices fell 18.5% sequentially and crude fell 3.0% (D). I expect weaker energy prices to weigh on customer purchases with a lag, taking December revenue down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0000918541",
+            "reason": "Higher customer prices helped hold NN's June sales decline to 0.12%. The Taunton and Irvine closures had already reduced shipment volume (A, B). I expect pricing to keep September above -5%, with the lost volume taking the December decline to at least 5% as the year-over-year pricing benefit fades."
+          },
+          {
+            "cik": "0001287213",
+            "reason": "March sales fell 19.55%, and June's 10.5% rebound left first-half sales down 0.1% (A, C). Higher pricing and more preseason orders shipped supported June (B). I expect preseason shipments to keep September above -5%, then leave fewer orders to ship in December, pushing that quarter's sales down at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000792987",
+            "reason": "Sales growth slowed from 19.47% in March to 10.0% in June. At June's sales level of $350.0 million, the $688.8 million backlog represented roughly two quarters of sales, but it was $148.6 million smaller than a year earlier (A–C). I expect existing orders to keep September above -5% and the smaller order book to pull December sales down at least 5%."
+          },
+          {
+            "cik": "0001401257",
+            "reason": "Revenue growth slowed from 21.77% in March to 7.67% in June. Consumables and activity-based equipment supplied about 65% of first-half revenue, and second-quarter natural gas prices fell 71.2% year over year (A, C). I expect the June growth cushion to keep September above -5%, with weaker customer activity pushing December revenue down at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000793074",
+            "reason": "Werner's June operating revenue fell 3.01%. Strong logistics volume cushioned a $41.9 million year-over-year loss of trucking fuel surcharge revenue (A, B, D). I expect logistics to keep September above -5%, but competitive freight rates alongside lower surcharges to push December's consolidated decline to at least 5% (D, E)."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q4/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q4/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

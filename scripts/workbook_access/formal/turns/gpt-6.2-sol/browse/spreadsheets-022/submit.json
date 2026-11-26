@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-022",
+    "stage": "submit",
+    "prompt_sha256": "2a02f2e1ba9e82bddcc86a42a7d4eb4ba880f262006e5215d9807f49ed7830b1",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-ffc4-7a23-9a55-e73b644c3872",
+    "raw": "{\n  \"sheet-57354\": {\n    \"formulas\": {\n      \"B3\": \"=SUMIF($F$2:$XFD$2,B$2,$F3:$XFD3)\",\n      \"C3\": \"=SUMIF($F$2:$XFD$2,C$2,$F3:$XFD3)\",\n      \"D3\": \"=SUMIF($F$2:$XFD$2,D$2,$F3:$XFD3)\",\n      \"E3\": \"=SUMIF($F$2:$XFD$2,E$2,$F3:$XFD3)\"\n    }\n  },\n  \"sheet-58047\": {\n    \"fills\": [\n      {\n        \"range\": \"H2:H30\",\n        \"formula\": \"=IF(A2=\\\"\\\",0,IF(INDEX($G$2:$G2,MATCH(A2,$A$2:$A2,0))=\\\"\\\",0,INDEX($G$2:$G2,MATCH(A2,$A$2:$A2,0))))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-58701\": {\n    \"formulas\": {\n      \"E2\": \"=IF(B2=\\\"\\\",\\\"\\\",IFNA(VLOOKUP(B2,'Table Tab'!$A:$B,2,FALSE),\\\"\\\"))\",\n      \"E3\": \"=IF(B3=\\\"\\\",\\\"\\\",IFNA(VLOOKUP(B3,'Table Tab'!$A:$B,2,FALSE),\\\"\\\"))\"\n    }\n  },\n  \"sheet-59160\": {\n    \"formulas\": {\n      \"D3\": \"=COUNTIFS($A:$A,\\\">=\\\"&$D$1,$A:$A,\\\"<\\\"&($D$1+1),$B:$B,D$2)\",\n      \"E3\": \"=COUNTIFS($A:$A,\\\">=\\\"&$D$1,$A:$A,\\\"<\\\"&($D$1+1),$B:$B,E$2)\",\n      \"F3\": \"=COUNTIFS($A:$A,\\\">=\\\"&$F$1,$A:$A,\\\"<\\\"&($F$1+1),$B:$B,F$2)\",\n      \"G3\": \"=COUNTIFS($A:$A,\\\">=\\\"&$F$1,$A:$A,\\\"<\\\"&($F$1+1),$B:$B,G$2)\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 20599,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 708,
+      "reasoning_output_tokens": 188
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

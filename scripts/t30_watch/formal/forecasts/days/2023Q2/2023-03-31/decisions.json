@@ -1,0 +1,69 @@
+{
+  "text": [
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Destination XL’s fiscal 2022 sales grew 8.1% (A), while year-end inventory rose 13.7%, from $81.8 million to $93.0 million (C). I forecast that year-over-year net sales growth stays above -5.00% in the preceding quarter but reaches -5.00% or lower in the quarter starting April 30 as slower sell-through creates pressure to mark down merchandise. The timing is the least certain part of the forecast because A and C give annual figures."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/retail-3",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": [
+        {
+          "cik": "0000897429",
+          "reason": "Quarterly net sales growth slowed from 14.26% to 5.60%. A further slowdown of the same size would put the intervening quarter near -3.1%, still above -5.00%. Fiscal 2022 net sales grew 18.3% (A), leaving a strong prior-year comparison. I forecast that growth falls to -5.00% or below in the quarter starting April 30."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-2",
+      "alerts": [
+        {
+          "cik": "0000072333",
+          "reason": "Quarterly net sales growth slipped from -2.50% to -3.72%. Another 1.22 percentage-point drop would leave the intervening quarter near -4.94%, just above the threshold. Demand weakened through the holidays (B), and markdowns exceeded plan (C). I forecast that continued demand weakness takes net sales growth to -5.00% or below in the quarter starting April 30."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-3",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": [
+        {
+          "cik": "0000897429",
+          "reason": "Reported sales YoY 14.26% then 5.60%. Target is step 2; preceding -3.06% versus target -11.72%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-2",
+      "alerts": [
+        {
+          "cik": "0000072333",
+          "reason": "Reported sales YoY -2.50% then -3.72%. Target is step 2; preceding -4.94% versus target -6.16%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-3",
+      "alerts": []
+    }
+  ]
+}

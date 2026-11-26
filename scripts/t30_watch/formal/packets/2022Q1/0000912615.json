@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000912615",
+  "issuer": "URBAN OUTFITTERS INC",
+  "cutoff": "2022-01-02",
+  "projected_target_start": "2022-02-01",
+  "status": "complete",
+  "period_end": "2021-10-31",
+  "filing_date": "2021-12-10",
+  "text": {
+    "sector": "retail",
+    "cik": "0000912615",
+    "issuer": "URBAN OUTFITTERS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-12-10",
+        "text": "The Company did not remove stores that were closed or operating for an extended period of time at a reduced capacity due to the COVID-19 pandemic from the comparable stores net sales calculations."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-12-10",
+        "text": "Positive comparable store net sales in the third quarter of fiscal 2022 resulted from an increase in store traffic, transactions and average unit retail price, while units per transaction and conversion rate declined."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-12-10",
+        "text": "The COVID-19 pandemic and general unfavorable macro-economic conditions have disrupted the Company’s global supply chain in fiscal 2022, leading to COVID-19 related factory closures and continued port congestions, which have resulted in inventory receipt delays and an increase in inbound freight costs."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-12-10",
+        "text": "The Company qualified for certain of these programs during the second quarter and through the remainder of fiscal 2021 and recorded the benefit as an offset to selling, general and administrative expenses or to store occupancy expenses in cost of sales based on the nature of the related expenses offset by such programs."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-12-10",
+        "text": "Income from operations was 10.2% of net sales, or $115.9 million, for the third quarter of fiscal 2022 compared to 10.2% of net sales, or $98.5 million, for the third quarter of fiscal 2021."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-07-31",
+        "filed": "2021-09-09",
+        "reported_sales_usd": 1157725000,
+        "year_ago_reported_sales_usd": 803266000,
+        "yoy_percent": "44.1272"
+      },
+      {
+        "quarter_end": "2021-10-31",
+        "filed": "2021-12-10",
+        "reported_sales_usd": 1131424000,
+        "year_ago_reported_sales_usd": 969607000,
+        "yoy_percent": "16.6889"
+      }
+    ],
+    "status": "complete"
+  }
+}

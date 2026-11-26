@@ -1,0 +1,100 @@
+{
+  "version": "issuer-t30-v1",
+  "parent_protocol_sha256": "c230bd14bee930408515eb71fe63751c52f9e87002647a196b58d0268aa62781",
+  "circumstances": "Development reuses previously studied issuers and periods. Formal issuers use ranks 13 through 30, disjoint from either prior 36-issuer panel and the 6-issuer pilot. Historical model knowledge is possible.",
+  "source_tables": [
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q1.zip",
+      "member": "sub.txt",
+      "sha256": "5c89b0295c403903909c34b9293d9a050f589b0722585f3ee6d6035b16501950"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q2.zip",
+      "member": "sub.txt",
+      "sha256": "98b22c06bef3114129df460122f6bb0dc8dc87e217ab393144e56c815f28b09f"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q3.zip",
+      "member": "sub.txt",
+      "sha256": "bc21f3f831c75fb4f63952f01dc8823c9537db6a44da020aa8a167e663b325fa"
+    },
+    {
+      "archive": "https://www.sec.gov/files/dera/data/financial-statement-data-sets/2020q4.zip",
+      "member": "sub.txt",
+      "sha256": "aa21f0660fed6c25f42ffe6a7b1cb62098bd56f51327aade4884e059a19b5d25"
+    }
+  ],
+  "sampling": "First 2020 SEC roster with fixed sector/SIC rules, company eligibility and hash seed unchanged. Include every wave for every selected issuer; no replacement of missing or delisted firms.",
+  "waves": {
+    "development": [
+      "2022Q1",
+      "2022Q2",
+      "2022Q3",
+      "2022Q4",
+      "2023Q1",
+      "2023Q2",
+      "2023Q3",
+      "2023Q4"
+    ],
+    "formal": [
+      "2021Q2",
+      "2021Q3",
+      "2021Q4",
+      "2022Q1",
+      "2022Q2",
+      "2022Q3",
+      "2022Q4",
+      "2023Q1",
+      "2023Q2",
+      "2023Q3",
+      "2023Q4",
+      "2024Q1",
+      "2024Q2",
+      "2024Q3",
+      "2024Q4",
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2025Q4",
+      "2026Q1"
+    ]
+  },
+  "wave_assignment": "For each calendar quarter wave select prior-year fiscal period end + 1 closest to wave start + 40 days (within 46 days). Consider original SEC 10-Q/K filing dates up to wave start minus 60 days only. The most recent four distinct period ends before or on the source period identify month-end or fixed-weekday calendars. Each old period is mapped to at most one wave per issuer; ambiguous or duplicate targets are unresolved.",
+  "calendar_projection": "For month-end calendars use the same month's first day one year later. For four period ends on the same weekday, move comparable fiscal start to the nearest matching weekday to its anniversary (possible 52/53-week drift). Source year must be the preceding comparable season. Otherwise calendar unavailable. Retain vintage filings, projected date and method. This is a prospectively computable expected date. Post-lock require unique actual target start within 14 days and actual lead at least 30 days for primary credit; report drift.",
+  "cutoff": "Projected fiscal quarter start minus 30 calendar days, end of day America/New_York. A record cannot use a filing dated after its issuer's cutoff.",
+  "inputs": "Latest anchor filing. Select five distinct historical operating sentences in filing order, preferably in MD&A. A consolidated revenue or sales; B demand; C balance or capacity; D pricing, cost or margin; E operating results or cash flow. Exclude forecasts, generic definitions, safe harbor, tables of contents and cross-references without substantive facts. Shortest meaningful contiguous source sentence or complete clause preferred, table rows carry headings and units. Fallback first unused historical financial or operating sentence in MD&A, then rest of filing including meaningful tables. If fewer than five available give explicit missing fields. Preserve source words, source URL and locators. Issuer provided filings on EDGAR.",
+  "industry_slots_B_C": {
+    "retail": [
+      "comparable sales, transactions",
+      "inventories"
+    ],
+    "food_manufacturing": [
+      "volume, mix",
+      "inventories"
+    ],
+    "industrial_machinery": [
+      "orders, backlog",
+      "backlog, supply"
+    ],
+    "semiconductors": [
+      "demand, shipments",
+      "inventories"
+    ],
+    "prepackaged_software": [
+      "subscriptions, bookings, retention",
+      "deferred revenue, remaining performance obligations"
+    ],
+    "transportation": [
+      "volume, loads, traffic",
+      "capacity, utilization"
+    ]
+  },
+  "trend": "Mechanical extrapolation from as-of consolidated reported quarterly sales only. For two consecutive anchor-quarter and previous quarter YoY growth rates g and p (percent), project g+(g-p) and g+2*(g-p); flag only a fresh downward crossing from above -5 to at/below -5 in these projections. Rank by lowest projected growth then CIK and take at most 2 issuers per sector. Need both same-quarter year-ago comparisons and aligned anchor, no substitution. May abstain.",
+  "historical_sales": "Latest two consecutive quarters as reported, same-filing prior-year comparators and filing dates. Form 10-K Q4 subtract original Q3 year-to-date when appropriate. No later amendments.",
+  "freshness": "Latest original 10-Q/K filed by cutoff; maximum period age 185 days and filing age 135 days. Unavailable/stale/partial text or missing historical comparisons are retained as unscorable matched opportunities.",
+  "budget": "Fixed six-issuer cohorts per sector-wave. Stream dated decisions earliest first with at most two warnings over the whole cohort-wave per arm. Enforce joint decisions only among the same cutoff; no later packet or competitor ranking passed into an earlier decision. Zero alerts permitted.",
+  "outcome": "New crossing to a consolidated reported quarterly GAAP net-sales year-over-year decline of at least 5.00% in either following fiscal quarter, with the immediately preceding quarter above -5.00%. Use consolidated net sales, else total revenue consistently; ratio of current to corresponding year-ago amounts minus one, before rounding. Count reported operations, without calendar, acquisition or currency adjustments. A continued decline already below the threshold is not a new onset. If it recovers then crosses again, that is a new onset.",
+  "first_disclosure": "Earliest dated official issuer public disclosure that unambiguously establishes the threshold for that specific fiscal quarter, including numeric quarterly guidance, preannouncements, and actual results. Exact figures or a range whose entire interval is at or below the threshold qualify; mapped dollar guidance must use the same prior-year base. Full-year projections, comparable sales alone and nonspecific warnings do not qualify. Search issuer earnings releases, intervening public updates, official investor presentations/call transcripts or issuer-furnished SEC exhibits for advance guidance. Record the first verified date, primary URL and evidence plus search coverage. Do not assert the date of the earliest market rumor or universal first mention.",
+  "target": "Count only the named target fiscal quarter, inside the two following fiscal quarters from the then-filed anchor, with actual lead >= 30 and first verified explicit disclosure strictly later than cutoff. Retain misses, documented negatives, date drift and unknowns individually. Preserve all negative quarters and all issued alerts, including status of unscorable alerts.",
+  "locking": "Register roster, protocol, and dates before preparing packets. Seal all reader packets and all predictions before future labels are opened. No filled-in or substituted firms, chronological or per-company leakage, and no post-hoc resizing the formal sample to achieve 100 events."
+}

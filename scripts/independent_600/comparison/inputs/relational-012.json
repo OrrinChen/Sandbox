@@ -1,0 +1,251 @@
+[
+  {
+    "task_id": "decision-bounded-remainder-barcode",
+    "tool": "sqlite.query",
+    "instruction": "Each barcode has one missing nonnegative integer and an inclusive interval of allowed values from low_value through high_value. Each remainder check records the required remainder when that integer is divided by a positive modulus. A candidate must satisfy every check for its barcode. Report a barcode only if exactly one integer in its interval passes all checks. Omit barcodes with zero or multiple valid integers, even when one candidate is smaller than the others. Return columns barcode_id and missing_value, in that order, sorted by barcode_id ascending. Values are unitless integers. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "barcodes": {
+        "columns": [
+          "barcode_id TEXT",
+          "low_value INTEGER",
+          "high_value INTEGER"
+        ],
+        "rows": [
+          [
+            "amber",
+            0,
+            14
+          ],
+          [
+            "mint",
+            0,
+            15
+          ],
+          [
+            "slate",
+            0,
+            10
+          ]
+        ]
+      },
+      "remainder_checks": {
+        "columns": [
+          "barcode_id TEXT",
+          "modulus INTEGER",
+          "required_remainder INTEGER"
+        ],
+        "rows": [
+          [
+            "amber",
+            3,
+            2
+          ],
+          [
+            "amber",
+            5,
+            3
+          ],
+          [
+            "mint",
+            3,
+            0
+          ],
+          [
+            "mint",
+            5,
+            0
+          ],
+          [
+            "slate",
+            2,
+            0
+          ],
+          [
+            "slate",
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "barcode_id",
+      "missing_value"
+    ]
+  },
+  {
+    "task_id": "decision-bridge-disjoint-route-pair",
+    "tool": "sqlite.query",
+    "instruction": "All listed routes serve the same two terminals. Select two distinct routes so that closing any one bridge leaves at least one of them usable. The crossings table lists every bridge on each route in traversal order, with positions numbered from 1. A bridge ID identifies the same physical bridge at every position on every route. Among pairs with no bridge in common, minimize the sum of the two routes' durations in minutes. Route IDs are unique. Put the smaller ID first in each pair and break ties on total duration by ascending first ID, then ascending second ID, using binary text order. Return one row with route_a, route_b, then total_min. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crossings": {
+        "columns": [
+          "route_id TEXT",
+          "position INTEGER",
+          "bridge_id TEXT"
+        ],
+        "rows": [
+          [
+            "R1",
+            1,
+            "X"
+          ],
+          [
+            "R1",
+            2,
+            "Y"
+          ],
+          [
+            "R2",
+            1,
+            "Z"
+          ],
+          [
+            "R2",
+            2,
+            "Y"
+          ],
+          [
+            "R3",
+            1,
+            "X"
+          ],
+          [
+            "R3",
+            2,
+            "W"
+          ]
+        ]
+      },
+      "routes": {
+        "columns": [
+          "route_id TEXT",
+          "duration_min INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            4
+          ],
+          [
+            "R2",
+            5
+          ],
+          [
+            "R3",
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "route_a",
+      "route_b",
+      "total_min"
+    ]
+  },
+  {
+    "task_id": "decision-bridge-print-spool-roll-ranges",
+    "tool": "sqlite.query",
+    "instruction": "Two printing spools independently log runs using the same roll-number scale. Each run covers every integer roll number from first_roll through last_roll, inclusive. Run IDs are local to their spool. Construct one bridge record for every pair of runs, one from each spool, that share at least one roll number. Keep the two run IDs separate, even when they have the same text. Return a_run, b_run, first_shared_roll, last_shared_roll, and shared_roll_count, in that column order. The count is in whole rolls. Include single-roll overlaps. Sort by a_run and then b_run in ascending binary text order. Run IDs are unique within each spool, so the pair resolves all ordering ties. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "spool_a": {
+        "columns": [
+          "run_id TEXT",
+          "first_roll INTEGER",
+          "last_roll INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            10,
+            13
+          ],
+          [
+            "R2",
+            14,
+            16
+          ]
+        ]
+      },
+      "spool_b": {
+        "columns": [
+          "run_id TEXT",
+          "first_roll INTEGER",
+          "last_roll INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            8,
+            10
+          ],
+          [
+            "R7",
+            12,
+            15
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "a_run",
+      "b_run",
+      "first_shared_roll",
+      "last_shared_roll",
+      "shared_roll_count"
+    ]
+  },
+  {
+    "task_id": "decision-budget-one-shift-of-retention-calls",
+    "tool": "sqlite.query",
+    "instruction": "Choose up to two distinct overdue subscription batches for one shift. A batch is indivisible. Its forecast_cents is the incremental collectible cash before its one-time outlay_cents. Both are nonnegative integers. Selected outlays may total at most 100 cents, and batches sharing a desk_code cannot both run. Forecasts and costs add across selected batches. Maximize total forecast less total outlay, then minimize total outlay, then minimize the portfolio string in binary text order. The portfolio string is the selected batch codes sorted ascending and joined by a single comma, or the empty string for an idle shift. Batch codes are unique single uppercase letters. No fields are null. Return one row with columns portfolio, spend_cents, net_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "call_batches": {
+        "columns": [
+          "batch_code TEXT",
+          "desk_code TEXT",
+          "outlay_cents INTEGER",
+          "forecast_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "red",
+            70,
+            190
+          ],
+          [
+            "B",
+            "blue",
+            50,
+            143
+          ],
+          [
+            "C",
+            "red",
+            50,
+            145
+          ],
+          [
+            "D",
+            "green",
+            30,
+            75
+          ],
+          [
+            "E",
+            "blue",
+            20,
+            50
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "portfolio",
+      "spend_cents",
+      "net_cents"
+    ]
+  }
+]

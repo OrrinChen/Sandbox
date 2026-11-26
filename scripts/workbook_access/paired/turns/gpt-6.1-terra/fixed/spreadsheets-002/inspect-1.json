@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-002",
+    "stage": "inspect-1",
+    "prompt_sha256": "8ff9e6a747893559d070ca73c86df8dd416c0c59db754b9c23ea99f85e60d395",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e6-0eaa-7960-8b2a-713d9bbb8694",
+    "raw": "{\"sheet-32562\":[],\"sheet-33157\":[],\"sheet-34033\":[{\"op\":\"range\",\"sheet\":\"ExcelForum help\",\"range\":\"H1:K13\"},{\"op\":\"range\",\"sheet\":\"ExcelForum help\",\"range\":\"A1:E13\"}],\"sheet-3413\":[]}",
+    "usage": {
+      "input_tokens": 18330,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 154,
+      "reasoning_output_tokens": 87
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

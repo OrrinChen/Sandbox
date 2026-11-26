@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-018",
+    "stage": "submit",
+    "prompt_sha256": "ea82305be81fa4d07b419822cdb96613ad952e35ec3521cf8ad0c96982160807",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d9-a62a-74e3-ab66-a8890fb63c4e",
+    "raw": "{\n  \"sheet-53167\": {\n    \"fills\": [\n      {\n        \"range\": \"E4:E16\",\n        \"formula\": \"=XLOOKUP(B4,$B$3:B3,$D$3:D3,D4,0,-1)-D4\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-53383\": {\n    \"fills\": [\n      {\n        \"range\": \"C3:C6\",\n        \"formula\": \"=IF(SUMPRODUCT(--('worksheet 1'!$A$3:$A$6=A3),--('worksheet 1'!$B$3:$B$6=B3))>0,\\\"Matched\\\",\\\"Not Matched\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-54274\": {\n    \"formulas\": {\n      \"G4\": \"=IF(F4<=B4,F4/B4,MIN(F4/B4,IF(F4<C4,1.09,IF(F4=C4,1.1,IF(F4<D4,1.19,1.2)))))\"\n    }\n  },\n  \"sheet-55085\": {\n    \"fills\": [\n      {\n        \"range\": \"G10:L10\",\n        \"formula\": \"=IF(G$3='Master-RM'!$I$6,SUMIFS('Master-RM'!$I$8:$I$20,'Master-RM'!$A$8:$A$20,G$2,'Master-RM'!$B$8:$B$20,\\\"Total\\\"),IF(G$3='Master-RM'!$K$6,SUMIFS('Master-RM'!$K$8:$K$20,'Master-RM'!$A$8:$A$20,G$2,'Master-RM'!$B$8:$B$20,\\\"Total\\\"),0))\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20411,
+      "cached_input_tokens": 14720,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 857,
+      "reasoning_output_tokens": 434
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

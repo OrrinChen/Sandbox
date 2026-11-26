@@ -1,0 +1,107 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 51806,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 656,
+    "reasoning_output_tokens": 22
+  },
+  "thread": "01a20d8a-8be5-7552-ad77-305f2f06be9b",
+  "packet_sha256": "89e1a7782e85edde031283afc01b52300584348829602bcd30c02f5da45698cd",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q3/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/industrial_machinery-2\",\"alerts\":[{\"cik\":\"0001701605\",\"reason\":\"I forecast June-quarter revenue growth above -5% as the comparison reaches the period of depressed hydrocarbon demand (C). Service and equipment orders each fell 18% (B). As fewer orders convert to sales, I expect a September-quarter decline of at least 5%. Turbomachinery was the only segment cited as offsetting lower activity elsewhere (A).\"}]},\n    {\"sector\":\"2021Q3/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/prepackaged_software-3\",\"alerts\":[{\"cik\":\"0000946581\",\"reason\":\"The August 2020 launch of PGA TOUR 2K21 contributed to the $562.2 million annual bookings increase. Earlier titles saw bookings fall after their launch year (B). I expect the June quarter to stay above -5% year over year, then the August launch anniversary to make the September comparison hard enough for reported net revenue to fall at least 5%. The filing gives no title-level quarterly revenue, so the size of the effect is uncertain.\"}]},\n    {\"sector\":\"2021Q3/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/semiconductors-2\",\"alerts\":[{\"cik\":\"0001274494\",\"reason\":\"Higher third-party module volume supports a June-quarter forecast above -5% year over year. Three Sun Streams project sales also helped drive March's 51% net sales increase, and substantially all GA Solar 4 construction ended in 2020 (A, B). I forecast a September-quarter decline of at least 5% if module sales cannot replace the prior year's project revenue. Project timing is the main uncertainty.\"}]},\n    {\"sector\":\"2021Q3/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0001701605",
+            "reason": "I forecast June-quarter revenue growth above -5% as the comparison reaches the period of depressed hydrocarbon demand (C). Service and equipment orders each fell 18% (B). As fewer orders convert to sales, I expect a September-quarter decline of at least 5%. Turbomachinery was the only segment cited as offsetting lower activity elsewhere (A)."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-3",
+        "alerts": [
+          {
+            "cik": "0000946581",
+            "reason": "The August 2020 launch of PGA TOUR 2K21 contributed to the $562.2 million annual bookings increase. Earlier titles saw bookings fall after their launch year (B). I expect the June quarter to stay above -5% year over year, then the August launch anniversary to make the September comparison hard enough for reported net revenue to fall at least 5%. The filing gives no title-level quarterly revenue, so the size of the effect is uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0001274494",
+            "reason": "Higher third-party module volume supports a June-quarter forecast above -5% year over year. Three Sun Streams project sales also helped drive March's 51% net sales increase, and substantially all GA Solar 4 construction ended in 2020 (A, B). I forecast a September-quarter decline of at least 5% if module sales cannot replace the prior year's project revenue. Project timing is the main uncertainty."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q3/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

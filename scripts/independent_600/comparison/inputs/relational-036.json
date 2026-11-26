@@ -1,0 +1,320 @@
+[
+  {
+    "task_id": "decision-kiln-pair-recovery-allocation",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly one cycle for kiln E and one for kiln W for the next recovery shift. Each candidate gives the additional saleable tiles recovered, whole technician minutes used, and whole grams of glaze consumed. Benefits and resource use add across kilns. The single shift_limits row sets inclusive shared caps on both resources. Maximize total recovered tiles among feasible pairs. Break ties by fewer total technician minutes, then fewer total glaze grams, then ascending east cycle_code and west cycle_code using binary text order. Cycle codes are unique within each kiln, all values are non-NULL, and at least one feasible pair exists. Return one row with east_cycle, west_cycle, recovered_tiles, tech_min, glaze_g. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "kiln_cycle": {
+        "columns": [
+          "kiln_code TEXT",
+          "cycle_code TEXT",
+          "tile_gain INTEGER",
+          "labor_min INTEGER",
+          "glaze_g INTEGER"
+        ],
+        "rows": [
+          [
+            "E",
+            "deep",
+            12,
+            7,
+            2
+          ],
+          [
+            "E",
+            "light",
+            8,
+            3,
+            5
+          ],
+          [
+            "E",
+            "hold",
+            0,
+            0,
+            0
+          ],
+          [
+            "W",
+            "wash",
+            11,
+            6,
+            3
+          ],
+          [
+            "W",
+            "seal",
+            9,
+            3,
+            7
+          ],
+          [
+            "W",
+            "hold",
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "shift_limits": {
+        "columns": [
+          "minute_cap INTEGER",
+          "gram_cap INTEGER"
+        ],
+        "rows": [
+          [
+            10,
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_cycle",
+      "west_cycle",
+      "recovered_tiles",
+      "tech_min",
+      "glaze_g"
+    ]
+  },
+  {
+    "task_id": "decision-kiln-shift-firing-plan",
+    "tool": "sqlite.query",
+    "instruction": "Choose one plan for each of two product lines, cups and tiles, for a single shift. Each menu row is a complete indivisible option for that line, including its idle option. Plan codes are unique within a line. All produced pieces sell. Contribution in cents equals pieces times selling price less variable cost per piece, minus the full one-time setup cost shown for that option. Apply both shared shift limits from the single signed shift brief. Maximize combined contribution. Break ties by fewer total kiln minutes, then ascending binary cup plan code, then ascending binary tile plan code. Return exactly one row with cup_plan, tile_plan, kiln_minutes, clay_kg, contribution_cents, source_id in that order. All fields are nonnull integers or text as declared. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "firing_menu": {
+        "columns": [
+          "line_code TEXT",
+          "plan_code TEXT",
+          "pieces INTEGER",
+          "price_cents INTEGER",
+          "unit_cost_cents INTEGER",
+          "setup_cents INTEGER",
+          "kiln_minutes INTEGER",
+          "clay_kg INTEGER"
+        ],
+        "rows": [
+          [
+            "cups",
+            "idle",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "cups",
+            "short",
+            10,
+            100,
+            40,
+            100,
+            30,
+            4
+          ],
+          [
+            "cups",
+            "long",
+            20,
+            100,
+            40,
+            250,
+            55,
+            8
+          ],
+          [
+            "tiles",
+            "idle",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            "tiles",
+            "small",
+            12,
+            100,
+            50,
+            100,
+            25,
+            5
+          ],
+          [
+            "tiles",
+            "large",
+            20,
+            110,
+            50,
+            800,
+            45,
+            6
+          ]
+        ]
+      },
+      "shift_brief": {
+        "columns": [
+          "source_id TEXT",
+          "minute_cap INTEGER",
+          "clay_cap INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "KB-9",
+            75,
+            10,
+            "Maintenance releases the kiln for 75 minutes. The prepared clay cart holds 10 kg for both lines together."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "cup_plan",
+      "tile_plan",
+      "kiln_minutes",
+      "clay_kg",
+      "contribution_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-kiln-simpson-reversal",
+    "tool": "sqlite.query",
+    "instruction": "Compare kiln methods A and B on accepted tiles per operating hour. Each method has one row for each of two tile sizes, with positive operating hours. Within each size, compare accepted tiles divided by hours. For the pooled comparison, weight each size's rate by that method's own operating hours, equivalently dividing total accepted tiles by total hours for each method. Set reversal to 1 only when the same method has a strictly higher rate in both sizes and a strictly lower pooled rate. Any tie or mixed within-size ordering gives 0. Decide reversal using unrounded rates. Return one row with columns a_tiles_per_hour, b_tiles_per_hour, reversal, showing the two pooled rates rounded to three decimal places. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "kiln_runs": {
+        "columns": [
+          "tile_size TEXT",
+          "method TEXT",
+          "accepted INTEGER",
+          "hours INTEGER"
+        ],
+        "rows": [
+          [
+            "small",
+            "A",
+            9,
+            10
+          ],
+          [
+            "small",
+            "B",
+            80,
+            100
+          ],
+          [
+            "large",
+            "A",
+            20,
+            100
+          ],
+          [
+            "large",
+            "B",
+            1,
+            10
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "a_tiles_per_hour",
+      "b_tiles_per_hour",
+      "reversal"
+    ]
+  },
+  {
+    "task_id": "decision-kit-cost-with-slot-substitutes",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the cost of building one kit, including its nested assemblies. Within each parent, each distinct slot is required. Rows for the same parent and slot are substitutes. Select the row with the lowest priority number, breaking ties by child code in ascending binary text order. Multiply quantities along each selected path. A purchased part used in two required slots contributes its cost in both slots. Assemblies have no direct cost, all leaves have a purchase price, and the bill is acyclic. Return one row with root_part followed by cost_cents in whole cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bom": {
+        "columns": [
+          "parent TEXT",
+          "slot TEXT",
+          "child TEXT",
+          "priority INTEGER",
+          "qty INTEGER"
+        ],
+        "rows": [
+          [
+            "kit",
+            "stand",
+            "frame",
+            1,
+            2
+          ],
+          [
+            "kit",
+            "stand",
+            "block",
+            2,
+            1
+          ],
+          [
+            "kit",
+            "trim",
+            "peg",
+            1,
+            3
+          ],
+          [
+            "frame",
+            "rail",
+            "bar",
+            1,
+            2
+          ],
+          [
+            "frame",
+            "rail",
+            "rod",
+            1,
+            1
+          ],
+          [
+            "frame",
+            "pin",
+            "peg",
+            1,
+            1
+          ]
+        ]
+      },
+      "prices": {
+        "columns": [
+          "part TEXT",
+          "cents INTEGER"
+        ],
+        "rows": [
+          [
+            "block",
+            75
+          ],
+          [
+            "bar",
+            12
+          ],
+          [
+            "rod",
+            20
+          ],
+          [
+            "peg",
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "root_part",
+      "cost_cents"
+    ]
+  }
+]

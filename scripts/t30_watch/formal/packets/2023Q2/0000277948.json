@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "transportation-2",
+  "sector": "transportation",
+  "cik": "0000277948",
+  "issuer": "CSX CORP",
+  "cutoff": "2023-03-02",
+  "projected_target_start": "2023-04-01",
+  "status": "complete",
+  "period_end": "2022-12-31",
+  "filing_date": "2023-02-15",
+  "text": {
+    "sector": "transportation",
+    "cik": "0000277948",
+    "issuer": "CSX CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2023-02-15",
+        "text": "Total revenue increased by $2.3 billion in 2022, or 19%, when compared to the previous year primarily due to higher fuel recovery, pricing gains that include the benefit of higher export coal benchmark rates, and the inclusion of Quality Carriers’ results."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2023-02-15",
+        "text": "Chemicals - Decreased due to lower shipments of crude oil and other energy-related commodities as well as waste."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2023-02-15",
+        "text": "Export coal decreased due to lower shipments of thermal coal, partially driven by reduced capacity at Curtis Bay coal pier due to an outage at a portion of the facility."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2023-02-15",
+        "text": "• Expenses of $8.8 billion increased $1.9 billion or 27% year over year."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2023-02-15",
+        "text": "• Operating income of $6.0 billion increased $429 million or 8% year over year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-09-30",
+        "filed": "2022-10-21",
+        "reported_sales_usd": 3895000000,
+        "year_ago_reported_sales_usd": 3292000000,
+        "yoy_percent": "18.3171"
+      },
+      {
+        "quarter_end": "2022-12-31",
+        "filed": "2023-02-15",
+        "reported_sales_usd": 3730000000,
+        "year_ago_reported_sales_usd": 3427000000,
+        "yoy_percent": "8.8416"
+      }
+    ],
+    "status": "complete"
+  }
+}

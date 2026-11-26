@@ -1,0 +1,197 @@
+[
+  {
+    "task_id": "decision-midnight-course-hold-credit",
+    "tool": "sqlite.query",
+    "instruction": "Compute adjusted leg times for all completed legs in one overnight mixed relay. The race clock starts at noon on day one. Clock fields are local seconds since midnight on a fixed 86400-second day. Values at or above 43200 occur on day one and smaller values occur on day two. Every leg and the single course hold lie within this noon-to-noon race window. The hold applies to every squad. Deduct only the seconds shared by the leg and the hold, treating both as half-open intervals with the end excluded. A null finish_s means the leg is incomplete and must be omitted. All other fields are nonnull, and squad plus leg_no uniquely identifies a leg. Return squad, leg_no, credit_s, adjusted_s, where adjusted_s is elapsed leg seconds less credit_s. Sort by squad in binary text order then numeric leg_no, both ascending, retaining equal times. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "course_hold": {
+        "columns": [
+          "begin_s INTEGER",
+          "resume_s INTEGER"
+        ],
+        "rows": [
+          [
+            86340,
+            60
+          ]
+        ]
+      },
+      "leg_log": {
+        "columns": [
+          "squad TEXT",
+          "leg_no INTEGER",
+          "start_s INTEGER",
+          "finish_s INTEGER"
+        ],
+        "rows": [
+          [
+            "Fern",
+            1,
+            86200,
+            86320
+          ],
+          [
+            "Fern",
+            2,
+            86320,
+            120
+          ],
+          [
+            "Fern",
+            3,
+            120,
+            300
+          ],
+          [
+            "Lark",
+            1,
+            86370,
+            30
+          ],
+          [
+            "Lark",
+            2,
+            30,
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "squad",
+      "leg_no",
+      "credit_s",
+      "adjusted_s"
+    ]
+  },
+  {
+    "task_id": "decision-milestone-order-count",
+    "tool": "sqlite.query",
+    "instruction": "Count the distinct ways to complete all listed milestones, one at a time, with each milestone appearing exactly once. Each dependency requires before_id to appear earlier than after_id. A milestone may be chosen as soon as all its prerequisites have appeared. When several milestones are eligible, count every valid choice of order. Milestone IDs are unique single uppercase ASCII letters, and dependencies form an acyclic graph over those IDs. Return one row with the single integer column ordering_count, measured in complete sequences. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dependencies": {
+        "columns": [
+          "before_id TEXT",
+          "after_id TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "D"
+          ]
+        ]
+      },
+      "milestones": {
+        "columns": [
+          "milestone_id TEXT"
+        ],
+        "rows": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "D"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "ordering_count"
+    ]
+  },
+  {
+    "task_id": "decision-minimize-two-cycle-sensor-drift",
+    "tool": "sqlite.query",
+    "instruction": "A sensor starts at zero drift. Choose an ordering of its three distinct calibration steps A, B, and C, then run that same ordering twice. Each execution adds the step's signed drift in microvolts to the current drift. Carry drift across the cycle boundary. Score an ordering by the largest absolute accumulated drift observed after any of the six executions. Minimize that score, breaking ties by the concatenated three-letter sequence in ascending binary text order. Return one row with sequence and peak_microvolts in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "calibration_step": {
+        "columns": [
+          "step_code TEXT",
+          "drift_microvolts INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            4
+          ],
+          [
+            "B",
+            -3
+          ],
+          [
+            "C",
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "sequence",
+      "peak_microvolts"
+    ]
+  },
+  {
+    "task_id": "decision-minimum-maintenance-vertex-cover",
+    "tool": "sqlite.query",
+    "instruction": "Each maintenance link joins a pump to a valve. Opening either endpoint gives access to that link. Choose a set of access points that covers every link and minimizes the number of points opened. Each point has a distinct power-of-two tie_bit. Among covers of equal minimum size, choose the one with the smallest sum of tie_bit values. Return one row per chosen point with the single column point_name, ordered by increasing tie_bit. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "access_points": {
+        "columns": [
+          "point_name TEXT",
+          "tie_bit INTEGER"
+        ],
+        "rows": [
+          [
+            "pump_a",
+            1
+          ],
+          [
+            "pump_b",
+            2
+          ],
+          [
+            "valve_x",
+            4
+          ],
+          [
+            "valve_y",
+            8
+          ]
+        ]
+      },
+      "maintenance_links": {
+        "columns": [
+          "pump_name TEXT",
+          "valve_name TEXT"
+        ],
+        "rows": [
+          [
+            "pump_a",
+            "valve_x"
+          ],
+          [
+            "pump_b",
+            "valve_x"
+          ],
+          [
+            "pump_b",
+            "valve_y"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "point_name"
+    ]
+  }
+]

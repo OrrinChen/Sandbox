@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "input_sha256": "16c012b5f7b81ad130c7a7f1a96116e9cca9837e6aa6651655780e81bd7a3929",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-48983\": {\n    \"fills\": [\n      {\n        \"range\": \"M6:S11\",\n        \"formula\": \"=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-49246\": {\n    \"formulas\": {\n      \"B2\": \"=IF(A2=\\\"\\\",\\\"\\\",VLOOKUP(A2,$J$2:$K$4,2,0))\"\n    },\n    \"fills\": [\n      {\n        \"range\": \"B3:B14\",\n        \"formula\": \"=IF(A3=\\\"\\\",B2,VLOOKUP(A3,$J$2:$K$4,2,0))\"\n      }\n    ]\n  },\n  \"sheet-49300\": {\n    \"fills\": [\n      {\n        \"range\": \"C2:C3\",\n        \"formula\": \"=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(IF(B2>48,Data!$AY$2,B2),Data!$C$2:$AY$2,0))*1\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-49455\": {\n    \"formulas\": {\n      \"H3\": \"=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,$K$1:$K$9,0)),--(D6:D208<>\\\"\\\"),--(H6:H208<>\\\"\\\"))\"\n    }\n  }\n}",
+  "submissions": {
+    "sheet-48983": {
+      "fills": [
+        {
+          "range": "M6:S11",
+          "formula": "=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-49246": {
+      "formulas": {
+        "B2": "=IF(A2=\"\",\"\",VLOOKUP(A2,$J$2:$K$4,2,0))"
+      },
+      "fills": [
+        {
+          "range": "B3:B14",
+          "formula": "=IF(A3=\"\",B2,VLOOKUP(A3,$J$2:$K$4,2,0))"
+        }
+      ]
+    },
+    "sheet-49300": {
+      "fills": [
+        {
+          "range": "C2:C3",
+          "formula": "=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(IF(B2>48,Data!$AY$2,B2),Data!$C$2:$AY$2,0))*1"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-49455": {
+      "formulas": {
+        "H3": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,$K$1:$K$9,0)),--(D6:D208<>\"\"),--(H6:H208<>\"\"))"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-4f4c-7dd0-ac63-63649302774d",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27892,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 359,
+    "reasoning_output_tokens": 0
+  }
+}

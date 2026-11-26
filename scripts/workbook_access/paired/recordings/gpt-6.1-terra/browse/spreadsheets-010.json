@@ -1,0 +1,134 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "8b5dd1152c7939a0a254a06756857c954ed02cb1171ea56b5d89d5ff2bc6c703",
+    "db5585eea6edf9f7658e32ef444b27bbf9cccff80dbc008d974d0da7078ac69f",
+    "f37f0cf70acf0428897d4d8ca26eeb99cccb0ea8974dcbd65bff676e92169453"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-44264",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "submission": {
+        "fills": [
+          {
+            "range": "J7:N9",
+            "formula": "=IF(AND(J$6>=$H7,J$6<$H7+3),$G7*INDEX($R$7:$R$9,J$6-$H7+1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 54485,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 553,
+        "reasoning_output_tokens": 245
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-44266",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B12",
+            "formula": "=IFERROR(INDEX(Data!$G$14:$P$14,1,MATCH(A2,Data!$F$4:$O$4,0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 54485,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 553,
+        "reasoning_output_tokens": 245
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-44628",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:G3",
+            "formula": "=SUMIF($A$2:$A$10,D2&\"*\",$B$2:$B$10)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 54485,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 553,
+        "reasoning_output_tokens": 245
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-45030",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-010",
+      "submission": {
+        "fills": [
+          {
+            "range": "B7:B28",
+            "formula": "=IF(C7=\"\",\"\",MAXIFS($E$7:$E$19,$E$7:$E$19,\"<=\"&C7))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 54485,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 553,
+        "reasoning_output_tokens": 245
+      },
+      "model_calls": 3
+    }
+  ]
+}

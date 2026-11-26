@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q2",
+  "cohort": "transportation-1",
+  "sector": "transportation",
+  "cik": "0000100517",
+  "issuer": "UNITED AIRLINES HOLDINGS, INC.",
+  "cutoff": "2021-03-02",
+  "projected_target_start": "2021-04-01",
+  "status": "complete",
+  "period_end": "2020-12-31",
+  "filing_date": "2021-03-01",
+  "text": {
+    "sector": "transportation",
+    "cik": "0000100517",
+    "issuer": "UNITED AIRLINES HOLDINGS, INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2021-03-01",
+        "text": "Passenger revenue decreased $27.8 billion, or 70.2%, in 2020 as compared to 2019, primarily due to the decrease in demand for air travel as a result of the worldwide spread of COVID-19 and the associated shelter-in-place directives and travel restrictions."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2021-03-01",
+        "text": "The Company has taken a number of actions in response to the decreased demand for air travel."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2021-03-01",
+        "text": "In response to decreased demand, the Company cut, relative to 2019 capacity, approximately 57% of its scheduled capacity for 2020."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2021-03-01",
+        "text": "On September 28, 2020, United borrowed, and recorded as Long-term debt on the Company's consolidated balance sheet, $520 million under the CARES Act Term Loan Facility, the proceeds of which were used to pay certain transaction fees and expenses and for working capital and other general corporate purposes of the Company."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2021-03-01",
+        "text": "Cash flows used by operations for the year ended December 31, 2020 was $4.1 billion compared to $6.9 billion provided by operations in the same period in 2019."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2020-09-30",
+        "filed": "2020-10-15",
+        "reported_sales_usd": 2489000000,
+        "year_ago_reported_sales_usd": 11380000000,
+        "yoy_percent": "-78.1283"
+      },
+      {
+        "quarter_end": "2020-12-31",
+        "filed": "2021-03-01",
+        "reported_sales_usd": 3412000000,
+        "year_ago_reported_sales_usd": 10888000000,
+        "yoy_percent": "-68.6627"
+      }
+    ],
+    "status": "complete"
+  }
+}

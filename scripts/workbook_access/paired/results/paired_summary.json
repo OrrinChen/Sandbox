@@ -1,0 +1,2487 @@
+{
+  "task_count": 100,
+  "all_complete_batches": [
+    "spreadsheets-002",
+    "spreadsheets-005",
+    "spreadsheets-006",
+    "spreadsheets-007",
+    "spreadsheets-008",
+    "spreadsheets-009",
+    "spreadsheets-011",
+    "spreadsheets-012",
+    "spreadsheets-013",
+    "spreadsheets-016",
+    "spreadsheets-017",
+    "spreadsheets-019",
+    "spreadsheets-023",
+    "spreadsheets-024"
+  ],
+  "untruncated_tasks_with_truncated_batch_peer": [
+    "sheet-1563",
+    "sheet-15829",
+    "sheet-17251",
+    "sheet-18935",
+    "sheet-32255",
+    "sheet-34210",
+    "sheet-35747",
+    "sheet-36236",
+    "sheet-36277",
+    "sheet-37228",
+    "sheet-37378",
+    "sheet-44264",
+    "sheet-44628",
+    "sheet-45030",
+    "sheet-48983",
+    "sheet-49246",
+    "sheet-49801",
+    "sheet-49857",
+    "sheet-50630",
+    "sheet-53167",
+    "sheet-53383",
+    "sheet-54274",
+    "sheet-56451",
+    "sheet-56599",
+    "sheet-56995",
+    "sheet-57029",
+    "sheet-57105",
+    "sheet-57137",
+    "sheet-57354",
+    "sheet-58701",
+    "sheet-59160"
+  ],
+  "models": [
+    "gpt-6.2-sol",
+    "gpt-6.1-terra"
+  ],
+  "archived_passes": {
+    "direct": 70,
+    "self_check": 68
+  },
+  "archived_both_failed": [
+    "sheet-34033",
+    "sheet-36236",
+    "sheet-36764",
+    "sheet-37378",
+    "sheet-37554",
+    "sheet-37609",
+    "sheet-37615",
+    "sheet-38662",
+    "sheet-40757",
+    "sheet-43436",
+    "sheet-48365",
+    "sheet-48588",
+    "sheet-48608",
+    "sheet-49455",
+    "sheet-49859",
+    "sheet-50630",
+    "sheet-50952",
+    "sheet-51807",
+    "sheet-53167",
+    "sheet-55535",
+    "sheet-56427",
+    "sheet-56915",
+    "sheet-56995",
+    "sheet-57105",
+    "sheet-57137",
+    "sheet-58701",
+    "sheet-59224",
+    "sheet-59259",
+    "sheet-59358",
+    "sheet-9111"
+  ],
+  "tasks_with_initially_omitted_cells": [
+    "sheet-14240",
+    "sheet-2212",
+    "sheet-31915",
+    "sheet-35739",
+    "sheet-36764",
+    "sheet-44266",
+    "sheet-49300",
+    "sheet-49455",
+    "sheet-49859",
+    "sheet-55085",
+    "sheet-56915",
+    "sheet-57262",
+    "sheet-58047"
+  ],
+  "old_failures_with_initially_omitted_cells": [
+    "sheet-36764",
+    "sheet-49455",
+    "sheet-49859",
+    "sheet-56915"
+  ],
+  "by_model": {
+    "gpt-6.2-sol": {
+      "all": {
+        "both_pass": {
+          "count": 63,
+          "tasks": [
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-36764",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40757",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794"
+          ]
+        },
+        "gained": {
+          "count": 4,
+          "tasks": [
+            "sheet-14240",
+            "sheet-33157",
+            "sheet-46897",
+            "sheet-47699"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-50952",
+            "sheet-58701"
+          ]
+        },
+        "both_fail": {
+          "count": 31,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-43436",
+            "sheet-45063",
+            "sheet-45937",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-55260",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        }
+      },
+      "old_both_failed": {
+        "both_pass": {
+          "count": 3,
+          "tasks": [
+            "sheet-36764",
+            "sheet-40757",
+            "sheet-55535"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-50952",
+            "sheet-58701"
+          ]
+        },
+        "both_fail": {
+          "count": 25,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      },
+      "initially_truncated": {
+        "both_pass": {
+          "count": 9,
+          "tasks": [
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-35739",
+            "sheet-36764",
+            "sheet-44266",
+            "sheet-49300",
+            "sheet-55085",
+            "sheet-57262",
+            "sheet-58047"
+          ]
+        },
+        "gained": {
+          "count": 1,
+          "tasks": [
+            "sheet-14240"
+          ]
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "initially_complete": {
+        "both_pass": {
+          "count": 54,
+          "tasks": [
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40757",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57354",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794"
+          ]
+        },
+        "gained": {
+          "count": 3,
+          "tasks": [
+            "sheet-33157",
+            "sheet-46897",
+            "sheet-47699"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-50952",
+            "sheet-58701"
+          ]
+        },
+        "both_fail": {
+          "count": 28,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-43436",
+            "sheet-45063",
+            "sheet-45937",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-55260",
+            "sheet-56427",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        }
+      },
+      "all_tasks_in_batch_initially_complete": {
+        "both_pass": {
+          "count": 31,
+          "tasks": [
+            "sheet-32562",
+            "sheet-3413",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40757",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794"
+          ]
+        },
+        "gained": {
+          "count": 3,
+          "tasks": [
+            "sheet-33157",
+            "sheet-46897",
+            "sheet-47699"
+          ]
+        },
+        "lost": {
+          "count": 1,
+          "tasks": [
+            "sheet-50952"
+          ]
+        },
+        "both_fail": {
+          "count": 21,
+          "tasks": [
+            "sheet-34033",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-43436",
+            "sheet-45063",
+            "sheet-45937",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-51807",
+            "sheet-55260",
+            "sheet-56427",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        }
+      },
+      "old_failures_with_truncated_input": {
+        "both_pass": {
+          "count": 1,
+          "tasks": [
+            "sheet-36764"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "old_failures_with_complete_input": {
+        "both_pass": {
+          "count": 2,
+          "tasks": [
+            "sheet-40757",
+            "sheet-55535"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-50952",
+            "sheet-58701"
+          ]
+        },
+        "both_fail": {
+          "count": 22,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      },
+      "all_with_new_cells_returned": {
+        "both_pass": {
+          "count": 2,
+          "tasks": [
+            "sheet-49300",
+            "sheet-55085"
+          ]
+        },
+        "gained": {
+          "count": 1,
+          "tasks": [
+            "sheet-14240"
+          ]
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "old_failures_with_new_cells_returned": {
+        "both_pass": {
+          "count": 0,
+          "tasks": []
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "archived_direct_to_fixed": {
+        "both_pass": {
+          "count": 60,
+          "tasks": [
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794"
+          ]
+        },
+        "gained": {
+          "count": 5,
+          "tasks": [
+            "sheet-36764",
+            "sheet-40757",
+            "sheet-50952",
+            "sheet-55535",
+            "sheet-58701"
+          ]
+        },
+        "lost": {
+          "count": 10,
+          "tasks": [
+            "sheet-14240",
+            "sheet-33157",
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-45063",
+            "sheet-45937",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-55260",
+            "sheet-7902"
+          ]
+        },
+        "both_fail": {
+          "count": 25,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      },
+      "archived_self_check_to_fixed": {
+        "both_pass": {
+          "count": 59,
+          "tasks": [
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639"
+          ]
+        },
+        "gained": {
+          "count": 6,
+          "tasks": [
+            "sheet-36764",
+            "sheet-40757",
+            "sheet-50952",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-59794"
+          ]
+        },
+        "lost": {
+          "count": 9,
+          "tasks": [
+            "sheet-14240",
+            "sheet-33157",
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-45937",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-55260",
+            "sheet-7902"
+          ]
+        },
+        "both_fail": {
+          "count": 26,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-45063",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      },
+      "archived_direct_to_browse": {
+        "both_pass": {
+          "count": 64,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794"
+          ]
+        },
+        "gained": {
+          "count": 3,
+          "tasks": [
+            "sheet-36764",
+            "sheet-40757",
+            "sheet-55535"
+          ]
+        },
+        "lost": {
+          "count": 6,
+          "tasks": [
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-45063",
+            "sheet-45937",
+            "sheet-55260",
+            "sheet-7902"
+          ]
+        },
+        "both_fail": {
+          "count": 27,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-50952",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-58701",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      },
+      "archived_self_check_to_browse": {
+        "both_pass": {
+          "count": 63,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639"
+          ]
+        },
+        "gained": {
+          "count": 4,
+          "tasks": [
+            "sheet-36764",
+            "sheet-40757",
+            "sheet-55535",
+            "sheet-59794"
+          ]
+        },
+        "lost": {
+          "count": 5,
+          "tasks": [
+            "sheet-40892",
+            "sheet-43406",
+            "sheet-45937",
+            "sheet-55260",
+            "sheet-7902"
+          ]
+        },
+        "both_fail": {
+          "count": 28,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-43436",
+            "sheet-45063",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-48608",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-50952",
+            "sheet-51807",
+            "sheet-53167",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-58701",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358",
+            "sheet-9111"
+          ]
+        }
+      }
+    },
+    "gpt-6.1-terra": {
+      "all": {
+        "both_pass": {
+          "count": 74,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-36764",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45063",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48608",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-50952",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53167",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55260",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-58701",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        },
+        "gained": {
+          "count": 2,
+          "tasks": [
+            "sheet-38662",
+            "sheet-44264"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-43406",
+            "sheet-45030"
+          ]
+        },
+        "both_fail": {
+          "count": 22,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "old_both_failed": {
+        "both_pass": {
+          "count": 7,
+          "tasks": [
+            "sheet-36764",
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-9111"
+          ]
+        },
+        "gained": {
+          "count": 1,
+          "tasks": [
+            "sheet-38662"
+          ]
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 22,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "initially_truncated": {
+        "both_pass": {
+          "count": 10,
+          "tasks": [
+            "sheet-14240",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-35739",
+            "sheet-36764",
+            "sheet-44266",
+            "sheet-49300",
+            "sheet-55085",
+            "sheet-57262",
+            "sheet-58047"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "initially_complete": {
+        "both_pass": {
+          "count": 64,
+          "tasks": [
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44628",
+            "sheet-45063",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48608",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-50952",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53167",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55260",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57354",
+            "sheet-58701",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        },
+        "gained": {
+          "count": 2,
+          "tasks": [
+            "sheet-38662",
+            "sheet-44264"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-43406",
+            "sheet-45030"
+          ]
+        },
+        "both_fail": {
+          "count": 19,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "all_tasks_in_batch_initially_complete": {
+        "both_pass": {
+          "count": 41,
+          "tasks": [
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-45063",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48608",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-50952",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-55260",
+            "sheet-55535",
+            "sheet-55609",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794",
+            "sheet-7902",
+            "sheet-9111"
+          ]
+        },
+        "gained": {
+          "count": 1,
+          "tasks": [
+            "sheet-38662"
+          ]
+        },
+        "lost": {
+          "count": 1,
+          "tasks": [
+            "sheet-43406"
+          ]
+        },
+        "both_fail": {
+          "count": 13,
+          "tasks": [
+            "sheet-34033",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "old_failures_with_truncated_input": {
+        "both_pass": {
+          "count": 1,
+          "tasks": [
+            "sheet-36764"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "old_failures_with_complete_input": {
+        "both_pass": {
+          "count": 6,
+          "tasks": [
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-9111"
+          ]
+        },
+        "gained": {
+          "count": 1,
+          "tasks": [
+            "sheet-38662"
+          ]
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 19,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "all_with_new_cells_returned": {
+        "both_pass": {
+          "count": 2,
+          "tasks": [
+            "sheet-14240",
+            "sheet-55085"
+          ]
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "old_failures_with_new_cells_returned": {
+        "both_pass": {
+          "count": 0,
+          "tasks": []
+        },
+        "gained": {
+          "count": 0,
+          "tasks": []
+        },
+        "lost": {
+          "count": 0,
+          "tasks": []
+        },
+        "both_fail": {
+          "count": 3,
+          "tasks": [
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-56915"
+          ]
+        }
+      },
+      "archived_direct_to_fixed": {
+        "both_pass": {
+          "count": 69,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43406",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45063",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55260",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794",
+            "sheet-7902"
+          ]
+        },
+        "gained": {
+          "count": 7,
+          "tasks": [
+            "sheet-36764",
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-9111"
+          ]
+        },
+        "lost": {
+          "count": 1,
+          "tasks": [
+            "sheet-44264"
+          ]
+        },
+        "both_fail": {
+          "count": 23,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "archived_self_check_to_fixed": {
+        "both_pass": {
+          "count": 67,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43406",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45030",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55260",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-7902"
+          ]
+        },
+        "gained": {
+          "count": 9,
+          "tasks": [
+            "sheet-36764",
+            "sheet-45063",
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-59794",
+            "sheet-9111"
+          ]
+        },
+        "lost": {
+          "count": 1,
+          "tasks": [
+            "sheet-44264"
+          ]
+        },
+        "both_fail": {
+          "count": 23,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-38662",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "archived_direct_to_browse": {
+        "both_pass": {
+          "count": 68,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45063",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55260",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-59794",
+            "sheet-7902"
+          ]
+        },
+        "gained": {
+          "count": 8,
+          "tasks": [
+            "sheet-36764",
+            "sheet-38662",
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-9111"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-43406",
+            "sheet-45030"
+          ]
+        },
+        "both_fail": {
+          "count": 22,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      },
+      "archived_self_check_to_browse": {
+        "both_pass": {
+          "count": 66,
+          "tasks": [
+            "sheet-14240",
+            "sheet-1563",
+            "sheet-15829",
+            "sheet-17251",
+            "sheet-18935",
+            "sheet-2212",
+            "sheet-31915",
+            "sheet-32255",
+            "sheet-32562",
+            "sheet-33157",
+            "sheet-3413",
+            "sheet-34210",
+            "sheet-35739",
+            "sheet-35747",
+            "sheet-36277",
+            "sheet-37228",
+            "sheet-38462",
+            "sheet-38537",
+            "sheet-38969",
+            "sheet-39432",
+            "sheet-39604",
+            "sheet-40478",
+            "sheet-40892",
+            "sheet-41680",
+            "sheet-41969",
+            "sheet-42515",
+            "sheet-42526",
+            "sheet-43589",
+            "sheet-43775",
+            "sheet-44264",
+            "sheet-44266",
+            "sheet-44628",
+            "sheet-45300",
+            "sheet-45937",
+            "sheet-46167",
+            "sheet-46897",
+            "sheet-47699",
+            "sheet-48354",
+            "sheet-48643",
+            "sheet-48969",
+            "sheet-48983",
+            "sheet-49246",
+            "sheet-49300",
+            "sheet-49801",
+            "sheet-49857",
+            "sheet-51249",
+            "sheet-51262",
+            "sheet-52220",
+            "sheet-52233",
+            "sheet-52532",
+            "sheet-52917",
+            "sheet-53383",
+            "sheet-54274",
+            "sheet-55085",
+            "sheet-55260",
+            "sheet-55609",
+            "sheet-56451",
+            "sheet-56599",
+            "sheet-57029",
+            "sheet-57262",
+            "sheet-57354",
+            "sheet-58047",
+            "sheet-59160",
+            "sheet-59196",
+            "sheet-59639",
+            "sheet-7902"
+          ]
+        },
+        "gained": {
+          "count": 10,
+          "tasks": [
+            "sheet-36764",
+            "sheet-38662",
+            "sheet-45063",
+            "sheet-48608",
+            "sheet-50952",
+            "sheet-53167",
+            "sheet-55535",
+            "sheet-58701",
+            "sheet-59794",
+            "sheet-9111"
+          ]
+        },
+        "lost": {
+          "count": 2,
+          "tasks": [
+            "sheet-43406",
+            "sheet-45030"
+          ]
+        },
+        "both_fail": {
+          "count": 22,
+          "tasks": [
+            "sheet-34033",
+            "sheet-36236",
+            "sheet-37378",
+            "sheet-37554",
+            "sheet-37609",
+            "sheet-37615",
+            "sheet-40757",
+            "sheet-43436",
+            "sheet-48365",
+            "sheet-48588",
+            "sheet-49455",
+            "sheet-49859",
+            "sheet-50630",
+            "sheet-51807",
+            "sheet-56427",
+            "sheet-56915",
+            "sheet-56995",
+            "sheet-57105",
+            "sheet-57137",
+            "sheet-59224",
+            "sheet-59259",
+            "sheet-59358"
+          ]
+        }
+      }
+    }
+  },
+  "second_model_vs_first": {
+    "fixed": {
+      "both_pass": {
+        "count": 63,
+        "tasks": [
+          "sheet-1563",
+          "sheet-15829",
+          "sheet-17251",
+          "sheet-18935",
+          "sheet-2212",
+          "sheet-31915",
+          "sheet-32255",
+          "sheet-32562",
+          "sheet-3413",
+          "sheet-34210",
+          "sheet-35739",
+          "sheet-35747",
+          "sheet-36277",
+          "sheet-36764",
+          "sheet-37228",
+          "sheet-38462",
+          "sheet-38537",
+          "sheet-38969",
+          "sheet-39432",
+          "sheet-39604",
+          "sheet-40478",
+          "sheet-41680",
+          "sheet-41969",
+          "sheet-42515",
+          "sheet-42526",
+          "sheet-43589",
+          "sheet-43775",
+          "sheet-44266",
+          "sheet-44628",
+          "sheet-45030",
+          "sheet-45300",
+          "sheet-46167",
+          "sheet-48354",
+          "sheet-48643",
+          "sheet-48969",
+          "sheet-48983",
+          "sheet-49246",
+          "sheet-49300",
+          "sheet-49801",
+          "sheet-49857",
+          "sheet-50952",
+          "sheet-51249",
+          "sheet-51262",
+          "sheet-52220",
+          "sheet-52233",
+          "sheet-52532",
+          "sheet-52917",
+          "sheet-53383",
+          "sheet-54274",
+          "sheet-55085",
+          "sheet-55535",
+          "sheet-55609",
+          "sheet-56451",
+          "sheet-56599",
+          "sheet-57029",
+          "sheet-57262",
+          "sheet-57354",
+          "sheet-58047",
+          "sheet-58701",
+          "sheet-59160",
+          "sheet-59196",
+          "sheet-59639",
+          "sheet-59794"
+        ]
+      },
+      "gained": {
+        "count": 13,
+        "tasks": [
+          "sheet-14240",
+          "sheet-33157",
+          "sheet-40892",
+          "sheet-43406",
+          "sheet-45063",
+          "sheet-45937",
+          "sheet-46897",
+          "sheet-47699",
+          "sheet-48608",
+          "sheet-53167",
+          "sheet-55260",
+          "sheet-7902",
+          "sheet-9111"
+        ]
+      },
+      "lost": {
+        "count": 2,
+        "tasks": [
+          "sheet-40757",
+          "sheet-44264"
+        ]
+      },
+      "both_fail": {
+        "count": 22,
+        "tasks": [
+          "sheet-34033",
+          "sheet-36236",
+          "sheet-37378",
+          "sheet-37554",
+          "sheet-37609",
+          "sheet-37615",
+          "sheet-38662",
+          "sheet-43436",
+          "sheet-48365",
+          "sheet-48588",
+          "sheet-49455",
+          "sheet-49859",
+          "sheet-50630",
+          "sheet-51807",
+          "sheet-56427",
+          "sheet-56915",
+          "sheet-56995",
+          "sheet-57105",
+          "sheet-57137",
+          "sheet-59224",
+          "sheet-59259",
+          "sheet-59358"
+        ]
+      }
+    },
+    "browse": {
+      "both_pass": {
+        "count": 65,
+        "tasks": [
+          "sheet-14240",
+          "sheet-1563",
+          "sheet-15829",
+          "sheet-17251",
+          "sheet-18935",
+          "sheet-2212",
+          "sheet-31915",
+          "sheet-32255",
+          "sheet-32562",
+          "sheet-33157",
+          "sheet-3413",
+          "sheet-34210",
+          "sheet-35739",
+          "sheet-35747",
+          "sheet-36277",
+          "sheet-36764",
+          "sheet-37228",
+          "sheet-38462",
+          "sheet-38537",
+          "sheet-38969",
+          "sheet-39432",
+          "sheet-39604",
+          "sheet-40478",
+          "sheet-41680",
+          "sheet-41969",
+          "sheet-42515",
+          "sheet-42526",
+          "sheet-43589",
+          "sheet-43775",
+          "sheet-44264",
+          "sheet-44266",
+          "sheet-44628",
+          "sheet-45300",
+          "sheet-46167",
+          "sheet-46897",
+          "sheet-47699",
+          "sheet-48354",
+          "sheet-48643",
+          "sheet-48969",
+          "sheet-48983",
+          "sheet-49246",
+          "sheet-49300",
+          "sheet-49801",
+          "sheet-49857",
+          "sheet-51249",
+          "sheet-51262",
+          "sheet-52220",
+          "sheet-52233",
+          "sheet-52532",
+          "sheet-52917",
+          "sheet-53383",
+          "sheet-54274",
+          "sheet-55085",
+          "sheet-55535",
+          "sheet-55609",
+          "sheet-56451",
+          "sheet-56599",
+          "sheet-57029",
+          "sheet-57262",
+          "sheet-57354",
+          "sheet-58047",
+          "sheet-59160",
+          "sheet-59196",
+          "sheet-59639",
+          "sheet-59794"
+        ]
+      },
+      "gained": {
+        "count": 11,
+        "tasks": [
+          "sheet-38662",
+          "sheet-40892",
+          "sheet-45063",
+          "sheet-45937",
+          "sheet-48608",
+          "sheet-50952",
+          "sheet-53167",
+          "sheet-55260",
+          "sheet-58701",
+          "sheet-7902",
+          "sheet-9111"
+        ]
+      },
+      "lost": {
+        "count": 2,
+        "tasks": [
+          "sheet-40757",
+          "sheet-45030"
+        ]
+      },
+      "both_fail": {
+        "count": 22,
+        "tasks": [
+          "sheet-34033",
+          "sheet-36236",
+          "sheet-37378",
+          "sheet-37554",
+          "sheet-37609",
+          "sheet-37615",
+          "sheet-43406",
+          "sheet-43436",
+          "sheet-48365",
+          "sheet-48588",
+          "sheet-49455",
+          "sheet-49859",
+          "sheet-50630",
+          "sheet-51807",
+          "sheet-56427",
+          "sheet-56915",
+          "sheet-56995",
+          "sheet-57105",
+          "sheet-57137",
+          "sheet-59224",
+          "sheet-59259",
+          "sheet-59358"
+        ]
+      }
+    }
+  },
+  "old_shared_failures_across_browse_models": {
+    "both_pass": {
+      "count": 2,
+      "tasks": [
+        "sheet-36764",
+        "sheet-55535"
+      ]
+    },
+    "gained": {
+      "count": 6,
+      "tasks": [
+        "sheet-38662",
+        "sheet-48608",
+        "sheet-50952",
+        "sheet-53167",
+        "sheet-58701",
+        "sheet-9111"
+      ]
+    },
+    "lost": {
+      "count": 1,
+      "tasks": [
+        "sheet-40757"
+      ]
+    },
+    "both_fail": {
+      "count": 21,
+      "tasks": [
+        "sheet-34033",
+        "sheet-36236",
+        "sheet-37378",
+        "sheet-37554",
+        "sheet-37609",
+        "sheet-37615",
+        "sheet-43436",
+        "sheet-48365",
+        "sheet-48588",
+        "sheet-49455",
+        "sheet-49859",
+        "sheet-50630",
+        "sheet-51807",
+        "sheet-56427",
+        "sheet-56915",
+        "sheet-56995",
+        "sheet-57105",
+        "sheet-57137",
+        "sheet-59224",
+        "sheet-59259",
+        "sheet-59358"
+      ]
+    }
+  },
+  "usage": {
+    "gpt-6.2-sol/fixed": {
+      "passes": 65,
+      "batches": 25,
+      "model_calls": 75,
+      "read_requests": 79,
+      "read_errors": 0,
+      "tasks_with_new_cells": 0,
+      "new_task_cell_pairs": 0,
+      "tokens": {
+        "input_tokens": 1532811,
+        "cached_input_tokens": 968064,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 24872,
+        "reasoning_output_tokens": 9844
+      }
+    },
+    "gpt-6.2-sol/browse": {
+      "passes": 67,
+      "batches": 25,
+      "model_calls": 75,
+      "read_requests": 78,
+      "read_errors": 0,
+      "tasks_with_new_cells": 6,
+      "new_task_cell_pairs": 218,
+      "tokens": {
+        "input_tokens": 1535724,
+        "cached_input_tokens": 1007616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 22119,
+        "reasoning_output_tokens": 8370
+      }
+    },
+    "gpt-6.1-terra/fixed": {
+      "passes": 76,
+      "batches": 25,
+      "model_calls": 75,
+      "read_requests": 44,
+      "read_errors": 0,
+      "tasks_with_new_cells": 0,
+      "new_task_cell_pairs": 0,
+      "tokens": {
+        "input_tokens": 1411448,
+        "cached_input_tokens": 913920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14043,
+        "reasoning_output_tokens": 4552
+      }
+    },
+    "gpt-6.1-terra/browse": {
+      "passes": 76,
+      "batches": 25,
+      "model_calls": 75,
+      "read_requests": 44,
+      "read_errors": 0,
+      "tasks_with_new_cells": 5,
+      "new_task_cell_pairs": 189,
+      "tokens": {
+        "input_tokens": 1413883,
+        "cached_input_tokens": 915712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14329,
+        "reasoning_output_tokens": 4241
+      }
+    }
+  },
+  "prediction_lock_sha256": "dda2bfaa9a144382d2879b459071dfe2461d9a149fc69013767cc84e71e6f9ee",
+  "efficient_tier": "gpt-6.1-terra",
+  "parent_registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "28f42d630666d787d6e629a279fde4d7beb5cb945a3c24a809eedf0ff3b4f240",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-limit-cable-exposure-in-one-duct\": \"WITH duct_totals AS (SELECT route_code, duct_code, SUM(piece_m) AS duct_m FROM route_piece GROUP BY route_code, duct_code), route_totals AS (SELECT route_code, SUM(duct_m) AS installed_m, MAX(duct_m) AS worst_duct_m FROM duct_totals GROUP BY route_code) SELECT r.route_code, r.installed_m, r.worst_duct_m, b.brief_id FROM route_totals AS r CROSS JOIN works_brief AS b WHERE r.worst_duct_m <= b.duct_cap_m ORDER BY r.installed_m, r.route_code COLLATE BINARY LIMIT 1\",\n  \"decision-loan-podiums-with-current-confirmations\": \"WITH ranked_notes AS (SELECT n.*, ROW_NUMBER() OVER (PARTITION BY depot_id, design_id ORDER BY revision_no DESC) AS revision_rank FROM loan_note AS n) SELECT d.design_id, n.depot_id, n.confirmed_units - d.required_units AS surplus_units, n.source_id FROM podium_design AS d JOIN ranked_notes AS n ON n.design_id = d.design_id WHERE n.revision_rank = 1 AND n.confirmed_units >= d.required_units ORDER BY d.sightline_score DESC, surplus_units, d.design_id COLLATE BINARY, n.depot_id COLLATE BINARY LIMIT 1\",\n  \"decision-locate-conductor-handoffs-at-cue-starts\": \"WITH effective AS (SELECT c.cue_id, c.at_min, COALESCE((SELECT n.baton_code FROM baton_notice AS n WHERE n.start_min <= c.at_min AND (n.stop_min IS NULL OR c.at_min < n.stop_min) ORDER BY n.notice_no DESC LIMIT 1), 'DESK') AS next_code FROM cue_start AS c), compared AS (SELECT cue_id, at_min, LAG(next_code) OVER (ORDER BY at_min) AS prior_code, next_code FROM effective) SELECT cue_id, prior_code, next_code FROM compared WHERE prior_code <> next_code ORDER BY at_min\",\n  \"decision-loom-calibration-cutover-slot\": \"SELECT s.adoption_day, COALESCE(SUM(r.roll_count), 0) AS covered_rolls, COALESCE(SUM(r.need_hours), 0) AS used_hours, s.source_id FROM slot_offer AS s LEFT JOIN weave_run AS r ON s.adoption_day BETWEEN r.ready_day AND r.last_day GROUP BY s.source_id, s.adoption_day, s.loom_hours HAVING COALESCE(SUM(r.need_hours), 0) <= s.loom_hours ORDER BY covered_rolls DESC, s.adoption_day, s.source_id COLLATE BINARY LIMIT 1\"\n}",
+  "submissions": {
+    "decision-limit-cable-exposure-in-one-duct": "WITH duct_totals AS (SELECT route_code, duct_code, SUM(piece_m) AS duct_m FROM route_piece GROUP BY route_code, duct_code), route_totals AS (SELECT route_code, SUM(duct_m) AS installed_m, MAX(duct_m) AS worst_duct_m FROM duct_totals GROUP BY route_code) SELECT r.route_code, r.installed_m, r.worst_duct_m, b.brief_id FROM route_totals AS r CROSS JOIN works_brief AS b WHERE r.worst_duct_m <= b.duct_cap_m ORDER BY r.installed_m, r.route_code COLLATE BINARY LIMIT 1",
+    "decision-loan-podiums-with-current-confirmations": "WITH ranked_notes AS (SELECT n.*, ROW_NUMBER() OVER (PARTITION BY depot_id, design_id ORDER BY revision_no DESC) AS revision_rank FROM loan_note AS n) SELECT d.design_id, n.depot_id, n.confirmed_units - d.required_units AS surplus_units, n.source_id FROM podium_design AS d JOIN ranked_notes AS n ON n.design_id = d.design_id WHERE n.revision_rank = 1 AND n.confirmed_units >= d.required_units ORDER BY d.sightline_score DESC, surplus_units, d.design_id COLLATE BINARY, n.depot_id COLLATE BINARY LIMIT 1",
+    "decision-locate-conductor-handoffs-at-cue-starts": "WITH effective AS (SELECT c.cue_id, c.at_min, COALESCE((SELECT n.baton_code FROM baton_notice AS n WHERE n.start_min <= c.at_min AND (n.stop_min IS NULL OR c.at_min < n.stop_min) ORDER BY n.notice_no DESC LIMIT 1), 'DESK') AS next_code FROM cue_start AS c), compared AS (SELECT cue_id, at_min, LAG(next_code) OVER (ORDER BY at_min) AS prior_code, next_code FROM effective) SELECT cue_id, prior_code, next_code FROM compared WHERE prior_code <> next_code ORDER BY at_min",
+    "decision-loom-calibration-cutover-slot": "SELECT s.adoption_day, COALESCE(SUM(r.roll_count), 0) AS covered_rolls, COALESCE(SUM(r.need_hours), 0) AS used_hours, s.source_id FROM slot_offer AS s LEFT JOIN weave_run AS r ON s.adoption_day BETWEEN r.ready_day AND r.last_day GROUP BY s.source_id, s.adoption_day, s.loom_hours HAVING COALESCE(SUM(r.need_hours), 0) <= s.loom_hours ORDER BY covered_rolls DESC, s.adoption_day, s.source_id COLLATE BINARY LIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1a-d0f2-7542-97c7-53c7d2e38f88",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22749,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 575,
+    "reasoning_output_tokens": 0
+  }
+}

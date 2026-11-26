@@ -1,0 +1,306 @@
+[
+  {
+    "task_id": "decision-choose-same-day-reimbursement-batch",
+    "tool": "sqlite.query",
+    "instruction": "Select one batch for today's payment run. Only ready vouchers can be paid. Pay each selected voucher in full. The run can carry at most two vouchers, and the sum of their principal and individual transfer fees must fit the single run_limit row's cash_cents. Among feasible batches maximize the number of vouchers paid, then maximize principal reimbursed, then choose the lexicographically smallest sorted sequence of voucher IDs using SQLite BINARY order. At least one ready voucher fits individually. All fields are non-null, voucher IDs are unique uppercase ASCII codes, principal is positive, and fees are nonnegative. All monetary fields are integer cents. Return one row with first_id, second_id, principal_cents, cash_used_cents in that order. Put the IDs in ascending order and use NULL for second_id on a singleton. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "run_limit": {
+        "columns": [
+          "cash_cents INTEGER"
+        ],
+        "rows": [
+          [
+            10000
+          ]
+        ]
+      },
+      "voucher": {
+        "columns": [
+          "voucher_id TEXT",
+          "stage TEXT",
+          "principal_cents INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "ready",
+            8000,
+            50
+          ],
+          [
+            "B",
+            "ready",
+            5100,
+            100
+          ],
+          [
+            "C",
+            "ready",
+            4800,
+            100
+          ],
+          [
+            "D",
+            "ready",
+            4700,
+            75
+          ],
+          [
+            "E",
+            "held",
+            4750,
+            0
+          ],
+          [
+            "F",
+            "ready",
+            4700,
+            25
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_id",
+      "second_id",
+      "principal_cents",
+      "cash_used_cents"
+    ]
+  },
+  {
+    "task_id": "decision-choose-two-recovery-retrofits",
+    "tool": "sqlite.query",
+    "instruction": "Each candidate retrofit was tested on two matched production runs of equal duration. The two gram measurements are usable material recovered with the existing and proposed equipment respectively. Select exactly two retrofits for installation. Their combined installation time may be at most 8 hours, and they must use different lift bays because each bay can support only one installation in the shutdown. Maximize the sum of the two within-candidate gains in recovered grams. On a tie, minimize total installation hours, then choose the lexicographically smallest pair of codes after sorting the two codes ascending. Codes are unique ASCII identifiers. A NULL measurement makes that candidate ineligible; all other fields are present. Return the single winning row with columns first_code, second_code, gained_grams, install_hours. Return zero rows if no pair qualifies. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "retrofit_trials": {
+        "columns": [
+          "kit_code TEXT",
+          "lift_bay TEXT",
+          "fit_hours INTEGER",
+          "existing_grams INTEGER",
+          "proposed_grams INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "west",
+            5,
+            50,
+            66
+          ],
+          [
+            "B",
+            "west",
+            3,
+            80,
+            95
+          ],
+          [
+            "C",
+            "east",
+            4,
+            20,
+            34
+          ],
+          [
+            "D",
+            "north",
+            3,
+            70,
+            82
+          ],
+          [
+            "E",
+            "east",
+            3,
+            60,
+            72
+          ],
+          [
+            "F",
+            "south",
+            1,
+            null,
+            98
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_code",
+      "second_code",
+      "gained_grams",
+      "install_hours"
+    ]
+  },
+  {
+    "task_id": "decision-citation-footnote-duplicate-lineages",
+    "tool": "sqlite.query",
+    "instruction": "Each row in footnote_citations means that child_note cites source_note. In this finite acyclic graph, trace each footnote listed in review_notes through every citation until reaching original footnotes, which have no outgoing citations. A lineage is the set of distinct original footnote IDs reached, regardless of path length or how many paths reach an original. Two review footnotes have duplicate lineages exactly when their sets are equal. Return one row per unordered duplicate pair with the smaller ID as note_a, the larger as note_b, and the number of distinct originals as original_count. Use binary text order for IDs and sort by note_a then note_b ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "footnote_citations": {
+        "columns": [
+          "child_note TEXT",
+          "source_note TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "M"
+          ],
+          [
+            "A",
+            "X"
+          ],
+          [
+            "M",
+            "X"
+          ],
+          [
+            "M",
+            "Y"
+          ],
+          [
+            "B",
+            "X"
+          ],
+          [
+            "B",
+            "Y"
+          ],
+          [
+            "C",
+            "X"
+          ]
+        ]
+      },
+      "review_notes": {
+        "columns": [
+          "note_id TEXT"
+        ],
+        "rows": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "note_a",
+      "note_b",
+      "original_count"
+    ]
+  },
+  {
+    "task_id": "decision-cite-active-glaze-inspection-card",
+    "tool": "sqlite.query",
+    "instruction": "A tile workshop fires a control tile and a trial tile together and counts visible pinholes on each. For every firing, find the inspection card for its finish that was effective on the firing day. A card remains in force until superseded for that finish. Use the greatest start_day less than or equal to firing_day, breaking same-day revision ties by greatest card_id in binary text order. Day values are integers on one workshop calendar. The primary text on each card sets the direction of the comparison. 'Count extra pinholes on the trial tile.' means trial minus control; 'Count any difference between the tiles.' means absolute difference. The card's allowance is the maximum permitted count in that direction. Return only firings that exceed their applicable allowance, citing the actual card used. Skip firings lacking an applicable card or either count. Only the tile counts may be NULL. Return firing_code, assessed_difference, allowance, card_id ordered by unique firing_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "inspection_cards": {
+        "columns": [
+          "card_id TEXT",
+          "finish_code TEXT",
+          "start_day INTEGER",
+          "primary_text TEXT",
+          "allowance INTEGER"
+        ],
+        "rows": [
+          [
+            "M1",
+            "matte",
+            2,
+            "Count any difference between the tiles.",
+            4
+          ],
+          [
+            "M2",
+            "matte",
+            6,
+            "Count extra pinholes on the trial tile.",
+            1
+          ],
+          [
+            "S1",
+            "satin",
+            4,
+            "Count extra pinholes on the trial tile.",
+            6
+          ],
+          [
+            "S2",
+            "satin",
+            4,
+            "Count extra pinholes on the trial tile.",
+            2
+          ]
+        ]
+      },
+      "tile_firings": {
+        "columns": [
+          "firing_code TEXT",
+          "finish_code TEXT",
+          "firing_day INTEGER",
+          "control_pits INTEGER",
+          "trial_pits INTEGER"
+        ],
+        "rows": [
+          [
+            "K1",
+            "matte",
+            4,
+            8,
+            3
+          ],
+          [
+            "K2",
+            "matte",
+            6,
+            8,
+            3
+          ],
+          [
+            "K3",
+            "satin",
+            5,
+            2,
+            5
+          ],
+          [
+            "K4",
+            "satin",
+            3,
+            0,
+            8
+          ],
+          [
+            "K5",
+            "matte",
+            7,
+            null,
+            9
+          ],
+          [
+            "K6",
+            "satin",
+            6,
+            2,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "firing_code",
+      "assessed_difference",
+      "allowance",
+      "card_id"
+    ]
+  }
+]

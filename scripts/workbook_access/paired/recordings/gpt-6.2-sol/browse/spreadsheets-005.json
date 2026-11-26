@@ -1,0 +1,401 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "70e3801b64e20beceebdbd15089be245ef83553bd8ab3ac45fc8250b9606f89d",
+    "c0a64b53520c90cf8e2d583d7699e9d9098b3cfafc98a9a09e6bdd1fdef0521e",
+    "7edc6931318fea09b91eecb7bbef592502487daa5343b75901ae7cc43ca4d59d"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-37554",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F17",
+            "formula": "=SUMPRODUCT(--($A$2:$A$17=D2),$B$2:$B$17)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "F2:F19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "F2:F19",
+            "range_size": 18,
+            "cells": [
+              [
+                "F2",
+                "74"
+              ],
+              [
+                "F3",
+                "4"
+              ],
+              [
+                "F4",
+                "4377"
+              ],
+              [
+                "F5",
+                "41"
+              ],
+              [
+                "F6",
+                "1"
+              ],
+              [
+                "F7",
+                "21"
+              ],
+              [
+                "F8",
+                "11"
+              ],
+              [
+                "F9",
+                "1629"
+              ],
+              [
+                "F10",
+                "122"
+              ],
+              [
+                "F11",
+                "117"
+              ],
+              [
+                "F12",
+                "181"
+              ],
+              [
+                "F13",
+                "176"
+              ],
+              [
+                "F14",
+                "2"
+              ],
+              [
+                "F15",
+                "17"
+              ],
+              [
+                "F16",
+                "941"
+              ],
+              [
+                "F17",
+                "38"
+              ],
+              [
+                "F18",
+                "7752"
+              ],
+              [
+                "F19",
+                "117"
+              ]
+            ],
+            "total": 18,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61365,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 91
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37609",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C11",
+            "formula": "=IF(OR(A2=\"U\",B2=\"U\"),\"-\",IF(OR(N(A2)>=7,N(B2)>=7),\"e\",\"-\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61365,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 91
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37615",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "F7:F37",
+            "formula": "=IF(D7<=0,0,IF(ROUND(D7*24,9)>4,$D$42,$D$43))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "D6:F14",
+            "range_size": 27,
+            "cells": [
+              [
+                "D6",
+                "Total Hours"
+              ],
+              [
+                "E6",
+                "Days Billed"
+              ],
+              [
+                "F6",
+                "$ Amount"
+              ],
+              [
+                "D7",
+                "8:00:00"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "D8",
+                "3:00:00"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "D9",
+                "0:00:00"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "D10",
+                "0:00:00"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "D11",
+                "8:15:00"
+              ],
+              [
+                "E11",
+                "1"
+              ],
+              [
+                "D12",
+                "3:50:00"
+              ],
+              [
+                "E12",
+                "1"
+              ],
+              [
+                "D13",
+                "5:00:00"
+              ],
+              [
+                "E13",
+                "1"
+              ],
+              [
+                "D14",
+                "7:30:00"
+              ],
+              [
+                "E14",
+                "1"
+              ]
+            ],
+            "total": 19,
+            "truncated": false,
+            "blank_count": 8
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Example",
+            "range": "A38:F44"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Example",
+            "range": "A38:F44",
+            "range_size": 42,
+            "cells": [
+              [
+                "D42",
+                "57.2"
+              ],
+              [
+                "F42",
+                "0"
+              ],
+              [
+                "D43",
+                "28.6"
+              ],
+              [
+                "F43",
+                "0"
+              ],
+              [
+                "E44",
+                "Total invoice:"
+              ],
+              [
+                "F44",
+                "0"
+              ]
+            ],
+            "total": 6,
+            "truncated": false,
+            "blank_count": 36
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 61365,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 91
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-38462",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-005",
+      "submission": {
+        "fills": [
+          {
+            "range": "C1:C2",
+            "formula": "=ROUNDUP(ROUND(B1*24,9),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:C2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:C2",
+            "range_size": 4,
+            "cells": [
+              [
+                "B1",
+                "2046 days, 17:30:00"
+              ],
+              [
+                "C1",
+                "49122"
+              ],
+              [
+                "B2",
+                "2055 days, 11:58:00"
+              ]
+            ],
+            "total": 3,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61365,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 91
+      },
+      "model_calls": 3
+    }
+  ]
+}

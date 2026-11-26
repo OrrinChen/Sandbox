@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "ffbf0d0bb2ce8dbb02557d1660d6dda3c99529371a45ac9135b1fd541f82dcde",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-43406\": {\n    \"fills\": [\n      {\n        \"range\": \"C7:C20\",\n        \"formula\": \"=IF(D7=\\\"H\\\",COUNTIF(D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",ROUND(MAX(C$6:C6)+0.1,1),\\\"\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43436\": {\n    \"fills\": [\n      {\n        \"range\": \"I2:K6\",\n        \"formula\": \"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\">0\\\",$C$2:$C$12,\\\"<\\\"&DATE(2022,6+COLUMN()-COLUMN($I$1),1),$D$2:$D$12,\\\"\\\")+COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\">0\\\",$C$2:$C$12,\\\"<\\\"&DATE(2022,6+COLUMN()-COLUMN($I$1),1),$D$2:$D$12,\\\">=\\\"&DATE(2022,5+COLUMN()-COLUMN($I$1),1))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-43589\": {\n    \"formulas\": {\n      \"B2\": \"=VALUE(TRIM(MID(A2,SEARCH(\\\"to\\\",A2)+2,LEN(A2))))-VALUE(TRIM(LEFT(A2,SEARCH(\\\"to\\\",A2)-1)))+1\"\n    }\n  },\n  \"sheet-43775\": {\n    \"formulas\": {\n      \"I6\": \"=H3\",\n      \"M6\": \"=I3\",\n      \"Q6\": \"=J3\",\n      \"U6\": \"=K3\",\n      \"Y6\": \"=L3\"\n    }\n  }\n}",
+  "submissions": {
+    "sheet-43406": {
+      "fills": [
+        {
+          "range": "C7:C20",
+          "formula": "=IF(D7=\"H\",COUNTIF(D$7:D7,\"H\"),IF(D7=\"S\",ROUND(MAX(C$6:C6)+0.1,1),\"\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-43436": {
+      "fills": [
+        {
+          "range": "I2:K6",
+          "formula": "=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\">0\",$C$2:$C$12,\"<\"&DATE(2022,6+COLUMN()-COLUMN($I$1),1),$D$2:$D$12,\"\")+COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\">0\",$C$2:$C$12,\"<\"&DATE(2022,6+COLUMN()-COLUMN($I$1),1),$D$2:$D$12,\">=\"&DATE(2022,5+COLUMN()-COLUMN($I$1),1))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-43589": {
+      "formulas": {
+        "B2": "=VALUE(TRIM(MID(A2,SEARCH(\"to\",A2)+2,LEN(A2))))-VALUE(TRIM(LEFT(A2,SEARCH(\"to\",A2)-1)))+1"
+      }
+    },
+    "sheet-43775": {
+      "formulas": {
+        "I6": "=H3",
+        "M6": "=I3",
+        "Q6": "=J3",
+        "U6": "=K3",
+        "Y6": "=L3"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-2239-7752-851f-557a493d5a50",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 25616,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 410,
+    "reasoning_output_tokens": 0
+  }
+}

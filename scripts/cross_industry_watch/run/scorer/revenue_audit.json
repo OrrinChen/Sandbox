@@ -1,0 +1,55 @@
+{
+  "scope": "Post-lock reconciliation of reported revenue values and the sensitivity of the sealed numerical baseline.",
+  "quarter_export_sha256": "bfd25f11094e065597b429a10eebed7e75d4c91b5b8eb2652918483d256b8ef0",
+  "quarter_facts_count": 598,
+  "complete_positive_value_pairs": 598,
+  "public_evidence_vs_trend_anchor": {
+    "matched_fresh": 375,
+    "matched_stale": 57,
+    "mismatched": 0
+  },
+  "fourth_quarter_reconciliation": {
+    "direct_reporting_source": "reported_quarter_pairs.json",
+    "issuer": "Activision Blizzard",
+    "period": "2020-12-31",
+    "fiscal_year_less_ytd_usd": 2412000000,
+    "direct_reported_quarter_usd": 2413000000,
+    "counterfactual": "Replace reported amounts by the archived release values in a copy of each public input only when its original release date is no later than cutoff. Run the registered trend_arm for each origin, comparing ordered alert CIKs in all six sectors.",
+    "input_rows_adjusted": 12,
+    "origins_whose_active_rate_pair_changed": [
+      "2021Q1",
+      "2021Q2",
+      "2022Q1",
+      "2022Q2"
+    ],
+    "changed_ranked_watchlists_out_of_72": 0,
+    "changed_alert_flags_out_of_432": 0,
+    "changed_alert_explanations": [
+      [
+        "2021Q1",
+        "prepackaged_software"
+      ]
+    ]
+  },
+  "near_threshold_checks": {
+    "screen": "All annual-minus-nine-month quarter pairs within 0.5 percentage points of the -5.00% threshold in the private quarter export. Each directly reported consolidated-quarter pair agrees with the derived amounts.",
+    "rows": [
+      {
+        "cik": "0001498710",
+        "end": "2023-12-31",
+        "sales": 1321760000,
+        "year_ago_sales": 1391310000,
+        "above_threshold_usd": 15500,
+        "source": "https://s204.q4cdn.com/112592003/files/doc_financials/2023/q4/Earnings-Release-4Q23.pdf"
+      },
+      {
+        "cik": "0000799233",
+        "end": "2021-12-31",
+        "sales": 148142000,
+        "year_ago_sales": 155789000,
+        "above_threshold_usd": 142450,
+        "source": "https://www.sec.gov/Archives/edgar/data/799233/000079923322000003/a2021q4earningsrelease.htm"
+      }
+    ]
+  }
+}

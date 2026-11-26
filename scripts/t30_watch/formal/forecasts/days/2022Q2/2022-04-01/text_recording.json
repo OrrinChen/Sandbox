@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 26426,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 344,
+    "reasoning_output_tokens": 26
+  },
+  "thread": "01a20d8b-5155-79b1-a8dc-1b3758ab2215",
+  "packet_sha256": "5e40f7491f86e91993cc120fdddf9f3eb1628ec378a1d5051b5306c7778aa795",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-2\",\"alerts\":[{\"cik\":\"0000768835\",\"reason\":\"Big Lots reported a 2.5% decline in annual comparable sales while year-end inventory rose 31.6% (B, C). That buildup suggests merchandise was selling more slowly than planned. If it takes another quarter to clear, markdowns could push consolidated net sales through the 5% decline threshold in the quarter beginning in May. The timing is uncertain because the sales clue is annual.\"}]},\n    {\"sector\":\"2022Q2/retail-3\",\"alerts\":[{\"cik\":\"0001634117\",\"reason\":\"Barnes & Noble Education’s January-quarter sales fell 2.1% (A). It finalized the sale of its logo merchandise inventory in the prior-year counterpart of the May target quarter (C). If that finalization contributed to reported sales then, the tougher comparison could push the May-quarter decline to 5% or more after a shallower April-quarter decline. The filing gives no quarterly sales amount for the transaction.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-2",
+        "alerts": [
+          {
+            "cik": "0000768835",
+            "reason": "Big Lots reported a 2.5% decline in annual comparable sales while year-end inventory rose 31.6% (B, C). That buildup suggests merchandise was selling more slowly than planned. If it takes another quarter to clear, markdowns could push consolidated net sales through the 5% decline threshold in the quarter beginning in May. The timing is uncertain because the sales clue is annual."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/retail-3",
+        "alerts": [
+          {
+            "cik": "0001634117",
+            "reason": "Barnes & Noble Education’s January-quarter sales fell 2.1% (A). It finalized the sale of its logo merchandise inventory in the prior-year counterpart of the May target quarter (C). If that finalization contributed to reported sales then, the tougher comparison could push the May-quarter decline to 5% or more after a shallower April-quarter decline. The filing gives no quarterly sales amount for the transaction."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25548,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 354,
+    "reasoning_output_tokens": 17
+  },
+  "thread": "01a20d8d-8642-75f3-acfd-9fb3cabbcd8b",
+  "packet_sha256": "e55bd1e485a052f2e2598d74f7fb4c47c576bd706495964ddd7c72bf1f629eb9",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q1/retail-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q1/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000072333\",\n          \"reason\": \"Nordstrom’s year-over-year net sales growth fell from +11.98% in July to -2.50% in October. Holiday demand for core categories (A, E) supports a forecast that the intervening quarter stays above -5.00%. With that demand fading and economic pressure affecting every customer segment (D), I forecast a decline of at least 5.00% in the quarter beginning January 29.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q1/retail-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001634117\",\n          \"reason\": \"Barnes & Noble Education’s October sales fell $9.9 million year over year despite a $44.3 million increase in First Day Complete (A), implying a roughly $54.2 million decline across the rest of the business. Delivery by the first day of class (D) could keep the intervening quarter above -5.00% as spring courses begin. I forecast a decline of at least 5.00% in the quarter beginning January 29 as that support recedes and fewer campus buybacks constrain used-textbook supply (C).\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-2",
+        "alerts": [
+          {
+            "cik": "0000072333",
+            "reason": "Nordstrom’s year-over-year net sales growth fell from +11.98% in July to -2.50% in October. Holiday demand for core categories (A, E) supports a forecast that the intervening quarter stays above -5.00%. With that demand fading and economic pressure affecting every customer segment (D), I forecast a decline of at least 5.00% in the quarter beginning January 29."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q1/retail-3",
+        "alerts": [
+          {
+            "cik": "0001634117",
+            "reason": "Barnes & Noble Education’s October sales fell $9.9 million year over year despite a $44.3 million increase in First Day Complete (A), implying a roughly $54.2 million decline across the rest of the business. Delivery by the first day of class (D) could keep the intervening quarter above -5.00% as spring courses begin. I forecast a decline of at least 5.00% in the quarter beginning January 29 as that support recedes and fewer campus buybacks constrain used-textbook supply (C)."
+          }
+        ]
+      }
+    ]
+  }
+}

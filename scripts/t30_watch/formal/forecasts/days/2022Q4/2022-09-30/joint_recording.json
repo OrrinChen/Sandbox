@@ -1,0 +1,47 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25548,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 506,
+    "reasoning_output_tokens": 70
+  },
+  "thread": "01a20d8d-7d6c-7571-8c73-54a993173ccd",
+  "packet_sha256": "0b5a24c20955497777a08822ef0b04d65a91f33372c455285b83396154056a7a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000897429\",\n          \"reason\": \"Year-over-year net sales growth slowed from 39.43% in Q1 to 18.36% in Q2 (A), while inventory rose about 68%, from $202 million to $339 million (C). The Q2 sales cushion supports a Q3 forecast above -5.00%, but inventory growing that much faster than sales raises the risk that holiday markdowns push Q4 net sales to a decline of at least 5.00%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000072333\",\n          \"reason\": \"Net sales growth slowed from 18.61% in Q1 to 11.98% in Q2 despite a roughly two-point Q2 lift from Anniversary Sale timing (E). Resilience among higher-income customers supports a Q3 forecast above -5.00%. Demand was already softening more sharply among lower-income customers across both banners (D), creating a risk of a decline of at least 5.00% in the holiday quarter (A).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/retail-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001634117\",\n          \"reason\": \"Year-over-year sales growth slowed from 17.08% in April to 9.58% in July (A). Another 7.5-point slowdown in each of the next two quarters would put growth near +2.1% in the intervening quarter and -5.4% in the target quarter. Disrupted campus buybacks constrained the supply of used textbooks for future selling periods (C), supporting the forecast of further slowing.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0000897429",
+            "reason": "Year-over-year net sales growth slowed from 39.43% in Q1 to 18.36% in Q2 (A), while inventory rose about 68%, from $202 million to $339 million (C). The Q2 sales cushion supports a Q3 forecast above -5.00%, but inventory growing that much faster than sales raises the risk that holiday markdowns push Q4 net sales to a decline of at least 5.00%."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-2",
+        "alerts": [
+          {
+            "cik": "0000072333",
+            "reason": "Net sales growth slowed from 18.61% in Q1 to 11.98% in Q2 despite a roughly two-point Q2 lift from Anniversary Sale timing (E). Resilience among higher-income customers supports a Q3 forecast above -5.00%. Demand was already softening more sharply among lower-income customers across both banners (D), creating a risk of a decline of at least 5.00% in the holiday quarter (A)."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-3",
+        "alerts": [
+          {
+            "cik": "0001634117",
+            "reason": "Year-over-year sales growth slowed from 17.08% in April to 9.58% in July (A). Another 7.5-point slowdown in each of the next two quarters would put growth near +2.1% in the intervening quarter and -5.4% in the target quarter. Disrupted campus buybacks constrained the supply of used textbooks for future selling periods (C), supporting the forecast of further slowing."
+          }
+        ]
+      }
+    ]
+  }
+}

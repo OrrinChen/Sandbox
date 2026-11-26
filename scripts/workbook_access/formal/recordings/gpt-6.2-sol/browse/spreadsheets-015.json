@@ -1,0 +1,537 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "e60762fc81b446e82c107f53e07d8d58c53602077ca2f43502e861a1932a0a3c",
+    "4264fc855a7e0a406031be3e174a6c6216cdf829abff00f3885a46bbd7b0afa3",
+    "3aeb7853e5f13e816f773d720dd7f0b7bebc4bbdfb606bea37439e8b08c8f690"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-49801",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "C1": "=LEFT(A1,2)&RIGHT(A1,5)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 62090,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 204
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49857",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "G4:G10",
+            "formula": "=IF(F4=\"YES\",COUNTIF($F$4:F4,\"YES\"),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 62090,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 204
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49859",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "D12:Q23",
+            "formula": "=IF(D$8<=D$9,--AND($C12>=D$8,$C12<=D$9),--OR($C12>=D$8,$C12<=D$9))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C19:Q23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C19:Q23",
+            "range_size": 75,
+            "cells": [
+              [
+                "C19",
+                "10"
+              ],
+              [
+                "D19",
+                "0"
+              ],
+              [
+                "E19",
+                "1"
+              ],
+              [
+                "F19",
+                "0"
+              ],
+              [
+                "G19",
+                "0"
+              ],
+              [
+                "H19",
+                "1"
+              ],
+              [
+                "I19",
+                "0"
+              ],
+              [
+                "J19",
+                "0"
+              ],
+              [
+                "C20",
+                "11"
+              ],
+              [
+                "D20",
+                "0"
+              ],
+              [
+                "E20",
+                "0"
+              ],
+              [
+                "F20",
+                "1"
+              ],
+              [
+                "G20",
+                "0"
+              ],
+              [
+                "H20",
+                "0"
+              ],
+              [
+                "I20",
+                "1"
+              ],
+              [
+                "J20",
+                "0"
+              ],
+              [
+                "C21",
+                "12"
+              ],
+              [
+                "D21",
+                "0"
+              ],
+              [
+                "E21",
+                "0"
+              ],
+              [
+                "F21",
+                "1"
+              ],
+              [
+                "G21",
+                "0"
+              ],
+              [
+                "H21",
+                "0"
+              ],
+              [
+                "I21",
+                "1"
+              ],
+              [
+                "J21",
+                "0"
+              ],
+              [
+                "C22",
+                "1"
+              ],
+              [
+                "D22",
+                "0"
+              ],
+              [
+                "E22",
+                "0"
+              ],
+              [
+                "F22",
+                "1"
+              ],
+              [
+                "G22",
+                "0"
+              ],
+              [
+                "H22",
+                "0"
+              ],
+              [
+                "I22",
+                "1"
+              ],
+              [
+                "J22",
+                "0"
+              ],
+              [
+                "C23",
+                "2"
+              ],
+              [
+                "D23",
+                "0"
+              ],
+              [
+                "E23",
+                "0"
+              ],
+              [
+                "F23",
+                "1"
+              ],
+              [
+                "G23",
+                "0"
+              ],
+              [
+                "H23",
+                "0"
+              ],
+              [
+                "I23",
+                "1"
+              ],
+              [
+                "J23",
+                "0"
+              ]
+            ],
+            "total": 40,
+            "truncated": false,
+            "blank_count": 35
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Vat",
+            "range": "K8:Q16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Vat",
+            "range": "K8:Q16",
+            "range_size": 63,
+            "cells": [
+              [
+                "K8",
+                "7"
+              ],
+              [
+                "L8",
+                "11"
+              ],
+              [
+                "M8",
+                "3"
+              ],
+              [
+                "N8",
+                "7"
+              ],
+              [
+                "O8",
+                "11"
+              ],
+              [
+                "P8",
+                "3"
+              ],
+              [
+                "Q8",
+                "7"
+              ],
+              [
+                "K9",
+                "10"
+              ],
+              [
+                "L9",
+                "2"
+              ],
+              [
+                "M9",
+                "6"
+              ],
+              [
+                "N9",
+                "10"
+              ],
+              [
+                "O9",
+                "2"
+              ],
+              [
+                "P9",
+                "6"
+              ],
+              [
+                "Q9",
+                "10"
+              ],
+              [
+                "K11",
+                "8"
+              ],
+              [
+                "L11",
+                "9"
+              ],
+              [
+                "M11",
+                "10"
+              ],
+              [
+                "N11",
+                "11"
+              ],
+              [
+                "O11",
+                "12"
+              ],
+              [
+                "P11",
+                "13"
+              ],
+              [
+                "Q11",
+                "14"
+              ]
+            ],
+            "total": 21,
+            "truncated": false,
+            "blank_count": 42
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "Vat",
+          "C22"
+        ],
+        [
+          "Vat",
+          "D21"
+        ],
+        [
+          "Vat",
+          "D22"
+        ],
+        [
+          "Vat",
+          "E21"
+        ],
+        [
+          "Vat",
+          "E22"
+        ],
+        [
+          "Vat",
+          "F21"
+        ],
+        [
+          "Vat",
+          "F22"
+        ],
+        [
+          "Vat",
+          "G21"
+        ],
+        [
+          "Vat",
+          "G22"
+        ],
+        [
+          "Vat",
+          "H21"
+        ],
+        [
+          "Vat",
+          "H22"
+        ],
+        [
+          "Vat",
+          "I21"
+        ],
+        [
+          "Vat",
+          "I22"
+        ],
+        [
+          "Vat",
+          "J21"
+        ],
+        [
+          "Vat",
+          "J22"
+        ]
+      ],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 62090,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 204
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-50630",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "C5:C6",
+            "formula": "=LEFT(A5,SEARCH(\"Added \",A5)-1)"
+          },
+          {
+            "range": "D5:D6",
+            "formula": "=MID(A5,SEARCH(\"Added \",A5)+6,SEARCH(\"Due \",A5,SEARCH(\"Added \",A5)+6)-SEARCH(\"Added \",A5)-6)"
+          },
+          {
+            "range": "E5:E6",
+            "formula": "=DATEVALUE(TRIM(MID(A5,SEARCH(\"Due \",A5,SEARCH(\"Added \",A5)+6)+4,LEN(A5))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:E6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:E6",
+            "range_size": 15,
+            "cells": [
+              [
+                "C4",
+                "NAME"
+              ],
+              [
+                "D4",
+                "ADDED DATE"
+              ],
+              [
+                "E4",
+                "DUE DATE"
+              ],
+              [
+                "A5",
+                "rafal kucharski Added 8 Sep 2021 Due 15 Nov 2021"
+              ],
+              [
+                "C5",
+                "rafal kucharski "
+              ],
+              [
+                "D5",
+                "8 Sep 2021 "
+              ],
+              [
+                "E5",
+                "2021-11-15 00:00:00"
+              ],
+              [
+                "A6",
+                "Zita Kvitovszka Added 8 Sep 2021 Due 16 Nov 2021"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62090,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 204
+      },
+      "model_calls": 3
+    }
+  ]
+}

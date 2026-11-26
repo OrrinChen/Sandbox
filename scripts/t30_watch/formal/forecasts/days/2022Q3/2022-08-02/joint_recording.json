@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23585,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 258,
+    "reasoning_output_tokens": 32
+  },
+  "thread": "01a20d8c-5ad9-79e1-80b3-ca5132f51115",
+  "packet_sha256": "aa16dab005c815cd0119b9b7597f519dbb2833bea4ab1e41a157e552fd1e3a8b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000063754\",\n          \"reason\": \"McCormick’s consolidated sales growth fell from +2.76% year over year in February to -1.28% in May. Unfavorable volume and mix reduced sales by 6.6% (B), and weakness in China drove a $24 million Asia/Pacific sales decline (C). I forecast that consolidated sales growth stays above -5.00% in the June–August quarter, then crosses to -5.00% or below in September–November as volume pressure persists. The timing is uncertain.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000063754",
+            "reason": "McCormick’s consolidated sales growth fell from +2.76% year over year in February to -1.28% in May. Unfavorable volume and mix reduced sales by 6.6% (B), and weakness in China drove a $24 million Asia/Pacific sales decline (C). I forecast that consolidated sales growth stays above -5.00% in the June–August quarter, then crosses to -5.00% or below in September–November as volume pressure persists. The timing is uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

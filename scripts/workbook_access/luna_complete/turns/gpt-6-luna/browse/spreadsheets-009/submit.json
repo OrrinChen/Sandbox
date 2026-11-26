@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-009",
+    "stage": "submit",
+    "prompt_sha256": "b1dabe00afcd851eea564fef9a07b954d3f26035a1d0bc9d8eed762fc17ee2da",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122c-9cdd-7733-93ca-830037e8682b"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-43406\":{\"fills\":[{\"range\":\"C7:C20\",\"formula\":\"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",LOOKUP(2,1/($D$7:D7=\\\"H\\\"),$C$7:C7)+COUNTIFS(INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\"),ROW($D$7:D7))+1):D7,\\\"S\\\")/10,\\\"\\\"))\"}],\"formulas\":{}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:I6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,5,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,5,1),-1))\"},{\"range\":\"J2:J6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,6,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,6,1),-1))\"},{\"range\":\"K2:K6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,7,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,7,1),-1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(TRIM(MID(A2,FIND(\\\"to\\\",A2)+2,LEN(A2))))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-1))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 18043,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 508,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-43406\":{\"fills\":[{\"range\":\"C7:C20\",\"formula\":\"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",LOOKUP(2,1/($D$7:D7=\\\"H\\\"),$C$7:C7)+COUNTIFS(INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\"),ROW($D$7:D7))+1):D7,\\\"S\\\")/10,\\\"\\\"))\"}],\"formulas\":{}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:I6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,5,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,5,1),-1))\"},{\"range\":\"J2:J6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,6,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,6,1),-1))\"},{\"range\":\"K2:K6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,7,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,7,1),-1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(TRIM(MID(A2,FIND(\\\"to\\\",A2)+2,LEN(A2))))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-1))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122c-9cdd-7733-93ca-830037e8682b",
+    "raw": "{\"sheet-43406\":{\"fills\":[{\"range\":\"C7:C20\",\"formula\":\"=IF(D7=\\\"H\\\",COUNTIF($D$7:D7,\\\"H\\\"),IF(D7=\\\"S\\\",LOOKUP(2,1/($D$7:D7=\\\"H\\\"),$C$7:C7)+COUNTIFS(INDEX($D:$D,MATCH(2,1/($D$7:D7=\\\"H\\\"),ROW($D$7:D7))+1):D7,\\\"S\\\")/10,\\\"\\\"))\"}],\"formulas\":{}},\"sheet-43436\":{\"fills\":[{\"range\":\"I2:I6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,5,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,5,1),-1))\"},{\"range\":\"J2:J6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,6,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,6,1),-1))\"},{\"range\":\"K2:K6\",\"formula\":\"=COUNTIFS($B$2:$B$12,$G2,$C$2:$C$12,\\\"<=\\\"&EOMONTH(DATE(2022,7,1),0),$D$2:$D$12,\\\">\\\"&EOMONTH(DATE(2022,7,1),-1))\"}],\"formulas\":{}},\"sheet-43589\":{\"formulas\":{\"B2\":\"=VALUE(TRIM(MID(A2,FIND(\\\"to\\\",A2)+2,LEN(A2))))-VALUE(LEFT(A2,FIND(\\\"to\\\",A2)-1))+1\"}},\"sheet-43775\":{\"fills\":[{\"range\":\"G6:Z6\",\"formula\":\"=IF(MOD(COLUMN()-COLUMN($I$6),4)=0,INDEX($H$3:$L$3,1,QUOTIENT(COLUMN()-COLUMN($I$6),4)+1),\\\"\\\")\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18043,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 508,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

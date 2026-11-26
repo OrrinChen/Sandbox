@@ -1,0 +1,44 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 27792,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 106,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a2036a-e1a4-7f31-9eed-c7ab1c5c83aa",
+  "packet_sha256": "4ce7ddc74c688fdf3608f65c2255dc8144976458d8963d10666dea867df8c348",
+  "prompt_sha256": "e6313b248604d950df79174ec83d12ae03252441255218358033a9816b53adde",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\": \"retail\", \"alerts\": []},\n    {\"sector\": \"food_manufacturing\", \"alerts\": []},\n    {\"sector\": \"industrial_machinery\", \"alerts\": []},\n    {\"sector\": \"semiconductors\", \"alerts\": []},\n    {\"sector\": \"prepackaged_software\", \"alerts\": []},\n    {\"sector\": \"transportation\", \"alerts\": []}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "retail",
+        "alerts": []
+      },
+      {
+        "sector": "food_manufacturing",
+        "alerts": []
+      },
+      {
+        "sector": "industrial_machinery",
+        "alerts": []
+      },
+      {
+        "sector": "semiconductors",
+        "alerts": []
+      },
+      {
+        "sector": "prepackaged_software",
+        "alerts": []
+      },
+      {
+        "sector": "transportation",
+        "alerts": []
+      }
+    ]
+  }
+}

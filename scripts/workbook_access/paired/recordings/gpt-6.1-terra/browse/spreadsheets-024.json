@@ -1,0 +1,243 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "f6a75abebee09fad15892675868232a42027e7bc45612bd03642c3ea7138b01a",
+    "a9dff99862cdebabe91b0ec7fe96a033087931a7b18a9578cc58307db56a3f41",
+    "50180c19842f3b05ce8bf436386add5fdda178aad9d53b895b6cace2948f842f"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59639",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D5:K7",
+            "formula": "=MID($A5,COLUMN()-3,1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57439,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 785,
+        "reasoning_output_tokens": 311
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59794",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:M5",
+            "formula": "=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-2)),FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",CHAR(1),COLUMN()-2))-1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57439,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 785,
+        "reasoning_output_tokens": 311
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-7902",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:J6",
+            "formula": "=IF(COUNTIFS(Grouping!$A$2:$A$7,$C3,Grouping!$B$2:$B$7,$B3)>0,INDEX(Grouping!$C$2:$I$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0),COLUMN()-3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B3:J6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B3:J6",
+            "range_size": 36,
+            "cells": [
+              [
+                "C3",
+                "Group A"
+              ],
+              [
+                "D3",
+                "0"
+              ],
+              [
+                "E3",
+                "0"
+              ],
+              [
+                "F3",
+                "0.5"
+              ],
+              [
+                "G3",
+                "0.5"
+              ],
+              [
+                "B4",
+                "Material X"
+              ],
+              [
+                "C4",
+                "Group B"
+              ],
+              [
+                "D4",
+                "0.12"
+              ],
+              [
+                "E4",
+                "0.13"
+              ],
+              [
+                "F4",
+                "0.5"
+              ],
+              [
+                "G4",
+                "0.5"
+              ],
+              [
+                "C5",
+                "Group C"
+              ],
+              [
+                "D5",
+                "0.05"
+              ],
+              [
+                "E5",
+                "0.1"
+              ],
+              [
+                "F5",
+                "0.1"
+              ],
+              [
+                "G5",
+                "0.1"
+              ],
+              [
+                "B6",
+                "Material Z"
+              ],
+              [
+                "C6",
+                "Group D"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "0.1"
+              ],
+              [
+                "G6",
+                "0.1"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 14
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57439,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 785,
+        "reasoning_output_tokens": 311
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-9111",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D7",
+            "formula": "=IF(AND(B2=\"\",C2=\"\"),\"\",IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57439,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 785,
+        "reasoning_output_tokens": 311
+      },
+      "model_calls": 3
+    }
+  ]
+}

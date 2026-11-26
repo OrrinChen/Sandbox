@@ -1,0 +1,264 @@
+[
+  {
+    "task_id": "decision-export-warranty-close-adjustments",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of warranty_adjustments.csv for period 6. Each depot opens with a provision credit balance in cents. During period 6 it debits claim payments against that balance. The target closing credit balance is the latest approved estimate for that depot and period, where larger revision_no means later. Each depot has an approved period-6 estimate, and revision numbers are unique within depot and period. A draft has a NULL target. All other values are nonnull. Compute the signed entry that brings the post-payment provision to target, with positive amounts increasing the credit balance. Export only nonzero entries, ordered by unique depot_code in ascending binary order. Codes are uppercase ASCII letters and need no CSV escaping. Return one row with one TEXT column named csv_text containing the header depot_code,adjustment_cents and the data lines, each terminated by a single LF including the last line. Format cents as signed decimal integers with a minus sign for negatives and no plus sign for positives. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "depot_book": {
+        "columns": [
+          "depot_code TEXT",
+          "opening_cents INTEGER",
+          "paid_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "W",
+            12000,
+            3500
+          ],
+          [
+            "A",
+            8000,
+            1000
+          ],
+          [
+            "M",
+            5000,
+            600
+          ]
+        ]
+      },
+      "depot_estimate": {
+        "columns": [
+          "depot_code TEXT",
+          "period_no INTEGER",
+          "revision_no INTEGER",
+          "approval_state TEXT",
+          "target_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "W",
+            6,
+            1,
+            "approved",
+            9900
+          ],
+          [
+            "W",
+            6,
+            2,
+            "approved",
+            9100
+          ],
+          [
+            "W",
+            6,
+            3,
+            "draft",
+            null
+          ],
+          [
+            "A",
+            6,
+            1,
+            "approved",
+            6200
+          ],
+          [
+            "M",
+            6,
+            1,
+            "approved",
+            4400
+          ],
+          [
+            "A",
+            7,
+            1,
+            "approved",
+            7000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-export-wrapped-legend-captions",
+    "tool": "csv.export",
+    "instruction": "Construct the full contents of a UTF-8 CSV transcript as one SQLite TEXT value named csv_text in one result row. Each cited leaf is one source page. Within each page, physical lines have unique integer positions counted from the top, with gaps allowed. A non-NULL glyph starts a new caption, even if it repeats a previous glyph. A NULL glyph continues the preceding caption on that same page. Every page begins with a caption start. The primary text on each line is verbatim and non-NULL. Join successive fragments of a caption with one ASCII space. Emit the literal header source_id,glyph,caption followed by one record per caption, in ascending binary source ID order then ascending start position. Double-quote every data field, doubling each embedded double quote. Use one LF after the header and after every record, including the last. There are no other NULLs or embedded line breaks. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "leaf_lines": {
+        "columns": [
+          "source_id TEXT",
+          "line_pos INTEGER",
+          "glyph TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "L2",
+            3,
+            "arc",
+            "Dry channel"
+          ],
+          [
+            "L1",
+            4,
+            null,
+            "after rain"
+          ],
+          [
+            "L1",
+            1,
+            "arc",
+            "Pool, seasonal"
+          ],
+          [
+            "L1",
+            7,
+            "arc",
+            "Former \"pool\""
+          ],
+          [
+            "L2",
+            5,
+            null,
+            "in chalk"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  },
+  {
+    "task_id": "decision-finish-unloading-before-station-handoffs",
+    "tool": "sqlite.query",
+    "instruction": "A loaded van leaves BASE at minute zero and must replenish both listed stations exactly once. Compare the two visit orders. Use direct directed drive_leg times in minutes and begin unloading immediately on arrival. Each handoff_note is the receiving station's evidence for its unload duration and latest permissible completion minute. Finishing exactly at that minute is allowed. End the run when the second unload finishes. Choose the feasible order with the earliest finish, breaking ties by first station ID in SQLite BINARY order. At least one order works. All required legs are present once, station IDs are unique, and inputs contain no nulls. Return one row with columns first_station, second_station, finish_min, first_source, second_source, in that order, citing the receiving notes in visit order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "drive_leg": {
+        "columns": [
+          "origin_id TEXT",
+          "dest_id TEXT",
+          "drive_min INTEGER"
+        ],
+        "rows": [
+          [
+            "BASE",
+            "Arch",
+            2
+          ],
+          [
+            "BASE",
+            "Basin",
+            4
+          ],
+          [
+            "Arch",
+            "Basin",
+            3
+          ],
+          [
+            "Basin",
+            "Arch",
+            2
+          ],
+          [
+            "Arch",
+            "BASE",
+            1
+          ]
+        ]
+      },
+      "handoff_note": {
+        "columns": [
+          "station_id TEXT",
+          "unload_min INTEGER",
+          "latest_min INTEGER",
+          "source_id TEXT",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "Arch",
+            2,
+            9,
+            "AR-2",
+            "Allow two minutes to unload. Clear our bay by minute nine."
+          ],
+          [
+            "Basin",
+            1,
+            7,
+            "BA-1",
+            "Allow one minute for unloading. The bay closes at minute seven."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_station",
+      "second_station",
+      "finish_min",
+      "first_source",
+      "second_source"
+    ]
+  },
+  {
+    "task_id": "decision-first-majority-run-with-missing-readings",
+    "tool": "sqlite.query",
+    "instruction": "Each numbered sampling period counts amber readings, blue readings, and scheduled observations whose color is missing. Each missing observation could be either color. Confirm a color as the period's majority only if it would hold strictly more than half of all scheduled observations under every possible assignment of the missing readings. Apply this rule symmetrically. A tie or an indeterminate majority breaks a run, as does a gap in period numbers. Locate the earliest run of at least two consecutive periods with the same confirmed majority. Report only its first two periods, even if it continues. Return at most one row with start_period, confirmed_period (the second period), and majority_color ('amber' or 'blue'), in that order. Periods are integer indices with one row per recorded period. Return no rows if no run qualifies. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "readings": {
+        "columns": [
+          "period INTEGER",
+          "amber_count INTEGER",
+          "blue_count INTEGER",
+          "missing_count INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            2,
+            0,
+            2
+          ],
+          [
+            2,
+            3,
+            1,
+            0
+          ],
+          [
+            3,
+            1,
+            1,
+            0
+          ],
+          [
+            4,
+            0,
+            2,
+            1
+          ],
+          [
+            5,
+            1,
+            3,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "start_period",
+      "confirmed_period",
+      "majority_color"
+    ]
+  }
+]

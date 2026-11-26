@@ -1,0 +1,291 @@
+[
+  {
+    "task_id": "decision-passing-loop-charter-packing",
+    "tool": "sqlite.query",
+    "instruction": "For one operating day, award one or two charter reservations on a single passing-loop track. Each bid is indivisible and pays its fee in cents once. Arrival and release are integer minutes after midnight. A charter may enter at the exact minute the previous charter releases the track. Maximize total fees, then prefer fewer awards, then the lexicographically smallest list of bid IDs in chronological order. IDs use distinct single uppercase letters and binary text order. The single loop notice is the operating authority. Its award cap is either one or two. All inputs are non-null, each release follows arrival, and at least one bid exists. Return one row with ordered columns bid_list, fee_cents, notice_id. Join awarded IDs with a comma and no spaces, and cite the actual notice ID. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "charter_bid": {
+        "columns": [
+          "bid_id TEXT",
+          "arrive_min INTEGER",
+          "release_min INTEGER",
+          "fee_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            480,
+            525,
+            7000
+          ],
+          [
+            "B",
+            525,
+            555,
+            5100
+          ],
+          [
+            "C",
+            475,
+            555,
+            12000
+          ],
+          [
+            "D",
+            530,
+            550,
+            5100
+          ],
+          [
+            "E",
+            505,
+            540,
+            8200
+          ]
+        ]
+      },
+      "loop_notice": {
+        "columns": [
+          "notice_id TEXT",
+          "award_cap INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "LP7",
+            2,
+            "Award up to two stops today. Entry is permitted at the posted release minute."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bid_list",
+      "fee_cents",
+      "notice_id"
+    ]
+  },
+  {
+    "task_id": "decision-place-a-relief-trip-in-a-service-gap",
+    "tool": "sqlite.query",
+    "instruction": "Insert exactly one relief trip into an existing gap between consecutive departures on the same route. The gap survey has one row per eligible gap with its observed constant passenger arrival rate in riders per minute. A dispatch offer supplies a route and one available departure minute. All times are integer minutes after 16:00. Each offer code and survey source ID is unique. Gaps on a route have disjoint interiors. Reject an offer unless it leaves at least three minutes to each neighboring departure. A NULL offer minute means the crew is unavailable. All other values are non-NULL. Assume continuous uniform arrivals and unlimited boarding. Waiting accumulated over an interval of length h is rate times h squared divided by two rider-minutes. Maximize the reduction in total rider-minutes across the surveyed gaps, then choose the lexicographically smallest offer_code using SQLite BINARY order. Return one row with columns offer_code, route_code, relief_min, saved_rider_min, source_id. Report the integer saving and cite the survey for the split gap. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "gap_survey": {
+        "columns": [
+          "source_id TEXT",
+          "route_code TEXT",
+          "left_min INTEGER",
+          "right_min INTEGER",
+          "arrival_rate INTEGER",
+          "survey_text TEXT"
+        ],
+        "rows": [
+          [
+            "G1",
+            "Loop",
+            0,
+            18,
+            1,
+            "Loop platform counted one arrival per minute in the opening gap."
+          ],
+          [
+            "G2",
+            "Loop",
+            18,
+            30,
+            3,
+            "After minute eighteen the count rose to three riders per minute."
+          ],
+          [
+            "G3",
+            "Ridge",
+            4,
+            14,
+            5,
+            "Ridge platform averaged five arrivals per minute."
+          ]
+        ]
+      },
+      "relief_offer": {
+        "columns": [
+          "offer_code TEXT",
+          "route_code TEXT",
+          "relief_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Arc",
+            "Loop",
+            9
+          ],
+          [
+            "Bell",
+            "Loop",
+            24
+          ],
+          [
+            "Cove",
+            "Ridge",
+            7
+          ],
+          [
+            "Dock",
+            "Ridge",
+            12
+          ],
+          [
+            "Echo",
+            "Ridge",
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "offer_code",
+      "route_code",
+      "relief_min",
+      "saved_rider_min",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-plan-two-coupon-redemptions",
+    "tool": "sqlite.query",
+    "instruction": "Plan coupon redemptions for purchase 1 followed by purchase 2 to maximize total savings in cents. Each campaign row gives its total available coupon count and its savings on each purchase. Redeem at most one coupon per purchase. A redemption consumes one unit of that campaign's inventory. Redeeming A immediately expires all B coupons for subsequent purchases, and redeeming B likewise expires all A coupons. C is independent. Skipping a purchase consumes nothing and expires nothing. Return the single best plan as first_coupon, second_coupon and saved_cents, using '-' for a skip. Break savings ties by first_coupon ascending and then second_coupon ascending using SQLite BINARY ordering. Campaign IDs are unique and drawn from A, B and C. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "campaigns": {
+        "columns": [
+          "campaign_id TEXT",
+          "stock INTEGER",
+          "first_cents INTEGER",
+          "second_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            90,
+            30
+          ],
+          [
+            "B",
+            1,
+            20,
+            100
+          ],
+          [
+            "C",
+            1,
+            60,
+            40
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_coupon",
+      "second_coupon",
+      "saved_cents"
+    ]
+  },
+  {
+    "task_id": "decision-platform-amendment-at-departure",
+    "tool": "sqlite.query",
+    "instruction": "Prepare the platform line for every departure in the board. All rows concern one station and service day. Times are integer minutes after midnight. Each bulletin applies to one route from open_min inclusive to close_min exclusive. A null close_min means the bulletin has no scheduled end. A departure can use only bulletins published at or before its depart_min. Among eligible bulletins choose the most recently published, breaking publication ties by lexicographically smallest source_id. The fixtures guarantee at least one eligible bulletin per departure. Return columns trip_id, platform_code, source_id, ordered by trip_id ascending. Use the platform code and citation from the same bulletin. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "departure_board": {
+        "columns": [
+          "trip_id TEXT",
+          "route_code TEXT",
+          "depart_min INTEGER"
+        ],
+        "rows": [
+          [
+            "D1",
+            "R",
+            500
+          ],
+          [
+            "D2",
+            "R",
+            520
+          ],
+          [
+            "D3",
+            "R",
+            540
+          ],
+          [
+            "D4",
+            "S",
+            520
+          ]
+        ]
+      },
+      "platform_bulletin": {
+        "columns": [
+          "source_id TEXT",
+          "route_code TEXT",
+          "posted_min INTEGER",
+          "open_min INTEGER",
+          "close_min INTEGER",
+          "platform_code TEXT",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "P10",
+            "R",
+            450,
+            480,
+            null,
+            "2",
+            "Route R uses platform 2 from minute 480."
+          ],
+          [
+            "P21",
+            "R",
+            490,
+            500,
+            540,
+            "4",
+            "Use platform 4 for R during the canopy inspection."
+          ],
+          [
+            "P20",
+            "R",
+            490,
+            500,
+            520,
+            "3",
+            "Use platform 3 for R during the early inspection slot."
+          ],
+          [
+            "P30",
+            "R",
+            530,
+            510,
+            540,
+            "5",
+            "The inspection move for R is revised to platform 5."
+          ],
+          [
+            "P40",
+            "S",
+            460,
+            480,
+            null,
+            "1",
+            "Route S boards at platform 1."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "trip_id",
+      "platform_code",
+      "source_id"
+    ]
+  }
+]

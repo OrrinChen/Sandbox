@@ -1,0 +1,699 @@
+{
+  "accepted_replacements": [
+    "factorial-interaction-walsh-coefficient",
+    "paired-published-baseline-brier-skill",
+    "kiln-simpson-reversal",
+    "lamp-survival-day-two",
+    "paired-glaze-weighted-median",
+    "post-deposit-after-phased-acceptance",
+    "reconcile-split-fifo-lots",
+    "settle-capped-royalty-and-advance",
+    "bridge-disjoint-route-pair",
+    "earliest-journey-with-transfer",
+    "milestone-order-count",
+    "railway-junction-removal",
+    "bridge-print-spool-roll-ranges",
+    "canonical-circular-etch",
+    "chance-adjusted-transcription-agreement",
+    "restore-alternating-rail-marker",
+    "attribute-signal-with-time-uncertainty",
+    "calibrate-clock-from-paired-punches",
+    "integrate-drying-sheet-area",
+    "unwrap-counter-with-signed-log",
+    "allocate-freight-overage-with-floor",
+    "plan-two-coupon-redemptions",
+    "collapse-color-components",
+    "first-majority-run-with-missing-readings",
+    "instant-runoff-design-ballot",
+    "reciprocal-assembly-overhead",
+    "estimate-paired-crossover-carryover",
+    "check-scoped-reprint-withdrawal",
+    "join-split-page-caption",
+    "trace-common-quote-witnesses",
+    "verify-conversion-primary",
+    "allocate-fee-at-fixed-effective-yield",
+    "balance-invoice-across-directed-quotes",
+    "distinct-design-rollup-discrepancy",
+    "kit-cost-with-slot-substitutes",
+    "allocate-export-short-names",
+    "order-overlapping-quality-inspections",
+    "schedule-after-business-day-lag",
+    "station-bias-with-fixed-effects",
+    "undo-one-step-receipt-carry",
+    "bin-code-migration-matrix",
+    "capped-vendor-credit",
+    "close-the-tile-frame",
+    "double-stage-carton-inspection",
+    "interline-through-ticket-change",
+    "maximize-packed-production-mix",
+    "minimize-two-cycle-sensor-drift",
+    "recover-archived-catalogue-join",
+    "acoustic-recording-channel-witness-set",
+    "art-print-signed-audit-trail",
+    "citation-footnote-duplicate-lineages",
+    "map-legend-source-footprints",
+    "consecutive-stockout-penalty",
+    "interval-energy-netting",
+    "rotating-closed-bay-allocation",
+    "sliding-phase-retention",
+    "allocate-printer-plates-to-chapter-pockets",
+    "bound-missing-fold-offsets",
+    "export-complete-leaf-pairs-at-release",
+    "recover-signatures-from-conjugate-leaves",
+    "bound-late-course-tickets",
+    "count-menu-options-with-complete-labels",
+    "reconcile-course-charges-at-close",
+    "assign-survey-heads-before-simultaneous-readings",
+    "separate-monument-drift-from-datum-reset",
+    "triangulate-forward-sight-consensus",
+    "dead-heat-purse-apportionment",
+    "midnight-course-hold-credit",
+    "standing-exchange-disqualifications",
+    "audit-numbering-between-printed-anchors",
+    "locate-conductor-handoffs-at-cue-starts",
+    "recover-playtime-from-blank-reprises",
+    "fund-monthly-guarantee-shortfalls-in-priority-order",
+    "recoup-returns-against-originating-credit-lots",
+    "select-capped-bonus-offers-within-monthly-pool",
+    "bounded-remainder-barcode",
+    "marked-point-hausdorff-distance",
+    "minimum-maintenance-vertex-cover"
+  ],
+  "bound_files_sha256": {
+    "relational_audit.json": "6bb9a51b27fa78ee97c8a189214f28f8f2285375145a9c53c44a326731b1e6d9",
+    "relational_keys.json": "855a5e3f5282aeb30ab6948ee71c69129cffe23e7e7119a0674c32af9dfd3a5d",
+    "relational_reviewed_pairs.json": "0017890c81ca489565c09fd2a2d023ba9a3bcbf8c17753f2be42b97b8e17f07c",
+    "relational_tasks.json": "5a1478da4f8c7d831c2bcc46005a21617c26561fdb9e13d21647c3bf7a0a7b4b"
+  },
+  "dimensions": {
+    "dev": 62,
+    "test": 318
+  },
+  "discarded_originals": [
+    "allocate-mixed-invoice-settlements",
+    "allocate-pooled-rebate-to-inventory",
+    "allocate-shared-yard-cost-to-projects",
+    "allocate-shrink-prevention-hours",
+    "allocate-two-erratum-bulletin-slots",
+    "allocate-two-feed-replay-window",
+    "apply-unrestricted-cash-to-oldest-dues",
+    "apportion-archive-charges-by-ingest",
+    "apportion-inbound-freight-cents",
+    "blend-irrigation-header-batch",
+    "blend-whole-totes-for-press-intake",
+    "bound-the-heavy-stroke-cutoff",
+    "choose-overlapping-spectral-evidence",
+    "cite-dock-notice-at-filing-cutoff",
+    "cite-effective-bin-instructions",
+    "close-returnable-crate-deposits",
+    "deposit-batch-clearing-exceptions",
+    "depreciation-invoice-cent-allocation",
+    "document-carton-count-provenance",
+    "estimate-weekly-setup-time-change",
+    "export-current-item-followups",
+    "export-reset-handover-csv",
+    "export-unbalanced-processor-payouts",
+    "fifo-release-on-partial-fx-settlement",
+    "find-diary-gaps-for-editor-follow-up",
+    "fit-evidence-into-label-margin",
+    "fit-preview-pair-to-cartridge",
+    "fit-two-facsimiles-on-a-legend-rail",
+    "installation-milestone-close",
+    "interline-two-buses-across-terminals",
+    "least-worst-box-relocation",
+    "match-ferry-claims-to-service-intervals",
+    "measure-matched-folio-proofing-change",
+    "measure-paired-drill-accuracy",
+    "member-clearing-file",
+    "pack-hands-on-exhibit-kits",
+    "pack-index-restoration-shift",
+    "packing-line-recount-portfolio",
+    "prepaid-pool-revenue-allocation",
+    "prepare-dated-vendor-credit-claims",
+    "print-room-late-handoff-charges",
+    "rain-gauge-calibration-at-interval-start",
+    "reconcile-material-credits-to-issued-returns",
+    "reconcile-repeated-manifest-lines",
+    "reconstruct-calibration-citations-at-freeze",
+    "reconstruct-installment-commission-postings",
+    "reconstruct-the-credit-at-proof-lock",
+    "recover-distinct-weather-archive-blocks",
+    "recover-observed-overnight-load",
+    "recover-pick-bins-at-scan-time",
+    "resolve-bin-display-notices",
+    "resolve-fold-axis-from-press-notes",
+    "retention-pilot-selection",
+    "reverse-historical-cost-on-partial-refunds",
+    "route-a-mobile-fruit-grader",
+    "route-chilled-cartons-after-an-erratum",
+    "schedule-index-shard-rebuilds",
+    "schedule-trailer-precooling-under-feeder-limit",
+    "schedule-two-feed-rehearsal",
+    "select-project-rework-buyouts",
+    "serial-binder-interior-gaps",
+    "shared-freight-book-orders",
+    "shared-meter-run-pricing",
+    "shelf-tag-handover-at-checkout",
+    "single-line-working-exposure",
+    "slitter-loss-overlap-register",
+    "split-tier-charge-at-cutover",
+    "standardize-trial-start-lift-to-launch-mix",
+    "trial-margin-after-return-grading",
+    "two-setups-for-drainage-profile",
+    "two-slot-archive-dispatch",
+    "two-slot-kiln-loading",
+    "two-strip-reduction-window",
+    "vacancy-release-handoff-csv",
+    "verify-sampling-permission-at-booked-stalls",
+    "wash-tank-reserve-through-a-pump-stop",
+    "wayfinding-print-manifest",
+    "wind-recorder-unwitnessed-gaps"
+  ],
+  "distinct_pairs_reviewed": 1569,
+  "final_candidate_pairs": 1102,
+  "flagged_relations": [
+    {
+      "a": "document-carton-count-provenance",
+      "b": "route-chilled-cartons-after-an-erratum",
+      "duplicate": true,
+      "reason": "Both filter rules for applicability and give a dock exception priority over a newer general rule. Reporting the selected bulletin and count or the selected bay uses the same precedence decision."
+    },
+    {
+      "a": "close-returnable-crate-deposits",
+      "b": "reconcile-returnable-spool-deposits",
+      "duplicate": true,
+      "reason": "Both subtract evidenced returns from each original issuance and value the remainder at that issuance's historical rate. Deduplicating receipts and using the latest rate are errors in different steps of the same reconciliation."
+    },
+    {
+      "a": "encoder-sweep-coverage-gaps",
+      "b": "wind-recorder-unwitnessed-gaps",
+      "duplicate": true,
+      "reason": "Both detect a gap when the next interval starts beyond the furthest endpoint reached so far. Both produce a false gap if a shorter nested interval replaces its enclosing interval as the coverage endpoint."
+    },
+    {
+      "a": "fit-complementary-surveys-into-radio-bulletin",
+      "b": "two-strip-reduction-window",
+      "duplicate": true,
+      "reason": "Both choose two items under a shared budget and maximize the number of distinct geographic units covered. Subtracting strip overlap computes the same union score, and both wrong approaches count shared units twice."
+    },
+    {
+      "a": "export-corrected-appliance-inventory",
+      "b": "wayfinding-print-manifest",
+      "duplicate": true,
+      "reason": "Both select the latest record for each entity, exclude entities whose latest record is a withdrawal, and export the survivors in a fixed CSV order. Filtering withdrawals too early revives superseded records in both."
+    },
+    {
+      "a": "serial-binder-interior-gaps",
+      "b": "encoder-sweep-coverage-gaps",
+      "duplicate": true,
+      "reason": "Both find interior gaps by tracking the furthest endpoint reached across earlier ranges. In both, comparing only with the immediately preceding range creates a false gap after a nested range. The serial task also records the boundary witnesses."
+    },
+    {
+      "a": "reconcile-material-credits-to-issued-returns",
+      "b": "reconcile-carton-short-shipment-credit",
+      "duplicate": true,
+      "reason": "Both compute the amount owed on a source record as eligible quantity times unit rate, then subtract the sum of its posted credits. Equal-valued postings and partial settlement expose different mistakes in that same calculation."
+    },
+    {
+      "a": "vacancy-release-handoff-csv",
+      "b": "release-manifest-after-corrections",
+      "duplicate": true,
+      "reason": "Both select the controlling directive per entity at a cutoff, retain entities whose directive authorizes release, and export a cited CSV. Filtering early resurrects a superseded release in either task."
+    },
+    {
+      "a": "bound-the-heavy-stroke-cutoff",
+      "b": "bound-reset-time-from-signed-sightings",
+      "duplicate": true,
+      "reason": "Fine widths and OLD sightings impose strict lower bounds. Heavy widths and NEW sightings impose inclusive upper bounds. Both tasks take the greatest lower-side observation and the least upper-side observation and cite the witness for each."
+    },
+    {
+      "a": "two-strip-reduction-window",
+      "b": "fit-two-facsimiles-on-a-legend-rail",
+      "duplicate": true,
+      "reason": "Both enumerate feasible pairs and maximize their union size by counting shared items once. A tile covered by both strips plays the same role as a meaning illustrated on both mounts."
+    },
+    {
+      "a": "shelf-tag-handover-at-checkout",
+      "b": "cite-operative-leak-handoff",
+      "duplicate": true,
+      "reason": "Both select the latest applicable record before interpreting its state. Skipping a removal or hold during selection makes an earlier tag or authorization appear current."
+    },
+    {
+      "a": "wind-recorder-unwitnessed-gaps",
+      "b": "find-diary-gaps-for-editor-follow-up",
+      "duplicate": true,
+      "reason": "Both detect a gap when the next interval starts beyond the furthest endpoint reached so far. Clipping the diary window and reporting the longest gap preserve that logic and the same false-gap error on nested intervals."
+    },
+    {
+      "a": "recover-distinct-weather-archive-blocks",
+      "b": "choose-complementary-catalog-import-packs",
+      "duplicate": true,
+      "reason": "Both select a feasible two-reader combination by counting distinct items under a shared time budget. Adding individual counts double-counts overlap in both tasks. First-reader attribution records the result after selection."
+    },
+    {
+      "a": "reconstruct-the-credit-at-proof-lock",
+      "b": "reconstruct-calibration-citations-at-freeze",
+      "duplicate": true,
+      "reason": "Both reconstruct the record at a cutoff by selecting the governing notice before applying its withdrawal status. Filtering withdrawals before that selection revives a superseded record in both tasks."
+    },
+    {
+      "a": "choose-overlapping-spectral-evidence",
+      "b": "two-strip-reduction-window",
+      "duplicate": true,
+      "reason": "Both select a feasible pair under a shared budget and maximize unique coverage. Subtracting the overlap from the summed lengths computes the interval-union length in both tasks."
+    },
+    {
+      "a": "allocate-pooled-rebate-to-inventory",
+      "b": "apportion-archive-charges-by-ingest",
+      "duplicate": true,
+      "reason": "Both use recipient weights to divide a fixed monetary pool by largest remainder. Aggregated ingest supplies the collection weights, and independent rounding can break the required total in either task."
+    },
+    {
+      "a": "two-setups-for-drainage-profile",
+      "b": "two-strip-reduction-window",
+      "duplicate": true,
+      "reason": "Both rank feasible pairs by the length of their interval union. In each, adding the two individual lengths double-counts the overlap and can change the winning pair."
+    },
+    {
+      "a": "recover-observed-overnight-load",
+      "b": "kiln-meter-observed-load",
+      "duplicate": true,
+      "reason": "Weighting each interval's mean power by its duration gives the same result as dividing total eligible energy by total eligible time. Both fail when short and long intervals receive equal weight."
+    },
+    {
+      "a": "shrub-canopy-line-intercept",
+      "b": "slitter-loss-overlap-register",
+      "duplicate": true,
+      "reason": "Both partition a measured line at interval endpoints and sum each covered segment once. Replacing canopy spans with reject marks preserves the calculation, including its treatment of nested and overlapping intervals."
+    },
+    {
+      "a": "two-slot-kiln-loading",
+      "b": "kiln-cart-dispatch",
+      "duplicate": true,
+      "reason": "Both enumerate feasible loads of up to two items and rank whole loads by an ordered objective. In both, choosing the highest-value item first can exclude the best pair."
+    },
+    {
+      "a": "verify-sampling-permission-at-booked-stalls",
+      "b": "resolve-bin-display-notices",
+      "duplicate": true,
+      "reason": "Both identify the applicable notices, resolve precedence, and use the winning notice to decide permission and cite its ID. The wrong approaches select the wrong notice at different points in that same operation."
+    },
+    {
+      "a": "select-project-rework-buyouts",
+      "b": "book-complementary-demo-packages",
+      "duplicate": true,
+      "reason": "Both rank portfolios of at most two packages after checking budget, crew capacity, and geographic exclusivity. Selecting two treatments for one area produces the same feasibility error as booking two packages for one exclusive territory."
+    },
+    {
+      "a": "standardize-trial-start-lift-to-launch-mix",
+      "b": "coating-yield-at-contract-mix",
+      "duplicate": true,
+      "reason": "Both pool counts within each segment and compare conditions using fixed target weights. With complete support, weighting the segment differences gives the same result as subtracting the two standardized rates."
+    },
+    {
+      "a": "export-current-item-followups",
+      "b": "export-corrected-appliance-inventory",
+      "duplicate": true,
+      "reason": "Both select the latest eligible record per entity, test that record for inclusion, and write a deterministic CSV. Filtering before selection revives an obsolete row in both cases, whether a later submission supplied the estimate or a later revision withdrew the asset."
+    },
+    {
+      "a": "export-reset-handover-csv",
+      "b": "export-corrected-appliance-inventory",
+      "duplicate": true,
+      "reason": "Both select the latest revision per entity, suppress withdrawn entities, and serialize the survivors in a defined CSV order. Filtering withdrawals before revision selection resurrects stale records in both."
+    },
+    {
+      "a": "allocate-shrink-prevention-hours",
+      "b": "packing-line-recount-portfolio",
+      "duplicate": true,
+      "reason": "Both rank empty, single-job, and two-job plans under a time limit and a one-job-per-group rule. Both wrong approaches double-count benefits within a group. The recount tie-break only orders equally valued plans."
+    },
+    {
+      "a": "restore-crate-labels-from-dated-routing-notices",
+      "b": "resolve-bin-display-notices",
+      "duplicate": true,
+      "reason": "Both select the notice in force for a date, give an active specific notice precedence over a newer general one, and take the decision and citation from the winning record."
+    },
+    {
+      "a": "trial-margin-after-return-grading",
+      "b": "measure-margin-after-graded-returns",
+      "duplicate": true,
+      "reason": "Both subtract refunds from original margin and reverse historical inventory cost only to the extent inspection yields a recovery. Crediting a scrapped unit overstates margin in both."
+    },
+    {
+      "a": "measure-matched-folio-proofing-change",
+      "b": "measure-paired-drill-accuracy",
+      "duplicate": true,
+      "reason": "Renaming folios as stations, passes as sessions, and inspected lines as shots preserves the calculation. Both retain complete pairs, compute each unit's rate change, and average those changes equally. Pooling observations produces the same weighting error."
+    },
+    {
+      "a": "two-slot-archive-dispatch",
+      "b": "pack-preview-refresh-window",
+      "duplicate": true,
+      "reason": "Both rank feasible singleton and two-bundle selections by total benefit, then apply tie breakers. In both, committing to the best individual bundle can exclude the winning pair."
+    },
+    {
+      "a": "schedule-index-shard-rebuilds",
+      "b": "pack-index-restoration-shift",
+      "duplicate": true,
+      "reason": "Pools map to stations. Both tasks compare feasible singles and cross-group pairs within one window, then rank by total yield, resource use, and a deterministic identifier tie-break. Choosing the best single first can miss the winning pair in both."
+    },
+    {
+      "a": "schedule-two-feed-rehearsal",
+      "b": "schedule-indivisible-import-repair-files",
+      "duplicate": true,
+      "reason": "Both enumerate feasible combinations under one time budget and rank whole selections by their combined benefit. Choosing the best individual item first can exclude the winning pair in either task."
+    },
+    {
+      "a": "audit-placeholder-counts-before-import",
+      "b": "reconcile-repeated-manifest-lines",
+      "duplicate": true,
+      "reason": "Both subtract occurrence counts across two inventories using a complete identity as the key. A message-token pair serves the same role as a decoded manifest line, and deduplication hides repeated occurrences in both."
+    },
+    {
+      "a": "fit-booklet-files-to-press-stock",
+      "b": "fit-preview-pair-to-cartridge",
+      "duplicate": true,
+      "reason": "Both choose a feasible two-component pair under a shared resource ceiling, maximizing the lower component quality before applying tie-breakers. Ranking by combined quality first causes the same error in both."
+    },
+    {
+      "a": "allocate-two-feed-replay-window",
+      "b": "schedule-two-feed-rehearsal",
+      "duplicate": true,
+      "reason": "Both enumerate attainable choices for each feed, test each pair against one shared time budget, and rank feasible pairs by their combined result. Undercounting prefix time and choosing one feed greedily are different mistakes within that same optimization."
+    },
+    {
+      "a": "cite-dock-notice-at-filing-cutoff",
+      "b": "audit-diverter-routes-as-received",
+      "duplicate": true,
+      "reason": "Both restrict notices to those available at the event, then use effective time to select and cite the controlling instruction. In both, ranking by receipt time can let a late-arriving older instruction win."
+    },
+    {
+      "a": "allocate-mixed-invoice-settlements",
+      "b": "allocate-invoice-discount-before-page-subtotals",
+      "duplicate": true,
+      "reason": "Both allocate a fixed cent total across invoice lines by largest fractional remainder, then group the allocated cents. Replacing settlement cash with a discount and cash-flow classes with pages preserves the calculation."
+    },
+    {
+      "a": "apply-unrestricted-cash-to-oldest-dues",
+      "b": "apply-remittance-to-open-invoices",
+      "duplicate": true,
+      "reason": "Both allocate a finite cash pool down an ordered queue of eligible balances. Each balance gets the lesser of its amount due and the cash left after earlier eligible balances. That calculation yields both the applied and unpaid amounts."
+    },
+    {
+      "a": "recover-pick-bins-at-scan-time",
+      "b": "shelf-tag-handover-at-checkout",
+      "duplicate": true,
+      "reason": "Both resolve an event to the latest applicable assignment and treat an explicit removal as the controlling state. Filtering out removals before selecting the latest revision revives a stale assignment in either task."
+    },
+    {
+      "a": "assign-festival-crates-to-return-bays",
+      "b": "interline-two-buses-across-terminals",
+      "duplicate": true,
+      "reason": "Both require a minimum-total-cost feasible one-to-one assignment for two requests competing for distinct resources. The greedy shortcuts fail differently, but the required assignment logic is the same."
+    },
+    {
+      "a": "capacity-constrained-rebate-elections",
+      "b": "retention-pilot-selection",
+      "duplicate": true,
+      "reason": "Both rank feasible selections under a shared capacity limit and an at-most-one-per-group rule. Replacing supplier elections with crew pilots preserves the selection logic and the error of admitting two candidates from the same group."
+    },
+    {
+      "a": "depreciation-invoice-cent-allocation",
+      "b": "apportion-inbound-freight-cents",
+      "duplicate": true,
+      "reason": "Both compute proportional shares of a fixed charge and distribute residual cents by largest fractional remainder. Independent rounding causes the same reconciliation failure."
+    },
+    {
+      "a": "reverse-historical-cost-on-partial-refunds",
+      "b": "reconstruct-installment-commission-postings",
+      "duplicate": true,
+      "reason": "Both compute each posting by subtracting the rounded cumulative amount before the event from the rounded cumulative amount after it. The ledger cutoff sets the opening value for the same calculation, and rounding events independently causes the same drift."
+    },
+    {
+      "a": "export-unbalanced-processor-payouts",
+      "b": "bank-clearing-exception-csv",
+      "duplicate": true,
+      "reason": "Both aggregate all postings by reconciliation reference, compare the two sides, and export discrepancies to CSV. In both, deduplicating by amount discards legitimate postings and corrupts the comparison."
+    },
+    {
+      "a": "prepaid-pool-revenue-allocation",
+      "b": "allocate-shared-yard-cost-to-projects",
+      "duplicate": true,
+      "reason": "Both allocate whole cents by ranking integer remainders and assigning residual cents until the shares sum to the pool total."
+    },
+    {
+      "a": "cost-project-issues-from-fifo-layers",
+      "b": "fifo-release-on-partial-fx-settlement",
+      "duplicate": true,
+      "reason": "Both price each withdrawal by intersecting its cumulative quantity interval with FIFO lot intervals. Restarting at the first lot for each withdrawal double-counts early units in both tasks."
+    },
+    {
+      "a": "allocate-shared-yard-cost-to-projects",
+      "b": "apportion-archive-charges-by-ingest",
+      "duplicate": true,
+      "reason": "Aggregating ingest events supplies the collection weights. Both tasks then allocate integer cents within each pool by ranking proportional remainders, with the same rounding error if shares are rounded independently."
+    },
+    {
+      "a": "shared-meter-run-pricing",
+      "b": "split-tier-charge-at-cutover",
+      "duplicate": true,
+      "reason": "Both split successive quantities at one account-wide price break and reduce the remaining allowance after each quantity. Prior billed volume sets the opening balance in the cutover task."
+    },
+    {
+      "a": "member-clearing-file",
+      "b": "export-trip-advance-clearing-csv",
+      "duplicate": true,
+      "reason": "Both reconcile net cash transferred to date against each person's expense and export the residual in an ordered CSV. In each task, reversing the sign of a return moves the settlement balance in the wrong direction."
+    },
+    {
+      "a": "deposit-batch-clearing-exceptions",
+      "b": "bank-clearing-exception-csv",
+      "duplicate": true,
+      "reason": "Both net every posting on each side by reference, compare totals across the union of references and report mismatches. Omitting bank-only references and dropping equal-valued postings are two ways to corrupt that same comparison. CSV ordering changes how the resulting exceptions are delivered."
+    },
+    {
+      "a": "blend-irrigation-header-batch",
+      "b": "whole-tonne-grit-blend",
+      "duplicate": true,
+      "reason": "Both minimize the cost of a fixed-size batch split into integer quantities from two limited sources. Both require an exact weighted-average ceiling and admit an over-limit blend if integer division rounds the average down."
+    },
+    {
+      "a": "wash-tank-reserve-through-a-pump-stop",
+      "b": "schedule-fixed-volume-pump-runs",
+      "duplicate": true,
+      "reason": "Both choose the cheapest feasible operating schedule by carrying tank balances forward and checking each period's limits. In both, checking only the closing balance lets a later inflow hide an earlier shortage."
+    },
+    {
+      "a": "shared-crate-loan-pair",
+      "b": "shared-freight-book-orders",
+      "duplicate": true,
+      "reason": "Both determine affordability by charging freight once for items that ship together. Including singleton book orders adds only the trivial one-item case. Double-charging a shared shipment can wrongly exclude a pair in either task."
+    },
+    {
+      "a": "finish-unloading-before-station-handoffs",
+      "b": "route-a-mobile-fruit-grader",
+      "duplicate": true,
+      "reason": "Both evaluate the two possible stop orders, add travel and service time at each stop, and check each completion deadline. Checking arrival instead admits the same late-finishing itinerary in either setting."
+    },
+    {
+      "a": "apply-retroactive-carton-bulletins",
+      "b": "trace-publishing-reversions-by-performance-date",
+      "duplicate": true,
+      "reason": "Both select and cite the notice with the greatest effective day on or before the event and the greatest revision on that day, after which carton multiplication and discrepancy filtering are row-level bookkeeping."
+    },
+    {
+      "a": "trace-misrouted-course-drops",
+      "b": "trace-readings-to-prism-custody-notes",
+      "duplicate": true,
+      "reason": "Both select the latest assignment effective by each event\u2019s minute, resolve same-minute revisions, and cite the winning record when its value passes a simple test (seat differs from the recorded seat or prism equals P7)."
+    },
+    {
+      "a": "rebuild-invoice-tax-from-running-totals",
+      "b": "reconstruct-installment-commission-postings",
+      "duplicate": true,
+      "reason": "Both recover each posting by subtracting the rounded entitlement before the entry from the rounded entitlement after it, with the opening balance, rate, signed changes, and output filter handled by the same calculation and minor bookkeeping."
+    },
+    {
+      "a": "buy-stock-limited-patch-cord-packs",
+      "b": "pack-hands-on-exhibit-kits",
+      "duplicate": true,
+      "reason": "Both choose stock-bounded integer quantities to meet two independent minima, then minimize cost, total units, and the quantity vector in order, since fixing the total and arc count also fixes the bay count."
+    },
+    {
+      "a": "allocate-two-erratum-bulletin-slots",
+      "b": "fit-complementary-surveys-into-radio-bulletin",
+      "duplicate": true,
+      "reason": "Both choose exactly two items under a shared budget, count each covered location once across the pair, and break ties by total resource use and then sorted IDs."
+    },
+    {
+      "a": "book-uninterrupted-tug-charge",
+      "b": "schedule-trailer-precooling-under-feeder-limit",
+      "duplicate": true,
+      "reason": "Both slide a fixed hourly load profile over candidate starts, require every slot to exist and fit its available capacity, and minimize summed hourly cost with an earliest-start tie break."
+    },
+    {
+      "a": "audit-diverter-routes-as-received",
+      "b": "reconstruct-calibration-citations-at-freeze",
+      "duplicate": true,
+      "reason": "Both apply effective-time and visibility cutoffs, select the eligible notice with the latest effective time and then latest receipt or posting, and test the selected notice for inclusion before citing it."
+    },
+    {
+      "a": "rain-gauge-calibration-at-interval-start",
+      "b": "temperature-chamber-release-gap",
+      "duplicate": true,
+      "reason": "Both select and cite the latest eligible record for the same device at or before an event\u2019s start, then use its value to compute rainfall or retain runs whose controlling signed check was FAIL."
+    },
+    {
+      "a": "blend-whole-totes-for-press-intake",
+      "b": "whole-tonne-grit-blend",
+      "duplicate": true,
+      "reason": "Both choose a stock-limited whole-unit split of a fixed load, compare the weighted quality total with the threshold times the load using the specified inequality, then minimize cost and the second source's share."
+    },
+    {
+      "a": "normalize-losses-by-active-hours",
+      "b": "single-line-working-exposure",
+      "duplicate": true,
+      "reason": "Both require the duration of the union of intervals clipped to one window, with active time obtained by subtraction and source IDs collected from all positively overlapping notices before merging."
+    },
+    {
+      "a": "restore-crate-labels-from-dated-routing-notices",
+      "b": "route-chilled-cartons-after-an-erratum",
+      "duplicate": true,
+      "reason": "Both filter routing records for applicability, prefer a specific exception even over a newer general rule, then break ties by latest effective start and smallest source ID and cite the winning record."
+    },
+    {
+      "a": "dryer-paired-moisture-change",
+      "b": "measure-matched-folio-proofing-change",
+      "duplicate": true,
+      "reason": "Both average one signed difference per unit with two usable readings, giving each unit equal weight once the folio pass counts are converted to clean fractions and paired."
+    },
+    {
+      "a": "fit-complementary-surveys-into-radio-bulletin",
+      "b": "fit-evidence-into-label-margin",
+      "duplicate": true,
+      "reason": "Both maximize distinct coverage under an additive budget, and the label's singleton option can use the same pair calculation with a zero-cost, empty-coverage second slot and the stated tie preference."
+    },
+    {
+      "a": "bound-liquid-assets-by-marginal-tier",
+      "b": "marginal-volume-rebate-accrual",
+      "duplicate": true,
+      "reason": "Both aggregate the group\u2019s quantity first, allocate it across successive bands, and sum each occupied band\u2019s quantity times its own rate, with per-band rounding needed only for percentage haircuts."
+    },
+    {
+      "a": "allocate-pooled-rebate-to-inventory",
+      "b": "apportion-inbound-freight-cents",
+      "duplicate": true,
+      "reason": "Once eligible costs or line masses are determined, both floor each proportional share and distribute the remaining cents by descending fractional remainder with ascending ID as the tie-breaker."
+    },
+    {
+      "a": "balance-crossover-packing-times",
+      "b": "estimate-weekly-setup-time-change",
+      "duplicate": true,
+      "reason": "Both average complete-pair differences within each required group and sum those means with prescribed weights, using one-half per run order for packing and scheduled days per class for setup."
+    },
+    {
+      "a": "balance-three-gallery-sessions",
+      "b": "least-worst-box-relocation",
+      "duplicate": true,
+      "reason": "Negating distances turns relocation into the gallery\u2019s assignment rule: fill three positions with distinct available choices, maximize the smallest score, then maximize the sum and break ties by the ordered codes."
+    },
+    {
+      "a": "assemble-best-feasible-prop-van-load",
+      "b": "pack-index-restoration-shift",
+      "duplicate": true,
+      "reason": "Both compare singletons and pairs from different groups under one shared capacity, then maximize total benefit, minimize resource use, and choose the smallest sorted code sequence."
+    },
+    {
+      "a": "allocate-shrink-prevention-hours",
+      "b": "pack-index-restoration-shift",
+      "duplicate": true,
+      "reason": "Both rank single jobs and different-group pairs under a shared labor cap by additive benefit, then labor and sorted codes, and the empty plan can never beat a fitting repair job with positive yield."
+    },
+    {
+      "a": "match-ferry-claims-to-service-intervals",
+      "b": "temperature-chamber-release-gap",
+      "duplicate": true,
+      "reason": "Both cite the latest effective log entry at or before the event and flag a state that conflicts with the expected one, with chamber checks filtered by signature and chamber and ties resolved by source ID."
+    },
+    {
+      "a": "apply-remittance-to-open-invoices",
+      "b": "shared-meter-run-pricing",
+      "duplicate": true,
+      "reason": "Both assign each eligible row the lesser of its quantity and the shared allowance left by earlier eligible rows, and the meter bill prices the allocated units and the remainder before summing by workshop."
+    },
+    {
+      "a": "crate-stack-notice-audit",
+      "b": "trace-readings-to-prism-custody-notes",
+      "duplicate": true,
+      "reason": "Both select the latest effective note for the observation\u2019s key and time before testing the state it establishes, with entry time and source ID breaking ties in the prism ledger."
+    },
+    {
+      "a": "cite-effective-bin-instructions",
+      "b": "resolve-fold-axis-from-press-notes",
+      "duplicate": true,
+      "reason": "After filtering slips by packing day or press notes by directional text, both choose the specific source over any general source, then the latest within scope, then the smallest source ID, and decode and cite the winner."
+    },
+    {
+      "a": "allocate-bundle-rounding-cents",
+      "b": "apportion-inbound-freight-cents",
+      "duplicate": true,
+      "reason": "Both floor each line\u2019s proportional share of a group total, then assign leftover cents by descending exact remainder with ascending line identifier as the tie-breaker."
+    },
+    {
+      "a": "cite-effective-bin-instructions",
+      "b": "restore-crate-labels-from-dated-routing-notices",
+      "duplicate": true,
+      "reason": "Both filter instructions applicable on the target day, give specific instructions precedence over general ones, break ties by latest start and then smallest source ID, and extract the destination and citation from the same winner."
+    },
+    {
+      "a": "allocate-printer-plates-to-chapter-pockets",
+      "b": "fit-compatible-script-cuts-to-a-call",
+      "duplicate": true,
+      "reason": "Both choose one option from each of two groups, filter pairs by compatibility and a shared time cap, then rank by combined score, total time, and the two identifiers in order."
+    },
+    {
+      "a": "shrub-canopy-line-intercept",
+      "b": "single-line-working-exposure",
+      "duplicate": true,
+      "reason": "After clipping notices to the window and recording the overlapping IDs, both measure interval-union length and must preserve coverage from an earlier span that extends beyond a nested one."
+    },
+    {
+      "a": "metered-revenue-across-quarterly-bands",
+      "b": "price-metered-energy-across-tariff-boundaries",
+      "duplicate": true,
+      "reason": "Both price each tariff overlap by multiplying its length by the applicable rate, with the energy task also multiplying by the interval\u2019s constant watt-hours per minute and summing the resulting charges."
+    },
+    {
+      "a": "print-room-late-handoff-charges",
+      "b": "sequence-trim-bench-orders",
+      "duplicate": true,
+      "reason": "Once the prerequisites are read from the job rows or the trim note, both choose the lexicographically first feasible three-job permutation minimizing the sum of each job\u2019s late minutes times its own rate."
+    },
+    {
+      "a": "consignment-ownership-cutoff",
+      "b": "installation-milestone-close",
+      "duplicate": true,
+      "reason": "Both select the latest record through day 30, resolve same-day ties by greatest sequence, and use its status to recognize the full amount or zero while citing the record even for zero recognition."
+    },
+    {
+      "a": "consignment-ownership-cutoff",
+      "b": "prepare-dated-vendor-credit-claims",
+      "duplicate": true,
+      "reason": "Both select and cite the latest applicable record effective by a cutoff and use it to value a lot, with the credit claim supplying its receipt date as the cutoff and the selected notice supplying its unit rate."
+    }
+  ],
+  "initial_candidates": 861,
+  "initial_flagged": 54,
+  "new_dev_cases": 2,
+  "new_test_cases": 76,
+  "original_dev_removed": 2,
+  "original_tasks_removed": 78,
+  "population": "380 simulated relational/CSV tasks. External workbook and repair source IDs are audited separately.",
+  "remaining_flagged_candidate_pairs": 0,
+  "replay": "PYTHONPATH=src python3 scripts/independent_600/verify_relational_review.py (optional curation dependency: scikit-learn 1.6.1)",
+  "screen": "Original set: same-authoring scenario, matching SQL shape after renaming, word unigram/bigram TF-IDF cosine >=0.21 or closest other scenario. Final set strengthens nearest-other to two, three for new cases. A separate model judged candidate pairs. On new pairs it saw full instructions; original pairs used titles, operational mechanisms and known mistakes. Rerun the neighborhood after every exclusion. Unselected pairs are not exhaustively adjudicated.",
+  "treatment": "Flagged components conservatively retain one representative, prioritizing original development, then original, then slug. Replacements come from unused split-disjoint groups, qualified by a second solver before selection. No participant run outcomes are used.",
+  "verification": "380/380 references and independently authored queries succeed on both public and alternate inputs; 380/380 runnable same-schema wrong queries rejected on at least one.",
+  "version": "relational-candidate-audit-1"
+}

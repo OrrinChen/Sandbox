@@ -1,0 +1,129 @@
+{
+  "cutoff": "2023-07-01",
+  "sectors": {
+    "2023Q3/semiconductors-1": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000006951",
+          "issuer": "APPLIED MATERIALS INC /DE",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-07-31",
+          "latest_filed_period_end": "2023-04-30",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Our Applied Global Services net sales in the three and six months ended April 30, 2023 increased compared to the same periods in the prior year primarily driven by an increase in legacy systems sales, partially offset by a decrease in long-term service agreements and spares due to additional export regulations issued by the United States government in 2022."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "The timing of customer investment in manufacturing equipment is also affected by the timing of next-generation process development and the timing of capacity expansion to meet end-market demand."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Gross margin in the three months ended April 30, 2023 was approximately flat compared to the same period in the prior year primarily driven by higher material costs and inventory charges, offset by an increase in average selling prices, favorable changes in product mix and lower freight and logistics costs."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Gross margin in the six months ended April 30, 2023 was approximately flat compared to the same period in the prior year primarily driven by higher material costs and inventory charges, unfavorable changes in product mix and the impact of export regulations, offset by an increase in average selling prices and lower freight and logistics costs."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-05-26",
+              "text": "Cash provided by operating activities increased in the first six months of fiscal 2023 compared to the same period in the prior year primarily due to lower income taxes and inventory payments and higher cash collections, partially offset by higher payments to vendors."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2023-01-29",
+                "filed": "2023-02-23",
+                "reported_sales_usd": 6739000000,
+                "year_ago_reported_sales_usd": 6271000000,
+                "yoy_percent": "7.4629"
+              },
+              {
+                "quarter_end": "2023-04-30",
+                "filed": "2023-05-26",
+                "reported_sales_usd": 6630000000,
+                "year_ago_reported_sales_usd": 6245000000,
+                "yoy_percent": "6.1649"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2023Q3/semiconductors-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001730168",
+          "issuer": "BROADCOM INC.",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-07-31",
+          "latest_filed_period_end": "2023-04-30",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Net revenue from our semiconductor solutions segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods due to strong product demand, primarily for networking, server storage and broadband products, partially offset by lower demand for wireless products."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Net revenue from our infrastructure software segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods primarily due to increases in sales from our mainframe solutions products, partially offset by lower demand for our FC SAN products."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "The increases were primarily due to lower amortization of acquisition-related intangible assets, mainly from our 2016 acquisition of Broadcom Corporation, slightly offset by less favorable margin within our semiconductor solutions segment driven primarily by product mix."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Gross margin was $6,115 million, or 70% of net revenue, for the fiscal quarter ended April 30, 2023 compared to $5,439 million, or 67% of net revenue, for the fiscal quarter ended May 1, 2022, and $12,119 million, or 69% of net revenue, for the two fiscal quarters ended April 30, 2023 compared to $10,488 million, or 66% of net revenue, for the two fiscal quarters ended May 1, 2022."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2023-06-07",
+              "text": "Operating income from our semiconductor solutions segment increased in the fiscal quarter and two fiscal quarters ended April 30, 2023 compared to the prior year fiscal periods primarily due to higher net revenue from networking, server storage, and broadband products, partially offset by lower net revenue from wireless products."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2023-01-29",
+                "filed": "2023-03-08",
+                "reported_sales_usd": 8915000000,
+                "year_ago_reported_sales_usd": 7706000000,
+                "yoy_percent": "15.6891"
+              },
+              {
+                "quarter_end": "2023-04-30",
+                "filed": "2023-06-07",
+                "reported_sales_usd": 8733000000,
+                "year_ago_reported_sales_usd": 8103000000,
+                "yoy_percent": "7.7749"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

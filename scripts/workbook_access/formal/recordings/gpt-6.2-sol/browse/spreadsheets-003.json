@@ -1,0 +1,281 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "c1f6191b85f34ff8a9869d1adb8010bee71d4b38c5c952b98f63e69814b872b9",
+    "9e1994e4af07bfb66381ee20f325d125ab5c13643ac241fba6bb0f34591c1f6d",
+    "4220c0e989449fef80093075749e15f3a1dbc9cf030eb7d09d00b658bb0f0dbd"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-34210",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C55",
+            "formula": "=IF(A2=\"\",C1,A2)"
+          }
+        ],
+        "formulas": {
+          "C1": "=IF(A1=\"\",\"\",A1)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 64908,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 564,
+        "reasoning_output_tokens": 171
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-35739",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C100",
+            "formula": "=IF(B2=\"\",\"\",MOD(B2-TIME(0,30,0),1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A8:C12"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A8:C12",
+            "range_size": 15,
+            "cells": [
+              [
+                "A8",
+                "11-Jun-2023"
+              ],
+              [
+                "B8",
+                "23:45"
+              ],
+              [
+                "C8",
+                "23:15:00"
+              ],
+              [
+                "A9",
+                "12-Jun-2023"
+              ],
+              [
+                "B9",
+                "00:15"
+              ],
+              [
+                "C9",
+                "1899-12-29 23:45:00"
+              ],
+              [
+                "A10",
+                "12-Jun-2023"
+              ],
+              [
+                "B10",
+                "00:15"
+              ],
+              [
+                "C10",
+                "1899-12-29 23:45:00"
+              ],
+              [
+                "A11",
+                "12-Jun-2023"
+              ],
+              [
+                "B11",
+                "00:30"
+              ],
+              [
+                "C11",
+                "00:00:00"
+              ],
+              [
+                "A12",
+                "12-Jun-2023"
+              ],
+              [
+                "B12",
+                "00:30"
+              ],
+              [
+                "C12",
+                "00:00:00"
+              ]
+            ],
+            "total": 15,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A51:C56"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A51:C56",
+            "range_size": 18,
+            "cells": [
+              [
+                "A51",
+                "12-Jun-2023"
+              ],
+              [
+                "B51",
+                "05:45"
+              ],
+              [
+                "C51",
+                "05:15:00"
+              ],
+              [
+                "A52",
+                "12-Jun-2023"
+              ],
+              [
+                "B52",
+                "05:45"
+              ],
+              [
+                "C52",
+                "05:15:00"
+              ],
+              [
+                "A53",
+                "12-Jun-2023"
+              ],
+              [
+                "B53",
+                "05:45"
+              ],
+              [
+                "C53",
+                "05:15:00"
+              ],
+              [
+                "C54",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C55",
+                "1899-12-29 23:30:00"
+              ],
+              [
+                "C56",
+                "1899-12-29 23:30:00"
+              ]
+            ],
+            "total": 12,
+            "truncated": false,
+            "blank_count": 6
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 64908,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 564,
+        "reasoning_output_tokens": 171
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-35747",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "formulas": {
+          "M2": "=SUMPRODUCT(($A$2:$A$11=$L2)*($B$1:$J$1>=$M$1)*($B$1:$J$1<$N$1)*ISNUMBER($B$2:$J$11)*($B$2:$J$11>100))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 64908,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 564,
+        "reasoning_output_tokens": 171
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-36236",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-003",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F6",
+            "formula": "=IF(A2=B2,A2&\"\",TEXTJOIN(\", \",TRUE,A2:B2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 64908,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 564,
+        "reasoning_output_tokens": 171
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-008",
+    "stage": "submit",
+    "prompt_sha256": "92a47c7cfef74fff84052ca94070035e57148601f4f29ccdf20816a8a1263ad3",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122c-7ddd-7093-8746-8f62b3cb313e"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-41680\":{\"fills\":[{\"range\":\"F2:F18\",\"formula\":\"=TRIM(E2)\"}],\"formulas\":{}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B$5:$B$19,MATCH(G5,$C$5:$C$19,0))))\"}],\"formulas\":{}},\"sheet-42526\":{\"fills\":[{\"range\":\"B2:B16\",\"formula\":\"=A2/IF(A2>=0,MAX($A$2:$A$16)/5,ABS(MIN($A$2:$A$16))/5)\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20435,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 204,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-41680\":{\"fills\":[{\"range\":\"F2:F18\",\"formula\":\"=TRIM(E2)\"}],\"formulas\":{}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B$5:$B$19,MATCH(G5,$C$5:$C$19,0))))\"}],\"formulas\":{}},\"sheet-42526\":{\"fills\":[{\"range\":\"B2:B16\",\"formula\":\"=A2/IF(A2>=0,MAX($A$2:$A$16)/5,ABS(MIN($A$2:$A$16))/5)\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122c-7ddd-7093-8746-8f62b3cb313e",
+    "raw": "{\"sheet-41680\":{\"fills\":[{\"range\":\"F2:F18\",\"formula\":\"=TRIM(E2)\"}],\"formulas\":{}},\"sheet-41969\":{\"formulas\":{\"A6\":\"=COUNTBLANK(A3:C3)\",\"B6\":\"=COUNTBLANK(D3:F3)\",\"C6\":\"=COUNTBLANK(G3:I3)\"}},\"sheet-42515\":{\"fills\":[{\"range\":\"F5:F19\",\"formula\":\"=SUM(1/((1/B5)*INDEX($B$5:$B$19,MATCH(G5,$C$5:$C$19,0))))\"}],\"formulas\":{}},\"sheet-42526\":{\"fills\":[{\"range\":\"B2:B16\",\"formula\":\"=A2/IF(A2>=0,MAX($A$2:$A$16)/5,ABS(MIN($A$2:$A$16))/5)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20435,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 204,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-024",
+    "stage": "submit",
+    "prompt_sha256": "cd06beacb237dcfd483b78d7fdb55a88209c35f0aa29869729ddea6825b4a8c3",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f8-069c-7543-a699-99e1fedef77b",
+    "raw": "{\"sheet-59639\":{\"fills\":[{\"range\":\"D5:K7\",\"formula\":\"=MID($A5,COLUMN()-COLUMN($D$5)+1,1)\"}],\"formulas\":{}},\"sheet-59794\":{\"fills\":[{\"range\":\"C3:M5\",\"formula\":\"=IFERROR(MID($A3,IF(COLUMN()=3,1,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-3))+1),IFERROR(FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-2)),LEN($A3)+1)-IF(COLUMN()=3,1,FIND(CHAR(1),SUBSTITUTE($A3,\\\"/\\\",CHAR(1),COLUMN()-3))+1)),\\\"\\\")\"}],\"formulas\":{}},\"sheet-7902\":{\"fills\":[{\"range\":\"D3:J6\",\"formula\":\"=IF($B3=\\\"\\\",VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE),IFERROR(INDEX(Grouping!$C$2:$I$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0),COLUMN()-3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE)))\"}],\"formulas\":{}},\"sheet-9111\":{\"fills\":[{\"range\":\"D2:D7\",\"formula\":\"=IF(AND(B2=\\\"\\\",C2=\\\"\\\"),\\\"\\\",IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19085,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 577,
+      "reasoning_output_tokens": 171
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

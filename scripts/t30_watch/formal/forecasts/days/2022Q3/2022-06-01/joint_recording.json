@@ -1,0 +1,111 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 59173,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 716,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8a-4503-7340-aa86-c49860b7d4a4",
+  "packet_sha256": "bd57d62408ff01e0eb74d6ee01b18e85f7317a8d11cef3ec5870cc967f077ef7",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q3/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/industrial_machinery-2\",\"alerts\":[\n      {\"cik\":\"0000918541\",\"reason\":\"NN's year-over-year sales change recovered from -7.27% in December to +1.00% in March. That rebound supports a June result above -5%. Demand had already weakened across multiple regions (B), and sales volume was down (C), supporting a forecast of a renewed decline of at least 5% in July–September.\"},\n      {\"cik\":\"0001287213\",\"reason\":\"Douglas Dynamics' year-over-year sales decline narrowed from 3.30% in December to 0.72% in March (A), supporting a June result above -5%. Chassis and component shortages cut Work Truck Solutions deliveries (B), while Work Truck Attachments also sold fewer units (C). Persistent volume losses in both businesses could push the July–September decline to at least 5%.\"}\n    ]},\n    {\"sector\":\"2022Q3/industrial_machinery-3\",\"alerts\":[\n      {\"cik\":\"0000097134\",\"reason\":\"Tennant's reported sales growth fell from +1.25% in December to -1.97% in March. Higher prices across all regions cushioned volume losses caused by parts shortages (C, D). I expect pricing to keep June above -5%, with continued shipment constraints pushing July–September sales down at least 5% year over year.\"}\n    ]},\n    {\"sector\":\"2022Q3/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/prepackaged_software-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/semiconductors-1\",\"alerts\":[\n      {\"cik\":\"0000833640\",\"reason\":\"Power Integrations' year-over-year revenue growth slowed from 14.57% in December to 4.84% in March (A). Communications revenue had already fallen against unusually strong prior-year cellphone demand (B). March growth still stood 9.84 percentage points above the threshold, supporting a forecast that June stays above -5% before July–September revenue falls at least 5% if the slowdown persists.\"}\n    ]},\n    {\"sector\":\"2022Q3/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q3/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0000918541",
+            "reason": "NN's year-over-year sales change recovered from -7.27% in December to +1.00% in March. That rebound supports a June result above -5%. Demand had already weakened across multiple regions (B), and sales volume was down (C), supporting a forecast of a renewed decline of at least 5% in July–September."
+          },
+          {
+            "cik": "0001287213",
+            "reason": "Douglas Dynamics' year-over-year sales decline narrowed from 3.30% in December to 0.72% in March (A), supporting a June result above -5%. Chassis and component shortages cut Work Truck Solutions deliveries (B), while Work Truck Attachments also sold fewer units (C). Persistent volume losses in both businesses could push the July–September decline to at least 5%."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000097134",
+            "reason": "Tennant's reported sales growth fell from +1.25% in December to -1.97% in March. Higher prices across all regions cushioned volume losses caused by parts shortages (C, D). I expect pricing to keep June above -5%, with continued shipment constraints pushing July–September sales down at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0000833640",
+            "reason": "Power Integrations' year-over-year revenue growth slowed from 14.57% in December to 4.84% in March (A). Communications revenue had already fallen against unusually strong prior-year cellphone demand (B). March growth still stood 9.84 percentage points above the threshold, supporting a forecast that June stays above -5% before July–September revenue falls at least 5% if the slowdown persists."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

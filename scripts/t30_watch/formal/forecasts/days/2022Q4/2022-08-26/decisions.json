@@ -1,0 +1,61 @@
+{
+  "text": [
+    {
+      "sector": "2022Q4/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-1",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2022Q4/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-1",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2022Q4/food_manufacturing-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-1",
+      "alerts": [
+        {
+          "cik": "0000772406",
+          "reason": "Reported sales YoY 66.92% then 41.98%. Target is step 2; preceding 17.04% versus target -7.91%."
+        }
+      ]
+    }
+  ]
+}

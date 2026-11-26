@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24318,
+    "cached_input_tokens": 18688,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 323,
+    "reasoning_output_tokens": 20
+  },
+  "thread": "01a20d8e-5f36-7b82-a732-da25cc89151a",
+  "packet_sha256": "e8b0d42bb7cdc9ccf5d1a8d33023a3e913aa5ea1e3f26da48c328c4893c9f516",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000813298\",\n          \"reason\": \"Reported sales growth fell from +7.81% year over year in January to -1.73% in April (A). Inventory rose 3.5% year over year as sales fell (C), raising the risk of markdowns if demand stays soft. I forecast sales growth above -5.00% in Q2 and at or below -5.00% in Q3.\"\n        },\n        {\n          \"cik\": \"0000897429\",\n          \"reason\": \"Reported sales growth slowed from +5.60% year over year in January to -1.14% in April. April comparable sales fell just 0.6% (A), supporting a Q2 forecast above -5.00%. Inventory was already 9.8% below the prior year (C), suggesting the company was stocking for softer demand. I forecast Q3 reported sales growth at or below -5.00%.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q3/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q3/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000813298",
+            "reason": "Reported sales growth fell from +7.81% year over year in January to -1.73% in April (A). Inventory rose 3.5% year over year as sales fell (C), raising the risk of markdowns if demand stays soft. I forecast sales growth above -5.00% in Q2 and at or below -5.00% in Q3."
+          },
+          {
+            "cik": "0000897429",
+            "reason": "Reported sales growth slowed from +5.60% year over year in January to -1.14% in April. April comparable sales fell just 0.6% (A), supporting a Q2 forecast above -5.00%. Inventory was already 9.8% below the prior year (C), suggesting the company was stocking for softer demand. I forecast Q3 reported sales growth at or below -5.00%."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

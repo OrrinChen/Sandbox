@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000880266",
+  "issuer": "AGCO CORP /DE",
+  "cutoff": "2022-03-02",
+  "projected_target_start": "2022-04-01",
+  "status": "complete",
+  "period_end": "2021-12-31",
+  "filing_date": "2022-02-25",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000880266",
+    "issuer": "AGCO CORP /DE",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-02-25",
+        "text": "Net sales for 2021 were approximately $11,138.3 million, or 21.7% higher than 2020, primarily due to improved market demand."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-02-25",
+        "text": "Net income attributable to AGCO Corporation and subsidiaries 8.1 % 4.7 % 1.4 %"
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-02-25",
+        "text": "Supply chain disruptions resulted in higher raw material and work-in-process inventory levels during 2021 as compared to the prior year."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-02-25",
+        "text": "The increase in income from operations during 2021 was primarily the result of higher net sales and production volumes and improved margins, which benefited from positive pricing impacts and a favorable sales mix that offset substantial inflationary material and freight cost pressures along with higher manufacturing costs."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-02-25",
+        "text": "Income from operations was approximately $1,001.4 million in 2021 compared to approximately $599.7 million in 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-11-08",
+        "reported_sales_usd": 2725100000,
+        "year_ago_reported_sales_usd": 2497500000,
+        "yoy_percent": "9.1131"
+      },
+      {
+        "quarter_end": "2021-12-31",
+        "filed": "2022-02-25",
+        "reported_sales_usd": 3155200000,
+        "year_ago_reported_sales_usd": 2717100000,
+        "yoy_percent": "16.1238"
+      }
+    ],
+    "status": "complete"
+  }
+}

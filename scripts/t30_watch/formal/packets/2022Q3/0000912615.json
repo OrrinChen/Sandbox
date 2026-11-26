@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000912615",
+  "issuer": "URBAN OUTFITTERS INC",
+  "cutoff": "2022-07-02",
+  "projected_target_start": "2022-08-01",
+  "status": "complete",
+  "period_end": "2022-04-30",
+  "filing_date": "2022-06-09",
+  "text": {
+    "sector": "retail",
+    "cik": "0000912615",
+    "issuer": "URBAN OUTFITTERS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-06-09",
+        "text": "The Company did not remove stores that were closed or operating for an extended period of time at a reduced capacity due to the COVID-19 pandemic from the comparable stores net sales calculations."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-06-09",
+        "text": "With those restrictions lifted in the current year quarter, Retail segment comparable sales increased due to double-digit growth in retail store sales due to higher traffic and transactions as well as an increase in average unit selling price, partially offset by a decrease in units per transaction and a decrease in conversion rate."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-06-09",
+        "text": "The COVID-19 pandemic and general unfavorable macro-economic conditions also disrupted the Company’s global supply chain in fiscal 2022, leading to COVID-19 related factory and port closures, continued port congestion and shipping delays, which resulted in inventory receipt delays and an increase in inbound transportation costs."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-06-09",
+        "text": "The decrease in gross profit rate was primarily due to lower initial merchandise markups driven largely by higher inbound transportation expenses and raw materials costs."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-06-09",
+        "text": "Income from operations was 4.4% of net sales, or $46.2 million, for the first quarter of fiscal 2023 compared to 7.9% of net sales, or $73.5 million, for the first quarter of fiscal 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-01-31",
+        "filed": "2022-04-01",
+        "reported_sales_usd": 1332199000,
+        "year_ago_reported_sales_usd": 1088393000,
+        "yoy_percent": "22.4005"
+      },
+      {
+        "quarter_end": "2022-04-30",
+        "filed": "2022-06-09",
+        "reported_sales_usd": 1051934000,
+        "year_ago_reported_sales_usd": 927415000,
+        "yoy_percent": "13.4265"
+      }
+    ],
+    "status": "complete"
+  }
+}

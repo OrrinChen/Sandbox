@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22951,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 221,
+    "reasoning_output_tokens": 11
+  },
+  "thread": "01a20d8c-5ab8-77a1-9b21-a011c5868c6b",
+  "packet_sha256": "0e6a3e0d409cb3841678272d6a568dea14adc000d8d71254a14af8db6f70209e",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000063754\",\n          \"reason\": \"Unfavorable volume and mix reduced sales by 6.6% (B), and weaker China sales drove a $24 million year-over-year decline in Asia/Pacific sales in Q2 (C). If that pressure persists and pricing offsets less of it, I forecast consolidated net sales growth will move from above -5% in June–August to -5% or lower in September–November. The June–August rate is also a forecast.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/transportation-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0000063754",
+            "reason": "Unfavorable volume and mix reduced sales by 6.6% (B), and weaker China sales drove a $24 million year-over-year decline in Asia/Pacific sales in Q2 (C). If that pressure persists and pricing offsets less of it, I forecast consolidated net sales growth will move from above -5% in June–August to -5% or lower in September–November. The June–August rate is also a forecast."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

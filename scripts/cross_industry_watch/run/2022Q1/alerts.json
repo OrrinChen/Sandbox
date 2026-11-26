@@ -1,0 +1,143 @@
+{
+  "origin": "2022Q1",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000018255",
+          "reason": "Cato attributed its 34.2% annual sales rebound partly to stimulus and reopening (A, B). As those purchases enter the year-earlier comparison, inflation pressure on customers’ disposable incomes (D) could push quarterly sales down 5% or more in the next two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001005286",
+          "reason": "Landec’s planned reduction of its vegetable and tray business was already cutting Curation Foods revenue (A), while Lifecore revenue grew (B). Further planned cuts could outweigh that offset and push consolidated quarterly sales down at least 5% within two quarters. The packet gives no consolidated quarterly rate."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001124796",
+          "reason": "nLIGHT reported annual growth across all end markets (A), but industrial unit sales in China and average selling prices had already fallen (D). Customers delaying capital spending (B) could weaken the unit gains outside China that sustained industrial revenue, putting a 5% companywide quarterly decline in reach within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Activision segment net bookings fell $464 million, with Vanguard trailing Black Ops Cold War (B), even as annual consolidated revenue grew 9% (A). Because some online-product revenue is deferred (C, D), weaker bookings could pull consolidated revenue down at least 5% year on year in either of the next two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001641991",
+          "reason": "Reported sales YoY 9.16% then -0.53%; linear projections -10.22% and -19.91%."
+        },
+        {
+          "cik": "0000026324",
+          "reason": "Reported sales YoY 8.57% then -0.25%; linear projections -9.08% and -17.90%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001463101",
+          "reason": "Reported sales YoY 96.93% then 55.84%; linear projections 14.75% and -26.34%."
+        },
+        {
+          "cik": "0001124796",
+          "reason": "Reported sales YoY 17.01% then 2.66%; linear projections -11.69% and -26.04%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000857005",
+          "reason": "Reported sales YoY 22.94% then 6.68%; linear projections -9.57% and -25.82%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0001158463",
+          "reason": "Reported sales YoY 300.81% then 177.46%; linear projections 54.10% and -69.25%."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "text": [
+    {
+      "sector": "2023Q2/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/transportation-1",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Smith Transport began adding reported revenue after May 31, 2022 (C–D). That gives the March 2023 quarter three months of added revenue against a base without Smith, but the June quarter only two. With early 2022 freight demand near peak levels (B), I forecast the acquisition contribution keeps March above −5% year over year, then its smaller contribution in June allows a decline of 5% or more."
+        }
+      ]
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q2/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Reported revenue growth fell from +2.30% in September to -0.70% in December. A further 3-point slowdown each quarter would put March near -3.70% and June near -6.70%. Record B identifies a client that went out of business, though it does not quantify lost revenue."
+        },
+        {
+          "cik": "0000857005",
+          "reason": "Reported revenue growth slowed from +5.67% in September to +1.79% in December. Another slowdown of that size each quarter would put March near -2.1% and June near -6.0%. Shorter Windchill and IIoT subscriptions reduced revenue recognized in December, and the shift to partners reduced professional services revenue (B, A)."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/transportation-1",
+      "alerts": [
+        {
+          "cik": "0000878927",
+          "reason": "Old Dominion's reported revenue growth slowed from +14.55% in September to +5.76% in December. A repeat of that 8.8-point slowdown would leave March near -3%, still above the threshold. A further 2-point slowdown would put June at about -5%. Record C confirms revenue grew over 2022 as a whole."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q2/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/prepackaged_software-1",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Reported sales YoY 2.30% then -0.70%. Target is step 2; preceding -3.70% versus target -6.70%."
+        },
+        {
+          "cik": "0000857005",
+          "reason": "Reported sales YoY 5.67% then 1.79%. Target is step 2; preceding -2.10% versus target -5.98%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q2/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q2/transportation-1",
+      "alerts": [
+        {
+          "cik": "0000878927",
+          "reason": "Reported sales YoY 14.55% then 5.76%. Target is step 2; preceding -3.02% versus target -11.80%."
+        }
+      ]
+    }
+  ]
+}

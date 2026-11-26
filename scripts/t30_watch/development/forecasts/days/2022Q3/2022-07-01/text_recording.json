@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21508,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 140,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7d-61a7-7753-842a-a105d8933e73",
+  "packet_sha256": "ba9a26d11da2522e7d6abd4d4cc4253db54b6f713c076f04237c8a1e7d62cbee",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q3/retail-1\",\"alerts\":[{\"cik\":\"0000018255\",\"reason\":\"Q1 retail sales fell 2.98% year over year, from $211.2 million to $204.9 million (D). Sales from noncomparable stores partly offset a same-store decline (E). I forecast Q2 stays above −5.00%, though its sales are unknown. Continued inflation pressure on customers’ disposable incomes (C) could then deepen the same-store decline enough to push reported Q3 net sales growth to −5.00% or below.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "Q1 retail sales fell 2.98% year over year, from $211.2 million to $204.9 million (D). Sales from noncomparable stores partly offset a same-store decline (E). I forecast Q2 stays above −5.00%, though its sales are unknown. Continued inflation pressure on customers’ disposable incomes (C) could then deepen the same-store decline enough to push reported Q3 net sales growth to −5.00% or below."
+          }
+        ]
+      }
+    ]
+  }
+}

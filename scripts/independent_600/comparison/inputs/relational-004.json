@@ -1,0 +1,309 @@
+[
+  {
+    "task_id": "decision-apply-scoped-exhibit-wording-slips",
+    "tool": "sqlite.query",
+    "instruction": "Construct exhibit_corrections.csv for a translated exhibit guide. Each unique label_code is one current label. The evidence table transcribes the signed wording slips, with the source ID, primary text and its structured term, room scope, issue number and prescribed wording. All fields are present. A slip applies to its exact term_code in its named room, or in every room if room_scope is '*'. For each label prefer a room-specific slip over any general slip, then the highest integer issue_no within that scope, then the binary-smallest source_id. Apply these priorities before comparing wording. Emit only labels with an applicable slip whose prescribed text differs exactly from current_text. Include the actual winning slip ID for the copy editor. Output label_code, replacement_text, source_id ordered by label_code in binary ascending order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "exhibit_labels": {
+        "columns": [
+          "label_code TEXT",
+          "room_code TEXT",
+          "term_code TEXT",
+          "current_text TEXT"
+        ],
+        "rows": [
+          [
+            "l1",
+            "loom",
+            "frame",
+            "Marco"
+          ],
+          [
+            "l2",
+            "ink",
+            "frame",
+            "Borde"
+          ],
+          [
+            "l3",
+            "ink",
+            "plate",
+            "Plancha"
+          ],
+          [
+            "l4",
+            "loom",
+            "pin",
+            "Clavo"
+          ]
+        ]
+      },
+      "wording_slips": {
+        "columns": [
+          "source_id TEXT",
+          "primary_text TEXT",
+          "term_code TEXT",
+          "room_scope TEXT",
+          "issue_no INTEGER",
+          "prescribed_text TEXT"
+        ],
+        "rows": [
+          [
+            "s1",
+            "Throughout the guide, render frame as Marco.",
+            "frame",
+            "*",
+            8,
+            "Marco"
+          ],
+          [
+            "s2",
+            "In the loom room, call the frame Bastidor.",
+            "frame",
+            "loom",
+            2,
+            "Bastidor"
+          ],
+          [
+            "s3",
+            "In the loom room, use Armazón for frame.",
+            "frame",
+            "loom",
+            1,
+            "Armazón"
+          ],
+          [
+            "s4",
+            "In the ink room, call the plate Plancha.",
+            "plate",
+            "ink",
+            4,
+            "Plancha"
+          ],
+          [
+            "s5",
+            "In the ink room, use Placa for plate.",
+            "plate",
+            "ink",
+            4,
+            "Placa"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "label_code",
+      "replacement_text",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-apportion-kiln-fees-after-ledger-merger",
+    "tool": "sqlite.query",
+    "instruction": "Construct firing_postings.csv for all kiln runs in the input. Each run has a nonnegative shared fee in whole cents. Each load line records positive whole shelf units used under an old studio key. Multiple lines may belong to one studio, and multiple old keys may map to one posting key. For each run, combine units by posting key, then apportion the fee in proportion to those combined units. First award the whole-cent floor of each exact share. Distribute the remaining cents one per posting key in descending order of fractional remainder, breaking ties by ascending posting_key in binary text order. Include participating keys even when awarded zero cents. Run keys are unique in kiln_fee, every run has usage, every load line has exactly one mapping and one run, and nothing is null. Output run_key, posting_key, fee_cents ordered by run_key then posting_key, both ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "kiln_fee": {
+        "columns": [
+          "run_key INTEGER",
+          "shared_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      "ledger_map": {
+        "columns": [
+          "studio_key TEXT",
+          "posting_key TEXT"
+        ],
+        "rows": [
+          [
+            "a",
+            "West"
+          ],
+          [
+            "b",
+            "West"
+          ],
+          [
+            "c",
+            "East"
+          ],
+          [
+            "d",
+            "Loft"
+          ]
+        ]
+      },
+      "shelf_load": {
+        "columns": [
+          "run_key INTEGER",
+          "studio_key TEXT",
+          "shelf_units INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "a",
+            1
+          ],
+          [
+            1,
+            "b",
+            1
+          ],
+          [
+            1,
+            "c",
+            1
+          ],
+          [
+            2,
+            "a",
+            1
+          ],
+          [
+            2,
+            "c",
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_key",
+      "posting_key",
+      "fee_cents"
+    ]
+  },
+  {
+    "task_id": "decision-archive-writer-shift-meter",
+    "tool": "sqlite.query",
+    "instruction": "Produce shift_output.csv with one row for each writer in writer_meter. The readings cover one shift. sample_no gives chronological order within a writer, with no ties. total_mib is a cumulative integer count of MiB written during the indicated run. The first non-NULL reading per writer is the opening baseline and earns no shift output. Between consecutive non-NULL readings in the same run, credit the increase. A change of run_id means the new run started from zero after the preceding valid reading, so credit its entire current reading, even if it exceeds the preceding run's reading. NULL total_mib means no measurement and is skipped. All other fields are non-NULL. Counters never decrease within a run, and every writer has a valid reading. Output writer_id, written_mib in that order, sorted by writer_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "writer_meter": {
+        "columns": [
+          "writer_id TEXT",
+          "sample_no INTEGER",
+          "run_id TEXT",
+          "total_mib INTEGER"
+        ],
+        "rows": [
+          [
+            "east",
+            1,
+            "j",
+            12
+          ],
+          [
+            "east",
+            2,
+            "j",
+            null
+          ],
+          [
+            "east",
+            3,
+            "j",
+            19
+          ],
+          [
+            "east",
+            4,
+            "k",
+            24
+          ],
+          [
+            "west",
+            1,
+            "p",
+            40
+          ],
+          [
+            "west",
+            2,
+            "q",
+            3
+          ],
+          [
+            "west",
+            3,
+            "q",
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "writer_id",
+      "written_mib"
+    ]
+  },
+  {
+    "task_id": "decision-art-print-signed-audit-trail",
+    "tool": "sqlite.query",
+    "instruction": "Reconstruct the certificate history of art print P7, starting at its issue event. An issue contributes +1 active certificate. A cancellation links to the issue or re-issuance it voids. A re-issuance links to the cancellation it reverses. For either link, multiply the linked event's signed contribution by link_sign to obtain the new event's contribution. The issue has no parent and uses +1 as its seed sign. Event numbers are unique and increase along links. Follow only events descended from P7's issue. Return event_no, action, linked_event, signed_change and active_after, ordered by event_no ascending. Keep the issue's linked_event NULL. Both change and running balance are in certificates. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "print_events": {
+        "columns": [
+          "event_no INTEGER",
+          "print_code TEXT",
+          "action TEXT",
+          "linked_event INTEGER",
+          "link_sign INTEGER"
+        ],
+        "rows": [
+          [
+            10,
+            "P7",
+            "issue",
+            null,
+            1
+          ],
+          [
+            11,
+            "Q2",
+            "issue",
+            null,
+            1
+          ],
+          [
+            12,
+            "P7",
+            "cancel",
+            10,
+            -1
+          ],
+          [
+            15,
+            "P7",
+            "reissue",
+            12,
+            -1
+          ],
+          [
+            19,
+            "P7",
+            "cancel",
+            15,
+            -1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "event_no",
+      "action",
+      "linked_event",
+      "signed_change",
+      "active_after"
+    ]
+  }
+]

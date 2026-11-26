@@ -1,0 +1,2882 @@
+[
+  {
+    "task_id": "cross-test-74f19910903b9517",
+    "family": "cross_source",
+    "question": "For Aster March Enterprise's FY2021 review, put the earnings transcript figure for charges for network use first and deduct the slide deck figure for spending to replace fibre. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT01A",
+      "XT01B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT01A",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT01A",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-21b22ea396776968",
+    "family": "cross_source",
+    "question": "Aster March Partners (FY2021) is the only issuer in scope. Take the investor deck's spending to replace fibre away from the results call's charges for network use. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT01A",
+      "XT01B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT01B",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT01B",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-bfd4e765588aa0b5",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Aster Sound Enterprise at FY2024 after subtracting the investor slides' charges for holding freight from the analyst call's rebates on import duties?",
+    "company_tickers": [
+      "XT02A",
+      "XT02B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT02A",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT02A",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-2c3c023ea5549f6d",
+    "family": "cross_source",
+    "question": "For Aster Sound Partners in FY2024, start from the presentation amount for charges for holding freight; then remove the call transcript amount for rebates on import duties. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT02A",
+      "XT02B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT02B",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT02B",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-77d2648b24ab302a",
+    "family": "cross_source",
+    "question": "Use the FY2021 Aster Bluff Enterprise packet. By how much does costs of bringing merchants aboard in the slide pack exceed commission earned through the marketplace in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT03A",
+      "XT03B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT03A",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT03A",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-621b66882f405763",
+    "family": "cross_source",
+    "question": "I need Aster Bluff Partners's FY2021 bridge in US dollars: costs of bringing merchants aboard as shown in the investor presentation minus commission earned through the marketplace as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT03A",
+      "XT03B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT03B",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT03B",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-6a3ee2c42b368304",
+    "family": "cross_source",
+    "question": "For Aster Cove Enterprise's FY2024 review, put the earnings transcript figure for cash from handling at terminals first and deduct the slide deck figure for payments for terminal security. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT04A",
+      "XT04B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT04A",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT04A",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-baeeb1ca45a3ab5b",
+    "family": "cross_source",
+    "question": "Aster Cove Partners (FY2024) is the only issuer in scope. Take the investor deck's payments for terminal security away from the results call's cash from handling at terminals. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT04A",
+      "XT04B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT04B",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT04B",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-8cbc58bf1d1da81d",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Brindle March Enterprise at FY2021 after subtracting the investor slides' fees for contracted verification from the analyst call's collections from carbon credits?",
+    "company_tickers": [
+      "XT05A",
+      "XT05B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT05A",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT05A",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-3d48e2051d1f3fa8",
+    "family": "cross_source",
+    "question": "For Brindle March Partners in FY2021, start from the presentation amount for fees for contracted verification; then remove the call transcript amount for collections from carbon credits. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT05A",
+      "XT05B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT05B",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT05B",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-a7f8346a58b76c6e",
+    "family": "cross_source",
+    "question": "Use the FY2024 Brindle Sound Enterprise packet. By how much does spending at repair centres in the slide pack exceed payments recovered under warranties in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT06A",
+      "XT06B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT06A",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT06A",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-d7db6b2bb71a8ea4",
+    "family": "cross_source",
+    "question": "I need Brindle Sound Partners's FY2024 bridge in US dollars: spending at repair centres as shown in the investor presentation minus payments recovered under warranties as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT06A",
+      "XT06B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT06B",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT06B",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-efdfc1a5e0f64fc5",
+    "family": "cross_source",
+    "question": "For Brindle Bluff Enterprise's FY2021 review, put the earnings transcript figure for payments for booking capacity first and deduct the slide deck figure for payouts on connection credits. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT07A",
+      "XT07B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT07A",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT07A",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-27f174a59dc06227",
+    "family": "cross_source",
+    "question": "Brindle Bluff Partners (FY2021) is the only issuer in scope. Take the investor deck's payouts on connection credits away from the results call's payments for booking capacity. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT07A",
+      "XT07B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT07B",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT07B",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-0fddaff98e927b2f",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Brindle Cove Enterprise at FY2024 after subtracting the investor slides' spending at sites being retired from the analyst call's sales of equipment recovered for salvage?",
+    "company_tickers": [
+      "XT08A",
+      "XT08B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT08A",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT08A",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-765f37af21206072",
+    "family": "cross_source",
+    "question": "For Brindle Cove Partners in FY2024, start from the presentation amount for spending at sites being retired; then remove the call transcript amount for sales of equipment recovered for salvage. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT08A",
+      "XT08B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT08B",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT08B",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-27ce9245f68a26bb",
+    "family": "cross_source",
+    "question": "Use the FY2021 Cobalt March Enterprise packet. By how much does spending to replace fibre in the slide pack exceed charges for network use in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT09A",
+      "XT09B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT09A",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT09A",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-bf9062e57fc3e568",
+    "family": "cross_source",
+    "question": "I need Cobalt March Partners's FY2021 bridge in US dollars: spending to replace fibre as shown in the investor presentation minus charges for network use as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT09A",
+      "XT09B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT09B",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT09B",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-f9df5ed7059a4f59",
+    "family": "cross_source",
+    "question": "For Cobalt Sound Enterprise's FY2024 review, put the earnings transcript figure for rebates on import duties first and deduct the slide deck figure for charges for holding freight. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT10A",
+      "XT10B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT10A",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT10A",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-ee7873d09d81c33d",
+    "family": "cross_source",
+    "question": "Cobalt Sound Partners (FY2024) is the only issuer in scope. Take the investor deck's charges for holding freight away from the results call's rebates on import duties. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT10A",
+      "XT10B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT10B",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT10B",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-f04d9e7d63b16142",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Cobalt Bluff Enterprise at FY2021 after subtracting the investor slides' costs of bringing merchants aboard from the analyst call's commission earned through the marketplace?",
+    "company_tickers": [
+      "XT11A",
+      "XT11B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT11A",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT11A",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-3dd5395a280eb3a4",
+    "family": "cross_source",
+    "question": "For Cobalt Bluff Partners in FY2021, start from the presentation amount for costs of bringing merchants aboard; then remove the call transcript amount for commission earned through the marketplace. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT11A",
+      "XT11B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT11B",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT11B",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-220437bc76f9ea44",
+    "family": "cross_source",
+    "question": "Use the FY2024 Cobalt Cove Enterprise packet. By how much does payments for terminal security in the slide pack exceed cash from handling at terminals in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT12A",
+      "XT12B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT12A",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT12A",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-e41e87646edda199",
+    "family": "cross_source",
+    "question": "I need Cobalt Cove Partners's FY2024 bridge in US dollars: payments for terminal security as shown in the investor presentation minus cash from handling at terminals as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT12A",
+      "XT12B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT12B",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT12B",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-ae71422f707a852b",
+    "family": "cross_source",
+    "question": "For Dunlin March Enterprise's FY2021 review, put the earnings transcript figure for collections from carbon credits first and deduct the slide deck figure for fees for contracted verification. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT13A",
+      "XT13B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT13A",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT13A",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-7a63c3c6d1a7cb81",
+    "family": "cross_source",
+    "question": "Dunlin March Partners (FY2021) is the only issuer in scope. Take the investor deck's fees for contracted verification away from the results call's collections from carbon credits. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT13A",
+      "XT13B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT13B",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT13B",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-728b08f8119c6d48",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Dunlin Sound Enterprise at FY2024 after subtracting the investor slides' spending at repair centres from the analyst call's payments recovered under warranties?",
+    "company_tickers": [
+      "XT14A",
+      "XT14B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT14A",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT14A",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-d756b5e9bea8dfb1",
+    "family": "cross_source",
+    "question": "For Dunlin Sound Partners in FY2024, start from the presentation amount for spending at repair centres; then remove the call transcript amount for payments recovered under warranties. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT14A",
+      "XT14B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT14B",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT14B",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-6e2dce1d0ef9b9ed",
+    "family": "cross_source",
+    "question": "Use the FY2021 Dunlin Bluff Enterprise packet. By how much does payouts on connection credits in the slide pack exceed payments for booking capacity in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT15A",
+      "XT15B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT15A",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT15A",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-a6d5591608326b94",
+    "family": "cross_source",
+    "question": "I need Dunlin Bluff Partners's FY2021 bridge in US dollars: payouts on connection credits as shown in the investor presentation minus payments for booking capacity as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT15A",
+      "XT15B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT15B",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT15B",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-01820b8870d10dc4",
+    "family": "cross_source",
+    "question": "For Dunlin Cove Enterprise's FY2024 review, put the earnings transcript figure for sales of equipment recovered for salvage first and deduct the slide deck figure for spending at sites being retired. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT16A",
+      "XT16B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT16A",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT16A",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-637af43897d2799d",
+    "family": "cross_source",
+    "question": "Dunlin Cove Partners (FY2024) is the only issuer in scope. Take the investor deck's spending at sites being retired away from the results call's sales of equipment recovered for salvage. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT16A",
+      "XT16B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT16B",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT16B",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-0ffe6143e13dbcb6",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Flint March Enterprise at FY2021 after subtracting the investor slides' spending to replace fibre from the analyst call's charges for network use?",
+    "company_tickers": [
+      "XT17A",
+      "XT17B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT17A",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT17A",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-12d53afc0b40b653",
+    "family": "cross_source",
+    "question": "For Flint March Partners in FY2021, start from the presentation amount for spending to replace fibre; then remove the call transcript amount for charges for network use. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT17A",
+      "XT17B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT17B",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT17B",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-b3a295e42e03488c",
+    "family": "cross_source",
+    "question": "Use the FY2024 Flint Sound Enterprise packet. By how much does charges for holding freight in the slide pack exceed rebates on import duties in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT18A",
+      "XT18B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT18A",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT18A",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-30fc427175fb617b",
+    "family": "cross_source",
+    "question": "I need Flint Sound Partners's FY2024 bridge in US dollars: charges for holding freight as shown in the investor presentation minus rebates on import duties as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT18A",
+      "XT18B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT18B",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT18B",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-8fce76b91c9b4b68",
+    "family": "cross_source",
+    "question": "For Flint Bluff Enterprise's FY2021 review, put the earnings transcript figure for commission earned through the marketplace first and deduct the slide deck figure for costs of bringing merchants aboard. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT19A",
+      "XT19B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT19A",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT19A",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-0741fd17e9bfe6a8",
+    "family": "cross_source",
+    "question": "Flint Bluff Partners (FY2021) is the only issuer in scope. Take the investor deck's costs of bringing merchants aboard away from the results call's commission earned through the marketplace. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT19A",
+      "XT19B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT19B",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT19B",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-ab8cf1b8b82af73a",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Flint Cove Enterprise at FY2024 after subtracting the investor slides' payments for terminal security from the analyst call's cash from handling at terminals?",
+    "company_tickers": [
+      "XT20A",
+      "XT20B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT20A",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT20A",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-9ea8891215dfaebe",
+    "family": "cross_source",
+    "question": "For Flint Cove Partners in FY2024, start from the presentation amount for payments for terminal security; then remove the call transcript amount for cash from handling at terminals. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT20A",
+      "XT20B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT20B",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT20B",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-03e3591e5e517e60",
+    "family": "cross_source",
+    "question": "Use the FY2021 Gorse March Enterprise packet. By how much does fees for contracted verification in the slide pack exceed collections from carbon credits in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT21A",
+      "XT21B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT21A",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT21A",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-b25125028bc393b6",
+    "family": "cross_source",
+    "question": "I need Gorse March Partners's FY2021 bridge in US dollars: fees for contracted verification as shown in the investor presentation minus collections from carbon credits as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT21A",
+      "XT21B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT21B",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT21B",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-041b4fa8b1d60109",
+    "family": "cross_source",
+    "question": "For Gorse Sound Enterprise's FY2024 review, put the earnings transcript figure for payments recovered under warranties first and deduct the slide deck figure for spending at repair centres. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT22A",
+      "XT22B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT22A",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT22A",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-652c1ad8b23c47c2",
+    "family": "cross_source",
+    "question": "Gorse Sound Partners (FY2024) is the only issuer in scope. Take the investor deck's spending at repair centres away from the results call's payments recovered under warranties. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT22A",
+      "XT22B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT22B",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT22B",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-6986828468e5fd18",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Gorse Bluff Enterprise at FY2021 after subtracting the investor slides' payouts on connection credits from the analyst call's payments for booking capacity?",
+    "company_tickers": [
+      "XT23A",
+      "XT23B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT23A",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT23A",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-9116e5d83ef000b4",
+    "family": "cross_source",
+    "question": "For Gorse Bluff Partners in FY2021, start from the presentation amount for payouts on connection credits; then remove the call transcript amount for payments for booking capacity. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT23A",
+      "XT23B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT23B",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT23B",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-f75c2714d7e2e858",
+    "family": "cross_source",
+    "question": "Use the FY2024 Gorse Cove Enterprise packet. By how much does spending at sites being retired in the slide pack exceed sales of equipment recovered for salvage in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT24A",
+      "XT24B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT24A",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT24A",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-c676c22132139b03",
+    "family": "cross_source",
+    "question": "I need Gorse Cove Partners's FY2024 bridge in US dollars: spending at sites being retired as shown in the investor presentation minus sales of equipment recovered for salvage as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT24A",
+      "XT24B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT24B",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT24B",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-198abe54e941687e",
+    "family": "cross_source",
+    "question": "For Hawthorn March Enterprise's FY2021 review, put the earnings transcript figure for charges for network use first and deduct the slide deck figure for spending to replace fibre. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT25A",
+      "XT25B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT25A",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT25A",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-bc78fbf041d8ab6e",
+    "family": "cross_source",
+    "question": "Hawthorn March Partners (FY2021) is the only issuer in scope. Take the investor deck's spending to replace fibre away from the results call's charges for network use. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT25A",
+      "XT25B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT25B",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT25B",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-c3f658dc5002767c",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Hawthorn Sound Enterprise at FY2024 after subtracting the investor slides' charges for holding freight from the analyst call's rebates on import duties?",
+    "company_tickers": [
+      "XT26A",
+      "XT26B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT26A",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT26A",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-e366a38c7e84e7ad",
+    "family": "cross_source",
+    "question": "For Hawthorn Sound Partners in FY2024, start from the presentation amount for charges for holding freight; then remove the call transcript amount for rebates on import duties. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT26A",
+      "XT26B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT26B",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT26B",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-d5a47a761d62bf05",
+    "family": "cross_source",
+    "question": "Use the FY2021 Hawthorn Bluff Enterprise packet. By how much does costs of bringing merchants aboard in the slide pack exceed commission earned through the marketplace in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT27A",
+      "XT27B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT27A",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT27A",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-08ac1997bac295df",
+    "family": "cross_source",
+    "question": "I need Hawthorn Bluff Partners's FY2021 bridge in US dollars: costs of bringing merchants aboard as shown in the investor presentation minus commission earned through the marketplace as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT27A",
+      "XT27B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT27B",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT27B",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-8d3ee19880b5e417",
+    "family": "cross_source",
+    "question": "For Hawthorn Cove Enterprise's FY2024 review, put the earnings transcript figure for cash from handling at terminals first and deduct the slide deck figure for payments for terminal security. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT28A",
+      "XT28B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT28A",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT28A",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-44c47e593c7606aa",
+    "family": "cross_source",
+    "question": "Hawthorn Cove Partners (FY2024) is the only issuer in scope. Take the investor deck's payments for terminal security away from the results call's cash from handling at terminals. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT28A",
+      "XT28B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT28B",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT28B",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-fc8a72affd1b8c4a",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Ilex March Enterprise at FY2021 after subtracting the investor slides' fees for contracted verification from the analyst call's collections from carbon credits?",
+    "company_tickers": [
+      "XT29A",
+      "XT29B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT29A",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT29A",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-d3a6efa4c3f9fca2",
+    "family": "cross_source",
+    "question": "For Ilex March Partners in FY2021, start from the presentation amount for fees for contracted verification; then remove the call transcript amount for collections from carbon credits. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT29A",
+      "XT29B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT29B",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT29B",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-e998f140c68a38a5",
+    "family": "cross_source",
+    "question": "Use the FY2024 Ilex Sound Enterprise packet. By how much does spending at repair centres in the slide pack exceed payments recovered under warranties in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT30A",
+      "XT30B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT30A",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT30A",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-0903fb20864a5623",
+    "family": "cross_source",
+    "question": "I need Ilex Sound Partners's FY2024 bridge in US dollars: spending at repair centres as shown in the investor presentation minus payments recovered under warranties as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT30A",
+      "XT30B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT30B",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT30B",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-d0b14981062f9a2f",
+    "family": "cross_source",
+    "question": "For Ilex Bluff Enterprise's FY2021 review, put the earnings transcript figure for payments for booking capacity first and deduct the slide deck figure for payouts on connection credits. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT31A",
+      "XT31B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT31A",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT31A",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-99852d29e209641a",
+    "family": "cross_source",
+    "question": "Ilex Bluff Partners (FY2021) is the only issuer in scope. Take the investor deck's payouts on connection credits away from the results call's payments for booking capacity. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT31A",
+      "XT31B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT31B",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT31B",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-61e9488c6987b53d",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Ilex Cove Enterprise at FY2024 after subtracting the investor slides' spending at sites being retired from the analyst call's sales of equipment recovered for salvage?",
+    "company_tickers": [
+      "XT32A",
+      "XT32B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT32A",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT32A",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-aa0e11fdef83553a",
+    "family": "cross_source",
+    "question": "For Ilex Cove Partners in FY2024, start from the presentation amount for spending at sites being retired; then remove the call transcript amount for sales of equipment recovered for salvage. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT32A",
+      "XT32B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT32B",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT32B",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-4eea1331536be0c7",
+    "family": "cross_source",
+    "question": "Use the FY2021 Larch March Enterprise packet. By how much does spending to replace fibre in the slide pack exceed charges for network use in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT33A",
+      "XT33B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT33A",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT33A",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-4ac788c40fd2a32e",
+    "family": "cross_source",
+    "question": "I need Larch March Partners's FY2021 bridge in US dollars: spending to replace fibre as shown in the investor presentation minus charges for network use as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT33A",
+      "XT33B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT33B",
+        "period": "FY2021",
+        "metric": "fiber_replacement_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT33B",
+        "period": "FY2021",
+        "metric": "network_usage_fees",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-43463d9178b9d648",
+    "family": "cross_source",
+    "question": "For Larch Sound Enterprise's FY2024 review, put the earnings transcript figure for rebates on import duties first and deduct the slide deck figure for charges for holding freight. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT34A",
+      "XT34B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT34A",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT34A",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-903e39e13c5791f6",
+    "family": "cross_source",
+    "question": "Larch Sound Partners (FY2024) is the only issuer in scope. Take the investor deck's charges for holding freight away from the results call's rebates on import duties. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT34A",
+      "XT34B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT34B",
+        "period": "FY2024",
+        "metric": "customs_duty_rebates",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT34B",
+        "period": "FY2024",
+        "metric": "freight_demurrage",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-2440d3abeacc499f",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Larch Bluff Enterprise at FY2021 after subtracting the investor slides' costs of bringing merchants aboard from the analyst call's commission earned through the marketplace?",
+    "company_tickers": [
+      "XT35A",
+      "XT35B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT35A",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT35A",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-b55198cf917c2d4e",
+    "family": "cross_source",
+    "question": "For Larch Bluff Partners in FY2021, start from the presentation amount for costs of bringing merchants aboard; then remove the call transcript amount for commission earned through the marketplace. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT35A",
+      "XT35B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT35B",
+        "period": "FY2021",
+        "metric": "merchant_onboarding_costs",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT35B",
+        "period": "FY2021",
+        "metric": "marketplace_commissions",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-da944cf6e7629718",
+    "family": "cross_source",
+    "question": "Use the FY2024 Larch Cove Enterprise packet. By how much does payments for terminal security in the slide pack exceed cash from handling at terminals in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT36A",
+      "XT36B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT36A",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT36A",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-730771d54345da19",
+    "family": "cross_source",
+    "question": "I need Larch Cove Partners's FY2024 bridge in US dollars: payments for terminal security as shown in the investor presentation minus cash from handling at terminals as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT36A",
+      "XT36B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT36B",
+        "period": "FY2024",
+        "metric": "terminal_security_outlays",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT36B",
+        "period": "FY2024",
+        "metric": "terminal_handling_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-df775a09851c659f",
+    "family": "cross_source",
+    "question": "For Marten March Enterprise's FY2021 review, put the earnings transcript figure for collections from carbon credits first and deduct the slide deck figure for fees for contracted verification. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT37A",
+      "XT37B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT37A",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT37A",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-b5823726f54a3c1d",
+    "family": "cross_source",
+    "question": "Marten March Partners (FY2021) is the only issuer in scope. Take the investor deck's fees for contracted verification away from the results call's collections from carbon credits. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT37A",
+      "XT37B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT37B",
+        "period": "FY2021",
+        "metric": "carbon_credit_receipts",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT37B",
+        "period": "FY2021",
+        "metric": "verification_contract_fees",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-6175d1156f20058d",
+    "family": "cross_source",
+    "question": "In thousands of US dollars, what remains for Marten Sound Enterprise at FY2024 after subtracting the investor slides' spending at repair centres from the analyst call's payments recovered under warranties?",
+    "company_tickers": [
+      "XT38A",
+      "XT38B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT38A",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT38A",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  },
+  {
+    "task_id": "cross-test-aa11797f0aaaef60",
+    "family": "cross_source",
+    "question": "For Marten Sound Partners in FY2024, start from the presentation amount for spending at repair centres; then remove the call transcript amount for payments recovered under warranties. Report the difference in millions of US dollars.",
+    "company_tickers": [
+      "XT38A",
+      "XT38B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT38B",
+        "period": "FY2024",
+        "metric": "repair_center_cost",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT38B",
+        "period": "FY2024",
+        "metric": "warranty_reimbursements",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-a6f512cef72dbc05",
+    "family": "cross_source",
+    "question": "Use the FY2021 Marten Bluff Enterprise packet. By how much does payouts on connection credits in the slide pack exceed payments for booking capacity in the earnings call? Keep the sign and use millions of US dollars.",
+    "company_tickers": [
+      "XT39A",
+      "XT39B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT39A",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT39A",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd_millions"
+  },
+  {
+    "task_id": "cross-test-085bc7007ce39c12",
+    "family": "cross_source",
+    "question": "I need Marten Bluff Partners's FY2021 bridge in US dollars: payouts on connection credits as shown in the investor presentation minus payments for booking capacity as discussed in the earnings Q&A.",
+    "company_tickers": [
+      "XT39A",
+      "XT39B"
+    ],
+    "fiscal_periods": [
+      "FY2020",
+      "FY2021",
+      "FY2022"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT39B",
+        "period": "FY2021",
+        "metric": "connection_credit_payouts",
+        "source_type": "investor_deck"
+      },
+      {
+        "ticker": "XT39B",
+        "period": "FY2021",
+        "metric": "capacity_booking_receipts",
+        "source_type": "transcript"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-9d2c510287d5a91b",
+    "family": "cross_source",
+    "question": "For Marten Cove Enterprise's FY2024 review, put the earnings transcript figure for sales of equipment recovered for salvage first and deduct the slide deck figure for spending at sites being retired. Return the signed amount in US dollars.",
+    "company_tickers": [
+      "XT40A",
+      "XT40B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT40A",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT40A",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd"
+  },
+  {
+    "task_id": "cross-test-c95a96047441e1dc",
+    "family": "cross_source",
+    "question": "Marten Cove Partners (FY2024) is the only issuer in scope. Take the investor deck's spending at sites being retired away from the results call's sales of equipment recovered for salvage. Express it in thousands of US dollars.",
+    "company_tickers": [
+      "XT40A",
+      "XT40B"
+    ],
+    "fiscal_periods": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "allowed_source_types": [
+      "sec_filing",
+      "sec_xbrl_companyfacts",
+      "transcript",
+      "investor_deck"
+    ],
+    "operation": "difference",
+    "operands": [
+      {
+        "ticker": "XT40B",
+        "period": "FY2024",
+        "metric": "equipment_salvage_revenue",
+        "source_type": "transcript"
+      },
+      {
+        "ticker": "XT40B",
+        "period": "FY2024",
+        "metric": "retirement_site_costs",
+        "source_type": "investor_deck"
+      }
+    ],
+    "unit": "usd_thousands"
+  }
+]

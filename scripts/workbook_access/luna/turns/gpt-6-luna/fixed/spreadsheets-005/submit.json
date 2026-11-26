@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-005",
+    "stage": "submit",
+    "prompt_sha256": "caf39e7fb534a4bac847edffae51b26f294918b8c95a9f2560e206896f61fae1",
+    "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49"
+  },
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2121d-c1f8-7b53-ad41-04d54afcdebe",
+    "raw": "{\"sheet-37554\":{\"formulas\":{\"F2\":\"=SUMPRODUCT(--EXACT($A2,$D$2:$D$17),$F$2:$F$17)\"}},\"sheet-37609\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(AND(N(A2)<7,N(B2)<7),\\\"-\\\",\\\"e\\\")\"}],\"formulas\":{}},\"sheet-37615\":{\"fills\":[{\"range\":\"F7:F37\",\"formula\":\"=IF(D7>TIME(4,0,0),D42,D43)*E7\"}],\"formulas\":{}},\"sheet-38462\":{\"formulas\":{\"C2\":\"=ROUNDUP(B2*24,0)\"}}}",
+    "usage": {
+      "input_tokens": 18847,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 158,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

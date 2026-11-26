@@ -1,0 +1,355 @@
+[
+  {
+    "task_id": "decision-audit-diverter-routes-as-received",
+    "tool": "sqlite.query",
+    "instruction": "Construct route_exceptions.csv with columns scan_id, observed_lane, required_lane, source_id, ordered by scan_id ascending in binary text order. A tray_scan records the lane used at scan_minute and the notice-feed position visible to the scanner, seen_pos. For that scan's diverter, consider notices received by seen_pos inclusive whose start_minute is at or before scan_minute. Choose the greatest applicable start_minute, breaking ties by greatest received_pos. Positions are unique in the notice feed. A correction to an earlier effective minute revises that entry only. Each primary notice has a unique source_id and exact notice_text in the form 'Route trays to ' followed by the entire required lane code, with no punctuation. Report only scans with an applicable notice whose required lane differs from the observed lane, citing the selected notice's actual source_id. Minutes are integer offsets from shift start, positions are unitless integers, identifiers and lane codes are case-sensitive text, and all values are non-NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "route_notice": {
+        "columns": [
+          "source_id TEXT",
+          "diverter TEXT",
+          "start_minute INTEGER",
+          "received_pos INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "n-a",
+            "bend",
+            5,
+            1,
+            "Route trays to east"
+          ],
+          [
+            "n-b",
+            "bend",
+            20,
+            2,
+            "Route trays to north"
+          ],
+          [
+            "n-c",
+            "arch",
+            8,
+            3,
+            "Route trays to south"
+          ],
+          [
+            "n-d",
+            "bend",
+            5,
+            4,
+            "Route trays to west"
+          ]
+        ]
+      },
+      "tray_scan": {
+        "columns": [
+          "scan_id TEXT",
+          "diverter TEXT",
+          "scan_minute INTEGER",
+          "seen_pos INTEGER",
+          "observed_lane TEXT"
+        ],
+        "rows": [
+          [
+            "s1",
+            "bend",
+            12,
+            2,
+            "east"
+          ],
+          [
+            "s2",
+            "bend",
+            12,
+            4,
+            "east"
+          ],
+          [
+            "s3",
+            "bend",
+            25,
+            4,
+            "west"
+          ],
+          [
+            "s4",
+            "arch",
+            7,
+            4,
+            "east"
+          ],
+          [
+            "s5",
+            "bend",
+            3,
+            4,
+            "north"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "scan_id",
+      "observed_lane",
+      "required_lane",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-audit-independent-glaze-attributions",
+    "tool": "sqlite.query",
+    "instruction": "For each specimen, determine whether a glaze attribution has enough independent support to enter the catalogue. Each slip records one proposed glaze. Slips with the same family_code for a specimen derive from the same underlying observation, even when their wording differs. A family casts one vote if all its slips agree and abstains if they disagree. Accept a glaze only if it receives at least two votes and strictly more votes than every rival for that specimen. Omit ties and specimens without an accepted glaze. For each family supporting an accepted glaze, cite its lexicographically smallest slip_id. Return one row per cited family with columns specimen_code, glaze_name, vote_count, slip_id, ordered by specimen_code and slip_id in ascending binary text order. vote_count counts supporting families. Slip IDs are unique and all fields are non-null. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "glaze_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "specimen_code TEXT",
+          "family_code TEXT",
+          "glaze_name TEXT",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "A1",
+            "Cup",
+            "kiln",
+            "reed",
+            "Kiln tally calls the cup glaze reed."
+          ],
+          [
+            "A2",
+            "Cup",
+            "kiln",
+            "reed",
+            "Fair copy repeats reed beside the cup mark."
+          ],
+          [
+            "A3",
+            "Cup",
+            "tile",
+            "reed",
+            "Trial tile for the cup is scratched reed."
+          ],
+          [
+            "A4",
+            "Cup",
+            "rack",
+            "ash",
+            "Rack card assigns ash to the cup."
+          ],
+          [
+            "A5",
+            "Bowl",
+            "tray",
+            "ash",
+            "Tray sketch labels the bowl ash."
+          ],
+          [
+            "A6",
+            "Bowl",
+            "tray",
+            "reed",
+            "Second tracing reads the same tray mark as reed."
+          ],
+          [
+            "A7",
+            "Bowl",
+            "tile",
+            "ash",
+            "Matching bowl tile is marked ash."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "specimen_code",
+      "glaze_name",
+      "vote_count",
+      "slip_id"
+    ]
+  },
+  {
+    "task_id": "decision-audit-missed-survey-pickups",
+    "tool": "sqlite.query",
+    "instruction": "A workshop survey normally treats a blank return as nonresponse. Audit the narrower claim that a documented missed pickup could explain the blank. Each survey_boxes row describes one box on one route, with a planned pickup day measured in whole days from the start of the survey and a count of returned forms. Zero is a verified blank. A NULL form_count means the count is unknown. Each route_notes row is a primary operations note with a unique source ID, its short original text, a coded finding, and the inclusive first and last pickup days it covers. Return only verified blanks whose route and planned day are covered by a note. If several notes cover a box, use the one with the shortest coverage interval, breaking equal lengths by ascending source ID in SQLite binary text order. Decide whether the winning note says 'missed' only after resolving competing evidence. Output box_code, pickup_day, source_id, primary_text for each supported claim, ordered by box_code. All fields except form_count are non-NULL and box codes are unique. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "route_notes": {
+        "columns": [
+          "source_id TEXT",
+          "route_code TEXT",
+          "first_day INTEGER",
+          "last_day INTEGER",
+          "finding TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "R8",
+            "reed",
+            3,
+            6,
+            "missed",
+            "The reed van stayed in the shed throughout the closure."
+          ],
+          [
+            "R3",
+            "reed",
+            4,
+            4,
+            "served",
+            "I collected the reed boxes with the spare cart."
+          ],
+          [
+            "R4",
+            "reed",
+            4,
+            4,
+            "missed",
+            "Our reed crew made no collection that day."
+          ],
+          [
+            "R5",
+            "reed",
+            5,
+            5,
+            "missed",
+            "The reed boxes were still sealed at dusk."
+          ],
+          [
+            "C2",
+            "clay",
+            2,
+            3,
+            "served",
+            "We emptied the clay boxes on both rounds."
+          ]
+        ]
+      },
+      "survey_boxes": {
+        "columns": [
+          "box_code TEXT",
+          "route_code TEXT",
+          "pickup_day INTEGER",
+          "form_count INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "reed",
+            3,
+            0
+          ],
+          [
+            "B",
+            "reed",
+            4,
+            0
+          ],
+          [
+            "C",
+            "reed",
+            5,
+            0
+          ],
+          [
+            "D",
+            "reed",
+            6,
+            2
+          ],
+          [
+            "E",
+            "clay",
+            3,
+            0
+          ],
+          [
+            "F",
+            "reed",
+            3,
+            null
+          ],
+          [
+            "G",
+            "reed",
+            9,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "box_code",
+      "pickup_day",
+      "source_id",
+      "primary_text"
+    ]
+  },
+  {
+    "task_id": "decision-audit-numbering-between-printed-anchors",
+    "tool": "sqlite.query",
+    "instruction": "Audit leaf A of the prompt book. Place entries in ascending pos, the unique physical line position within a leaf. Only cue entries consume a cue number. A non-null ink_no on a cue is a printed integer anchor. A null ink_no on a cue means the number is illegible, but the cue still occupies one place. Ignore all numbers on notes. Between each pair of consecutive cue anchors on A, compare the increase in printed number with the number of cue entries after the first anchor through and including the second. Report only disagreements. A positive excess means the numbering advanced farther than the surviving cue entries explain. Do not extrapolate beyond the anchors. Return start_pos, end_pos, cue_steps, excess in ascending start_pos order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "leaf_entry": {
+        "columns": [
+          "leaf_id TEXT",
+          "pos INTEGER",
+          "entry_kind TEXT",
+          "ink_no INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            "cue",
+            10
+          ],
+          [
+            "A",
+            2,
+            "cue",
+            null
+          ],
+          [
+            "A",
+            3,
+            "note",
+            15
+          ],
+          [
+            "A",
+            4,
+            "cue",
+            13
+          ],
+          [
+            "A",
+            5,
+            "cue",
+            14
+          ],
+          [
+            "A",
+            6,
+            "cue",
+            14
+          ],
+          [
+            "B",
+            2,
+            "cue",
+            80
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "start_pos",
+      "end_pos",
+      "cue_steps",
+      "excess"
+    ]
+  }
+]

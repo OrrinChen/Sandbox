@@ -1,0 +1,10 @@
+{
+  "version": "independent-tools-solver-comparison-v1",
+  "split": "500 frozen tasks; boot-check on development only",
+  "arms": {"direct": "Solve each task and submit the requested artifact.", "self_check": "Solve each task. Before submitting check the artifact against the stated boundary conditions, ordering, output shape and required state changes."},
+  "model": "gpt-6.2-astra",
+  "effort": "medium",
+  "budget": "One call per arm per identical batch of up to four problems of the same artifact type. Both receive the same public tool observation. No agent access to labels, external tools, reference implementations, later batches or the other answer. The budget is matched in calls and allowed context; record actual usage separately.",
+  "observations": "Reference-independent public SQLite tables (all rows), Python issue plus broken source (whole), or public XLSX workbook inspected by the same deterministic reader for both arms. The workbook view includes sheet dimensions and nonempty cells, capped by a documented deterministic selection. No private alternative fixtures or answer workbooks.",
+  "scoring": "Seal both arms' submissions before grading any frozen task. Candidate failures and explicit abstentions stay in the denominator. Report paired wins/losses, per-domain results and replay a failed submission. This is a fixed-observation comparison of two prompting policies, not an evaluation of arbitrary autonomous tool discovery."
+}

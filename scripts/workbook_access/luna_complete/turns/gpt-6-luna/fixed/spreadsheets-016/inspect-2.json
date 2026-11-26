@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-016",
+    "stage": "inspect-2",
+    "prompt_sha256": "642d545ebf304c3c0b44b768eb9b4010f6c37c80deefb18e14adcd50603b10ac",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-1a1a-7442-8b7f-b5a61002ac5d"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the remaining inspection round to clarify the incomplete examples for the formula tasks, especially which cells are intended outputs."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"}],\"sheet-51807\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 36820,
+          "cached_input_tokens": 30080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 783,
+          "reasoning_output_tokens": 659
+        }
+      ],
+      "cli_final": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"}],\"sheet-51807\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-1a1a-7442-8b7f-b5a61002ac5d",
+    "raw": "{\"sheet-50952\":[],\"sheet-51249\":[],\"sheet-51262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F9:F14\"}],\"sheet-51807\":[]}",
+    "usage": {
+      "input_tokens": 36820,
+      "cached_input_tokens": 30080,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 783,
+      "reasoning_output_tokens": 659
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

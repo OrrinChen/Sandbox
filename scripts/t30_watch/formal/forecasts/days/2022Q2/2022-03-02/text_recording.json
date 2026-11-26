@@ -1,0 +1,97 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 50071,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 498,
+    "reasoning_output_tokens": 29
+  },
+  "thread": "01a20d8a-3e3e-79c1-95bb-6884aef664be",
+  "packet_sha256": "68a8e38a741b55684271556b6c54ca5854a5fe39c9a29b127b4ad2e4458b8ff1",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q2/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/industrial_machinery-2\",\"alerts\":[{\"cik\":\"0001287213\",\"reason\":\"Douglas Dynamics attributed part of its 12.8% sales growth in 2021 to pent-up dealer demand and better snowfall in the season ended March 31 (A, D). I expect pricing to help keep March-quarter sales above the −5% threshold. April–June is the first full quarter after the snow season and compares against a year when dealers were catching up on purchases. I forecast a decline of at least 5% as that demand fades. The filing does not quantify how much catch-up buying occurred in that quarter.\"}]},\n    {\"sector\":\"2022Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/prepackaged_software-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q2/transportation-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0001287213",
+            "reason": "Douglas Dynamics attributed part of its 12.8% sales growth in 2021 to pent-up dealer demand and better snowfall in the season ended March 31 (A, D). I expect pricing to help keep March-quarter sales above the −5% threshold. April–June is the first full quarter after the snow season and compares against a year when dealers were catching up on purchases. I forecast a decline of at least 5% as that demand fades. The filing does not quantify how much catch-up buying occurred in that quarter."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

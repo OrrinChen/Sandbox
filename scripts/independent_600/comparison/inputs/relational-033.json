@@ -1,0 +1,227 @@
+[
+  {
+    "task_id": "decision-indivisible-racks-on-a-lift-truck",
+    "tool": "sqlite.query",
+    "instruction": "Choose one or two distinct preloaded racks for a single outbound truck run. Each row in rack_offer is one indivisible rack for a different station. Its slot_use is the number of truck floor slots it occupies, and saved_trips is the forecast number of otherwise missed rider trips it would restore. These benefits add across destinations. The single truck_card row documents the active loading rule and gives the available floor slots. Maximize total saved trips within the slot limit, then minimize slots used, then choose the lexicographically smallest ordered pair of rack IDs using SQLite BINARY order, with NULL sorting first. Put the smaller ID first for a two-rack load. At least one rack fits. Inputs contain no nulls. Return one row with columns first_rack, second_rack, used_slots, saved_trips, source_id, in that order. Use NULL for the absent second rack and cite the active truck card. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "rack_offer": {
+        "columns": [
+          "rack_id TEXT",
+          "slot_use INTEGER",
+          "saved_trips INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            5,
+            10
+          ],
+          [
+            "B",
+            4,
+            8
+          ],
+          [
+            "C",
+            4,
+            8
+          ],
+          [
+            "D",
+            3,
+            5
+          ]
+        ]
+      },
+      "truck_card": {
+        "columns": [
+          "source_id TEXT",
+          "slot_limit INTEGER",
+          "card_text TEXT"
+        ],
+        "rows": [
+          [
+            "TR-8",
+            8,
+            "Eight floor slots cleared. The lift crew can handle at most two sealed racks this run."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_rack",
+      "second_rack",
+      "used_slots",
+      "saved_trips",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-inspection-possession-displacement",
+    "tool": "sqlite.query",
+    "instruction": "Choose one approved possession window for a mandatory inspection on one station throat. A window blocks every listed movement on that throat with a positive-duration overlap. All intervals are half-open in integer minutes after midnight. Each movement belongs to one service booking. Displacing any movement cancels its entire booking and incurs the booking's compensation once in cents. A NULL compensation denotes a protected booking whose movements must all remain available. A window touching any protected movement for positive duration is infeasible. Minimize total compensation, then the number of canceled bookings, then start minute, then binary ascending permit ID. An empty window of traffic costs zero. All intervals have positive length, every movement references an existing booking, booking and permit IDs are unique within their tables, and only compensation can be null. At least one window is feasible. Return one row with ordered columns permit_id, canceled_qty, compensation_cents. The permit ID must cite the selected possession permit. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "possession_permit": {
+        "columns": [
+          "permit_id TEXT",
+          "start_min INTEGER",
+          "end_min INTEGER",
+          "permit_text TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            400,
+            430,
+            "Inspection crew cleared for minutes 400 through 429."
+          ],
+          [
+            "P2",
+            440,
+            470,
+            "Inspection crew cleared for minutes 440 through 469."
+          ],
+          [
+            "P3",
+            480,
+            510,
+            "Inspection crew cleared for minutes 480 through 509."
+          ]
+        ]
+      },
+      "service_booking": {
+        "columns": [
+          "booking_id TEXT",
+          "cancel_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Turn",
+            4200
+          ],
+          [
+            "Local",
+            6000
+          ],
+          [
+            "Mail",
+            null
+          ]
+        ]
+      },
+      "throat_move": {
+        "columns": [
+          "booking_id TEXT",
+          "enter_min INTEGER",
+          "leave_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Turn",
+            398,
+            405
+          ],
+          [
+            "Turn",
+            419,
+            426
+          ],
+          [
+            "Local",
+            435,
+            450
+          ],
+          [
+            "Mail",
+            480,
+            485
+          ],
+          [
+            "Mail",
+            430,
+            439
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "permit_id",
+      "canceled_qty",
+      "compensation_cents"
+    ]
+  },
+  {
+    "task_id": "decision-instant-runoff-design-ballot",
+    "tool": "sqlite.query",
+    "instruction": "Choose one of three designs A, B, and C by instant runoff. Each row is an anonymous group of ballot_count identical ballots ranking all three designs, once each, from first to third. Count each ballot for its highest-ranked remaining design. A design wins immediately with strictly more than half of all ballots. Otherwise eliminate exactly one remaining design with the fewest votes, including designs with zero votes. Break elimination ties by eliminating C before B before A. Transfer the eliminated design's ballots and repeat, applying the same rule even if the final two designs tie. Return exactly one row with winner (design code), winning_round (integer, starting at 1), and winning_votes (number of ballots credited to the winner in that round), in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "ballots": {
+        "columns": [
+          "first_choice TEXT",
+          "second_choice TEXT",
+          "third_choice TEXT",
+          "ballot_count INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "C",
+            "B",
+            3
+          ],
+          [
+            "B",
+            "A",
+            "C",
+            2
+          ],
+          [
+            "C",
+            "B",
+            "A",
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "winner",
+      "winning_round",
+      "winning_votes"
+    ]
+  },
+  {
+    "task_id": "decision-integrate-drying-sheet-area",
+    "tool": "sqlite.query",
+    "instruction": "Use SQLite to calculate the integral of sheet area over one drying pass, from the first sample through the last. Each sample gives elapsed time in seconds and the sheet's width and length in centimetres. Between consecutive samples, width and length each change linearly with time. The instantaneous area is their product. Return one row with one column, area_cm2_s, in square-centimetre seconds. Sample times are distinct and there are at least two samples. The exact total for each supplied dataset is an integer. Preserve fractional contributions until the total is formed. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "sheet_samples": {
+        "columns": [
+          "elapsed_s INTEGER",
+          "width_cm INTEGER",
+          "length_cm INTEGER"
+        ],
+        "rows": [
+          [
+            3,
+            4,
+            6
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            5,
+            4,
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "area_cm2_s"
+    ]
+  }
+]

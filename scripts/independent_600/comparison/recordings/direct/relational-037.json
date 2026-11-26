@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "05cdc42a4e1124ea974cf88ecbb4dbbfcd8d09f483c11a8beb786e27902349aa",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-lamp-survival-day-two\": \"WITH RECURSIVE failure_days AS (\\n  SELECT exit_day, COUNT(*) AS failures\\n  FROM lamp_exits\\n  WHERE outcome = 'failed' AND exit_day <= 2\\n  GROUP BY exit_day\\n), steps AS (\\n  SELECT ROW_NUMBER() OVER (ORDER BY f.exit_day) AS step, f.failures,\\n         (SELECT COUNT(*) FROM lamp_exits AS l WHERE l.exit_day >= f.exit_day) AS at_risk\\n  FROM failure_days AS f\\n), km(step, survival) AS (\\n  SELECT 0, 1.0\\n  UNION ALL\\n  SELECT s.step, k.survival * (s.at_risk - s.failures) / s.at_risk\\n  FROM km AS k JOIN steps AS s ON s.step = k.step + 1\\n)\\nSELECT ROUND(survival, 6) AS survival_day_2\\nFROM km\\nORDER BY step DESC\\nLIMIT 1\",\n  \"decision-last-confirmed-shelf-before-inventory\": \"SELECT c.holding_code, n.shelf_code, n.slip_no\\nFROM inventory_close AS c\\nJOIN shelf_note AS n ON n.slip_no = (\\n  SELECT s.slip_no\\n  FROM shelf_note AS s\\n  WHERE s.holding_code = c.holding_code AND s.note_kind = 'sighted' AND s.note_day <= c.close_day\\n  ORDER BY s.note_day DESC, s.slip_no DESC\\n  LIMIT 1\\n)\\nORDER BY c.holding_code\",\n  \"decision-least-cost-dual-dealer-funding\": \"SELECT a.ticket_code AS a_code, b.ticket_code AS b_code,\\n       a.price_cents + b.price_cents AS cost_cents,\\n       a.hold_cents + b.hold_cents AS hold_cents\\nFROM funding_request AS r\\nJOIN dealer_ticket AS a ON a.desk_code = 'A' AND a.delivery_day <= r.cutoff_day\\nJOIN dealer_ticket AS b ON b.desk_code = 'B' AND b.delivery_day <= r.cutoff_day\\nWHERE a.buy_units + b.buy_units = r.need_units\\n  AND a.hold_cents + b.hold_cents <= r.cap_cents\\nORDER BY cost_cents, a.ticket_code COLLATE BINARY, b.ticket_code COLLATE BINARY\\nLIMIT 1\",\n  \"decision-least-cost-two-stage-finish\": \"SELECT s.source_id AS sand_source, w.source_id AS wax_source,\\n       s.sand_cents + w.wax_cents + s.handling_cents + CASE WHEN s.source_id = w.source_id THEN 0 ELSE w.handling_cents END AS total_cents,\\n       s.sand_hours + w.wax_hours AS total_hours\\nFROM finish_quote AS s CROSS JOIN finish_quote AS w\\nWHERE s.sand_cents IS NOT NULL AND w.wax_cents IS NOT NULL\\n  AND s.sand_hours + w.wax_hours <= 8\\nORDER BY total_cents, total_hours, s.source_id COLLATE BINARY, w.source_id COLLATE BINARY\\nLIMIT 1\"\n}",
+  "submissions": {
+    "decision-lamp-survival-day-two": "WITH RECURSIVE failure_days AS (\n  SELECT exit_day, COUNT(*) AS failures\n  FROM lamp_exits\n  WHERE outcome = 'failed' AND exit_day <= 2\n  GROUP BY exit_day\n), steps AS (\n  SELECT ROW_NUMBER() OVER (ORDER BY f.exit_day) AS step, f.failures,\n         (SELECT COUNT(*) FROM lamp_exits AS l WHERE l.exit_day >= f.exit_day) AS at_risk\n  FROM failure_days AS f\n), km(step, survival) AS (\n  SELECT 0, 1.0\n  UNION ALL\n  SELECT s.step, k.survival * (s.at_risk - s.failures) / s.at_risk\n  FROM km AS k JOIN steps AS s ON s.step = k.step + 1\n)\nSELECT ROUND(survival, 6) AS survival_day_2\nFROM km\nORDER BY step DESC\nLIMIT 1",
+    "decision-last-confirmed-shelf-before-inventory": "SELECT c.holding_code, n.shelf_code, n.slip_no\nFROM inventory_close AS c\nJOIN shelf_note AS n ON n.slip_no = (\n  SELECT s.slip_no\n  FROM shelf_note AS s\n  WHERE s.holding_code = c.holding_code AND s.note_kind = 'sighted' AND s.note_day <= c.close_day\n  ORDER BY s.note_day DESC, s.slip_no DESC\n  LIMIT 1\n)\nORDER BY c.holding_code",
+    "decision-least-cost-dual-dealer-funding": "SELECT a.ticket_code AS a_code, b.ticket_code AS b_code,\n       a.price_cents + b.price_cents AS cost_cents,\n       a.hold_cents + b.hold_cents AS hold_cents\nFROM funding_request AS r\nJOIN dealer_ticket AS a ON a.desk_code = 'A' AND a.delivery_day <= r.cutoff_day\nJOIN dealer_ticket AS b ON b.desk_code = 'B' AND b.delivery_day <= r.cutoff_day\nWHERE a.buy_units + b.buy_units = r.need_units\n  AND a.hold_cents + b.hold_cents <= r.cap_cents\nORDER BY cost_cents, a.ticket_code COLLATE BINARY, b.ticket_code COLLATE BINARY\nLIMIT 1",
+    "decision-least-cost-two-stage-finish": "SELECT s.source_id AS sand_source, w.source_id AS wax_source,\n       s.sand_cents + w.wax_cents + s.handling_cents + CASE WHEN s.source_id = w.source_id THEN 0 ELSE w.handling_cents END AS total_cents,\n       s.sand_hours + w.wax_hours AS total_hours\nFROM finish_quote AS s CROSS JOIN finish_quote AS w\nWHERE s.sand_cents IS NOT NULL AND w.wax_cents IS NOT NULL\n  AND s.sand_hours + w.wax_hours <= 8\nORDER BY total_cents, total_hours, s.source_id COLLATE BINARY, w.source_id COLLATE BINARY\nLIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1a-b662-7171-bee4-c738d4d0194c",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22752,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 673,
+    "reasoning_output_tokens": 0
+  }
+}

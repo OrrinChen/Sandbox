@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23168,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 210,
+    "reasoning_output_tokens": 27
+  },
+  "thread": "01a20d8e-aec9-7360-b9c1-e5cca6ffdefb",
+  "packet_sha256": "f0a3749dcaab4f5b1a76e704219e61113f5049a5862da11c8cd0b25236c60e0a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q1/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/transportation-3\",\"alerts\":[{\"cik\":\"0001048911\",\"reason\":\"I forecast the consolidated revenue decline stays under 5% in fiscal Q3, then reaches at least 5% in Q4. Q2 revenue fell 3% despite base yield gains at Ground and Freight (A). Express revenue fell 6%, and lower fuel surcharges weighed on all transportation segments (A, B, D). From the Q2 rate, a two-percentage-point deterioration would reach the threshold if those pressures persist and the yield gains fade.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/transportation-3",
+        "alerts": [
+          {
+            "cik": "0001048911",
+            "reason": "I forecast the consolidated revenue decline stays under 5% in fiscal Q3, then reaches at least 5% in Q4. Q2 revenue fell 3% despite base yield gains at Ground and Freight (A). Express revenue fell 6%, and lower fuel surcharges weighed on all transportation segments (A, B, D). From the Q2 rate, a two-percentage-point deterioration would reach the threshold if those pressures persist and the yield gains fade."
+          }
+        ]
+      }
+    ]
+  }
+}

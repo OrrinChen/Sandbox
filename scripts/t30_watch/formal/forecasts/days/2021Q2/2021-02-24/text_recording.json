@@ -1,0 +1,24 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 20255,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 56,
+    "reasoning_output_tokens": 21
+  },
+  "thread": "01a20d89-d2fe-7db3-8157-7a3272df0895",
+  "packet_sha256": "c043628273176d9ae2a23fcd18c29a6105a88ae9756eaab97d5beb520ea801c0",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2021Q2/food_manufacturing-2\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-2",
+        "alerts": []
+      }
+    ]
+  }
+}

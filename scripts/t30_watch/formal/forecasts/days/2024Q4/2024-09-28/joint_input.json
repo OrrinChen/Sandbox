@@ -1,0 +1,129 @@
+{
+  "cutoff": "2024-09-28",
+  "sectors": {
+    "2024Q4/semiconductors-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000006951",
+          "issuer": "APPLIED MATERIALS INC /DE",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2024-10-28",
+          "latest_filed_period_end": "2024-07-28",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2024-08-22",
+              "text": "Semiconductor Systems revenue increased for the three months and decreased for the nine months ended July 28, 2024 as compared to the same periods in the prior year."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2024-08-22",
+              "text": "The timing of customer investment in manufacturing equipment is also affected by the timing of next-generation process development and the timing of capacity expansion to meet end-market demand."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2024-08-22",
+              "text": "Gross margin in the nine months ended July 28, 2024 increased compared to the same period in the prior year, primarily driven by lower material, freight, logistics and manufacturing costs and a decrease in inventory reserves, partially offset by unfavorable changes in customer and product mix and an increase in labor costs."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2024-08-22",
+              "text": "Gross margin in the three months ended July 28, 2024 increased compared to the same period in the prior year, primarily driven by lower material, freight, logistics and manufacturing costs."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2024-08-22",
+              "text": "Cash provided by operating activities decreased in the first nine months of fiscal 2024 compared to the same period in the prior year primarily due to lower new billings for products and services for which there were unsatisfied performance obligations, lower collections of customer receivable balances and higher payments for income taxes, partially offset by lower payments to vendors."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-04-28",
+                "filed": "2024-05-23",
+                "reported_sales_usd": 6646000000,
+                "year_ago_reported_sales_usd": 6630000000,
+                "yoy_percent": "0.2413"
+              },
+              {
+                "quarter_end": "2024-07-28",
+                "filed": "2024-08-22",
+                "reported_sales_usd": 6778000000,
+                "year_ago_reported_sales_usd": 6425000000,
+                "yoy_percent": "5.4942"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2024Q4/semiconductors-3": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001045810",
+          "issuer": "NVIDIA CORP",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2024-10-28",
+          "latest_filed_period_end": "2024-07-28",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2024-08-28",
+              "text": "Revenue was $30.0 billion, up 122% from a year ago and up 15% sequentially."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2024-08-28",
+              "text": "Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, and 3D internet applications."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2024-08-28",
+              "text": "Sequentially, gross margin decreased primarily driven by inventory provisions for low-yielding Blackwell material and a higher mix of new products within Data Center."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2024-08-28",
+              "text": "Gross margin increased from a year ago on strong Data Center revenue growth primarily driven by our Hopper GPU computing platform."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2024-08-28",
+              "text": "Reportable segment operating income – The increase in the second quarter and first half of fiscal year 2025 compared to the second quarter and first half of fiscal year 2024 in Compute & Networking and Graphics operating income was driven by higher revenue."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-04-28",
+                "filed": "2024-05-29",
+                "reported_sales_usd": 26044000000,
+                "year_ago_reported_sales_usd": 7192000000,
+                "yoy_percent": "262.1246"
+              },
+              {
+                "quarter_end": "2024-07-28",
+                "filed": "2024-08-28",
+                "reported_sales_usd": 30040000000,
+                "year_ago_reported_sales_usd": 13507000000,
+                "yoy_percent": "122.4032"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

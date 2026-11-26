@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23808,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 251,
+    "reasoning_output_tokens": 46
+  },
+  "thread": "01a20d8d-f598-7870-a3f5-5335cd766dc4",
+  "packet_sha256": "4caf3a56ecdfc8bf53ee070cac5abf6025fafbc860c754ff0108db3238124bf9",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q4/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/retail-1\",\"alerts\":[{\"cik\":\"0000912615\",\"reason\":\"Consolidated net sales growth slowed from 13.43% YoY in April to 2.22% in July. Higher traffic and more transactions kept comparable store sales flat as conversion, units per transaction and average unit retail price fell (B). I expect traffic gains to keep October above −5%, but if those gains fade while shoppers continue buying fewer units at lower prices, consolidated net sales could fall at least 5% YoY in the quarter beginning November 1.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0000912615",
+            "reason": "Consolidated net sales growth slowed from 13.43% YoY in April to 2.22% in July. Higher traffic and more transactions kept comparable store sales flat as conversion, units per transaction and average unit retail price fell (B). I expect traffic gains to keep October above −5%, but if those gains fade while shoppers continue buying fewer units at lower prices, consolidated net sales could fall at least 5% YoY in the quarter beginning November 1."
+          }
+        ]
+      }
+    ]
+  }
+}

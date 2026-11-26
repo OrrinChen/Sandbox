@@ -1,0 +1,53 @@
+{
+  "binding": {
+    "input_sha256": "69058df04710dd5950984f3a52a5b4b2726a256177653736fe1ec71c8032a7fa",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-56451\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:F7\",\n        \"formula\": \"=INDEX('Sheet 2'!$B$2:$F$7,MATCH($A2,'Sheet 2'!$A$2:$A$7,0),MATCH(B$1,'Sheet 2'!$B$1:$F$1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56599\": {\n    \"formulas\": {\n      \"B2\": \"=IFERROR(IF(AND(M5<>\\\"\\\",MOD(--M5,1)=0,COUNTIFS(G6:G30,\\\"<=\\\"&--M5,H6:H30,\\\">=\\\"&--M5)=1),SUMIFS(J6:J30,G6:G30,\\\"<=\\\"&--M5,H6:H30,\\\">=\\\"&--M5),\\\"not found - please re-enter\\\"),\\\"not found - please re-enter\\\")\"\n    }\n  },\n  \"sheet-56915\": {\n    \"fills\": [\n      {\n        \"range\": \"B18:E23\",\n        \"formula\": \"=IFERROR(IF(COUNT(INDEX(DATA!$B$14:$AC$24,MATCH(\\\"*\\\"&SUBSTITUTE(TRIM($A18),\\\" \\\",\\\"*\\\")&\\\"*\\\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)))=0,\\\"\\\",IF(B$13=\\\"% age\\\",IF(INDEX(DATA!$B$14:$AC$24,MATCH(\\\"*\\\"&SUBSTITUTE(TRIM($A18),\\\" \\\",\\\"*\\\")&\\\"*\\\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))<0,\\\"(\\\"&TEXT(ABS(INDEX(DATA!$B$14:$AC$24,MATCH(\\\"*\\\"&SUBSTITUTE(TRIM($A18),\\\" \\\",\\\"*\\\")&\\\"*\\\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))),\\\"0.00\\\")&\\\")\\\",TEXT(INDEX(DATA!$B$14:$AC$24,MATCH(\\\"*\\\"&SUBSTITUTE(TRIM($A18),\\\" \\\",\\\"*\\\")&\\\"*\\\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),\\\"0.00\\\")),ROUND(INDEX(DATA!$B$14:$AC$24,MATCH(\\\"*\\\"&SUBSTITUTE(TRIM($A18),\\\" \\\",\\\"*\\\")&\\\"*\\\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),2))),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56995\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D5\",\n        \"formula\": \"=IF(OR(B2=\\\"\\\",B2=0),\\\"Not Attempt\\\",(B2-C2)/B2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-56451": {
+      "fills": [
+        {
+          "range": "B2:F7",
+          "formula": "=INDEX('Sheet 2'!$B$2:$F$7,MATCH($A2,'Sheet 2'!$A$2:$A$7,0),MATCH(B$1,'Sheet 2'!$B$1:$F$1,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-56599": {
+      "formulas": {
+        "B2": "=IFERROR(IF(AND(M5<>\"\",MOD(--M5,1)=0,COUNTIFS(G6:G30,\"<=\"&--M5,H6:H30,\">=\"&--M5)=1),SUMIFS(J6:J30,G6:G30,\"<=\"&--M5,H6:H30,\">=\"&--M5),\"not found - please re-enter\"),\"not found - please re-enter\")"
+      }
+    },
+    "sheet-56915": {
+      "fills": [
+        {
+          "range": "B18:E23",
+          "formula": "=IFERROR(IF(COUNT(INDEX(DATA!$B$14:$AC$24,MATCH(\"*\"&SUBSTITUTE(TRIM($A18),\" \",\"*\")&\"*\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)))=0,\"\",IF(B$13=\"% age\",IF(INDEX(DATA!$B$14:$AC$24,MATCH(\"*\"&SUBSTITUTE(TRIM($A18),\" \",\"*\")&\"*\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))<0,\"(\"&TEXT(ABS(INDEX(DATA!$B$14:$AC$24,MATCH(\"*\"&SUBSTITUTE(TRIM($A18),\" \",\"*\")&\"*\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13))),\"0.00\")&\")\",TEXT(INDEX(DATA!$B$14:$AC$24,MATCH(\"*\"&SUBSTITUTE(TRIM($A18),\" \",\"*\")&\"*\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),\"0.00\")),ROUND(INDEX(DATA!$B$14:$AC$24,MATCH(\"*\"&SUBSTITUTE(TRIM($A18),\" \",\"*\")&\"*\",DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$13)),2))),\"\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-56995": {
+      "fills": [
+        {
+          "range": "D2:D5",
+          "formula": "=IF(OR(B2=\"\",B2=0),\"Not Attempt\",(B2-C2)/B2)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-8bdb-7771-967c-c3410701e1ba",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27638,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 806,
+    "reasoning_output_tokens": 44
+  }
+}

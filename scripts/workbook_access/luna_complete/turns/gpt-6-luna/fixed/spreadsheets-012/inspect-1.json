@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-012",
+    "stage": "inspect-1",
+    "prompt_sha256": "e09e1a84f12e50bb90d224f4d20dcf387dcf772d70fa9a242d87b1f3c788a565",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122d-6a12-7aa1-9300-fb6f869dfd88"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to locate the workbook layouts and formulas relevant to each target, especially the dashboard’s selection cells and the intended output column for the text classification."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-46897\":[],\"sheet-47699\":[],\"sheet-48354\":[],\"sheet-48365\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 54458,
+          "cached_input_tokens": 46848,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 692,
+          "reasoning_output_tokens": 557
+        }
+      ],
+      "cli_final": "{\"sheet-46897\":[],\"sheet-47699\":[],\"sheet-48354\":[],\"sheet-48365\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122d-6a12-7aa1-9300-fb6f869dfd88",
+    "raw": "{\"sheet-46897\":[],\"sheet-47699\":[],\"sheet-48354\":[],\"sheet-48365\":[]}",
+    "usage": {
+      "input_tokens": 54458,
+      "cached_input_tokens": 46848,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 692,
+      "reasoning_output_tokens": 557
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

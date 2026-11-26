@@ -1,0 +1,755 @@
+{
+  "method": "Post-lock, independently extracted consolidated and year-ago quarterly facts from original SEC documents, checked dates, whole reported guidance ranges, material earlier issuer communications and EDGAR coverage. Reviewers received numerical candidate cases without alert selections. Dates represent earliest qualifying disclosure found in reviewed public material.",
+  "sha256": {
+    "protocol.json": "c230bd14bee930408515eb71fe63751c52f9e87002647a196b58d0268aa62781",
+    "protocol_lock.json": "ab381aa60418a08564bdbbc92c95034fd0fe06dde9a41523fd373ec14265bb8a",
+    "run/prediction_lock.json": "939b789e57e5e8370a7270aad6afafa64c28a4d029498675ee4f203d3930ffed",
+    "run/scorer/quarters.json": "1f814a69ed4dbde002b13a867e20c6ffc732096239f04cd446921a7be924d622",
+    "run/scorer/disclosures.json": "a2d20b82d6c372b2d2bd977bae3009a52522f6c2729002995abfb1cb5d1089dc",
+    "run/scorer/filing_inventory.json": "586cc1bac2ba39be6e0e3d853a5b6b0028b7477fe42b8f616acfc68fa7da3dc7"
+  },
+  "coverage": {
+    "numerical_onsets": 12,
+    "dated": 11,
+    "unresolved_exact_date": 1,
+    "distinct_8k_filings_checked": 194,
+    "primary_filing_document_hashes_recomputed": 342
+  },
+  "events": [
+    {
+      "issuer": "MOLSON COORS BEVERAGE CO",
+      "cik": "0000024545",
+      "quarter_start": "2024-07-01",
+      "quarter_end": "2024-09-30",
+      "first_qualifying_public_date": "2024-11-07",
+      "verified_by_date": "2024-11-07",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-06-30",
+      "prior_quarter_yoy_percent": -0.437764,
+      "threshold_usd": "3133480000.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "3042700000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/24545/000002454524000024/tap-20240930.htm",
+        "sha256": "70e1b671dc128662668452076001430523b866f9f0c4bce15fc077866fb50634",
+        "current": {
+          "usd": 3042700000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+          "context": "c-8",
+          "start": "2024-07-01",
+          "end": "2024-09-30"
+        },
+        "year_ago": {
+          "usd": 3298400000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+          "context": "c-9",
+          "start": "2023-07-01",
+          "end": "2023-09-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/24545/000002454524000023/tapex99120240930-earningsr.htm",
+        "sha256": "52f61ee85cc23ab507a18eaadb2a226fe06eeda2b9b0bf1a7dc33b2e3285e2ae",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Net sales 3,042.7 3,298.4"
+      },
+      "coverage_assessment": "August call discussed Q3 shipment destocking. Shipment volume and full-year constant-currency sales leave the reported consolidated quarter open.",
+      "sec_filings_in_inventory": 13,
+      "additional_source_checks": [
+        {
+          "date": "2024-08-06",
+          "event": "Q2 2024",
+          "url": "https://stockanalysis.com/stocks/tap/transcripts/189409-q2-2024/",
+          "transcript_page_sha256": "e5026332b39299b221904e9a1b78e242f03242a563fc427c7ea9ed1bdf3c975d",
+          "recording": "https://files.quartr.com/audio-files/f3ee2-2024-08-06-01-40-34.mpeg"
+        },
+        {
+          "date": "2024-06-05",
+          "event": "2024 dbAccess Global Consumer Conference",
+          "url": "https://stockanalysis.com/stocks/tap/transcripts/197464-2024-dbaccess-global-consumer-conference/",
+          "transcript_page_sha256": "6a93baca36bc2b70d7010ea1f6914cd58875319568b2952e53fc2cc788d8b14c",
+          "recording": "https://files.quartr.com/audio-files/b3689-2024-06-05-10-03-49.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "MOLSON COORS BEVERAGE CO",
+      "cik": "0000024545",
+      "quarter_start": "2025-01-01",
+      "quarter_end": "2025-03-31",
+      "first_qualifying_public_date": "2025-05-08",
+      "verified_by_date": "2025-05-08",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-12-31",
+      "prior_quarter_yoy_percent": -1.977927,
+      "threshold_usd": "2466580000.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "2304100000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/24545/000002454525000014/tap-20250331.htm",
+        "sha256": "63db9f74bfef2e14d3204f3b694aafdec3603bb9bfddb30b0852ca77fb54fd68",
+        "current": {
+          "usd": 2304100000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+          "context": "c-1",
+          "start": "2025-01-01",
+          "end": "2025-03-31"
+        },
+        "year_ago": {
+          "usd": 2596400000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+          "context": "c-8",
+          "start": "2024-01-01",
+          "end": "2024-03-31"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/24545/000002454525000012/tapex99120250331earningsre.htm",
+        "sha256": "9c225ecdbb918dbcc1fa0133e19842a50965092947d00acb52c99773af107be4",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Net sales 2,304.1 2,596.4"
+      },
+      "coverage_assessment": "The December conference, February earnings call and CAGNY presentation discussed quarterly shipment timing, currency and annual sales. None capped Q1 consolidated reported sales.",
+      "sec_filings_in_inventory": 13,
+      "additional_source_checks": [
+        {
+          "date": "2024-12-03",
+          "event": "Morgan Stanley Global Consumer & Retail Conference",
+          "url": "https://stockanalysis.com/stocks/tap/transcripts/258611-morgan-stanley-global-consumer-retail-conference/",
+          "transcript_page_sha256": "b1d8ae835608f7b842506fbf7d7e6d86a12ae180e2863b8175a1e84f1f0fe9cb",
+          "recording": "https://files.quartr.com/audio-files/2ba90-2024-12-03-04-11-01.mpeg"
+        },
+        {
+          "date": "2025-02-13",
+          "event": "Q4 2024",
+          "url": "https://stockanalysis.com/stocks/tap/transcripts/240474-q4-2024/",
+          "transcript_page_sha256": "fb59ff972dbabebe29d41259587a72a2eff3345bccf3ede8900b529ab7468b14",
+          "recording": "https://files.quartr.com/audio-files/087cd-2025-02-13-03-16-05.mpeg"
+        },
+        {
+          "date": "2025-02-19",
+          "event": "Consumer Analyst Group of New York Conference 2025",
+          "url": "https://stockanalysis.com/stocks/tap/transcripts/314747-consumer-analyst-group-of-new-york-conference-2025/",
+          "transcript_page_sha256": "5c1ff12bf7ee4e6b7b0e377f764c40513555be649acf46b0a7c505e72a21c5d6",
+          "recording": "https://files.quartr.com/audio-files/ff982-2025-02-19-11-42-08.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "INTEL CORP",
+      "cik": "0000050863",
+      "quarter_start": "2024-06-30",
+      "quarter_end": "2024-09-28",
+      "first_qualifying_public_date": "2024-10-31",
+      "verified_by_date": "2024-10-31",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-06-29",
+      "prior_quarter_yoy_percent": -0.895822,
+      "threshold_usd": "13450100000.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "13284000000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086324000149/intc-20240928.htm",
+        "sha256": "84ab2c64a951ed70573944855e7fb77e0d9e3134c3662f42c995ee8c4a32327b",
+        "current": {
+          "usd": 13284000000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-3",
+          "start": "2024-06-30",
+          "end": "2024-09-28"
+        },
+        "year_ago": {
+          "usd": 14158000000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-4",
+          "start": "2023-07-02",
+          "end": "2023-09-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086324000147/q324_earningsrelease.htm",
+        "sha256": "46abde8984bf1abf21d434b8496c06a7ddc6cbaf2c02b2f11b2207393fbd1c2d",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Net revenue $ 13,284 $ 14,158"
+      },
+      "coverage_assessment": "August outlook capped quarterly sales at USD 13.5bn, above the qualifying USD 13.4501bn. Reviewed May shareholder Q&A and the target-window public conferences, including August 29 and September 4. No tighter consolidated range found.",
+      "sec_filings_in_inventory": 20,
+      "additional_source_checks": [
+        {
+          "url": "https://d1io3yog0oux5.cloudfront.net/_5bcd8acc7e1b5c73a62283d752dd0b96/intel/db/958/9126/file/2024+ASM+-+Consolidated+Q%26A.pdf",
+          "sha256": "25f5cc0ad6db78de3139dff413cee8327767ae944aa0176eb41d9793668916a5",
+          "locator": "Nine-page official May 7 consolidated annual-meeting Q&A. No Q3 consolidated revenue ceiling."
+        },
+        {
+          "date": "2024-08-01",
+          "event": "Q2 2024",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/188746-q2-2024/",
+          "transcript_page_sha256": "7c7789bcec533310996f6ed54599a22ac74385700911c530a1e1e06362982494",
+          "recording": "https://files.quartr.com/audio-files/91b04-2024-08-01-10-30-12.mpeg"
+        },
+        {
+          "date": "2024-05-30",
+          "event": "Goldman Sachs Global Semiconductor Conference",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/196266-goldman-sachs-global-semiconductor-conference/",
+          "transcript_page_sha256": "7ca2234b2e57abeaa5dc06745182bdf622a29c142cbd01f708b1e98ed43caf83",
+          "recording": "https://files.quartr.com/audio-files/f914c-2024-05-30-03-41-37.mpeg"
+        },
+        {
+          "date": "2024-06-04",
+          "event": "BofA Securities 2024 Global Technology Conference",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/196280-bofa-securities-2024-global-technology-conference/",
+          "transcript_page_sha256": "326cc0d5f6482d59e6c86f9db958dc2e2a6dc37f5735973fc41c7d5864866c32",
+          "recording": "https://files.quartr.com/audio-files/c8a1f-2024-06-04-10-12-49.mpeg"
+        },
+        {
+          "date": "2024-06-12",
+          "event": "Mizuho Technology Conference 2024",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/196310-mizuho-technology-conference-2024/",
+          "transcript_page_sha256": "f24ffa94834ade1a68d1b3594f197ed0c3dee808e43793fdad3db3fb403b1312",
+          "recording": "https://files.quartr.com/audio-files/94c23-2024-06-12-03-25-51.mpeg"
+        },
+        {
+          "date": "2024-09-04",
+          "event": "The Citigroup Global TMT Conference",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/221990-the-citigroup-global-tmt-conference/",
+          "transcript_page_sha256": "232a9fd509663f54b169182b12b15e4ec1d2f35f2a7f521169c126a4958ac876",
+          "recording": "https://files.quartr.com/audio-files/08919-2024-09-04-09-32-01.mpeg"
+        },
+        {
+          "date": "2024-08-29",
+          "event": "Deutsche Bank Technology Conference 2024",
+          "url": "https://stockanalysis.com/stocks/intc/transcripts/222694-deutsche-bank-technology-conference-2024/",
+          "transcript_page_sha256": "45b652e218075938c586c71aef96e0273deee3dfdc1f69b9cdf974703263dac6",
+          "recording": "https://files.quartr.com/audio-files/442ee-2024-08-29-03-47-39.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "LINCOLN ELECTRIC HOLDINGS INC",
+      "cik": "0000059527",
+      "quarter_start": "2024-01-01",
+      "quarter_end": "2024-03-31",
+      "first_qualifying_public_date": "2024-04-25",
+      "verified_by_date": "2024-04-25",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2023-12-31",
+      "prior_quarter_yoy_percent": 13.704516,
+      "threshold_usd": "987375850.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "981197000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/59527/000005952724000015/leco-20240331x10q.htm",
+        "sha256": "2b111b7e8c55e440caed0fbf3055f37ae27a9112029047e857d71c7fa7ff8f0d",
+        "current": {
+          "usd": 981197000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "Duration_1_1_2024_To_3_31_2024_MTwvxDyJl0izWAihxuBO1A",
+          "start": "2024-01-01",
+          "end": "2024-03-31"
+        },
+        "year_ago": {
+          "usd": 1039343000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "Duration_1_1_2023_To_3_31_2023_QVhyM6Vv5k-O1r_u6j668Q",
+          "start": "2023-01-01",
+          "end": "2023-03-31"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/59527/000005952724000013/leco-20240425xex99d1.htm",
+        "sha256": "2b41a2e05fb702ccc4ad08b0ffba987839c6cc20be934a22adccd4c37d0157ad",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "981,197 100.0 % $ 1,039,343"
+      },
+      "coverage_assessment": "February earnings call allowed flat sales. February 22 Barclays discussion covered industrial markets and strategy. April shareholder meeting required a holder access number under the proxy. The public voting filing carried no sales update.",
+      "sec_filings_in_inventory": 16,
+      "additional_source_checks": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/59527/000114036124013708/ny20010153x1_def14a.htm",
+          "sha256": "832ab709ca6f2361342834a9ff9d26716ceb095536bdf90c7e4975a535c9d52b",
+          "locator": "Annual meeting access requires a holder control number."
+        },
+        {
+          "date": "2024-02-15",
+          "event": "Q4 2023",
+          "url": "https://stockanalysis.com/stocks/leco/transcripts/126598-q4-2023/",
+          "transcript_page_sha256": "719a88ff4940158ec9a9a3dfdba4923a729b0775bff2d7839e51e36639d9fa27",
+          "recording": "https://files.quartr.com/audio-files/1c64b-2024-02-15-03-56-50.mpeg"
+        },
+        {
+          "date": "2024-02-22",
+          "event": "Barclays 41st Annual Industrial Select Conference",
+          "url": "https://stockanalysis.com/stocks/leco/transcripts/166229-barclays-41st-annual-industrial-select-conference/",
+          "transcript_page_sha256": "a8131ce4949295f02838c9c85417cfd88e8f8195bf730efc8e97b219ea4005f2",
+          "recording": "https://files.quartr.com/audio-files/d7e3d-2024-02-22-04-30-37.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "SEMTECH CORP",
+      "cik": "0000088941",
+      "quarter_start": "2024-01-29",
+      "quarter_end": "2024-04-28",
+      "first_qualifying_public_date": null,
+      "verified_by_date": "2024-03-28",
+      "status": "exact_date_unresolved",
+      "prior_quarter_end": "2024-01-28",
+      "prior_quarter_yoy_percent": 15.184584,
+      "threshold_usd": "224712050.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "205000000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/88941/000008894124000065/smtc-20240428.htm",
+        "sha256": "bfd4a92c58bf017802490e2ed8326cbbe470f582d765a7211e5101f696fd83b8",
+        "current": {
+          "usd": 206105000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-1",
+          "start": "2024-01-29",
+          "end": "2024-04-28"
+        },
+        "year_ago": {
+          "usd": 236539000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-3",
+          "start": "2023-01-30",
+          "end": "2023-04-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/88941/000008894124000029/smtc-01282024x8k991.htm",
+        "sha256": "24b1c49b8154b4d62e7be61d1a1390c7edd6ed2fba8212eba2580d1414659ea2",
+        "locator": "Issuer exhibit dateline and quarterly guidance row (millions USD).",
+        "excerpt": "Net sales $ 200.0 +/- $5.0"
+      },
+      "coverage_assessment": "December outlook was for the preceding quarter. March guidance established the crossing by March 28. No public replay, text or issuer-specific attendance restrictions could be verified for the February 29 Susquehanna meeting. Other issuers’ formats do not establish what Semtech did.",
+      "sec_filings_in_inventory": 23,
+      "additional_source_checks": [
+        {
+          "date": "2023-12-06",
+          "event": "Q3 2024",
+          "url": "https://stockanalysis.com/stocks/smtc/transcripts/106853-q3-2024/",
+          "transcript_page_sha256": "1733b2e61b6c5bed85e123d6e9ec07edeeb029e140125330ca45263a35cd3699",
+          "recording": "https://files.quartr.com/audio-files/9ff3f-2023-12-06-11-03-10.mpeg"
+        },
+        {
+          "date": "2024-03-28",
+          "event": "Q4 2024",
+          "url": "https://stockanalysis.com/stocks/smtc/transcripts/133436-q4-2024/",
+          "transcript_page_sha256": "8d7c87ad92ad17c97f086bc7714d1c454dedb96964422a9ebae3deea54f14190",
+          "recording": "https://files.quartr.com/audio-files/72af7-2024-03-28-10-22-03.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "MESA AIR GROUP INC",
+      "cik": "0000810332",
+      "quarter_start": "2024-10-01",
+      "quarter_end": "2024-12-31",
+      "first_qualifying_public_date": "2025-05-19",
+      "verified_by_date": "2025-05-19",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-09-30",
+      "prior_quarter_yoy_percent": 0.779078,
+      "threshold_usd": "112838150.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "103233000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/810332/000095017025073787/mesa-20241231.htm",
+        "sha256": "a6834f0fbc0e2a686cff92e70b113efc9f085d96d1fb48f37104ecb02c46d596",
+        "current": {
+          "usd": 103233000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "C_153b4d05-47cf-4c33-9654-9d58b4c160d7",
+          "start": "2024-10-01",
+          "end": "2024-12-31"
+        },
+        "year_ago": {
+          "usd": 118777000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "C_bdc1dfe3-f0a9-4db8-a463-2d0598998bf9",
+          "start": "2023-10-01",
+          "end": "2023-12-31"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/810332/000095017025075323/mesa-ex99_1.htm",
+        "sha256": "6bb57a3d1b921d86d2b4893d0e5f2d4ae6339fd81d4c19f4dba112d86c324cd7",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Total operating revenues 103,233 118,777"
+      },
+      "coverage_assessment": "April merger communication concerned Republic/perimeter and the May 14 prior-quarter release reported September. December 10-Q was accepted Friday after the SEC dissemination cutoff and filed Monday May 19, the release date.",
+      "sec_filings_in_inventory": 23,
+      "additional_source_checks": []
+    },
+    {
+      "issuer": "BUCKLE INC",
+      "cik": "0000885245",
+      "quarter_start": "2024-02-04",
+      "quarter_end": "2024-05-04",
+      "first_qualifying_public_date": "2024-05-09",
+      "verified_by_date": "2024-05-09",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-02-03",
+      "prior_quarter_yoy_percent": -4.833925,
+      "threshold_usd": "268692300.00",
+      "comparison_type": "yoy_percent",
+      "disclosed_upper_bound": "-7.2",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/885245/000088524524000067/bke-20240504.htm",
+        "sha256": "c7b02d8c1ddbf4c3bcd635dd2c516b121faa3c5b8f90088ea79d9373d161b0a6",
+        "current": {
+          "usd": 262480000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-1",
+          "start": "2024-02-04",
+          "end": "2024-05-04"
+        },
+        "year_ago": {
+          "usd": 282834000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-5",
+          "start": "2023-01-29",
+          "end": "2023-04-29"
+        }
+      },
+      "dated_source": {
+        "url": "https://corporate.buckle.com/investor-relations/press-releases/press-release-details/2024/The-Buckle-Inc.-Reports-April-2024-Net-Sales/default.aspx",
+        "representation_url": "https://r.jina.ai/https://corporate.buckle.com/investor-relations/press-releases/press-release-details/2024/The-Buckle-Inc.-Reports-April-2024-Net-Sales/default.aspx",
+        "representation_sha256": "d3bf676255f31d3fb362ada5826100666559436982bb868ea49f073414c5d7b3",
+        "locator": "Issuer release of May 9, second paragraph, full 13-week net sales.",
+        "excerpt": "decreased 7.2 percent to $262.5 million"
+      },
+      "coverage_assessment": "March and April monthly releases left part of the quarter unknown. May 9 April release gives all 13 weeks. Prior comparator April 29 is fiscal GAAP; the separate comparable-store number used a shifted 13-week period.",
+      "sec_filings_in_inventory": 14,
+      "additional_source_checks": [
+        {
+          "url": "https://kbjr.marketminute.com/article/bizwire-2024-5-9-the-buckle-inc-reports-april-2024-net-sales",
+          "sha256": "757f9dc7c4d8878cd93e06cf327708343f3326dff8bed6331e9b4b863b48c13b",
+          "locator": "Company-issued Business Wire release, syndicated at 6:50 a.m. EDT on May 9."
+        },
+        {
+          "date": "2023-11-17",
+          "event": "Q3 2024",
+          "url": "https://stockanalysis.com/stocks/bke/transcripts/70440-q3-2024/",
+          "transcript_page_sha256": "cf7e0c7461b44607f705bf2a49ac72e2b95924cdc8e01927a1350ff177a854da",
+          "recording": "https://files.quartr.com/audio-files/750cb-2023-11-17-04-26-22.mpeg"
+        },
+        {
+          "date": "2024-03-15",
+          "event": "Q4 2024",
+          "url": "https://stockanalysis.com/stocks/bke/transcripts/128551-q4-2024/",
+          "transcript_page_sha256": "737c183b3336a43d0e50789e1061528fe4cc11110bf895133f4ed8c7f7494c2c",
+          "recording": "https://files.quartr.com/audio-files/7794d-2024-03-15-03-43-01.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "ARCBEST CORP /DE/",
+      "cik": "0000894405",
+      "quarter_start": "2024-07-01",
+      "quarter_end": "2024-09-30",
+      "first_qualifying_public_date": "2024-11-01",
+      "verified_by_date": "2024-11-01",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-06-30",
+      "prior_quarter_yoy_percent": -2.322958,
+      "threshold_usd": "1071932500.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "1063124000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/894405/000155837024014134/arcb-20240930x10q.htm",
+        "sha256": "c0864072044a3ced750324e399238cc1609efe11a9169e766dfdd0d0b61f4f69",
+        "current": {
+          "usd": 1063124000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "Duration_7_1_2024_To_9_30_2024_anAwQf0G-EGFrKG7J-vrDQ",
+          "start": "2024-07-01",
+          "end": "2024-09-30"
+        },
+        "year_ago": {
+          "usd": 1128350000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "Duration_7_1_2023_To_9_30_2023_vq_qci2lRkC2xxVsHZOJDA",
+          "start": "2023-07-01",
+          "end": "2023-09-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/894405/000155837024014076/arcb-20241101xex99d1.htm",
+        "sha256": "83c6d6b9d0f32c51aa01eb8c7faf8579d28ce10122becf51496998c542b0f5c4",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Total consolidated revenues from continuing operations $ 1,063,124 $ 1,128,350"
+      },
+      "coverage_assessment": "September 3 interim update supplied July–August segment revenue-per-day figures. Excluding September, one cannot establish quarterly consolidated revenue. The original 2023 release used the same continuing-operations denominator.",
+      "sec_filings_in_inventory": 26,
+      "additional_source_checks": [
+        {
+          "date": "2024-04-30",
+          "event": "Q1 2024",
+          "url": "https://stockanalysis.com/stocks/arcb/transcripts/165136-q1-2024/",
+          "transcript_page_sha256": "db4cb451179c7a9b1cf7abf93dc1ab00dbb04af41ce9ee6411c70dea868e40bc",
+          "recording": "https://files.quartr.com/audio-files/667c6-2024-04-30-03-50-01.mpeg"
+        },
+        {
+          "date": "2024-08-02",
+          "event": "Q2 2024",
+          "url": "https://stockanalysis.com/stocks/arcb/transcripts/189386-q2-2024/",
+          "transcript_page_sha256": "c5d01a4f1e0e8d9dc0b6d52181db6570b0caa78623c8e23b22ae337495ddc5b8",
+          "recording": "https://files.quartr.com/audio-files/6c116-2024-08-02-02-20-38.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "INGREDION INC",
+      "cik": "0001046257",
+      "quarter_start": "2024-01-01",
+      "quarter_end": "2024-03-31",
+      "first_qualifying_public_date": "2024-05-08",
+      "verified_by_date": "2024-05-08",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2023-12-31",
+      "prior_quarter_yoy_percent": -3.32159,
+      "threshold_usd": "2030150000.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "1882000000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1046257/000104625724000018/ingr-20240331.htm",
+        "sha256": "fedd3dff4521c40d9b4c9f88e1ad9175615260f11bebf8d62a56e839abb1e05c",
+        "current": {
+          "usd": 1882000000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-1",
+          "start": "2024-01-01",
+          "end": "2024-03-31"
+        },
+        "year_ago": {
+          "usd": 2137000000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-3",
+          "start": "2023-01-01",
+          "end": "2023-03-31"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1046257/000104625724000012/ingr-2024331xexx99.htm",
+        "sha256": "74d7d176343d67370f488202f276c8e1420757502869063e78ebe8195cd4b8db",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Net sales $ 1,882 $ 2,137"
+      },
+      "coverage_assessment": "February 6 call forecast a mid-single-digit decline. The wording permits less than 5%. CAGNY discussion supplied no qualifying quarter-specific upper bound.",
+      "sec_filings_in_inventory": 12,
+      "additional_source_checks": [
+        {
+          "date": "2024-02-06",
+          "event": "Q4 2023",
+          "url": "https://stockanalysis.com/stocks/ingr/transcripts/124232-q4-2023/",
+          "transcript_page_sha256": "52a37c5bb5ad21280aae4ddce21a5974beddfd9b68d2e84d52ec5ef026419ad7",
+          "recording": "https://files.quartr.com/audio-files/04617-2024-02-06-03-58-18.mpeg"
+        },
+        {
+          "date": "2024-02-21",
+          "event": "CAGNY 2024 Conference",
+          "url": "https://stockanalysis.com/stocks/ingr/transcripts/166226-cagny-2024-conference/",
+          "transcript_page_sha256": "c1a5d0a65f5e75c10fe632a877a49b7d775ebd50078efb162988eae50d818cb0",
+          "recording": "https://files.quartr.com/audio-files/8f6c0-2024-02-21-10-11-17.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "AMKOR TECHNOLOGY, INC.",
+      "cik": "0001047127",
+      "quarter_start": "2024-10-01",
+      "quarter_end": "2024-12-31",
+      "first_qualifying_public_date": "2025-02-10",
+      "verified_by_date": "2025-02-10",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-09-30",
+      "prior_quarter_yoy_percent": 2.184441,
+      "threshold_usd": "1664220450.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "1629118000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1047127/000104712725000005/amkr123124erex-991.htm",
+        "sha256": "305664e3012b0414ea6981eaa8d2a3b071a426477577f0a484b80090a6ff1314",
+        "current": {
+          "usd": 1629118000,
+          "column": "2024",
+          "table": "Three months ended December 31, consolidated income statement, net sales in thousands of USD."
+        },
+        "year_ago": {
+          "usd": 1751811000,
+          "column": "2023",
+          "table": "Three months ended December 31, consolidated income statement, net sales in thousands of USD."
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1047127/000104712725000005/amkr123124erex-991.htm",
+        "sha256": "305664e3012b0414ea6981eaa8d2a3b071a426477577f0a484b80090a6ff1314",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Net sales $ 1,629,118 $ 1,751,811"
+      },
+      "coverage_assessment": "October guidance of USD 1.60–1.70bn straddled the USD 1.66422045bn threshold. December management repeated the midpoint decline; neither December event set a narrower binding range.",
+      "sec_filings_in_inventory": 11,
+      "additional_source_checks": [
+        {
+          "date": "2024-10-28",
+          "event": "Q3 2024",
+          "url": "https://stockanalysis.com/stocks/amkr/transcripts/216767-q3-2024/",
+          "transcript_page_sha256": "753bd5c35a0135d8f6805498be824e217b4fe9ee0534b7095475b1c0a587f79c",
+          "recording": "https://files.quartr.com/audio-files/93260-2024-10-28-09-08-22.mpeg"
+        },
+        {
+          "date": "2024-12-03",
+          "event": "UBS Global Technology and AI Conference",
+          "url": "https://stockanalysis.com/stocks/amkr/transcripts/258617-ubs-global-technology-and-ai-conference/",
+          "transcript_page_sha256": "ae569ed11577bb5817e18df92ddd702595a01f97e6ee5d3893d0792775ec811b",
+          "recording": "https://files.quartr.com/audio-files/2d2a8-2024-12-03-05-47-22.mpeg"
+        },
+        {
+          "date": "2024-12-10",
+          "event": "51st Nasdaq London Investor Conference",
+          "url": "https://stockanalysis.com/stocks/amkr/transcripts/262206-51st-nasdaq-london-investor-conference/",
+          "transcript_page_sha256": "7a89f3bc21e2ee42ab32b95fbda89c1a661fcd22c9b294c00c9ab149de14d493",
+          "recording": "https://files.quartr.com/audio-files/95f20-2024-12-10-09-08-39.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "UNIVERSAL LOGISTICS HOLDINGS, INC.",
+      "cik": "0001308208",
+      "quarter_start": "2025-01-01",
+      "quarter_end": "2025-03-29",
+      "first_qualifying_public_date": "2025-02-07",
+      "verified_by_date": "2025-02-07",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-12-31",
+      "prior_quarter_yoy_percent": 18.98368,
+      "threshold_usd": "467311650.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "410000000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1308208/000095017025067068/ulh-20250329.htm",
+        "sha256": "d65636ae3144f9963f42c415d5574972d2c25eb48a090c05035cd036473f5019",
+        "current": {
+          "usd": 382390000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "C_d2619a15-204f-4dd3-a0b0-93d4fbaac907",
+          "start": "2025-01-01",
+          "end": "2025-03-29"
+        },
+        "year_ago": {
+          "usd": 491907000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "C_0508a761-e3c6-4c2b-a47c-6596881db406",
+          "start": "2024-01-01",
+          "end": "2024-03-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://files.quartr.com/audio-files/a71e0-2025-02-07-03-19-39.mpeg",
+        "sha256": "b121abd340a0c4c9ca98ed934a7dd0524b5bed43ba56b31dc272001933604e38",
+        "locator": "CFO prepared guidance; offline speech recognition at 819.70–830.89 seconds from start.",
+        "excerpt": "top line revenues between three hundred and ninety and four hundred and ten million"
+      },
+      "coverage_assessment": "February 6 release announced the call, without the Q1 company sales range. The CFO gave USD 390–410m on February 7. The 10-Q tags the sales period as January 1–March 29 (December 31 is one day before the quarter).",
+      "sec_filings_in_inventory": 12,
+      "additional_source_checks": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1308208/000095017025015408/ulh-ex99_1.htm",
+          "sha256": "0f5a1b095259df816c38875b8567cd963897d4b7642c12c105d9a7135474d8c5",
+          "locator": "Conference call timetable, February 7 at 10:00 a.m. ET."
+        },
+        {
+          "date": "2024-10-25",
+          "event": "Q3 2024",
+          "url": "https://stockanalysis.com/stocks/ulh/transcripts/216365-q3-2024/",
+          "transcript_page_sha256": "aa1a39e6eff3a9cabb3aec3c87bafb3fe8fba3b1b4477226d1fa11b3528c5e64",
+          "recording": "https://files.quartr.com/audio-files/6d910-2024-10-25-02-27-36.mpeg"
+        },
+        {
+          "date": "2025-02-07",
+          "event": "Q4 2024",
+          "url": "https://stockanalysis.com/stocks/ulh/transcripts/237848-q4-2024/",
+          "transcript_page_sha256": "98771847a071e68bfe54318a8efc2f3c7ffe0a58e9632aa57d0592b8f1515c09",
+          "recording": "https://files.quartr.com/audio-files/a71e0-2025-02-07-03-19-39.mpeg"
+        }
+      ]
+    },
+    {
+      "issuer": "JOHN BEAN TECHNOLOGIES CORP",
+      "cik": "0001433660",
+      "quarter_start": "2024-04-01",
+      "quarter_end": "2024-06-30",
+      "first_qualifying_public_date": "2024-07-30",
+      "verified_by_date": "2024-07-30",
+      "status": "earliest_verified_in_reviewed_issuer_coverage",
+      "prior_quarter_end": "2024-03-31",
+      "prior_quarter_yoy_percent": 0.978121,
+      "threshold_usd": "406315000.00",
+      "comparison_type": "usd",
+      "disclosed_upper_bound": "402300000",
+      "actual_and_comparator_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1433660/000143366024000035/jbt-20240630.htm",
+        "sha256": "2ad59d878d2eb13169d81a2e5d4288b64713ee7d59a00dee00043bdfa8e698a4",
+        "current": {
+          "usd": 402300000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-11",
+          "start": "2024-04-01",
+          "end": "2024-06-30"
+        },
+        "year_ago": {
+          "usd": 427700000,
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "context": "c-12",
+          "start": "2023-04-01",
+          "end": "2023-06-30"
+        }
+      },
+      "dated_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1433660/000143366024000026/a2024q2earningsexhibit9918k.htm",
+        "sha256": "aa1a629385b3a5b88efe3e7cfbc1fd98b919dbbf218bd78176a5189c7a5c5554",
+        "locator": "Issuer exhibit dateline and target-quarter GAAP consolidated income statement/comparative net-sales row.",
+        "excerpt": "Revenue $ 402.3 $ 427.7"
+      },
+      "coverage_assessment": "Prior two calls provided annual guidance and approximate half-year weighting, without a Q2 bound. June public discussions concerned the Marel transaction. The May annual meeting required shareholder credentials.",
+      "sec_filings_in_inventory": 20,
+      "additional_source_checks": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1433660/000143366024000015/jbt-20240328.htm",
+          "sha256": "0ae683ac0a39b92658047efbe65d8edc776972e0e822e68cd2c594cbf98f5ddc",
+          "locator": "Annual meeting access requires a holder control number."
+        },
+        {
+          "date": "2024-02-21",
+          "event": "Q4 2023",
+          "url": "https://stockanalysis.com/stocks/jbtm/transcripts/120209-q4-2023/",
+          "transcript_page_sha256": "99fe7d3c125d391a713a3c0e91a328afa7e33df971132d715658be03023ac653",
+          "recording": "https://files.quartr.com/audio-files/0184b-2024-02-21-03-26-37.mpeg"
+        },
+        {
+          "date": "2024-05-02",
+          "event": "Q1 2024",
+          "url": "https://stockanalysis.com/stocks/jbtm/transcripts/169001-q1-2024/",
+          "transcript_page_sha256": "c15da9cbd45a7d972fac43b9e874bbd45505e34678e4b36b0ae0e469a22138b4",
+          "recording": "https://files.quartr.com/audio-files/ea8df-2024-05-02-03-57-23.mpeg"
+        },
+        {
+          "date": "2024-06-20",
+          "event": "Business Combination",
+          "url": "https://stockanalysis.com/stocks/jbtm/transcripts/204190-business-combination/",
+          "transcript_page_sha256": "4bb983cadb51e1c023755c7959d954818de707e85c4b5da11bd1cf8e00985090",
+          "recording": "https://files.quartr.com/audio-files/b69ca-2024-06-20-03-20-02.mpeg"
+        },
+        {
+          "date": "2024-06-24",
+          "event": "Investor Update",
+          "url": "https://stockanalysis.com/stocks/jbtm/transcripts/205244-investor-update/",
+          "transcript_page_sha256": "3d283ce13b43fd59ce1c7ba8f533a9f458901b9dc3875bcbc9a8d26c522daae9",
+          "recording": "https://files.quartr.com/audio-files/3a34b-2024-06-24-02-20-30.mpeg"
+        }
+      ]
+    }
+  ]
+}

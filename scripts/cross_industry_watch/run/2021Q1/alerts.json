@@ -1,0 +1,139 @@
+{
+  "origin": "2021Q1",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000023217",
+          "reason": "A shows reported Q2 net sales grew despite Foodservice weakness. B and C tie part of the 14% Grocery & Snacks volume gain to customers replenishing inventory. If restocking fades as Conagra laps elevated at-home demand, consolidated net sales could fall at least 5% year over year by fiscal Q4."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000003197",
+          "reason": "B shows annual orders fell 27% to $279.6 million, well below the $316.0 million of sales in A. Fewer orders available to ship put Q1 and Q2 sales at risk of a 5% year-over-year decline. A gives only annual sales, so the starting quarterly rate is uncertain."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001579910",
+          "reason": "B says customers requested engagement deferrals and employees had difficulty delivering products and services. Those delays could shift enough revenue out of Q1 or Q2 to produce a new 5% year-over-year decline, though the filing gives neither the amount deferred nor the latest quarterly growth rate."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0001448056",
+          "reason": "D says slower activity and the pricing change hurt both revenue and deferred revenue. A shows nine-month revenue still grew 13%. As existing subscriptions run off, weaker deferred revenue could pull a coming quarter's reported revenue at least 5% below the prior year."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0000023217",
+          "reason": "Reported sales YoY 12.06% then 6.18%; linear projections 0.31% and -5.56%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000880266",
+          "reason": "Reported sales YoY 18.40% then 8.10%; linear projections -2.21% and -12.51%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001579910",
+          "reason": "Reported sales YoY 1678.48% then 32.24%; linear projections -1613.99% and -3260.23%."
+        },
+        {
+          "cik": "0000723125",
+          "reason": "Reported sales YoY 24.35% then 12.23%; linear projections 0.10% and -12.02%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000718877",
+          "reason": "Reported sales YoY 52.42% then 21.45%; linear projections -9.52% and -40.49%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

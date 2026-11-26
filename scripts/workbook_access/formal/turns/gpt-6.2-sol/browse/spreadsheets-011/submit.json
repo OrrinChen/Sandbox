@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-011",
+    "stage": "submit",
+    "prompt_sha256": "b2b3b2d1f331b9938206a5361d469a23d6056d3859af9ce8b1596644275c7c27",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d7-a21a-7190-a6f1-b745f1502771",
+    "raw": "{\n  \"sheet-45063\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:B6\",\n        \"formula\": \"=IFNA(VLOOKUP(A2,Sheet2!$A$2:$B$6,2,FALSE),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45300\": {\n    \"fills\": [\n      {\n        \"range\": \"B1:B4\",\n        \"formula\": \"=IFERROR(LEFT(A1,FIND(\\\"FT\\\",A1)-1),A1)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-45937\": {\n    \"fills\": [\n      {\n        \"range\": \"E7:E9\",\n        \"formula\": \"=IFNA(IF(C7<=INDEX($I$20:$I$22,MATCH(C7,$H$20:$H$22,1)),INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0)),\\\"\\\"),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-46167\": {\n    \"formulas\": {\n      \"D2\": \"=SUMIF(A2:A12,111111,B2:B12)\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 19411,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 508,
+      "reasoning_output_tokens": 216
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

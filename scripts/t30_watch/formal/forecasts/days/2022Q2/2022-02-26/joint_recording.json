@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21719,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 85,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8a-11f3-75a3-be72-02c204d958af",
+  "packet_sha256": "e5a8425376b5a7ddfeb0bf3866034f765073f95ec5207eab0b6069022b701a9b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\": \"2022Q2/food_manufacturing-2\", \"alerts\": []},\n    {\"sector\": \"2022Q2/industrial_machinery-2\", \"alerts\": []},\n    {\"sector\": \"2022Q2/semiconductors-2\", \"alerts\": []}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q2/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

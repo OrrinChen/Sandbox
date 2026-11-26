@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22626,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 83,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d90-acf9-7c43-ba8c-c515c7a134d8",
+  "packet_sha256": "51c03e4f43ed598f474bafcf286f964b66efa05f707b3ca111c9b40b635b02bb",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\": \"2024Q4/semiconductors-1\", \"alerts\": []},\n    {\"sector\": \"2024Q4/semiconductors-2\", \"alerts\": []},\n    {\"sector\": \"2024Q4/semiconductors-3\", \"alerts\": []}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q4/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/semiconductors-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q4/semiconductors-3",
+        "alerts": []
+      }
+    ]
+  }
+}

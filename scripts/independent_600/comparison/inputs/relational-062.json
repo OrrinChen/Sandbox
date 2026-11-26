@@ -1,0 +1,299 @@
+[
+  {
+    "task_id": "decision-restore-alternating-rail-marker",
+    "tool": "sqlite.query",
+    "instruction": "A display rail carries one decimal digit at each consecutive position, numbered from 1. Odd positions carry odd digits and even positions carry even digits. Exactly one marker_digit is NULL. The single checksum row gives the remainder when the sum of all digits on the complete rail is divided by 5. Recover the missing digit using both rules. Return one row with missing_position followed by restored_digit. Positions count markers and digits range from 0 through 9. The parity and checksum together identify exactly one digit, so there are no ties or row-order choices. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "rail_checksum": {
+        "columns": [
+          "remainder INTEGER"
+        ],
+        "rows": [
+          [
+            1
+          ]
+        ]
+      },
+      "rail_markers": {
+        "columns": [
+          "position INTEGER",
+          "marker_digit INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            null
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "missing_position",
+      "restored_digit"
+    ]
+  },
+  {
+    "task_id": "decision-restore-counts-from-aisle-snapshots",
+    "tool": "csv.export",
+    "instruction": "Reconstruct aisle_counts.csv as it stood at the end of minute 30 after shift start. Each snapshot_files row registers a complete replacement count for one aisle, including files with zero detail rows. Select the most recently received file per aisle at or before the cutoff. If two files arrived in the same integer minute, the greater intake_seq wins. Intake sequences are unique. Copy every detail row of the selected file, including explicit zero counts. An omitted bin has no row in that snapshot, and an empty snapshot contributes no rows. Ignore later arrivals. File IDs are unique, bin codes are unique within a file, piece_qty counts individual pieces, and no values are null. Return aisle_code, bin_code, piece_qty in ascending aisle_code, bin_code order. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "bin_counts": {
+        "columns": [
+          "file_id TEXT",
+          "bin_code TEXT",
+          "piece_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "a0",
+            "left",
+            5
+          ],
+          [
+            "a0",
+            "rear",
+            8
+          ],
+          [
+            "b0",
+            "top",
+            4
+          ],
+          [
+            "a1",
+            "left",
+            3
+          ],
+          [
+            "a2",
+            "left",
+            0
+          ],
+          [
+            "a2",
+            "side",
+            2
+          ],
+          [
+            "a3",
+            "side",
+            7
+          ]
+        ]
+      },
+      "snapshot_files": {
+        "columns": [
+          "file_id TEXT",
+          "aisle_code TEXT",
+          "arrival_min INTEGER",
+          "intake_seq INTEGER"
+        ],
+        "rows": [
+          [
+            "a0",
+            "A",
+            12,
+            1
+          ],
+          [
+            "b0",
+            "B",
+            16,
+            2
+          ],
+          [
+            "a1",
+            "A",
+            25,
+            3
+          ],
+          [
+            "a2",
+            "A",
+            25,
+            4
+          ],
+          [
+            "b1",
+            "B",
+            30,
+            5
+          ],
+          [
+            "a3",
+            "A",
+            31,
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "aisle_code",
+      "bin_code",
+      "piece_qty"
+    ]
+  },
+  {
+    "task_id": "decision-retired-components-sale-settlement",
+    "tool": "sqlite.query",
+    "instruction": "For each final sale receipt, calculate the gain or loss on the units retired from its fixture lot. All money is in cents. The lot card gives original cost, accumulated depreciation at the start of month 1, residual value and monthly straight-line charge, each per unit. Charge depreciation for whole months preceding the sale month, with no charge in the sale month and no reduction below residual. Units within a lot are identical. Receipt proceeds and removal fees are totals for that receipt. A NULL fee means the buyer covered removal at zero seller cost. Exclude draft receipts. Return receipt_id, retired_book_cents, net_proceeds_cents, gain_loss_cents, with a positive sign for a gain. Cite the final receipt by its actual ID. Sort by sale_month and then binary receipt_id ascending. Receipt IDs and lot codes within their respective tables are unique, opening book values are at least residual, and no other fields are NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "fixture_lot": {
+        "columns": [
+          "lot_code TEXT",
+          "unit_cost INTEGER",
+          "unit_open_dep INTEGER",
+          "unit_residual INTEGER",
+          "unit_month_dep INTEGER"
+        ],
+        "rows": [
+          [
+            "RAIL",
+            1800,
+            600,
+            200,
+            150
+          ],
+          [
+            "RACK",
+            3200,
+            2500,
+            500,
+            120
+          ]
+        ]
+      },
+      "sale_receipt": {
+        "columns": [
+          "receipt_id TEXT",
+          "lot_code TEXT",
+          "sale_month INTEGER",
+          "units_sold INTEGER",
+          "proceeds INTEGER",
+          "removal_fee INTEGER",
+          "final_flag INTEGER",
+          "receipt_text TEXT"
+        ],
+        "rows": [
+          [
+            "S7",
+            "RAIL",
+            3,
+            3,
+            3000,
+            180,
+            1,
+            "Three rails accepted, removal billed to seller."
+          ],
+          [
+            "S2",
+            "RACK",
+            3,
+            2,
+            950,
+            null,
+            1,
+            "Buyer collected both racks."
+          ],
+          [
+            "S1",
+            "RAIL",
+            1,
+            1,
+            1500,
+            40,
+            0,
+            "Unsigned quote for a spare rail."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "receipt_id",
+      "retired_book_cents",
+      "net_proceeds_cents",
+      "gain_loss_cents"
+    ]
+  },
+  {
+    "task_id": "decision-return-crate-pilot-quorum",
+    "tool": "sqlite.query",
+    "instruction": "For each crate standard, report when a second distinct depot first confirmed live use. Each evidence row is a dated depot bulletin. The coded stage distinguishes live use from a trial. A depot counts once per standard, even if it publishes several live bulletins. Use its earliest live bulletin, breaking same-day ties by ascending source_id. Order the resulting depot confirmations by bulletin_day and then source_id, and cite the confirmation that brings the count to two. Omit standards that never reach two depots. All dates are ISO calendar days, identifiers use SQLite binary text order, and no input values are null. Return standard_code, adoption_day, source_id in ascending standard_code order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "depot_bulletin": {
+        "columns": [
+          "source_id TEXT",
+          "standard_code TEXT",
+          "depot_code TEXT",
+          "bulletin_day TEXT",
+          "stage_code TEXT",
+          "excerpt TEXT"
+        ],
+        "rows": [
+          [
+            "B11",
+            "Fold",
+            "Ash",
+            "2032-04-01",
+            "trial",
+            "Ash tested folding crates on an empty return run."
+          ],
+          [
+            "B12",
+            "Fold",
+            "Ash",
+            "2032-04-03",
+            "live",
+            "Ash began shipping returns in folding crates."
+          ],
+          [
+            "B13",
+            "Fold",
+            "Ash",
+            "2032-04-04",
+            "live",
+            "Ash used folding crates on its second return run."
+          ],
+          [
+            "B15",
+            "Fold",
+            "Elm",
+            "2032-04-06",
+            "live",
+            "Elm dispatched its first full load of folding crates."
+          ],
+          [
+            "B14",
+            "Fold",
+            "Bay",
+            "2032-04-06",
+            "live",
+            "Bay put folding crates into daily service."
+          ],
+          [
+            "B16",
+            "Nest",
+            "Elm",
+            "2032-04-02",
+            "live",
+            "Elm switched its returns to nesting crates."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "standard_code",
+      "adoption_day",
+      "source_id"
+    ]
+  }
+]

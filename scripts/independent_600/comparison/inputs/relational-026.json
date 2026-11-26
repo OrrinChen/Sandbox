@@ -1,0 +1,317 @@
+[
+  {
+    "task_id": "decision-evidenced-short-settlement-reconciliation",
+    "tool": "sqlite.query",
+    "instruction": "For each incoming transfer where credited_cents is below instructed_cents, calculate the unexplained shortfall in USD cents after documented fees. Both amounts are USD settlement amounts after conversion. The bank writes one primary evidence note per USD fee: note_text is exactly 'Debited USD cents N' for a charge actually taken or 'Quoted USD cents N' for an estimate, where N is a positive decimal integer. Only debited fees on the same transfer explain a short credit. Sum those fees and floor the unexplained shortfall at zero. Include fully explained short credits. For each reported transfer, cite every debited note used, even when their sum exceeds the shortfall, by joining the actual note_id values with commas in ascending binary order. Use SQL NULL for the citation when there is no debited note. Transfer and note identifiers are unique within their respective tables, note identifiers contain no commas, and all input fields are non-null. Return transfer_code, unexplained_cents, source_ids ordered by descending unexplained_cents, then ascending transfer_code in binary order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bank_note": {
+        "columns": [
+          "note_id TEXT",
+          "transfer_code TEXT",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "D9",
+            "P",
+            "Debited USD cents 30"
+          ],
+          [
+            "D2",
+            "P",
+            "Debited USD cents 60"
+          ],
+          [
+            "E3",
+            "P",
+            "Quoted USD cents 140"
+          ],
+          [
+            "D4",
+            "Q",
+            "Debited USD cents 80"
+          ],
+          [
+            "E8",
+            "S",
+            "Quoted USD cents 50"
+          ],
+          [
+            "D7",
+            "R",
+            "Debited USD cents 12"
+          ]
+        ]
+      },
+      "incoming_transfer": {
+        "columns": [
+          "transfer_code TEXT",
+          "instructed_cents INTEGER",
+          "credited_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            15000,
+            14860
+          ],
+          [
+            "Q",
+            8400,
+            8330
+          ],
+          [
+            "R",
+            2300,
+            2300
+          ],
+          [
+            "S",
+            7100,
+            7050
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "transfer_code",
+      "unexplained_cents",
+      "source_ids"
+    ]
+  },
+  {
+    "task_id": "decision-export-applicable-menu-caption-errata",
+    "tool": "csv.export",
+    "instruction": "Generate the complete contents of menu_errata.csv for the supplied shipped menu snapshot. Each caption_card is a primary editorial correction with its source ID, a menu item code, the exact old caption it applies to, its replacement, and the editor's text. Include a card only when the snapshot has that item code and its shipped caption matches the specified old caption exactly in binary text order. Item codes are unique in the snapshot, card IDs are unique, and at most one card applies per item. A null shipped caption means the caption is unknown and cannot match. All other fields are non-null. Return one row with one text column csv_body. Start the file with the literal unquoted header item_code,new_caption,card_id. Append one record per applicable card in ascending binary item_code order. Double-quote every data field, doubling each embedded double quote. Use LF after every record including the header and the last record. Fields contain no line breaks. The card_id field cites the evidence for each emitted correction. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "caption_card": {
+        "columns": [
+          "card_id TEXT",
+          "item_code TEXT",
+          "old_caption TEXT",
+          "new_caption TEXT",
+          "editor_text TEXT"
+        ],
+        "rows": [
+          [
+            "C8",
+            "sort",
+            "Order",
+            "Sort, ascending",
+            "Replace Order with the direction-specific caption."
+          ],
+          [
+            "C2",
+            "copy",
+            "Duplicate",
+            "Copy \"as is\"",
+            "Use the literal quoted phrase on the copy command."
+          ],
+          [
+            "C4",
+            "wrap",
+            "wrap",
+            "Wrap text",
+            "Expand the lowercase draft caption."
+          ],
+          [
+            "C5",
+            "zoom",
+            "",
+            "Zoom page",
+            "Fill the verified empty zoom caption."
+          ]
+        ]
+      },
+      "shipped_menu": {
+        "columns": [
+          "item_code TEXT",
+          "shipped_caption TEXT"
+        ],
+        "rows": [
+          [
+            "sort",
+            "Order"
+          ],
+          [
+            "copy",
+            "Duplicate"
+          ],
+          [
+            "zoom",
+            null
+          ],
+          [
+            "wrap",
+            "Wrap"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-export-approved-caption-patch",
+    "tool": "csv.export",
+    "instruction": "Construct the complete CSV patch for a catalogue caption importer at the close of batch 8. For each object with at least one approved slip through batch 8 inclusive, use the newest such slip by integer batch_no, breaking ties by greatest slip_id in binary text order. Emit a record only if the selected proposed_caption differs from the stored caption, treating two NULLs as equal and NULL as distinct from any text. A NULL proposal clears the caption. Produce one row with the single column csv_body. Its value must begin with the literal header object_code,caption,source_id followed by LF. Append records ordered by object_code in ascending binary order, each terminated by LF. Quote every data field with double quotes, double any embedded double quote, and encode a NULL caption as a quoted empty field. Copy source_id from the chosen slip's slip_id. Object codes and slip IDs are unique in their respective tables. Only caption fields are nullable. Caption text, when present, is nonempty and has no line breaks. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "caption_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "object_code TEXT",
+          "batch_no INTEGER",
+          "approval_state TEXT",
+          "proposed_caption TEXT",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            "S1",
+            "C1",
+            5,
+            "approved",
+            "Woven mat",
+            "Mount note records a woven surface."
+          ],
+          [
+            "S2",
+            "C1",
+            8,
+            "approved",
+            "Mat, \"Tide\"",
+            "Edge label gives the mat title as Tide."
+          ],
+          [
+            "S3",
+            "C1",
+            9,
+            "approved",
+            "Tide mat",
+            "Later proof changes the title order."
+          ],
+          [
+            "S4",
+            "C2",
+            7,
+            "approved",
+            null,
+            "Rack audit assigns the jar caption to a neighboring mount."
+          ],
+          [
+            "S5",
+            "C3",
+            8,
+            "approved",
+            null,
+            "Proof sheet leaves this caption blank."
+          ],
+          [
+            "S6",
+            "C2",
+            8,
+            "pending",
+            "Fluted jar",
+            "Draft transcribes fluting from a loose note."
+          ]
+        ]
+      },
+      "caption_stock": {
+        "columns": [
+          "object_code TEXT",
+          "stored_caption TEXT"
+        ],
+        "rows": [
+          [
+            "C1",
+            "Round mat"
+          ],
+          [
+            "C2",
+            "Tall jar"
+          ],
+          [
+            "C3",
+            null
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-export-complete-leaf-pairs-at-release",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of leaf_pairs.csv as one row with one column named csv_body. Take a snapshot at the inclusive event number in the single release_cut row. For each numbered leaf and face ('r' recto, 'v' verso), its last event at or before the cut gives its current image filename. Event numbers are unique, so there are no event ties. A NULL filename withdraws the face. Export only leaves with both faces present at the cut, in ascending numeric leaf order. Start with the literal header leaf_no,recto,verso. Write leaf numbers as unquoted decimal integers. Always enclose each filename in double quotes and double any double quote inside it. End every record, including the header and the final record, with one LF character. With no complete leaves, return the header and its LF alone. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "face_event": {
+        "columns": [
+          "event_no INTEGER",
+          "leaf_no INTEGER",
+          "face_code TEXT",
+          "file_name TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            10,
+            "r",
+            "ten,r.tif"
+          ],
+          [
+            2,
+            10,
+            "v",
+            "ten\"v.tif"
+          ],
+          [
+            3,
+            2,
+            "r",
+            "two-r.tif"
+          ],
+          [
+            4,
+            2,
+            "v",
+            "two-v.tif"
+          ],
+          [
+            5,
+            10,
+            "r",
+            null
+          ],
+          [
+            6,
+            2,
+            "r",
+            "two,new.tif"
+          ],
+          [
+            7,
+            10,
+            "r",
+            "ten-fixed.tif"
+          ]
+        ]
+      },
+      "release_cut": {
+        "columns": [
+          "cut_no INTEGER"
+        ],
+        "rows": [
+          [
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  }
+]

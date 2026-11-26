@@ -1,0 +1,138 @@
+{
+  "origin": "2022Q2",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000018255",
+          "reason": "Cato’s quarterly retail sales fell 3.0% year on year (D). Sales from noncomparable stores partly offset a same-store decline (E). With inflation squeezing customers’ disposable income (C), a further two percentage points of deterioration would put total sales at the threshold within two quarters."
+        },
+        {
+          "cik": "0000878726",
+          "reason": "Tuesday Morning’s net sales rose 4.1% (A), but comparable sales grew just 0.6% for the quarter versus 18.1% over nine months (B). Inventory rose about 29% year on year (C). With stock growing much faster than sales, markdowns could push net sales to a 5% decline within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001140215",
+          "reason": "Reed’s quarterly net sales grew just 0.3% (A). Virgil’s volume fell 11% while Reed’s brand volume rose 5% (B). If Virgil’s losses persist and Reed’s volume growth fades, consolidated net sales could move from nearly flat to down 5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001124796",
+          "reason": "nLIGHT’s quarterly revenue grew 5.2% (A), but industrial unit sales fell in China and product mix lowered average selling prices (D). Customers were already delaying capital spending (B). Those delays could shift enough orders out of either of the next two quarters to produce a 5% year-on-year revenue decline."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Heartland’s reported operating revenue fell 0.7% in Q1 (A). Freight rates rose and fleet utilization improved throughout 2021 (B), making the next two year-on-year comparisons harder. That raises the risk that the decline widens by the 4.3 percentage points needed to reach the threshold."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000878726",
+          "reason": "Reported sales YoY 26.56% then 4.09%; linear projections -18.38% and -40.84%."
+        },
+        {
+          "cik": "0000018255",
+          "reason": "Reported sales YoY 13.39% then -2.99%; linear projections -19.36% and -35.74%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001140215",
+          "reason": "Reported sales YoY 19.71% then 0.30%; linear projections -19.11% and -38.52%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0001641991",
+          "reason": "Reported sales YoY 9.16% then -0.53%; linear projections -10.22% and -19.91%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": []
+    }
+  ]
+}

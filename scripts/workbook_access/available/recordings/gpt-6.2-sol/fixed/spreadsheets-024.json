@@ -1,0 +1,699 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "2e2b4f17d959995f8f26ea111b339a7f5b7a69ef288fc2d0d24174d73fda9e16",
+    "92e6fc9b60c55ac7443ffa8e92942cbf2099e71783876fe2961ee567eea9e7e5",
+    "f0392fcaa4cf3544d27caff174ab4ea8cf9cf6d1d896f58f0751cd2f7d1fb7d8"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59639",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D5:K7",
+            "formula": "=MID($A5,COLUMNS($D5:D5),1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 63492,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1237,
+        "reasoning_output_tokens": 576
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59794",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:M5",
+            "formula": "=IFERROR(MID(\"/\"&$A3&\"/\",FIND(REPT(\"/\",LEN($A3)+3)&\"!\",SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",REPT(\"/\",LEN($A3)+3)&\"!\",COLUMNS($C3:C3)))+1,FIND(REPT(\"/\",LEN($A3)+3)&\"!\",SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",REPT(\"/\",LEN($A3)+3)&\"!\",COLUMNS($C3:C3)+1))-FIND(REPT(\"/\",LEN($A3)+3)&\"!\",SUBSTITUTE(\"/\"&$A3&\"/\",\"/\",REPT(\"/\",LEN($A3)+3)&\"!\",COLUMNS($C3:C3)))-1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 63492,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1237,
+        "reasoning_output_tokens": 576
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-7902",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:J6",
+            "formula": "=IFNA(IF($B3=\"\",NA(),INDEX(Grouping!C$2:C$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0))),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMNS($D3:D3)+2,FALSE))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "A1:T6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "A1:T6",
+            "range_size": 120,
+            "cells": [
+              [
+                "B2",
+                "Material"
+              ],
+              [
+                "C2",
+                "Main Group"
+              ],
+              [
+                "D2",
+                "0 to 6 Month"
+              ],
+              [
+                "E2",
+                "6 Month to 1 Year"
+              ],
+              [
+                "F2",
+                "1 to 2 Year"
+              ],
+              [
+                "G2",
+                "2 to 3 Year"
+              ],
+              [
+                "H2",
+                "3 to 4 Year"
+              ],
+              [
+                "I2",
+                "4 to 5 Year"
+              ],
+              [
+                "J2",
+                "More than 5 Year"
+              ],
+              [
+                "L2",
+                "0 to 6 Month"
+              ],
+              [
+                "M2",
+                "6 Month to 1 Year"
+              ],
+              [
+                "N2",
+                "1 to 2 Year"
+              ],
+              [
+                "O2",
+                "2 to 3 Year"
+              ],
+              [
+                "P2",
+                "3 to 4 Year"
+              ],
+              [
+                "Q2",
+                "4 to 5 Year"
+              ],
+              [
+                "R2",
+                "More than 5 Year"
+              ],
+              [
+                "T2",
+                "Formula\nRequired"
+              ],
+              [
+                "C3",
+                "Group A"
+              ],
+              [
+                "D3",
+                "0"
+              ],
+              [
+                "E3",
+                "0"
+              ],
+              [
+                "F3",
+                "0.5"
+              ],
+              [
+                "G3",
+                "0.5"
+              ],
+              [
+                "L3",
+                "100"
+              ],
+              [
+                "M3",
+                "200"
+              ],
+              [
+                "N3",
+                "300"
+              ],
+              [
+                "O3",
+                "400"
+              ],
+              [
+                "P3",
+                "5600"
+              ],
+              [
+                "Q3",
+                "0"
+              ],
+              [
+                "R3",
+                "10000"
+              ],
+              [
+                "T3",
+                "0"
+              ],
+              [
+                "B4",
+                "Material X"
+              ],
+              [
+                "C4",
+                "Group B"
+              ],
+              [
+                "D4",
+                "0.12"
+              ],
+              [
+                "E4",
+                "0.13"
+              ],
+              [
+                "F4",
+                "0.5"
+              ],
+              [
+                "G4",
+                "0.5"
+              ],
+              [
+                "L4",
+                "30"
+              ],
+              [
+                "M4",
+                "170"
+              ],
+              [
+                "N4",
+                "250"
+              ],
+              [
+                "O4",
+                "325"
+              ],
+              [
+                "P4",
+                "4000"
+              ],
+              [
+                "Q4",
+                "5000"
+              ],
+              [
+                "R4",
+                "40000"
+              ],
+              [
+                "T4",
+                "1"
+              ],
+              [
+                "C5",
+                "Group C"
+              ],
+              [
+                "D5",
+                "0.05"
+              ],
+              [
+                "E5",
+                "0.1"
+              ],
+              [
+                "F5",
+                "0.1"
+              ],
+              [
+                "G5",
+                "0.1"
+              ],
+              [
+                "L5",
+                "40"
+              ],
+              [
+                "M5",
+                "180"
+              ],
+              [
+                "N5",
+                "280"
+              ],
+              [
+                "O5",
+                "350"
+              ],
+              [
+                "P5",
+                "4500"
+              ],
+              [
+                "Q5",
+                "10000"
+              ],
+              [
+                "R5",
+                "30000"
+              ],
+              [
+                "T5",
+                "0.1"
+              ],
+              [
+                "B6",
+                "Material Z"
+              ],
+              [
+                "C6",
+                "Group D"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "0.1"
+              ],
+              [
+                "G6",
+                "0.1"
+              ],
+              [
+                "L6",
+                "10"
+              ],
+              [
+                "M6",
+                "150"
+              ],
+              [
+                "N6",
+                "50"
+              ],
+              [
+                "O6",
+                "275"
+              ],
+              [
+                "P6",
+                "2500"
+              ],
+              [
+                "Q6",
+                "200"
+              ],
+              [
+                "R6",
+                "60000"
+              ],
+              [
+                "T6",
+                "0.1"
+              ]
+            ],
+            "total": 71,
+            "truncated": false,
+            "blank_count": 49
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Grouping",
+            "range": "A1:I7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Grouping",
+            "range": "A1:I7",
+            "range_size": 63,
+            "cells": [
+              [
+                "A1",
+                "Main Group"
+              ],
+              [
+                "B1",
+                "Material"
+              ],
+              [
+                "C1",
+                "0 to 6 Month"
+              ],
+              [
+                "D1",
+                "6 Month to 1 Year"
+              ],
+              [
+                "E1",
+                "1 to 2 Year"
+              ],
+              [
+                "F1",
+                "2 to 3 Year"
+              ],
+              [
+                "G1",
+                "3 to 4 Year"
+              ],
+              [
+                "H1",
+                "4 to 5 Year"
+              ],
+              [
+                "I1",
+                "More than 5 Year"
+              ],
+              [
+                "A2",
+                "Group A"
+              ],
+              [
+                "C2",
+                "0"
+              ],
+              [
+                "D2",
+                "0"
+              ],
+              [
+                "E2",
+                "0.5"
+              ],
+              [
+                "F2",
+                "0.5"
+              ],
+              [
+                "G2",
+                "0.5"
+              ],
+              [
+                "H2",
+                "0.5"
+              ],
+              [
+                "I2",
+                "0.5"
+              ],
+              [
+                "A3",
+                "Group B"
+              ],
+              [
+                "C3",
+                "0.1"
+              ],
+              [
+                "D3",
+                "0.2"
+              ],
+              [
+                "E3",
+                "0.25"
+              ],
+              [
+                "F3",
+                "0.5"
+              ],
+              [
+                "G3",
+                "0.5"
+              ],
+              [
+                "H3",
+                "0.5"
+              ],
+              [
+                "I3",
+                "0.5"
+              ],
+              [
+                "A4",
+                "Group C"
+              ],
+              [
+                "C4",
+                "0.05"
+              ],
+              [
+                "D4",
+                "0.1"
+              ],
+              [
+                "E4",
+                "0.1"
+              ],
+              [
+                "F4",
+                "0.1"
+              ],
+              [
+                "G4",
+                "0.1"
+              ],
+              [
+                "H4",
+                "0.1"
+              ],
+              [
+                "I4",
+                "0.1"
+              ],
+              [
+                "A5",
+                "Group B"
+              ],
+              [
+                "B5",
+                "Material X"
+              ],
+              [
+                "C5",
+                "0.12"
+              ],
+              [
+                "D5",
+                "0.13"
+              ],
+              [
+                "E5",
+                "0.5"
+              ],
+              [
+                "F5",
+                "0.5"
+              ],
+              [
+                "G5",
+                "0.5"
+              ],
+              [
+                "H5",
+                "0.75"
+              ],
+              [
+                "I5",
+                "1"
+              ],
+              [
+                "A6",
+                "Group C"
+              ],
+              [
+                "B6",
+                "Material Y"
+              ],
+              [
+                "C6",
+                "0.05"
+              ],
+              [
+                "D6",
+                "0.05"
+              ],
+              [
+                "E6",
+                "0.25"
+              ],
+              [
+                "F6",
+                "0.25"
+              ],
+              [
+                "G6",
+                "0.5"
+              ],
+              [
+                "H6",
+                "0.5"
+              ],
+              [
+                "I6",
+                "0.5"
+              ],
+              [
+                "A7",
+                "Group D"
+              ],
+              [
+                "B7",
+                "Material Z"
+              ],
+              [
+                "C7",
+                "0"
+              ],
+              [
+                "D7",
+                "0"
+              ],
+              [
+                "E7",
+                "0.1"
+              ],
+              [
+                "F7",
+                "0.1"
+              ],
+              [
+                "G7",
+                "0.1"
+              ],
+              [
+                "H7",
+                "0.1"
+              ],
+              [
+                "I7",
+                "0.1"
+              ]
+            ],
+            "total": 60,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 63492,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1237,
+        "reasoning_output_tokens": 576
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-9111",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D7",
+            "formula": "=IF(AND(B2=\"\",C2=\"\"),\"\",IFNA(IF(B2=\"\",NA(),XLOOKUP(B2,$G$2:$G$13,$H$2:$H$13)),IF(C2=\"\",2500,XLOOKUP(C2,$J$2:$J$6,$K$2:$K$6,2500))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 63492,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1237,
+        "reasoning_output_tokens": 576
+      },
+      "model_calls": 3
+    }
+  ]
+}

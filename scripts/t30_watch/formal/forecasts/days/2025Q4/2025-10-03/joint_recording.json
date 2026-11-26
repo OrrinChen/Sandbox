@@ -1,0 +1,33 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23056,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 230,
+    "reasoning_output_tokens": 34
+  },
+  "thread": "01a20d92-a1af-7912-bfa3-69b887d0a71f",
+  "packet_sha256": "043899de5925929c9ededa65f7a9fcd8d937de216133d12707d92d6ac79356b8",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2025Q4/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001326380\",\n          \"reason\": \"GameStop’s consolidated net sales swung from −16.94% year over year in Q1 to +21.78% in Q2 (A). I forecast Q3 stays above −5% on the strength of the U.S. and Australia, where Q2 sales grew 32.8% and 60.5%. The Q4 crossing forecast depends on those gains fading while the losses in Europe (−16.1%) and Canada (−100%) continue to weigh on consolidated sales (B).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2025Q4/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "GameStop’s consolidated net sales swung from −16.94% year over year in Q1 to +21.78% in Q2 (A). I forecast Q3 stays above −5% on the strength of the U.S. and Australia, where Q2 sales grew 32.8% and 60.5%. The Q4 crossing forecast depends on those gains fading while the losses in Europe (−16.1%) and Canada (−100%) continue to weigh on consolidated sales (B)."
+          }
+        ]
+      },
+      {
+        "sector": "2025Q4/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

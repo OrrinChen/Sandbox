@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-003",
+    "stage": "submit",
+    "prompt_sha256": "6d4505ed3a4437154c0309a071b1c6d509de403710756b8c2cf4f0d505fcf997",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e7-0d0a-7953-977f-50a73eb5cdb8",
+    "raw": "{\"sheet-34210\":{\"fills\":[{\"range\":\"C2:C55\",\"formula\":\"=IF(A2<>\\\"\\\",A2,C1)\"}],\"formulas\":{\"C1\":\"=A1\"}},\"sheet-35739\":{\"fills\":[{\"range\":\"C2:C100\",\"formula\":\"=IF(B2=\\\"\\\",\\\"\\\",MOD(B2-TIME(0,30,0),1))\"}],\"formulas\":{}},\"sheet-35747\":{\"formulas\":{\"M2\":\"=SUMPRODUCT((A2:A11=L2)*(B1:J1>=M1)*(B1:J1<N1)*(B2:J11>100))\"}},\"sheet-36236\":{\"fills\":[{\"range\":\"F2:F6\",\"formula\":\"=IF(A2=B2,A2,TEXTJOIN(\\\", \\\",TRUE,A2,B2))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20033,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 257,
+      "reasoning_output_tokens": 70
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

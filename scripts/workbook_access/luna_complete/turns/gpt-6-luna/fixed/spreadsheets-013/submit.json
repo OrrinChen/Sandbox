@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-013",
+    "stage": "submit",
+    "prompt_sha256": "04a84dd553fc9de223d4e5a53c86cf9b8b0f30b3bbdc67310371d2840d69c7f4",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-1532-7433-b45d-437b9094bb14"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-48588\":{\"fills\":[{\"range\":\"B2:B43\",\"formula\":\"=MATCH(A2,$A$2:$A$43,0)\"}],\"formulas\":{}},\"sheet-48608\":{\"fills\":[{\"range\":\"F2:F5\",\"formula\":\"=IFERROR(INDEX($A$2:$A$8,MATCH(G2,$B$2:$B$8,0)),\\\"\\\")\"}],\"formulas\":{}},\"sheet-48643\":{\"fills\":[{\"range\":\"H2:H40\",\"formula\":\"=IF(ROW()=2,F2,H1*(1+C2)+B2)\"}],\"formulas\":{}},\"sheet-48969\":{\"fills\":[{\"range\":\"J3:N5\",\"formula\":\"=IFERROR(INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE)\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 19833,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 215,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-48588\":{\"fills\":[{\"range\":\"B2:B43\",\"formula\":\"=MATCH(A2,$A$2:$A$43,0)\"}],\"formulas\":{}},\"sheet-48608\":{\"fills\":[{\"range\":\"F2:F5\",\"formula\":\"=IFERROR(INDEX($A$2:$A$8,MATCH(G2,$B$2:$B$8,0)),\\\"\\\")\"}],\"formulas\":{}},\"sheet-48643\":{\"fills\":[{\"range\":\"H2:H40\",\"formula\":\"=IF(ROW()=2,F2,H1*(1+C2)+B2)\"}],\"formulas\":{}},\"sheet-48969\":{\"fills\":[{\"range\":\"J3:N5\",\"formula\":\"=IFERROR(INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE)\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-1532-7433-b45d-437b9094bb14",
+    "raw": "{\"sheet-48588\":{\"fills\":[{\"range\":\"B2:B43\",\"formula\":\"=MATCH(A2,$A$2:$A$43,0)\"}],\"formulas\":{}},\"sheet-48608\":{\"fills\":[{\"range\":\"F2:F5\",\"formula\":\"=IFERROR(INDEX($A$2:$A$8,MATCH(G2,$B$2:$B$8,0)),\\\"\\\")\"}],\"formulas\":{}},\"sheet-48643\":{\"fills\":[{\"range\":\"H2:H40\",\"formula\":\"=IF(ROW()=2,F2,H1*(1+C2)+B2)\"}],\"formulas\":{}},\"sheet-48969\":{\"fills\":[{\"range\":\"J3:N5\",\"formula\":\"=IFERROR(INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19833,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 215,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

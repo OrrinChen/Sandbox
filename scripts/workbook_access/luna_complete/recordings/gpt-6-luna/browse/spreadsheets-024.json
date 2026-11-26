@@ -1,0 +1,446 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "fc8115f85fa00427e87c25b881420c0b46d1a77abc252bea2c2e106f9e90fdae",
+    "e1cae2e6aaea67eb838026fbe240aef129427a04fa5ba42fa7aa2c50062783a3",
+    "07d3bdf48bb06787ea580caa466468d26dfed2ae0cd7b56b9c41bc362058f0aa"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59639",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D5:K7",
+            "formula": "=IFERROR(MID($A5,COLUMN()-3,1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:K7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:K7",
+            "range_size": 44,
+            "cells": [
+              [
+                "A4",
+                "abcdefgh"
+              ],
+              [
+                "D4",
+                "a"
+              ],
+              [
+                "E4",
+                "b"
+              ],
+              [
+                "F4",
+                "c"
+              ],
+              [
+                "G4",
+                "d"
+              ],
+              [
+                "H4",
+                "e"
+              ],
+              [
+                "I4",
+                "f"
+              ],
+              [
+                "J4",
+                "g"
+              ],
+              [
+                "K4",
+                "h"
+              ],
+              [
+                "A5",
+                "ABCDEFGH"
+              ],
+              [
+                "A6",
+                "pqrst"
+              ],
+              [
+                "A7",
+                "xyz"
+              ]
+            ],
+            "total": 12,
+            "truncated": false,
+            "blank_count": 32
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94367,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1859,
+        "reasoning_output_tokens": 1147
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59794",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:M5",
+            "formula": "=IFERROR(MID($A3,FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-2))+1,FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-1))-FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-2))-1),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "A3:M5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "SOURCE",
+            "range": "A3:M5",
+            "range_size": 39,
+            "cells": [
+              [
+                "A3",
+                "WORD1XXXX/WORD2/WORD3/WORD4/-/-/WORD5/WORD6XX/-/-/2019 - 2020"
+              ],
+              [
+                "C3",
+                "WORD1XXXX"
+              ],
+              [
+                "D3",
+                "WORD2"
+              ],
+              [
+                "E3",
+                "WORD3"
+              ],
+              [
+                "A4",
+                "WORD1XXXX/WORD2/WORD3XXX/WORD4/-/-/WORD5/WORD6/-/-/2019 - 2020"
+              ],
+              [
+                "C4",
+                "WORD1XXXX"
+              ],
+              [
+                "D4",
+                "WORD2"
+              ],
+              [
+                "E4",
+                "WORD3XXX"
+              ],
+              [
+                "A5",
+                "WORD1/WORD2/WORD3/WORD4/-/-/WORD5XXX/WORD6/-/-/2019 - 2020"
+              ],
+              [
+                "C5",
+                "WORD1"
+              ],
+              [
+                "D5",
+                "WORD2"
+              ],
+              [
+                "E5",
+                "WORD3"
+              ]
+            ],
+            "total": 12,
+            "truncated": false,
+            "blank_count": 27
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94367,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1859,
+        "reasoning_output_tokens": 1147
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-7902",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:J6",
+            "formula": "=IFERROR(VLOOKUP($B3,Grouping!$B$2:$I$7,COLUMN()-1,FALSE),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B3:J6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Formula Required",
+            "range": "B3:J6",
+            "range_size": 36,
+            "cells": [
+              [
+                "C3",
+                "Group A"
+              ],
+              [
+                "D3",
+                "0"
+              ],
+              [
+                "E3",
+                "0"
+              ],
+              [
+                "F3",
+                "0.5"
+              ],
+              [
+                "G3",
+                "0.5"
+              ],
+              [
+                "B4",
+                "Material X"
+              ],
+              [
+                "C4",
+                "Group B"
+              ],
+              [
+                "D4",
+                "0.12"
+              ],
+              [
+                "E4",
+                "0.13"
+              ],
+              [
+                "F4",
+                "0.5"
+              ],
+              [
+                "G4",
+                "0.5"
+              ],
+              [
+                "C5",
+                "Group C"
+              ],
+              [
+                "D5",
+                "0.05"
+              ],
+              [
+                "E5",
+                "0.1"
+              ],
+              [
+                "F5",
+                "0.1"
+              ],
+              [
+                "G5",
+                "0.1"
+              ],
+              [
+                "B6",
+                "Material Z"
+              ],
+              [
+                "C6",
+                "Group D"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "0.1"
+              ],
+              [
+                "G6",
+                "0.1"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 14
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94367,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1859,
+        "reasoning_output_tokens": 1147
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-9111",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D7",
+            "formula": "=IF(B2=\"\",IF(C2=\"\",\"\",IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)),IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IF(C2=\"\",2500,IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:D7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:D7",
+            "range_size": 18,
+            "cells": [
+              [
+                "B2",
+                "bob"
+              ],
+              [
+                "C2",
+                "ff"
+              ],
+              [
+                "D2",
+                "6678"
+              ],
+              [
+                "B3",
+                "John"
+              ],
+              [
+                "C3",
+                "bb"
+              ],
+              [
+                "D3",
+                "3628"
+              ],
+              [
+                "C5",
+                "ff"
+              ],
+              [
+                "D5",
+                "3016"
+              ],
+              [
+                "C6",
+                "aab"
+              ],
+              [
+                "B7",
+                "Rissa"
+              ],
+              [
+                "C7",
+                "dd"
+              ]
+            ],
+            "total": 11,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94367,
+        "cached_input_tokens": 72832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1859,
+        "reasoning_output_tokens": 1147
+      },
+      "model_calls": 3
+    }
+  ]
+}

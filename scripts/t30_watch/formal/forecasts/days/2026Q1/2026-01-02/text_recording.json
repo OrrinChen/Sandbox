@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24130,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 264,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d92-f581-7691-924d-f97d02a8a944",
+  "packet_sha256": "4a6dd009f53cde4c727e18d7d33f23c73948763cb287110a4abacc43f7a035b3",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2026Q1/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2026Q1/prepackaged_software-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2026Q1/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001326380\",\n          \"reason\": \"GameStop’s consolidated net sales fell 4.6% year over year in the November 1 quarter, only 0.4 percentage points above the threshold (A). U.S. and Australian sales grew 11.8% and 23.3%, partly offsetting declines of 45.7% in Europe and 100.0% in Canada (B). I forecast that those gains keep the intervening quarter above -5.00%, but offset too little of the regional losses in the quarter beginning February 1 to keep consolidated growth above -5.00%. The timing is uncertain.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2026Q1/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2026Q1/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "GameStop’s consolidated net sales fell 4.6% year over year in the November 1 quarter, only 0.4 percentage points above the threshold (A). U.S. and Australian sales grew 11.8% and 23.3%, partly offsetting declines of 45.7% in Europe and 100.0% in Canada (B). I forecast that those gains keep the intervening quarter above -5.00%, but offset too little of the regional losses in the quarter beginning February 1 to keep consolidated growth above -5.00%. The timing is uncertain."
+          }
+        ]
+      },
+      {
+        "sector": "2026Q1/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

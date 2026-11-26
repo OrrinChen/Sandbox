@@ -1,0 +1,61 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 26310,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 296,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8a-099e-7f92-af35-a8105a0dec1e",
+  "packet_sha256": "f3423b53335933dabf7e1a29eafdcdabaca12265b35fc463c690a6c6f846cf66",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q2/semiconductors-2\",\"alerts\":[{\"cik\":\"0000912093\",\"reason\":\"VIAVI’s consolidated net revenue fell 4.4% year over year in the quarter ended January 2, just 0.6 percentage points above the cutoff (A). Field Instruments demand was under pressure (B). I forecast the year-over-year change stays above −5.00% in the intervening quarter and slips to −5.00% or below in the quarter starting March 28. The timing is uncertain because the records do not quantify the demand impact in either quarter.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q2/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000912093",
+            "reason": "VIAVI’s consolidated net revenue fell 4.4% year over year in the quarter ended January 2, just 0.6 percentage points above the cutoff (A). Field Instruments demand was under pressure (B). I forecast the year-over-year change stays above −5.00% in the intervening quarter and slips to −5.00% or below in the quarter starting March 28. The timing is uncertain because the records do not quantify the demand impact in either quarter."
+          }
+        ]
+      }
+    ]
+  }
+}

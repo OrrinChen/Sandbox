@@ -13,6 +13,7 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
     "pytest>=8",
+    "openpyxl==3.1.5",
 ]
 ai-integrations = [
     "langchain>=1,<2; python_version >= '3.10'",
@@ -34,6 +35,11 @@ sandboxed-agent-eval = "sandboxed_agent_eval_harness.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"sandboxed_agent_eval_harness.benchmarks.financial_evidence" = ["corpus.json", "a1_*.json"]
+"sandboxed_agent_eval_harness.benchmarks.financial_benchmark" = ["data/*.json"]
+"sandboxed_agent_eval_harness.benchmarks.independent" = ["data/*", "sheet_data/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

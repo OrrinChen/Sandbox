@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q1",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000880266",
+  "issuer": "AGCO CORP /DE",
+  "cutoff": "2022-12-02",
+  "projected_target_start": "2023-01-01",
+  "status": "complete",
+  "period_end": "2022-09-30",
+  "filing_date": "2022-11-09",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000880266",
+    "issuer": "AGCO CORP /DE",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2022-11-09",
+        "text": "Net income attributable to noncontrolling interests — (1.1)"
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2022-11-09",
+        "text": "Net income attributable to AGCO Corporation and subsidiaries $ 237.9 $ 181.3"
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2022-11-09",
+        "text": "Net loss (income) attributable to noncontrolling interests 14.9 (3.3)"
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2022-11-09",
+        "text": "Net income attributable to AGCO Corporation and subsidiaries $ 567.4 $ 614.9"
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2022-11-09",
+        "text": "Interest accrues on amounts outstanding under the credit facility, at the Company’s option, at either (1) the secured overnight financing rate (“SOFR”) for borrowings denominated in U.S. dollars or EURIBOR for borrowings denominated in Euros plus a margin of 0.75%, or (2) the base rate, which is equal to the higher of (i) the administrative agent’s base lending rate for the applicable currency, (ii) the federal funds rate plus 0.5%, or (iii) one-month adjusted term SOFR plus 1.0%, plus a margin of 0.75%."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-06-30",
+        "filed": "2022-08-09",
+        "reported_sales_usd": 2945200000,
+        "year_ago_reported_sales_usd": 2879300000,
+        "yoy_percent": "2.2888"
+      },
+      {
+        "quarter_end": "2022-09-30",
+        "filed": "2022-11-09",
+        "reported_sales_usd": 3121600000,
+        "year_ago_reported_sales_usd": 2725100000,
+        "yoy_percent": "14.5499"
+      }
+    ],
+    "status": "complete"
+  }
+}

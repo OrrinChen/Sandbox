@@ -1,0 +1,124 @@
+{
+  "cutoff": "2022-07-30",
+  "sectors": {
+    "2022Q3/food_manufacturing-1": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000023217",
+          "issuer": "CONAGRA BRANDS INC.",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2022-08-29",
+          "latest_filed_period_end": "2022-05-29",
+          "records": [
+            {
+              "id": "A",
+              "title": "FORM 10-K",
+              "date": "2022-07-21",
+              "text": "Fiscal 2022 performance compared to fiscal 2021 reflected an increase in net sales, with organic (excludes the impacts of foreign exchange and divested businesses) increases in all of our operating segments."
+            },
+            {
+              "id": "B",
+              "title": "FORM 10-K",
+              "date": "2022-07-21",
+              "text": "Throughout fiscal 2022, we continued to experience elevated demand for our products in the retail segments versus pre-pandemic levels, but volumes were lower compared to fiscal 2021, primarily due to the elasticity impact from inflation-driven pricing actions."
+            },
+            {
+              "id": "C",
+              "title": "FORM 10-K",
+              "date": "2022-07-21",
+              "text": "This result was primarily due to lapping the prior year's surge in at-home food consumption from the COVID-19 pandemic and replenishment of customer inventory levels in connection with the COVID-19 pandemic coupled with the elasticity impact from inflation-driven pricing actions."
+            },
+            {
+              "id": "D",
+              "title": "FORM 10-K",
+              "date": "2022-07-21",
+              "text": "Overall gross profit decreased primarily as a result of input cost inflation, higher transportation costs, elevated supply chain operating costs due, in part, to disruptions in the availability of labor and certain materials, and lost profits from divested businesses, which were partially offset by higher organic net sales, supply chain realized productivity, cost synergies associated with the Pinnacle acquisition, and lower COVID-19 pandemic-related expenses."
+            },
+            {
+              "id": "E",
+              "title": "FORM 10-K",
+              "date": "2022-07-21",
+              "text": "Overall segment operating profit decreased in all of our operating segments."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-02-27",
+                "filed": "2022-04-07",
+                "reported_sales_usd": 2913700000,
+                "year_ago_reported_sales_usd": 2771100000,
+                "yoy_percent": "5.1460"
+              },
+              {
+                "quarter_end": "2022-05-29",
+                "filed": "2022-07-21",
+                "reported_sales_usd": 2910000000,
+                "year_ago_reported_sales_usd": 2739500000,
+                "yoy_percent": "6.2238"
+              }
+            ]
+          }
+        },
+        {
+          "cik": "0001005286",
+          "issuer": "LANDEC CORP CA",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2022-08-29",
+          "latest_filed_period_end": "2022-02-27",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2022-04-07",
+              "text": "The increase in Lifecore’s revenues for the three months ended February 27, 2022, compared to the same period last year, was due to a $6.2 million increase in CDMO revenues from an increase in aseptic commercial shipments, resulting from increased demand from existing customers and an increase in development services activities resulting in higher sales to new and existing customers, as well as a $1.4 million increase in fermentation sales primarily due to the timing of shipments within the fiscal year."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2022-04-07",
+              "text": "The increase in Curation Foods’ revenues for the three and nine months ended February 27, 2022, compared to the same period last year, was primarily driven by increased volume of our guacamole and avocado products and olive oil and wine vinegars."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2022-04-07",
+              "text": "The primary factors for the increase in working capital during the nine months ended February 27, 2022, was an $11.9 million increase in inventory driven by production in our Avocado Products division, a $7.5 million increase in accounts receivable driven by sales increases and timing of customer payments, a $4.2 million increase in other accrued liabilities due to timing of payments, and a $3.8 million increase in accrued compensation driven by severance accruals, partially offset by a $13.1 million increase in accounts payable due primarily to the increase in inventory and timing of payments."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2022-04-07",
+              "text": "The Yucatan Foods business added a double-digit growth platform, a lower-cost infrastructure in Mexico, and higher margin product offerings that generally exhibit less sourcing volatility."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2022-04-07",
+              "text": "Net cash used in operating activities during the nine months ended February 27, 2022 was $24.4 million, compared to $10.6 million of net cash provided by operating activities for the same period last year."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2021-11-28",
+                "filed": "2022-01-07",
+                "reported_sales_usd": 129492000,
+                "year_ago_reported_sales_usd": 130904000,
+                "yoy_percent": "-1.0787"
+              },
+              {
+                "quarter_end": "2022-02-27",
+                "filed": "2022-04-07",
+                "reported_sales_usd": 53074000,
+                "year_ago_reported_sales_usd": 44690000,
+                "yoy_percent": "18.7603"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22509,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 251,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d91-88ef-7512-91a3-1d11def8d154",
+  "packet_sha256": "be287f87d2db58a7b0c173ac593da20d4296ee95e877be60b9e3965435f58048",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2025Q4/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q4/food_manufacturing-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q4/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2025Q4/semiconductors-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000895419\",\n          \"reason\": \"The year-over-year revenue decline narrowed from 7.62% in March to 1.84% in June. I expect growth to stay above −5.00% in the intervening quarter, supported by continued automotive growth, then fall to −5.00% or below in the quarter starting September 29. From June’s rate, a deterioration of 3.16 percentage points would reach the threshold. Record A identifies the downside risk: automotive growth only partly offset weaker industrial and energy demand over the fiscal year.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2025Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q4/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q4/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2025Q4/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0000895419",
+            "reason": "The year-over-year revenue decline narrowed from 7.62% in March to 1.84% in June. I expect growth to stay above −5.00% in the intervening quarter, supported by continued automotive growth, then fall to −5.00% or below in the quarter starting September 29. From June’s rate, a deterioration of 3.16 percentage points would reach the threshold. Record A identifies the downside risk: automotive growth only partly offset weaker industrial and energy demand over the fiscal year."
+          }
+        ]
+      }
+    ]
+  }
+}

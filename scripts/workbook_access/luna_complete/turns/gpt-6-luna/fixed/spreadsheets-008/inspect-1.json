@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-008",
+    "stage": "inspect-1",
+    "prompt_sha256": "db883557e579eb684f21ccd65e15cf83fab3048448ac5f68ebab4d5dd42f3683",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122b-cde6-7053-b408-beb74c16b738"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the two available inspection slots to confirm each workbook’s formulas and data layout, especially where the task wording leaves target-cell details implicit."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-41680\":[{\"op\":\"range\",\"sheet\":\"Remove space\",\"range\":\"E2:F18\"}],\"sheet-41969\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A3:I6\"}],\"sheet-42515\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A4:G19\"}],\"sheet-42526\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C16\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 34855,
+          "cached_input_tokens": 23808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 484,
+          "reasoning_output_tokens": 304
+        }
+      ],
+      "cli_final": "{\"sheet-41680\":[{\"op\":\"range\",\"sheet\":\"Remove space\",\"range\":\"E2:F18\"}],\"sheet-41969\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A3:I6\"}],\"sheet-42515\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A4:G19\"}],\"sheet-42526\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C16\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122b-cde6-7053-b408-beb74c16b738",
+    "raw": "{\"sheet-41680\":[{\"op\":\"range\",\"sheet\":\"Remove space\",\"range\":\"E2:F18\"}],\"sheet-41969\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A3:I6\"}],\"sheet-42515\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A4:G19\"}],\"sheet-42526\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:C16\"}]}",
+    "usage": {
+      "input_tokens": 34855,
+      "cached_input_tokens": 23808,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 484,
+      "reasoning_output_tokens": 304
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

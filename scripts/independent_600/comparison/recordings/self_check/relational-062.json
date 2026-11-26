@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "e2e42be1f92f3295012641d319a41be365c0c8f2e129a43eab97e514d799ddaf",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-restore-alternating-rail-marker\": \"WITH digits(d) AS (VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9)), known AS (SELECT COALESCE(SUM(marker_digit), 0) AS digit_sum FROM rail_markers) SELECT m.position AS missing_position, d AS restored_digit FROM rail_markers AS m CROSS JOIN digits CROSS JOIN known CROSS JOIN rail_checksum AS c WHERE m.marker_digit IS NULL AND d % 2 = m.position % 2 AND (digit_sum + d) % 5 = c.remainder\",\n  \"decision-restore-counts-from-aisle-snapshots\": \"WITH ranked AS (SELECT file_id, aisle_code, ROW_NUMBER() OVER (PARTITION BY aisle_code ORDER BY arrival_min DESC, intake_seq DESC) AS rn FROM snapshot_files WHERE arrival_min <= 30) SELECT r.aisle_code, b.bin_code, b.piece_qty FROM ranked AS r JOIN bin_counts AS b ON b.file_id = r.file_id WHERE r.rn = 1 ORDER BY r.aisle_code, b.bin_code\",\n  \"decision-retired-components-sale-settlement\": \"WITH settlement AS (SELECT r.receipt_id, r.sale_month, r.units_sold * MAX(l.unit_residual, l.unit_cost - l.unit_open_dep - (r.sale_month - 1) * l.unit_month_dep) AS retired_book_cents, r.proceeds - COALESCE(r.removal_fee, 0) AS net_proceeds_cents FROM sale_receipt AS r JOIN fixture_lot AS l ON l.lot_code = r.lot_code WHERE r.final_flag = 1) SELECT receipt_id, retired_book_cents, net_proceeds_cents, net_proceeds_cents - retired_book_cents AS gain_loss_cents FROM settlement ORDER BY sale_month, receipt_id COLLATE BINARY\",\n  \"decision-return-crate-pilot-quorum\": \"WITH live AS (SELECT standard_code, depot_code, bulletin_day, source_id, ROW_NUMBER() OVER (PARTITION BY standard_code, depot_code ORDER BY bulletin_day, source_id COLLATE BINARY) AS depot_rn FROM depot_bulletin WHERE stage_code = 'live'), confirmations AS (SELECT standard_code, bulletin_day, source_id, ROW_NUMBER() OVER (PARTITION BY standard_code ORDER BY bulletin_day, source_id COLLATE BINARY) AS confirmation_rn FROM live WHERE depot_rn = 1) SELECT standard_code, bulletin_day AS adoption_day, source_id FROM confirmations WHERE confirmation_rn = 2 ORDER BY standard_code COLLATE BINARY\"\n}",
+  "submissions": {
+    "decision-restore-alternating-rail-marker": "WITH digits(d) AS (VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9)), known AS (SELECT COALESCE(SUM(marker_digit), 0) AS digit_sum FROM rail_markers) SELECT m.position AS missing_position, d AS restored_digit FROM rail_markers AS m CROSS JOIN digits CROSS JOIN known CROSS JOIN rail_checksum AS c WHERE m.marker_digit IS NULL AND d % 2 = m.position % 2 AND (digit_sum + d) % 5 = c.remainder",
+    "decision-restore-counts-from-aisle-snapshots": "WITH ranked AS (SELECT file_id, aisle_code, ROW_NUMBER() OVER (PARTITION BY aisle_code ORDER BY arrival_min DESC, intake_seq DESC) AS rn FROM snapshot_files WHERE arrival_min <= 30) SELECT r.aisle_code, b.bin_code, b.piece_qty FROM ranked AS r JOIN bin_counts AS b ON b.file_id = r.file_id WHERE r.rn = 1 ORDER BY r.aisle_code, b.bin_code",
+    "decision-retired-components-sale-settlement": "WITH settlement AS (SELECT r.receipt_id, r.sale_month, r.units_sold * MAX(l.unit_residual, l.unit_cost - l.unit_open_dep - (r.sale_month - 1) * l.unit_month_dep) AS retired_book_cents, r.proceeds - COALESCE(r.removal_fee, 0) AS net_proceeds_cents FROM sale_receipt AS r JOIN fixture_lot AS l ON l.lot_code = r.lot_code WHERE r.final_flag = 1) SELECT receipt_id, retired_book_cents, net_proceeds_cents, net_proceeds_cents - retired_book_cents AS gain_loss_cents FROM settlement ORDER BY sale_month, receipt_id COLLATE BINARY",
+    "decision-return-crate-pilot-quorum": "WITH live AS (SELECT standard_code, depot_code, bulletin_day, source_id, ROW_NUMBER() OVER (PARTITION BY standard_code, depot_code ORDER BY bulletin_day, source_id COLLATE BINARY) AS depot_rn FROM depot_bulletin WHERE stage_code = 'live'), confirmations AS (SELECT standard_code, bulletin_day, source_id, ROW_NUMBER() OVER (PARTITION BY standard_code ORDER BY bulletin_day, source_id COLLATE BINARY) AS confirmation_rn FROM live WHERE depot_rn = 1) SELECT standard_code, bulletin_day AS adoption_day, source_id FROM confirmations WHERE confirmation_rn = 2 ORDER BY standard_code COLLATE BINARY"
+  },
+  "attempt": 1,
+  "thread": "01a20e1c-6679-7943-b0a3-4970880548f8",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22668,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 550,
+    "reasoning_output_tokens": 0
+  }
+}

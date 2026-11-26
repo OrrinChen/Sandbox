@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-005",
+    "stage": "submit",
+    "prompt_sha256": "ccdff0013f202b87c131562c31835082736fdd4561405f722fff24846996d3a2",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e9-b82c-7c62-9ec8-e9967e07de63",
+    "raw": "{\"sheet-37554\":{\"fills\":[{\"range\":\"F2:F17\",\"formula\":\"=SUMPRODUCT(($A$2:$A$17=D2)*$B$2:$B$17)\"}],\"formulas\":{}},\"sheet-37609\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(OR(A2=\\\"U\\\",B2=\\\"U\\\"),\\\"-\\\",IF(OR(N(A2)>=7,N(B2)>=7),\\\"e\\\",\\\"-\\\"))\"}],\"formulas\":{}},\"sheet-37615\":{\"fills\":[{\"range\":\"F7:F37\",\"formula\":\"=IF(D7<=0,0,IF(D7>TIME(4,0,0),57.2,28.6))\"}],\"formulas\":{}},\"sheet-38462\":{\"fills\":[{\"range\":\"C1:C2\",\"formula\":\"=ROUNDUP(B1*24,0)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19585,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 229,
+      "reasoning_output_tokens": 22
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

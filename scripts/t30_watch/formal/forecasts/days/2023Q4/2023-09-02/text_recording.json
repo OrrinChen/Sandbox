@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21777,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 148,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-23b5-7db1-8178-005bc1a0212a",
+  "packet_sha256": "85805325975ca7602830bde7d22dffa580e16a0128fab5acf4d382407ab83e3d",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q4/semiconductors-3\",\"alerts\":[{\"cik\":\"0000867773\",\"reason\":\"SunPower’s year-over-year revenue gain narrowed from $90.6 million in Q1 (derived from B less A) to $46.1 million, or 11%, in Q2. California’s April NEM change pulled demand forward, and grandfathered projects still supported Q2 revenue (A, B). I expect those projects to support enough Q3 installations to keep revenue growth above -5.00%, then fade enough for Q4 revenue to fall at least 5.00% year over year.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q4/semiconductors-3",
+        "alerts": [
+          {
+            "cik": "0000867773",
+            "reason": "SunPower’s year-over-year revenue gain narrowed from $90.6 million in Q1 (derived from B less A) to $46.1 million, or 11%, in Q2. California’s April NEM change pulled demand forward, and grandfathered projects still supported Q2 revenue (A, B). I expect those projects to support enough Q3 installations to keep revenue growth above -5.00%, then fade enough for Q4 revenue to fall at least 5.00% year over year."
+          }
+        ]
+      }
+    ]
+  }
+}

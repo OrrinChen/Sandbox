@@ -1,0 +1,45 @@
+{
+  "binding": {
+    "input_sha256": "322b029b44b40480e207f87157a7140d75780c7c808d2257fe3e4b2fe033d805",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-46897\": {\n    \"formulas\": {\n      \"I3\": \"=COUNTIF(INDEX(A2:D15,0,MATCH(I1,A1:D1,0)),I2)\"\n    }\n  },\n  \"sheet-47699\": {\n    \"formulas\": {\n      \"D1\": \"=SUMIF(A5:A1048576,FALSE(),D5:D1048576)\"\n    }\n  },\n  \"sheet-48354\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D6\",\n        \"formula\": \"=IF(ISNUMBER(SEARCH(\\\"domestic\\\",B2)),\\\"D\\\",IF(ISNUMBER(SEARCH(\\\"international\\\",B2)),\\\"I\\\",\\\"N/A\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-48365\": {\n    \"formulas\": {\n      \"C4\": \"=IF(COUNTIF(C11:C13,\\\"All\\\")>0,SUMIF(Data!A:A,C2,Data!C:C),SUMPRODUCT(--(Data!A2:A20=C2),--(Data!B2:B20<>\\\"\\\"),--(((Data!B2:B20=C11)+(Data!B2:B20=C12)+(Data!B2:B20=C13))>0),Data!C2:C20))\"\n    }\n  }\n}",
+  "submissions": {
+    "sheet-46897": {
+      "formulas": {
+        "I3": "=COUNTIF(INDEX(A2:D15,0,MATCH(I1,A1:D1,0)),I2)"
+      }
+    },
+    "sheet-47699": {
+      "formulas": {
+        "D1": "=SUMIF(A5:A1048576,FALSE(),D5:D1048576)"
+      }
+    },
+    "sheet-48354": {
+      "fills": [
+        {
+          "range": "D2:D6",
+          "formula": "=IF(ISNUMBER(SEARCH(\"domestic\",B2)),\"D\",IF(ISNUMBER(SEARCH(\"international\",B2)),\"I\",\"N/A\"))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-48365": {
+      "formulas": {
+        "C4": "=IF(COUNTIF(C11:C13,\"All\")>0,SUMIF(Data!A:A,C2,Data!C:C),SUMPRODUCT(--(Data!A2:A20=C2),--(Data!B2:B20<>\"\"),--(((Data!B2:B20=C11)+(Data!B2:B20=C12)+(Data!B2:B20=C13))>0),Data!C2:C20))"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-45d8-7cb3-9a02-957c29779f55",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26545,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 289,
+    "reasoning_output_tokens": 0
+  }
+}

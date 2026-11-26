@@ -1,0 +1,58 @@
+{
+  "text": [
+    {
+      "sector": "2023Q3/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Q1 total sales fell 1.8% year over year while inventory rose 3.5% (A, C). I forecast Q2 sales growth stays above −5.00%, close to the Q1 pace. If sales continue to lag inventory, markdowns to clear stock could deepen the year-over-year decline to at least 5.00% in Q3."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q3/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-3",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q3/retail-1",
+      "alerts": [
+        {
+          "cik": "0000813298",
+          "reason": "Reported sales growth fell from +7.81% year over year in January to -1.73% in April (A). Inventory rose 3.5% year over year as sales fell (C), raising the risk of markdowns if demand stays soft. I forecast sales growth above -5.00% in Q2 and at or below -5.00% in Q3."
+        },
+        {
+          "cik": "0000897429",
+          "reason": "Reported sales growth slowed from +5.60% year over year in January to -1.14% in April. April comparable sales fell just 0.6% (A), supporting a Q2 forecast above -5.00%. Inventory was already 9.8% below the prior year (C), suggesting the company was stocking for softer demand. I forecast Q3 reported sales growth at or below -5.00%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q3/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-3",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q3/retail-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/retail-3",
+      "alerts": []
+    }
+  ]
+}

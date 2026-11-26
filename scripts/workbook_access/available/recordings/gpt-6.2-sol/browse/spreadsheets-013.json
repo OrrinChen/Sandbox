@@ -1,0 +1,512 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "0259f4e567f079708b02882e501f722aa754e69d3d687bdc3d1f5ae461e2d59a",
+    "3f43090c94d700d8da211998c47b3afdfb2c1881f7deddeafb081308511b17c7",
+    "fd444f9f5b05d6e540bd4f95995e52b49b1e0903ba9e34c2d002c9fe063f974c"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-48588",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B43",
+            "formula": "=IF(A2=\"\",\"\",XMATCH(A2,UNIQUE(FILTER($A$2:A2,$A$2:A2<>\"\")),0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 62199,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 958,
+        "reasoning_output_tokens": 460
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48608",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F5",
+            "formula": "=IF(G2=\"\",\"\",XLOOKUP(1,($B$2:$B$8=G2)*($C$2:$C$8=\"Pass\"),$A$2:$A$8,\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:G8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:G8",
+            "range_size": 56,
+            "cells": [
+              [
+                "A1",
+                "Name"
+              ],
+              [
+                "B1",
+                "Session"
+              ],
+              [
+                "C1",
+                "Result"
+              ],
+              [
+                "E1",
+                "Passes (Hidden)"
+              ],
+              [
+                "F1",
+                "Passes"
+              ],
+              [
+                "A2",
+                "John"
+              ],
+              [
+                "B2",
+                "12345"
+              ],
+              [
+                "C2",
+                "Pass"
+              ],
+              [
+                "E2",
+                "12345"
+              ],
+              [
+                "F2",
+                "#N/A"
+              ],
+              [
+                "G2",
+                "12345"
+              ],
+              [
+                "A3",
+                "Paulie"
+              ],
+              [
+                "B3",
+                "45678"
+              ],
+              [
+                "C3",
+                "Pass"
+              ],
+              [
+                "E3",
+                "45678"
+              ],
+              [
+                "F3",
+                "#N/A"
+              ],
+              [
+                "G3",
+                "45678"
+              ],
+              [
+                "A4",
+                "Freddo"
+              ],
+              [
+                "B4",
+                "99999"
+              ],
+              [
+                "C4",
+                "Fail"
+              ],
+              [
+                "F4",
+                "#N/A"
+              ],
+              [
+                "G4",
+                "15667"
+              ],
+              [
+                "A5",
+                "Sandy"
+              ],
+              [
+                "B5",
+                "15667"
+              ],
+              [
+                "C5",
+                "Pass"
+              ],
+              [
+                "E5",
+                "15667"
+              ],
+              [
+                "F5",
+                "#N/A"
+              ],
+              [
+                "G5",
+                "11111"
+              ],
+              [
+                "A6",
+                "Graham"
+              ],
+              [
+                "B6",
+                "33333"
+              ],
+              [
+                "C6",
+                "Fail"
+              ],
+              [
+                "A7",
+                "Stevey"
+              ],
+              [
+                "B7",
+                "11111"
+              ],
+              [
+                "C7",
+                "Pass"
+              ],
+              [
+                "E7",
+                "11111"
+              ],
+              [
+                "A8",
+                "Djorno"
+              ],
+              [
+                "B8",
+                "98765"
+              ],
+              [
+                "C8",
+                "Fail"
+              ]
+            ],
+            "total": 38,
+            "truncated": false,
+            "blank_count": 18
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62199,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 958,
+        "reasoning_output_tokens": 460
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48643",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:H40",
+            "formula": "=SUM(H1,B2)*(1+C2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E1:H9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E1:H9",
+            "range_size": 36,
+            "cells": [
+              [
+                "E1",
+                "Efficiency amount"
+              ],
+              [
+                "F1",
+                "End amount"
+              ],
+              [
+                "H1",
+                "Total ability"
+              ],
+              [
+                "E2",
+                "72"
+              ],
+              [
+                "F2",
+                "1272"
+              ],
+              [
+                "E3",
+                "75"
+              ],
+              [
+                "F3",
+                "1575"
+              ],
+              [
+                "E4",
+                "105"
+              ],
+              [
+                "F4",
+                "1605"
+              ],
+              [
+                "E5",
+                "0"
+              ],
+              [
+                "F5",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "0"
+              ],
+              [
+                "E7",
+                "0"
+              ],
+              [
+                "F7",
+                "0"
+              ],
+              [
+                "E8",
+                "0"
+              ],
+              [
+                "F8",
+                "0"
+              ],
+              [
+                "E9",
+                "0"
+              ],
+              [
+                "F9",
+                "0"
+              ]
+            ],
+            "total": 19,
+            "truncated": false,
+            "blank_count": 17
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "H10:H40"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "H10:H40",
+            "range_size": 31,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 31
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 62199,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 958,
+        "reasoning_output_tokens": 460
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-48969",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-013",
+      "submission": {
+        "fills": [
+          {
+            "range": "J3:N5",
+            "formula": "=IFERROR(INDEX($C$3:$G$5,MATCH($I3,$B$3:$B$5,0),MATCH(J$2,$C$2:$G$2,0))=INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE())"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I2:N5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I2:N5",
+            "range_size": 24,
+            "cells": [
+              [
+                "I2",
+                "Name"
+              ],
+              [
+                "J2",
+                "2021-12-04 00:00:00"
+              ],
+              [
+                "K2",
+                "2021-12-05 00:00:00"
+              ],
+              [
+                "L2",
+                "2021-12-06 00:00:00"
+              ],
+              [
+                "M2",
+                "2021-12-07 00:00:00"
+              ],
+              [
+                "N2",
+                "2021-12-08 00:00:00"
+              ],
+              [
+                "I3",
+                "Dhaka"
+              ],
+              [
+                "J3",
+                "False"
+              ],
+              [
+                "K3",
+                "True"
+              ],
+              [
+                "L3",
+                "True"
+              ],
+              [
+                "I4",
+                "Khulna"
+              ],
+              [
+                "J4",
+                "False"
+              ],
+              [
+                "K4",
+                "True"
+              ],
+              [
+                "L4",
+                "True"
+              ],
+              [
+                "I5",
+                "Rajshahi"
+              ],
+              [
+                "J5",
+                "False"
+              ],
+              [
+                "K5",
+                "False"
+              ]
+            ],
+            "total": 17,
+            "truncated": false,
+            "blank_count": 7
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 62199,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 958,
+        "reasoning_output_tokens": 460
+      },
+      "model_calls": 3
+    }
+  ]
+}

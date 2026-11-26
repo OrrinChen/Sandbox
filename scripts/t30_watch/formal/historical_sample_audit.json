@@ -1,0 +1,4566 @@
+{
+  "input_lock_sha256": "3db53dbbd8c1507deb7a514fabedc3f8fe9714e7d626a6ac0d087390f08c082c",
+  "selection": "Earliest fully available packet per issuer, no future labels or model decisions consulted.",
+  "verified_pairs": 208,
+  "by_source_method": {
+    "original_inline_xbrl": 206,
+    "original_statement_table": 2
+  },
+  "issuers": [
+    {
+      "cik": "0000815556",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1413300000,
+            1379100000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000815556-20-000067"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-08",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1358000000,
+            1276900000
+          ],
+          "statement_row_labels": [
+            "Fourth quarter"
+          ],
+          "source_accessions": [
+            "0000815556-21-000008"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000815556-20-000067": "22ac605be3c8b7fe0c073106ec86e44112f489ec350145ceeba44fd5db9e5cde",
+        "0000815556-21-000008": "2c6f0162b3e5c89f2ef687b9dbfceff694ab3593c08815491841f85bd5301bc8"
+      }
+    },
+    {
+      "cik": "0001326380",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-08",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1004700000,
+            1438500000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001326380-20-000134"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2122100000,
+            2194100000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001326380-21-000032"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001326380-20-000134": "f902b1e4e6aab59dcc757c99118bace9aaa45a6f0af9886f3eac20475b3dca3c",
+        "0001326380-21-000032": "33063db37480acadc5fdd712081ca1225b9bb713785b3fb7374db557003f45f6"
+      }
+    },
+    {
+      "cik": "0000813298",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-11-20",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            85171000,
+            106581000
+          ],
+          "statement_row_labels": [
+            "Sales",
+            "Total Sales"
+          ],
+          "source_accessions": [
+            "0001564590-20-054750"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-19",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            100106000,
+            131239000
+          ],
+          "statement_row_labels": [
+            "Sales"
+          ],
+          "source_accessions": [
+            "0001564590-21-014278"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-054750": "4cdd85fc1214cd5da415957b72660adfb13aad2139af65ae778650c14cb981ff",
+        "0001564590-21-014278": "31245b978eae17be4690c99920fce9270ae7f436b5f5d505cc244b90d5a6926f"
+      }
+    },
+    {
+      "cik": "0000897429",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-11-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            351416000,
+            484706000
+          ],
+          "statement_row_labels": [
+            "Net Sales",
+            "Total Net Sales"
+          ],
+          "source_accessions": [
+            "0000897429-20-000142"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            386197000,
+            527085000
+          ],
+          "statement_row_labels": [
+            "Fourth quarter (4)",
+            "Fourth quarter (5)"
+          ],
+          "source_accessions": [
+            "0000897429-21-000038"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000897429-20-000142": "22dec7e815af7da28fbfa2df810486041104ca3c8466ac44972c958b3cd1ab22",
+        "0000897429-21-000038": "ece07f4498eac58ef0105d8564bc714979b0b41fa6bf8a90a38ac4286957fb89"
+      }
+    },
+    {
+      "cik": "0000912615",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-01",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            969607000,
+            987469000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001564590-20-056727"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-04-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1088393000,
+            1169578000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001564590-21-017306",
+            "0001564590-20-056727"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-056727": "50adf933865984770fcbe03d592e32bc978c2daa0d095e02353cfb041ce12516",
+        "0001564590-21-017306": "80e9865ec3c1c30c41708ad64439d780900b29af48e3c207ed0ad0353a8cf63c"
+      }
+    },
+    {
+      "cik": "0000064803",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            67056000000,
+            64810000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000064803-20-000041"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            69554000000,
+            66889000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000064803-21-000011",
+            "0000064803-20-000041"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000064803-20-000041": "50e9c80b932fd80c299be124f3a00e978bb1530ad38b826bf279bc7ee884105f",
+        "0000064803-21-000011": "4d50d96e1b6312f06fb108599e44a53dd164156276f39b851a43b0478c448008"
+      }
+    },
+    {
+      "cik": "0000812128",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-01",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            940023000,
+            906489000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0000812128-20-000017",
+            "0000812128-20-000014"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            909306000,
+            823078000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0000812128-21-000003"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000812128-20-000017": "9ec1e8f23384a79baee677b2be6722903aeebc9563afdf6d32b48a34d46545ca",
+        "0000812128-20-000014": "cf6135ed9cb0ced5eb91d60e172cbf2d11f3b420fe8ceae99687cf92a16f2548",
+        "0000812128-21-000003": "10f0bbde9ce6df7d063e5e243b9044dcf6e927994d7234ac95427ef4a7098361"
+      }
+    },
+    {
+      "cik": "0000047111",
+      "status": "verified",
+      "wave": "2025Q1",
+      "cutoff": "2024-11-30",
+      "checks": [
+        {
+          "quarter_end": "2024-06-30",
+          "filed": "2024-08-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2074480000,
+            2490280000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000047111-24-000045"
+          ]
+        },
+        {
+          "quarter_end": "2024-09-29",
+          "filed": "2024-11-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2987494000,
+            3029987000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000047111-24-000055"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000047111-24-000045": "15648a616a5e7624280beb8545a9fb1b528ed96787afbf74e7adecd0f0c89738",
+        "0000047111-24-000055": "a7dc5711d08d20d2fbf22af7a8cfbd6bdc07910714a63e36afff19d77ce5ef96"
+      }
+    },
+    {
+      "cik": "0000016918",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-05-02",
+      "checks": [
+        {
+          "quarter_end": "2020-11-30",
+          "filed": "2021-01-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2438100000,
+            1999400000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000016918-21-000010"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-28",
+          "filed": "2021-04-20",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1953000000,
+            1902900000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000016918-21-000060"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000016918-21-000010": "bdb3c95b4c26db3d7533c6f8b513a1b74bb6784d2e6d33a42811b7c3b5040cb7",
+        "0000016918-21-000060": "01cb1f32bc89ff3f1ef9790223fbae3e36180221a27bdc4871558d5a665f1fd9"
+      }
+    },
+    {
+      "cik": "0001644406",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            260855000,
+            227211000
+          ],
+          "statement_row_labels": [
+            "",
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001644406-20-000031"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-24",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            256043000,
+            216666000
+          ],
+          "statement_row_labels": [
+            "",
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001644406-21-000009",
+            "0001644406-20-000031"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001644406-20-000031": "b7f3698be3b4292bb0ac498f432925db57f980a742a9c26e87cdcd09ab4ef21b",
+        "0001644406-21-000009": "2f26aebbe5191f1e47acf56eda28f7779fb868da4a66e3693f0529a2bfc1ceeb"
+      }
+    },
+    {
+      "cik": "0000063754",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-05-02",
+      "checks": [
+        {
+          "quarter_end": "2020-11-30",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1557900000,
+            1484800000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000063754-21-000020"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-28",
+          "filed": "2021-03-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1481500000,
+            1212000000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Three months ended February 28, 2021",
+            "Three months ended February 29, 2020"
+          ],
+          "source_accessions": [
+            "0000063754-21-000071"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000063754-21-000020": "1d7813d74f89b7be2ecd90f7fa973edd8808c0edcf159641d3a143a79a607301",
+        "0000063754-21-000071": "c445521d9573e292884b71130849bc86d12418d604a65c4421adc0f292db2cfb"
+      }
+    },
+    {
+      "cik": "0000034563",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            97270000,
+            138600000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000034563-20-000130"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            104571000,
+            152498000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000034563-21-000010"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000034563-20-000130": "3c8b1ebf1e5c790d69ae07b7d344a442f9deee10f6374934869cefb9c93110ca",
+        "0000034563-21-000010": "9476fc8456744af8fd75d28df2f0fe8cf63555e9d5daafe7f383ce4704246267"
+      }
+    },
+    {
+      "cik": "0000014930",
+      "status": "verified",
+      "wave": "2024Q1",
+      "cutoff": "2023-12-01",
+      "checks": [
+        {
+          "quarter_end": "2023-07-01",
+          "filed": "2023-08-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1702300000,
+            1835600000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000014930-23-000174"
+          ]
+        },
+        {
+          "quarter_end": "2023-09-30",
+          "filed": "2023-11-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1593600000,
+            1698200000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000014930-23-000182"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000014930-23-000174": "085808aa49168a7ae9c1b93710e72746d78e91ee2c7afedc2c46185bf906d851",
+        "0000014930-23-000182": "ff995c2f73e392a096da23ca1152d09ee0d4e910266e0a4e741df679959b569f"
+      }
+    },
+    {
+      "cik": "0000029905",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-20",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1748256000,
+            1825345000
+          ],
+          "statement_row_labels": [
+            "As reported",
+            "Revenue",
+            "Total",
+            "Total consolidated revenue"
+          ],
+          "source_accessions": [
+            "0000029905-20-000043"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-12",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1780390000,
+            1775589000
+          ],
+          "statement_row_labels": [
+            "Fourth"
+          ],
+          "source_accessions": [
+            "0000029905-21-000010"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000029905-20-000043": "088cdd6434c57bbbc2e526a6beffca93411ed6a974656b5d65f5542b64c3b673",
+        "0000029905-21-000010": "62ef4298f58ebb265b06e2740da206117e44fc698cdb16cfa67ee9be006fc70e"
+      }
+    },
+    {
+      "cik": "0001599617",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            326000000,
+            751000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-20-050250"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            319000000,
+            639000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-21-006229",
+            "0001564590-20-050250"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-050250": "b8de63dc33bc300d41047ef82734e7e015d30e0d272f289a4b03efb87db5d4ba",
+        "0001564590-21-006229": "1db88775c288997393567107adf8e4a1b06b4501d735276c39e8185cd72cb299"
+      }
+    },
+    {
+      "cik": "0001005229",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            157790000,
+            207609000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001005229-20-000298"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            166547000,
+            199355000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001005229-21-000007"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001005229-20-000298": "f67bd0b398599485bec40428ffe49d90bc42e0c121c5df20255fd265b196d89f",
+        "0001005229-21-000007": "51eb56d0b79465c70b18d5543dfcb21bc6b08d6d38e6904ff25d9f7f80e8e1f1"
+      }
+    },
+    {
+      "cik": "0000737758",
+      "status": "no_complete_packet",
+      "checks": []
+    },
+    {
+      "cik": "0000055242",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            400305000,
+            518088000
+          ],
+          "statement_row_labels": [
+            "Sales",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0000055242-20-000046"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            440507000,
+            505080000
+          ],
+          "statement_row_labels": [
+            "Sales",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0000055242-21-000012"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000055242-20-000046": "a16af6115b9993375567f2aedecfbe3c569750cf06a9ee7a25b1671a08f8a233",
+        "0000055242-21-000012": "980bd04e98dc0c428fdd4680561050a589e4e01828c5e72e1adb9c4012d89706"
+      }
+    },
+    {
+      "cik": "0000006951",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-27",
+      "checks": [
+        {
+          "quarter_end": "2020-10-25",
+          "filed": "2020-12-11",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            4688000000,
+            3754000000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000006951-20-000048"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5162000000,
+            4162000000
+          ],
+          "statement_row_labels": [
+            "Net Sales",
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000006951-21-000013"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000006951-20-000048": "7759c33d23be89762918932ea2ba6dc207c47948bfc1dced205a8d54b56516cb",
+        "0000006951-21-000013": "5db86135bfbb79bb82fdd0d42ffafbc471c65efb46d1b607fa7a7e9d7f35a266"
+      }
+    },
+    {
+      "cik": "0000029002",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            309459000,
+            323674000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001564590-20-052586"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            350370000,
+            301157000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001564590-21-007008"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-052586": "13e5388bbbbc92402a7407a8f33048f6c5dfdd5afd9af7c6d290a1070af1f1d0",
+        "0001564590-21-007008": "21b2a07347e08df8542db525bdbe6e899fd7b946bd37a50ac57ec875bd0bf750"
+      }
+    },
+    {
+      "cik": "0000743988",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-10-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            766535000,
+            833366000
+          ],
+          "statement_row_labels": [
+            "Net revenues",
+            "Total net revenues"
+          ],
+          "source_accessions": [
+            "0000743988-20-000051"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-02",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            803404000,
+            723499000
+          ],
+          "statement_row_labels": [
+            "Net revenues",
+            "Total net revenues"
+          ],
+          "source_accessions": [
+            "0000743988-21-000011"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000743988-20-000051": "ea4c83d5ce6e93fdffc5ddb750716d837c439cb71cb6898608fe72f820ac4313",
+        "0000743988-21-000011": "fb827a962d253f90aa2ab228e815c2832498ffa79c1328ba1fa35c855f8d4e17"
+      }
+    },
+    {
+      "cik": "0000772406",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-11-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            347325000,
+            388912000
+          ],
+          "statement_row_labels": [
+            "",
+            "Net sales",
+            "﻿"
+          ],
+          "source_accessions": [
+            "0000772406-20-000039"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-26",
+          "filed": "2021-02-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            485795000,
+            374668000
+          ],
+          "statement_row_labels": [
+            "",
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000772406-21-000005"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000772406-20-000039": "a58db3b79dcea81d0ccf52ac943e4b98dc1e0a9bb2421ac2018c8545ad389737",
+        "0000772406-21-000005": "52969f5ec1cea9ce9e399da69b3a5c4ddf85ba4f448d666d1d6aa84c96aea05e"
+      }
+    },
+    {
+      "cik": "0000917273",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            56915000,
+            57399000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000917273-20-000031"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            61913000,
+            59947000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000917273-21-000005"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000917273-20-000031": "d92c0c8993b26f2cd3e4310f74d60c798f39d5147ebb6a238a5c9363572514e1",
+        "0000917273-21-000005": "7876677ddd623b00badc7b8a05c43c84bffc411d32167f4496b7c0e5fc11c7c5"
+      }
+    },
+    {
+      "cik": "0000833640",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            121129000,
+            114159000
+          ],
+          "statement_row_labels": [
+            "NET REVENUES",
+            "Total net revenues"
+          ],
+          "source_accessions": [
+            "0000833640-20-000253"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            150693000,
+            114457000
+          ],
+          "statement_row_labels": [
+            "Net revenues"
+          ],
+          "source_accessions": [
+            "0000833640-21-000025"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000833640-20-000253": "30bf1eb3dfd8951d7e552874baa35fafa805546eee88f9ccf700cd480335e0cd",
+        "0000833640-21-000025": "a3d1f051ad5db0fbc49fcfa2b0f6ad4241bd25dd70b79d4d1ad5bb23984f2018"
+      }
+    },
+    {
+      "cik": "0001107843",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            93069000,
+            82671000
+          ],
+          "statement_row_labels": [
+            "Revenues",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001437749-20-022558"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            94801000,
+            84664000
+          ],
+          "statement_row_labels": [
+            "Revenues"
+          ],
+          "source_accessions": [
+            "0001437749-21-003648"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-022558": "92daba4e4fe696df2f54c37328975c428f26c0a750fac181aaa6d2b884472f2e",
+        "0001437749-21-003648": "a75dad3ef7780a856b2a840882346bd42e2949bd0b0e3c77077051206df141d8"
+      }
+    },
+    {
+      "cik": "0001112920",
+      "status": "no_complete_packet",
+      "checks": []
+    },
+    {
+      "cik": "0001528396",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-01",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            169802000,
+            157010000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001528396-20-000070"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-03-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            180062000,
+            173458000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001528396-21-000019"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001528396-20-000070": "01961a5077dc9bc65e0c932d5b3517ecf6ae2e9521581fd4750522fe1f29d6a3",
+        "0001528396-21-000019": "5a912f0b984441a7861e05da606f6b4dec50ede1d6d6400c185aa4b1ec4d34de"
+      }
+    },
+    {
+      "cik": "0000813672",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-10-19",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            666607000,
+            579603000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000813672-20-000027"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-02",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            759909000,
+            599555000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000813672-21-000009",
+            "0000813672-20-000027"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000813672-20-000027": "05be3fd411ba43bd5edfcc181e12ba3d176df4b1b1eec9d7e95ec4ffb912822d",
+        "0000813672-21-000009": "bc64d0d0097846d9015442f4e0baca567e7a306bc0a9047abb7c9efbbd6ef51c"
+      }
+    },
+    {
+      "cik": "0001512673",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3033874000,
+            1266474000
+          ],
+          "statement_row_labels": [
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001512673-20-000012"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3158970000,
+            1313429000
+          ],
+          "statement_row_labels": [
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001512673-21-000008",
+            "0001512673-20-000012"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001512673-20-000012": "5fb5131de227b0b0b2a00a9fd879acd7fe8376320b157eb1fe1235cbc3f48fbd",
+        "0001512673-21-000008": "9bfc99933ab15aa7ddf68173274c3159b21ae3da22c41ea3efd06381ac5dced9"
+      }
+    },
+    {
+      "cik": "0000935494",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            308124000,
+            340442000
+          ],
+          "statement_row_labels": [
+            "Total net sales",
+            "Total net sales(1)"
+          ],
+          "source_accessions": [
+            "0000935494-20-000060"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            367837000,
+            367468000
+          ],
+          "statement_row_labels": [
+            "Total net sales",
+            "Total net sales (1)",
+            "Total net sales(1)"
+          ],
+          "source_accessions": [
+            "0000935494-21-000015",
+            "0000935494-20-000060"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000935494-20-000060": "57213fb16369c98a09b9f029faf0af94d2e6191fb158427f412e7a16ca73e453",
+        "0000935494-21-000015": "dbc907ff4dc7d691e512233c8a359eb7fa90c4faa27d19585d044bb10527a9a3"
+      }
+    },
+    {
+      "cik": "0000928658",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            191689000,
+            217040000
+          ],
+          "statement_row_labels": [
+            "Total revenue",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001437749-20-017342"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            210830000,
+            220459000
+          ],
+          "statement_row_labels": [
+            "Total revenue",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001437749-20-022403"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-017342": "d63536e3782e2563eb3b13129bce6608f094b81b5dc4ded074027943a888f00f",
+        "0001437749-20-022403": "2acc5e22cc95612fc8f8fbc4369699dc132ac771d0107489e701574d39e9bbf2"
+      }
+    },
+    {
+      "cik": "0000793074",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            590214000,
+            618264000
+          ],
+          "statement_row_labels": [
+            "Operating revenues",
+            "Total",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000793074-20-000053"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-24",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            620302000,
+            621787000
+          ],
+          "statement_row_labels": [
+            "Operating revenues"
+          ],
+          "source_accessions": [
+            "0000793074-21-000016"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000793074-20-000053": "d380157eb343df5ba6f1280b752a53ea2cd78e2089f6b045625a3d968b092a13",
+        "0000793074-21-000016": "a5d6cb7c8fcde22175fcaf234301e115fb029822f811c44efd8d966a3a398b0b"
+      }
+    },
+    {
+      "cik": "0000100885",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            4919000000,
+            5516000000
+          ],
+          "statement_row_labels": [
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0000100885-20-000304"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5141000000,
+            5212000000
+          ],
+          "statement_row_labels": [
+            "Operating revenues"
+          ],
+          "source_accessions": [
+            "0000100885-21-000068"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000100885-20-000304": "96e219014128222f1608cef53f8bddd76983fc7faae23088a77d7017ce4a0a9e",
+        "0000100885-21-000068": "14eb175e1b20f6eef776a03058a330b31044952bd77ba6c9bc1df411df82f22c"
+      }
+    },
+    {
+      "cik": "0000859598",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            175414000,
+            200658000
+          ],
+          "statement_row_labels": [
+            "",
+            "External customers",
+            "Operating Revenues"
+          ],
+          "source_accessions": [
+            "0000859598-20-000086"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            213531000,
+            192761000
+          ],
+          "statement_row_labels": [
+            "Operating Revenues"
+          ],
+          "source_accessions": [
+            "0000859598-21-000006"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000859598-20-000086": "74094165b3eab26059c58b5ede646d5ae9ecca58dfbbf8bf0aa692a212079a01",
+        "0000859598-21-000006": "4d44df7ec2f2f7ddf62f2da169a022d94a2252843dea23f1e15eab3d513d7442"
+      }
+    },
+    {
+      "cik": "0000006201",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3173000000,
+            11911000000
+          ],
+          "statement_row_labels": [
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0000006201-20-000101"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            4027000000,
+            11313000000
+          ],
+          "statement_row_labels": [
+            "Operating revenues"
+          ],
+          "source_accessions": [
+            "0000006201-21-000014"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000006201-20-000101": "e392204607633a96287a67562ca660816492bde10e86eb83046f541f051dbb96",
+        "0000006201-21-000014": "a9a2b9717f203c143a79814e7fd65f20954e8883f66026d2be290af9066d2fab"
+      }
+    },
+    {
+      "cik": "0000100517",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-15",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2489000000,
+            11380000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total operating revenue"
+          ],
+          "source_accessions": [
+            "0000100517-20-000056"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3412000000,
+            10888000000
+          ],
+          "statement_row_labels": [
+            "Operating revenue"
+          ],
+          "source_accessions": [
+            "0000100517-21-000016"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000100517-20-000056": "b0a99f1948112075d8239eaeb6c0b8e0197dd96a59dc497fb72508158a71fb78",
+        "0000100517-21-000016": "135c688e33d782390cd7bd7c3fdf89ec447bbbb1a7ef040d4568a8f2f9404acd"
+      }
+    },
+    {
+      "cik": "0000768835",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1377925000,
+            1167988000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000768835-20-000159"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1737915000,
+            1606982000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000768835-21-000028"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000768835-20-000159": "4999b286ff2e4ff2ae30445a877f32f9a57904ed659dd5d361b717d24621e48a",
+        "0000768835-21-000028": "f229a0604b8c3f12895f8e1af1101cd3a3b5db11564f302cf5a8d0f507801f1e"
+      }
+    },
+    {
+      "cik": "0001701114",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            112253000,
+            99490000
+          ],
+          "statement_row_labels": [
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-011964"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            115458000,
+            94322000
+          ],
+          "statement_row_labels": [
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001558370-21-001484",
+            "0001558370-20-011964"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-011964": "85bd836d61bb363eb482f5b47dfe9ed828bf907a2603164b17ed396ebb222891",
+        "0001558370-21-001484": "50e4e36596eee2a6251ab3ec3fd7729fd6b5ebf778071d32d5254f289e59407e"
+      }
+    },
+    {
+      "cik": "0001002590",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-12-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            183295000,
+            235887000
+          ],
+          "statement_row_labels": [
+            "Sales"
+          ],
+          "source_accessions": [
+            "0001564590-20-056309"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            373320000,
+            508945000
+          ],
+          "statement_row_labels": [
+            "Total Sales",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0001564590-21-004066"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-056309": "acaa12da08b29c562cd40cea54103669d472e1d6dabb51672faff14ad79969f9",
+        "0001564590-21-004066": "2b3db6e904f2e312f45b8975d3948b962180671dfa377920ae436f605ba4f802"
+      }
+    },
+    {
+      "cik": "0000084129",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-30",
+      "checks": [
+        {
+          "quarter_end": "2020-11-28",
+          "filed": "2021-01-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            6117038000,
+            5462298000
+          ],
+          "statement_row_labels": [
+            "Revenues",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001558370-21-000043"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-27",
+          "filed": "2021-04-27",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5916856000,
+            5727242000
+          ],
+          "statement_row_labels": [
+            "Revenues"
+          ],
+          "source_accessions": [
+            "0001558370-21-004887"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-21-000043": "558ef5040fc7046b680ceea08c2dd927e5ab66e6ad0bf8c1d4b9237131df9640",
+        "0001558370-21-004887": "5291f9d47d083f0a1c99caa9e1136b609a13ff199d3b491594aa5cb5e6f40d8f"
+      }
+    },
+    {
+      "cik": "0000072333",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3089000000,
+            3672000000
+          ],
+          "statement_row_labels": [
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000072333-20-000246"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3645000000,
+            4537000000
+          ],
+          "statement_row_labels": [
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000072333-21-000099",
+            "0000072333-20-000246"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000072333-20-000246": "254af9b907b5b7970cac57f427879137ccd9be967303b96365f36785e62faaff",
+        "0000072333-21-000099": "9fff4a63fd82343ae1abbec6198d5cec8efbbf9c9bb5a52382e57719781b0fbe"
+      }
+    },
+    {
+      "cik": "0000916365",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-10-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2606572000,
+            1984144000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000916365-20-000184"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-26",
+          "filed": "2021-02-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2878265000,
+            2191785000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000916365-21-000052",
+            "0000916365-20-000184"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000916365-20-000184": "be2df7c3cdf91ac11297dca4688d1f9618193aa3c5dcab05cf84e42925e8cb40",
+        "0000916365-21-000052": "ac3fdac3f1530a119707366c3f3616cf23fff832cf801418ab66d9805889e4ea"
+      }
+    },
+    {
+      "cik": "0000100493",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-10-03",
+          "filed": "2020-11-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            11460000000,
+            10884000000
+          ],
+          "statement_row_labels": [
+            "Sales"
+          ],
+          "source_accessions": [
+            "0000100493-20-000132"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-02",
+          "filed": "2021-02-11",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            10460000000,
+            10815000000
+          ],
+          "statement_row_labels": [
+            "Sales",
+            "Total",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0000100493-21-000015"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000100493-20-000132": "2b9c921e7b40114eccf5f0545eaf5b68126d37bfe772a3154156cf34e8140ef4",
+        "0000100493-21-000015": "423c53964bca69629ae8b370745f0625f9cedac8189d784769433ce1c2c438e4"
+      }
+    },
+    {
+      "cik": "0000802481",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-27",
+      "checks": [
+        {
+          "quarter_end": "2020-09-27",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3075121000,
+            2777970000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000802481-20-000080"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-27",
+          "filed": "2021-02-11",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3117829000,
+            3063489000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000802481-21-000015"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000802481-20-000080": "15ead3671b537449e85058824bfb8e390e68f97f20e291ddc42845827f5d1323",
+        "0000802481-21-000015": "623a79a51639457b68b0e25508fa9f170e8911af62586f374456db7ff0664d7b"
+      }
+    },
+    {
+      "cik": "0000880117",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-24",
+      "checks": [
+        {
+          "quarter_end": "2020-09-24",
+          "filed": "2020-10-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            210273000,
+            217846000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001193125-20-279777"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-24",
+          "filed": "2021-01-27",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            233575000,
+            246423000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001193125-21-019233"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001193125-20-279777": "a6451f457f661e7438f713c7a71963bb1647e536b20692b573d9c441fe97dad7",
+        "0001193125-21-019233": "030d54c8182a2d88853b228fff6d847a547a4a0434d4ee4af5fbf81f70681d09"
+      }
+    },
+    {
+      "cik": "0000007084",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            15126000000,
+            16726000000
+          ],
+          "statement_row_labels": [
+            "Consolidated Statement of Earnings",
+            "Revenues",
+            "Total gross revenues",
+            "Total revenues from external customers"
+          ],
+          "source_accessions": [
+            "0000007084-20-000038"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            17978000000,
+            16329000000
+          ],
+          "statement_row_labels": [
+            "Revenues"
+          ],
+          "source_accessions": [
+            "0000007084-21-000008"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000007084-20-000038": "2d1f72ce8b0075d1fe31ff3e0b7bf0b6cc6b61b881833dfc4e019fe067b02f5e",
+        "0000007084-21-000008": "9769b5df8c6d12086f6fa95ec08d376464ceb0cc4c7eda43d14c48cfa3f7cd6d"
+      }
+    },
+    {
+      "cik": "0001611647",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            84189912,
+            65265901
+          ],
+          "statement_row_labels": [
+            "NET SALES",
+            "Net Sales"
+          ],
+          "source_accessions": [
+            "0001437749-20-022389"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            84522000,
+            65752000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001437749-21-003615"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-022389": "6a7d6b69bbba395f78df82d4bddc80359ce25f74eb437f6dc98406e624841b3a",
+        "0001437749-21-003615": "aaddf19d3dc364c2a39325007c5ad7d047adb8de388cb9cfa1fe3ea1ae763b1e"
+      }
+    },
+    {
+      "cik": "0001341766",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-06",
+          "method": "original_statement_table",
+          "amounts_usd": [
+            30037227,
+            16121929
+          ],
+          "statement_row_labels": [
+            "Revenue (note 3) $30,037,227 $16,121,929 $58,222,116 $30,607,579"
+          ],
+          "source_accessions": [
+            "0001213900-20-020515"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-12",
+          "method": "original_statement_table",
+          "amounts_usd": [
+            36839149,
+            20423847
+          ],
+          "statement_row_labels": [
+            "Revenue (note 3) $36,839,149 $20,423,847 $95,061,265 $51,031,426"
+          ],
+          "source_accessions": [
+            "0001213900-20-036371"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001213900-20-020515": "43cb0fb3b1e7b598b6ac285e236262ed56d6e092e6452a2a7ff56e5e1e454a7f",
+        "0001213900-20-036371": "bc3af489dab4b979e863d85cab1c4afdd6f42d56c9b109e967127e70463a53a4"
+      }
+    },
+    {
+      "cik": "0000933974",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            246196000,
+            199211000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue",
+            "​"
+          ],
+          "source_accessions": [
+            "0001558370-20-013971",
+            "0001558370-20-008910"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            249503000,
+            210500000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue",
+            "​"
+          ],
+          "source_accessions": [
+            "0001558370-21-000702"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-013971": "bb46903f42143bfcb8801004aab394baaf5aaf8a1fcf7d3d0847bc087b865872",
+        "0001558370-20-008910": "5f33f3aaa31ff31b16c7d1da85fc2ea78d83bdb827a005023fe70787c385ec98",
+        "0001558370-21-000702": "c0fb62f95a0fdb3064159b11809acd0f22127aeeb948c046c4530dbb6ffd658e"
+      }
+    },
+    {
+      "cik": "0001701605",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5049000000,
+            5882000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001701605-20-000086"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5495000000,
+            6348000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001701605-21-000026",
+            "0001701605-20-000086"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001701605-20-000086": "0bf9ec194d0747664e8bf0648456c1f028bb012379373f9364ef1320b13627ae",
+        "0001701605-21-000026": "18d163e37025981f72672d19b8c125ea90fe1d7da57cca0d055c7e704b0945b9"
+      }
+    },
+    {
+      "cik": "0001287213",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            133761000,
+            141869000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total revenue",
+            "​"
+          ],
+          "source_accessions": [
+            "0001558370-20-012248"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            158160000,
+            160298000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001558370-21-001470"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-012248": "62a3b1e6aeacb9eaf2851fecd65bba39bda3ec3f115c2a47f4ea3cf707c654f5",
+        "0001558370-21-001470": "b6a603ef23a41a3effd42f659640b5cfec50a8a95726bfd3324bb79593b7754c"
+      }
+    },
+    {
+      "cik": "0000918541",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            150420000,
+            221666000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001628280-20-012141"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            113761000,
+            120459000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001628280-20-015927"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001628280-20-012141": "04e1e3212a00ed4c54394b9a7d7b7a610d06445f503f30753a6d07ce220c81a0",
+        "0001628280-20-015927": "d4d0668b632b0b55b09f89c35d4457ce6f83c61dc1d70372ce5924b2773d4861"
+      }
+    },
+    {
+      "cik": "0000707549",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-27",
+      "checks": [
+        {
+          "quarter_end": "2020-09-27",
+          "filed": "2020-10-27",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3177080000,
+            2165746000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0000707549-20-000173"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-27",
+          "filed": "2021-02-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            3456237000,
+            2583501000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0000707549-21-000017"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000707549-20-000173": "ab31256df41fe241d48757bd185a25cc81b5fcc49d1caf1c2b2bad9232b1c85c",
+        "0000707549-21-000017": "e7c2a5ae4098b34b039f2c1c1b9ff93403ed68f0e4b9b16f3483d3eae86060af"
+      }
+    },
+    {
+      "cik": "0000067887",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-10-03",
+          "filed": "2020-11-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            706895000,
+            765207000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000067887-20-000054"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-02",
+          "filed": "2021-01-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            683954000,
+            754843000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000067887-21-000008"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000067887-20-000054": "376a21af81c6b2c89e26eece9bdf5bfaf5d039766f03481f2ef1f0ea944e36f8",
+        "0000067887-21-000008": "2eeecffa04554346e939e95767878c3224740a3580a5de933d622914d6e04fc3"
+      }
+    },
+    {
+      "cik": "0001730168",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-03",
+      "checks": [
+        {
+          "quarter_end": "2020-11-01",
+          "filed": "2020-12-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            6467000000,
+            5776000000
+          ],
+          "statement_row_labels": [
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001730168-20-000226"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-03-12",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            6655000000,
+            5858000000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001730168-21-000045"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001730168-20-000226": "b782c90acc9a36272859eeeba7960f2744cee9a2c3b544efb887228465cf7d8b",
+        "0001730168-21-000045": "1062cd7b8050df80c954aa19f179ad0c786a5b2d6af6ea36a13da34f96e9d079"
+      }
+    },
+    {
+      "cik": "0000895419",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-27",
+      "checks": [
+        {
+          "quarter_end": "2020-09-27",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            216600000,
+            242800000
+          ],
+          "statement_row_labels": [
+            "Revenue, net",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000895419-20-000131"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-27",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            127000000,
+            120700000
+          ],
+          "statement_row_labels": [
+            "Revenue, net",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000895419-21-000018"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000895419-20-000131": "8a8d0382331ed9df8a3ed63cea8914755a1dcd1599eafb5ef4cd8ff57f11df7a",
+        "0000895419-21-000018": "04c0927568cb81d28dc8d7a7e3f032a242236fa13852239c5bc39cc2a194bda7"
+      }
+    },
+    {
+      "cik": "0000791915",
+      "status": "no_complete_packet",
+      "checks": []
+    },
+    {
+      "cik": "0001274494",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            927565000,
+            546806000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001274494-20-000059"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            609232000,
+            1399377000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001628280-21-003343",
+            "0001274494-20-000059"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001274494-20-000059": "39210ded7d437f69fea579e32079a404ae39b9266d50b340faf50ab5a2e9f59d",
+        "0001628280-21-003343": "7bba440f40bb772676ccf2995e9fafba21412b720497bc9c858ae9a756ba2869"
+      }
+    },
+    {
+      "cik": "0001102934",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            274207000,
+            278645000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001102934-20-000055"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            287863000,
+            283143000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001102934-21-000007"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001102934-20-000055": "ff3b018ffb4087aee0b5306a99734b63c80b97a0b369a6a2f19674a145184a0d",
+        "0001102934-21-000007": "4be6393ec9e3bc42c08f975f9a266b7a117dad865d9c6dafb1634d566a6a0b88"
+      }
+    },
+    {
+      "cik": "0000912093",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-10-03",
+          "filed": "2020-11-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            284700000,
+            299800000
+          ],
+          "statement_row_labels": [
+            "Net revenue",
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0000912093-20-000101"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-02",
+          "filed": "2021-02-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            299900000,
+            313700000
+          ],
+          "statement_row_labels": [
+            "Net revenue",
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0000912093-21-000027"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000912093-20-000101": "92771db97f97b258c782caa0792c9401fd810b41184ace485e3956d1bbd097ff",
+        "0000912093-21-000027": "f61dd6a4f402f55e4a63cb3bed29a9d8d1bf9f3e05a94c0e7769c9efcb0be133"
+      }
+    },
+    {
+      "cik": "0000877890",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            767170000,
+            732901000
+          ],
+          "statement_row_labels": [
+            "Total net revenues"
+          ],
+          "source_accessions": [
+            "0000877890-20-000316"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-08",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            809656000,
+            809823000
+          ],
+          "statement_row_labels": [
+            "Net revenues"
+          ],
+          "source_accessions": [
+            "0000877890-21-000051"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000877890-20-000316": "8dc46840a080a725766fcd3307c2396606a471d49cd6344264c9f94e15e395df",
+        "0000877890-21-000051": "d029874b6de75ea4a715d380d93b24e575bb57f8283bff04d594f1caad0ffb77"
+      }
+    },
+    {
+      "cik": "0001169561",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            171139000,
+            167582000
+          ],
+          "statement_row_labels": [
+            "Total Revenue",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001169561-20-000052"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            187992000,
+            176351000
+          ],
+          "statement_row_labels": [
+            "Total Revenue",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001169561-21-000008"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001169561-20-000052": "45e5edd1f908a97cf0e5d9b196786d4cc1fdc29c2c9c1bbb5057e27e0b0d5080",
+        "0001169561-21-000008": "1cd83159ad5d64ad1cddb834554d0c7a5df0909f9a416d12d0b69ac643399b1f"
+      }
+    },
+    {
+      "cik": "0001056696",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            149757000,
+            162275000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-20-049685"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            147082000,
+            152929000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-21-004542"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-049685": "9f70ec21f84525524896c02db46f07feeabb28f868972f60937604a3d5734a8c",
+        "0001564590-21-004542": "55f838286a8676a3f83a9ad11cdcea139862770ba5b50fe9a418edf171941e04"
+      }
+    },
+    {
+      "cik": "0001666134",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            90157000,
+            74925000
+          ],
+          "statement_row_labels": [
+            "",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001666134-20-000012"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            95710000,
+            80258000
+          ],
+          "statement_row_labels": [
+            "Revenues"
+          ],
+          "source_accessions": [
+            "0001666134-21-000004"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001666134-20-000012": "3f32b2086d045f873a92f1c01c06447ed4ef95f892baf3d0bf663cef8aa87bbf",
+        "0001666134-21-000004": "cc6c6155294ddc8360cde254009451ad1f4ac70ba2d5362197c7a1aa87f464af"
+      }
+    },
+    {
+      "cik": "0001108524",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-01",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5419000000,
+            4513000000
+          ],
+          "statement_row_labels": [
+            "",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001108524-20-000047"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-31",
+          "filed": "2021-03-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5817000000,
+            4851000000
+          ],
+          "statement_row_labels": [
+            "",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001108524-22-000008",
+            "0001108524-20-000047"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001108524-20-000047": "2f935c9bc90cd8d2fc085a3555558f8ab249805077a6f0150ee5ce7e36412086",
+        "0001108524-22-000008": "0eabc38f44c829c164d8278bc842fcb42922ec1614823d1c8abd5b43330d30c1"
+      }
+    },
+    {
+      "cik": "0001660280",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            112282000,
+            91852000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001660280-20-000129"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            118082000,
+            97049000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001660280-21-000027"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001660280-20-000129": "8c3e1c83c563166fa73070f241b303bfe90b1209ee75c503fda298c7bae31b06",
+        "0001660280-21-000027": "d6c75effbb05f918bc75b2ded5abb8a9ac85dc7204ed87f875e3ebe8561636fd"
+      }
+    },
+    {
+      "cik": "0001690334",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            41878000,
+            52812000
+          ],
+          "statement_row_labels": [
+            "",
+            "Operating Revenues"
+          ],
+          "source_accessions": [
+            "0001564590-20-037831"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            45697000,
+            54700000
+          ],
+          "statement_row_labels": [
+            "",
+            "Operating Revenues"
+          ],
+          "source_accessions": [
+            "0001564590-20-050818"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-037831": "43f2d7530e4e940bba565e1d11554bc906574fa5a53a3491ab4911343c270d40",
+        "0001564590-20-050818": "6040566833d4e2c2cb4bc847ce42bcbb79125b6023deaa194c6bf4d68eaa3bc0"
+      }
+    },
+    {
+      "cik": "0000766421",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            701000000,
+            2389000000
+          ],
+          "statement_row_labels": [
+            "Total Operating Revenues"
+          ],
+          "source_accessions": [
+            "0000766421-20-000089"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            808000000,
+            2228000000
+          ],
+          "statement_row_labels": [
+            "Total Operating Revenues"
+          ],
+          "source_accessions": [
+            "0000766421-21-000018",
+            "0000766421-20-000089"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000766421-20-000089": "4a83bf2e175bb683f2dba07b846fd62b8e71df3240f3d782d8121fdab296029c",
+        "0000766421-21-000018": "03739c075a6b181c05c45e6a5bbafc230eda6ed53bf72092c2ce6783fa7eeb27"
+      }
+    },
+    {
+      "cik": "0000277948",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2648000000,
+            2978000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000277948-20-000048"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2825000000,
+            2885000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0000277948-21-000014",
+            "0000277948-20-000048"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000277948-20-000048": "40c69246591eb21830b6ed13f803d502736582bdbaef9d2c31b77e2ad600f010",
+        "0000277948-21-000014": "159eb115c9b5557aa37078e9b5d4a41333d7a475a67c74edcd338796ebbfd8fd"
+      }
+    },
+    {
+      "cik": "0001090727",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            21238000000,
+            18318000000
+          ],
+          "statement_row_labels": [
+            "Consolidated",
+            "Consolidated revenue",
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001090727-20-000047"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            24896000000,
+            20568000000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001090727-21-000013"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001090727-20-000047": "19fda1eaa1ea9ab159ca33db0901851a5aeb061cf94daf681b195dd8866c5692",
+        "0001090727-21-000013": "860b9699644c4d242b293b0b854438e7cf8995e293f374acc86781eb96421482"
+      }
+    },
+    {
+      "cik": "0000075208",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            114539000,
+            88459000
+          ],
+          "statement_row_labels": [
+            "Total Shipping revenues",
+            "Total shipping revenues"
+          ],
+          "source_accessions": [
+            "0001493152-20-014996"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            105748000,
+            80926000
+          ],
+          "statement_row_labels": [
+            "Total Shipping revenues",
+            "Total shipping revenues"
+          ],
+          "source_accessions": [
+            "0001493152-20-020691"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001493152-20-014996": "ebcece22dccf91c047f8f710abf37a5473e4802c87af605cfb9f760b898237f6",
+        "0001493152-20-020691": "de8632104af54ab10bf1848ab7e6c3fce8327fe3a81affb2f990eed73490c1d2"
+      }
+    },
+    {
+      "cik": "0000728535",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2472523000,
+            2363660000
+          ],
+          "statement_row_labels": [
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0001437749-20-021952"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-23",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2737652000,
+            2450323000
+          ],
+          "statement_row_labels": [
+            "Operating revenues"
+          ],
+          "source_accessions": [
+            "0001437749-21-003667"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-021952": "3817ae1ab6e7aafd121f7851044e10d91a25c451a0951df85ec34d78072dd202",
+        "0001437749-21-003667": "4d3f4ec8974cfdd6e7f3cda756ca0316340bbd5ace1b49c3c764905a17e036a1"
+      }
+    },
+    {
+      "cik": "0000909832",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-10",
+      "checks": [
+        {
+          "quarter_end": "2020-11-22",
+          "filed": "2020-12-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            43208000000,
+            37040000000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000909832-20-000026"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-14",
+          "filed": "2021-03-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            44769000000,
+            39072000000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000909832-21-000003"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000909832-20-000026": "8314aba585fb751fc2c26fc9c626e7952939e608ea87d75ec3b315d1ed3b5f10",
+        "0000909832-21-000003": "ed199eb95582c1d6a7f4acd5afed3f89c5bbf108645e7bdca863452d173dfa3f"
+      }
+    },
+    {
+      "cik": "0001018840",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            819653000,
+            863472000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001018840-20-000094"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1122044000,
+            1184551000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001018840-21-000023",
+            "0001018840-20-000094"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001018840-20-000094": "916ad9bfa82f6cbcd0fedd8cb831aefe1bab3a48b2c6c2e919d793bd7471ef9b",
+        "0001018840-21-000023": "f1013d5fc8bd2e1a9b8015513c4569a1dea9e3bd1057b419a5771dcf4db22a92"
+      }
+    },
+    {
+      "cik": "0000049754",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            176643000,
+            217405000
+          ],
+          "statement_row_labels": [
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000049754-20-000020"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            196029000,
+            227511000
+          ],
+          "statement_row_labels": [
+            "4th Quarter"
+          ],
+          "source_accessions": [
+            "0000049754-21-000007"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000049754-20-000020": "5fdfd93d382379da4609e31e501cf4c6994d3a15ca27996d982ee0bee6a8a146",
+        "0000049754-21-000007": "0ca4467a1876752a76af444565e1b37fae821d8315a7d182a3edb0031d5fdde2"
+      }
+    },
+    {
+      "cik": "0001634117",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-04-02",
+      "checks": [
+        {
+          "quarter_end": "2020-10-31",
+          "filed": "2020-12-08",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            595485000,
+            772228000
+          ],
+          "statement_row_labels": [
+            "Total Sales",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0001634117-20-000154"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-30",
+          "filed": "2021-03-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            411613000,
+            502292000
+          ],
+          "statement_row_labels": [
+            "Total Sales",
+            "Total sales"
+          ],
+          "source_accessions": [
+            "0001634117-21-000015"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001634117-20-000154": "306351b63eaf90b973b9016ddb9e1516a46eeb1be7c3d9dd2a2703bdf3a654dd",
+        "0001634117-21-000015": "7aa2082ea96df8280bfd79c177655db30c78306f8888dc7d6050567ec9c5f400"
+      }
+    },
+    {
+      "cik": "0000105418",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-06-27",
+          "filed": "2020-08-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1098704000,
+            887967000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000105418-20-000021"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1002387000,
+            876222000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0000105418-20-000028"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000105418-20-000021": "5de029695acae91465859d8867a3d8b9c40ea8eb51042088da512c46c80afede",
+        "0000105418-20-000028": "62ecf8f6666e42acdc1b97dd7209d72861d137d3ca815a1013a85cc4e626bc25"
+      }
+    },
+    {
+      "cik": "0000932696",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1936478000,
+            1912547000
+          ],
+          "statement_row_labels": [
+            "",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0001564590-20-049966"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            2291315000,
+            2297156000
+          ],
+          "statement_row_labels": [
+            "Net sales"
+          ],
+          "source_accessions": [
+            "0001564590-21-006117"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-049966": "5df78c1d48873480d8d7ef23b67979529e5103975f27afb9ffd4297f34a29b88",
+        "0001564590-21-006117": "4be8f68bb47f6d865ad79225069c08b5711121d773c17c2b70e27b32fb1d2515"
+      }
+    },
+    {
+      "cik": "0000910329",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            271470000,
+            190061000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-012437"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            264912000,
+            170632000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001558370-21-001985"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-012437": "b4e3925f4d882c13efb75a1af9788f3ff0746d52e14a864420ee625a4029bd62",
+        "0001558370-21-001985": "9fa9c35d1564c3819af5606bc08fe8d00359a764a447882ed02d2309789a7440"
+      }
+    },
+    {
+      "cik": "0001579823",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            62637000,
+            66348000
+          ],
+          "statement_row_labels": [
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001493152-20-015028"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            62719000,
+            69828000
+          ],
+          "statement_row_labels": [
+            "Net revenue"
+          ],
+          "source_accessions": [
+            "0001493152-20-020731"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001493152-20-015028": "30029a5d6af30778002ecd84298c42de9139d1e158df0162d6de0696e6e1841d",
+        "0001493152-20-020731": "7764e1cb5befaa1421c4ca339f9224990059c0f2cfacb577267dbdf0f491319a"
+      }
+    },
+    {
+      "cik": "0000098677",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-13",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            157797000,
+            182724000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-013809"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            128864000,
+            135460000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001558370-21-002125",
+            "0001558370-20-013809"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-013809": "bfa43a25cb496137b3eee0182ee4aae0bb1d5799d2b803edba02b02829408f85",
+        "0001558370-21-002125": "01ff8d555065d899940395def6135bd594cddadb45a90067c3e1fe714562e10c"
+      }
+    },
+    {
+      "cik": "0000785956",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-11-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            252536000,
+            311872000
+          ],
+          "statement_row_labels": [
+            "4th Quarter"
+          ],
+          "source_accessions": [
+            "0001437749-20-024447"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-26",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            240997000,
+            282897000
+          ],
+          "statement_row_labels": [
+            "Consolidated Sales",
+            "Net Sales"
+          ],
+          "source_accessions": [
+            "0001437749-21-001491"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-024447": "03c55ec6ad153817c8d7096a60b6f273751a3f1313db10278ea38b9ac40cfeda",
+        "0001437749-21-001491": "22d8e888c4853f28455a701ac4604ae7bf2e80eaf74bf670efb160b39847282f"
+      }
+    },
+    {
+      "cik": "0000931336",
+      "status": "no_complete_packet",
+      "checks": []
+    },
+    {
+      "cik": "0000021344",
+      "status": "verified",
+      "wave": "2023Q1",
+      "cutoff": "2022-12-01",
+      "checks": [
+        {
+          "quarter_end": "2022-07-01",
+          "filed": "2022-07-27",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            11325000000,
+            10129000000
+          ],
+          "statement_row_labels": [
+            "Net Operating Revenues",
+            "Total",
+            "Total net operating revenues"
+          ],
+          "source_accessions": [
+            "0000021344-22-000034"
+          ]
+        },
+        {
+          "quarter_end": "2022-09-30",
+          "filed": "2022-10-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            11063000000,
+            10042000000
+          ],
+          "statement_row_labels": [
+            "Net Operating Revenues",
+            "Total",
+            "Total net operating revenues"
+          ],
+          "source_accessions": [
+            "0000021344-22-000042"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000021344-22-000034": "d7c9162b29623365458b404f081ee5679b5e31728d7c0f4530c30c04978dacd7",
+        "0000021344-22-000042": "64ef0632cc235056ef3cddde8468cc693fd05130131df0d5d488c34bb8329cf6"
+      }
+    },
+    {
+      "cik": "0001401257",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            103606000,
+            239266000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001401257-20-000155"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            112963000,
+            199777000
+          ],
+          "statement_row_labels": [
+            "Revenues"
+          ],
+          "source_accessions": [
+            "0001401257-21-000031"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001401257-20-000155": "90dff4eedc4dd2e221b6e677333903bc9c6354cb69f10ca6b13046511eacf43d",
+        "0001401257-21-000031": "72ca4d97c5345d41e69b3d40a90f1600f0744bec415535fc80c6af81876ab2a5"
+      }
+    },
+    {
+      "cik": "0000097134",
+      "status": "verified",
+      "wave": "2021Q4",
+      "cutoff": "2021-09-01",
+      "checks": [
+        {
+          "quarter_end": "2021-03-31",
+          "filed": "2021-05-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            263300000,
+            252100000
+          ],
+          "statement_row_labels": [
+            "Net Sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001437749-21-010714"
+          ]
+        },
+        {
+          "quarter_end": "2021-06-30",
+          "filed": "2021-08-03",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            279100000,
+            214000000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001437749-21-018269"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-21-010714": "880e6ab5beddcb95fc7a8e4a17cff00115196a572cf4ba942aa0e148b42cc55a",
+        "0001437749-21-018269": "8663f0e35ebb0f12a3628b67f0b099fd8d5071690499655efce93b0eecb3cc6f"
+      }
+    },
+    {
+      "cik": "0000886346",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-26",
+      "checks": [
+        {
+          "quarter_end": "2020-06-27",
+          "filed": "2020-08-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            152860000,
+            177165000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue (Notes 1 and 12)"
+          ],
+          "source_accessions": [
+            "0000886346-20-000107"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-26",
+          "filed": "2020-11-04",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            154610000,
+            173504000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue (Notes 1 and 12)"
+          ],
+          "source_accessions": [
+            "0000886346-20-000136"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000886346-20-000107": "df17e401022f3396ba0f80e46c1a45988e8d5402e8bc4d8b262d051d19890aff",
+        "0000886346-20-000136": "ce69d86bae9b2f2b18ef33e43a2d57d8158a972349185f6f2afccbafe1ef4a64"
+      }
+    },
+    {
+      "cik": "0001021860",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-27",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1384000000,
+            2126000000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-20-047905"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-12",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1327000000,
+            2281000000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue",
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001564590-21-005708",
+            "0001564590-20-047905"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-047905": "7b9d554807e50dd62cde2c0210438a4520af4311dad944371721b212e3980c96",
+        "0001564590-21-005708": "b31fc8d2d8b8cbc255c766067e8db300694e0e3f04f26c2722da8536d9f782e8"
+      }
+    },
+    {
+      "cik": "0000792987",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            231404000,
+            255807000
+          ],
+          "statement_row_labels": [
+            "Net sales",
+            "Total consolidated sales",
+            "Total net sales"
+          ],
+          "source_accessions": [
+            "0000792987-20-000110"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            238900000,
+            283200000
+          ],
+          "statement_row_labels": [
+            "2019",
+            "2020"
+          ],
+          "source_accessions": [
+            "0000792987-21-000016"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000792987-20-000110": "691d5e8855515a03cfe449766f1004252b2fb2d3c1c90390f1f759039e34f567",
+        "0000792987-21-000016": "649e6c021571fec30543bdf7add81fbb60ef8c86fdf7493057a846f38a900538"
+      }
+    },
+    {
+      "cik": "0000006955",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-05-02",
+      "checks": [
+        {
+          "quarter_end": "2020-11-30",
+          "filed": "2021-01-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            119430000,
+            146674000
+          ],
+          "statement_row_labels": [
+            "Total"
+          ],
+          "source_accessions": [
+            "0000006955-21-000003"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-28",
+          "filed": "2021-03-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            120654000,
+            133386000
+          ],
+          "statement_row_labels": [
+            "Total"
+          ],
+          "source_accessions": [
+            "0000006955-21-000012"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000006955-21-000003": "5c62bbad44407bddd41986e51f6c7caa1fff35d0baf9a0fee8a0c4a64afcc6de",
+        "0000006955-21-000012": "22368e2dd2fffdcdef7ddd05d7122e0e67ae3a5164ebaccec5a5f14e138988f2"
+      }
+    },
+    {
+      "cik": "0001051627",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-07",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            22134000,
+            24797000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-009961"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            25469000,
+            19841000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-013160"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-009961": "21238ce0bd824ce2b08ab6861a6f913fca3cd8134bde642a70a1aa1a3c7d3043",
+        "0001558370-20-013160": "436aa47f615f12788f7b8bbb5d77df6423efdd0ae5c0076e425dd76be463ec9c"
+      }
+    },
+    {
+      "cik": "0001160958",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            180691000,
+            94231000
+          ],
+          "statement_row_labels": [
+            "",
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001437749-20-022788"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            187541000,
+            102896000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001437749-21-004113"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-022788": "12d37bdb52e2a31c84a32b9696c8d72f51501b215d4896ed492af80c11280cbb",
+        "0001437749-21-004113": "0d6332757d4b51d0086b71ec8a3bf23d626526bae132a5ff712b3ecfe9076c32"
+      }
+    },
+    {
+      "cik": "0001493594",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-04",
+      "checks": [
+        {
+          "quarter_end": "2020-10-02",
+          "filed": "2020-11-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            147249000,
+            112248000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001493594-20-000063"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-01",
+          "filed": "2021-01-28",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            148504000,
+            119097000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001493594-21-000014"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001493594-20-000063": "a970fce38b351b07ffc28a791447f929c676f79395e5eda57da2481d2ef36c73",
+        "0001493594-21-000014": "1cfba476ae042b8554a310742a39aaf0a7e49743f9baec8764cb106055cb300c"
+      }
+    },
+    {
+      "cik": "0001045810",
+      "status": "verified",
+      "wave": "2021Q4",
+      "cutoff": "2021-09-25",
+      "checks": [
+        {
+          "quarter_end": "2021-05-02",
+          "filed": "2021-05-26",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            5661000000,
+            3080000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001045810-21-000064"
+          ]
+        },
+        {
+          "quarter_end": "2021-08-01",
+          "filed": "2021-08-20",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            6507000000,
+            3866000000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001045810-21-000131"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001045810-21-000064": "1266b3416c25e8772d6479677a924f848b61a405306987cbb48ad44369252803",
+        "0001045810-21-000131": "51f0c5b60df901777cf220b26163d2e418822ac159af20bbe07032fb0d8b74f4"
+      }
+    },
+    {
+      "cik": "0001280452",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            259422000,
+            168813000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001437749-20-022991"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            233043000,
+            166738000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total"
+          ],
+          "source_accessions": [
+            "0001437749-21-004587",
+            "0001437749-20-022991"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-022991": "ff197451172e448fd6f2eefb4a1342970030a081ff876679116f44206f15615c",
+        "0001437749-21-004587": "4fca5692cac220b2927616d58a54c4debd85b81497e53f816f775d5e0ede48e1"
+      }
+    },
+    {
+      "cik": "0000867773",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-02-27",
+      "checks": [
+        {
+          "quarter_end": "2020-09-27",
+          "filed": "2020-10-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            274806000,
+            286042000
+          ],
+          "statement_row_labels": [
+            "",
+            "Condensed consolidated GAAP revenue",
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0000867773-20-000098"
+          ]
+        },
+        {
+          "quarter_end": "2021-01-03",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            341810000,
+            401617000
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0000867773-21-000026"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000867773-20-000098": "c969688db28ec8fc27e2461da65cea4fa87d086eff17259e0edb237d7b1b3cd2",
+        "0000867773-21-000026": "43916a7dfa11371510e171611c8243779caf65c40c8e2836267139dad8ac4bf4"
+      }
+    },
+    {
+      "cik": "0001401680",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            199498000,
+            144952000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001401680-20-000060"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-22",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            206924000,
+            149594000
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001401680-21-000011",
+            "0001401680-20-000060"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001401680-20-000060": "f9bce5627bcfffd45371ce328c9a19e0e711948297e0c74cce3c2bbb49e3be45",
+        "0001401680-21-000011": "763cdde90e85e2889b4409849ffa59e8ddfa10b70764bf63348d7032bdb10812"
+      }
+    },
+    {
+      "cik": "0000946581",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            841142000,
+            857841000
+          ],
+          "statement_row_labels": [
+            "Net revenue",
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001628280-20-015824"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-09",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            860889000,
+            930129000
+          ],
+          "statement_row_labels": [
+            "Net revenue",
+            "Total net revenue"
+          ],
+          "source_accessions": [
+            "0001628280-21-001632"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001628280-20-015824": "8d8616d3671df86c72a83b153bb2577a4b4b3924107fcdf11abb57aa36fdb4e8",
+        "0001628280-21-001632": "4064b5aed0d2f3597b90f30a2aab2c3bed0a31b6dc76b53223753c6aa0406118"
+      }
+    },
+    {
+      "cik": "0001768267",
+      "status": "verified",
+      "wave": "2021Q3",
+      "cutoff": "2021-06-01",
+      "checks": [
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-08",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            94964000,
+            77459000
+          ],
+          "statement_row_labels": [
+            "Total net revenues",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001564590-21-004629"
+          ]
+        },
+        {
+          "quarter_end": "2021-03-31",
+          "filed": "2021-05-10",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            98662000,
+            86823000
+          ],
+          "statement_row_labels": [
+            "Total net revenues",
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0001564590-21-025918"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-21-004629": "d1207afc31ab630a5111580111035a7bcc837a4ff5bf4e735e533c4ac6c379ef",
+        "0001564590-21-025918": "b5196c749264beeb0eeba82aaed7249d4055085fd08cd4ae597550bcc07ec796"
+      }
+    },
+    {
+      "cik": "0001459200",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            158851000,
+            127880000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001459200-20-000030"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            165576000,
+            140488000
+          ],
+          "statement_row_labels": [
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0001459200-21-000012"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001459200-20-000030": "d85e0939639c6ae964795b0c4a3d64008ab4d0e8799e9b77c6b4cbe3ce34bfe4",
+        "0001459200-21-000012": "18707feb691b27728a7dc3256a53e078b3fa43237c7a36fa6be8ff4b5756772a"
+      }
+    },
+    {
+      "cik": "0001506439",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-14",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            7270905,
+            5517433
+          ],
+          "statement_row_labels": [
+            "Revenue",
+            "Total Revenue"
+          ],
+          "source_accessions": [
+            "0001654954-20-009187"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-16",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            7306832,
+            5723978
+          ],
+          "statement_row_labels": [
+            "Revenue"
+          ],
+          "source_accessions": [
+            "0001654954-20-012459"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001654954-20-009187": "9e783fc3298437b5a121a9fc280dfdc0cfacd6f13ffb13d08e6c4282ab06cf19",
+        "0001654954-20-012459": "e0e9523a9bae3b946b169bd2aa4dd998f841c0948e03f63bca8b75e1ca610f01"
+      }
+    },
+    {
+      "cik": "0000935036",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-05",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            315883000,
+            354901000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total revenue"
+          ],
+          "source_accessions": [
+            "0000935036-20-000043"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-25",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            387044000,
+            399920000
+          ],
+          "statement_row_labels": [
+            "Total revenues"
+          ],
+          "source_accessions": [
+            "0000935036-21-000014"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0000935036-20-000043": "b7dd1f90d2437a7c6175b216cb42869b6683d3283773ebf1e42cdb3f994e9621",
+        "0000935036-21-000014": "59ebc8564de8da3a367f0a3f075bd8fb43b0b5d3798beffda2078180e383e238"
+      }
+    },
+    {
+      "cik": "0000799167",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            216011000,
+            214973000
+          ],
+          "statement_row_labels": [
+            "Total operating revenue"
+          ],
+          "source_accessions": [
+            "0001437749-20-022878"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-01",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            227333000,
+            217185000
+          ],
+          "statement_row_labels": [
+            "Operating revenue"
+          ],
+          "source_accessions": [
+            "0001437749-21-004453"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-022878": "07672bc35c1d8095704af76826f8c709860f0c94ddf9b6738d02d11f07ec9027",
+        "0001437749-21-004453": "05c3accd7cd3c8c93987ae0997cb343b74ca78476ccb50c9a22d34c04cfcce42"
+      }
+    },
+    {
+      "cik": "0001048911",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-05-02",
+      "checks": [
+        {
+          "quarter_end": "2020-11-30",
+          "filed": "2020-12-17",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            20563000000,
+            17324000000
+          ],
+          "statement_row_labels": [
+            "",
+            "REVENUE"
+          ],
+          "source_accessions": [
+            "0001564590-20-057454"
+          ]
+        },
+        {
+          "quarter_end": "2021-02-28",
+          "filed": "2021-03-18",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            21510000000,
+            17487000000
+          ],
+          "statement_row_labels": [
+            "",
+            "REVENUE"
+          ],
+          "source_accessions": [
+            "0001564590-21-014160"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-057454": "5491aa4fb1a66f849e0c90f241434555ff1ac8fc946b676d046bf1fa2bbf9431",
+        "0001564590-21-014160": "e3a8dd99f64d24fd25a5e637f7c80f0938cf051c20d7afa1e590b44222f93ebb"
+      }
+    },
+    {
+      "cik": "0000923571",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-30",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            431469000,
+            428503000
+          ],
+          "statement_row_labels": [
+            "Total Operating Revenue",
+            "Total operating revenue"
+          ],
+          "source_accessions": [
+            "0001558370-20-012111"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-03-02",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            455587000,
+            449633000
+          ],
+          "statement_row_labels": [
+            "Total",
+            "Total Operating Revenue",
+            "Total operating revenue"
+          ],
+          "source_accessions": [
+            "0001558370-21-002239",
+            "0001558370-20-012111"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001558370-20-012111": "33517ee5dc9a2651c7738d633a9c669a90a650e89e0fb1b7c7fe14921845f73e",
+        "0001558370-21-002239": "b7ae4dcb6ad2f1183ce82517787043266f27d2b2fecf0460ee7455955b4ca5a3"
+      }
+    },
+    {
+      "cik": "0001177702",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            481374000,
+            468891000
+          ],
+          "statement_row_labels": [
+            "Operating Revenue"
+          ],
+          "source_accessions": [
+            "0001564590-20-048868"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-24",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            476482000,
+            443065000
+          ],
+          "statement_row_labels": [
+            "Operating revenue"
+          ],
+          "source_accessions": [
+            "0001564590-21-008077"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001564590-20-048868": "6e107c16b6a71cd1714da8c3c90e30d0143ec63e97c1b99bb0db94850564781e",
+        "0001564590-21-008077": "7dd0a1577341b6c995ad6d5918b567bf51ac410016382f27100ae44e67115dc4"
+      }
+    },
+    {
+      "cik": "0001692063",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-10-29",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1135700000,
+            1183900000
+          ],
+          "statement_row_labels": [
+            "Operating revenues",
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0001692063-20-000167"
+          ]
+        },
+        {
+          "quarter_end": "2020-12-31",
+          "filed": "2021-02-19",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            1265200000,
+            1156300000
+          ],
+          "statement_row_labels": [
+            "Operating revenues",
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0001692063-21-000056",
+            "0001692063-20-000167"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001692063-20-000167": "ab194014993a11e383b49dab0a9d02bb7e29b3e9bc5d5b2bfe976f4e7a771e45",
+        "0001692063-21-000056": "47b2a6901ac4274ee47f515586006d8b2d6150a03a3ab99bf5e2e0c449b39ce4"
+      }
+    },
+    {
+      "cik": "0000798287",
+      "status": "verified",
+      "wave": "2021Q2",
+      "cutoff": "2021-03-02",
+      "checks": [
+        {
+          "quarter_end": "2020-06-30",
+          "filed": "2020-08-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            92979000,
+            133000000
+          ],
+          "statement_row_labels": [
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0001437749-20-016911"
+          ]
+        },
+        {
+          "quarter_end": "2020-09-30",
+          "filed": "2020-11-06",
+          "method": "original_inline_xbrl",
+          "amounts_usd": [
+            121942000,
+            128994000
+          ],
+          "statement_row_labels": [
+            "Total operating revenues"
+          ],
+          "source_accessions": [
+            "0001437749-20-023023"
+          ]
+        }
+      ],
+      "original_sha256": {
+        "0001437749-20-016911": "fff721319eb48d34c1f2601d82271c552810d2f0b79f6c843ff7d398a26e48a2",
+        "0001437749-20-023023": "da78eb44f2d574fa2c6b8c86a149e12d738853ff77ac25cb1504ea56f16b2f9d"
+      }
+    }
+  ]
+}

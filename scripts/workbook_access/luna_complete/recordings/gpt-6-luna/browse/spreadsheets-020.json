@@ -1,0 +1,1159 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "f3dc917b26a058c9b8d629d72e28ea4165bd26c85d798dc7646871c3ef920eb3",
+    "28f2c7f75f1593c1d73cf5ab890d8134bd775cd692c669f1829a31eaec414ab2",
+    "a9341e3f36a715aba36c2b5ad4fb68d4e8a935ce2158f85325e99e33133df4b0"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-56451",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:F7",
+            "formula": "=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),COLUMN()-1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet 2",
+            "range": "A1:F7"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet 2",
+            "range": "A1:F7",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "NAME"
+              ],
+              [
+                "B1",
+                "transport"
+              ],
+              [
+                "C1",
+                "weight"
+              ],
+              [
+                "D1",
+                "location"
+              ],
+              [
+                "E1",
+                "food"
+              ],
+              [
+                "F1",
+                "height"
+              ],
+              [
+                "A2",
+                "John "
+              ],
+              [
+                "B2",
+                "bike"
+              ],
+              [
+                "C2",
+                "150"
+              ],
+              [
+                "D2",
+                "north"
+              ],
+              [
+                "E2",
+                "high"
+              ],
+              [
+                "F2",
+                "180"
+              ],
+              [
+                "A3",
+                "Mary"
+              ],
+              [
+                "B3",
+                "car"
+              ],
+              [
+                "D3",
+                "south"
+              ],
+              [
+                "E3",
+                "high"
+              ],
+              [
+                "F3",
+                "176"
+              ],
+              [
+                "A4",
+                "Todd"
+              ],
+              [
+                "B4",
+                "walk"
+              ],
+              [
+                "C4",
+                "170"
+              ],
+              [
+                "D4",
+                "east"
+              ],
+              [
+                "E4",
+                "low"
+              ],
+              [
+                "F4",
+                "189"
+              ],
+              [
+                "A5",
+                "Alex"
+              ],
+              [
+                "C5",
+                "170"
+              ],
+              [
+                "D5",
+                "south"
+              ],
+              [
+                "E5",
+                "high"
+              ],
+              [
+                "F5",
+                "145"
+              ],
+              [
+                "A6",
+                "Sam"
+              ],
+              [
+                "B6",
+                "bike"
+              ],
+              [
+                "C6",
+                "120"
+              ],
+              [
+                "D6",
+                "east"
+              ],
+              [
+                "F6",
+                "177"
+              ],
+              [
+                "A7",
+                "Rob"
+              ],
+              [
+                "B7",
+                "bike"
+              ],
+              [
+                "C7",
+                "190"
+              ],
+              [
+                "D7",
+                "north"
+              ],
+              [
+                "E7",
+                "moderate"
+              ],
+              [
+                "F7",
+                "187"
+              ]
+            ],
+            "total": 39,
+            "truncated": false,
+            "blank_count": 3
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 117962,
+        "cached_input_tokens": 92288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1603,
+        "reasoning_output_tokens": 956
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56599",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "formulas": {
+          "B2": "=IFERROR(INDEX($J$6:$J$30,MATCH(1,($G$6:$G$30<=M5)*($H$6:$H$30>=M5),0)),\"not found - please re-enter\")"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B5",
+            "range_size": 10,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 10
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "M5:M5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "M5:M5",
+            "range_size": 1,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 1
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "G5:J10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "G5:J10",
+            "range_size": 24,
+            "cells": [
+              [
+                "G5",
+                "Slip fm"
+              ],
+              [
+                "H5",
+                "slip to"
+              ],
+              [
+                "I5",
+                "total slips in book"
+              ],
+              [
+                "J5",
+                "BookNo"
+              ],
+              [
+                "G6",
+                "5871001"
+              ],
+              [
+                "H6",
+                "5871010"
+              ],
+              [
+                "I6",
+                "10"
+              ],
+              [
+                "J6",
+                "477101"
+              ],
+              [
+                "G7",
+                "5871011"
+              ],
+              [
+                "H7",
+                "5871020"
+              ],
+              [
+                "I7",
+                "10"
+              ],
+              [
+                "J7",
+                "477102"
+              ],
+              [
+                "G8",
+                "5871021"
+              ],
+              [
+                "H8",
+                "5871030"
+              ],
+              [
+                "I8",
+                "10"
+              ],
+              [
+                "J8",
+                "477103"
+              ],
+              [
+                "G9",
+                "5871031"
+              ],
+              [
+                "H9",
+                "5871040"
+              ],
+              [
+                "I9",
+                "10"
+              ],
+              [
+                "J9",
+                "477104"
+              ],
+              [
+                "G10",
+                "5871041"
+              ],
+              [
+                "H10",
+                "5871050"
+              ],
+              [
+                "I10",
+                "10"
+              ],
+              [
+                "J10",
+                "477105"
+              ]
+            ],
+            "total": 24,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B5"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B5",
+            "range_size": 10,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 10
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 117962,
+        "cached_input_tokens": 92288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1603,
+        "reasoning_output_tokens": 956
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56915",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "B18:E23",
+            "formula": "=ROUND(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-2),2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A12:I18"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A12:I18",
+            "range_size": 63,
+            "cells": [
+              [
+                "A12",
+                " "
+              ],
+              [
+                "B12",
+                "Total"
+              ],
+              [
+                "F12",
+                "V - 6666"
+              ],
+              [
+                "A13",
+                " "
+              ],
+              [
+                "B13",
+                "January"
+              ],
+              [
+                "C13",
+                "% age"
+              ],
+              [
+                "D13",
+                "YTD"
+              ],
+              [
+                "E13",
+                "% age"
+              ],
+              [
+                "F13",
+                "January"
+              ],
+              [
+                "G13",
+                "% age"
+              ],
+              [
+                "H13",
+                "YTD"
+              ],
+              [
+                "I13",
+                "% age"
+              ],
+              [
+                "A16",
+                "    REVENUES"
+              ],
+              [
+                "A18",
+                "    TOTAL: REVENUE"
+              ],
+              [
+                "B18",
+                "1890146.68"
+              ],
+              [
+                "C18",
+                "1"
+              ],
+              [
+                "D18",
+                "1890146.68"
+              ],
+              [
+                "E18",
+                "1"
+              ],
+              [
+                "F18",
+                "56113.91"
+              ],
+              [
+                "G18",
+                "1"
+              ],
+              [
+                "H18",
+                "56113.91"
+              ],
+              [
+                "I18",
+                "1"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 41
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A18:I24"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A18:I24",
+            "range_size": 63,
+            "cells": [
+              [
+                "A18",
+                "    TOTAL: REVENUE"
+              ],
+              [
+                "B18",
+                "1890146.68"
+              ],
+              [
+                "C18",
+                "1"
+              ],
+              [
+                "D18",
+                "1890146.68"
+              ],
+              [
+                "E18",
+                "1"
+              ],
+              [
+                "F18",
+                "56113.91"
+              ],
+              [
+                "G18",
+                "1"
+              ],
+              [
+                "H18",
+                "56113.91"
+              ],
+              [
+                "I18",
+                "1"
+              ],
+              [
+                "A20",
+                "    COST OF GOODS SOLD"
+              ],
+              [
+                "A21",
+                "      STUFF"
+              ],
+              [
+                "A22",
+                "        STUFF 1"
+              ],
+              [
+                "B22",
+                "49887.7048682951"
+              ],
+              [
+                "C22",
+                "0.0263935626775246"
+              ],
+              [
+                "D22",
+                "49887.7048682951"
+              ],
+              [
+                "E22",
+                "0.0263935626775246"
+              ],
+              [
+                "F22",
+                "1705.6561549394"
+              ],
+              [
+                "G22",
+                "0.0303963162598971"
+              ],
+              [
+                "H22",
+                "1705.6561549394"
+              ],
+              [
+                "I22",
+                "0.0303963162598971"
+              ],
+              [
+                "A23",
+                "        STUFF 2"
+              ],
+              [
+                "B23",
+                "-3390.80544821547"
+              ],
+              [
+                "C23",
+                "-0.00179393773197299"
+              ],
+              [
+                "D23",
+                "-3390.80544821547"
+              ],
+              [
+                "E23",
+                "-0.00179393773197299"
+              ],
+              [
+                "F23",
+                "-95.6776850726545"
+              ],
+              [
+                "G23",
+                "-0.00170506181217196"
+              ],
+              [
+                "H23",
+                "-95.6776850726545"
+              ],
+              [
+                "I23",
+                "-0.00170506181217196"
+              ],
+              [
+                "A24",
+                "        STUFF 3"
+              ],
+              [
+                "B24",
+                "128564.289829883"
+              ],
+              [
+                "C24",
+                "0.0680181549877828"
+              ],
+              [
+                "D24",
+                "128564.289829883"
+              ],
+              [
+                "E24",
+                "0.0680181549877828"
+              ],
+              [
+                "F24",
+                "3658.20212926082"
+              ],
+              [
+                "G24",
+                "0.0651924296357323"
+              ],
+              [
+                "H24",
+                "3658.20212926082"
+              ],
+              [
+                "I24",
+                "0.0651924296357323"
+              ]
+            ],
+            "total": 38,
+            "truncated": false,
+            "blank_count": 25
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A16:I24"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "DATA",
+            "range": "A16:I24",
+            "range_size": 81,
+            "cells": [
+              [
+                "A16",
+                "    REVENUES"
+              ],
+              [
+                "A18",
+                "    TOTAL: REVENUE"
+              ],
+              [
+                "B18",
+                "1890146.68"
+              ],
+              [
+                "C18",
+                "1"
+              ],
+              [
+                "D18",
+                "1890146.68"
+              ],
+              [
+                "E18",
+                "1"
+              ],
+              [
+                "F18",
+                "56113.91"
+              ],
+              [
+                "G18",
+                "1"
+              ],
+              [
+                "H18",
+                "56113.91"
+              ],
+              [
+                "I18",
+                "1"
+              ],
+              [
+                "A20",
+                "    COST OF GOODS SOLD"
+              ],
+              [
+                "A21",
+                "      STUFF"
+              ],
+              [
+                "A22",
+                "        STUFF 1"
+              ],
+              [
+                "B22",
+                "49887.7048682951"
+              ],
+              [
+                "C22",
+                "0.0263935626775246"
+              ],
+              [
+                "D22",
+                "49887.7048682951"
+              ],
+              [
+                "E22",
+                "0.0263935626775246"
+              ],
+              [
+                "F22",
+                "1705.6561549394"
+              ],
+              [
+                "G22",
+                "0.0303963162598971"
+              ],
+              [
+                "H22",
+                "1705.6561549394"
+              ],
+              [
+                "I22",
+                "0.0303963162598971"
+              ],
+              [
+                "A23",
+                "        STUFF 2"
+              ],
+              [
+                "B23",
+                "-3390.80544821547"
+              ],
+              [
+                "C23",
+                "-0.00179393773197299"
+              ],
+              [
+                "D23",
+                "-3390.80544821547"
+              ],
+              [
+                "E23",
+                "-0.00179393773197299"
+              ],
+              [
+                "F23",
+                "-95.6776850726545"
+              ],
+              [
+                "G23",
+                "-0.00170506181217196"
+              ],
+              [
+                "H23",
+                "-95.6776850726545"
+              ],
+              [
+                "I23",
+                "-0.00170506181217196"
+              ],
+              [
+                "A24",
+                "        STUFF 3"
+              ],
+              [
+                "B24",
+                "128564.289829883"
+              ],
+              [
+                "C24",
+                "0.0680181549877828"
+              ],
+              [
+                "D24",
+                "128564.289829883"
+              ],
+              [
+                "E24",
+                "0.0680181549877828"
+              ],
+              [
+                "F24",
+                "3658.20212926082"
+              ],
+              [
+                "G24",
+                "0.0651924296357323"
+              ],
+              [
+                "H24",
+                "3658.20212926082"
+              ],
+              [
+                "I24",
+                "0.0651924296357323"
+              ]
+            ],
+            "total": 39,
+            "truncated": false,
+            "blank_count": 42
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "COVER",
+            "range": "A18:E23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "COVER",
+            "range": "A18:E23",
+            "range_size": 30,
+            "cells": [
+              [
+                "A18",
+                "    TOTAL: REVENUE"
+              ],
+              [
+                "B18",
+                "#N/A"
+              ],
+              [
+                "C18",
+                "#N/A"
+              ],
+              [
+                "D18",
+                "#N/A"
+              ],
+              [
+                "E18",
+                "#N/A"
+              ],
+              [
+                "A19",
+                "    COST OF GOODS SOLD"
+              ],
+              [
+                "A20",
+                "      STUFF"
+              ],
+              [
+                "A21",
+                "        STUFF 1"
+              ],
+              [
+                "B21",
+                "1705.6561549394"
+              ],
+              [
+                "C21",
+                "#N/A"
+              ],
+              [
+                "D21",
+                "#N/A"
+              ],
+              [
+                "E21",
+                "#N/A"
+              ],
+              [
+                "A22",
+                "        STUFF 2"
+              ],
+              [
+                "B22",
+                "-95.6776850726545"
+              ],
+              [
+                "C22",
+                "#N/A"
+              ],
+              [
+                "D22",
+                "#N/A"
+              ],
+              [
+                "E22",
+                "#N/A"
+              ],
+              [
+                "A23",
+                "        STUFF 3"
+              ],
+              [
+                "B23",
+                "3658.20212926082"
+              ],
+              [
+                "C23",
+                "#N/A"
+              ],
+              [
+                "D23",
+                "#N/A"
+              ],
+              [
+                "E23",
+                "#N/A"
+              ]
+            ],
+            "total": 22,
+            "truncated": false,
+            "blank_count": 8
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "DATA",
+          "A16"
+        ],
+        [
+          "DATA",
+          "A18"
+        ],
+        [
+          "DATA",
+          "A20"
+        ],
+        [
+          "DATA",
+          "A21"
+        ],
+        [
+          "DATA",
+          "A22"
+        ],
+        [
+          "DATA",
+          "B18"
+        ],
+        [
+          "DATA",
+          "B22"
+        ],
+        [
+          "DATA",
+          "C13"
+        ],
+        [
+          "DATA",
+          "C18"
+        ],
+        [
+          "DATA",
+          "C22"
+        ],
+        [
+          "DATA",
+          "D13"
+        ],
+        [
+          "DATA",
+          "D18"
+        ],
+        [
+          "DATA",
+          "D22"
+        ],
+        [
+          "DATA",
+          "E13"
+        ],
+        [
+          "DATA",
+          "E18"
+        ],
+        [
+          "DATA",
+          "E22"
+        ],
+        [
+          "DATA",
+          "F13"
+        ],
+        [
+          "DATA",
+          "F18"
+        ],
+        [
+          "DATA",
+          "F22"
+        ],
+        [
+          "DATA",
+          "G13"
+        ],
+        [
+          "DATA",
+          "G18"
+        ],
+        [
+          "DATA",
+          "G22"
+        ],
+        [
+          "DATA",
+          "H13"
+        ],
+        [
+          "DATA",
+          "H18"
+        ],
+        [
+          "DATA",
+          "H22"
+        ],
+        [
+          "DATA",
+          "I13"
+        ],
+        [
+          "DATA",
+          "I18"
+        ],
+        [
+          "DATA",
+          "I22"
+        ]
+      ],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 117962,
+        "cached_input_tokens": 92288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1603,
+        "reasoning_output_tokens": 956
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56995",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-020",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D5",
+            "formula": "=IF(B2=\"\",\"Not Attempt\",(B2-C2)/B2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 117962,
+        "cached_input_tokens": 92288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1603,
+        "reasoning_output_tokens": 956
+      },
+      "model_calls": 3
+    }
+  ]
+}

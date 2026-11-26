@@ -1,0 +1,318 @@
+[
+  {
+    "task_id": "decision-equipment-deposit-refund-terms",
+    "tool": "sqlite.query",
+    "instruction": "Prepare refund authorizations for returned equipment with a recorded assessment. A null damage_cents means the assessment is pending, so omit that return. Zero means an assessment found no damage. Each return_code is unique. For each assessed return, cite the terms notice for its fleet_code with the latest start_day on or before intake_day. Each fleet has at most one notice per start_day and every intake has applicable terms. Notice text is the primary evidence, and allowance_cents is its structured monetary term. The operator absorbs assessed damage up to the allowance once per return. Retain the excess from the deposit, capped at the deposit held, and refund the balance. All monetary values are nonnegative integer cents and all other fields are nonnull. Return return_code, source_id (the actual applicable notice identifier), retained_cents, and refund_cents, ordered by return_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "equipment_returns": {
+        "columns": [
+          "return_code TEXT",
+          "fleet_code TEXT",
+          "intake_day INTEGER",
+          "held_cents INTEGER",
+          "damage_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            "Cart",
+            4,
+            900,
+            600
+          ],
+          [
+            "R2",
+            "Cart",
+            5,
+            900,
+            300
+          ],
+          [
+            "R3",
+            "Rig",
+            7,
+            400,
+            1200
+          ],
+          [
+            "R4",
+            "Cart",
+            9,
+            800,
+            null
+          ]
+        ]
+      },
+      "terms_notices": {
+        "columns": [
+          "source_id TEXT",
+          "fleet_code TEXT",
+          "start_day INTEGER",
+          "allowance_cents INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "C1",
+            "Cart",
+            1,
+            100,
+            "We absorb the first 100 cents of damage per cart return."
+          ],
+          [
+            "C5",
+            "Cart",
+            5,
+            350,
+            "We absorb the first 350 cents of damage per cart return."
+          ],
+          [
+            "G2",
+            "Rig",
+            2,
+            200,
+            "We absorb the first 200 cents of damage per rig return."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "return_code",
+      "source_id",
+      "retained_cents",
+      "refund_cents"
+    ]
+  },
+  {
+    "task_id": "decision-estimate-paired-crossover-carryover",
+    "tool": "sqlite.query",
+    "instruction": "Each matched block contains two calibration rigs with the same baseline response. One uses settings A then B (AB) and the other uses B then A (BA). The readings are in signal units. Assume additive effects, no carryover in period 1, the same direct effect of each setting in either period, and a common period effect within each block. Estimate residual carryover from A minus residual carryover from B. Within each block, subtract the BA rig's sum of both period readings from the AB rig's sum of both period readings. Report one row with matched_blocks, the number of complete blocks, followed by carryover_units, the equally weighted mean of those signed block contrasts. Each block has exactly one rig per sequence and both readings per rig. Keep fractional units and include zero contrasts in the mean. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "rig_readings": {
+        "columns": [
+          "block_id TEXT",
+          "sequence TEXT",
+          "period_one INTEGER",
+          "period_two INTEGER"
+        ],
+        "rows": [
+          [
+            "x",
+            "AB",
+            10,
+            18
+          ],
+          [
+            "x",
+            "BA",
+            14,
+            12
+          ],
+          [
+            "y",
+            "AB",
+            20,
+            30
+          ],
+          [
+            "y",
+            "BA",
+            25,
+            22
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "matched_blocks",
+      "carryover_units"
+    ]
+  },
+  {
+    "task_id": "decision-estimate-unreported-drive-failures",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the provision for the current drive cohort of each model. Each row is one cohort. A history row records cumulative failure counts at the first review and at warranty expiry for the same units. A current row has reached only the first review, so its expiry count is NULL. Within each model, estimate additional current failures by multiplying its current first-review count by the ratio of total historical post-review failures to total historical first-review failures. Pool historical counts before taking the ratio. A history row with zero first-review failures still contributes its later failures. Round the estimated count up to a whole failure, then multiply by the current cohort's repair cost in cents. Historical repair prices do not apply. Each model with a current row has exactly one such row and a positive pooled denominator. Apart from the stated expiry counts there are no nulls. Return model_code, additional_failures, provision_cents for current models only, including zero estimates, ordered by model_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "drive_cohort": {
+        "columns": [
+          "model_code TEXT",
+          "cohort_code TEXT",
+          "cohort_stage TEXT",
+          "first_count INTEGER",
+          "expiry_count INTEGER",
+          "repair_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "D",
+            "d1",
+            "history",
+            2,
+            5,
+            800
+          ],
+          [
+            "D",
+            "d2",
+            "history",
+            8,
+            9,
+            900
+          ],
+          [
+            "D",
+            "d3",
+            "history",
+            0,
+            2,
+            900
+          ],
+          [
+            "D",
+            "d4",
+            "current",
+            4,
+            null,
+            1100
+          ],
+          [
+            "M",
+            "m1",
+            "history",
+            5,
+            5,
+            700
+          ],
+          [
+            "M",
+            "m2",
+            "current",
+            3,
+            null,
+            750
+          ],
+          [
+            "S",
+            "s1",
+            "history",
+            3,
+            7,
+            600
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "model_code",
+      "additional_failures",
+      "provision_cents"
+    ]
+  },
+  {
+    "task_id": "decision-evidenced-meter-credit-export",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of credits.csv as one text field named csv_text. Export one credit for each invoice whose billed units exceed the accepted final meter count as of June 30, 2026 inclusive. Meter evidence records contain the primary note and structured fields transcribed from that note. For each invoice use the latest eligible signed note by note_day, breaking same-day ties by greatest source_id in binary text order. Draft notes and later notes are ineligible. If signed evidence is absent, skip the invoice. Credit cents equal excess units times the invoice's unit price. Cite the selected evidence record's actual source_id on every exported line. All fields are non-null except final_units may be null for drafts. Invoice codes and source IDs are unique within their respective tables and contain only ASCII letters and digits. Use the exact header invoice_code,credit_cents,source_id followed by data lines sorted by invoice_code ascending. Use decimal integers without leading zeros, comma delimiters, and one LF after every line including the last. If there are no credits, emit the header with its LF. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "meter_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "invoice_code TEXT",
+          "note_day TEXT",
+          "note_state TEXT",
+          "final_units INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "M11",
+            "I1",
+            "2026-06-12",
+            "signed",
+            80,
+            "Recount accepted at 80 units."
+          ],
+          [
+            "M12",
+            "I1",
+            "2026-06-12",
+            "signed",
+            92,
+            "Restored twelve omitted units. Signed total is 92."
+          ],
+          [
+            "M13",
+            "I1",
+            "2026-06-20",
+            "draft",
+            75,
+            "Preliminary recount suggests 75 units."
+          ],
+          [
+            "M21",
+            "I2",
+            "2026-06-30",
+            "signed",
+            40,
+            "All 40 billed units verified."
+          ],
+          [
+            "M31",
+            "I3",
+            "2026-06-28",
+            "signed",
+            15,
+            "Three duplicate readings removed. Final count is 15."
+          ],
+          [
+            "M32",
+            "I3",
+            "2026-07-01",
+            "signed",
+            18,
+            "July review reinstates the count of 18."
+          ],
+          [
+            "M41",
+            "I4",
+            "2026-06-18",
+            "draft",
+            null,
+            "Meter reconciliation still open."
+          ]
+        ]
+      },
+      "usage_invoice": {
+        "columns": [
+          "invoice_code TEXT",
+          "billed_units INTEGER",
+          "unit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "I1",
+            100,
+            7
+          ],
+          [
+            "I2",
+            40,
+            3
+          ],
+          [
+            "I3",
+            18,
+            5
+          ],
+          [
+            "I4",
+            20,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_text"
+    ]
+  }
+]

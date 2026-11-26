@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24549,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 255,
+    "reasoning_output_tokens": 62
+  },
+  "thread": "01a20d8e-5f1a-7a81-80ea-c3b273d88647",
+  "packet_sha256": "62ca201a3c93426b63e14acb9efc2320f3a1825817bc771efe937081933f27e4",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000813298\",\n          \"reason\": \"Q1 total sales fell 1.8% year over year while inventory rose 3.5% (A, C). I forecast Q2 sales growth stays above −5.00%, close to the Q1 pace. If sales continue to lag inventory, markdowns to clear stock could deepen the year-over-year decline to at least 5.00% in Q3.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q3/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q3/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000813298",
+            "reason": "Q1 total sales fell 1.8% year over year while inventory rose 3.5% (A, C). I forecast Q2 sales growth stays above −5.00%, close to the Q1 pace. If sales continue to lag inventory, markdowns to clear stock could deepen the year-over-year decline to at least 5.00% in Q3."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q3/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

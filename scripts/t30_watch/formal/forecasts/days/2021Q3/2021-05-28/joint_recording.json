@@ -1,0 +1,57 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 27103,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 284,
+    "reasoning_output_tokens": 14
+  },
+  "thread": "01a20d8a-099b-76b3-b5d7-4b7e0060ea90",
+  "packet_sha256": "de75ed33e0ecd6634a6cfe23a2eb4a1501942a35cae7dea7bc03518694b326e5",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q3/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-3\",\"alerts\":[{\"cik\":\"0000105418\",\"reason\":\"Weis’s year-over-year net sales growth slowed from 13.66% in December to 2.08% in March. Record E attributes part of the sales lift to closures of other food sources and to stimulus payments. I expect growth to stay above -5.00% in the intervening quarter, then reach -5.00% or lower in the quarter beginning June 27 as Weis compares against sales lifted by those temporary factors.\"}]},\n    {\"sector\":\"2021Q3/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q3/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-3",
+        "alerts": [
+          {
+            "cik": "0000105418",
+            "reason": "Weis’s year-over-year net sales growth slowed from 13.66% in December to 2.08% in March. Record E attributes part of the sales lift to closures of other food sources and to stimulus payments. I expect growth to stay above -5.00% in the intervening quarter, then reach -5.00% or lower in the quarter beginning June 27 as Weis compares against sales lifted by those temporary factors."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q3/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

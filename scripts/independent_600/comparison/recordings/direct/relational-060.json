@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "d7843bdc5648c879dff4eb1f842b849b38e93e8ea54b3ccad16afa6241e0d3c0",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-replacement-recruiting-month-close\": \"WITH totals AS (SELECT team_code, SUM(CASE WHEN start_month <= 4 AND 4 - start_month < term_months THEN total_cents / term_months ELSE 0 END) AS expense_cents, SUM(CASE WHEN paid_month = 4 THEN total_cents ELSE 0 END) AS cash_cents FROM vendor_charge GROUP BY team_code) SELECT team_code, expense_cents, cash_cents, expense_cents - cash_cents AS gap_cents FROM totals ORDER BY team_code ASC\",\n  \"decision-replay-clock-at-the-horn\": \"WITH bounds AS (SELECT r.basket_id, r.cam_release - h.cam_sync + h.arena_sync - h.error_ms AS earliest_ms, r.cam_release - h.cam_sync + h.arena_sync + h.error_ms AS latest_ms, h.horn_ms, r.replay_ref, h.horn_ref FROM replay_marks AS r JOIN horn_certificates AS h ON h.period_id = r.period_id) SELECT basket_id, earliest_ms, latest_ms, CASE WHEN latest_ms < horn_ms THEN 'count' WHEN earliest_ms >= horn_ms THEN 'void' ELSE 'review' END AS ruling, replay_ref, horn_ref FROM bounds ORDER BY basket_id ASC\",\n  \"decision-replay-surviving-catalog-cell-edits\": \"WITH last_ticks AS (SELECT item_key, field_key, MAX(tick) AS current_tick, MAX(CASE WHEN origin_key <> 'spill' THEN tick END) AS restored_tick FROM cell_edit GROUP BY item_key, field_key) SELECT t.item_key, t.field_key, CASE WHEN r.cell_value IS NULL THEN 'clear' ELSE 'set' END AS edit_action, r.cell_value AS new_value FROM last_ticks AS t JOIN cell_edit AS c ON c.tick = t.current_tick JOIN cell_edit AS r ON r.tick = t.restored_tick WHERE c.cell_value COLLATE BINARY IS NOT r.cell_value ORDER BY t.item_key COLLATE BINARY ASC, t.field_key COLLATE BINARY ASC\",\n  \"decision-reserve-a-sorter-service-window\": \"WITH feasible AS (SELECT hour_no, MAX(0, forecast_items - hand_capacity) AS delayed FROM sorter_hour WHERE crew_ready = 1 AND forecast_items IS NOT NULL AND hand_capacity IS NOT NULL) SELECT a.hour_no AS start_hour, MAX(a.delayed, b.delayed) AS peak_delayed, a.delayed + b.delayed AS total_delayed FROM feasible AS a JOIN feasible AS b ON b.hour_no = a.hour_no + 1 ORDER BY peak_delayed ASC, total_delayed ASC, start_hour ASC LIMIT 1\"\n}",
+  "submissions": {
+    "decision-replacement-recruiting-month-close": "WITH totals AS (SELECT team_code, SUM(CASE WHEN start_month <= 4 AND 4 - start_month < term_months THEN total_cents / term_months ELSE 0 END) AS expense_cents, SUM(CASE WHEN paid_month = 4 THEN total_cents ELSE 0 END) AS cash_cents FROM vendor_charge GROUP BY team_code) SELECT team_code, expense_cents, cash_cents, expense_cents - cash_cents AS gap_cents FROM totals ORDER BY team_code ASC",
+    "decision-replay-clock-at-the-horn": "WITH bounds AS (SELECT r.basket_id, r.cam_release - h.cam_sync + h.arena_sync - h.error_ms AS earliest_ms, r.cam_release - h.cam_sync + h.arena_sync + h.error_ms AS latest_ms, h.horn_ms, r.replay_ref, h.horn_ref FROM replay_marks AS r JOIN horn_certificates AS h ON h.period_id = r.period_id) SELECT basket_id, earliest_ms, latest_ms, CASE WHEN latest_ms < horn_ms THEN 'count' WHEN earliest_ms >= horn_ms THEN 'void' ELSE 'review' END AS ruling, replay_ref, horn_ref FROM bounds ORDER BY basket_id ASC",
+    "decision-replay-surviving-catalog-cell-edits": "WITH last_ticks AS (SELECT item_key, field_key, MAX(tick) AS current_tick, MAX(CASE WHEN origin_key <> 'spill' THEN tick END) AS restored_tick FROM cell_edit GROUP BY item_key, field_key) SELECT t.item_key, t.field_key, CASE WHEN r.cell_value IS NULL THEN 'clear' ELSE 'set' END AS edit_action, r.cell_value AS new_value FROM last_ticks AS t JOIN cell_edit AS c ON c.tick = t.current_tick JOIN cell_edit AS r ON r.tick = t.restored_tick WHERE c.cell_value COLLATE BINARY IS NOT r.cell_value ORDER BY t.item_key COLLATE BINARY ASC, t.field_key COLLATE BINARY ASC",
+    "decision-reserve-a-sorter-service-window": "WITH feasible AS (SELECT hour_no, MAX(0, forecast_items - hand_capacity) AS delayed FROM sorter_hour WHERE crew_ready = 1 AND forecast_items IS NOT NULL AND hand_capacity IS NOT NULL) SELECT a.hour_no AS start_hour, MAX(a.delayed, b.delayed) AS peak_delayed, a.delayed + b.delayed AS total_delayed FROM feasible AS a JOIN feasible AS b ON b.hour_no = a.hour_no + 1 ORDER BY peak_delayed ASC, total_delayed ASC, start_hour ASC LIMIT 1"
+  },
+  "attempt": 1,
+  "thread": "01a20e1c-3778-7952-8751-080f54a09ece",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22716,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 558,
+    "reasoning_output_tokens": 0
+  }
+}

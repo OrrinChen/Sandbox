@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-006",
+    "stage": "inspect-2",
+    "prompt_sha256": "b07e6e990ee8131961062274712822869db3d768807b881ba4cb5d9fc5e779b9",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122b-63e4-7fc3-8685-bdcf381e2061"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "The existing samples are enough to settle the formulas and target rows. I’ll use this last inspection round only where one ambiguity could affect the result: the FIFO cost calculation for row 5 with a larger current inventory."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-38537\":[],\"sheet-38662\":[],\"sheet-38969\":[],\"sheet-39432\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 37895,
+          "cached_input_tokens": 23808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1066,
+          "reasoning_output_tokens": 937
+        }
+      ],
+      "cli_final": "{\"sheet-38537\":[],\"sheet-38662\":[],\"sheet-38969\":[],\"sheet-39432\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122b-63e4-7fc3-8685-bdcf381e2061",
+    "raw": "{\"sheet-38537\":[],\"sheet-38662\":[],\"sheet-38969\":[],\"sheet-39432\":[]}",
+    "usage": {
+      "input_tokens": 37895,
+      "cached_input_tokens": 23808,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1066,
+      "reasoning_output_tokens": 937
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

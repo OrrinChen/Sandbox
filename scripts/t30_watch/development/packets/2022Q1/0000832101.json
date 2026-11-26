@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q1",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000832101",
+  "issuer": "IDEX CORP /DE/",
+  "cutoff": "2021-12-02",
+  "projected_target_start": "2022-01-01",
+  "status": "complete",
+  "period_end": "2021-09-30",
+  "filing_date": "2021-10-27",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000832101",
+    "issuer": "IDEX CORP /DE/",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-10-27",
+        "text": "Sales to customers outside the U.S. represented approximately 49% of total sales in the third quarter of 2021 compared to 51% during the same period in 2020."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-10-27",
+        "text": "•Sales of $712.0 million increased 23%; organic sales (which excludes acquisitions/divestitures and foreign currency translation) were up 15%."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-10-27",
+        "text": "These increases are a result of higher volume and price capture, partially offset by the fair value inventory step-up charges related to both the ABEL and Airtech acquisitions, inflation and supply chain constraints."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-10-27",
+        "text": "Adjusted operating margin increased 120 basis points to 24.3%."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-10-27",
+        "text": "Adjusted operating income increased 29% to $173.1 million."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-06-30",
+        "filed": "2021-07-28",
+        "reported_sales_usd": 685947000,
+        "year_ago_reported_sales_usd": 561249000,
+        "yoy_percent": "22.2179"
+      },
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-10-27",
+        "reported_sales_usd": 712019000,
+        "year_ago_reported_sales_usd": 581113000,
+        "yoy_percent": "22.5268"
+      }
+    ],
+    "status": "complete"
+  }
+}

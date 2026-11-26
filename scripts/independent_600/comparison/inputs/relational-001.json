@@ -1,0 +1,217 @@
+[
+  {
+    "task_id": "decision-allocate-freight-overage-with-floor",
+    "tool": "sqlite.query",
+    "instruction": "Allocate one 100-cent freight overage among the listed shipments. Each shipment must pay at least 20 cents. Split the available cents in proportion to capacity_used, measured in pallet positions. If any provisional shares fall below 20 cents, fix those shipments at 20 cents each and split the remaining pool proportionally among the remaining shipments. Repeat until the floor is satisfied. Round the final exact shares down to whole cents, then distribute leftover cents one per shipment in descending order of fractional remainder, breaking ties by shipment_id ascending. Return shipment_id and fee_cents ordered by shipment_id ascending. Shipment IDs are unique, capacity is positive, and the pool exceeds the sum of the minimums. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "shipments": {
+        "columns": [
+          "shipment_id TEXT",
+          "capacity_used INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            1
+          ],
+          [
+            "B",
+            3
+          ],
+          [
+            "C",
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shipment_id",
+      "fee_cents"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-invoice-discount-before-page-subtotals",
+    "tool": "sqlite.query",
+    "instruction": "Construct invoice_footers.csv for one invoice split across export pages. The single invoice_terms row supplies a whole-invoice discount in cents. Use only charge lines whose void_flag is 0; a flag of 1 marks a cancelled line. Allocate the discount across active lines in proportion to gross_cents. Give each line the integer floor of its exact share, then distribute the leftover cents, one per line, in descending order of fractional remainder, breaking ties by ascending unique line_no across the invoice. Sum the resulting allocations by the supplied page_no. Emit only pages containing an active line. All inputs are non-null integers, line amounts are positive, and the discount is between zero and the active gross total inclusive. Output columns page_no, gross_cents, discount_cents, net_cents, sorted by page_no ascending. Net is gross less allocated discount. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "charge_line": {
+        "columns": [
+          "line_no INTEGER",
+          "page_no INTEGER",
+          "gross_cents INTEGER",
+          "void_flag INTEGER"
+        ],
+        "rows": [
+          [
+            30,
+            2,
+            100,
+            0
+          ],
+          [
+            10,
+            1,
+            100,
+            0
+          ],
+          [
+            15,
+            1,
+            250,
+            1
+          ],
+          [
+            20,
+            1,
+            100,
+            0
+          ],
+          [
+            40,
+            3,
+            80,
+            1
+          ]
+        ]
+      },
+      "invoice_terms": {
+        "columns": [
+          "discount_cents INTEGER"
+        ],
+        "rows": [
+          [
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "page_no",
+      "gross_cents",
+      "discount_cents",
+      "net_cents"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-kiln-shelf-space",
+    "tool": "sqlite.query",
+    "instruction": "Construct firing_manifest.csv with one column lot_id in ascending binary text order. Choose one or two distinct whole lots from the waiting list for a single firing. Combined shelf use must be at most 10 slots and combined mass at most 12 kilograms. The new lot_slots field gives slots for the whole lot and takes precedence. When it is null, use piece_qty times slots_each from the old layout. Null means unavailable and every lot has a usable footprint. Mass and priority points always describe the whole lot. Maximize total priority points, then minimize total slots used, then choose the lexicographically smallest sorted sequence of lot IDs (a proper prefix sorts first). IDs are distinct single uppercase letters. At least one lot fits. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "waiting_lots": {
+        "columns": [
+          "lot_id TEXT",
+          "lot_slots INTEGER",
+          "piece_qty INTEGER",
+          "slots_each INTEGER",
+          "mass_kg INTEGER",
+          "priority_pts INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            7,
+            null,
+            null,
+            5,
+            12
+          ],
+          [
+            "B",
+            null,
+            2,
+            3,
+            7,
+            10
+          ],
+          [
+            "C",
+            4,
+            3,
+            2,
+            5,
+            9
+          ],
+          [
+            "D",
+            3,
+            null,
+            null,
+            8,
+            8
+          ],
+          [
+            "E",
+            2,
+            null,
+            null,
+            9,
+            7
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "lot_id"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-printer-plates-to-chapter-pockets",
+    "tool": "sqlite.query",
+    "instruction": "A printer must insert one plate for chapter 1 and one for chapter 2. Each pocket_offer row is an approved placement for that chapter. pocket_leaf is the numbered insertion position and opener_leaf is the chapter opening, both in leaves from the front. setup_min is handling time in whole minutes. Choose one offer per chapter such that the first pocket strictly precedes the second and their combined handling time is at most 7 minutes. Minimize the sum of absolute distances from the corresponding openers, then minimize total handling time, then choose the smaller first pocket, then the smaller second pocket. Offers are unique per chapter and pocket, and all fields are non-NULL. Return the single best layout in ordered columns first_leaf, second_leaf, drift_leaves, total_min. Return zero rows if no layout qualifies. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pocket_offer": {
+        "columns": [
+          "chapter_no INTEGER",
+          "opener_leaf INTEGER",
+          "pocket_leaf INTEGER",
+          "setup_min INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            10,
+            10,
+            5
+          ],
+          [
+            1,
+            10,
+            8,
+            2
+          ],
+          [
+            1,
+            10,
+            12,
+            2
+          ],
+          [
+            2,
+            12,
+            12,
+            4
+          ],
+          [
+            2,
+            12,
+            13,
+            3
+          ],
+          [
+            2,
+            12,
+            9,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_leaf",
+      "second_leaf",
+      "drift_leaves",
+      "total_min"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "e992c7ecc752e0a703a5db3787241669fc4fc93e76f8e3e958b53112aaf9c0d5",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-date-a-legend-reading-between-proofs\": \"WITH ranked AS (SELECT i.impression_id, n.reading, n.source_id, ROW_NUMBER() OVER (PARTITION BY i.impression_id ORDER BY n.note_day DESC, (n.plate_code IS NOT NULL) DESC, n.source_id COLLATE BINARY ASC) AS rn FROM impressions AS i LEFT JOIN proof_notes AS n ON n.glyph = i.glyph AND n.note_day <= i.print_day AND (n.plate_code IS NULL OR n.plate_code = i.plate_code)) SELECT impression_id, reading, source_id FROM ranked WHERE rn = 1 ORDER BY impression_id ASC\",\n  \"decision-dead-heat-purse-apportionment\": \"WITH classified AS (SELECT squad, RANK() OVER (ORDER BY official_ms) AS finish_place, COUNT(*) OVER (PARTITION BY official_ms) AS tie_size, ROW_NUMBER() OVER (PARTITION BY official_ms ORDER BY squad COLLATE BINARY) AS tie_order FROM finish_log WHERE official_ms IS NOT NULL), pooled AS (SELECT c.*, COALESCE((SELECT SUM(p.prize_cents) FROM prize_slot AS p WHERE p.slot_no >= c.finish_place AND p.slot_no < c.finish_place + c.tie_size), 0) AS pool_cents FROM classified AS c) SELECT squad, finish_place, pool_cents / tie_size + (tie_order <= pool_cents % tie_size) AS payout_cents FROM pooled ORDER BY finish_place ASC, squad COLLATE BINARY ASC\",\n  \"decision-dispatch-recovery-blocks\": \"SELECT a.offer_code AS a_code, b.offer_code AS b_code, a.fee + b.fee AS fee_cents, a.fee + b.fee - d.budget_cents AS over_budget_cents FROM block_offer AS a CROSS JOIN block_offer AS b CROSS JOIN depot_limit AS d WHERE a.vendor = 'A' AND b.vendor = 'B' AND a.crates + b.crates >= d.backlog AND a.hours_used + b.hours_used <= d.crew_hours ORDER BY fee_cents ASC, a.offer_code COLLATE BINARY ASC, b.offer_code COLLATE BINARY ASC LIMIT 1\",\n  \"decision-display-tray-stock-writedown\": \"SELECT m.shop_code, m.memo_day AS adoption_day, COALESCE(SUM(c.units_held * MAX(c.book_cents - c.recovery_cents, 0)), 0) AS write_down_cents, m.source_id FROM shop_memo AS m LEFT JOIN opening_count AS c ON c.shop_code = m.shop_code AND c.count_day = m.memo_day WHERE m.action_code = 'launch' GROUP BY m.shop_code, m.memo_day, m.source_id ORDER BY m.shop_code ASC\"\n}",
+  "submissions": {
+    "decision-date-a-legend-reading-between-proofs": "WITH ranked AS (SELECT i.impression_id, n.reading, n.source_id, ROW_NUMBER() OVER (PARTITION BY i.impression_id ORDER BY n.note_day DESC, (n.plate_code IS NOT NULL) DESC, n.source_id COLLATE BINARY ASC) AS rn FROM impressions AS i LEFT JOIN proof_notes AS n ON n.glyph = i.glyph AND n.note_day <= i.print_day AND (n.plate_code IS NULL OR n.plate_code = i.plate_code)) SELECT impression_id, reading, source_id FROM ranked WHERE rn = 1 ORDER BY impression_id ASC",
+    "decision-dead-heat-purse-apportionment": "WITH classified AS (SELECT squad, RANK() OVER (ORDER BY official_ms) AS finish_place, COUNT(*) OVER (PARTITION BY official_ms) AS tie_size, ROW_NUMBER() OVER (PARTITION BY official_ms ORDER BY squad COLLATE BINARY) AS tie_order FROM finish_log WHERE official_ms IS NOT NULL), pooled AS (SELECT c.*, COALESCE((SELECT SUM(p.prize_cents) FROM prize_slot AS p WHERE p.slot_no >= c.finish_place AND p.slot_no < c.finish_place + c.tie_size), 0) AS pool_cents FROM classified AS c) SELECT squad, finish_place, pool_cents / tie_size + (tie_order <= pool_cents % tie_size) AS payout_cents FROM pooled ORDER BY finish_place ASC, squad COLLATE BINARY ASC",
+    "decision-dispatch-recovery-blocks": "SELECT a.offer_code AS a_code, b.offer_code AS b_code, a.fee + b.fee AS fee_cents, a.fee + b.fee - d.budget_cents AS over_budget_cents FROM block_offer AS a CROSS JOIN block_offer AS b CROSS JOIN depot_limit AS d WHERE a.vendor = 'A' AND b.vendor = 'B' AND a.crates + b.crates >= d.backlog AND a.hours_used + b.hours_used <= d.crew_hours ORDER BY fee_cents ASC, a.offer_code COLLATE BINARY ASC, b.offer_code COLLATE BINARY ASC LIMIT 1",
+    "decision-display-tray-stock-writedown": "SELECT m.shop_code, m.memo_day AS adoption_day, COALESCE(SUM(c.units_held * MAX(c.book_cents - c.recovery_cents, 0)), 0) AS write_down_cents, m.source_id FROM shop_memo AS m LEFT JOIN opening_count AS c ON c.shop_code = m.shop_code AND c.count_day = m.memo_day WHERE m.action_code = 'launch' GROUP BY m.shop_code, m.memo_day, m.source_id ORDER BY m.shop_code ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-b321-7582-a9b9-56dcda9a6e6d",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22937,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 581,
+    "reasoning_output_tokens": 0
+  }
+}

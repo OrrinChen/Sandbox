@@ -1,0 +1,46 @@
+{
+  "text": [
+    {
+      "sector": "2023Q1/food_manufacturing-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/transportation-3",
+      "alerts": [
+        {
+          "cik": "0001048911",
+          "reason": "FedEx reported a 3% year-over-year revenue decline in fiscal Q2 after 1% growth for the first half as a whole (A). Weakening economic conditions reduced volumes across every transportation segment (B, E). I forecast that Q3 revenue growth stays above −5% and that continued volume losses push Q4, beginning March 1, to −5% or lower. The timing is uncertain because Q3 revenue was still unknown at the cutoff."
+        }
+      ]
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q1/food_manufacturing-1",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q1/food_manufacturing-1",
+      "alerts": [
+        {
+          "cik": "0000016918",
+          "reason": "Reported sales YoY 11.98% then 4.99%. Target is step 2; preceding -1.99% versus target -8.97%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q1/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q1/transportation-3",
+      "alerts": []
+    }
+  ]
+}

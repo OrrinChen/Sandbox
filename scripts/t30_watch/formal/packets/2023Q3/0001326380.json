@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2023-06-30",
+  "projected_target_start": "2023-07-30",
+  "status": "complete",
+  "period_end": "2023-04-29",
+  "filing_date": "2023-06-07",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2023-06-07",
+        "text": "Net sales decreased $141.3 million or 10.3%, for the three months ended April 29, 2023 compared to the prior year."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2023-06-07",
+        "text": "During the three months ended April 29, 2023, net sales in our United States, Canada, and Australia segments decreased by 16.4%, 18.5%, and 8.9%, respectively, compared to the prior year, while net sales in our Europe segment increased by 26.2% compared to the prior year."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2023-06-07",
+        "text": "Cash used in operating activities during the three months ended April 29, 2023 was primarily due to the impact of our net loss and an increase in merchandise inventory, partially offset by an increase in trade payables and a reduction in accounts receivable."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2023-06-07",
+        "text": "•Improving margins through operational discipline and increased emphasis on higher margin collectibles and pre-owned product categories;"
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2023-06-07",
+        "text": "During the three months ended April 29, 2023, cash flows from operating activities were an outflow of $102.7 million, compared with an outflow of $303.9 million during the same period last year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-01-28",
+        "filed": "2023-03-28",
+        "reported_sales_usd": 2226400000,
+        "year_ago_reported_sales_usd": 2253900000,
+        "yoy_percent": "-1.2201"
+      },
+      {
+        "quarter_end": "2023-04-29",
+        "filed": "2023-06-07",
+        "reported_sales_usd": 1237100000,
+        "year_ago_reported_sales_usd": 1378400000,
+        "yoy_percent": "-10.2510"
+      }
+    ],
+    "status": "complete"
+  }
+}

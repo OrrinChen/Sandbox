@@ -1,0 +1,288 @@
+[
+  {
+    "task_id": "decision-reconcile-translated-menu-edits",
+    "tool": "csv.export",
+    "instruction": "Construct the data rows of menu_patch.csv for one menu and one target language. Each unique entry_code identifies one menu label. The three text cells give its common base, the current local edit and the incoming edit. Each cell is a complete snapshot. NULL means the label is absent, and an empty string is a present, intentionally blank label. Compare text exactly. Omit entries where local and incoming already agree, or where only local changed. When only incoming changed, emit action_code 'remove' for an absent incoming label or 'write' for a present one, with the incoming cell as payload. When both sides changed and disagree, emit 'review' with NULL payload. Output entry_code, action_code, payload in ascending binary entry_code order. Return SQL NULL for a missing payload. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "menu_edits": {
+        "columns": [
+          "entry_code TEXT",
+          "base_label TEXT",
+          "local_label TEXT",
+          "incoming_label TEXT"
+        ],
+        "rows": [
+          [
+            "back",
+            "Retour",
+            "Retour",
+            null
+          ],
+          [
+            "close",
+            "Fermer",
+            "Quitter",
+            "Fermer"
+          ],
+          [
+            "exit",
+            "Fin",
+            null,
+            "Sortir"
+          ],
+          [
+            "help",
+            null,
+            "Aide",
+            "Aide"
+          ],
+          [
+            "more",
+            null,
+            null,
+            ""
+          ],
+          [
+            "save",
+            "Garder",
+            "Garder",
+            "Sauver"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "entry_code",
+      "action_code",
+      "payload"
+    ]
+  },
+  {
+    "task_id": "decision-recoup-returns-against-originating-credit-lots",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the April 2026 debit for returned subscription credits. Each uniquely identified lot was paid before April at its own royalty rate in integer cents per credit. Each return posting requests a positive integer number of credits against one existing lot. Posting history is complete, repeated postings are separate requests, and cumulative approved returns can never exceed the lot's issued quantity. Recognize only the increase in approved returns during April, valued at the originating lot's rate. Use ISO posting dates, including April 1 and excluding May 1. Report all imprints in credit_lots, including those with no recognized returns. Inputs are non-null. Return imprint_id, returned_credits, debit_cents ordered by imprint_id ascending, with debit expressed as a positive charge or zero. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "credit_lots": {
+        "columns": [
+          "lot_id TEXT",
+          "imprint_id TEXT",
+          "issued_qty INTEGER",
+          "unit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "l1",
+            "Fern",
+            5,
+            13
+          ],
+          [
+            "l2",
+            "Fern",
+            8,
+            20
+          ],
+          [
+            "l3",
+            "Moss",
+            2,
+            40
+          ],
+          [
+            "l4",
+            "Reed",
+            7,
+            11
+          ]
+        ]
+      },
+      "return_posts": {
+        "columns": [
+          "lot_id TEXT",
+          "posted_day TEXT",
+          "request_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "l1",
+            "2026-03-29",
+            4
+          ],
+          [
+            "l1",
+            "2026-04-01",
+            3
+          ],
+          [
+            "l2",
+            "2026-04-09",
+            2
+          ],
+          [
+            "l2",
+            "2026-04-09",
+            2
+          ],
+          [
+            "l3",
+            "2026-03-10",
+            3
+          ],
+          [
+            "l3",
+            "2026-04-30",
+            2
+          ],
+          [
+            "l4",
+            "2026-05-01",
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "imprint_id",
+      "returned_credits",
+      "debit_cents"
+    ]
+  },
+  {
+    "task_id": "decision-recover-archived-catalogue-join",
+    "tool": "sqlite.query",
+    "instruction": "Audit the shelf entries whose printed code has no exact match in the master catalogue. Recover each missing join by tracing substitutions from the printed code. Each substitution identifies two equivalent codes and can be traversed in either direction. The substitution graph is a forest, and each unmatched entry's connected component contains exactly one master code. Return entry_id, printed_code, master_code, item_label, and hops in that order, sorted by entry_id ascending in binary text order. Count one hop per substitution on the unique simple path. Exclude shelf entries that already join directly. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "master_item": {
+        "columns": [
+          "master_code TEXT",
+          "item_label TEXT"
+        ],
+        "rows": [
+          [
+            "M1",
+            "Clay tile"
+          ],
+          [
+            "M2",
+            "Glass tile"
+          ]
+        ]
+      },
+      "shelf_entry": {
+        "columns": [
+          "entry_id TEXT",
+          "printed_code TEXT"
+        ],
+        "rows": [
+          [
+            "E1",
+            "P7"
+          ],
+          [
+            "E2",
+            "M2"
+          ]
+        ]
+      },
+      "substitution": {
+        "columns": [
+          "from_code TEXT",
+          "to_code TEXT"
+        ],
+        "rows": [
+          [
+            "P7",
+            "K4"
+          ],
+          [
+            "J3",
+            "K4"
+          ],
+          [
+            "J3",
+            "M1"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "entry_id",
+      "printed_code",
+      "master_code",
+      "item_label",
+      "hops"
+    ]
+  },
+  {
+    "task_id": "decision-recover-missing-counter-intervals",
+    "tool": "sqlite.query",
+    "instruction": "Construct belt_hours.csv with ordered columns belt_id, end_hour, item_count, sorted by belt_id then end_hour ascending. Each unique belt/hour row closes one integer hour. The old interval_items field directly counts items during that hour. Its replacement, meter_items, counts all items since the start of a meter_run. During migration both can appear. Prefer a nonnull direct count, including zero. Otherwise derive a count only when this belt has readings at both this hour and exactly one hour earlier, both meter values are present, the run IDs are equal and nonnull, and the meter has not decreased. A null means unavailable. Omit hours with no supported count. A row with a direct count can still supply a meter baseline for another hour. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "belt_readings": {
+        "columns": [
+          "belt_id TEXT",
+          "end_hour INTEGER",
+          "interval_items INTEGER",
+          "meter_items INTEGER",
+          "meter_run TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            1,
+            4,
+            80,
+            "x"
+          ],
+          [
+            "A",
+            2,
+            null,
+            89,
+            "x"
+          ],
+          [
+            "A",
+            4,
+            null,
+            101,
+            "x"
+          ],
+          [
+            "A",
+            5,
+            null,
+            7,
+            "y"
+          ],
+          [
+            "A",
+            6,
+            0,
+            12,
+            "y"
+          ],
+          [
+            "B",
+            2,
+            null,
+            30,
+            "x"
+          ],
+          [
+            "B",
+            3,
+            null,
+            28,
+            "x"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "belt_id",
+      "end_hour",
+      "item_count"
+    ]
+  }
+]

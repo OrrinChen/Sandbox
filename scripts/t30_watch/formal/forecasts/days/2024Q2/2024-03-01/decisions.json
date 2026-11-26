@@ -1,0 +1,102 @@
+{
+  "text": [
+    {
+      "sector": "2024Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2024Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-3",
+      "alerts": [
+        {
+          "cik": "0000886346",
+          "reason": "Kadant’s reported quarterly revenue growth slowed from 8.76% to 2.83% year over year. If that 5.93-point slowdown repeats each quarter, growth would reach about -3.10% in the intervening quarter and -9.03% in the target quarter. A 4% decline in annual bookings from a capital-equipment-driven peak supports further slowing (C), though record parts and consumables bookings temper that forecast (B)."
+        }
+      ]
+    },
+    {
+      "sector": "2024Q2/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2024Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/industrial_machinery-3",
+      "alerts": [
+        {
+          "cik": "0000886346",
+          "reason": "Reported sales YoY 8.76% then 2.83%. Target is step 2; preceding -3.09% versus target -9.02%."
+        }
+      ]
+    },
+    {
+      "sector": "2024Q2/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q2/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+[
+  {
+    "task_id": "decision-close-the-tile-frame",
+    "tool": "sqlite.query",
+    "instruction": "Each puzzle tile is a straight edge piece with a unique integer ID and a positive integer length in centimeters. Choose four distinct tiles and arrange them as the four whole sides of a rectangle with perimeter exactly 12 cm. Each corner is a right angle, opposite sides must match exactly, and squares qualify. Tiles may be reordered but cannot be cut, bent, or reused. Return the chosen IDs in increasing numeric order as tile_1, tile_2, tile_3, tile_4, regardless of their placement around the frame. If several subsets work, return the numerically lexicographically smallest sorted ID tuple. Return no rows if none works. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "edge_tiles": {
+        "columns": [
+          "tile_id INTEGER",
+          "length_cm INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "tile_1",
+      "tile_2",
+      "tile_3",
+      "tile_4"
+    ]
+  },
+  {
+    "task_id": "decision-coating-yield-at-contract-mix",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the change in saleable coating yield from baseline to trial at each contract's fixed finish mix. The run table records disjoint production runs in pieces. Pool good_pcs and fed_pcs within each phase and finish before calculating yield. Each contract's positive integer mix weights sum to 100 and represent percentages of pieces. Include a contract only if every specified finish has positive total feed in both phases. Ignore finishes outside that contract. Compute the weighted average of trial minus baseline yield across its finishes, express it in basis points, and round the final signed value to the nearest integer, with exact halves away from zero. No fields are NULL. Return contract_code, change_bp ordered by contract_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "coating_run": {
+        "columns": [
+          "phase_code TEXT",
+          "finish_code TEXT",
+          "good_pcs INTEGER",
+          "fed_pcs INTEGER"
+        ],
+        "rows": [
+          [
+            "baseline",
+            "matte",
+            72,
+            80
+          ],
+          [
+            "baseline",
+            "matte",
+            8,
+            20
+          ],
+          [
+            "trial",
+            "matte",
+            17,
+            20
+          ],
+          [
+            "baseline",
+            "gloss",
+            9,
+            10
+          ],
+          [
+            "trial",
+            "gloss",
+            70,
+            100
+          ],
+          [
+            "trial",
+            "satin",
+            10,
+            10
+          ]
+        ]
+      },
+      "contract_mix": {
+        "columns": [
+          "contract_code TEXT",
+          "finish_code TEXT",
+          "mix_pct INTEGER"
+        ],
+        "rows": [
+          [
+            "bulk",
+            "matte",
+            80
+          ],
+          [
+            "bulk",
+            "gloss",
+            20
+          ],
+          [
+            "display",
+            "matte",
+            20
+          ],
+          [
+            "display",
+            "gloss",
+            80
+          ],
+          [
+            "sample",
+            "satin",
+            100
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "contract_code",
+      "change_bp"
+    ]
+  },
+  {
+    "task_id": "decision-collapse-color-components",
+    "tool": "sqlite.query",
+    "instruction": "A swatch catalog lists every sample in samples. Each pair in color_links records a judgment that two samples are equivalent. Treat each link as undirected and equivalence as transitive. Collapse each connected component to its lexicographically smallest sample code under SQLite BINARY ordering. An isolated sample represents itself. Return one row per original sample with the text columns sample_code and representative_code, in that order, sorted by sample_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "color_links": {
+        "columns": [
+          "left_code TEXT",
+          "right_code TEXT"
+        ],
+        "rows": [
+          [
+            "B",
+            "A"
+          ],
+          [
+            "B",
+            "C"
+          ]
+        ]
+      },
+      "samples": {
+        "columns": [
+          "sample_code TEXT"
+        ],
+        "rows": [
+          [
+            "A"
+          ],
+          [
+            "B"
+          ],
+          [
+            "C"
+          ],
+          [
+            "D"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "sample_code",
+      "representative_code"
+    ]
+  },
+  {
+    "task_id": "decision-commit-a-kiln-cooldown-before-orders-settle",
+    "tool": "sqlite.query",
+    "instruction": "Select one kiln maintenance window before learning whether the next order mix is tile or brick. Each signed estimate gives the crew-hours required and the total refiring cost in cents under each mix. A window is available only if its crew-hours fit the single roster allowance, inclusively. For each mix separately, find the lowest cost achievable among available windows. A window's regret under that mix is its cost minus that minimum. Minimize the larger of its two regrets. Break ties by fewer crew-hours, then by estimate ID in ascending binary text order. Return one row with columns estimate_id, tile_regret_cents, brick_regret_cents, worst_regret_cents, citing the selected estimate. Estimate IDs are unique, there are no nulls, and at least one window fits the roster. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "crew_roster": {
+        "columns": [
+          "allowed_hours INTEGER"
+        ],
+        "rows": [
+          [
+            4
+          ]
+        ]
+      },
+      "kiln_estimate": {
+        "columns": [
+          "estimate_id TEXT",
+          "crew_hours INTEGER",
+          "tile_cents INTEGER",
+          "brick_cents INTEGER",
+          "estimate_text TEXT"
+        ],
+        "rows": [
+          [
+            "KA",
+            4,
+            1000,
+            10000,
+            "Dawn cooldown preserves the tile firing but interrupts brick."
+          ],
+          [
+            "KB",
+            3,
+            4000,
+            8000,
+            "Midday cooldown splits the refiring burden across mixes."
+          ],
+          [
+            "KC",
+            3,
+            8000,
+            7000,
+            "Evening cooldown favors the brick firing."
+          ],
+          [
+            "KD",
+            5,
+            500,
+            5000,
+            "A five-hour staged cooldown reduces refiring for both mixes."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "estimate_id",
+      "tile_regret_cents",
+      "brick_regret_cents",
+      "worst_regret_cents"
+    ]
+  }
+]

@@ -1,0 +1,239 @@
+{
+  "registration_sha256": "fb484f54b2fa4489f60fb49c8f0bc36916354c774b83264e1defc314c207eb49",
+  "turns_sha256": [
+    "d2682f63a9f22bd2bf25b3dcdd9ffaeb1d89dc5346241b306d95c34949d10c63",
+    "83f33d3623352a73a6d13f69369441f0ff886bda5c53d5f46ad7f7c3586ad556",
+    "6b02791bc3493375746a6039681562054f33bb7a8933abc9633685e389a45eb1"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-41680",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F18",
+            "formula": "=TRIM(E2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 87666,
+        "cached_input_tokens": 46464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1742,
+        "reasoning_output_tokens": 1426
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-41969",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "A6:C6",
+            "formula": "=COUNTBLANK(A3:C3)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 87666,
+        "cached_input_tokens": 46464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1742,
+        "reasoning_output_tokens": 1426
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42515",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "F5:F19",
+            "formula": "=SUM(1/((1/B5)*INDEX($B$5:$B$19,MATCH(G5,$C$5:$C$19,0))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E4:G10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E4:G10",
+            "range_size": 21,
+            "cells": [
+              [
+                "E4",
+                "CROSS-PARITY IN EUR"
+              ],
+              [
+                "F4",
+                "EUR-XXX CROSS-RATE"
+              ],
+              [
+                "G4",
+                "RATE IN EUR"
+              ],
+              [
+                "E5",
+                "EUR-AUD"
+              ],
+              [
+                "F5",
+                "1.49283288889117"
+              ],
+              [
+                "G5",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E6",
+                "EUR-CHF"
+              ],
+              [
+                "F6",
+                "1.002083188964488"
+              ],
+              [
+                "G6",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E7",
+                "EUR-USD"
+              ],
+              [
+                "F7",
+                "0.8822703080980869"
+              ],
+              [
+                "G7",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E8",
+                "EUR-EUR"
+              ],
+              [
+                "F8",
+                "1"
+              ],
+              [
+                "G8",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E9",
+                "EUR-ZAR"
+              ],
+              [
+                "F9",
+                "17.34850767528944"
+              ],
+              [
+                "G9",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E10",
+                "EUR-AUD"
+              ],
+              [
+                "F10",
+                "1.487942741818885"
+              ],
+              [
+                "G10",
+                "2022-07-04 00:00:00"
+              ]
+            ],
+            "total": 21,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 87666,
+        "cached_input_tokens": 46464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1742,
+        "reasoning_output_tokens": 1426
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42526",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B16",
+            "formula": "=A2*5/MAX($A$2:$A$16)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 87666,
+        "cached_input_tokens": 46464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1742,
+        "reasoning_output_tokens": 1426
+      },
+      "model_calls": 3
+    }
+  ]
+}

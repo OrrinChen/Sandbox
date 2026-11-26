@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-009",
+    "stage": "inspect-1",
+    "prompt_sha256": "5ea9c4f1eab0e16dd6687a9d0df2963a50967d9251d473bcd0ffe519cf99c09b",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122b-f998-7c91-a8cf-8a14f27376ec"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-43406\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A6:E20\"}],\"sheet-43436\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D12\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G1:K6\"}],\"sheet-43589\":[],\"sheet-43775\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E3:E20\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G6:Z6\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 16821,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 559,
+          "reasoning_output_tokens": 443
+        }
+      ],
+      "cli_final": "{\"sheet-43406\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A6:E20\"}],\"sheet-43436\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D12\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G1:K6\"}],\"sheet-43589\":[],\"sheet-43775\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E3:E20\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G6:Z6\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122b-f998-7c91-a8cf-8a14f27376ec",
+    "raw": "{\"sheet-43406\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A6:E20\"}],\"sheet-43436\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:D12\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G1:K6\"}],\"sheet-43589\":[],\"sheet-43775\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E3:E20\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"G6:Z6\"}]}",
+    "usage": {
+      "input_tokens": 16821,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 559,
+      "reasoning_output_tokens": 443
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

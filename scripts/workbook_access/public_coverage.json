@@ -1,0 +1,2193 @@
+{
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "archived_input_lock_sha256": "499b9c15d2a3951c22d07c5c58ccdb71e4804d7fcc81515e0e3b6f88cb3e03d0",
+  "public_workbook_archive_sha256": "4928170d2395dd5f83330fe778ce8fe7add39822e3d2395bea368f617a8ecee7",
+  "definition": "Count each nonempty worksheet address once per task. Overlap compares the archived displayed string with the first 350 characters of the public cell display. Dimensions and the original disclosed nonempty counts must match.",
+  "tasks": 100,
+  "tasks_with_extra_cells": 13,
+  "fixed_cells": 5862,
+  "full_cells": 8923,
+  "extra_cells": 3061,
+  "rows": [
+    {
+      "task_id": "sheet-14240",
+      "public_xlsx_sha256": "e96b6b8d1e4663dc70e870a8edb98ec0093c3075934145dc361f850041eab7e1",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            75,
+            21
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 709,
+          "extra_cells": 529
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 709,
+      "extra_cells": 529
+    },
+    {
+      "task_id": "sheet-1563",
+      "public_xlsx_sha256": "a8bb17b6e456c3596079e9da19965cd1285cfe18ea1704f5d0908bb5ecffbdd4",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            30,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-15829",
+      "public_xlsx_sha256": "8984b8977ad4d502b80e681a03746d0f10ec00d3bddc39cdb18ae2ffc6ac02db",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            22,
+            12
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 123,
+          "full_cells": 123,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 123,
+      "full_cells": 123,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-17251",
+      "public_xlsx_sha256": "44d7f293847cd06516dbe43ffbfc358421f6943032f1bf3f419932a0a2247cb3",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            11,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 29,
+          "full_cells": 29,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 29,
+      "full_cells": 29,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-18935",
+      "public_xlsx_sha256": "578d893d8854cdbe30f386f255b7609f3c822a9a879a3e6e219bbc76bcd11255",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            22,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 59,
+          "full_cells": 59,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 59,
+      "full_cells": 59,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-2212",
+      "public_xlsx_sha256": "7e2731129acad5a31bae5fd6d3e031ada8ba47adbf03dc5db1ed8c73b46fe460",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            273,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 287,
+          "extra_cells": 107
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 287,
+      "extra_cells": 107
+    },
+    {
+      "task_id": "sheet-31915",
+      "public_xlsx_sha256": "5c5f3a580ba6fa87c55b542c985f674b95080390af3da5330e4e79c1d45df04e",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            156,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 925,
+          "extra_cells": 855
+        },
+        "Sheet2": {
+          "dimensions": [
+            11,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 95,
+      "full_cells": 950,
+      "extra_cells": 855
+    },
+    {
+      "task_id": "sheet-32255",
+      "public_xlsx_sha256": "3cc07e03079001a48d3dc57067831325289cb6b55dcf007889f18bc58df0b4fe",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            13,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 64,
+          "full_cells": 64,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 64,
+      "full_cells": 64,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-32562",
+      "public_xlsx_sha256": "66b45e9a3c659b365e96f818e0bf021e4bca4a4fa57b8accea05ba7c4346cd42",
+      "sheets": {
+        "Sheet2": {
+          "dimensions": [
+            21,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 42,
+          "full_cells": 42,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 42,
+      "full_cells": 42,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-33157",
+      "public_xlsx_sha256": "77691726b5f1ea360f7c6640d332725a3e81e122373823ac96073972c3e80970",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 45,
+          "full_cells": 45,
+          "extra_cells": 0
+        },
+        "list": {
+          "dimensions": [
+            7,
+            1
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 7,
+          "full_cells": 7,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 52,
+      "full_cells": 52,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-34033",
+      "public_xlsx_sha256": "420b40de82ae97c74c76c3b130a92c7f1b943e58a00b827d57038c9d5833cefb",
+      "sheets": {
+        "ExcelForum help": {
+          "dimensions": [
+            13,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 78,
+          "full_cells": 78,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 78,
+      "full_cells": 78,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-3413",
+      "public_xlsx_sha256": "2f84187590fb9342a1c251f20375f4aa3d3254ebaa9835a0283405049b019928",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            7,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 33,
+          "full_cells": 33,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 33,
+      "full_cells": 33,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-34210",
+      "public_xlsx_sha256": "7b171268b4c4341d57b887005abde0c784a5729d523ec8b331c3b8ba2a2a7839",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            55,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 60,
+          "full_cells": 60,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 60,
+      "full_cells": 60,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-35739",
+      "public_xlsx_sha256": "6606e347fc5b1b37faa55d2ceedcbb319418adf08dd8bb0245af6938e4b59ecf",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            100,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 206,
+          "extra_cells": 26
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 206,
+      "extra_cells": 26
+    },
+    {
+      "task_id": "sheet-35747",
+      "public_xlsx_sha256": "e979a4f5fa5fd467e5859b87f0c86c936f20fe79c6ee01ff251d2acfddb1e8c2",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            11,
+            14
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 112,
+          "full_cells": 112,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 112,
+      "full_cells": 112,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-36236",
+      "public_xlsx_sha256": "6a95d641da4aeda9f204cb1fd2d39117a37c7e271d34906a71640aaadb287e60",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 16,
+          "full_cells": 16,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 16,
+      "full_cells": 16,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-36277",
+      "public_xlsx_sha256": "aecd2219b0f403a116f54708b18c633543cb70632711fb707ce5198c04f2c33d",
+      "sheets": {
+        "Sheet2": {
+          "dimensions": [
+            25,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 133,
+          "full_cells": 133,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 133,
+      "full_cells": 133,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-36764",
+      "public_xlsx_sha256": "3e213d034f668a9eb164fe6eda86416d98417bc5b093485cbb5ffef94480da55",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            3,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 8,
+          "full_cells": 8,
+          "extra_cells": 0
+        },
+        "Sheet2": {
+          "dimensions": [
+            363,
+            19
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 1088,
+          "extra_cells": 1018
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 78,
+      "full_cells": 1096,
+      "extra_cells": 1018
+    },
+    {
+      "task_id": "sheet-37228",
+      "public_xlsx_sha256": "aa768ed6a17dad43a1dc46e50ebadeca7bb0d18232f649d2be0ff0441bcd473d",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            23,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 80,
+          "full_cells": 80,
+          "extra_cells": 0
+        },
+        "Sheet2": {
+          "dimensions": [
+            1,
+            1
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 0,
+          "full_cells": 0,
+          "extra_cells": 0
+        },
+        "Sheet3": {
+          "dimensions": [
+            1,
+            1
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 0,
+          "full_cells": 0,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 80,
+      "full_cells": 80,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-37378",
+      "public_xlsx_sha256": "a0f07b4c7edc0e15eb71516cc8b2fe0e31517363c7f669f89f8c6a1f20e7c6bb",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            4,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 7,
+          "full_cells": 7,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 7,
+      "full_cells": 7,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-37554",
+      "public_xlsx_sha256": "a5c9ef1fbf3f57daa5fd0af22e3ed08f7b70e605040de871a9578e0bb6265792",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            19,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 91,
+          "full_cells": 91,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 91,
+      "full_cells": 91,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-37609",
+      "public_xlsx_sha256": "1dff9b584578c8f1199ad262e0f8df0243b1462cd5f5d2c5b4c1fb9c0d578cd8",
+      "sheets": {
+        "Sheet2": {
+          "dimensions": [
+            11,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 33,
+          "full_cells": 33,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 33,
+      "full_cells": 33,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-37615",
+      "public_xlsx_sha256": "75d64a362973132b9ae50b9547a8b813e724ca34653db2c4bf11df04296aa2da",
+      "sheets": {
+        "Example": {
+          "dimensions": [
+            44,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 126,
+          "full_cells": 126,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 126,
+      "full_cells": 126,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-38462",
+      "public_xlsx_sha256": "34acc6391e85f38c73466eca4a11db3ca23e957e094641ebc00cc2fc636e68f8",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            2,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 5,
+          "full_cells": 5,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 5,
+      "full_cells": 5,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-38537",
+      "public_xlsx_sha256": "c9efb34bcf52a4e6581ab52153e232f1e72c941592f9f6ea5768281095085cc3",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            36,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 52,
+          "full_cells": 52,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 52,
+      "full_cells": 52,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-38662",
+      "public_xlsx_sha256": "ff7a498036d500f37f8599a5a8ed9dddef695d47324f9600b5a7cfb82300ab7b",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            2,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 3,
+          "full_cells": 3,
+          "extra_cells": 0
+        },
+        "Job Code Table": {
+          "dimensions": [
+            2,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 6,
+          "full_cells": 6,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 9,
+      "full_cells": 9,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-38969",
+      "public_xlsx_sha256": "1d9e91d81743f358e215991255c7a224b3420ae53459398101ee4eddc03cf8b8",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            20,
+            21
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 52,
+          "full_cells": 52,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 52,
+      "full_cells": 52,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-39432",
+      "public_xlsx_sha256": "d0b32fba897fea78318fed0f1cfd42d3113335f7b76804da5dfa86b7b0c0b714",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            5,
+            13
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 45,
+          "full_cells": 45,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 45,
+      "full_cells": 45,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-39604",
+      "public_xlsx_sha256": "26b329f0329eb56fd197321a3d1b7664640c65943eff8fbf057689e9b0a96be1",
+      "sheets": {
+        "before": {
+          "dimensions": [
+            4,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 9,
+          "full_cells": 9,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 9,
+      "full_cells": 9,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-40478",
+      "public_xlsx_sha256": "f9569977b85ad6bdb3d5b26814d6847214737c9524ad896d97e0ba29aa27faa5",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            3,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 5,
+          "full_cells": 5,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 5,
+      "full_cells": 5,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-40757",
+      "public_xlsx_sha256": "8f19fca590c34182fccaae5461ace2da1e01fc09864bef8c39f955602d7567bc",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            11,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 13,
+          "full_cells": 13,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 13,
+      "full_cells": 13,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-40892",
+      "public_xlsx_sha256": "391def4330ac3c57a55e46504ea9bfe574ce8aa3a3dfe7aad5b1b00ff0df8189",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            17,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 29,
+          "full_cells": 29,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 29,
+      "full_cells": 29,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-41680",
+      "public_xlsx_sha256": "5e4e52efa3a8e832258a82974ae9d6063c05f3b04948d7c378da523328d2c1df",
+      "sheets": {
+        "Remove space": {
+          "dimensions": [
+            18,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 17,
+          "full_cells": 17,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 17,
+      "full_cells": 17,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-41969",
+      "public_xlsx_sha256": "aea7acde0c34cbd195843a8cc2437fa8ea0f062d1155cf680ffbf0c2e12aca6a",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 8,
+          "full_cells": 8,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 8,
+      "full_cells": 8,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-42515",
+      "public_xlsx_sha256": "9fdd21ba3b047d93ad29969a1025c0f2abf6450ef786a5146cfc1c85e6681c2c",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            19,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 98,
+          "full_cells": 98,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 98,
+      "full_cells": 98,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-42526",
+      "public_xlsx_sha256": "9a64f5321e8bed84434c9f36f0703fec855e40e4a1da2c262a0f846d838d32ba",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            16,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 18,
+          "full_cells": 18,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 18,
+      "full_cells": 18,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-43406",
+      "public_xlsx_sha256": "36b38ba6d2e1c874cf780a2a750672d5a58b54054cdbdfc7ad6f4b14654a77dd",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            20,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 55,
+          "full_cells": 55,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 55,
+      "full_cells": 55,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-43436",
+      "public_xlsx_sha256": "7d1c913c0fbf3915441bac4c6a6eb32b0ec92676abe31acb270b3a8b3426113b",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            12,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 58,
+          "full_cells": 58,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 58,
+      "full_cells": 58,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-43589",
+      "public_xlsx_sha256": "a7bcc8affef16dfd3b182b24098f38d5c760113100c20956e877274aa0513cff",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            2,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 3,
+          "full_cells": 3,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 3,
+      "full_cells": 3,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-43775",
+      "public_xlsx_sha256": "14d5be721d2e4c5921fd932414c1e8f4d96c62a87594dcce09af3d7b7e092742",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            13
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 8,
+          "full_cells": 8,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 8,
+      "full_cells": 8,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-44264",
+      "public_xlsx_sha256": "d27e14ecfd83c392e5abd1c6bf9515053ea71d947dc7f576a41ee4fcf315f361",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            9,
+            18
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-44266",
+      "public_xlsx_sha256": "3a8ae3a9efbd32e4cc8dc78d169ba1159b0aa795b854b6f56eb751165b2c6e26",
+      "sheets": {
+        "Data": {
+          "dimensions": [
+            24,
+            16
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 73,
+          "extra_cells": 3
+        },
+        "Lookup": {
+          "dimensions": [
+            12,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 12,
+          "full_cells": 12,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 82,
+      "full_cells": 85,
+      "extra_cells": 3
+    },
+    {
+      "task_id": "sheet-44628",
+      "public_xlsx_sha256": "dd7308bc7b2a52fc560eb474cd2141d64e39c1abb51201510f6cac3d5adda7ad",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            10,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-45030",
+      "public_xlsx_sha256": "89f123e62dbf23656eb9b0bc3f981bc1ef5f9620db2488a1025032a220d82276",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            28,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 62,
+          "full_cells": 62,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 62,
+      "full_cells": 62,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-45063",
+      "public_xlsx_sha256": "4e9830535b87ae3c3c35c5b71e3e5d56d09628bd21fcc016fd75bb923eb7e405",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 8,
+          "full_cells": 8,
+          "extra_cells": 0
+        },
+        "Sheet2": {
+          "dimensions": [
+            6,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 12,
+          "full_cells": 12,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 20,
+      "full_cells": 20,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-45300",
+      "public_xlsx_sha256": "84ce4b5880482cc60c296394a47a3e47639e40f3aa1fd9ce042b3dc86ee587c5",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            4,
+            1
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 4,
+          "full_cells": 4,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 4,
+      "full_cells": 4,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-45937",
+      "public_xlsx_sha256": "90895545d7be85d090cf0358a1151499fe50da60fcd12ad5208cdb1dcb6e44f3",
+      "sheets": {
+        "Current": {
+          "dimensions": [
+            22,
+            14
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 58,
+          "full_cells": 58,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 58,
+      "full_cells": 58,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-46167",
+      "public_xlsx_sha256": "78f6109a37e66e46ba56273395ce34ac8815499739ef34a15a02c5230471a673",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            12,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-46897",
+      "public_xlsx_sha256": "2bc95c8f7b7ed838b195f91f9d45b708d275bedb16095ffe3867a717c894c9a0",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            15,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 65,
+          "full_cells": 65,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 65,
+      "full_cells": 65,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-47699",
+      "public_xlsx_sha256": "bfb9535636187ee4aaa5c4e04a3b4a789b3ed64c9f4a096a3c67bf8ef5a1a832",
+      "sheets": {
+        "Prev working day Quote (2)": {
+          "dimensions": [
+            27,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 99,
+          "full_cells": 99,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 99,
+      "full_cells": 99,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48354",
+      "public_xlsx_sha256": "fa6ee5028aa864143b9351ed3577ee168b455ed25183239d1064c0e9c5e13cab",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 17,
+          "full_cells": 17,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 17,
+      "full_cells": 17,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48365",
+      "public_xlsx_sha256": "00244a7c12d2262637e8664de49f5077138c31c375929466da3fe91e7d1508e9",
+      "sheets": {
+        "Dashboard": {
+          "dimensions": [
+            13,
+            17
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 15,
+          "full_cells": 15,
+          "extra_cells": 0
+        },
+        "Data": {
+          "dimensions": [
+            20,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 60,
+          "full_cells": 60,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 75,
+      "full_cells": 75,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48588",
+      "public_xlsx_sha256": "fa682cf571b0baea9840c72fb793edc4bb484a5886de75780bf775cf2dd40bcd",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            43,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 61,
+          "full_cells": 61,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 61,
+      "full_cells": 61,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48608",
+      "public_xlsx_sha256": "674a5ca36b1e4ce609ad29971d834d42c23cf37ae7aba39b06a753e69c4cc26d",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            8,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 38,
+          "full_cells": 38,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 38,
+      "full_cells": 38,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48643",
+      "public_xlsx_sha256": "533d4f1044037e6d1107eae509e3749bc8028e4ca2424eac6b17dc712c5f06f9",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            40,
+            8
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 133,
+          "full_cells": 133,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 133,
+      "full_cells": 133,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48969",
+      "public_xlsx_sha256": "60793050c41c0411292d947abc36907001743197d4ae05524ca31d6bea700c31",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            10,
+            14
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 69,
+          "full_cells": 69,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 69,
+      "full_cells": 69,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-48983",
+      "public_xlsx_sha256": "b44a0e0838112a6a5d9ef5a4058bf846ebd27c92dae413bd515050e4aae476c1",
+      "sheets": {
+        "Hárok1": {
+          "dimensions": [
+            19,
+            19
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 58,
+          "full_cells": 58,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 58,
+      "full_cells": 58,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-49246",
+      "public_xlsx_sha256": "24259a681c8df2380995e3abc1383f97a46aac01d185a6b92fd04b49c2ca855a",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            14,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 82,
+          "full_cells": 82,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 82,
+      "full_cells": 82,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-49300",
+      "public_xlsx_sha256": "f9935c0f091a42365a84ef9883a1c3800800432d12e029c90c26c0257933831a",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            3,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 8,
+          "full_cells": 8,
+          "extra_cells": 0
+        },
+        "Data": {
+          "dimensions": [
+            4,
+            51
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 149,
+          "extra_cells": 79
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 78,
+      "full_cells": 157,
+      "extra_cells": 79
+    },
+    {
+      "task_id": "sheet-49455",
+      "public_xlsx_sha256": "3024a10b19af5101b126465193670dfff7d084f01be5ac383c947bd54822fc03",
+      "sheets": {
+        "KPI 1": {
+          "dimensions": [
+            208,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 451,
+          "extra_cells": 271
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 451,
+      "extra_cells": 271
+    },
+    {
+      "task_id": "sheet-49801",
+      "public_xlsx_sha256": "a2f6f23d90cb2c63ef884158bf9eb69d7f16f848a295ba661683503f989812a8",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            1,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 3,
+          "full_cells": 3,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 3,
+      "full_cells": 3,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-49857",
+      "public_xlsx_sha256": "24f148a661b090a9f9fc3bf895232894082b2da8731a91647198821156992ef1",
+      "sheets": {
+        "Sub CO's": {
+          "dimensions": [
+            10,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 63,
+          "full_cells": 63,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 63,
+      "full_cells": 63,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-49859",
+      "public_xlsx_sha256": "be9fbdc3ad040ac481ffc00f65b2561cf3150bd7a87e9c0cad3a9d51ce48e8a2",
+      "sheets": {
+        "Vat": {
+          "dimensions": [
+            24,
+            17
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 195,
+          "extra_cells": 15
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 195,
+      "extra_cells": 15
+    },
+    {
+      "task_id": "sheet-50630",
+      "public_xlsx_sha256": "b89966b00f31ea6b87b10f473c4eda44e845f885a8171edc4e4d2dd22ef47e8e",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            6,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 9,
+          "full_cells": 9,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 9,
+      "full_cells": 9,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-50952",
+      "public_xlsx_sha256": "60d3b2d8292d861196f8187f50e05cc9f78f2fe72701f87e3aeaa5d769e3ed36",
+      "sheets": {
+        "Munka1": {
+          "dimensions": [
+            7,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-51249",
+      "public_xlsx_sha256": "ac1e290178f73dfe72c7a3f4f2044f1694fffbd5250c7b2001c9537f45f16737",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            10,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 14,
+          "full_cells": 14,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 14,
+      "full_cells": 14,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-51262",
+      "public_xlsx_sha256": "b31ce4976de49420614d257cf7244255fb2ed30ee67a99eb6d1e982005478df8",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            13,
+            8
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 33,
+          "full_cells": 33,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 33,
+      "full_cells": 33,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-51807",
+      "public_xlsx_sha256": "619ac9d84f217ae2073bf29dac7da20ac20a3ace5a2f767127c87a4992eba047",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            3,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 7,
+          "full_cells": 7,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 7,
+      "full_cells": 7,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-52220",
+      "public_xlsx_sha256": "a1dea4373ce170b2ffe3c77bcf21a24a1b1521b8c457035f012b245ea7cddc27",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            3,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 6,
+          "full_cells": 6,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 6,
+      "full_cells": 6,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-52233",
+      "public_xlsx_sha256": "e9a85a88211787d8affe2e8ea70fc0d9fd941fc09a737e145f96b8d144859ea2",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            10,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 24,
+          "full_cells": 24,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 24,
+      "full_cells": 24,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-52532",
+      "public_xlsx_sha256": "af9500cc95e705386374395a7262c45cb1c68e19f2d1745b72189b99c79df918",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            8,
+            8
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 59,
+          "full_cells": 59,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 59,
+      "full_cells": 59,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-52917",
+      "public_xlsx_sha256": "b505d6ff6114872c9187fb14956e3037ae9e7a87d3c856e524b901ee51bbf579",
+      "sheets": {
+        "whole date": {
+          "dimensions": [
+            9,
+            10
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 32,
+          "full_cells": 32,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 32,
+      "full_cells": 32,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-53167",
+      "public_xlsx_sha256": "76f773ba8489b210e047b714769cda7486a86e0cfd6a5051c0874954346a18e0",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            16,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 50,
+          "full_cells": 50,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 50,
+      "full_cells": 50,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-53383",
+      "public_xlsx_sha256": "656c4d3f0b2e670c3441bfa9b69d27da1990fd7a8bf0a323b82e80f0ffc0ad5b",
+      "sheets": {
+        "worksheet 1": {
+          "dimensions": [
+            6,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 11,
+          "full_cells": 11,
+          "extra_cells": 0
+        },
+        "worksheet2": {
+          "dimensions": [
+            6,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 14,
+          "full_cells": 14,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-54274",
+      "public_xlsx_sha256": "3fb8135cb7e4290b6a6e67eebfc29356e751fc314afd02d4dcbf8f0c5a169326",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            4,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 11,
+          "full_cells": 11,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 11,
+      "full_cells": 11,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-55085",
+      "public_xlsx_sha256": "b73e3225df95dfe65eaa99a305848a6a633eac79d8debf5b432f285833df205e",
+      "sheets": {
+        "Result": {
+          "dimensions": [
+            10,
+            12
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 22,
+          "full_cells": 22,
+          "extra_cells": 0
+        },
+        "Master-RM": {
+          "dimensions": [
+            20,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 83,
+          "extra_cells": 13
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 92,
+      "full_cells": 105,
+      "extra_cells": 13
+    },
+    {
+      "task_id": "sheet-55260",
+      "public_xlsx_sha256": "43af20204bfade683e86c5c49d5e5646490d44a4dce261758ca45f1611f12e17",
+      "sheets": {
+        "Sheet2": {
+          "dimensions": [
+            2,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 4,
+          "full_cells": 4,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 4,
+      "full_cells": 4,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-55535",
+      "public_xlsx_sha256": "1221321d58cab4439008144aa669dd8080a5d38a75772cf9f707c9fefb621593",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            17,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 25,
+          "full_cells": 25,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 25,
+      "full_cells": 25,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-55609",
+      "public_xlsx_sha256": "43c268b0bb32e8aa1a3221e6b0cc4ae486ab4009f05c0d956b4c7d8ae8b32a50",
+      "sheets": {
+        "Φύλλο1": {
+          "dimensions": [
+            17,
+            13
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 80,
+          "full_cells": 80,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 80,
+      "full_cells": 80,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-56427",
+      "public_xlsx_sha256": "81521cfc4d70a42b3260cb1ca1bd575bcd7d1f139986f21aa7a527a0e5e3dc8f",
+      "sheets": {
+        "Taul1": {
+          "dimensions": [
+            28,
+            57
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 153,
+          "full_cells": 153,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 153,
+      "full_cells": 153,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-56451",
+      "public_xlsx_sha256": "21855dbd61cd549277bf10f62af26eb51cc414ed2e37a3d747fa2088dd47c56b",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            7,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 42,
+          "full_cells": 42,
+          "extra_cells": 0
+        },
+        "Sheet 2": {
+          "dimensions": [
+            7,
+            6
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 39,
+          "full_cells": 39,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 81,
+      "full_cells": 81,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-56599",
+      "public_xlsx_sha256": "8ca679e6a4a138836e4d46062f3f7b681ef5445fe4fe26f812a9f7e032b76f20",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            30,
+            10
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 104,
+          "full_cells": 104,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 104,
+      "full_cells": 104,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-56915",
+      "public_xlsx_sha256": "ce02098eb40db7ee777ff8cb4ca8821547c1d862de8fbb35c8f225648ae1be65",
+      "sheets": {
+        "COVER": {
+          "dimensions": [
+            23,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 31,
+          "full_cells": 31,
+          "extra_cells": 0
+        },
+        "DATA": {
+          "dimensions": [
+            24,
+            29
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 158,
+          "extra_cells": 88
+        },
+        "LIST": {
+          "dimensions": [
+            6,
+            1
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 6,
+          "full_cells": 6,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 107,
+      "full_cells": 195,
+      "extra_cells": 88
+    },
+    {
+      "task_id": "sheet-56995",
+      "public_xlsx_sha256": "b2d4f014abddbf01de3d3e51305fd1a56684f2749dfa544597f0417d65d850d6",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            5,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 16,
+          "full_cells": 16,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 16,
+      "full_cells": 16,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-57029",
+      "public_xlsx_sha256": "45430b84880a11decea4a88fca4ffeee499b8dc6b1136683cb82496cef9dddf7",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            5,
+            3
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 13,
+          "full_cells": 13,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 13,
+      "full_cells": 13,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-57105",
+      "public_xlsx_sha256": "dfe07b4cb70c47970b082d15f0f1cc2ff1ec7c33af331adaf91449bff4885f38",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            16,
+            13
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 72,
+          "full_cells": 72,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 72,
+      "full_cells": 72,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-57137",
+      "public_xlsx_sha256": "a6147d1b7abc37fc0025872178245dea9f537fd45205ca50f95c05ed1e782c9a",
+      "sheets": {
+        "Sheet2": {
+          "dimensions": [
+            16,
+            4
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 49,
+          "full_cells": 49,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 49,
+      "full_cells": 49,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-57262",
+      "public_xlsx_sha256": "b9d0cb40e006098833ed76199efe5d9a0cc44974af3d61975323b883fcfd9fd7",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            25,
+            25
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 180,
+          "full_cells": 197,
+          "extra_cells": 17
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 180,
+      "full_cells": 197,
+      "extra_cells": 17
+    },
+    {
+      "task_id": "sheet-57354",
+      "public_xlsx_sha256": "1d0b4f8767ea94771b386946e208f83c6fc99fbdc78de8956ad60db3b6ea9659",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            11,
+            21
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 72,
+          "full_cells": 72,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 72,
+      "full_cells": 72,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-58047",
+      "public_xlsx_sha256": "24c30b6ee22db250b3ffdc089138936884d6d1058efe169da2e4420416034211",
+      "sheets": {
+        "orders_export": {
+          "dimensions": [
+            30,
+            8
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 73,
+          "full_cells": 73,
+          "extra_cells": 0
+        },
+        "Sheet1": {
+          "dimensions": [
+            17,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 110,
+          "extra_cells": 40
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 143,
+      "full_cells": 183,
+      "extra_cells": 40
+    },
+    {
+      "task_id": "sheet-58701",
+      "public_xlsx_sha256": "e27ac55606f49d60b66b5bf15f483a6cd92c1404a8b653bb5f684d83ae2baf52",
+      "sheets": {
+        "Entry Tab": {
+          "dimensions": [
+            3,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 4,
+          "full_cells": 4,
+          "extra_cells": 0
+        },
+        "Table Tab": {
+          "dimensions": [
+            3,
+            2
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 6,
+          "full_cells": 6,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 10,
+      "full_cells": 10,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59160",
+      "public_xlsx_sha256": "71c032aa33742e0385f53e0487a1e59c420bbef65262c0dac1756746bd781ef6",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            11,
+            7
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 29,
+          "full_cells": 29,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 29,
+      "full_cells": 29,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59196",
+      "public_xlsx_sha256": "d3cb4ab0b58ef60228f4661e38064c71be28271f673359b3efee5c256391cdc1",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            5,
+            8
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 18,
+          "full_cells": 18,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 18,
+      "full_cells": 18,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59224",
+      "public_xlsx_sha256": "db5f39ea98fda19a51efd7302c8ce41db939eb0887bc697748c3787e2f274da8",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            14,
+            5
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 40,
+          "full_cells": 40,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 40,
+      "full_cells": 40,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59259",
+      "public_xlsx_sha256": "bce42aceabdc9ad4dcd6d125516b44faa3cb3a214621268299def4a6494db671",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            16,
+            12
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 77,
+          "full_cells": 77,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 77,
+      "full_cells": 77,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59358",
+      "public_xlsx_sha256": "ef71c098be5d0e36bab5c63e51b0a4fffd3129996cced5ad9688207977ecc12c",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            23,
+            12
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 103,
+          "full_cells": 103,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 103,
+      "full_cells": 103,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59639",
+      "public_xlsx_sha256": "8bfda34beca1ce29064329a8028e391d05175dbbcb5378a4d7a060d570592649",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            7,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 12,
+          "full_cells": 12,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 12,
+      "full_cells": 12,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-59794",
+      "public_xlsx_sha256": "d5e53178ccfe05f73860c7d61be6edfba81084fa624ac4e5b4477559f2bf5b3f",
+      "sheets": {
+        "SOURCE": {
+          "dimensions": [
+            5,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 24,
+          "full_cells": 24,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 24,
+      "full_cells": 24,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-7902",
+      "public_xlsx_sha256": "312ffbf67eefcded3ea7f5fc9867b5324b71f0ef1d23ee7e9ffb6bc2d2622b13",
+      "sheets": {
+        "Grouping": {
+          "dimensions": [
+            7,
+            9
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 60,
+          "full_cells": 60,
+          "extra_cells": 0
+        },
+        "Formula Required": {
+          "dimensions": [
+            6,
+            20
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 71,
+          "full_cells": 71,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 131,
+      "full_cells": 131,
+      "extra_cells": 0
+    },
+    {
+      "task_id": "sheet-9111",
+      "public_xlsx_sha256": "46c6869af1734d64719b817bf62ed015f1fac05186ce866ac1e424ce9eddda9d",
+      "sheets": {
+        "Sheet1": {
+          "dimensions": [
+            20,
+            11
+          ],
+          "overlap_identical": true,
+          "fixed_cells": 70,
+          "full_cells": 70,
+          "extra_cells": 0
+        }
+      },
+      "overlap_identical": true,
+      "fixed_cells": 70,
+      "full_cells": 70,
+      "extra_cells": 0
+    }
+  ]
+}

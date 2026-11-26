@@ -1,0 +1,43 @@
+{
+  "version": "a1-financial-evidence-v1",
+  "provenance": {
+    "repository": "https://github.com/OrrinChen/multimodal_FEE",
+    "commit": "9bc84f7ef222c8eb829a576c4605ab19719204a4",
+    "notes": "Search text is adapted from A1's local numeric fixtures. Values are normalized to USD."
+  },
+  "documents": [
+    {
+      "evidence_id": "aapl-fy2024-revenue",
+      "source": "AAPL:sec_xbrl_companyfacts:2024:FY",
+      "source_fixture": "scripts/smoke_phase5_claim_verification.py::_evidence",
+      "ticker": "AAPL",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "value": 391035000000,
+      "unit": "USD",
+      "text": "Apple (AAPL) FY2024 annual revenue was 391035000000 USD."
+    },
+    {
+      "evidence_id": "aapl-q4-fy2024-revenue",
+      "source": "fixture://a1/apple-q4-revenue",
+      "source_fixture": "tests/test_phase3_normalization.py::test_comparison_guardrails_reject_wrong_period_scale_and_company",
+      "ticker": "AAPL",
+      "fiscal_period": "Q4 FY2024",
+      "metric": "revenue",
+      "value": 94930000000,
+      "unit": "USD",
+      "text": "Apple (AAPL) Q4 FY2024 quarterly revenue was 94930000000 USD."
+    },
+    {
+      "evidence_id": "msft-fy2024-revenue",
+      "source": "fixture://a1/microsoft-revenue",
+      "source_fixture": "tests/test_phase3_normalization.py::test_comparison_guardrails_reject_wrong_period_scale_and_company",
+      "ticker": "MSFT",
+      "fiscal_period": "FY2024",
+      "metric": "revenue",
+      "value": 245122000000,
+      "unit": "USD",
+      "text": "Microsoft (MSFT) FY2024 annual revenue was 245122000000 USD."
+    }
+  ]
+}

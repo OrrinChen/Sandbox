@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-020",
+    "stage": "submit",
+    "prompt_sha256": "e6c348cf721f29b0f1034c9d29589cd75b27603b564edfc97282b590be7666b5",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-eaf1-7f31-b997-cb9fbad9c7f9"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-56451\":{\"fills\":[{\"range\":\"B2:F7\",\"formula\":\"=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),COLUMN()-COLUMN($A$1))\"}],\"formulas\":{}},\"sheet-56599\":{\"formulas\":{\"B2\":\"=IF(M5=\\\"\\\",\\\"not found - please re-enter\\\",IFERROR(INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=M5)*($H$6:$H$30>=M5),0),0)),\\\"not found - please re-enter\\\")\"}},\"sheet-56915\":{\"fills\":[{\"range\":\"B18:E23\",\"formula\":\"=IFERROR(ROUND(INDEX(DATA!$B$14:$AC$24,MATCH($A18,DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$1)),2),0)\"}],\"formulas\":{}},\"sheet-56995\":{\"fills\":[{\"range\":\"D2:D5\",\"formula\":\"=IF(B2=\\\"\\\",\\\"Not Attempt\\\",1-C2/B2)\"}],\"formulas\":{}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20619,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 284,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-56451\":{\"fills\":[{\"range\":\"B2:F7\",\"formula\":\"=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),COLUMN()-COLUMN($A$1))\"}],\"formulas\":{}},\"sheet-56599\":{\"formulas\":{\"B2\":\"=IF(M5=\\\"\\\",\\\"not found - please re-enter\\\",IFERROR(INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=M5)*($H$6:$H$30>=M5),0),0)),\\\"not found - please re-enter\\\")\"}},\"sheet-56915\":{\"fills\":[{\"range\":\"B18:E23\",\"formula\":\"=IFERROR(ROUND(INDEX(DATA!$B$14:$AC$24,MATCH($A18,DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$1)),2),0)\"}],\"formulas\":{}},\"sheet-56995\":{\"fills\":[{\"range\":\"D2:D5\",\"formula\":\"=IF(B2=\\\"\\\",\\\"Not Attempt\\\",1-C2/B2)\"}],\"formulas\":{}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-eaf1-7f31-b997-cb9fbad9c7f9",
+    "raw": "{\"sheet-56451\":{\"fills\":[{\"range\":\"B2:F7\",\"formula\":\"=INDEX('Sheet 2'!$A$1:$F$7,MATCH($A2,'Sheet 2'!$A:$A,0),COLUMN()-COLUMN($A$1))\"}],\"formulas\":{}},\"sheet-56599\":{\"formulas\":{\"B2\":\"=IF(M5=\\\"\\\",\\\"not found - please re-enter\\\",IFERROR(INDEX($J$6:$J$30,MATCH(1,INDEX(($G$6:$G$30<=M5)*($H$6:$H$30>=M5),0),0)),\\\"not found - please re-enter\\\")\"}},\"sheet-56915\":{\"fills\":[{\"range\":\"B18:E23\",\"formula\":\"=IFERROR(ROUND(INDEX(DATA!$B$14:$AC$24,MATCH($A18,DATA!$A$14:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+COLUMN()-COLUMN($B$1)),2),0)\"}],\"formulas\":{}},\"sheet-56995\":{\"fills\":[{\"range\":\"D2:D5\",\"formula\":\"=IF(B2=\\\"\\\",\\\"Not Attempt\\\",1-C2/B2)\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 20619,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 284,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

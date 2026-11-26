@@ -1,0 +1,134 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "7e82f29a298bc1a3ab47ea95c246eb08c05ea1cbebaf6fadb3d6825712642728",
+    "a41b4babfc6bb10f7d582569ea9acd1b3391faf3427bc7ebb4f4a69ca3929280",
+    "b549a316df250f5ca3782578b023fbeddb5e335688d3035c83c7860d0779fb68"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59639",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D5:K7",
+            "formula": "=MID($A5,COLUMN()-COLUMN($D$5)+1,1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56991,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 686,
+        "reasoning_output_tokens": 218
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59794",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "C3:M5",
+            "formula": "=IFERROR(MID($A3,IF(COLUMN()=3,1,FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-3))+1),IFERROR(FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-2)),LEN($A3)+1)-IF(COLUMN()=3,1,FIND(CHAR(1),SUBSTITUTE($A3,\"/\",CHAR(1),COLUMN()-3))+1)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56991,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 686,
+        "reasoning_output_tokens": 218
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-7902",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:J6",
+            "formula": "=IF($B3=\"\",VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE),IFERROR(INDEX(Grouping!$C$2:$I$7,MATCH(1,INDEX((Grouping!$A$2:$A$7=$C3)*(Grouping!$B$2:$B$7=$B3),0),0),COLUMN()-3),VLOOKUP($C3,Grouping!$A$2:$I$7,COLUMN()-1,FALSE)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56991,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 686,
+        "reasoning_output_tokens": 218
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-9111",
+      "model": "gpt-6.1-terra",
+      "arm": "fixed",
+      "batch": "spreadsheets-024",
+      "submission": {
+        "fills": [
+          {
+            "range": "D2:D7",
+            "formula": "=IF(AND(B2=\"\",C2=\"\"),\"\",IFERROR(VLOOKUP(B2,$G$2:$H$13,2,FALSE),IFERROR(VLOOKUP(C2,$J$2:$K$6,2,FALSE),2500)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 56991,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 686,
+        "reasoning_output_tokens": 218
+      },
+      "model_calls": 3
+    }
+  ]
+}

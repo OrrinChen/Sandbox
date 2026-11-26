@@ -1,0 +1,124 @@
+{
+  "origin": "2023Q1",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000003453",
+          "reason": "“B” reports a 13.0% year-on-year drop in Q4 Hawaii container volume. “D” also cites lower lift volume and terminal revenue. If those pressures persist into Q1 or Q2, fewer shipments and less handling revenue could push consolidated revenue growth to −5% or lower. The packet leaves the Q4 consolidated growth rate unknown."
+        }
+      ]
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0001402057",
+          "reason": "Reported sales YoY 17.27% then -1.78%; linear projections -20.84% and -39.89%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001038074",
+          "reason": "Reported sales YoY 45.98% then 23.31%; linear projections 0.64% and -22.03%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0001627014",
+          "reason": "Reported sales YoY 2.30% then -0.70%; linear projections -3.70% and -6.70%."
+        },
+        {
+          "cik": "0000857005",
+          "reason": "Reported sales YoY 5.67% then 1.79%; linear projections -2.10% and -5.98%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000878927",
+          "reason": "Reported sales YoY 14.55% then 5.76%; linear projections -3.02% and -11.80%."
+        }
+      ]
+    }
+  ]
+}

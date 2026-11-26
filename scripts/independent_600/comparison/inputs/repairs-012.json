@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "repair-original-ordered-cdn-key-split",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a CDN cache inventory. vary is an ordered list of distinct lowercase header names. entries is a list of objects with state and key. Decode only entries whose state is 'live'. Each live key is a route followed by exactly one value per vary name, with fields separated by literal '|'. Fields contain no literal pipe, the route is nonempty, and values may be empty. Treat fields as opaque, case-sensitive strings without decoding or trimming them. Return one {route,headers} object per live entry in input order, including duplicates. headers maps each vary name to its positional value. An empty vary list means the whole key is the route and headers is empty. Ignored entries may use a different key format.",
+    "observation": "def solve(data):\n    rows = []\n    names = sorted(data['vary'])\n    for entry in data['entries']:\n        if entry['state'] != 'live':\n            continue\n        route, *values = entry['key'].split('|')\n        rows.append({'route': route, 'headers': dict(zip(names, values))})\n    return rows"
+  },
+  {
+    "task_id": "repair-original-orient-joined-consist",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data). The first and second arrays list car labels in each section's stored front-to-rear order. first_end and second_end are each 'front' or 'rear' and name the ends coupled together. Return one array of labels in walking order from the free end of the first section, across the joint, to the free end of the second section. Include every car exactly once per occurrence, even when labels repeat. Use array position as the car order. Either array may be empty for a manifest preview. An empty section contributes no labels and its end setting has no effect on the other section.",
+    "observation": "def solve(data):\n    first = data['first']\n    second = data['second']\n    if data['first_end'] == 'front':\n        first = first[::-1]\n    if data['second_end'] == 'front':\n        second = second[::-1]\n    return first + second\n"
+  },
+  {
+    "task_id": "repair-original-orphaned-bookings",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a booking desk. The events list contains book and cancel records with kind, id, minute, and seq. A book also has parent, either null for an independent booking or the ID of a booking active immediately before that event. IDs are nonempty strings. A cancel always targets an active booking. A canceled ID may later be booked again, creating a fresh reservation. Replay events by increasing (minute, seq), regardless of input order. Both fields are nonnegative integers, minute is measured from desk opening, and each pair is unique. A cancellation closes only the targeted booking. A dependent booking becomes orphaned if any reservation in its original chain of support closes, even if the same ID is subsequently rebooked. A new booking attached to an already orphaned parent is also orphaned. Return a lexicographically sorted list of the IDs of active orphaned bookings after the last event.",
+    "observation": "def solve(data):\n    active = {}\n    parents = []\n    names = []\n    events = sorted(data['events'], key=lambda e: (e['minute'], e['seq']))\n    for event in events:\n        name = event['id']\n        if event['kind'] == 'cancel':\n            del active[name]\n        else:\n            parent = event['parent']\n            parents.append(active.get(parent))\n            names.append(name)\n            active[name] = len(parents) - 1\n\n    supported = set()\n    for version, parent in enumerate(parents):\n        if names[version] in active and (parent is None or parent in supported):\n            supported.add(version)\n    return sorted(name for name, version in active.items() if version not in supported)"
+  },
+  {
+    "task_id": "repair-original-parse-multiline-dispatch-csv",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Parse `text`, a valid comma-delimited dispatch export, into a list of records, each a list of strings. Outside quoted fields, LF or CRLF ends a record. Inside a quoted field, preserve every character, including commas and the exact LF or CRLF sequence. Two consecutive double quotes inside a quoted field represent one literal double quote. Quotes enclose the entire field when present. Unquoted spaces are significant. Retain record and field order, duplicate records, and empty fields, including a final field after a trailing comma. A blank physical line outside a quoted field is an empty record []. The last record may omit its terminator, and a final terminator adds no extra record. Empty text yields []. The only supported line breaks are LF and CRLF.",
+    "observation": "import csv\n\n\ndef solve(data):\n    text = data['text']\n    lines = text.split('\\n')\n    physical_lines = [line.removesuffix('\\r') for line in lines[:-1]]\n    if lines[-1]:\n        physical_lines.append(lines[-1])\n    return list(csv.reader(physical_lines))\n"
+  }
+]

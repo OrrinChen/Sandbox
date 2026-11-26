@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-015",
+    "stage": "inspect-1",
+    "prompt_sha256": "052908ccff2ee1778cf56c2df06ae91ee6ecd75615cfe00049630f774c450007",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-ac43-76c2-8024-f8387afa3b95"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to resolve the ambiguous row boundaries and source columns for the formula tasks that need more than the supplied examples."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-49801\":[],\"sheet-49857\":[{\"op\":\"range\",\"sheet\":\"Sub CO's\",\"range\":\"F4:G10\"}],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C12:J17\"}],\"sheet-50630\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A5:E6\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 36377,
+          "cached_input_tokens": 29824,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 723,
+          "reasoning_output_tokens": 568
+        }
+      ],
+      "cli_final": "{\"sheet-49801\":[],\"sheet-49857\":[{\"op\":\"range\",\"sheet\":\"Sub CO's\",\"range\":\"F4:G10\"}],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C12:J17\"}],\"sheet-50630\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A5:E6\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-ac43-76c2-8024-f8387afa3b95",
+    "raw": "{\"sheet-49801\":[],\"sheet-49857\":[{\"op\":\"range\",\"sheet\":\"Sub CO's\",\"range\":\"F4:G10\"}],\"sheet-49859\":[{\"op\":\"range\",\"sheet\":\"Vat\",\"range\":\"C12:J17\"}],\"sheet-50630\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A5:E6\"}]}",
+    "usage": {
+      "input_tokens": 36377,
+      "cached_input_tokens": 29824,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 723,
+      "reasoning_output_tokens": 568
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "a84b4d6570eca26a274e4f53083e1a4f8d6ac30e68286842a3167bcc9b8f432f",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-capacity-constrained-rebate-elections\": \"WITH candidates(election_ids, pallets_used, rebate_cents) AS (SELECT source_id, pallets, rebate_cents FROM offer_evidence UNION ALL SELECT a.source_id || ',' || b.source_id, a.pallets + b.pallets, a.rebate_cents + b.rebate_cents FROM offer_evidence AS a JOIN offer_evidence AS b ON a.source_id COLLATE BINARY < b.source_id AND a.supplier_code <> b.supplier_code) SELECT election_ids, pallets_used, rebate_cents FROM candidates WHERE pallets_used <= 10 ORDER BY rebate_cents DESC, pallets_used ASC, election_ids COLLATE BINARY ASC LIMIT 1\",\n  \"decision-capped-vendor-credit\": \"SELECT o.order_id, MIN(o.order_cap_cents, COALESCE(SUM(MIN(i.affected_units * i.unit_credit_cents, i.item_cap_cents)), 0)) AS payable_cents FROM orders AS o LEFT JOIN credit_items AS i ON i.order_id = o.order_id GROUP BY o.order_id, o.order_cap_cents ORDER BY o.order_id ASC\",\n  \"decision-catalogue-freeze-correction-trail\": \"SELECT f.edition_code, n.adoption_day, n.source_id FROM edition_freeze AS f JOIN editorial_notice AS n ON n.standard_code = f.standard_code AND n.issue_day <= f.freeze_day WHERE NOT EXISTS (SELECT 1 FROM editorial_notice AS c WHERE c.replaces_id = n.source_id AND c.issue_day <= f.freeze_day) ORDER BY f.edition_code ASC\",\n  \"decision-chance-adjusted-transcription-agreement\": \"WITH counts AS (SELECT COUNT(*) AS n, SUM(left_reading = right_reading) AS matches, SUM(left_reading = 'A') AS left_a, SUM(right_reading = 'A') AS right_a FROM transcriptions), agreement AS (SELECT n, matches, left_a * right_a + (n - left_a) * (n - right_a) AS chance_pairs FROM counts) SELECT CAST(ROUND(1000000.0 * (matches * n - chance_pairs) / (n * n - chance_pairs)) AS INTEGER) AS kappa_ppm FROM agreement\"\n}",
+  "submissions": {
+    "decision-capacity-constrained-rebate-elections": "WITH candidates(election_ids, pallets_used, rebate_cents) AS (SELECT source_id, pallets, rebate_cents FROM offer_evidence UNION ALL SELECT a.source_id || ',' || b.source_id, a.pallets + b.pallets, a.rebate_cents + b.rebate_cents FROM offer_evidence AS a JOIN offer_evidence AS b ON a.source_id COLLATE BINARY < b.source_id AND a.supplier_code <> b.supplier_code) SELECT election_ids, pallets_used, rebate_cents FROM candidates WHERE pallets_used <= 10 ORDER BY rebate_cents DESC, pallets_used ASC, election_ids COLLATE BINARY ASC LIMIT 1",
+    "decision-capped-vendor-credit": "SELECT o.order_id, MIN(o.order_cap_cents, COALESCE(SUM(MIN(i.affected_units * i.unit_credit_cents, i.item_cap_cents)), 0)) AS payable_cents FROM orders AS o LEFT JOIN credit_items AS i ON i.order_id = o.order_id GROUP BY o.order_id, o.order_cap_cents ORDER BY o.order_id ASC",
+    "decision-catalogue-freeze-correction-trail": "SELECT f.edition_code, n.adoption_day, n.source_id FROM edition_freeze AS f JOIN editorial_notice AS n ON n.standard_code = f.standard_code AND n.issue_day <= f.freeze_day WHERE NOT EXISTS (SELECT 1 FROM editorial_notice AS c WHERE c.replaces_id = n.source_id AND c.issue_day <= f.freeze_day) ORDER BY f.edition_code ASC",
+    "decision-chance-adjusted-transcription-agreement": "WITH counts AS (SELECT COUNT(*) AS n, SUM(left_reading = right_reading) AS matches, SUM(left_reading = 'A') AS left_a, SUM(right_reading = 'A') AS right_a FROM transcriptions), agreement AS (SELECT n, matches, left_a * right_a + (n - left_a) * (n - right_a) AS chance_pairs FROM counts) SELECT CAST(ROUND(1000000.0 * (matches * n - chance_pairs) / (n * n - chance_pairs)) AS INTEGER) AS kappa_ppm FROM agreement"
+  },
+  "attempt": 1,
+  "thread": "01a20e19-3e8a-7950-9e7f-c71c8abb84b4",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22592,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 472,
+    "reasoning_output_tokens": 0
+  }
+}

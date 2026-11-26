@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q2",
+  "cohort": "retail-2",
+  "sector": "retail",
+  "cik": "0000768835",
+  "issuer": "BIG LOTS INC",
+  "cutoff": "2022-04-01",
+  "projected_target_start": "2022-05-01",
+  "status": "complete",
+  "period_end": "2022-01-29",
+  "filing_date": "2022-03-29",
+  "text": {
+    "sector": "retail",
+    "cik": "0000768835",
+    "issuer": "BIG LOTS INC",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2022-03-29",
+        "text": "•Gross margin dollars decreased $100.4 million and gross margin rate decreased 130 basis points to 39.0% of net sales."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2022-03-29",
+        "text": "•Comparable sales for stores open at least fifteen months, plus our e-commerce operations, decreased $152.2 million, or 2.5%."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2022-03-29",
+        "text": "•Inventory of $1,237.8 million represented a $297.5 million increase, or 31.6%, from 2020."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2022-03-29",
+        "text": "•Selling and administrative expenses increased $49.1 million, which included $5.0 million of store asset impairment charges."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2022-03-29",
+        "text": "•Operating profit decreased $616.7 million to $239.8 million."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-10-30",
+        "filed": "2021-12-08",
+        "reported_sales_usd": 1335656000,
+        "year_ago_reported_sales_usd": 1377925000,
+        "yoy_percent": "-3.0676"
+      },
+      {
+        "quarter_end": "2022-01-29",
+        "filed": "2022-03-29",
+        "reported_sales_usd": 1732021000,
+        "year_ago_reported_sales_usd": 1737915000,
+        "yoy_percent": "-0.3391"
+      }
+    ],
+    "status": "complete"
+  }
+}

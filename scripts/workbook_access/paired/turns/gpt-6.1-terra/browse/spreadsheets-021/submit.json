@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-021",
+    "stage": "submit",
+    "prompt_sha256": "fb1bc30cd7f5d8ffb8b6072ecab08895b4af3e72a6f40e43530aebc2429e6a44",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f6-2ed6-7fd1-87a6-0c724f8fcdf8",
+    "raw": "{\"sheet-57029\":{\"fills\":[{\"range\":\"C1:C5\",\"formula\":\"=ISNUMBER(SEARCH(B1,A1))\"}],\"formulas\":{}},\"sheet-57105\":{\"fills\":[{\"range\":\"C4:C15\",\"formula\":\"=SUMIFS($M$4:$M$57,$L$4:$L$57,\\\">=\\\"&EOMONTH(B4,-1)+1,$L$4:$L$57,\\\"<\\\"&EOMONTH(B4,0)+1)\"}],\"formulas\":{}},\"sheet-57137\":{\"fills\":[{\"range\":\"D2:D16\",\"formula\":\"=IF(COUNTIFS($A$2:$A$16,A2,$B$2:$B$16,B2,$C$2:$C$16,\\\"system\\\")>0,IF(AND(C2=\\\"system\\\",COUNTIFS($A$2:A2,A2,$B$2:B2,B2,$C$2:C2,\\\"system\\\")=1),\\\"Accepted\\\",\\\"Rejected\\\"),IF(COUNTIFS($A$2:A2,A2,$B$2:B2,B2)=1,\\\"Accepted\\\",\\\"Rejected\\\"))\"}],\"formulas\":{}},\"sheet-57262\":{\"fills\":[{\"range\":\"T7:T15\",\"formula\":\"=SUMPRODUCT(E7:K7,TRANSPOSE($Y$13:$Y$19))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 19959,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 385,
+      "reasoning_output_tokens": 81
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22513,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 219,
+    "reasoning_output_tokens": 8
+  },
+  "thread": "01a20d8c-a6bf-7a82-a858-699f94b4343a",
+  "packet_sha256": "60e079f4ca388dd4100d583454fad0e093d31ae784cc215b68d501f0d2e9440a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q2/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000802481\",\n          \"reason\": \"Rapidly rising cold-storage inventories and year-end chicken prices near the bottom of their five-year range point to sustained pricing pressure (C). I expect the 2022 volume recovery and 18.2% annual sales growth (A, B) to help keep the preceding quarter above −5% year over year, with a full additional quarter of weak pricing pushing consolidated net sales growth to −5% or lower in the quarter beginning March 27.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2023Q2/industrial_machinery-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q2/semiconductors-2\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q2/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000802481",
+            "reason": "Rapidly rising cold-storage inventories and year-end chicken prices near the bottom of their five-year range point to sustained pricing pressure (C). I expect the 2022 volume recovery and 18.2% annual sales growth (A, B) to help keep the preceding quarter above −5% year over year, with a full additional quarter of weak pricing pushing consolidated net sales growth to −5% or lower in the quarter beginning March 27."
+          }
+        ]
+      },
+      {
+        "sector": "2023Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q2/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

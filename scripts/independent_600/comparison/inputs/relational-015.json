@@ -1,0 +1,306 @@
+[
+  {
+    "task_id": "decision-check-scoped-reprint-withdrawal",
+    "tool": "sqlite.query",
+    "instruction": "Each evidence row proposes using an exhibit item in a named reprint on use_day. Consent was initially granted for every listed use. A withdrawal takes effect at the start of effective_day and permanently revokes consent for that exact item and reprint together. A use is admissible if no matching withdrawal has taken effect by its use_day. Dates are calendar days stored as YYYY-MM-DD. Return every admissible use with columns use_id, item, reprint, ordered by integer use_id ascending. Each use_id is unique. Evaluate uses on the same day separately. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "evidence": {
+        "columns": [
+          "use_id INTEGER",
+          "item TEXT",
+          "reprint TEXT",
+          "use_day TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "tile",
+            "folio",
+            "2025-04-09"
+          ],
+          [
+            2,
+            "tile",
+            "folio",
+            "2025-04-10"
+          ],
+          [
+            3,
+            "tile",
+            "pocket",
+            "2025-04-11"
+          ],
+          [
+            4,
+            "vase",
+            "folio",
+            "2025-04-11"
+          ],
+          [
+            5,
+            "vase",
+            "pocket",
+            "2025-04-12"
+          ]
+        ]
+      },
+      "withdrawal": {
+        "columns": [
+          "item TEXT",
+          "reprint TEXT",
+          "effective_day TEXT"
+        ],
+        "rows": [
+          [
+            "tile",
+            "folio",
+            "2025-04-10"
+          ],
+          [
+            "vase",
+            "pocket",
+            "2025-04-12"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "use_id",
+      "item",
+      "reprint"
+    ]
+  },
+  {
+    "task_id": "decision-choose-a-transfer-hold-with-recovery-slack",
+    "tool": "sqlite.query",
+    "instruction": "For each outbound run, choose one hold duration from hold_option. Zero is always offered. A duration is feasible only if it is at most that run's slack_min. The run leaves at due_min plus the chosen hold. Its onboard riders each incur the full hold as delay. Each incoming group boards this run if ready_min is at or before its departure, otherwise it boards at fallback_min. Charge each incoming rider the minutes from readiness to boarding. All times and durations are integer minutes on one operating day. All groups are ready by fallback_min, which is later than every feasible departure. Capacity is sufficient, fields are nonnull, and group rows represent separate groups even if their times coincide. Minimize combined onboard delay and incoming waiting in passenger-minutes, breaking ties by shorter hold. Return run_id, hold_min, passenger_minutes ordered by run_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "hold_option": {
+        "columns": [
+          "hold_min INTEGER"
+        ],
+        "rows": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ]
+        ]
+      },
+      "incoming_group": {
+        "columns": [
+          "run_id TEXT",
+          "ready_min INTEGER",
+          "rider_count INTEGER"
+        ],
+        "rows": [
+          [
+            "Loop",
+            20,
+            2
+          ],
+          [
+            "Loop",
+            22,
+            4
+          ],
+          [
+            "Loop",
+            23,
+            1
+          ]
+        ]
+      },
+      "outbound_run": {
+        "columns": [
+          "run_id TEXT",
+          "due_min INTEGER",
+          "fallback_min INTEGER",
+          "slack_min INTEGER",
+          "onboard_count INTEGER"
+        ],
+        "rows": [
+          [
+            "Loop",
+            20,
+            35,
+            3,
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_id",
+      "hold_min",
+      "passenger_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-choose-a-two-line-endcap",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly two distinct lines from different product families for one endcap. Each line occupies its stated number of slots in full. At most 10 slots are available. Maximize the sum of the two weekly contribution forecasts in cents plus the signed weekly adjustment in pair_effect for that exact pair. Each effect occurs once, with the smaller line code first. An absent effect is zero. All fields are non-NULL, line codes are unique, and at least one pair is feasible. Break equal contribution by using fewer slots, then by the lexicographically smallest ordered pair of codes under binary text order. Return the single winning row with columns first_code, second_code, slots_used, weekly_cents, with the smaller code first. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "endcap_line": {
+        "columns": [
+          "line_code TEXT",
+          "family_code TEXT",
+          "slot_count INTEGER",
+          "forecast_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "paper",
+            6,
+            800
+          ],
+          [
+            "B",
+            "paper",
+            4,
+            740
+          ],
+          [
+            "C",
+            "clips",
+            5,
+            700
+          ],
+          [
+            "D",
+            "tape",
+            4,
+            650
+          ],
+          [
+            "E",
+            "clips",
+            3,
+            500
+          ]
+        ]
+      },
+      "pair_effect": {
+        "columns": [
+          "left_code TEXT",
+          "right_code TEXT",
+          "delta_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "B",
+            "C",
+            100
+          ],
+          [
+            "A",
+            "D",
+            -80
+          ],
+          [
+            "A",
+            "C",
+            300
+          ],
+          [
+            "A",
+            "B",
+            400
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_code",
+      "second_code",
+      "slots_used",
+      "weekly_cents"
+    ]
+  },
+  {
+    "task_id": "decision-choose-complementary-catalog-import-packs",
+    "tool": "sqlite.query",
+    "instruction": "Construct reader_manifest.csv for a catalog synchronization run. The two readers, amber and blue, must each load exactly one entire import pack assigned to that reader. Each unique pack_code in import_pack has an integer load_minutes cost. The readers share a transfer link, so their costs add and the pair may use at most 10 minutes. Each pack_item row says the pack refreshes the named catalog asset. Repeated lines for the same asset are permitted, including within a pack. All listed assets need a refresh, all count equally, and refreshing an asset multiple times in this run gives credit only once. Consider every feasible amber and blue pair. Maximize the number of distinct assets refreshed across the pair, then minimize total load minutes, then choose the lexicographically smallest pair of (amber pack_code, blue pack_code) using binary text order. A feasible pair exists. All input cells are non-NULL. Produce the two manifest rows in reader_code ascending order with columns reader_code, pack_code, load_minutes, new_assets. For new_assets, count distinct assets first refreshed by that row when amber runs first and blue runs second. A selected pack with no new assets still gets a manifest row. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "import_pack": {
+        "columns": [
+          "pack_code TEXT",
+          "reader_code TEXT",
+          "load_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "A1",
+            "amber",
+            6
+          ],
+          [
+            "A2",
+            "amber",
+            4
+          ],
+          [
+            "B1",
+            "blue",
+            5
+          ],
+          [
+            "B2",
+            "blue",
+            4
+          ]
+        ]
+      },
+      "pack_item": {
+        "columns": [
+          "pack_code TEXT",
+          "asset_code TEXT"
+        ],
+        "rows": [
+          [
+            "A1",
+            "reed"
+          ],
+          [
+            "A1",
+            "shell"
+          ],
+          [
+            "A2",
+            "reed"
+          ],
+          [
+            "B1",
+            "tile"
+          ],
+          [
+            "B1",
+            "wheel"
+          ],
+          [
+            "B2",
+            "reed"
+          ],
+          [
+            "B2",
+            "shell"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "reader_code",
+      "pack_code",
+      "load_minutes",
+      "new_assets"
+    ]
+  }
+]

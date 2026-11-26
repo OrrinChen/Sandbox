@@ -1,0 +1,67 @@
+{
+  "cutoff": "2022-10-02",
+  "sectors": {
+    "2022Q4/prepackaged_software-1": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0001660134",
+          "issuer": "OKTA, INC.",
+          "sector": "prepackaged_software",
+          "target_fiscal_quarter_projected_start": "2022-11-01",
+          "latest_filed_period_end": "2022-07-31",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2022-09-01",
+              "text": "For the three and six months ended July 31, 2022, the increase in subscription revenue was primarily due to the addition of new customers and an increase in users and sales of additional products to existing customers."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2022-09-01",
+              "text": "Additionally, as our acquisition of Auth0 was completed on May 3, 2021, subscription revenue during the six months ended July 31, 2022 includes six months of Auth0 revenue while subscription revenue during the six months ended July 31, 2021 includes approximately three months of Auth0 revenue."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2022-09-01",
+              "text": "The primary drivers of the changes in operating assets and liabilities related to a $74.0 million decrease in accounts receivable, a $24.6 million increase in accounts payable and a $15.1 million increase in deferred revenue partially offset by a $55.2 million decrease in accrued compensation, and a $50.1 million increase in deferred commissions."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2022-09-01",
+              "text": "We further experienced cost savings driven by reductions in employee-related expenses as our sales and marketing activities shifted primarily to an online-only sales format and our employees shifted to work-from-home procedures."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2022-09-01",
+              "text": "During the six months ended July 31, 2022, cash used in operating activities was $0.2 million primarily due to our net loss of $453.2 million, adjusted for non-cash charges of $444.9 million and net cash inflows of $8.0 million provided by changes in our operating assets and liabilities."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-04-30",
+                "filed": "2022-06-03",
+                "reported_sales_usd": 414943000,
+                "year_ago_reported_sales_usd": 251006000,
+                "yoy_percent": "65.3120"
+              },
+              {
+                "quarter_end": "2022-07-31",
+                "filed": "2022-09-01",
+                "reported_sales_usd": 451807000,
+                "year_ago_reported_sales_usd": 315500000,
+                "yoy_percent": "43.2035"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

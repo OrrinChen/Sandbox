@@ -1,0 +1,703 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "6a7ca580d26d5c8fd252da3956173ba2eca0efd2f0cf919d456688721ec529dd",
+    "f9a6683ae813324a42d622e2a2a4919facde9cdf15e829dc31f0cb346719eae2",
+    "f19d668ad23751517cd22ee9da1dc215b2c8c47b7882e0c10bce4020af404306"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-48983",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "M6:S11",
+            "formula": "=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59659,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49246",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B14",
+            "formula": "=VLOOKUP(LOOKUP(2,1/($A$2:A2<>\"\"),$A$2:A2),$J$1:$K$4,2,0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59659,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49300",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C3",
+            "formula": "=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59659,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 215
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49455",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "formulas": {
+          "H3": "=SUMPRODUCT(--ISNUMBER(MATCH(D6:D208,K1:K9,0)),--(H6:H208<>\"\"))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D180:H208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D180:H208",
+            "range_size": 145,
+            "cells": [
+              [
+                "D180",
+                "Apple"
+              ],
+              [
+                "D181",
+                "Apple"
+              ],
+              [
+                "H181",
+                "19/10/21"
+              ],
+              [
+                "D182",
+                "Apple"
+              ],
+              [
+                "D183",
+                "Newspaper"
+              ],
+              [
+                "D184",
+                "Apple"
+              ],
+              [
+                "D185",
+                "Newspaper"
+              ],
+              [
+                "D186",
+                "Apple"
+              ],
+              [
+                "H186",
+                "29/10/21"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 136
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "H5:H30"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "H5:H30",
+            "range_size": 26,
+            "cells": [
+              [
+                "H5",
+                "End Date"
+              ],
+              [
+                "H7",
+                "07/10/21"
+              ],
+              [
+                "H8",
+                "04/10/21"
+              ],
+              [
+                "H10",
+                "12/10/21"
+              ],
+              [
+                "H11",
+                "26/10/21"
+              ],
+              [
+                "H13",
+                "28/10/21"
+              ],
+              [
+                "H15",
+                "19/10/21"
+              ],
+              [
+                "H24",
+                "20/10/21"
+              ],
+              [
+                "H30",
+                "05/10/21"
+              ]
+            ],
+            "total": 9,
+            "truncated": false,
+            "blank_count": 17
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D140:H179"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D140:H179",
+            "range_size": 200,
+            "cells": [
+              [
+                "D140",
+                "Newspaper"
+              ],
+              [
+                "D141",
+                "Newspaper"
+              ],
+              [
+                "H141",
+                "28/10/21"
+              ],
+              [
+                "D142",
+                "Banana"
+              ],
+              [
+                "H142",
+                "11/10/21"
+              ],
+              [
+                "D143",
+                "Apple"
+              ],
+              [
+                "D145",
+                "Apple"
+              ],
+              [
+                "H145",
+                "20/10/21"
+              ],
+              [
+                "D146",
+                "Newspaper"
+              ],
+              [
+                "D147",
+                "Newspaper"
+              ],
+              [
+                "D148",
+                "Apple"
+              ],
+              [
+                "D150",
+                "Apple"
+              ],
+              [
+                "H150",
+                "13/10/21"
+              ],
+              [
+                "H151",
+                "21/10/21"
+              ],
+              [
+                "D152",
+                "Apple"
+              ],
+              [
+                "D153",
+                "Apple"
+              ],
+              [
+                "D154",
+                "Apple"
+              ],
+              [
+                "D155",
+                "Banana"
+              ],
+              [
+                "D156",
+                "Newspaper"
+              ],
+              [
+                "D157",
+                "Apple"
+              ],
+              [
+                "H157",
+                "08/10/21"
+              ],
+              [
+                "D158",
+                "Newspaper"
+              ],
+              [
+                "D159",
+                "Apple"
+              ],
+              [
+                "H159",
+                "04/10/21"
+              ],
+              [
+                "D160",
+                "Apple"
+              ],
+              [
+                "H160",
+                "13/10/21"
+              ],
+              [
+                "D161",
+                "Banana"
+              ],
+              [
+                "D162",
+                "Apple"
+              ],
+              [
+                "D163",
+                "Apple"
+              ],
+              [
+                "H163",
+                "04/10/21"
+              ],
+              [
+                "D164",
+                "Apple"
+              ],
+              [
+                "D165",
+                "Apple"
+              ],
+              [
+                "D166",
+                "Apple"
+              ],
+              [
+                "H166",
+                "11/10/21"
+              ],
+              [
+                "D167",
+                "Apple"
+              ],
+              [
+                "D168",
+                "Newspaper"
+              ],
+              [
+                "D169",
+                "Apple"
+              ],
+              [
+                "H169",
+                "19/10/21"
+              ],
+              [
+                "D170",
+                "Apple"
+              ],
+              [
+                "D171",
+                "Apple"
+              ],
+              [
+                "D172",
+                "Newspaper"
+              ],
+              [
+                "D173",
+                "Banana"
+              ],
+              [
+                "D174",
+                "Apple"
+              ],
+              [
+                "D176",
+                "Apple"
+              ],
+              [
+                "H176",
+                "26/10/21"
+              ],
+              [
+                "D177",
+                "Newspaper"
+              ],
+              [
+                "D178",
+                "Banana"
+              ],
+              [
+                "D179",
+                "Apple"
+              ]
+            ],
+            "total": 48,
+            "truncated": false,
+            "blank_count": 152
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D187:H208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "D187:H208",
+            "range_size": 110,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 110
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "KPI 1",
+          "D140"
+        ],
+        [
+          "KPI 1",
+          "D141"
+        ],
+        [
+          "KPI 1",
+          "D142"
+        ],
+        [
+          "KPI 1",
+          "D143"
+        ],
+        [
+          "KPI 1",
+          "D145"
+        ],
+        [
+          "KPI 1",
+          "D146"
+        ],
+        [
+          "KPI 1",
+          "D147"
+        ],
+        [
+          "KPI 1",
+          "D148"
+        ],
+        [
+          "KPI 1",
+          "D150"
+        ],
+        [
+          "KPI 1",
+          "D152"
+        ],
+        [
+          "KPI 1",
+          "D153"
+        ],
+        [
+          "KPI 1",
+          "D154"
+        ],
+        [
+          "KPI 1",
+          "D155"
+        ],
+        [
+          "KPI 1",
+          "D156"
+        ],
+        [
+          "KPI 1",
+          "D157"
+        ],
+        [
+          "KPI 1",
+          "D158"
+        ],
+        [
+          "KPI 1",
+          "D159"
+        ],
+        [
+          "KPI 1",
+          "D160"
+        ],
+        [
+          "KPI 1",
+          "D161"
+        ],
+        [
+          "KPI 1",
+          "D162"
+        ],
+        [
+          "KPI 1",
+          "D163"
+        ],
+        [
+          "KPI 1",
+          "D164"
+        ],
+        [
+          "KPI 1",
+          "D165"
+        ],
+        [
+          "KPI 1",
+          "D166"
+        ],
+        [
+          "KPI 1",
+          "D167"
+        ],
+        [
+          "KPI 1",
+          "D168"
+        ],
+        [
+          "KPI 1",
+          "D169"
+        ],
+        [
+          "KPI 1",
+          "D170"
+        ],
+        [
+          "KPI 1",
+          "D171"
+        ],
+        [
+          "KPI 1",
+          "D172"
+        ],
+        [
+          "KPI 1",
+          "D173"
+        ],
+        [
+          "KPI 1",
+          "D174"
+        ],
+        [
+          "KPI 1",
+          "D176"
+        ],
+        [
+          "KPI 1",
+          "D177"
+        ],
+        [
+          "KPI 1",
+          "D178"
+        ],
+        [
+          "KPI 1",
+          "D179"
+        ],
+        [
+          "KPI 1",
+          "D180"
+        ],
+        [
+          "KPI 1",
+          "D181"
+        ],
+        [
+          "KPI 1",
+          "D182"
+        ],
+        [
+          "KPI 1",
+          "D183"
+        ],
+        [
+          "KPI 1",
+          "D184"
+        ],
+        [
+          "KPI 1",
+          "D185"
+        ],
+        [
+          "KPI 1",
+          "D186"
+        ],
+        [
+          "KPI 1",
+          "H141"
+        ],
+        [
+          "KPI 1",
+          "H142"
+        ],
+        [
+          "KPI 1",
+          "H145"
+        ],
+        [
+          "KPI 1",
+          "H150"
+        ],
+        [
+          "KPI 1",
+          "H151"
+        ],
+        [
+          "KPI 1",
+          "H157"
+        ],
+        [
+          "KPI 1",
+          "H159"
+        ],
+        [
+          "KPI 1",
+          "H160"
+        ],
+        [
+          "KPI 1",
+          "H163"
+        ],
+        [
+          "KPI 1",
+          "H166"
+        ],
+        [
+          "KPI 1",
+          "H169"
+        ],
+        [
+          "KPI 1",
+          "H176"
+        ],
+        [
+          "KPI 1",
+          "H181"
+        ],
+        [
+          "KPI 1",
+          "H186"
+        ]
+      ],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 59659,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 215
+      },
+      "model_calls": 3
+    }
+  ]
+}

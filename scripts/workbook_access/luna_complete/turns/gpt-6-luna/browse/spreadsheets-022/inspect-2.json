@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-022",
+    "stage": "inspect-2",
+    "prompt_sha256": "9aceb7ac98dafae53792d0fcac8dc4a8fee357d6ca44358aad80628fdac73221",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "protocol_rejected",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21231-bde3-7761-8c26-5da4fd4e1a81"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the remaining inspection slots only where the target layout is still ambiguous: the revenue/GP grouping and the Yes/No count headers. The other two tasks already show their lookup and format pattern clearly."
+        },
+        {
+          "type": "mcp_tool_call",
+          "phase": null
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-57354\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B2:U4\"}],\"sheet-58047\":[],\"sheet-58701\":[],\"sheet-59160\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"D1:G3\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 36919,
+          "cached_input_tokens": 30080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 654,
+          "reasoning_output_tokens": 516
+        }
+      ],
+      "cli_final": "{\"sheet-57354\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B2:U4\"}],\"sheet-58047\":[],\"sheet-58701\":[],\"sheet-59160\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"D1:G3\"}]}",
+      "external_tool_events": [
+        {
+          "event": "item.started",
+          "item": "mcp_tool_call"
+        },
+        {
+          "event": "item.completed",
+          "item": "mcp_tool_call"
+        }
+      ],
+      "error_events": 0
+    }
+  ],
+  "diagnostic": "Undeclared tool or action: mcp_tool_call"
+}

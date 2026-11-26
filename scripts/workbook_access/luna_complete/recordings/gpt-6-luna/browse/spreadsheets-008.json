@@ -1,0 +1,729 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "eb5ceecd2032a2151038c143700f62ceceae97ee8821c97499bd6464b812caaa",
+    "78808709fafc5631f9d4ebaa7991daf85185a146f7fc0e707eb1af4a699c3cb7",
+    "14fe8c95d9b5d298888523ac102b844e49a7563abf5243780b64dd521a5cbbf2"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-41680",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "formulas": {
+          "F2": "=TRIM(E2)",
+          "F3": "=TRIM(E3)",
+          "F4": "=TRIM(E4)",
+          "F5": "=TRIM(E5)",
+          "F6": "=TRIM(E6)",
+          "F7": "=TRIM(E7)",
+          "F8": "=TRIM(E8)",
+          "F9": "=TRIM(E9)",
+          "F10": "=TRIM(E10)",
+          "F11": "=TRIM(E11)",
+          "F12": "=TRIM(E12)",
+          "F13": "=TRIM(E13)",
+          "F14": "=TRIM(E14)",
+          "F15": "=TRIM(E15)",
+          "F16": "=TRIM(E16)",
+          "F17": "=TRIM(E17)",
+          "F18": "=TRIM(E18)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 108373,
+        "cached_input_tokens": 76416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2087,
+        "reasoning_output_tokens": 1310
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-41969",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "formulas": {
+          "A6": "=COUNTBLANK(A3:C3)",
+          "B6": "=COUNTBLANK(D3:F3)",
+          "C6": "=COUNTBLANK(G3:I3)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I6",
+            "range_size": 54,
+            "cells": [
+              [
+                "A3",
+                "1"
+              ],
+              [
+                "B3",
+                "2"
+              ],
+              [
+                "C3",
+                "3"
+              ],
+              [
+                "D3",
+                "4"
+              ],
+              [
+                "F3",
+                "6"
+              ],
+              [
+                "H3",
+                "8"
+              ],
+              [
+                "I3",
+                "9"
+              ],
+              [
+                "A6",
+                "0"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 46
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 108373,
+        "cached_input_tokens": 76416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2087,
+        "reasoning_output_tokens": 1310
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42515",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "F5:F19",
+            "formula": "=SUM(1/((1/B5)*INDEX($B:$B,8+5*INT((ROW()-5)/5))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E3:G19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E3:G19",
+            "range_size": 51,
+            "cells": [
+              [
+                "E3",
+                "TABLE 2"
+              ],
+              [
+                "E4",
+                "CROSS-PARITY IN EUR"
+              ],
+              [
+                "F4",
+                "EUR-XXX CROSS-RATE"
+              ],
+              [
+                "G4",
+                "RATE IN EUR"
+              ],
+              [
+                "E5",
+                "EUR-AUD"
+              ],
+              [
+                "F5",
+                "1.49283288889117"
+              ],
+              [
+                "G5",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E6",
+                "EUR-CHF"
+              ],
+              [
+                "F6",
+                "1.002083188964488"
+              ],
+              [
+                "G6",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E7",
+                "EUR-USD"
+              ],
+              [
+                "F7",
+                "0.8822703080980869"
+              ],
+              [
+                "G7",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E8",
+                "EUR-EUR"
+              ],
+              [
+                "F8",
+                "1"
+              ],
+              [
+                "G8",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E9",
+                "EUR-ZAR"
+              ],
+              [
+                "F9",
+                "17.34850767528944"
+              ],
+              [
+                "G9",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E10",
+                "EUR-AUD"
+              ],
+              [
+                "F10",
+                "1.487942741818885"
+              ],
+              [
+                "G10",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E11",
+                "EUR-CHF"
+              ],
+              [
+                "F11",
+                "1.14424222825078"
+              ],
+              [
+                "G11",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E12",
+                "EUR-USD"
+              ],
+              [
+                "F12",
+                "1.048238443434362"
+              ],
+              [
+                "G12",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E13",
+                "EUR-EUR"
+              ],
+              [
+                "F13",
+                "0.9999828896183612"
+              ],
+              [
+                "G13",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E14",
+                "EUR-ZAR"
+              ],
+              [
+                "F14",
+                "16.48016350680694"
+              ],
+              [
+                "G14",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E15",
+                "EUR-AUD"
+              ],
+              [
+                "F15",
+                "1.62921033022181"
+              ],
+              [
+                "G15",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E16",
+                "EUR-CHF"
+              ],
+              [
+                "F16",
+                "1.050539789764741"
+              ],
+              [
+                "G16",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E17",
+                "EUR-USD"
+              ],
+              [
+                "F17",
+                "0.9441482922555846"
+              ],
+              [
+                "G17",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E18",
+                "EUR-EUR"
+              ],
+              [
+                "F18",
+                "1.116753544629436"
+              ],
+              [
+                "G18",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E19",
+                "EUR-ZAR"
+              ],
+              [
+                "F19",
+                "17.87944452857048"
+              ],
+              [
+                "G19",
+                "2022-07-05 00:00:00"
+              ]
+            ],
+            "total": 49,
+            "truncated": false,
+            "blank_count": 2
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:C19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A4:C19",
+            "range_size": 48,
+            "cells": [
+              [
+                "A4",
+                "CROSS-PARITY IN GBP"
+              ],
+              [
+                "B4",
+                "MIDRATE"
+              ],
+              [
+                "C4",
+                "PRICEDATE"
+              ],
+              [
+                "A5",
+                "GBP-AUD"
+              ],
+              [
+                "B5",
+                "1.744944"
+              ],
+              [
+                "C5",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A6",
+                "GBP-CHF"
+              ],
+              [
+                "B6",
+                "1.171316"
+              ],
+              [
+                "C6",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A7",
+                "GBP-USD"
+              ],
+              [
+                "B7",
+                "1.031269"
+              ],
+              [
+                "C7",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A8",
+                "GBP-EUR"
+              ],
+              [
+                "B8",
+                "1.168881"
+              ],
+              [
+                "C8",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A9",
+                "GBP-ZAR"
+              ],
+              [
+                "B9",
+                "20.278341"
+              ],
+              [
+                "C9",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "A10",
+                "GBP-AUD"
+              ],
+              [
+                "B10",
+                "1.739228"
+              ],
+              [
+                "C10",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "A11",
+                "GBP-CHF"
+              ],
+              [
+                "B11",
+                "1.337483"
+              ],
+              [
+                "C11",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "A12",
+                "GBP-USD"
+              ],
+              [
+                "B12",
+                "1.225266"
+              ],
+              [
+                "C12",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "A13",
+                "GBP-EUR"
+              ],
+              [
+                "B13",
+                "1.168861"
+              ],
+              [
+                "C13",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "A14",
+                "GBP-ZAR"
+              ],
+              [
+                "B14",
+                "19.26335"
+              ],
+              [
+                "C14",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "A15",
+                "GBP-AUD"
+              ],
+              [
+                "B15",
+                "1.904353"
+              ],
+              [
+                "C15",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "A16",
+                "GBP-CHF"
+              ],
+              [
+                "B16",
+                "1.227956"
+              ],
+              [
+                "C16",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "A17",
+                "GBP-USD"
+              ],
+              [
+                "B17",
+                "1.103597"
+              ],
+              [
+                "C17",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "A18",
+                "GBP-EUR"
+              ],
+              [
+                "B18",
+                "1.305352"
+              ],
+              [
+                "C18",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "A19",
+                "GBP-ZAR"
+              ],
+              [
+                "B19",
+                "20.898943"
+              ],
+              [
+                "C19",
+                "2022-07-05 00:00:00"
+              ]
+            ],
+            "total": 48,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 108373,
+        "cached_input_tokens": 76416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2087,
+        "reasoning_output_tokens": 1310
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42526",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "formulas": {
+          "B2": "=A2/18*5",
+          "B3": "=A3/18*5",
+          "B4": "=A4/18*5",
+          "B5": "=A5/18*5",
+          "B6": "=A6/18*5",
+          "B7": "=A7/18*5",
+          "B8": "=A8/18*5",
+          "B9": "=A9/18*5",
+          "B10": "=A10/18*5",
+          "B11": "=A11/18*5",
+          "B12": "=A12/18*5",
+          "B13": "=A13/18*5",
+          "B14": "=A14/18*5",
+          "B15": "=A15/18*5",
+          "B16": "=A16/18*5"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:C16",
+            "range_size": 48,
+            "cells": [
+              [
+                "A1",
+                "values"
+              ],
+              [
+                "B1",
+                "Scoring between two numbers(-5,+5)"
+              ],
+              [
+                "C1",
+                "ranking"
+              ],
+              [
+                "A2",
+                "13"
+              ],
+              [
+                "A3",
+                "25"
+              ],
+              [
+                "A4",
+                "12"
+              ],
+              [
+                "A5",
+                "4"
+              ],
+              [
+                "A6",
+                "-9"
+              ],
+              [
+                "A7",
+                "2"
+              ],
+              [
+                "A8",
+                "9"
+              ],
+              [
+                "A9",
+                "41"
+              ],
+              [
+                "A10",
+                "0"
+              ],
+              [
+                "A11",
+                "-14"
+              ],
+              [
+                "A12",
+                "-18"
+              ],
+              [
+                "A13",
+                "22"
+              ],
+              [
+                "A14",
+                "9"
+              ],
+              [
+                "A15",
+                "34"
+              ],
+              [
+                "A16",
+                "10"
+              ]
+            ],
+            "total": 18,
+            "truncated": false,
+            "blank_count": 30
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "missing_or_invalid_plan"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 108373,
+        "cached_input_tokens": 76416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2087,
+        "reasoning_output_tokens": 1310
+      },
+      "model_calls": 3
+    }
+  ]
+}

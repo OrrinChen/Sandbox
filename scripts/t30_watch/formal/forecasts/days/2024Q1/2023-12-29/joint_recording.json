@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25652,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 180,
+    "reasoning_output_tokens": 8
+  },
+  "thread": "01a20d8e-00bb-7430-a59e-dc18deb95146",
+  "packet_sha256": "d94b6f15972bf5b0d8b9e0d448066b6c8eac1934ce4b14e8c9cc5e874dbeb0f8",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2024Q1/retail-1\",\"alerts\":[{\"cik\":\"0000897429\",\"reason\":\"Net sales fell 2.43% year over year in Q2 and 2.55% in Q3 (A). Those similar declines support a forecast that Q4 stays above -5.00%. Q3 comparable sales fell 2.7% while inventory rose 12.7% year over year (B, C). That buildup raises the risk of markdowns carrying into Q1, when I forecast the net sales decline reaches at least 5.00%.\"}]},{\"sector\":\"2024Q1/retail-2\",\"alerts\":[]},{\"sector\":\"2024Q1/retail-3\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q1/retail-1",
+        "alerts": [
+          {
+            "cik": "0000897429",
+            "reason": "Net sales fell 2.43% year over year in Q2 and 2.55% in Q3 (A). Those similar declines support a forecast that Q4 stays above -5.00%. Q3 comparable sales fell 2.7% while inventory rose 12.7% year over year (B, C). That buildup raises the risk of markdowns carrying into Q1, when I forecast the net sales decline reaches at least 5.00%."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

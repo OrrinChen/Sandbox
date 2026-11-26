@@ -1,0 +1,4151 @@
+{
+  "task_set_id": "phase6_seed_multimodal_due_diligence",
+  "version": "2026-05-01",
+  "provenance": {
+    "repository": "https://github.com/OrrinChen/multimodal_FEE",
+    "commit": "9bc84f7ef222c8eb829a576c4605ab19719204a4",
+    "source": "src/financial_evidence_engine/evaluation/gold_builder.py"
+  },
+  "tasks": {
+    "phase6:aapl:single_company_trend": {
+      "task_id": "phase6:aapl:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:aapl:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:aapl:cross_company_comparison": {
+      "task_id": "phase6:aapl:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:aapl:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:aapl:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:aapl:management_claim_verification": {
+      "task_id": "phase6:aapl:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:aapl:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:aapl:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:aapl:risk_contradiction": {
+      "task_id": "phase6:aapl:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:aapl:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:aapl:guidance_vs_actuals": {
+      "task_id": "phase6:aapl:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:aapl:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:aapl:chart_table_reconciliation": {
+      "task_id": "phase6:aapl:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:aapl:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:aapl:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:aapl:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:aapl:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:aapl:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:single_company_trend": {
+      "task_id": "phase6:msft:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:msft:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:cross_company_comparison": {
+      "task_id": "phase6:msft:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:msft:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:msft:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:management_claim_verification": {
+      "task_id": "phase6:msft:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:msft:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:msft:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:risk_contradiction": {
+      "task_id": "phase6:msft:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:msft:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:guidance_vs_actuals": {
+      "task_id": "phase6:msft:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:msft:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:msft:chart_table_reconciliation": {
+      "task_id": "phase6:msft:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:msft:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:msft:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:msft:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "MSFT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:msft:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:msft:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:single_company_trend": {
+      "task_id": "phase6:nvda:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:nvda:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:cross_company_comparison": {
+      "task_id": "phase6:nvda:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:nvda:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:nvda:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:management_claim_verification": {
+      "task_id": "phase6:nvda:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:nvda:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:nvda:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:risk_contradiction": {
+      "task_id": "phase6:nvda:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:nvda:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:guidance_vs_actuals": {
+      "task_id": "phase6:nvda:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:nvda:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nvda:chart_table_reconciliation": {
+      "task_id": "phase6:nvda:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nvda:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nvda:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nvda:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NVDA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nvda:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:nvda:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:single_company_trend": {
+      "task_id": "phase6:amzn:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:amzn:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:cross_company_comparison": {
+      "task_id": "phase6:amzn:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:amzn:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:amzn:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:management_claim_verification": {
+      "task_id": "phase6:amzn:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:amzn:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:amzn:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:risk_contradiction": {
+      "task_id": "phase6:amzn:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:amzn:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:guidance_vs_actuals": {
+      "task_id": "phase6:amzn:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:amzn:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:amzn:chart_table_reconciliation": {
+      "task_id": "phase6:amzn:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:amzn:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:amzn:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:amzn:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AMZN",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:amzn:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:amzn:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:single_company_trend": {
+      "task_id": "phase6:googl:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:googl:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:cross_company_comparison": {
+      "task_id": "phase6:googl:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:googl:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:googl:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:management_claim_verification": {
+      "task_id": "phase6:googl:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:googl:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:googl:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:risk_contradiction": {
+      "task_id": "phase6:googl:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:googl:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:guidance_vs_actuals": {
+      "task_id": "phase6:googl:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:googl:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:googl:chart_table_reconciliation": {
+      "task_id": "phase6:googl:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:googl:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:googl:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:googl:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "GOOGL",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:googl:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:googl:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:single_company_trend": {
+      "task_id": "phase6:meta:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:meta:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:cross_company_comparison": {
+      "task_id": "phase6:meta:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:meta:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:meta:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:management_claim_verification": {
+      "task_id": "phase6:meta:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:meta:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:meta:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:risk_contradiction": {
+      "task_id": "phase6:meta:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "META",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:meta:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:guidance_vs_actuals": {
+      "task_id": "phase6:meta:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:meta:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:meta:chart_table_reconciliation": {
+      "task_id": "phase6:meta:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:meta:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:meta:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:meta:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "META",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:meta:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:meta:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:single_company_trend": {
+      "task_id": "phase6:jpm:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:jpm:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:cross_company_comparison": {
+      "task_id": "phase6:jpm:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:jpm:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:jpm:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:management_claim_verification": {
+      "task_id": "phase6:jpm:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:jpm:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:jpm:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:risk_contradiction": {
+      "task_id": "phase6:jpm:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:jpm:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:guidance_vs_actuals": {
+      "task_id": "phase6:jpm:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:jpm:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:jpm:chart_table_reconciliation": {
+      "task_id": "phase6:jpm:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:jpm:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:jpm:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:jpm:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "JPM",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:jpm:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:jpm:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:single_company_trend": {
+      "task_id": "phase6:wmt:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:wmt:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:cross_company_comparison": {
+      "task_id": "phase6:wmt:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:wmt:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:wmt:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:management_claim_verification": {
+      "task_id": "phase6:wmt:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:wmt:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:wmt:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:risk_contradiction": {
+      "task_id": "phase6:wmt:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:wmt:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:guidance_vs_actuals": {
+      "task_id": "phase6:wmt:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:wmt:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:wmt:chart_table_reconciliation": {
+      "task_id": "phase6:wmt:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:wmt:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:wmt:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:wmt:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "WMT",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:wmt:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:wmt:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:single_company_trend": {
+      "task_id": "phase6:tsla:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:tsla:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:cross_company_comparison": {
+      "task_id": "phase6:tsla:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:tsla:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:tsla:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:management_claim_verification": {
+      "task_id": "phase6:tsla:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:tsla:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:tsla:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:risk_contradiction": {
+      "task_id": "phase6:tsla:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:tsla:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:guidance_vs_actuals": {
+      "task_id": "phase6:tsla:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:tsla:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:tsla:chart_table_reconciliation": {
+      "task_id": "phase6:tsla:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:tsla:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:tsla:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:tsla:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "TSLA",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:tsla:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:tsla:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:single_company_trend": {
+      "task_id": "phase6:nflx:single_company_trend",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:single_company_trend:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "current revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:single_company_trend:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2023",
+          "role": "prior revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:single_company_trend:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "MD&A revenue discussion",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:single_company_trend:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "year_over_year_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:single_company_trend:dist1",
+          "description": "quarterly revenue value",
+          "reason": "Quarterly figures cannot validate an annual trend."
+        },
+        {
+          "distractor_id": "phase6:nflx:single_company_trend:dist2",
+          "description": "peer company revenue",
+          "reason": "Peer-company facts do not support this single-company claim."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:cross_company_comparison": {
+      "task_id": "phase6:nflx:cross_company_comparison",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:cross_company_comparison:ev1",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "subject operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:cross_company_comparison:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "subject revenue fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:cross_company_comparison:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "peer operating income fact",
+          "metric": "operating_income",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:cross_company_comparison:ev4",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "role": "peer income statement table",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:cross_company_comparison:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "compare_against_peer",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:nflx:cross_company_comparison:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "AAPL",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "peer_denominator_check",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:cross_company_comparison:dist1",
+          "description": "net margin instead of operating margin",
+          "reason": "Metric substitution changes the claim being tested."
+        },
+        {
+          "distractor_id": "phase6:nflx:cross_company_comparison:dist2",
+          "description": "different fiscal year for the peer",
+          "reason": "Cross-company comparison requires aligned fiscal periods."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:management_claim_verification": {
+      "task_id": "phase6:nflx:management_claim_verification",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:management_claim_verification:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "management operating leverage statement",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:management_claim_verification:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "current margin numerator and denominator",
+          "metric": "operating_margin",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:management_claim_verification:ev3",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "cost structure disclosure",
+          "metric": "operating_expense",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:management_claim_verification:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "operating_margin",
+          "relation": "margin_expansion",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        },
+        {
+          "check_id": "phase6:nflx:management_claim_verification:num2",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "operating_expense",
+          "relation": "expense_growth_vs_revenue_growth",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "insufficient",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:management_claim_verification:dist1",
+          "description": "management quote without numeric support",
+          "reason": "Narrative alone cannot verify the margin driver."
+        },
+        {
+          "distractor_id": "phase6:nflx:management_claim_verification:dist2",
+          "description": "one-time charge discussion",
+          "reason": "One-time items can explain margin movement without proving durable leverage."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:risk_contradiction": {
+      "task_id": "phase6:nflx:risk_contradiction",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:risk_contradiction:ev1",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:risk_contradiction:ev2",
+          "source_type": "sec_filing",
+          "modality": "text",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2023",
+          "role": "prior-year risk factor disclosure",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:risk_contradiction:ev3",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "management risk commentary",
+          "metric": "risk_exposure",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:risk_contradiction:ev4",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "exposure-related financial fact",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:risk_contradiction:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "risk_exposure",
+          "relation": "risk_disclosure_change",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "contradict",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:risk_contradiction:dist1",
+          "description": "boilerplate risk factor from another issuer",
+          "reason": "Risk contradiction must use the same company."
+        },
+        {
+          "distractor_id": "phase6:nflx:risk_contradiction:dist2",
+          "description": "current transcript optimism",
+          "reason": "Optimistic commentary does not override filed risk disclosure."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:guidance_vs_actuals": {
+      "task_id": "phase6:nflx:guidance_vs_actuals",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:guidance_vs_actuals:ev1",
+          "source_type": "transcript",
+          "modality": "transcript",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "management guidance statement",
+          "metric": "revenue_guidance",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:guidance_vs_actuals:ev2",
+          "source_type": "analyst_estimates",
+          "modality": "estimate",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "consensus range cross-check",
+          "metric": "revenue_estimate",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:guidance_vs_actuals:ev3",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "reported revenue actual",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:guidance_vs_actuals:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "actual_within_guidance_range",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:guidance_vs_actuals:dist1",
+          "description": "EPS guidance",
+          "reason": "EPS guidance cannot validate a revenue guidance claim."
+        },
+        {
+          "distractor_id": "phase6:nflx:guidance_vs_actuals:dist2",
+          "description": "post-period analyst revision",
+          "reason": "Estimates after actual results are not contemporaneous guidance evidence."
+        }
+      ],
+      "requires_citation": true
+    },
+    "phase6:nflx:chart_table_reconciliation": {
+      "task_id": "phase6:nflx:chart_table_reconciliation",
+      "expected_evidence": [
+        {
+          "requirement_id": "phase6:nflx:chart_table_reconciliation:ev1",
+          "source_type": "investor_deck",
+          "modality": "chart",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "deck chart value",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:chart_table_reconciliation:ev2",
+          "source_type": "sec_xbrl_companyfacts",
+          "modality": "xbrl",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "reported XBRL fact",
+          "metric": "revenue",
+          "min_count": 1
+        },
+        {
+          "requirement_id": "phase6:nflx:chart_table_reconciliation:ev3",
+          "source_type": "sec_filing",
+          "modality": "table",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "role": "filing table value",
+          "metric": "revenue",
+          "min_count": 1
+        }
+      ],
+      "numeric_checks": [
+        {
+          "check_id": "phase6:nflx:chart_table_reconciliation:num1",
+          "validator": "numeric_reconciliation",
+          "company_ticker": "NFLX",
+          "fiscal_period": "FY2024",
+          "metric": "revenue",
+          "relation": "reconcile_chart_to_xbrl",
+          "expected_value": null,
+          "expected_unit": null,
+          "tolerance": "0"
+        }
+      ],
+      "expected_verdict": "support",
+      "known_distractors": [
+        {
+          "distractor_id": "phase6:nflx:chart_table_reconciliation:dist1",
+          "description": "non-GAAP chart without bridge",
+          "reason": "Non-GAAP chart values need an explicit bridge before reconciliation."
+        },
+        {
+          "distractor_id": "phase6:nflx:chart_table_reconciliation:dist2",
+          "description": "axis label in millions vs XBRL dollars",
+          "reason": "Scale must be normalized before comparing chart and filing facts."
+        }
+      ],
+      "requires_citation": true
+    }
+  }
+}

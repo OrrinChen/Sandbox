@@ -1,0 +1,693 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "7b0f758dfa58da62c8ade47fbab91137343d580d61c8ec5774e73503ec876e30",
+    "2a81c9455c473bec491ea362b43764407b7a85bbdf453f6c68841ccbd31d3b08",
+    "39e95b510c2b411fa2ba9951c5a55226acba784e3585e19f7d74f9e7389277aa"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-32562",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "formulas": {
+          "B2": "=COUNTIF($A$2:A2,A2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B21",
+            "range_size": 42,
+            "cells": [
+              [
+                "A1",
+                "Item"
+              ],
+              [
+                "B1",
+                "Count Of Item"
+              ],
+              [
+                "A2",
+                "86"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "A3",
+                "503"
+              ],
+              [
+                "B3",
+                "0"
+              ],
+              [
+                "A4",
+                "142"
+              ],
+              [
+                "B4",
+                "0"
+              ],
+              [
+                "A5",
+                "216"
+              ],
+              [
+                "B5",
+                "0"
+              ],
+              [
+                "A6",
+                "125"
+              ],
+              [
+                "B6",
+                "0"
+              ],
+              [
+                "A7",
+                "173"
+              ],
+              [
+                "B7",
+                "0"
+              ],
+              [
+                "A8",
+                "35"
+              ],
+              [
+                "B8",
+                "0"
+              ],
+              [
+                "A9",
+                "434"
+              ],
+              [
+                "B9",
+                "0"
+              ],
+              [
+                "A10",
+                "627"
+              ],
+              [
+                "B10",
+                "0"
+              ],
+              [
+                "A11",
+                "377"
+              ],
+              [
+                "B11",
+                "0"
+              ],
+              [
+                "A12",
+                "508"
+              ],
+              [
+                "B12",
+                "0"
+              ],
+              [
+                "A13",
+                "374"
+              ],
+              [
+                "B13",
+                "0"
+              ],
+              [
+                "A14",
+                "374"
+              ],
+              [
+                "B14",
+                "0"
+              ],
+              [
+                "A15",
+                "374"
+              ],
+              [
+                "B15",
+                "0"
+              ],
+              [
+                "A16",
+                "321"
+              ],
+              [
+                "B16",
+                "0"
+              ],
+              [
+                "A17",
+                "321"
+              ],
+              [
+                "B17",
+                "0"
+              ],
+              [
+                "A18",
+                "321"
+              ],
+              [
+                "B18",
+                "0"
+              ],
+              [
+                "A19",
+                "9"
+              ],
+              [
+                "B19",
+                "0"
+              ],
+              [
+                "A20",
+                "141"
+              ],
+              [
+                "B20",
+                "0"
+              ],
+              [
+                "A21",
+                "109"
+              ],
+              [
+                "B21",
+                "0"
+              ]
+            ],
+            "total": 42,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 91804,
+        "cached_input_tokens": 70912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1780,
+        "reasoning_output_tokens": 1002
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-33157",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "formulas": {
+          "K2": "=INDEX($B$1:$H$1,1,MATCH(J2,$C2:$I2,0)*2-1)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:K6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B1:K6",
+            "range_size": 60,
+            "cells": [
+              [
+                "B1",
+                "Activity 1"
+              ],
+              [
+                "C1",
+                "Activity 1\nDate"
+              ],
+              [
+                "D1",
+                "Activity 2"
+              ],
+              [
+                "E1",
+                "Activity 2\nDate"
+              ],
+              [
+                "F1",
+                "Activity 3"
+              ],
+              [
+                "G1",
+                "Activity 3\nDate"
+              ],
+              [
+                "H1",
+                "Activity 4"
+              ],
+              [
+                "I1",
+                "Activity 4\nDate"
+              ],
+              [
+                "J1",
+                "Earliest\nDate \nAttended"
+              ],
+              [
+                "K1",
+                "Earliest Activity Attended"
+              ],
+              [
+                "B2",
+                "15/08/2004 - Electrical - Venus"
+              ],
+              [
+                "C2",
+                "2004-08-15 00:00:00"
+              ],
+              [
+                "D2",
+                "11/05/1999 -WoodWork - Saturn"
+              ],
+              [
+                "E2",
+                "1999-05-11 00:00:00"
+              ],
+              [
+                "F2",
+                "16/01/2009 - Plumbing - Pluto"
+              ],
+              [
+                "G2",
+                "2009-01-16 00:00:00"
+              ],
+              [
+                "J2",
+                "1999-05-11 00:00:00"
+              ],
+              [
+                "B3",
+                "16/01/2009 - Plumbing - Pluto"
+              ],
+              [
+                "C3",
+                "2009-01-16 00:00:00"
+              ],
+              [
+                "J3",
+                "2009-01-16 00:00:00"
+              ],
+              [
+                "B4",
+                "17/12/2008 - Basket Weaving - Mars"
+              ],
+              [
+                "C4",
+                "2008-12-17 00:00:00"
+              ],
+              [
+                "D4",
+                "18/04/2018 - Electrical - Earth"
+              ],
+              [
+                "E4",
+                "2018-04-18 00:00:00"
+              ],
+              [
+                "J4",
+                "2008-12-17 00:00:00"
+              ],
+              [
+                "B5",
+                "18/04/2018 - Electrical - Earth"
+              ],
+              [
+                "C5",
+                "2018-04-18 00:00:00"
+              ],
+              [
+                "D5",
+                "17/12/2008 - Basket Weaving - Mars"
+              ],
+              [
+                "E5",
+                "2008-12-17 00:00:00"
+              ],
+              [
+                "F5",
+                "24/09/2021 - Plumbing - Venus"
+              ],
+              [
+                "G5",
+                "2021-09-24 00:00:00"
+              ],
+              [
+                "H5",
+                "16/01/2009 - Plumbing - Pluto"
+              ],
+              [
+                "I5",
+                "2009-01-16 00:00:00"
+              ],
+              [
+                "J5",
+                "2008-12-17 00:00:00"
+              ],
+              [
+                "B6",
+                "11/05/1999 -WoodWork - Saturn"
+              ],
+              [
+                "C6",
+                "1999-05-11 00:00:00"
+              ],
+              [
+                "D6",
+                "15/08/2004 - Electrical - Venus"
+              ],
+              [
+                "E6",
+                "2004-08-15 00:00:00"
+              ],
+              [
+                "J6",
+                "1999-05-11 00:00:00"
+              ]
+            ],
+            "total": 39,
+            "truncated": false,
+            "blank_count": 21
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 91804,
+        "cached_input_tokens": 70912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1780,
+        "reasoning_output_tokens": 1002
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-34033",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "formulas": {
+          "K6": "=INDEX($C$3:$E$13,MATCH(1,($A$3:$A$13<=J6)*($A$4:$A$14>J6)*($B$3:$B$13=H6),0),MATCH(I6,$C$2:$E$2,0))",
+          "K7": "=INDEX($C$3:$E$13,MATCH(1,($A$3:$A$13<=J7)*($A$4:$A$14>J7)*($B$3:$B$13=H7),0),MATCH(I7,$C$2:$E$2,0))",
+          "K8": "=INDEX($C$3:$E$13,MATCH(1,($A$3:$A$13<=J8)*($A$4:$A$14>J8)*($B$3:$B$13=H8),0),MATCH(I8,$C$2:$E$2,0))",
+          "K9": "=INDEX($C$3:$E$13,MATCH(1,($A$3:$A$13<=J9)*($A$4:$A$14>J9)*($B$3:$B$13=H9),0),MATCH(I9,$C$2:$E$2,0))",
+          "K10": "=INDEX($C$3:$E$13,MATCH(1,($A$3:$A$13<=J10)*($A$4:$A$14>J10)*($B$3:$B$13=H10),0),MATCH(I10,$C$2:$E$2,0))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "ExcelForum help",
+            "range": "A3:E13"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "ExcelForum help",
+            "range": "A3:E13",
+            "range_size": 55,
+            "cells": [
+              [
+                "A3",
+                "2023-01-01 00:00:00"
+              ],
+              [
+                "B3",
+                "A"
+              ],
+              [
+                "C3",
+                "25"
+              ],
+              [
+                "D3",
+                "10"
+              ],
+              [
+                "E3",
+                "99"
+              ],
+              [
+                "A4",
+                "2023-02-01 00:00:00"
+              ],
+              [
+                "B4",
+                "A"
+              ],
+              [
+                "C4",
+                "26"
+              ],
+              [
+                "D4",
+                "11"
+              ],
+              [
+                "E4",
+                "97"
+              ],
+              [
+                "A5",
+                "2023-03-01 00:00:00"
+              ],
+              [
+                "B5",
+                "A"
+              ],
+              [
+                "C5",
+                "27"
+              ],
+              [
+                "D5",
+                "12"
+              ],
+              [
+                "E5",
+                "95"
+              ],
+              [
+                "A7",
+                "2023-01-10 00:00:00"
+              ],
+              [
+                "B7",
+                "B"
+              ],
+              [
+                "C7",
+                "38"
+              ],
+              [
+                "D7",
+                "55"
+              ],
+              [
+                "E7",
+                "250"
+              ],
+              [
+                "A8",
+                "2023-02-10 00:00:00"
+              ],
+              [
+                "B8",
+                "B"
+              ],
+              [
+                "C8",
+                "39"
+              ],
+              [
+                "D8",
+                "56"
+              ],
+              [
+                "E8",
+                "245"
+              ],
+              [
+                "A9",
+                "2023-03-10 00:00:00"
+              ],
+              [
+                "B9",
+                "B"
+              ],
+              [
+                "C9",
+                "40"
+              ],
+              [
+                "D9",
+                "57"
+              ],
+              [
+                "E9",
+                "240"
+              ],
+              [
+                "A11",
+                "2023-01-20 00:00:00"
+              ],
+              [
+                "B11",
+                "C"
+              ],
+              [
+                "C11",
+                "60"
+              ],
+              [
+                "D11",
+                "3"
+              ],
+              [
+                "E11",
+                "300"
+              ],
+              [
+                "A12",
+                "2023-02-20 00:00:00"
+              ],
+              [
+                "B12",
+                "C"
+              ],
+              [
+                "C12",
+                "61"
+              ],
+              [
+                "D12",
+                "4"
+              ],
+              [
+                "E12",
+                "301"
+              ],
+              [
+                "A13",
+                "2023-03-20 00:00:00"
+              ],
+              [
+                "B13",
+                "C"
+              ],
+              [
+                "C13",
+                "62"
+              ],
+              [
+                "D13",
+                "5"
+              ],
+              [
+                "E13",
+                "302"
+              ]
+            ],
+            "total": 45,
+            "truncated": false,
+            "blank_count": 10
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 91804,
+        "cached_input_tokens": 70912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1780,
+        "reasoning_output_tokens": 1002
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-3413",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-002",
+      "submission": {
+        "fills": [
+          {
+            "range": "G3:G6",
+            "formula": "=IF(COUNTIFS($A$3:$A$7,E3,$B$3:$B$7,F3)>0,SUMIFS($C$3:$C$7,$A$3:$A$7,E3,$B$3:$B$7,F3),SUMIF($A$3:$A$7,E3,$C$3:$C$7))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 91804,
+        "cached_input_tokens": 70912,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1780,
+        "reasoning_output_tokens": 1002
+      },
+      "model_calls": 3
+    }
+  ]
+}

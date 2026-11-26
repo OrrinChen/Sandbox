@@ -1,0 +1,68 @@
+{
+  "wave": "2023Q2",
+  "cohort": "transportation-1",
+  "sector": "transportation",
+  "cik": "0001158463",
+  "issuer": "JETBLUE AIRWAYS CORP",
+  "cutoff": "2023-03-02",
+  "projected_target_start": "2023-04-01",
+  "status": "complete",
+  "period_end": "2022-12-31",
+  "filing_date": "2023-02-27",
+  "text": {
+    "sector": "transportation",
+    "cik": "0001158463",
+    "issuer": "JETBLUE AIRWAYS CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2023-02-27",
+        "text": "When compared to 2019, our operating revenue increased by 13.1%, primarily driven by a 12.5% increase in yield, offset by a decrease in revenue passengers of 7.4%."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2023-02-27",
+        "text": "The year-over-year decrease is primarily driven by rate normalization resulting from airport traffic recovery closer to pre-COVID-19 levels."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2023-02-27",
+        "text": "•System capacity increased by 19.1% year-over-year and increased by 1.0% compared to 2019."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2023-02-27",
+        "text": "•Operating expense increased by 54.6% year-over-year to $9.5 billion and increased by 29.6% compared to 2019."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2023-02-27",
+        "text": "Cash provided by operating activities totaled approximately $379 million in 2022."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2022-09-30",
+        "filed": "2022-11-02",
+        "reported_sales_usd": 2562000000,
+        "year_ago_reported_sales_usd": 1972000000,
+        "yoy_percent": "29.9189"
+      },
+      {
+        "quarter_end": "2022-12-31",
+        "filed": "2023-02-27",
+        "reported_sales_usd": 2415000000,
+        "year_ago_reported_sales_usd": 1834000000,
+        "yoy_percent": "31.6794"
+      }
+    ],
+    "status": "complete"
+  }
+}

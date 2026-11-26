@@ -1,0 +1,42 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24448,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 341,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8d-7d6d-7da3-b043-2ac0e2c6b5dc",
+  "packet_sha256": "b0c025a0d49863225e49c0763ecf37c9b521699c6aaa2a9e7d28f45d83df8ebc",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001326380\",\n          \"reason\": \"GameStop’s first-quarter net sales rose $101.6 million year over year, inferred from the $54.2 million first-half gain and $47.4 million second-quarter decline. By the second quarter, sales were down 4.0% (A). Slower sell-through and higher markdown rates (C) support a forecast that sales growth stays above −5.00% in the third quarter but falls to −5.00% or below in the fourth. The timing is uncertain given how close the second quarter already was to the threshold.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/retail-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000072333\",\n          \"reason\": \"Nordstrom’s second-quarter net sales grew 12%, with about two percentage points from an Anniversary Sale shift (E). That growth and the resilience of higher-income customers (D) support a third-quarter forecast above −5.00%. Demand was already softening across both banners, especially among lower-income customers (D). I expect that softness to weigh enough on holiday sales (A) to take fourth-quarter net sales growth to −5.00% or below.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/retail-3\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "GameStop’s first-quarter net sales rose $101.6 million year over year, inferred from the $54.2 million first-half gain and $47.4 million second-quarter decline. By the second quarter, sales were down 4.0% (A). Slower sell-through and higher markdown rates (C) support a forecast that sales growth stays above −5.00% in the third quarter but falls to −5.00% or below in the fourth. The timing is uncertain given how close the second quarter already was to the threshold."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-2",
+        "alerts": [
+          {
+            "cik": "0000072333",
+            "reason": "Nordstrom’s second-quarter net sales grew 12%, with about two percentage points from an Anniversary Sale shift (E). That growth and the resilience of higher-income customers (D) support a third-quarter forecast above −5.00%. Demand was already softening across both banners, especially among lower-income customers (D). I expect that softness to weigh enough on holiday sales (A) to take fourth-quarter net sales growth to −5.00% or below."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-014",
+    "stage": "inspect-2",
+    "prompt_sha256": "6306f06397a6c8a62b199e8e9972b4896618f6662f7c4b476d557c8e6198d96d",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122e-938b-7fa3-bac7-414724e8d0d9"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-48983\":[{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B5:I14\"},{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B15:I19\"}],\"sheet-49246\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:B14\"}],\"sheet-49300\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"B2:H4\"}],\"sheet-49455\":[{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"D1:H12\"},{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"K1:K9\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 58250,
+          "cached_input_tokens": 49408,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 579,
+          "reasoning_output_tokens": 376
+        }
+      ],
+      "cli_final": "{\"sheet-48983\":[{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B5:I14\"},{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B15:I19\"}],\"sheet-49246\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:B14\"}],\"sheet-49300\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"B2:H4\"}],\"sheet-49455\":[{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"D1:H12\"},{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"K1:K9\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122e-938b-7fa3-bac7-414724e8d0d9",
+    "raw": "{\"sheet-48983\":[{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B5:I14\"},{\"op\":\"range\",\"sheet\":\"Hárok1\",\"range\":\"B15:I19\"}],\"sheet-49246\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A2:B14\"}],\"sheet-49300\":[{\"op\":\"range\",\"sheet\":\"Data\",\"range\":\"B2:H4\"}],\"sheet-49455\":[{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"D1:H12\"},{\"op\":\"range\",\"sheet\":\"KPI 1\",\"range\":\"K1:K9\"}]}",
+    "usage": {
+      "input_tokens": 58250,
+      "cached_input_tokens": 49408,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 579,
+      "reasoning_output_tokens": 376
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

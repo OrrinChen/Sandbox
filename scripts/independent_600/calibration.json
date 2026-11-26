@@ -1,0 +1,4209 @@
+{
+  "kind": "reference and controlled-error calibration",
+  "release_sha256": "a047231de2b17708be633c319a180dd6e96b789934412ec49640f4dbb4ddf337",
+  "cases": 600,
+  "references_accepted": 600,
+  "incorrect_rejected": 600,
+  "results": [
+    {
+      "task_id": "decision-acoustic-recording-channel-witness-set",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-advance-gap-free-spool-checkpoints",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-bundle-rounding-cents",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-chilled-crates-to-buyers",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-export-short-names",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-fee-at-fixed-effective-yield",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-freight-overage-with-floor",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-invoice-discount-before-page-subtotals",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-kiln-shelf-space",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-printer-plates-to-chapter-pockets",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-refurbishment-kits-to-warranty-lots",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-renewal-deposit-budget",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-two-relay-legs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-two-reminder-slots",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-allocate-two-review-desks",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apply-meal-tip-policy-at-service-date",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apply-one-pass-folder-moves",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apply-remittance-to-open-invoices",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apply-retroactive-carton-bulletins",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apply-scoped-exhibit-wording-slips",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-apportion-kiln-fees-after-ledger-merger",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-archive-writer-shift-meter",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-art-print-signed-audit-trail",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assemble-best-feasible-prop-van-load",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assemble-verified-night-handoff-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assign-exhibits-to-rated-display-cases",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assign-festival-crates-to-return-bays",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assign-grain-sensitive-blanks-to-remnants",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-assign-survey-heads-before-simultaneous-readings",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-attribute-signal-with-time-uncertainty",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-abandons-across-a-bulletin-change",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-disputed-save-credits",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-diverter-routes-as-received",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-independent-glaze-attributions",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-missed-survey-pickups",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-numbering-between-printed-anchors",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-placeholder-counts-before-import",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-audit-weekly-carrier-minimum-top-ups",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-balance-check-weight-pair",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-balance-crossover-packing-times",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-balance-invoice-across-directed-quotes",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-balance-simultaneous-closing-desks",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-balance-three-gallery-sessions",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bank-clearing-exception-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bin-code-migration-matrix",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-book-a-coolant-exchange-stop",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-book-complementary-demo-packages",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-book-drop-pilot-paired-stops",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-book-nonoverlapping-shaker-visits",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-book-uninterrupted-tug-charge",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-cartons-needing-rework",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-late-course-tickets",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-missing-fold-offsets",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-preview-fix-by-consecutive-builds",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-reset-time-from-signed-sightings",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bound-the-order-of-fog-arrival",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bounded-remainder-barcode",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bridge-disjoint-route-pair",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bridge-print-spool-roll-ranges",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-budget-one-shift-of-retention-calls",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-bundle-conveyor-repairs-into-two-line-stops",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-buy-rolls-for-uncut-banners",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-buy-stock-limited-patch-cord-packs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-calibrate-clock-from-paired-punches",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-canonical-circular-etch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-capacity-constrained-rebate-elections",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-capped-vendor-credit",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-catalogue-freeze-correction-trail",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-chance-adjusted-transcription-agreement",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-check-scoped-reprint-withdrawal",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-choose-a-transfer-hold-with-recovery-slack",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-choose-a-two-line-endcap",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-choose-complementary-catalog-import-packs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-choose-same-day-reimbursement-batch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-choose-two-recovery-retrofits",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-citation-footnote-duplicate-lineages",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cite-active-glaze-inspection-card",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cite-last-complete-enclosure-count",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cite-operative-leak-handoff",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cite-release-slips-at-packing-cutoff",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-clear-consensual-shift-exchange",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-close-followup-vendor-ledger",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-close-prepaid-update-revenue",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-close-the-tile-frame",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-coating-yield-at-contract-mix",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-collapse-color-components",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-commit-a-kiln-cooldown-before-orders-settle",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-consecutive-stockout-penalty",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-consignment-count-reconciliation",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-consignment-ownership-cutoff",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-consolidate-inbound-lot-fees",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-contiguous-party-seat-quote",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-continuous-bin-discharge-window",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-contract-relief-for-dated-assembly-work",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-corroborate-a-room-attribution",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cost-project-issues-from-fifo-layers",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-count-menu-options-with-complete-labels",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cover-two-strip-orders-with-opening-fees",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-crate-destination-receipt-audit",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-crate-stack-notice-audit",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-crosswalk-print-blocks-from-impressions",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-cumulative-holdback-on-progress-bills",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-customer-relationship-value-from-mature-renewals",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-date-a-legend-reading-between-proofs",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-dead-heat-purse-apportionment",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-dispatch-recovery-blocks",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-display-tray-stock-writedown",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-distinct-design-rollup-discrepancy",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-diversion-path-insurance",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-double-stage-carton-inspection",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-dryer-paired-moisture-change",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-dryer-probe-swap-evidence",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-earliest-journey-with-transfer",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-early-payout-funding-selection",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-effective-reserve-true-up",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-encoder-sweep-coverage-gaps",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-equipment-deposit-refund-terms",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-estimate-paired-crossover-carryover",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-estimate-unreported-drive-failures",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-evidenced-meter-credit-export",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-evidenced-short-settlement-reconciliation",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-applicable-menu-caption-errata",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-approved-caption-patch",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-auditable-rainfall-increments",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-complete-leaf-pairs-at-release",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-corrected-appliance-inventory",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-evidence-backed-accrual-adjustments",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-incremental-cash-pool-sweeps",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-page-specific-caption-errata",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-paired-counter-exceptions",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-panel-caption-change-file",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-rotation-counter-increments",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-trip-advance-clearing-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-unfulfilled-partner-kit-orders",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-walkthrough-confirmed-sign-defects",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-warranty-close-adjustments",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-export-wrapped-legend-captions",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fabrication-progress-estimate-catchup",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-factorial-interaction-walsh-coefficient",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-ferry-charging-window",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fifo-count-across-receipt-layers",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-finish-unloading-before-station-handoffs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-first-majority-run-with-missing-readings",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-first-peak-of-simultaneous-waiting",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fit-booklet-files-to-press-stock",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fit-catalog-pages-under-byte-cap",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fit-cited-corrections-into-stoppress-space",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fit-complementary-surveys-into-radio-bulletin",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fit-transfer-evidence-on-a-display-card",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-flag-impossible-gallery-transfers",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-four-day-closing-balance-interest",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-frozen-archive-location-manifest",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-fund-monthly-guarantee-shortfalls-in-priority-order",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-gallery-crate-pickup-release",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-gross-retention-across-billing-components",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-hold-a-pulse-for-feeder-groups",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-idle-plant-overhead-absorption",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-incompatible-staff-height-bands",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-indivisible-racks-on-a-lift-truck",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-inspection-possession-displacement",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-instant-runoff-design-ballot",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-integrate-drying-sheet-area",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-intercompany-margin-in-blended-stock",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-interline-through-ticket-change",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-interval-energy-netting",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-inventory-step-up-by-production-stage",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-isolate-main-with-overlapping-outages",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-isolate-trading-working-capital",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-join-split-page-caption",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-cart-dispatch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-disagreement-by-exposure-time",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-meter-observed-load",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-pair-recovery-allocation",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-shift-firing-plan",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kiln-simpson-reversal",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-kit-cost-with-slot-substitutes",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-lamp-survival-day-two",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-last-confirmed-shelf-before-inventory",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-least-cost-dual-dealer-funding",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-least-cost-two-stage-finish",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-limit-cable-exposure-in-one-duct",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-loan-podiums-with-current-confirmations",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-locate-conductor-handoffs-at-cue-starts",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-loom-calibration-cutover-slot",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-loom-pattern-change-export",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-map-legend-source-footprints",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-marginal-volume-rebate-accrual",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-marked-point-hausdorff-distance",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-market-stall-repair-pair",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-match-unlabeled-copy-removals",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-matched-store-lift-with-balanced-pairs",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-maximize-packed-production-mix",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-measure-cutoff-cash-forecast-error",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-measure-margin-after-graded-returns",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-measure-reclaimable-folder-bytes",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-measure-warranty-top-up-after-prior-service",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-merge-sparse-asset-corrections-at-cutoff",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-meter-reset-production-depreciation",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-metered-revenue-across-quarterly-bands",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-midnight-course-hold-credit",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-milestone-order-count",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-minimize-two-cycle-sensor-drift",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-minimum-maintenance-vertex-cover",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-month-end-earned-premium-rollforward",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-mural-progress-payment",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-net-currency-pocket-conversion",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-net-interbranch-premium-settlement-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-net-revolver-sweeps-within-facility-day",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-opening-stock-with-lost-rentals-and-returns",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-order-overlapping-quality-inspections",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-overnight-wagon-block-split",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pack-a-compatible-kiln-firing",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pack-caption-review-shift",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pack-preview-refresh-window",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-packing-label-correction-file",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-packing-labor-rate-and-efficiency",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-packing-pilot-paired-savings",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-packing-scale-retrospective-audit",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-packing-upgrades-under-depreciation-ceiling",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pair-relief-shifts-to-cover-two-surges",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pair-repairs-within-shutdown-window",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-glaze-weighted-median",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-lot-award-with-bay-cap",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-lots-with-shipping-tare",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-map-packet-acquisition",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-published-baseline-brier-skill",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-quadrat-colonization",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-paired-relief-shuttle-allocation",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-park-trail-opening-portfolio",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-passing-loop-charter-packing",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-place-a-dust-extractor-shutdown",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-place-a-relief-trip-in-a-service-gap",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-plan-two-coupon-redemptions",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-platform-amendment-at-departure",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-platform-wait-across-a-frequency-change",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-pooled-freight-booking",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-portable-check-in-desk-dispatch",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-post-crate-deposit-movements",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-post-deposit-after-phased-acceptance",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-prepaid-booth-space-close",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-prepaid-rental-expense-export",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-preserve-a-reusable-reel-remnant",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-press-first-pass-at-shift-close",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-preview-deck-session-scheduling",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-price-a-short-term-funding-bridge",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-price-fair-stockroom-extension",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-price-prepaid-cancellation-credits-from-term-notices",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-print-only-changed-shelf-labels",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-prism-changes-within-a-traverse",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-project-unsampled-breakage",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-publish-certified-relay-patch",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-quarterly-tier-close-with-usage-corrections",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-railway-junction-removal",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-ration-sealed-refill-packs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-ration-swap-pack-charging",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rebalance-chilled-trailer-bays",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rebate-remittance-balance-file",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rebuild-invoice-tax-from-running-totals",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-receiving-cutoff-at-dispatch",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reciprocal-assembly-overhead",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-between-stock-counts",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-carton-short-shipment-credit",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-cash-at-bank-close",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-complete-shelf-count-files",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-course-charges-at-close",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-display-ad-shortfall-credits",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-gallery-scan-page-counts",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-independent-carton-witnesses",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-return-crates-by-model",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-returnable-spool-deposits",
+      "split": "dev",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-split-fifo-lots",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-transferred-finish-credits",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconcile-translated-menu-edits",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reconstruct-dust-bulletin-at-press-time",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recoup-returns-against-originating-credit-lots",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-archived-catalogue-join",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-dryer-run-minutes-across-overlapping-files",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-missing-counter-intervals",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-playtime-from-blank-reprises",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-signatures-from-conjugate-leaves",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-recover-unacknowledged-invoice-line-occurrences",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-refill-meter-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-regional-capacity-commitment-under-cash-cap",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-release-cleared-caption-masters",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-release-manifest-after-corrections",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reopened-carton-deletions",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-repair-sparse-bin-updates",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-replacement-recruiting-month-close",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-replay-clock-at-the-horn",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-replay-surviving-catalog-cell-edits",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reserve-a-sorter-service-window",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reserve-a-weather-resilient-pick-plan",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reserve-an-unbroken-charging-window",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reserve-folio-stock-before-demand-is-known",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reserve-proof-press-slot",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-restore-alternating-rail-marker",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-restore-carton-quantities-from-dock-notices",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-restore-counts-from-aisle-snapshots",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-restore-crate-labels-from-dated-routing-notices",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-retired-components-sale-settlement",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-return-crate-pilot-quorum",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-returnable-crate-lifetime-cost",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-reverse-bundle-credit-allocations",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rotatable-bulk-totes-on-deck",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rotating-closed-bay-allocation",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-rotation-restore-exceptions",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-route-a-balancing-rig-between-press-bays",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-a-two-slot-patch-panel-move",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-after-business-day-lag",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-fixed-volume-pump-runs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-indivisible-import-repair-files",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-laundry-with-solar-headroom",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-reset-checks-before-dispatch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-schedule-two-renewal-clinics",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-score-slip-print-order",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-second-week-return-with-reporting-lag",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-seed-tray-pair-diversity",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-select-capped-bonus-offers-within-monthly-pool",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-select-noncompeting-replication-sites",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-select-outage-resilient-charging-layout",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-select-overlap-aware-purge-runs",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-separate-monument-drift-from-datum-reset",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sequence-field-heat-removal",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sequence-leak-repairs-before-refill",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sequence-single-dock-refills",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sequence-three-cutter-jobs-before-dispatch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sequence-trim-bench-orders",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-serialize-confirmed-specimen-labels",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-settle-capped-royalty-and-advance",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-settle-monthly-solar-export-credit",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-seven-day-repeat-contact-cohort",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shared-asset-exit-buyout",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shared-circuit-kiln-dispatch",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shared-crate-loan-pair",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shared-yard-highest-value-use",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shield-bias-from-probe-swap",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shift-standardized-turnover",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-shrub-canopy-line-intercept",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-simultaneous-terminal-bay-outages",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-single-feed-finals-handoff",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-size-ferry-departure-topup",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-size-opening-pick-face-reserve",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sky-scaled-aperture-excess",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-sliding-phase-retention",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-split-an-ordered-label-run",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-split-irregular-equipment-loan-payments",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-split-reading-kits-between-branches",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-staff-a-serial-carton-line",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-stage-a-reserve-trailer-for-worst-case-response",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-stage-installation-crew-upgrade",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-stagger-two-slot-relief-breaks",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-standing-exchange-disqualifications",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-station-bias-with-fixed-effects",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-step-acquisition-goodwill-bridge-csv",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-stitch-overlapping-pick-list-pages",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-stratified-rosette-inventory",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-supplier-rebate-close-file",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-temperature-chamber-release-gap",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-term-deposit-liquidation-for-payout",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-trace-an-excerpt-across-a-splice",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-trace-common-quote-witnesses",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-trace-renewals-through-studio-rename-notices",
+      "split": "dev",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-trace-shared-equipment-premium-splits",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-triangulate-forward-sight-consensus",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-trim-unsealed-packing-file-tails",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-true-up-deleted-slot-credits",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-true-up-studio-print-charges",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-two-bank-chair-setup-budget",
+      "split": "test",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-undo-one-step-receipt-carry",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-unwrap-counter-with-signed-log",
+      "split": "test",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-verify-conversion-primary",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-verify-display-light-ceiling",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-verify-relocated-boardings-against-dispatch-notices",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-versioned-net-payment-file",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-voltmeter-trim-paired-reference",
+      "split": "dev",
+      "domain": "data_analysis",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-warehouse-gate-correction-file",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-water-tariff-across-register-exchanges",
+      "split": "test",
+      "domain": "finance",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-wayfinding-sign-export-after-walkthrough",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-wheel-state-at-shutter-open",
+      "split": "test",
+      "domain": "citation",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "decision-whole-tonne-grit-blend",
+      "split": "dev",
+      "domain": "optimization",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-all-your-base",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-allergies",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-anagram",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-book-store",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-change",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-circular-buffer",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-clock",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-collatz-conjecture",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-connect",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-darts",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-diamond",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-eliuds-eggs",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-flatten-array",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-flower-field",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-forth",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-game-of-life",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-go-counting",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-grade-school",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-grains",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-high-scores",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-isbn-verifier",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-kindergarten-garden",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-knapsack",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-largest-series-product",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-leap",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-ledger",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-linked-list",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-list-ops",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-luhn",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-markdown",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-matching-brackets",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-matrix",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-meetup",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-nth-prime",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-ocr-numbers",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-allocate-invoice-cents",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-apply-product-exclusions",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-booklet-signature",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-cache-eviction-pinned-bytes",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-cap-net-cancellation-refund",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-compact-print-color-runs",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-dated-ownership-mapping",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-decode-routing-fields",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-deduplicate-upload-names",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-dispatch-index-ties",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-dispatch-record-date",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-expand-month-end-close",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-expire-event-id-suppression",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-fabric-repeat-cuts",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-fair-package-promotion",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-gate-dispatch-sequence-rollover",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-incremental-shipment-checksum",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-inherit-report-subscriptions",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-invoice-effective-revision",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-join-cited-paragraph-ranges",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-merge-catalog-tombstones",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-normalize-rotated-tile-pixels",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-ordered-cdn-key-split",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-orient-joined-consist",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-orphaned-bookings",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-parse-multiline-dispatch-csv",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-reconcile-early-transfer-receipts",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-repeated-hour-pickups",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-resume-page-token",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-retain-interpolation-boundary",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-retry-invoice-issuance",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-round-fiscal-week",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-schedule-marker-covering-music",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-signed-literal-delta-runs",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-simultaneous-track-merge",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-sort-release-catalog",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-stereo-segment-marker-alignment",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-undo-coalesced-form-edits",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-utc-handoff-meeting",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-original-webhook-part-receipts",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-palindrome-products",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-perfect-numbers",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-prime-factors",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-proverb",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-pythagorean-triplet",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-raindrops",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-rectangles",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-relative-distance",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-reverse-string",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-robot-simulator",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-roman-numerals",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-scale-generator",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-scrabble-score",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-series",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-sieve",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-space-age",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-spiral-matrix",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-state-of-tic-tac-toe",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-sum-of-multiples",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-tournament",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-transpose",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-triangle",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-twelve-days",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-two-bucket",
+      "split": "dev",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "repair-wordy",
+      "split": "test",
+      "domain": "coding",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-14240",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-1563",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-15829",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-17251",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-18935",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-2212",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-31915",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-32255",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-32562",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-33157",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-34033",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-3413",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-34210",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-35739",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-35747",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-36236",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-36277",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-36764",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-37228",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-37378",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-37554",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-37609",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-37615",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-38462",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-38537",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-38662",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-38823",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-38969",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-39432",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-39515",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-39604",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-39931",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-40478",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-40536",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-40757",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-40892",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-41680",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-41969",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-42198",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-42515",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-42526",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-42566",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-43213",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-43406",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-43436",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-43589",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-43775",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-44264",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-44266",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-44628",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-45030",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-45063",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-45300",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-45937",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-46058",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-46167",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-46897",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-47699",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-47798",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48354",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48365",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48527",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48588",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48608",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48643",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48685",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48969",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-48983",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49246",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49300",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49455",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49613",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49801",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49857",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-49859",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-50630",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-50952",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-51249",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-51262",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-51807",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52050",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52220",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52233",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52532",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52807",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-52917",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-53167",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-53383",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-54242",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-54274",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-55085",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-55260",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-55468",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-55535",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-55609",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56427",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56451",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56599",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56915",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56921",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-56995",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57026",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57029",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57105",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57137",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57262",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57354",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-57693",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-58047",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-58701",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-58942",
+      "split": "dev",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59160",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59196",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59224",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59259",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59358",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59639",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-59794",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-7902",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    },
+    {
+      "task_id": "sheet-9111",
+      "split": "test",
+      "domain": "file_workflow",
+      "reference_accepted": true,
+      "incorrect_rejected": true
+    }
+  ]
+}

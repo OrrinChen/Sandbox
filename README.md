@@ -16,6 +16,8 @@ Evidence: offline recorded, fixture-backed, no live API by default. The model pr
 
 Recorded-study context, unchanged: 6 domains, 10 deterministic validators (+5 trading-specific validators), 7 failure categories, and 5 recorded profiles.
 
+Sandbox also packages the A1 financial RAG regression and 500 held-out independent tool-use tasks. On the independent tasks, direct submissions passed 469/500 and self-checked submissions passed 465/500. All 30 shared failures were workbooks. A follow-up gave three models read-only access to those 100 frozen workbooks and recorded which cells each model chose to inspect. [Benchmark results, task sources and offline replay](BENCHMARKS.md)
+
 ## Problem
 
 Final-answer-only grading misses silent failures: wrong tool choice, wrong arguments, wrong state mutation, wrong numeric values, unsupported citations, constraint violations, non-replayable traces, timeouts, and cost regressions.

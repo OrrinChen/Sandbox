@@ -1,0 +1,885 @@
+{
+  "prediction_sha256": "635642f0a7a71d65bfc2d401af3176ac7c17cb91c48ac11d421a2983c5461571",
+  "quarters_sha256": "7f2a7ecd73e8c9aa1f1bedf6f87e9040c560aea0cd878c9a0863ea069e159724",
+  "candidate_count": 18,
+  "compared_quarters": 36,
+  "agreements": 36,
+  "checks": [
+    {
+      "cik": "0000003453",
+      "end": "2022-09-30",
+      "accessions": [
+        "0001558370-22-016112"
+      ],
+      "stored": [
+        1114800000,
+        1071600000
+      ],
+      "statement_amounts": [
+        1114800000,
+        1071600000
+      ],
+      "statement_row_labels": [
+        "Total Operating Revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000003453",
+      "end": "2022-12-31",
+      "accessions": [
+        "0001558370-23-001961",
+        "0001558370-22-016112"
+      ],
+      "stored": [
+        801600000,
+        1267000000
+      ],
+      "statement_amounts": [
+        801600000,
+        1267000000
+      ],
+      "statement_row_labels": [
+        "Total Operating Revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000018255",
+      "end": "2022-04-30",
+      "accessions": [
+        "0000018255-22-000024"
+      ],
+      "stored": [
+        206721000,
+        213085000
+      ],
+      "statement_amounts": [
+        206721000,
+        213085000
+      ],
+      "statement_row_labels": [
+        ""
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000018255",
+      "end": "2022-07-30",
+      "accessions": [
+        "0001562762-22-000372"
+      ],
+      "stored": [
+        196864000,
+        207746000
+      ],
+      "statement_amounts": [
+        196864000,
+        207746000
+      ],
+      "statement_row_labels": [
+        "Revenues",
+        "Total revenues"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000018255",
+      "end": "2023-01-28",
+      "accessions": [
+        "0001562762-23-000126",
+        "0001562762-22-000478"
+      ],
+      "stored": [
+        179049000,
+        176227000
+      ],
+      "statement_amounts": [
+        179049000,
+        176227000
+      ],
+      "statement_row_labels": [
+        "",
+        "Revenues",
+        "Total revenues"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000018255",
+      "end": "2023-04-29",
+      "accessions": [
+        "0001562762-23-000267"
+      ],
+      "stored": [
+        192050000,
+        206721000
+      ],
+      "statement_amounts": [
+        192050000,
+        206721000
+      ],
+      "statement_row_labels": [
+        ""
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000026324",
+      "end": "2021-12-31",
+      "accessions": [
+        "0000026324-22-000004",
+        "0000026324-21-000022"
+      ],
+      "stored": [
+        666758000,
+        668444000
+      ],
+      "statement_amounts": [
+        666758000,
+        668444000
+      ],
+      "statement_row_labels": [
+        "Consolidated total",
+        "Total",
+        "Total Consolidated",
+        "Total consolidated",
+        "Total net sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000026324",
+      "end": "2022-03-31",
+      "accessions": [
+        "0000026324-22-000012"
+      ],
+      "stored": [
+        559461000,
+        597059000
+      ],
+      "statement_amounts": [
+        559461000,
+        597059000
+      ],
+      "statement_row_labels": [
+        "Total consolidated"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000723125",
+      "end": "2022-06-02",
+      "accessions": [
+        "0000723125-22-000036"
+      ],
+      "stored": [
+        8642000000,
+        7422000000
+      ],
+      "statement_amounts": [
+        8642000000,
+        7422000000
+      ],
+      "statement_row_labels": [
+        "",
+        "Revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000723125",
+      "end": "2022-09-01",
+      "accessions": [
+        "0000723125-22-000048",
+        "0000723125-22-000036"
+      ],
+      "stored": [
+        6643000000,
+        8274000000
+      ],
+      "statement_amounts": [
+        6643000000,
+        8274000000
+      ],
+      "statement_row_labels": [
+        "",
+        "Revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000799233",
+      "end": "2023-09-30",
+      "accessions": [
+        "0000799233-23-000049"
+      ],
+      "stored": [
+        295026000,
+        273976000
+      ],
+      "statement_amounts": [
+        295026000,
+        273976000
+      ],
+      "statement_row_labels": [
+        "OPERATING REVENUE"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000799233",
+      "end": "2023-12-31",
+      "accessions": [
+        "0000799233-24-000005",
+        "0000799233-23-000049"
+      ],
+      "stored": [
+        275347000,
+        354923000
+      ],
+      "statement_amounts": [
+        275347000,
+        354923000
+      ],
+      "statement_row_labels": [
+        "OPERATING REVENUE"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000878726",
+      "end": "2022-04-02",
+      "accessions": [
+        "0000950170-22-009678"
+      ],
+      "stored": [
+        159621000,
+        153345000
+      ],
+      "statement_amounts": [
+        159621000,
+        153345000
+      ],
+      "statement_row_labels": [
+        "Net sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000878726",
+      "end": "2022-07-02",
+      "accessions": [
+        "0000950170-22-018973",
+        "0000950170-22-009678"
+      ],
+      "stored": [
+        161934000,
+        177274000
+      ],
+      "statement_amounts": [
+        161934000,
+        177274000
+      ],
+      "statement_row_labels": [
+        "Net sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000878927",
+      "end": "2023-03-31",
+      "accessions": [
+        "0000950170-23-018765"
+      ],
+      "stored": [
+        1442136000,
+        1497280000
+      ],
+      "statement_amounts": [
+        1442136000,
+        1497280000
+      ],
+      "statement_row_labels": [
+        "Revenue from operations",
+        "Total revenue from operations"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0000878927",
+      "end": "2023-06-30",
+      "accessions": [
+        "0000950170-23-038553"
+      ],
+      "stored": [
+        1413189000,
+        1667448000
+      ],
+      "statement_amounts": [
+        1413189000,
+        1667448000
+      ],
+      "statement_row_labels": [
+        "Revenue from operations",
+        "Total revenue from operations"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001038074",
+      "end": "2023-04-01",
+      "accessions": [
+        "0001104659-23-049995"
+      ],
+      "stored": [
+        246787000,
+        233814000
+      ],
+      "statement_amounts": [
+        246787000,
+        233814000
+      ],
+      "statement_row_labels": [
+        "Revenues",
+        "​"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001038074",
+      "end": "2023-07-01",
+      "accessions": [
+        "0001104659-23-084101"
+      ],
+      "stored": [
+        244866000,
+        263150000
+      ],
+      "statement_amounts": [
+        244866000,
+        263150000
+      ],
+      "statement_row_labels": [
+        "Revenues",
+        "​"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001124796",
+      "end": "2022-03-31",
+      "accessions": [
+        "0001124796-22-000060"
+      ],
+      "stored": [
+        64459000,
+        61345000
+      ],
+      "statement_amounts": [
+        64459000,
+        61345000
+      ],
+      "statement_row_labels": [
+        "",
+        "Revenue",
+        "Total revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001124796",
+      "end": "2022-06-30",
+      "accessions": [
+        "0001124796-22-000116"
+      ],
+      "stored": [
+        60827000,
+        69113000
+      ],
+      "statement_amounts": [
+        60827000,
+        69113000
+      ],
+      "statement_row_labels": [
+        "",
+        "Revenue",
+        "Total revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2022-06-30",
+      "accessions": [
+        "0001493152-22-022882"
+      ],
+      "stored": [
+        13725000,
+        11270000
+      ],
+      "statement_amounts": [
+        13725000,
+        11270000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2022-09-30",
+      "accessions": [
+        "0001493152-22-032238"
+      ],
+      "stored": [
+        12094000,
+        13402000
+      ],
+      "statement_amounts": [
+        12094000,
+        13402000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2022-12-31",
+      "accessions": [
+        "0001493152-23-017571",
+        "0001493152-22-032238"
+      ],
+      "stored": [
+        15040000,
+        12781000
+      ],
+      "statement_amounts": [
+        15040000,
+        12781000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2023-03-31",
+      "accessions": [
+        "0001493152-23-019742"
+      ],
+      "stored": [
+        11157000,
+        12182000
+      ],
+      "statement_amounts": [
+        11157000,
+        12182000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2023-09-30",
+      "accessions": [
+        "0001493152-23-040116"
+      ],
+      "stored": [
+        11856000,
+        12094000
+      ],
+      "statement_amounts": [
+        11856000,
+        12094000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001140215",
+      "end": "2023-12-31",
+      "accessions": [
+        "0001493152-24-012505",
+        "0001493152-23-040116"
+      ],
+      "stored": [
+        11693000,
+        15040000
+      ],
+      "statement_amounts": [
+        11693000,
+        15040000
+      ],
+      "statement_row_labels": [
+        "Net Sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001158463",
+      "end": "2023-06-30",
+      "accessions": [
+        "0001158463-23-000015"
+      ],
+      "stored": [
+        2610000000,
+        2445000000
+      ],
+      "statement_amounts": [
+        2610000000,
+        2445000000
+      ],
+      "statement_row_labels": [
+        "Total operating revenues",
+        "Total revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001158463",
+      "end": "2023-09-30",
+      "accessions": [
+        "0001158463-23-000022"
+      ],
+      "stored": [
+        2353000000,
+        2562000000
+      ],
+      "statement_amounts": [
+        2353000000,
+        2562000000
+      ],
+      "statement_row_labels": [
+        "Total operating revenues",
+        "Total revenue"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001402057",
+      "end": "2022-12-31",
+      "accessions": [
+        "0001402057-23-000052",
+        "0001402057-22-000159"
+      ],
+      "stored": [
+        5438300000,
+        5536900000
+      ],
+      "statement_amounts": [
+        5438300000,
+        5536900000
+      ],
+      "statement_row_labels": [
+        "Net sales",
+        "Total Net sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001402057",
+      "end": "2023-03-31",
+      "accessions": [
+        "0001402057-23-000091"
+      ],
+      "stored": [
+        5103100000,
+        5949100000
+      ],
+      "statement_amounts": [
+        5103100000,
+        5949100000
+      ],
+      "statement_row_labels": [
+        "Net sales",
+        "Total Net sales"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001463101",
+      "end": "2023-06-30",
+      "accessions": [
+        "0001463101-23-000140"
+      ],
+      "stored": [
+        711118000,
+        530196000
+      ],
+      "statement_amounts": [
+        711118000,
+        530196000
+      ],
+      "statement_row_labels": [
+        "Net revenues",
+        "Total"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001463101",
+      "end": "2023-09-30",
+      "accessions": [
+        "0001463101-23-000165"
+      ],
+      "stored": [
+        551082000,
+        634713000
+      ],
+      "statement_amounts": [
+        551082000,
+        634713000
+      ],
+      "statement_row_labels": [
+        "Net revenues",
+        "Total"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001498710",
+      "end": "2023-06-30",
+      "accessions": [
+        "0001498710-23-000163"
+      ],
+      "stored": [
+        1432472000,
+        1366643000
+      ],
+      "statement_amounts": [
+        1432472000,
+        1366643000
+      ],
+      "statement_row_labels": [
+        "Total",
+        "Total operating revenues"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001498710",
+      "end": "2023-09-30",
+      "accessions": [
+        "0001498710-23-000191"
+      ],
+      "stored": [
+        1258543000,
+        1343179000
+      ],
+      "statement_amounts": [
+        1258543000,
+        1343179000
+      ],
+      "statement_row_labels": [
+        "Total",
+        "Total operating revenues"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001627014",
+      "end": "2023-03-31",
+      "accessions": [
+        "0001558370-23-007986"
+      ],
+      "stored": [
+        382200000,
+        387200000
+      ],
+      "statement_amounts": [
+        382200000,
+        387200000
+      ],
+      "statement_row_labels": [
+        "Revenues"
+      ],
+      "matches": true
+    },
+    {
+      "cik": "0001627014",
+      "end": "2023-06-30",
+      "accessions": [
+        "0001558370-23-013080"
+      ],
+      "stored": [
+        368200000,
+        394500000
+      ],
+      "statement_amounts": [
+        368200000,
+        394500000
+      ],
+      "statement_row_labels": [
+        "Revenues"
+      ],
+      "matches": true
+    }
+  ],
+  "originals": {
+    "0000018255-22-000024": {
+      "url": "https://www.sec.gov/Archives/edgar/data/18255/000001825522000024/cato-20220430.htm",
+      "sha256": "16d91594eb51108b6510660cb16dcec3a53303bad9062114a5f886993db988b3"
+    },
+    "0000026324-21-000022": {
+      "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632421000022/cw-20210930.htm",
+      "sha256": "e02f0ae2a934eefe65e4e9302e89f775d9a518a771da0d1a48db51d1670bcbf3"
+    },
+    "0000026324-22-000004": {
+      "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632422000004/cw-20211231.htm",
+      "sha256": "42165751725413bb7b4617be54009cf81f2b685dbde0bfaf45ce779bc48a27c5"
+    },
+    "0000026324-22-000012": {
+      "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632422000012/cw-20220331.htm",
+      "sha256": "2e895ecba2c829507a6366f0ebd1fd0221166b7ae713b13df54ce502f7a33a05"
+    },
+    "0000723125-22-000036": {
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312522000036/mu-20220602.htm",
+      "sha256": "e5f241e881364cd73b03e54674ed12b425159bb56de5433db374c4dc72a15aad"
+    },
+    "0000723125-22-000048": {
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312522000048/mu-20220901.htm",
+      "sha256": "76fa83a0aa0f2afc8e22f3c99dd64e07224cb9f24095e4b8ae82706839816cb0"
+    },
+    "0000799233-23-000049": {
+      "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000049/htld-20230930.htm",
+      "sha256": "700b7d4c9b9ebcf18c4f9275f7dd13cdc8ef6ddf47d1b18179a6b83468662fdd"
+    },
+    "0000799233-24-000005": {
+      "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923324000005/htld-20231231.htm",
+      "sha256": "1b5214e3c54e51e3262902364f402f5265809da9579553f9561347f5676b45ae"
+    },
+    "0000950170-22-009678": {
+      "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022009678/tuem-20220402.htm",
+      "sha256": "e9509ed2c2967b7a995819b3f757d3031661d3c79b28e3b86be7b892b3fb123d"
+    },
+    "0000950170-22-018973": {
+      "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022018973/tuem-20220702.htm",
+      "sha256": "2f07609a2064685d1e4b4a9665f9a592e2b54dd0ed95061c0818f9a56b3025b8"
+    },
+    "0000950170-23-018765": {
+      "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023018765/odfl-20230331.htm",
+      "sha256": "bc3e0b05d32ffb8ed09208bd155eff95324e2daea5e48a3aa564ea9c8fc2c545"
+    },
+    "0000950170-23-038553": {
+      "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023038553/odfl-20230630.htm",
+      "sha256": "40be3dae003df00e3bd50681714bf8bb0c0ed8b62c39b323afdbac4be9ba05c6"
+    },
+    "0001104659-23-049995": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923049995/slab-20230401x10q.htm",
+      "sha256": "fa5a41d02a36d03f945f1e1f9a5ed7c6b6d2a2eefe2a0271c78eecbb45618d86"
+    },
+    "0001104659-23-084101": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923084101/slab-20230701x10q.htm",
+      "sha256": "04ad7e1ed7df680ca7572b5fc2e4eadaa072aaad98632d257a9d78cdd73fbd74"
+    },
+    "0001124796-22-000060": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479622000060/lasr-20220331.htm",
+      "sha256": "bd25369e9cd7a1cb2efcc97c7c7cc43477c3f580e7ec51d1722e4d124a5fe861"
+    },
+    "0001124796-22-000116": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479622000116/lasr-20220630.htm",
+      "sha256": "3180b4bb363241d387a2bb2915f638c4fa66575a588c23e160d68de9753b34f6"
+    },
+    "0001158463-23-000015": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000015/jblu-20230630.htm",
+      "sha256": "94b56f6dd4789d012e24a4538c458d370f03e014297d95af8368ced3ff290258"
+    },
+    "0001158463-23-000022": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000022/jblu-20230930.htm",
+      "sha256": "d6a304adcedf865e46f5711010af0214b0a5d3ee903703a9ca31495feffa20cf"
+    },
+    "0001402057-22-000159": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205722000159/cdw-20220930.htm",
+      "sha256": "b6dbf5a57904d52beb7854e733f37a91915aabfc7295fb800cdfe97f4ee247cd"
+    },
+    "0001402057-23-000052": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm",
+      "sha256": "cdc06dc1f56b2dd1abfff809b2a0fca949fdc3425c5e518a3cb717fa08061098"
+    },
+    "0001402057-23-000091": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000091/cdw-20230331.htm",
+      "sha256": "cf719c0dd439332edb164fff84b4f628e1641697d876430edbc9a62cb85c1501"
+    },
+    "0001463101-23-000140": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000140/enph-20230630.htm",
+      "sha256": "592df3576b60a3410e58d29637004cf86d1e6ee2b07ba3cd16db6f40ee6b0e44"
+    },
+    "0001463101-23-000165": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000165/enph-20230930.htm",
+      "sha256": "293be528bc6db5d31cb4b177e250ec64adfc7902accf1e177b96bd0ae18a90de"
+    },
+    "0001493152-22-022882": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315222022882/form10-q.htm",
+      "sha256": "663934f5a04453dfd29cdb98e846b45d1fa478a56c3fd39800a5066cafa90ac4"
+    },
+    "0001493152-22-032238": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315222032238/form10-q.htm",
+      "sha256": "aef3277361354314e97e0d3c163c1199612f263a4797574de9049537577b1770"
+    },
+    "0001493152-23-017571": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315223017571/form10-k.htm",
+      "sha256": "488103852c80224508ecfe7d102cd47b8dd0bbe86c6e985e6e6d4a13d1283941"
+    },
+    "0001493152-23-019742": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315223019742/form10-q.htm",
+      "sha256": "4fc2c73c4f2b6cbde9c2bffc0f948ec7e5aabec363576f744e48f77b8fee83c8"
+    },
+    "0001493152-23-040116": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315223040116/form10-q.htm",
+      "sha256": "6c218c8926dfec2d132bebf6f67e369dd4fca83c08b8752c7aba07b055c5ffc4"
+    },
+    "0001493152-24-012505": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315224012505/form10-k.htm",
+      "sha256": "fabf48aa604deee8c71780cb3d2c3d82344a3876d9b87812d73ed7eaacb2a1fc"
+    },
+    "0001498710-23-000163": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000163/save-20230630.htm",
+      "sha256": "fb5c50d6a531f1844b2ac378b3c087becf2c7a45cdbeeb65d3e9ff2895c68202"
+    },
+    "0001498710-23-000191": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000191/save-20230930.htm",
+      "sha256": "51d593c84710d8a40a19cb0000357126a18c6fa3bf7e128afd74df8d38c57078"
+    },
+    "0001558370-22-016112": {
+      "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837022016112/matx-20220930x10q.htm",
+      "sha256": "cf7b8b1a904f16c98b9d59f91a05265ebdd73850b7108fc47a4f0ac5e6c269fc"
+    },
+    "0001558370-23-001961": {
+      "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm",
+      "sha256": "091ef756117326aa755f9c8a3d786f6f0cd6e5729d237b12b4d664716292c459"
+    },
+    "0001558370-23-007986": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023007986/bki-20230331x10q.htm",
+      "sha256": "d5a0f7ad309a9a066ecff48335254200e64bcd8c81eb7548a158a8bf5be2c61e"
+    },
+    "0001558370-23-013080": {
+      "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023013080/bki-20230630x10q.htm",
+      "sha256": "209e5fd7ead9a4f344f2d92c62086a9466d93f7d5fedd421c45d8f06e7c30338"
+    },
+    "0001562762-22-000372": {
+      "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276222000372/cato21qtr2q.htm",
+      "sha256": "dd1af1311f089fb44b30974a86ee94574c4aedae97c53cdff23c3589e16983c2"
+    },
+    "0001562762-22-000478": {
+      "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276222000478/cato22qtr3q.htm",
+      "sha256": "287cc2ebb2254ea9d9206c4e55a39a099b13d19f9cb9d96f7bad3a775530c92b"
+    },
+    "0001562762-23-000126": {
+      "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm",
+      "sha256": "0f2943428388287b64ec3748772a7d70d093c4631914d746ea9ab65a9e538a7d"
+    },
+    "0001562762-23-000267": {
+      "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000267/cato23qtr1q.htm",
+      "sha256": "aefbb9107e7c44be75a6d0d82074647412c79e981f9a0d394431085f012227d5"
+    }
+  }
+}

@@ -1,0 +1,1193 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "fd33b2acbfce3808bd3c920d365ec8b175c1fe318e0a1e012c97f3d01ef9cbcb",
+    "d05c9bfd9f7d564ede1fdf0e8f03dff97e928e74904336878a3470101c3bc523",
+    "a07a22c7e9f9f68e28f0349d947d4389be23784e3a091d5c74ce942b41287c81"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-55260",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "formulas": {
+          "C1": "=FLOOR.MATH(B1,10)+IF(MOD(B1,10)>5,10,5)",
+          "C2": "=MROUND(B2,5)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B2",
+            "range_size": 4,
+            "cells": [
+              [
+                "A1",
+                "350"
+              ],
+              [
+                "B1",
+                "367.5"
+              ],
+              [
+                "A2",
+                "475"
+              ],
+              [
+                "B2",
+                "498.75"
+              ]
+            ],
+            "total": 4,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B2"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:B2",
+            "range_size": 4,
+            "cells": [
+              [
+                "A1",
+                "350"
+              ],
+              [
+                "B1",
+                "367.5"
+              ],
+              [
+                "A2",
+                "475"
+              ],
+              [
+                "B2",
+                "498.75"
+              ]
+            ],
+            "total": 4,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 95134,
+        "cached_input_tokens": 59520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2118,
+        "reasoning_output_tokens": 1340
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55535",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "A1:A17",
+            "formula": "=IF(B1=\"\",\"\",\"KC-GPGY-\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,LEFT(B1,2)&\"BC*\")+COUNTIF($B$1:B1,LEFT(B1,2)&\"BC*\")*0,\"0000\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B17",
+            "range_size": 34,
+            "cells": [
+              [
+                "A1",
+                "KC-GPGY-210001"
+              ],
+              [
+                "B1",
+                "21BC000104"
+              ],
+              [
+                "A2",
+                "KC-GPGY-210002"
+              ],
+              [
+                "B2",
+                "21BC001005"
+              ],
+              [
+                "A3",
+                "KC-GPGY-210003"
+              ],
+              [
+                "B3",
+                "21BC004573"
+              ],
+              [
+                "A4",
+                "KC-GPGY-210004"
+              ],
+              [
+                "B4",
+                "21BC005500"
+              ],
+              [
+                "A5",
+                "KC-GPGY-200005"
+              ],
+              [
+                "B5",
+                "20BC007572"
+              ],
+              [
+                "A6",
+                "KC-GPGY-210006"
+              ],
+              [
+                "B6",
+                "21BC006000"
+              ],
+              [
+                "A7",
+                "KC-GPGY-210007"
+              ],
+              [
+                "B7",
+                "21BC008759"
+              ],
+              [
+                "A8",
+                "KC-GPGY-210008"
+              ],
+              [
+                "B8",
+                "21BC009145"
+              ],
+              [
+                "B9",
+                "20BC010010"
+              ],
+              [
+                "B10",
+                "21BC009200"
+              ],
+              [
+                "B11",
+                "21BC009578"
+              ],
+              [
+                "B12",
+                "21BC009912"
+              ],
+              [
+                "B13",
+                "20BC006824"
+              ],
+              [
+                "B14",
+                "20BC003482"
+              ],
+              [
+                "B15",
+                "20BC010425"
+              ],
+              [
+                "B16",
+                "20BC010987"
+              ],
+              [
+                "B17",
+                "20BC011234"
+              ]
+            ],
+            "total": 25,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 95134,
+        "cached_input_tokens": 59520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2118,
+        "reasoning_output_tokens": 1340
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-55609",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "D3:M8",
+            "formula": "=INDEX($D$12:$M$17,MATCH(COLUMN()-COLUMN($D$2)+1,$D$11:$M$11,0),MATCH($D$2,$D$2:$M$2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D2:M8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D2:M8",
+            "range_size": 70,
+            "cells": [
+              [
+                "D2",
+                "2"
+              ],
+              [
+                "E2",
+                "5"
+              ],
+              [
+                "F2",
+                "10"
+              ],
+              [
+                "G2",
+                "9"
+              ],
+              [
+                "H2",
+                "8"
+              ],
+              [
+                "I2",
+                "7"
+              ],
+              [
+                "J2",
+                "6"
+              ],
+              [
+                "K2",
+                "4"
+              ],
+              [
+                "L2",
+                "1"
+              ],
+              [
+                "M2",
+                "3"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 60
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D11:M17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D11:M17",
+            "range_size": 70,
+            "cells": [
+              [
+                "D11",
+                "1"
+              ],
+              [
+                "E11",
+                "2"
+              ],
+              [
+                "F11",
+                "3"
+              ],
+              [
+                "G11",
+                "4"
+              ],
+              [
+                "H11",
+                "5"
+              ],
+              [
+                "I11",
+                "6"
+              ],
+              [
+                "J11",
+                "7"
+              ],
+              [
+                "K11",
+                "8"
+              ],
+              [
+                "L11",
+                "9"
+              ],
+              [
+                "M11",
+                "10"
+              ],
+              [
+                "D12",
+                "2"
+              ],
+              [
+                "E12",
+                "3"
+              ],
+              [
+                "F12",
+                "4"
+              ],
+              [
+                "G12",
+                "5"
+              ],
+              [
+                "H12",
+                "6"
+              ],
+              [
+                "I12",
+                "7"
+              ],
+              [
+                "J12",
+                "8"
+              ],
+              [
+                "K12",
+                "9"
+              ],
+              [
+                "L12",
+                "10"
+              ],
+              [
+                "M12",
+                "11"
+              ],
+              [
+                "D13",
+                "3"
+              ],
+              [
+                "E13",
+                "4"
+              ],
+              [
+                "F13",
+                "5"
+              ],
+              [
+                "G13",
+                "6"
+              ],
+              [
+                "H13",
+                "7"
+              ],
+              [
+                "I13",
+                "8"
+              ],
+              [
+                "J13",
+                "9"
+              ],
+              [
+                "K13",
+                "10"
+              ],
+              [
+                "L13",
+                "11"
+              ],
+              [
+                "M13",
+                "12"
+              ],
+              [
+                "D14",
+                "4"
+              ],
+              [
+                "E14",
+                "5"
+              ],
+              [
+                "F14",
+                "6"
+              ],
+              [
+                "G14",
+                "7"
+              ],
+              [
+                "H14",
+                "8"
+              ],
+              [
+                "I14",
+                "9"
+              ],
+              [
+                "J14",
+                "10"
+              ],
+              [
+                "K14",
+                "11"
+              ],
+              [
+                "L14",
+                "12"
+              ],
+              [
+                "M14",
+                "13"
+              ],
+              [
+                "D15",
+                "5"
+              ],
+              [
+                "E15",
+                "6"
+              ],
+              [
+                "F15",
+                "7"
+              ],
+              [
+                "G15",
+                "8"
+              ],
+              [
+                "H15",
+                "9"
+              ],
+              [
+                "I15",
+                "10"
+              ],
+              [
+                "J15",
+                "11"
+              ],
+              [
+                "K15",
+                "12"
+              ],
+              [
+                "L15",
+                "13"
+              ],
+              [
+                "M15",
+                "14"
+              ],
+              [
+                "D16",
+                "6"
+              ],
+              [
+                "E16",
+                "7"
+              ],
+              [
+                "F16",
+                "8"
+              ],
+              [
+                "G16",
+                "9"
+              ],
+              [
+                "H16",
+                "10"
+              ],
+              [
+                "I16",
+                "11"
+              ],
+              [
+                "J16",
+                "12"
+              ],
+              [
+                "K16",
+                "13"
+              ],
+              [
+                "L16",
+                "14"
+              ],
+              [
+                "M16",
+                "15"
+              ],
+              [
+                "D17",
+                "7"
+              ],
+              [
+                "E17",
+                "8"
+              ],
+              [
+                "F17",
+                "9"
+              ],
+              [
+                "G17",
+                "10"
+              ],
+              [
+                "H17",
+                "11"
+              ],
+              [
+                "I17",
+                "12"
+              ],
+              [
+                "J17",
+                "13"
+              ],
+              [
+                "K17",
+                "14"
+              ],
+              [
+                "L17",
+                "15"
+              ],
+              [
+                "M17",
+                "16"
+              ]
+            ],
+            "total": 70,
+            "truncated": false,
+            "blank_count": 0
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D3:M8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D3:M8",
+            "range_size": 60,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 60
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D3:M8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Φύλλο1",
+            "range": "D3:M8",
+            "range_size": 60,
+            "cells": [],
+            "total": 0,
+            "truncated": false,
+            "blank_count": 60
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 95134,
+        "cached_input_tokens": 59520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2118,
+        "reasoning_output_tokens": 1340
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-56427",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-019",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:S28",
+            "formula": "=IF(OR(COUNTIF($A$2:A2,A2)=0,B2>C2,G$1>\"#\"&C2),\"\",IF($B2=1,INDEX($G:$G,MATCH($A2,$A:$A,0)+COLUMN()-COLUMN($H2)),\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "A2:C28"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "A2:C28",
+            "range_size": 81,
+            "cells": [
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "1"
+              ],
+              [
+                "C2",
+                "5"
+              ],
+              [
+                "A3",
+                "1"
+              ],
+              [
+                "B3",
+                "2"
+              ],
+              [
+                "A4",
+                "1"
+              ],
+              [
+                "B4",
+                "3"
+              ],
+              [
+                "A5",
+                "1"
+              ],
+              [
+                "B5",
+                "4"
+              ],
+              [
+                "A6",
+                "1"
+              ],
+              [
+                "B6",
+                "5"
+              ],
+              [
+                "A7",
+                "2"
+              ],
+              [
+                "B7",
+                "1"
+              ],
+              [
+                "C7",
+                "8"
+              ],
+              [
+                "A8",
+                "2"
+              ],
+              [
+                "B8",
+                "2"
+              ],
+              [
+                "A9",
+                "2"
+              ],
+              [
+                "B9",
+                "3"
+              ],
+              [
+                "A10",
+                "2"
+              ],
+              [
+                "B10",
+                "4"
+              ],
+              [
+                "A11",
+                "2"
+              ],
+              [
+                "B11",
+                "5"
+              ],
+              [
+                "A12",
+                "2"
+              ],
+              [
+                "B12",
+                "6"
+              ],
+              [
+                "A13",
+                "2"
+              ],
+              [
+                "B13",
+                "7"
+              ],
+              [
+                "A14",
+                "2"
+              ],
+              [
+                "B14",
+                "8"
+              ],
+              [
+                "A15",
+                "3"
+              ],
+              [
+                "B15",
+                "1"
+              ],
+              [
+                "C15",
+                "14"
+              ],
+              [
+                "A16",
+                "3"
+              ],
+              [
+                "B16",
+                "2"
+              ],
+              [
+                "A17",
+                "3"
+              ],
+              [
+                "B17",
+                "3"
+              ],
+              [
+                "A18",
+                "3"
+              ],
+              [
+                "B18",
+                "4"
+              ],
+              [
+                "A19",
+                "3"
+              ],
+              [
+                "B19",
+                "5"
+              ],
+              [
+                "A20",
+                "3"
+              ],
+              [
+                "B20",
+                "6"
+              ],
+              [
+                "A21",
+                "3"
+              ],
+              [
+                "B21",
+                "7"
+              ],
+              [
+                "A22",
+                "3"
+              ],
+              [
+                "B22",
+                "8"
+              ],
+              [
+                "A23",
+                "3"
+              ],
+              [
+                "B23",
+                "9"
+              ],
+              [
+                "A24",
+                "3"
+              ],
+              [
+                "B24",
+                "10"
+              ],
+              [
+                "A25",
+                "3"
+              ],
+              [
+                "B25",
+                "11"
+              ],
+              [
+                "A26",
+                "3"
+              ],
+              [
+                "B26",
+                "12"
+              ],
+              [
+                "A27",
+                "3"
+              ],
+              [
+                "B27",
+                "13"
+              ],
+              [
+                "A28",
+                "3"
+              ],
+              [
+                "B28",
+                "14"
+              ]
+            ],
+            "total": 57,
+            "truncated": false,
+            "blank_count": 24
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "G2:G28"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "G2:G28",
+            "range_size": 27,
+            "cells": [
+              [
+                "G2",
+                "1.3"
+              ],
+              [
+                "G3",
+                "5.5"
+              ],
+              [
+                "G4",
+                "21.5"
+              ],
+              [
+                "G5",
+                "5.5"
+              ],
+              [
+                "G6",
+                "28.4"
+              ],
+              [
+                "G7",
+                "11.4"
+              ],
+              [
+                "G8",
+                "7.8"
+              ],
+              [
+                "G9",
+                "1.6"
+              ],
+              [
+                "G10",
+                "4.7"
+              ],
+              [
+                "G11",
+                "60.2"
+              ],
+              [
+                "G12",
+                "11.6"
+              ],
+              [
+                "G14",
+                "50.1"
+              ],
+              [
+                "G15",
+                "8.0"
+              ],
+              [
+                "G17",
+                "9.9"
+              ],
+              [
+                "G18",
+                "46.3"
+              ],
+              [
+                "G19",
+                "1.6"
+              ],
+              [
+                "G21",
+                "35.9"
+              ],
+              [
+                "G22",
+                "13.7"
+              ],
+              [
+                "G23",
+                "5.6"
+              ],
+              [
+                "G25",
+                "31.7"
+              ]
+            ],
+            "total": 20,
+            "truncated": false,
+            "blank_count": 7
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:S28"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:S28",
+            "range_size": 324,
+            "cells": [
+              [
+                "H2",
+                "1.3"
+              ],
+              [
+                "I2",
+                "5.5"
+              ],
+              [
+                "J2",
+                "21.5"
+              ],
+              [
+                "K2",
+                "5.5"
+              ],
+              [
+                "L2",
+                "28.4"
+              ],
+              [
+                "H7",
+                "11.4"
+              ],
+              [
+                "I7",
+                "7.8"
+              ],
+              [
+                "J7",
+                "1.6"
+              ],
+              [
+                "K7",
+                "4.7"
+              ],
+              [
+                "L7",
+                "60.2"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 314
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:S28"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Taul1",
+            "range": "H2:S28",
+            "range_size": 324,
+            "cells": [
+              [
+                "H2",
+                "1.3"
+              ],
+              [
+                "I2",
+                "5.5"
+              ],
+              [
+                "J2",
+                "21.5"
+              ],
+              [
+                "K2",
+                "5.5"
+              ],
+              [
+                "L2",
+                "28.4"
+              ],
+              [
+                "H7",
+                "11.4"
+              ],
+              [
+                "I7",
+                "7.8"
+              ],
+              [
+                "J7",
+                "1.6"
+              ],
+              [
+                "K7",
+                "4.7"
+              ],
+              [
+                "L7",
+                "60.2"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 314
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 4,
+      "usage": {
+        "input_tokens": 95134,
+        "cached_input_tokens": 59520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2118,
+        "reasoning_output_tokens": 1340
+      },
+      "model_calls": 3
+    }
+  ]
+}

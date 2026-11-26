@@ -36,6 +36,8 @@ Roadmap status: frozen after Phase 24.
 
 The Agentic RL extension (environment, reward, and GRPO loop) is documented in `docs/agentic_rl_design.md`. It does not change the frozen recorded-evidence numbers. GPU post-training results are not yet run.
 
+Completed benchmark extensions include the original A1 top-five regression, synthetic financial retrieval sets, the 100-development/500-test independent tool-use release, the three-model workbook study and the dated early-warning evaluation. Each study has its own held-out population and scoring rules. [Benchmark guide](BENCHMARKS.md)
+
 Deferred:
 - Broader optimization and coding suites beyond initial deterministic slices
 - Live multi-provider model experiments with credentials supplied outside default tests

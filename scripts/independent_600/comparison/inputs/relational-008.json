@@ -1,0 +1,248 @@
+[
+  {
+    "task_id": "decision-audit-placeholder-counts-before-import",
+    "tool": "sqlite.query",
+    "instruction": "Construct placeholder_repairs.csv from two offline token inventories for one source file and its proposed translation. A row records one occurrence of a named placeholder in the indicated message. Identical rows represent separate occurrences. All cells are present. The inventories are complete, so a missing message and token combination has count zero on that side. Token order may change freely. Compare exact token names within each message across the union of both inventories. Emit one row for every count mismatch with columns message_code, token_name, count_delta. The signed integer count_delta is the number of occurrences to add to the translation, with a negative value indicating removals. Sort by message_code and then token_name, both binary ascending. Messages with no tokens on either side require no rows. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "source_tokens": {
+        "columns": [
+          "message_code TEXT",
+          "token_name TEXT"
+        ],
+        "rows": [
+          [
+            "banner",
+            "item"
+          ],
+          [
+            "banner",
+            "item"
+          ],
+          [
+            "banner",
+            "bin"
+          ],
+          [
+            "footer",
+            "qty"
+          ],
+          [
+            "notice",
+            "day"
+          ],
+          [
+            "notice",
+            "hour"
+          ]
+        ]
+      },
+      "translated_tokens": {
+        "columns": [
+          "message_code TEXT",
+          "token_name TEXT"
+        ],
+        "rows": [
+          [
+            "notice",
+            "hour"
+          ],
+          [
+            "banner",
+            "item"
+          ],
+          [
+            "banner",
+            "bin"
+          ],
+          [
+            "footer",
+            "qty"
+          ],
+          [
+            "footer",
+            "qty"
+          ],
+          [
+            "notice",
+            "day"
+          ],
+          [
+            "title",
+            "item"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "message_code",
+      "token_name",
+      "count_delta"
+    ]
+  },
+  {
+    "task_id": "decision-balance-crossover-packing-times",
+    "tool": "sqlite.query",
+    "instruction": "A packing station tested two tray layouts on matched lots. Each trial has one row, and each timing measures seconds to pack the same number of cartons. Sequence OT means the old layout ran first, and TO means the trial layout ran first. A NULL timing means the run was interrupted. Exclude the whole pair if either timing is missing. For each station, estimate seconds saved per lot by taking the mean of old_seconds minus trial_seconds within each sequence, then giving the two sequence means equal weight. Report only stations with at least one complete pair in each sequence. Keep fractional seconds without rounding. Return station_code, complete_pairs, saved_seconds in that column order, sorted by station_code ascending. Retain all qualifying stations even when their estimates tie. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "packing_trials": {
+        "columns": [
+          "lot_code TEXT",
+          "station_code TEXT",
+          "run_sequence TEXT",
+          "old_seconds INTEGER",
+          "trial_seconds INTEGER"
+        ],
+        "rows": [
+          [
+            "L1",
+            "A",
+            "OT",
+            100,
+            82
+          ],
+          [
+            "L2",
+            "A",
+            "OT",
+            90,
+            84
+          ],
+          [
+            "L3",
+            "A",
+            "TO",
+            80,
+            84
+          ],
+          [
+            "L4",
+            "A",
+            "TO",
+            79,
+            null
+          ],
+          [
+            "L5",
+            "B",
+            "OT",
+            100,
+            95
+          ],
+          [
+            "L6",
+            "B",
+            "TO",
+            null,
+            93
+          ],
+          [
+            "L7",
+            "A",
+            "OT",
+            94,
+            85
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "station_code",
+      "complete_pairs",
+      "saved_seconds"
+    ]
+  },
+  {
+    "task_id": "decision-balance-invoice-across-directed-quotes",
+    "tool": "sqlite.query",
+    "instruction": "For each invoice, desk A first sells the entire USD deposit and credits EUR using its USD-base, EUR-counter bid. Round the credit down to whole euro cents. Desk B then buys the exact remaining EUR at its independently traded EUR-base, USD-counter ask. Round the required additional USD payment up to whole US cents. Each quote gives counter currency units per base currency unit, scaled by 10000. The bid applies when selling the base and the ask when buying it. Both currencies have 100 cents per unit. Each desk has one quote, deposits are positive, and each first-leg credit is below the invoice amount. Return invoice_id, credited_eur_cents, remaining_eur_cents, and topup_usd_cents in that order, sorted by unique invoice_id in ascending binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "invoices": {
+        "columns": [
+          "invoice_id TEXT",
+          "due_eur_cents INTEGER",
+          "deposit_usd_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "tile",
+            10000,
+            10000
+          ]
+        ]
+      },
+      "quotes": {
+        "columns": [
+          "desk TEXT",
+          "base TEXT",
+          "counter TEXT",
+          "bid_scaled INTEGER",
+          "ask_scaled INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "USD",
+            "EUR",
+            9000,
+            9100
+          ],
+          [
+            "B",
+            "EUR",
+            "USD",
+            10950,
+            11200
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "invoice_id",
+      "credited_eur_cents",
+      "remaining_eur_cents",
+      "topup_usd_cents"
+    ]
+  },
+  {
+    "task_id": "decision-balance-three-gallery-sessions",
+    "tool": "sqlite.query",
+    "instruction": "Assign one exhibit demonstration to each of the early, middle, and late sessions in a single gallery. A demonstration can appear only once. Each session column gives the predicted number of visitors for that demonstration at that time. NULL means the demonstration is unavailable for that session. Demonstration codes are unique and non-null. Among complete feasible schedules, maximize the attendance of the least-attended session, then maximize the sum of session attendances. Break remaining ties by the lexicographically smallest sequence of early, middle, and late codes under SQLite BINARY order. Return one row with columns early_show, middle_show, late_show, smallest_audience, day_visits. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "demo_forecast": {
+        "columns": [
+          "demo_code TEXT",
+          "early_visits INTEGER",
+          "middle_visits INTEGER",
+          "late_visits INTEGER"
+        ],
+        "rows": [
+          [
+            "fold",
+            20,
+            7,
+            null
+          ],
+          [
+            "glaze",
+            8,
+            null,
+            10
+          ],
+          [
+            "weave",
+            null,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "early_show",
+      "middle_show",
+      "late_show",
+      "smallest_audience",
+      "day_visits"
+    ]
+  }
+]

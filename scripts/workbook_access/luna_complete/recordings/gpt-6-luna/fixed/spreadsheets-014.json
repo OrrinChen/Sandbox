@@ -1,0 +1,1082 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "680fbaad58a0e16d1c2851260eb46911def7f7bf63dbb9bf7ac2273619d9dc7d",
+    "c57c68a86ede72d6a90f9d7fd20c75db39fa9ed89101ad996055078984eba7a1",
+    "4390e4ed3e9b6b22cc2359bfa6054920e4666f5ed821e03c7a4c75073c046c82"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-48983",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "M6:S19",
+            "formula": "=INDEX($C$6:$I$19,MATCH($L6,$B$6:$B$19,0),MATCH(M$5,$C$5:$I$5,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "A4:S19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Hárok1",
+            "range": "A4:S19",
+            "range_size": 304,
+            "cells": [
+              [
+                "C4",
+                "Category"
+              ],
+              [
+                "M4",
+                "Category"
+              ],
+              [
+                "C5",
+                "HDD"
+              ],
+              [
+                "D5",
+                "SPD"
+              ],
+              [
+                "E5",
+                "FFI"
+              ],
+              [
+                "F5",
+                "ADW"
+              ],
+              [
+                "G5",
+                "HDW"
+              ],
+              [
+                "H5",
+                "LAD"
+              ],
+              [
+                "I5",
+                "TWC"
+              ],
+              [
+                "M5",
+                "TWC"
+              ],
+              [
+                "N5",
+                "LAD"
+              ],
+              [
+                "O5",
+                "HDW"
+              ],
+              [
+                "P5",
+                "ADW"
+              ],
+              [
+                "Q5",
+                "FFI"
+              ],
+              [
+                "R5",
+                "SPD"
+              ],
+              [
+                "S5",
+                "HDD"
+              ],
+              [
+                "A6",
+                "Brand"
+              ],
+              [
+                "B6",
+                "Persil"
+              ],
+              [
+                "E6",
+                "2005"
+              ],
+              [
+                "K6",
+                "Brand"
+              ],
+              [
+                "L6",
+                "Persil"
+              ],
+              [
+                "B7",
+                "Bref"
+              ],
+              [
+                "C7",
+                "730"
+              ],
+              [
+                "H7",
+                "4575"
+              ],
+              [
+                "L7",
+                "Silan"
+              ],
+              [
+                "B8",
+                "Cif"
+              ],
+              [
+                "C8",
+                "3772"
+              ],
+              [
+                "H8",
+                "3867"
+              ],
+              [
+                "I8",
+                "3121"
+              ],
+              [
+                "L8",
+                "Pur"
+              ],
+              [
+                "B9",
+                "Clin"
+              ],
+              [
+                "I9",
+                "2269"
+              ],
+              [
+                "L9",
+                "Bref"
+              ],
+              [
+                "B10",
+                "Coccolino"
+              ],
+              [
+                "E10",
+                "678"
+              ],
+              [
+                "L10",
+                "Bloo"
+              ],
+              [
+                "B11",
+                "Domestos"
+              ],
+              [
+                "C11",
+                "25"
+              ],
+              [
+                "H11",
+                "8416"
+              ],
+              [
+                "L11",
+                "Clin"
+              ],
+              [
+                "B12",
+                "Finish"
+              ],
+              [
+                "F12",
+                "7647"
+              ],
+              [
+                "B13",
+                "Jar"
+              ],
+              [
+                "F13",
+                "5922"
+              ],
+              [
+                "G13",
+                "2903"
+              ],
+              [
+                "B14",
+                "Lenor"
+              ],
+              [
+                "E14",
+                "7636"
+              ],
+              [
+                "B15",
+                "Pur"
+              ],
+              [
+                "G15",
+                "8913"
+              ],
+              [
+                "B16",
+                "Silan"
+              ],
+              [
+                "E16",
+                "5531"
+              ],
+              [
+                "B17",
+                "TS"
+              ],
+              [
+                "G17",
+                "2502"
+              ],
+              [
+                "H17",
+                "7343"
+              ],
+              [
+                "B18",
+                "Dylon"
+              ],
+              [
+                "H18",
+                "18217"
+              ],
+              [
+                "B19",
+                "Bloo"
+              ],
+              [
+                "I19",
+                "1230"
+              ]
+            ],
+            "total": 58,
+            "truncated": false,
+            "blank_count": 246
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 98953,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1636,
+        "reasoning_output_tokens": 940
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49246",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B14",
+            "formula": "=VLOOKUP(IF(A2=\"\",LOOKUP(2,1/($A$2:A2<>\"\"),$A$2:A2),A2),$J$2:$K$4,2,FALSE)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:K14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:K14",
+            "range_size": 154,
+            "cells": [
+              [
+                "A1",
+                "Outlet Number"
+              ],
+              [
+                "B1",
+                "Outlet "
+              ],
+              [
+                "C1",
+                "Time\n"
+              ],
+              [
+                "D1",
+                "Date"
+              ],
+              [
+                "E1",
+                "Receipt Number"
+              ],
+              [
+                "F1",
+                "Value"
+              ],
+              [
+                "J1",
+                "Outlet #"
+              ],
+              [
+                "K1",
+                "Outlet"
+              ],
+              [
+                "A2",
+                "1062929"
+              ],
+              [
+                "B2",
+                "Restaurant A"
+              ],
+              [
+                "C2",
+                "Lunch"
+              ],
+              [
+                "D2",
+                "22OCT2021"
+              ],
+              [
+                "E2",
+                "1234xxxxxxxx4321"
+              ],
+              [
+                "F2",
+                "81"
+              ],
+              [
+                "J2",
+                "1062929"
+              ],
+              [
+                "K2",
+                "Restaurant A"
+              ],
+              [
+                "B3",
+                "#N/A"
+              ],
+              [
+                "C3",
+                "Lunch"
+              ],
+              [
+                "D3",
+                "22OCT2021"
+              ],
+              [
+                "E3",
+                "1234xxxxxxxx4322"
+              ],
+              [
+                "F3",
+                "81"
+              ],
+              [
+                "J3",
+                "7195746"
+              ],
+              [
+                "K3",
+                "Restaurant B"
+              ],
+              [
+                "B4",
+                "#N/A"
+              ],
+              [
+                "C4",
+                "Dinner"
+              ],
+              [
+                "D4",
+                "22OCT2021"
+              ],
+              [
+                "E4",
+                "1234xxxxxxxx4323"
+              ],
+              [
+                "F4",
+                "81"
+              ],
+              [
+                "J4",
+                "7195753"
+              ],
+              [
+                "K4",
+                "Restaurant C"
+              ],
+              [
+                "B5",
+                "#N/A"
+              ],
+              [
+                "C5",
+                "Dinner"
+              ],
+              [
+                "D5",
+                "22OCT2021"
+              ],
+              [
+                "E5",
+                "1234xxxxxxxx4324"
+              ],
+              [
+                "F5",
+                "81"
+              ],
+              [
+                "A6",
+                "7195746"
+              ],
+              [
+                "B6",
+                "Restaurant B"
+              ],
+              [
+                "C6",
+                "Lunch"
+              ],
+              [
+                "D6",
+                "22OCT2021"
+              ],
+              [
+                "E6",
+                "1234xxxxxxxx4325"
+              ],
+              [
+                "F6",
+                "24.15"
+              ],
+              [
+                "B7",
+                "#N/A"
+              ],
+              [
+                "C7",
+                "Lunch"
+              ],
+              [
+                "D7",
+                "22OCT2021"
+              ],
+              [
+                "E7",
+                "1234xxxxxxxx4326"
+              ],
+              [
+                "F7",
+                "100.05"
+              ],
+              [
+                "B8",
+                "#N/A"
+              ],
+              [
+                "C8",
+                "Lunch"
+              ],
+              [
+                "D8",
+                "22OCT2021"
+              ],
+              [
+                "E8",
+                "1234xxxxxxxx4327"
+              ],
+              [
+                "F8",
+                "307.05"
+              ],
+              [
+                "B9",
+                "#N/A"
+              ],
+              [
+                "C9",
+                "Dinner"
+              ],
+              [
+                "D9",
+                "22OCT2021"
+              ],
+              [
+                "E9",
+                "1234xxxxxxxx4328"
+              ],
+              [
+                "F9",
+                "235.75"
+              ],
+              [
+                "B10",
+                "#N/A"
+              ],
+              [
+                "C10",
+                "Dinner"
+              ],
+              [
+                "D10",
+                "22OCT2021"
+              ],
+              [
+                "E10",
+                "1234xxxxxxxx4329"
+              ],
+              [
+                "F10",
+                "225.11"
+              ],
+              [
+                "A11",
+                "7195753"
+              ],
+              [
+                "B11",
+                "Restaurant C"
+              ],
+              [
+                "C11",
+                "Lunch"
+              ],
+              [
+                "D11",
+                "22OCT2021"
+              ],
+              [
+                "E11",
+                "1234xxxxxxxx4330"
+              ],
+              [
+                "F11",
+                "39.1"
+              ],
+              [
+                "B12",
+                "#N/A"
+              ],
+              [
+                "C12",
+                "Lunch"
+              ],
+              [
+                "D12",
+                "22OCT2021"
+              ],
+              [
+                "E12",
+                "1234xxxxxxxx4331"
+              ],
+              [
+                "F12",
+                "44.28"
+              ],
+              [
+                "B13",
+                "#N/A"
+              ],
+              [
+                "C13",
+                "Dinner"
+              ],
+              [
+                "D13",
+                "22OCT2021"
+              ],
+              [
+                "E13",
+                "1234xxxxxxxx4332"
+              ],
+              [
+                "F13",
+                "37.95"
+              ],
+              [
+                "B14",
+                "#N/A"
+              ],
+              [
+                "C14",
+                "Dinner"
+              ],
+              [
+                "D14",
+                "22OCT2021"
+              ]
+            ],
+            "total": 82,
+            "truncated": true,
+            "blank_count": 72
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 98953,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1636,
+        "reasoning_output_tokens": 940
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49300",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "fills": [
+          {
+            "range": "C2:C3",
+            "formula": "=INDEX(Data!$C$3:$AY$4,MATCH(A2,Data!$B$3:$B$4,0),MATCH(B2,Data!$C$2:$AY$2,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Data",
+            "range": "A2:H4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Data",
+            "range": "A2:H4",
+            "range_size": 24,
+            "cells": [
+              [
+                "C2",
+                "1"
+              ],
+              [
+                "D2",
+                "2"
+              ],
+              [
+                "E2",
+                "3"
+              ],
+              [
+                "F2",
+                "4"
+              ],
+              [
+                "G2",
+                "5"
+              ],
+              [
+                "H2",
+                "6"
+              ],
+              [
+                "B3",
+                "BM"
+              ],
+              [
+                "C3",
+                "5"
+              ],
+              [
+                "D3",
+                "10"
+              ],
+              [
+                "E3",
+                "15"
+              ],
+              [
+                "F3",
+                "20"
+              ],
+              [
+                "G3",
+                "20"
+              ],
+              [
+                "H3",
+                "25"
+              ]
+            ],
+            "total": 13,
+            "truncated": false,
+            "blank_count": 11
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Data",
+            "range": "AS2:AY4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Data",
+            "range": "AS2:AY4",
+            "range_size": 21,
+            "cells": [
+              [
+                "AS2",
+                "43"
+              ],
+              [
+                "AT2",
+                "44"
+              ],
+              [
+                "AU2",
+                "45"
+              ],
+              [
+                "AV2",
+                "46"
+              ],
+              [
+                "AW2",
+                "47"
+              ],
+              [
+                "AX2",
+                "48"
+              ],
+              [
+                "AY2",
+                ">48"
+              ]
+            ],
+            "total": 7,
+            "truncated": false,
+            "blank_count": 14
+          }
+        },
+        {
+          "round": 2,
+          "request": {
+            "op": "range",
+            "sheet": "Data",
+            "range": "B3:B4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Data",
+            "range": "B3:B4",
+            "range_size": 2,
+            "cells": [
+              [
+                "B3",
+                "BM"
+              ]
+            ],
+            "total": 1,
+            "truncated": false,
+            "blank_count": 1
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 3,
+      "usage": {
+        "input_tokens": 98953,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1636,
+        "reasoning_output_tokens": 940
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49455",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-014",
+      "submission": {
+        "formulas": {
+          "H3": "=SUMPRODUCT(COUNTIF(D6:D208,K1:K9),--(H6:H208<>\"\"))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C1:K15"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C1:K15",
+            "range_size": 135,
+            "cells": [
+              [
+                "E1",
+                "2021-10-31 00:00:00"
+              ],
+              [
+                "K1",
+                "Apple"
+              ],
+              [
+                "K2",
+                "Banana"
+              ],
+              [
+                "C3",
+                "203"
+              ],
+              [
+                "D3",
+                "137"
+              ],
+              [
+                "K3",
+                "Strawberry"
+              ],
+              [
+                "K4",
+                "Pear"
+              ],
+              [
+                "C5",
+                "Site ID"
+              ],
+              [
+                "D5",
+                "Cert Type"
+              ],
+              [
+                "H5",
+                "End Date"
+              ],
+              [
+                "K5",
+                "Orange"
+              ],
+              [
+                "C6",
+                "223361"
+              ],
+              [
+                "D6",
+                "Apple"
+              ],
+              [
+                "K6",
+                "Milk"
+              ],
+              [
+                "C7",
+                "223961"
+              ],
+              [
+                "D7",
+                "Apple"
+              ],
+              [
+                "H7",
+                "07/10/21"
+              ],
+              [
+                "K7",
+                "Bread"
+              ],
+              [
+                "C8",
+                "223080"
+              ],
+              [
+                "D8",
+                "Apple"
+              ],
+              [
+                "H8",
+                "04/10/21"
+              ],
+              [
+                "K8",
+                "Tea"
+              ],
+              [
+                "C9",
+                "223681"
+              ],
+              [
+                "D9",
+                "Newspaper"
+              ],
+              [
+                "K9",
+                "Stars"
+              ],
+              [
+                "C10",
+                "223483"
+              ],
+              [
+                "D10",
+                "Banana"
+              ],
+              [
+                "H10",
+                "12/10/21"
+              ],
+              [
+                "C11",
+                "222819"
+              ],
+              [
+                "D11",
+                "Apple"
+              ],
+              [
+                "H11",
+                "26/10/21"
+              ],
+              [
+                "C12",
+                "223572"
+              ],
+              [
+                "D12",
+                "Orange"
+              ],
+              [
+                "C13",
+                "224334"
+              ],
+              [
+                "D13",
+                "Orange"
+              ],
+              [
+                "H13",
+                "28/10/21"
+              ],
+              [
+                "C14",
+                "223337"
+              ],
+              [
+                "D14",
+                "Newspaper"
+              ],
+              [
+                "C15",
+                "222605"
+              ],
+              [
+                "D15",
+                "Apple"
+              ],
+              [
+                "H15",
+                "19/10/21"
+              ]
+            ],
+            "total": 41,
+            "truncated": false,
+            "blank_count": 94
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C195:K208"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "KPI 1",
+            "range": "C195:K208",
+            "range_size": 126,
+            "cells": [
+              [
+                "C207",
+                "224161"
+              ],
+              [
+                "C208",
+                "221405"
+              ]
+            ],
+            "total": 2,
+            "truncated": false,
+            "blank_count": 124
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 98953,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1636,
+        "reasoning_output_tokens": 940
+      },
+      "model_calls": 3
+    }
+  ]
+}

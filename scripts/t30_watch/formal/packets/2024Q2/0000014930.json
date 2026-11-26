@@ -1,0 +1,68 @@
+{
+  "wave": "2024Q2",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0000014930",
+  "issuer": "BRUNSWICK CORP",
+  "cutoff": "2024-03-01",
+  "projected_target_start": "2024-03-31",
+  "status": "complete",
+  "period_end": "2023-12-31",
+  "filing_date": "2024-02-16",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0000014930",
+    "issuer": "BRUNSWICK CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-K",
+        "date": "2024-02-16",
+        "text": "Net sales decreased 6.0 percent during 2023 when compared with 2022."
+      },
+      {
+        "id": "B",
+        "title": "10-K",
+        "date": "2024-02-16",
+        "text": "Navico Group segment's net sales decreased by $154.6 million or 14.5 percent in 2023 versus the prior year due to lower sales resulting from softer marine OEM orders and the continued weak RV manufacturing environment."
+      },
+      {
+        "id": "C",
+        "title": "10-K",
+        "date": "2024-02-16",
+        "text": "Gross margin percentage increased 10 basis points in 2022 when compared with 2021 driven by increased sales (620 bps) and acquisitions (60 bps), partially offset by higher manufacturing costs including material and labor inflation and inefficiencies caused by supply chain disruptions (670 bps)."
+      },
+      {
+        "id": "D",
+        "title": "10-K",
+        "date": "2024-02-16",
+        "text": "Sales in 2023 were below the prior year as higher discounts in select segments coupled with the impact of cautious wholesale ordering patterns by dealers, OEMs and retailers in the second half of the year were partially offset by successful new product momentum, positive mix and pricing."
+      },
+      {
+        "id": "E",
+        "title": "10-K",
+        "date": "2024-02-16",
+        "text": "Due to the factors described in the preceding paragraphs, operating earnings, net earnings from continuing operations, and diluted earnings per common share from continuing operations decreased during 2023."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-09-30",
+        "filed": "2023-11-01",
+        "reported_sales_usd": 1593600000,
+        "year_ago_reported_sales_usd": 1698200000,
+        "yoy_percent": "-6.1595"
+      },
+      {
+        "quarter_end": "2023-12-31",
+        "filed": "2024-02-16",
+        "reported_sales_usd": 1361900000,
+        "year_ago_reported_sales_usd": 1582700000,
+        "yoy_percent": "-13.9508"
+      }
+    ],
+    "status": "complete"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "binding": {
+    "input_sha256": "08d1f1e969344b7d9960a139824f17120369b6bb9b8c5c2042702f829cda89cb",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-49801\": {\n    \"formulas\": {\n      \"C1\": \"=LEFT(A1,2)&RIGHT(A1,5)\"\n    }\n  },\n  \"sheet-49857\": {\n    \"fills\": [\n      {\"range\":\"G4:G10\",\"formula\":\"=IF(F4=\\\"YES\\\",COUNTIF($F$4:F4,\\\"YES\\\"),0)\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-49859\": {\n    \"fills\": [\n      {\"range\":\"D12:Q23\",\"formula\":\"=IF(D$8<=D$9,IF(AND($C12>=D$8,$C12<=D$9),1,0),IF(OR($C12>=D$8,$C12<=D$9),1,0))\"}\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-50630\": {\n    \"fills\": [\n      {\"range\":\"C5:C6\",\"formula\":\"=TRIM(SUBSTITUTE(LEFT(A5,SEARCH(\\\"Added \\\",A5)-1),CHAR(160),\\\" \\\"))\"},\n      {\"range\":\"D5:D6\",\"formula\":\"=TRIM(SUBSTITUTE(MID(A5,SEARCH(\\\"Added \\\",A5)+6,SEARCH(\\\"Due \\\",A5)-SEARCH(\\\"Added \\\",A5)-6),CHAR(160),\\\" \\\"))\"},\n      {\"range\":\"E5:E6\",\"formula\":\"=DATEVALUE(TRIM(SUBSTITUTE(MID(A5,SEARCH(\\\"Due \\\",A5)+4,LEN(A5)),CHAR(160),\\\" \\\")))\"}\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-49801": {
+      "formulas": {
+        "C1": "=LEFT(A1,2)&RIGHT(A1,5)"
+      }
+    },
+    "sheet-49857": {
+      "fills": [
+        {
+          "range": "G4:G10",
+          "formula": "=IF(F4=\"YES\",COUNTIF($F$4:F4,\"YES\"),0)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-49859": {
+      "fills": [
+        {
+          "range": "D12:Q23",
+          "formula": "=IF(D$8<=D$9,IF(AND($C12>=D$8,$C12<=D$9),1,0),IF(OR($C12>=D$8,$C12<=D$9),1,0))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-50630": {
+      "fills": [
+        {
+          "range": "C5:C6",
+          "formula": "=TRIM(SUBSTITUTE(LEFT(A5,SEARCH(\"Added \",A5)-1),CHAR(160),\" \"))"
+        },
+        {
+          "range": "D5:D6",
+          "formula": "=TRIM(SUBSTITUTE(MID(A5,SEARCH(\"Added \",A5)+6,SEARCH(\"Due \",A5)-SEARCH(\"Added \",A5)-6),CHAR(160),\" \"))"
+        },
+        {
+          "range": "E5:E6",
+          "formula": "=DATEVALUE(TRIM(SUBSTITUTE(MID(A5,SEARCH(\"Due \",A5)+4,LEN(A5)),CHAR(160),\" \")))"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-6473-7d61-9757-36348067b203",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27063,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 485,
+    "reasoning_output_tokens": 127
+  }
+}

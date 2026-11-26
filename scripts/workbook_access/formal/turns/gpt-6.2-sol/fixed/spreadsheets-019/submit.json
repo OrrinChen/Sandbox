@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-019",
+    "stage": "submit",
+    "prompt_sha256": "4fca38c872660547abfb53237768eb9ed10649eb4ace51f19b621d7314a28493",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d9-dbe7-7ee3-89cb-8cc82fcd2693",
+    "raw": "{\n  \"sheet-55260\": {\n    \"formulas\": {\n      \"C1\": \"=IF(MOD(B1,5)<=2.5,FLOOR.MATH(B1,5),CEILING.MATH(B1,5))\",\n      \"C2\": \"=IF(MOD(B2,5)<=2.5,FLOOR.MATH(B2,5),CEILING.MATH(B2,5))\"\n    }\n  },\n  \"sheet-55535\": {\n    \"fills\": [\n      {\n        \"range\": \"A1:A17\",\n        \"formula\": \"=IF(B1=\\\"\\\",\\\"\\\",\\\"KC-GPGY-\\\"&LEFT(B1,2)&TEXT(COUNTIF($B$1:B1,\\\"?*\\\"),\\\"0000\\\"))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-55609\": {\n    \"fills\": [\n      {\n        \"range\": \"D3:M8\",\n        \"formula\": \"=INDEX($D12:$M12,1,MATCH(D$2,$D$11:$M$11,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56427\": {\n    \"fills\": [\n      {\n        \"range\": \"H2:S28\",\n        \"formula\": \"=IF(AND($B2=1,COLUMNS($H2:H2)<=$C2),IF(INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)=\\\"\\\",\\\"\\\",INDEX($G:$G,ROW()+COLUMNS($H2:H2)-1)),\\\"\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 20792,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 556,
+      "reasoning_output_tokens": 200
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

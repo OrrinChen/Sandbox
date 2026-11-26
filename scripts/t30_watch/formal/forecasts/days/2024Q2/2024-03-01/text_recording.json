@@ -1,0 +1,48 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24606,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 148,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8f-42e0-7750-a58e-9bc79d2d62c9",
+  "packet_sha256": "b6cceb5f0b2a6df1a0763af6eb411e56999c18e5429d425c09c4b37507b7a59f",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

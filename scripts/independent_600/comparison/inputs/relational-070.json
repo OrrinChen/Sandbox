@@ -1,0 +1,295 @@
+[
+  {
+    "task_id": "decision-shield-bias-from-probe-swap",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the temperature difference attributable to a prototype shield in each bench run. Each primary bench slip records simultaneous readings in tenths of a degree Celsius from probes P and Q. Exactly one probe wore the prototype and the other wore the standard shield. proto_probe identifies the probe wearing the prototype. A complete run has one usable slip for each of the two opposite assignments. Discard slips with either reading NULL (unreadable), then select the lexicographically smallest slip_id per run and assignment if a reading was repeated. Other fields are non-NULL. Compute prototype minus standard within each selected slip, give both assignments equal weight to cancel a constant probe offset, and express their mean in hundredths of a degree Celsius. Report only complete runs. Return run_id, effect_centi_c, p_proto_slip, q_proto_slip, ordered by run_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bench_slip": {
+        "columns": [
+          "slip_id TEXT",
+          "run_id TEXT",
+          "proto_probe TEXT",
+          "p_tenth INTEGER",
+          "q_tenth INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "S1",
+            "Dawn",
+            "P",
+            146,
+            140,
+            "Prototype on P during the first lamp hold."
+          ],
+          [
+            "S2",
+            "Dawn",
+            "Q",
+            164,
+            163,
+            "Shields exchanged before the warmer lamp hold."
+          ],
+          [
+            "S3",
+            "Dawn",
+            "Q",
+            165,
+            168,
+            "Repeat taken after reseating the standard shield."
+          ],
+          [
+            "S4",
+            "Fog",
+            "P",
+            91,
+            90,
+            "First assignment read during the mist hold."
+          ],
+          [
+            "S5",
+            "Fog",
+            "Q",
+            99,
+            null,
+            "Q display obscured after the swap."
+          ],
+          [
+            "S6",
+            "Ice",
+            "P",
+            -32,
+            -30,
+            "Both displays read with prototype on P."
+          ],
+          [
+            "S7",
+            "Ice",
+            "Q",
+            -25,
+            -29,
+            "Both displays read after exchanging shields."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_id",
+      "effect_centi_c",
+      "p_proto_slip",
+      "q_proto_slip"
+    ]
+  },
+  {
+    "task_id": "decision-shift-standardized-turnover",
+    "tool": "sqlite.query",
+    "instruction": "Compare turnover across sites for the entire supplied reporting window. Each row covers one distinct site, shift and month. Exposure is measured in worker-months, and departures are counts. Within each site and shift, divide total departures by total exposure across all supplied months. Standardize each site's rate to a workforce with equal day and night exposure by averaging those two shift rates. Report departures per 1,000 worker-months, rounded to the nearest integer with halves rounded up. Include only sites with positive total exposure on both shifts. An absent shift supplies zero exposure. Zero-exposure rows have zero departures. All fields are non-null. Return site_code and standardized_per_1000, ordered by the reported rate descending and then site_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "shift_counts": {
+        "columns": [
+          "site_code TEXT",
+          "shift_code TEXT",
+          "month_no INTEGER",
+          "exposure INTEGER",
+          "departures INTEGER"
+        ],
+        "rows": [
+          [
+            "east",
+            "day",
+            1,
+            10,
+            1
+          ],
+          [
+            "east",
+            "day",
+            2,
+            10,
+            1
+          ],
+          [
+            "east",
+            "night",
+            1,
+            4,
+            2
+          ],
+          [
+            "west",
+            "day",
+            1,
+            12,
+            0
+          ],
+          [
+            "west",
+            "night",
+            1,
+            4,
+            1
+          ],
+          [
+            "ridge",
+            "day",
+            1,
+            8,
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "site_code",
+      "standardized_per_1000"
+    ]
+  },
+  {
+    "task_id": "decision-simultaneous-terminal-bay-outages",
+    "tool": "sqlite.query",
+    "instruction": "Each terminal has exactly two interchangeable boarding bays, A and B. For each terminal in terminal_watch, count minutes within its watch when both bays were unavailable at once. Watch and outage intervals use integer minutes on one operating day, with the start included and the end excluded. A null restored_min means the outage continued through the end of the watch. All other fields are populated. Reports for the same bay may overlap, and outages may extend outside the watch. Events sharing a boundary minute add no overlap merely by touching. Return terminal_id, blocked_minutes in terminal_id order, including zero totals. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bay_outage": {
+        "columns": [
+          "terminal_id TEXT",
+          "bay_code TEXT",
+          "failed_min INTEGER",
+          "restored_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Cove",
+            "A",
+            5,
+            18
+          ],
+          [
+            "Cove",
+            "A",
+            14,
+            22
+          ],
+          [
+            "Cove",
+            "B",
+            16,
+            20
+          ],
+          [
+            "Cove",
+            "B",
+            22,
+            null
+          ],
+          [
+            "Rim",
+            "B",
+            3,
+            6
+          ],
+          [
+            "Rim",
+            "A",
+            6,
+            10
+          ]
+        ]
+      },
+      "terminal_watch": {
+        "columns": [
+          "terminal_id TEXT",
+          "start_min INTEGER",
+          "end_min INTEGER"
+        ],
+        "rows": [
+          [
+            "Cove",
+            10,
+            30
+          ],
+          [
+            "Rim",
+            0,
+            12
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "terminal_id",
+      "blocked_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-single-feed-finals-handoff",
+    "tool": "sqlite.query",
+    "instruction": "Book one Copper final and one Jade final from the offered slots. Either division may air first. Start and end times are integer minutes after the broadcast desk opens. The feed needs 5 full minutes after the first final ends before the second can start, plus another 10 minutes if the halls differ. An exact fit is allowed. Maximize the sum of projected viewer-minutes, calculated for each final as its duration times its projected concurrent viewers. Break ties by the lexicographically smallest Copper slot ID, then Jade slot ID, using binary text order. Slot IDs are unique and no fields are null. Return one row with columns copper_slot, jade_slot, viewer_minutes. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "air_slot": {
+        "columns": [
+          "slot_id TEXT",
+          "division TEXT",
+          "hall TEXT",
+          "start_min INTEGER",
+          "end_min INTEGER",
+          "viewers INTEGER"
+        ],
+        "rows": [
+          [
+            "C1",
+            "Copper",
+            "Loft",
+            20,
+            50,
+            40
+          ],
+          [
+            "C2",
+            "Copper",
+            "Dock",
+            60,
+            80,
+            55
+          ],
+          [
+            "C3",
+            "Copper",
+            "Loft",
+            70,
+            90,
+            55
+          ],
+          [
+            "J1",
+            "Jade",
+            "Dock",
+            30,
+            55,
+            50
+          ],
+          [
+            "J2",
+            "Jade",
+            "Dock",
+            55,
+            75,
+            70
+          ],
+          [
+            "J3",
+            "Jade",
+            "Loft",
+            55,
+            75,
+            44
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "copper_slot",
+      "jade_slot",
+      "viewer_minutes"
+    ]
+  }
+]

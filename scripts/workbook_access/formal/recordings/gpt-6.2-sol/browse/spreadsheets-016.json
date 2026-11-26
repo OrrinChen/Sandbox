@@ -1,0 +1,181 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "07406744b593f858605597cb7db32490826d5edd95d184568f497223f848d0fe",
+    "292d578b63e55ab6a83e66a51ba8deb8780fdb1e752e212ed029a672e54c8598",
+    "24687bee90c49e123dab9378a416088632feecef6da315df159b546f769f6c16"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-50952",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "submission": {
+        "fills": [
+          {
+            "range": "G2:G5",
+            "formula": "=IF(OR(E2=\"\",F2=\"\"),\"\",XLOOKUP(1,($A$2:$A$10000<>\"\")*ISNUMBER(SEARCH(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(E2,\"~\",\"~~\"),\"*\",\"~*\"),\"?\",\"~?\"),$B$2:$B$10000))*ISNUMBER(SEARCH(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(F2,\"~\",\"~~\"),\"*\",\"~*\"),\"?\",\"~?\"),$B$2:$B$10000)),$A$2:$A$10000,\"\"))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57051,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1262,
+        "reasoning_output_tokens": 450
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-51249",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "submission": {
+        "formulas": {
+          "D1": "=IF(B2=\"\",IF(ISNUMBER(SEARCH(\"Description A\",B1)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B1)),\"Single B\",\"\")),IF(OR(AND(ISNUMBER(SEARCH(\"Description A\",B1)),ISNUMBER(SEARCH(\"Description B\",B2))),AND(ISNUMBER(SEARCH(\"Description B\",B1)),ISNUMBER(SEARCH(\"Description A\",B2)))),\"Multiple\",\"\"))",
+          "D5": "=IF(B6=\"\",IF(ISNUMBER(SEARCH(\"Description A\",B5)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B5)),\"Single B\",\"\")),IF(OR(AND(ISNUMBER(SEARCH(\"Description A\",B5)),ISNUMBER(SEARCH(\"Description B\",B6))),AND(ISNUMBER(SEARCH(\"Description B\",B5)),ISNUMBER(SEARCH(\"Description A\",B6)))),\"Multiple\",\"\"))",
+          "D9": "=IF(B10=\"\",IF(ISNUMBER(SEARCH(\"Description A\",B9)),\"Single A\",IF(ISNUMBER(SEARCH(\"Description B\",B9)),\"Single B\",\"\")),IF(OR(AND(ISNUMBER(SEARCH(\"Description A\",B9)),ISNUMBER(SEARCH(\"Description B\",B10))),AND(ISNUMBER(SEARCH(\"Description B\",B9)),ISNUMBER(SEARCH(\"Description A\",B10)))),\"Multiple\",\"\"))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57051,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1262,
+        "reasoning_output_tokens": 450
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-51262",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "submission": {
+        "fills": [
+          {
+            "range": "F6:H6",
+            "formula": "=SUMPRODUCT(--($B$6:$B$13>=EOMONTH(F5,-1)+1),--($B$6:$B$13<EOMONTH(F5,0)+1),--($C$6:$C$13<>\"\"),--ISNUMBER(MATCH($C$6:$C$13,$F$10:$F$14,0)),$D$6:$D$13)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57051,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1262,
+        "reasoning_output_tokens": 450
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-51807",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-016",
+      "submission": {
+        "fills": [
+          {
+            "range": "D1:D3",
+            "formula": "=IF(A1=\"\",\"\",\"Carton \"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\"\",\" Boxes \"&MOD(A1,12)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3",
+            "range_size": 12,
+            "cells": [
+              [
+                "A1",
+                "156"
+              ],
+              [
+                "B1",
+                "Carton 13"
+              ],
+              [
+                "D1",
+                "Carton "
+              ],
+              [
+                "D2",
+                "Carton "
+              ],
+              [
+                "A3",
+                "157"
+              ],
+              [
+                "B3",
+                " Carton 13 , Boxes 1"
+              ],
+              [
+                "D3",
+                "Carton "
+              ]
+            ],
+            "total": 7,
+            "truncated": false,
+            "blank_count": 5
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57051,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1262,
+        "reasoning_output_tokens": 450
+      },
+      "model_calls": 3
+    }
+  ]
+}

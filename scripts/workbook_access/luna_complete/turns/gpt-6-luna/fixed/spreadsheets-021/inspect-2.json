@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-021",
+    "stage": "inspect-2",
+    "prompt_sha256": "7c4a49353e8739cdf281f40060f2a0e9c69f5517d66dd9d44f663814fb772a10",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21231-261d-7272-986c-18b820986027"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-57029\":[],\"sheet-57105\":[],\"sheet-57137\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"D2:D16\"}],\"sheet-57262\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 19456,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1344,
+          "reasoning_output_tokens": 1296
+        }
+      ],
+      "cli_final": "{\"sheet-57029\":[],\"sheet-57105\":[],\"sheet-57137\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"D2:D16\"}],\"sheet-57262\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21231-261d-7272-986c-18b820986027",
+    "raw": "{\"sheet-57029\":[],\"sheet-57105\":[],\"sheet-57137\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"D2:D16\"}],\"sheet-57262\":[]}",
+    "usage": {
+      "input_tokens": 19456,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1344,
+      "reasoning_output_tokens": 1296
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

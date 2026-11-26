@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-005",
+    "stage": "inspect-2",
+    "prompt_sha256": "fbbbbf7effe22bb9a8d415c9ce7a9da67a8ca34b443f06ff005cd2e167d161ba",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122a-b05a-7630-8e2d-3a05bbd57e88"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-37554\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F2:F17\"}],\"sheet-37609\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"C2:C11\"}],\"sheet-37615\":[{\"op\":\"range\",\"sheet\":\"Example\",\"range\":\"F7:F44\"}],\"sheet-38462\":[]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 19319,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 533,
+          "reasoning_output_tokens": 452
+        }
+      ],
+      "cli_final": "{\"sheet-37554\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F2:F17\"}],\"sheet-37609\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"C2:C11\"}],\"sheet-37615\":[{\"op\":\"range\",\"sheet\":\"Example\",\"range\":\"F7:F44\"}],\"sheet-38462\":[]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122a-b05a-7630-8e2d-3a05bbd57e88",
+    "raw": "{\"sheet-37554\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"F2:F17\"}],\"sheet-37609\":[{\"op\":\"range\",\"sheet\":\"Sheet2\",\"range\":\"C2:C11\"}],\"sheet-37615\":[{\"op\":\"range\",\"sheet\":\"Example\",\"range\":\"F7:F44\"}],\"sheet-38462\":[]}",
+    "usage": {
+      "input_tokens": 19319,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 533,
+      "reasoning_output_tokens": 452
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

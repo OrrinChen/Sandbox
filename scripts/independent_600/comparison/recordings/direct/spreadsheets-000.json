@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "input_sha256": "d3741e3768b5ebec637c11edb2940e4bcf74165951bd35f2d6c63308383b2950",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-14240\": {\n    \"fills\": [\n      {\n        \"range\": \"U4:U75\",\n        \"formula\": \"=SUMPRODUCT(($A$4:$A$75=R4)*($B$4:$B$75=S4)*($C$3:$M$3=T4)*$C$4:$M$75)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-1563\": {\n    \"formulas\": {\n      \"B2\": \"=IF(A2=\\\"\\\",\\\"\\\",A2)\"\n    },\n    \"fills\": [\n      {\n        \"range\": \"B3:B30\",\n        \"formula\": \"=IF(A3=\\\"\\\",B2,A3)\"\n      }\n    ]\n  },\n  \"sheet-15829\": {\n    \"formulas\": {\n      \"B3\": \"=SUMIFS(I2:I22,F2:F22,B2,G2:G22,\\\"<=\\\"&B1,H2:H22,\\\">=\\\"&B1)\"\n    }\n  },\n  \"sheet-17251\": {\n    \"fills\": [\n      {\n        \"range\": \"C2:C11\",\n        \"formula\": \"=1+COUNTIFS($A$2:$A$11,A2,$B$2:$B$11,\\\"<\\\"&B2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-14240": {
+      "fills": [
+        {
+          "range": "U4:U75",
+          "formula": "=SUMPRODUCT(($A$4:$A$75=R4)*($B$4:$B$75=S4)*($C$3:$M$3=T4)*$C$4:$M$75)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-1563": {
+      "formulas": {
+        "B2": "=IF(A2=\"\",\"\",A2)"
+      },
+      "fills": [
+        {
+          "range": "B3:B30",
+          "formula": "=IF(A3=\"\",B2,A3)"
+        }
+      ]
+    },
+    "sheet-15829": {
+      "formulas": {
+        "B3": "=SUMIFS(I2:I22,F2:F22,B2,G2:G22,\"<=\"&B1,H2:H22,\">=\"&B1)"
+      }
+    },
+    "sheet-17251": {
+      "fills": [
+        {
+          "range": "C2:C11",
+          "formula": "=1+COUNTIFS($A$2:$A$11,A2,$B$2:$B$11,\"<\"&B2)"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-bf28-7f52-becc-d4a4f70ba5b1",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27499,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 291,
+    "reasoning_output_tokens": 0
+  }
+}

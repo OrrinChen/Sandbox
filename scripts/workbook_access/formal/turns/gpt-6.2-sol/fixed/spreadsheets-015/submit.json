@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-015",
+    "stage": "submit",
+    "prompt_sha256": "be56335b43da2f2908666467e2f183f0f9b1b349a81b16055427a0fed1bcfeed",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d8-af9b-7d62-ba2e-9dd4abab41ee",
+    "raw": "{\n  \"sheet-49801\": {\n    \"formulas\": {\n      \"C1\": \"=LEFT(A1,2)&RIGHT(A1,5)\"\n    }\n  },\n  \"sheet-49857\": {\n    \"formulas\": {\n      \"G4\": \"=IF(F4=\\\"YES\\\",COUNTIF($F$4:F4,\\\"YES\\\"),0)\",\n      \"G5\": \"=IF(F5=\\\"YES\\\",COUNTIF($F$4:F5,\\\"YES\\\"),0)\",\n      \"G6\": \"=IF(F6=\\\"YES\\\",COUNTIF($F$4:F6,\\\"YES\\\"),0)\",\n      \"G7\": \"=IF(F7=\\\"YES\\\",COUNTIF($F$4:F7,\\\"YES\\\"),0)\",\n      \"G8\": \"=IF(F8=\\\"YES\\\",COUNTIF($F$4:F8,\\\"YES\\\"),0)\",\n      \"G9\": \"=IF(F9=\\\"YES\\\",COUNTIF($F$4:F9,\\\"YES\\\"),0)\",\n      \"G10\": \"=IF(F10=\\\"YES\\\",COUNTIF($F$4:F10,\\\"YES\\\"),0)\"\n    }\n  },\n  \"sheet-49859\": {\n    \"fills\": [\n      {\n        \"range\": \"D12:Q23\",\n        \"formula\": \"=IF($C12=\\\"\\\",0,IF(MOD($C12-D$8,12)<=MOD(D$9-D$8,12),1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-50630\": {\n    \"formulas\": {\n      \"C5\": \"=LEFT(A5,SEARCH(\\\"Added \\\",A5)-1)\",\n      \"D5\": \"=MID(A5,SEARCH(\\\"Added \\\",A5)+6,SEARCH(\\\"Due \\\",A5,SEARCH(\\\"Added \\\",A5)+6)-SEARCH(\\\"Added \\\",A5)-6)\",\n      \"E5\": \"=DATEVALUE(TRIM(MID(A5,SEARCH(\\\"Due \\\",A5,SEARCH(\\\"Added \\\",A5)+6)+4,LEN(A5))))\",\n      \"C6\": \"=LEFT(A6,SEARCH(\\\"Added \\\",A6)-1)\",\n      \"D6\": \"=MID(A6,SEARCH(\\\"Added \\\",A6)+6,SEARCH(\\\"Due \\\",A6,SEARCH(\\\"Added \\\",A6)+6)-SEARCH(\\\"Added \\\",A6)-6)\",\n      \"E6\": \"=DATEVALUE(TRIM(MID(A6,SEARCH(\\\"Due \\\",A6,SEARCH(\\\"Added \\\",A6)+6)+4,LEN(A6))))\"\n    }\n  }\n}",
+    "usage": {
+      "input_tokens": 20802,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 880,
+      "reasoning_output_tokens": 324
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

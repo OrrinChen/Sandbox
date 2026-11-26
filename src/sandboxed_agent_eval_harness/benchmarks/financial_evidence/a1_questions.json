@@ -1,0 +1,1051 @@
+{
+  "task_set_id": "phase6_seed_multimodal_due_diligence",
+  "version": "2026-05-01",
+  "provenance": {
+    "repository": "https://github.com/OrrinChen/multimodal_FEE",
+    "commit": "9bc84f7ef222c8eb829a576c4605ab19719204a4",
+    "source": "src/financial_evidence_engine/evaluation/gold_builder.py"
+  },
+  "tasks": {
+    "phase6:aapl:single_company_trend": {
+      "task_id": "phase6:aapl:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Apple's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Apple's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:aapl:cross_company_comparison": {
+      "task_id": "phase6:aapl:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Apple's FY2024 operating margin higher than Microsoft's after normalizing company, period, metric, and unit?",
+      "claim_text": "Apple's FY2024 operating margin exceeded Microsoft's FY2024 operating margin.",
+      "company_tickers": [
+        "AAPL",
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:aapl:management_claim_verification": {
+      "task_id": "phase6:aapl:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Apple's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Apple's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:aapl:risk_contradiction": {
+      "task_id": "phase6:aapl:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Apple's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Apple's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:aapl:guidance_vs_actuals": {
+      "task_id": "phase6:aapl:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Apple's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Apple's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:aapl:chart_table_reconciliation": {
+      "task_id": "phase6:aapl:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Apple's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Apple's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:msft:single_company_trend": {
+      "task_id": "phase6:msft:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Microsoft's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Microsoft's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:msft:cross_company_comparison": {
+      "task_id": "phase6:msft:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Microsoft's FY2024 operating margin higher than NVIDIA's after normalizing company, period, metric, and unit?",
+      "claim_text": "Microsoft's FY2024 operating margin exceeded NVIDIA's FY2024 operating margin.",
+      "company_tickers": [
+        "MSFT",
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:msft:management_claim_verification": {
+      "task_id": "phase6:msft:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Microsoft's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Microsoft's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:msft:risk_contradiction": {
+      "task_id": "phase6:msft:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Microsoft's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Microsoft's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:msft:guidance_vs_actuals": {
+      "task_id": "phase6:msft:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Microsoft's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Microsoft's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:msft:chart_table_reconciliation": {
+      "task_id": "phase6:msft:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Microsoft's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Microsoft's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "MSFT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nvda:single_company_trend": {
+      "task_id": "phase6:nvda:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did NVIDIA's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "NVIDIA's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nvda:cross_company_comparison": {
+      "task_id": "phase6:nvda:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was NVIDIA's FY2024 operating margin higher than Amazon's after normalizing company, period, metric, and unit?",
+      "claim_text": "NVIDIA's FY2024 operating margin exceeded Amazon's FY2024 operating margin.",
+      "company_tickers": [
+        "NVDA",
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nvda:management_claim_verification": {
+      "task_id": "phase6:nvda:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can NVIDIA's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "NVIDIA's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nvda:risk_contradiction": {
+      "task_id": "phase6:nvda:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does NVIDIA's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "NVIDIA's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:nvda:guidance_vs_actuals": {
+      "task_id": "phase6:nvda:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did NVIDIA's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "NVIDIA's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:nvda:chart_table_reconciliation": {
+      "task_id": "phase6:nvda:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does NVIDIA's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "NVIDIA's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "NVDA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:amzn:single_company_trend": {
+      "task_id": "phase6:amzn:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Amazon's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Amazon's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:amzn:cross_company_comparison": {
+      "task_id": "phase6:amzn:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Amazon's FY2024 operating margin higher than Alphabet's after normalizing company, period, metric, and unit?",
+      "claim_text": "Amazon's FY2024 operating margin exceeded Alphabet's FY2024 operating margin.",
+      "company_tickers": [
+        "AMZN",
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:amzn:management_claim_verification": {
+      "task_id": "phase6:amzn:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Amazon's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Amazon's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:amzn:risk_contradiction": {
+      "task_id": "phase6:amzn:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Amazon's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Amazon's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:amzn:guidance_vs_actuals": {
+      "task_id": "phase6:amzn:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Amazon's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Amazon's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:amzn:chart_table_reconciliation": {
+      "task_id": "phase6:amzn:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Amazon's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Amazon's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "AMZN"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:googl:single_company_trend": {
+      "task_id": "phase6:googl:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Alphabet's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Alphabet's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:googl:cross_company_comparison": {
+      "task_id": "phase6:googl:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Alphabet's FY2024 operating margin higher than Meta's after normalizing company, period, metric, and unit?",
+      "claim_text": "Alphabet's FY2024 operating margin exceeded Meta's FY2024 operating margin.",
+      "company_tickers": [
+        "GOOGL",
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:googl:management_claim_verification": {
+      "task_id": "phase6:googl:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Alphabet's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Alphabet's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:googl:risk_contradiction": {
+      "task_id": "phase6:googl:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Alphabet's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Alphabet's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:googl:guidance_vs_actuals": {
+      "task_id": "phase6:googl:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Alphabet's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Alphabet's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:googl:chart_table_reconciliation": {
+      "task_id": "phase6:googl:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Alphabet's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Alphabet's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "GOOGL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:meta:single_company_trend": {
+      "task_id": "phase6:meta:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Meta's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Meta's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:meta:cross_company_comparison": {
+      "task_id": "phase6:meta:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Meta's FY2024 operating margin higher than JPMorgan Chase's after normalizing company, period, metric, and unit?",
+      "claim_text": "Meta's FY2024 operating margin exceeded JPMorgan Chase's FY2024 operating margin.",
+      "company_tickers": [
+        "META",
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:meta:management_claim_verification": {
+      "task_id": "phase6:meta:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Meta's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Meta's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:meta:risk_contradiction": {
+      "task_id": "phase6:meta:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Meta's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Meta's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:meta:guidance_vs_actuals": {
+      "task_id": "phase6:meta:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Meta's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Meta's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:meta:chart_table_reconciliation": {
+      "task_id": "phase6:meta:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Meta's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Meta's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "META"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:jpm:single_company_trend": {
+      "task_id": "phase6:jpm:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did JPMorgan Chase's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "JPMorgan Chase's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:jpm:cross_company_comparison": {
+      "task_id": "phase6:jpm:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was JPMorgan Chase's FY2024 operating margin higher than Walmart's after normalizing company, period, metric, and unit?",
+      "claim_text": "JPMorgan Chase's FY2024 operating margin exceeded Walmart's FY2024 operating margin.",
+      "company_tickers": [
+        "JPM",
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:jpm:management_claim_verification": {
+      "task_id": "phase6:jpm:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can JPMorgan Chase's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "JPMorgan Chase's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:jpm:risk_contradiction": {
+      "task_id": "phase6:jpm:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does JPMorgan Chase's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "JPMorgan Chase's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:jpm:guidance_vs_actuals": {
+      "task_id": "phase6:jpm:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did JPMorgan Chase's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "JPMorgan Chase's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:jpm:chart_table_reconciliation": {
+      "task_id": "phase6:jpm:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does JPMorgan Chase's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "JPMorgan Chase's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "JPM"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:wmt:single_company_trend": {
+      "task_id": "phase6:wmt:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Walmart's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Walmart's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:wmt:cross_company_comparison": {
+      "task_id": "phase6:wmt:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Walmart's FY2024 operating margin higher than Tesla's after normalizing company, period, metric, and unit?",
+      "claim_text": "Walmart's FY2024 operating margin exceeded Tesla's FY2024 operating margin.",
+      "company_tickers": [
+        "WMT",
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:wmt:management_claim_verification": {
+      "task_id": "phase6:wmt:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Walmart's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Walmart's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:wmt:risk_contradiction": {
+      "task_id": "phase6:wmt:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Walmart's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Walmart's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:wmt:guidance_vs_actuals": {
+      "task_id": "phase6:wmt:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Walmart's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Walmart's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:wmt:chart_table_reconciliation": {
+      "task_id": "phase6:wmt:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Walmart's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Walmart's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "WMT"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:tsla:single_company_trend": {
+      "task_id": "phase6:tsla:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Tesla's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Tesla's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:tsla:cross_company_comparison": {
+      "task_id": "phase6:tsla:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Tesla's FY2024 operating margin higher than Netflix's after normalizing company, period, metric, and unit?",
+      "claim_text": "Tesla's FY2024 operating margin exceeded Netflix's FY2024 operating margin.",
+      "company_tickers": [
+        "TSLA",
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:tsla:management_claim_verification": {
+      "task_id": "phase6:tsla:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Tesla's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Tesla's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:tsla:risk_contradiction": {
+      "task_id": "phase6:tsla:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Tesla's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Tesla's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:tsla:guidance_vs_actuals": {
+      "task_id": "phase6:tsla:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Tesla's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Tesla's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:tsla:chart_table_reconciliation": {
+      "task_id": "phase6:tsla:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Tesla's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Tesla's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "TSLA"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nflx:single_company_trend": {
+      "task_id": "phase6:nflx:single_company_trend",
+      "family": "single_company_trend",
+      "question": "Did Netflix's FY2024 revenue trend improve versus FY2023, and is the trend backed by filing facts rather than narrative-only evidence?",
+      "claim_text": "Netflix's FY2024 revenue grew versus FY2023.",
+      "company_tickers": [
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nflx:cross_company_comparison": {
+      "task_id": "phase6:nflx:cross_company_comparison",
+      "family": "cross_company_comparison",
+      "question": "Was Netflix's FY2024 operating margin higher than Apple's after normalizing company, period, metric, and unit?",
+      "claim_text": "Netflix's FY2024 operating margin exceeded Apple's FY2024 operating margin.",
+      "company_tickers": [
+        "NFLX",
+        "AAPL"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nflx:management_claim_verification": {
+      "task_id": "phase6:nflx:management_claim_verification",
+      "family": "management_claim_verification",
+      "question": "Can Netflix's management claim that FY2024 margin expansion was driven by durable operating leverage be fully verified from cited documents?",
+      "claim_text": "Netflix's FY2024 margin expansion was driven by durable operating leverage.",
+      "company_tickers": [
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    },
+    "phase6:nflx:risk_contradiction": {
+      "task_id": "phase6:nflx:risk_contradiction",
+      "family": "risk_contradiction",
+      "question": "Does Netflix's FY2024 risk disclosure contradict the claim that its key supply-chain or demand exposure materially decreased?",
+      "claim_text": "Netflix's FY2024 risk exposure materially decreased.",
+      "company_tickers": [
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2023",
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "sec_filing",
+        "transcript",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:nflx:guidance_vs_actuals": {
+      "task_id": "phase6:nflx:guidance_vs_actuals",
+      "family": "guidance_vs_actuals",
+      "question": "Did Netflix's FY2024 actual revenue fall within the cited management guidance or analyst-estimate range?",
+      "claim_text": "Netflix's FY2024 actual revenue was within the cited guidance range.",
+      "company_tickers": [
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "transcript",
+        "analyst_estimates",
+        "sec_xbrl_companyfacts"
+      ]
+    },
+    "phase6:nflx:chart_table_reconciliation": {
+      "task_id": "phase6:nflx:chart_table_reconciliation",
+      "family": "chart_table_reconciliation",
+      "question": "Does Netflix's FY2024 investor-deck chart or table reconcile to the corresponding SEC/XBRL reported metric?",
+      "claim_text": "Netflix's FY2024 deck chart reconciles to its reported financial metric.",
+      "company_tickers": [
+        "NFLX"
+      ],
+      "fiscal_periods": [
+        "FY2024"
+      ],
+      "allowed_source_types": [
+        "investor_deck",
+        "sec_xbrl_companyfacts",
+        "sec_filing"
+      ]
+    }
+  }
+}

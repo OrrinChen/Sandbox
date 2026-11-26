@@ -1,0 +1,57 @@
+{
+  "binding": {
+    "input_sha256": "808bea9d51146254735ae15677c957f0e8a5eac07359fbf036dec7bb9ec4299b",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-57029\": {\n    \"fills\": [\n      {\n        \"range\": \"C1:C5\",\n        \"formula\": \"=AND(B1<>\\\"\\\",ISNUMBER(FIND(LOWER(B1&\\\"\\\"),LOWER(A1&\\\"\\\"))))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57105\": {\n    \"fills\": [\n      {\n        \"range\": \"C4:C15\",\n        \"formula\": \"=SUMIFS($M$4:$M$57,$L$4:$L$57,\\\">=\\\"&(EOMONTH(B4,-1)+1),$L$4:$L$57,\\\"<\\\"&(EOMONTH(B4,0)+1))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57137\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D16\",\n        \"formula\": \"=IF(AND(COUNTIFS($A$2:A2,A2,$B$2:B2,B2,$C$2:C2,C2)=1,OR(C2=\\\"system\\\",AND(COUNTIFS($A$2:$A$16,A2,$B$2:$B$16,B2,$C$2:$C$16,\\\"system\\\")=0,COUNTIFS($A$2:A2,A2,$B$2:B2,B2)=1))),\\\"Accepted\\\",\\\"Rejected\\\")\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-57262\": {\n    \"fills\": [\n      {\n        \"range\": \"T7:T15\",\n        \"formula\": \"=E7*$Y$13+F7*$Y$14+G7*$Y$15+H7*$Y$16+I7*$Y$17+J7*$Y$18+K7*$Y$19\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+  "submissions": {
+    "sheet-57029": {
+      "fills": [
+        {
+          "range": "C1:C5",
+          "formula": "=AND(B1<>\"\",ISNUMBER(FIND(LOWER(B1&\"\"),LOWER(A1&\"\"))))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-57105": {
+      "fills": [
+        {
+          "range": "C4:C15",
+          "formula": "=SUMIFS($M$4:$M$57,$L$4:$L$57,\">=\"&(EOMONTH(B4,-1)+1),$L$4:$L$57,\"<\"&(EOMONTH(B4,0)+1))"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-57137": {
+      "fills": [
+        {
+          "range": "D2:D16",
+          "formula": "=IF(AND(COUNTIFS($A$2:A2,A2,$B$2:B2,B2,$C$2:C2,C2)=1,OR(C2=\"system\",AND(COUNTIFS($A$2:$A$16,A2,$B$2:$B$16,B2,$C$2:$C$16,\"system\")=0,COUNTIFS($A$2:A2,A2,$B$2:B2,B2)=1))),\"Accepted\",\"Rejected\")"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-57262": {
+      "fills": [
+        {
+          "range": "T7:T15",
+          "formula": "=E7*$Y$13+F7*$Y$14+G7*$Y$15+H7*$Y$16+I7*$Y$17+J7*$Y$18+K7*$Y$19"
+        }
+      ],
+      "formulas": {}
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-ad25-7fd2-a7b1-5d76a679cda3",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 27528,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 412,
+    "reasoning_output_tokens": 0
+  }
+}

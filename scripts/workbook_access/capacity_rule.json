@@ -1,0 +1,13 @@
+{
+  "registered_at": "2026-11-25T08:37:32.233701+00:00",
+  "initial_registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "observed_pre_score": {
+    "gpt-6.2-astra_completed_turns": 0,
+    "gpt-6.2-sol_completed_turns": 125,
+    "formal_score_opened": false
+  },
+  "capacity_reason": "A development prompt returned HTTP 429 for 6.2-Astra. Some development turns under a 240-second timeout did not complete. Verified the previous-generation professional model gpt-6-astra on that same public development prompt.",
+  "trigger": "If Sol has completed all scheduled turns and at least eight minutes have elapsed since the initial registration, and 6.2-Astra still has no complete three-turn batch, switch the professional tier before scoring. Preserve initial files. Use all 100 frozen workbooks in both conditions for the substitute. No 6.2-Astra answers count toward the substitute. If this condition does not hold continue the initial registration.",
+  "eligible_alternate": "gpt-6-astra",
+  "same_budget_and_public_inputs": true
+}

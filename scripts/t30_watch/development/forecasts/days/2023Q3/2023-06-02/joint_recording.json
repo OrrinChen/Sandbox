@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21715,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 143,
+    "reasoning_output_tokens": 14
+  },
+  "thread": "01a20d7e-b73f-7511-9b2e-567224471fbe",
+  "packet_sha256": "aa9ccbd056fa0930af51accbccb00128bcfa92950cf3bc5dec820e5abcc294cb",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q3/semiconductors-1\",\"alerts\":[{\"cik\":\"0001038074\",\"reason\":\"Reported revenue growth slowed from 23.31% to 5.55% year over year. Industrial & Commercial gains still outweighed the Home & Life decline in Q1 (A). I expect that offset to keep Q2 above -5.00% but to fade enough for Q3 to reach -5.00% or worse. The timing is uncertain because A does not quantify either product group's change.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q3/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001038074",
+            "reason": "Reported revenue growth slowed from 23.31% to 5.55% year over year. Industrial & Commercial gains still outweighed the Home & Life decline in Q1 (A). I expect that offset to keep Q2 above -5.00% but to fade enough for Q3 to reach -5.00% or worse. The timing is uncertain because A does not quantify either product group's change."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32732,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 249,
+    "reasoning_output_tokens": 26
+  },
+  "thread": "01a20d7e-4227-76e3-81df-58aec6aaa107",
+  "packet_sha256": "4c91752d06052e96947e472b7bd87256803fb12b7e7cbe64cb1a3597bbae2eea",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2023Q1/food_manufacturing-1\",\"alerts\":[]},{\"sector\":\"2023Q1/industrial_machinery-1\",\"alerts\":[]},{\"sector\":\"2023Q1/prepackaged_software-1\",\"alerts\":[]},{\"sector\":\"2023Q1/retail-1\",\"alerts\":[]},{\"sector\":\"2023Q1/semiconductors-1\",\"alerts\":[]},{\"sector\":\"2023Q1/transportation-1\",\"alerts\":[{\"cik\":\"0000003453\",\"reason\":\"Matson’s Q3 ocean transportation revenue grew 6.4% year over year (A), while Hawaii container volume fell 7.1% and the company cited weaker retail demand after the prior-year spike (B, C). I forecast consolidated revenue growth stays above -5% in Q4, then falls to -5% or below in Q1 as sustained volume weakness outweighs the factors supporting ocean revenue. The timing is uncertain because the volume figure covers only Hawaii.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000003453",
+            "reason": "Matson’s Q3 ocean transportation revenue grew 6.4% year over year (A), while Hawaii container volume fell 7.1% and the company cited weaker retail demand after the prior-year spike (B, C). I forecast consolidated revenue growth stays above -5% in Q4, then falls to -5% or below in Q1 as sustained volume weakness outweighs the factors supporting ocean revenue. The timing is uncertain because the volume figure covers only Hawaii."
+          }
+        ]
+      }
+    ]
+  }
+}

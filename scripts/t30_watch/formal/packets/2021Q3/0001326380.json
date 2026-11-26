@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q3",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001326380",
+  "issuer": "GAMESTOP CORP.",
+  "cutoff": "2021-07-02",
+  "projected_target_start": "2021-08-01",
+  "status": "complete",
+  "period_end": "2021-05-01",
+  "filing_date": "2021-06-09",
+  "text": {
+    "sector": "retail",
+    "cik": "0001326380",
+    "issuer": "GAMESTOP CORP.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-06-09",
+        "text": "For the first three months of fiscal 2021, net sales increased $255.8 million or 25.1% compared to the same prior year period."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-06-09",
+        "text": "We have historically reported comparable store sales which is a measure commonly used in the retail industry and indicates store performance by measuring the growth or decline in sales for certain stores for a particular period over the corresponding prior year's comparable period."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-06-09",
+        "text": "Improved inventory management drove a significant increase in inventory turns and as a result, in working capital, while an intense focus on organization structure and expense reductions yielded a $16.2 million or 4.2% reduction in reported selling, general and administrative expenses in the first quarter of fiscal 2021 as compared to the first fiscal quarter of 2020."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-06-09",
+        "text": "Selling, general and administrative expenses (\"SG&A\") decreased $16.2 million or 4.2% for the first fiscal quarter of 2021, compared to the same prior year period."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-06-09",
+        "text": "During the 13 weeks ended May 1, 2021, cash flows from operating activities were an outflow of $18.8 million, compared with an outflow of $49.3 million during the same period last year."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-01-30",
+        "filed": "2021-03-23",
+        "reported_sales_usd": 2122100000,
+        "year_ago_reported_sales_usd": 2194100000,
+        "yoy_percent": "-3.2815"
+      },
+      {
+        "quarter_end": "2021-05-01",
+        "filed": "2021-06-09",
+        "reported_sales_usd": 1276800000,
+        "year_ago_reported_sales_usd": 1021000000,
+        "yoy_percent": "25.0539"
+      }
+    ],
+    "status": "complete"
+  }
+}

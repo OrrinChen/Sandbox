@@ -1,0 +1,746 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "e85edd0e823420aac110aa15d6c0229e7a4b4cd33feb54b4b3099374674a401a",
+    "79c5167be6939bf5adf7ecafcf59d770690f3a2b2b13370835c20f9247b6c353",
+    "fd68b0b5f78a380a7074b89893d37734673a87c6f92c4b67f076ca5d619d7a17"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-36277",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "I2:I5",
+            "formula": "=INDEX($A$2:$E$25,MATCH($I$2,$A$2:$A$25,0),MATCH(H2,$A$1:$E$1,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:I8"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:I8",
+            "range_size": 72,
+            "cells": [
+              [
+                "A1",
+                "Category"
+              ],
+              [
+                "B1",
+                "Name"
+              ],
+              [
+                "C1",
+                "Type"
+              ],
+              [
+                "D1",
+                "Revenue"
+              ],
+              [
+                "E1",
+                "Profit"
+              ],
+              [
+                "H1",
+                "Name"
+              ],
+              [
+                "I1",
+                "H"
+              ],
+              [
+                "A2",
+                "Game"
+              ],
+              [
+                "B2",
+                "A"
+              ],
+              [
+                "C2",
+                "Purchase"
+              ],
+              [
+                "D2",
+                "100"
+              ],
+              [
+                "E2",
+                "200"
+              ],
+              [
+                "H2",
+                "Category"
+              ],
+              [
+                "I2",
+                "Social Media"
+              ],
+              [
+                "A3",
+                "Game"
+              ],
+              [
+                "B3",
+                "B"
+              ],
+              [
+                "C3",
+                "Purchase"
+              ],
+              [
+                "D3",
+                "300"
+              ],
+              [
+                "E3",
+                "400"
+              ],
+              [
+                "H3",
+                "Type"
+              ],
+              [
+                "I3",
+                "Free"
+              ],
+              [
+                "A4",
+                "Game"
+              ],
+              [
+                "B4",
+                "C"
+              ],
+              [
+                "C4",
+                "Purchase"
+              ],
+              [
+                "D4",
+                "500"
+              ],
+              [
+                "E4",
+                "600"
+              ],
+              [
+                "H4",
+                "Revenue"
+              ],
+              [
+                "A5",
+                "Game"
+              ],
+              [
+                "B5",
+                "D"
+              ],
+              [
+                "C5",
+                "Purchase"
+              ],
+              [
+                "D5",
+                "700"
+              ],
+              [
+                "E5",
+                "800"
+              ],
+              [
+                "H5",
+                "Profit"
+              ],
+              [
+                "A6",
+                "Productivity"
+              ],
+              [
+                "B6",
+                "E"
+              ],
+              [
+                "C6",
+                "Free"
+              ],
+              [
+                "D6",
+                "900"
+              ],
+              [
+                "E6",
+                "1000"
+              ],
+              [
+                "A7",
+                "Productivity"
+              ],
+              [
+                "B7",
+                "F"
+              ],
+              [
+                "C7",
+                "Free"
+              ],
+              [
+                "D7",
+                "1100"
+              ],
+              [
+                "E7",
+                "1200"
+              ],
+              [
+                "A8",
+                "Productivity"
+              ],
+              [
+                "B8",
+                "G"
+              ],
+              [
+                "C8",
+                "Free"
+              ],
+              [
+                "D8",
+                "1300"
+              ],
+              [
+                "E8",
+                "1400"
+              ]
+            ],
+            "total": 48,
+            "truncated": false,
+            "blank_count": 24
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94239,
+        "cached_input_tokens": 60800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2041,
+        "reasoning_output_tokens": 1509
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-36764",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "formulas": {
+          "C2": "=SUMIF(Sheet2!$A$2:$A$363,A2,Sheet2!$R$2:$R$363)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:D3",
+            "range_size": 12,
+            "cells": [
+              [
+                "A1",
+                "5) Breakdown of products below"
+              ],
+              [
+                "C1",
+                "UK purchases"
+              ],
+              [
+                "D1",
+                "IE purchases"
+              ],
+              [
+                "A2",
+                "Fully linked                                      "
+              ],
+              [
+                "B2",
+                "223"
+              ],
+              [
+                "C2",
+                "0"
+              ],
+              [
+                "A3",
+                "To be actioned                                    "
+              ],
+              [
+                "B3",
+                "138"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 4
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:S4"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet2",
+            "range": "A1:S4",
+            "range_size": 76,
+            "cells": [
+              [
+                "R1",
+                "UK purchases"
+              ],
+              [
+                "S1",
+                "IE purchases"
+              ],
+              [
+                "A2",
+                "To be actioned                                    "
+              ],
+              [
+                "R2",
+                "0"
+              ],
+              [
+                "S2",
+                "0"
+              ],
+              [
+                "A3",
+                "To be actioned                                    "
+              ],
+              [
+                "R3",
+                "0"
+              ],
+              [
+                "S3",
+                "0"
+              ],
+              [
+                "A4",
+                "Fully linked                                      "
+              ],
+              [
+                "R4",
+                "106"
+              ],
+              [
+                "S4",
+                "0"
+              ]
+            ],
+            "total": 11,
+            "truncated": false,
+            "blank_count": 65
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 94239,
+        "cached_input_tokens": 60800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2041,
+        "reasoning_output_tokens": 1509
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37228",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "G2:G23",
+            "formula": "=IF(E2=1,LEFT(F2,FIND(\" / \",F2&\" / \")-1),IFERROR(MID(F2,FIND(\" / \",F2)+3,LEN(F2)),F2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E2:G23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E2:G23",
+            "range_size": 66,
+            "cells": [
+              [
+                "E2",
+                "1"
+              ],
+              [
+                "F2",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "G2",
+                "10AM-12PM"
+              ],
+              [
+                "E3",
+                "1"
+              ],
+              [
+                "F3",
+                "3pm-5pm"
+              ],
+              [
+                "G3",
+                "3pm-5pm"
+              ],
+              [
+                "E4",
+                "1"
+              ],
+              [
+                "F4",
+                "10am-12pm"
+              ],
+              [
+                "G4",
+                "10am-12pm"
+              ],
+              [
+                "E5",
+                "1"
+              ],
+              [
+                "F5",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "G5",
+                "8am-10am"
+              ],
+              [
+                "E6",
+                "1"
+              ],
+              [
+                "F6",
+                "10am-12pm"
+              ],
+              [
+                "G6",
+                "10am-12pm"
+              ],
+              [
+                "E7",
+                "1"
+              ],
+              [
+                "F7",
+                "8AM-12PM / 2PM-4PM"
+              ],
+              [
+                "G7",
+                "8AM-12PM"
+              ],
+              [
+                "E8",
+                "1"
+              ],
+              [
+                "F8",
+                "3pm-5pm"
+              ],
+              [
+                "G8",
+                "3pm-5pm"
+              ],
+              [
+                "E9",
+                "1"
+              ],
+              [
+                "F9",
+                "10am-12pm"
+              ],
+              [
+                "G9",
+                "10am-12pm"
+              ],
+              [
+                "E10",
+                "2"
+              ],
+              [
+                "F10",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "G10",
+                "12pm-2pm"
+              ],
+              [
+                "E11",
+                "2"
+              ],
+              [
+                "F11",
+                "10am-12pm"
+              ],
+              [
+                "G11",
+                "10am-12pm"
+              ],
+              [
+                "E12",
+                "2"
+              ],
+              [
+                "F12",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "E13",
+                "2"
+              ],
+              [
+                "F13",
+                "3pm-5pm"
+              ],
+              [
+                "E14",
+                "2"
+              ],
+              [
+                "F14",
+                "10am-12pm"
+              ],
+              [
+                "E15",
+                "2"
+              ],
+              [
+                "F15",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "E16",
+                "2"
+              ],
+              [
+                "F16",
+                "10am-12pm"
+              ],
+              [
+                "E17",
+                "2"
+              ],
+              [
+                "F17",
+                "10am-12pm"
+              ],
+              [
+                "E18",
+                "2"
+              ],
+              [
+                "F18",
+                "10am-12pm"
+              ],
+              [
+                "E19",
+                "2"
+              ],
+              [
+                "F19",
+                "10AM-12PM / 2PM-4PM"
+              ],
+              [
+                "E20",
+                "2"
+              ],
+              [
+                "F20",
+                "3pm-5pm"
+              ],
+              [
+                "E21",
+                "2"
+              ],
+              [
+                "F21",
+                "10am-12pm"
+              ],
+              [
+                "E22",
+                "2"
+              ],
+              [
+                "F22",
+                "8am-10am / 12pm-2pm"
+              ],
+              [
+                "E23",
+                "2"
+              ],
+              [
+                "F23",
+                "10am-12pm"
+              ]
+            ],
+            "total": 54,
+            "truncated": false,
+            "blank_count": 12
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94239,
+        "cached_input_tokens": 60800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2041,
+        "reasoning_output_tokens": 1509
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-37378",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-004",
+      "submission": {
+        "fills": [
+          {
+            "range": "A2:A6",
+            "formula": "=IF(B2=\"\",\"\",COUNTA($B$2:B2))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:B10",
+            "range_size": 20,
+            "cells": [
+              [
+                "A1",
+                "#"
+              ],
+              [
+                "B1",
+                "A"
+              ],
+              [
+                "A2",
+                "1"
+              ],
+              [
+                "B2",
+                "2252"
+              ],
+              [
+                "A3",
+                "2"
+              ],
+              [
+                "B3",
+                "A"
+              ],
+              [
+                "B4",
+                "25"
+              ]
+            ],
+            "total": 7,
+            "truncated": false,
+            "blank_count": 13
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 94239,
+        "cached_input_tokens": 60800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2041,
+        "reasoning_output_tokens": 1509
+      },
+      "model_calls": 3
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-005",
+    "stage": "submit",
+    "prompt_sha256": "953ee3d2891ac13a78d70c896abfeb5e5bc799dcb4f14b858f01d9630fda7e15",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122a-f0d4-7282-843f-4a620c5c9a6b"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-37554\":{\"formulas\":{\"F2\":\"=SUMPRODUCT(--EXACT(D2,$A$2:$A$17),$B$2:$B$17)\",\"F3\":\"=SUMPRODUCT(--EXACT(D3,$A$2:$A$17),$B$2:$B$17)\",\"F4\":\"=SUMPRODUCT(--EXACT(D4,$A$2:$A$17),$B$2:$B$17)\",\"F5\":\"=SUMPRODUCT(--EXACT(D5,$A$2:$A$17),$B$2:$B$17)\",\"F6\":\"=SUMPRODUCT(--EXACT(D6,$A$2:$A$17),$B$2:$B$17)\",\"F7\":\"=SUMPRODUCT(--EXACT(D7,$A$2:$A$17),$B$2:$B$17)\",\"F8\":\"=SUMPRODUCT(--EXACT(D8,$A$2:$A$17),$B$2:$B$17)\",\"F9\":\"=SUMPRODUCT(--EXACT(D9,$A$2:$A$17),$B$2:$B$17)\",\"F10\":\"=SUMPRODUCT(--EXACT(D10,$A$2:$A$17),$B$2:$B$17)\",\"F11\":\"=SUMPRODUCT(--EXACT(D11,$A$2:$A$17),$B$2:$B$17)\",\"F12\":\"=SUMPRODUCT(--EXACT(D12,$A$2:$A$17),$B$2:$B$17)\",\"F13\":\"=SUMPRODUCT(--EXACT(D13,$A$2:$A$17),$B$2:$B$17)\",\"F14\":\"=SUMPRODUCT(--EXACT(D14,$A$2:$A$17),$B$2:$B$17)\",\"F15\":\"=SUMPRODUCT(--EXACT(D15,$A$2:$A$17),$B$2:$B$17)\",\"F16\":\"=SUMPRODUCT(--EXACT(D16,$A$2:$A$17),$B$2:$B$17)\",\"F17\":\"=SUMPRODUCT(--EXACT(D17,$A$2:$A$17),$B$2:$B$17)\"}},\"sheet-37609\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(AND(N(A2)>=7,N(B2)>=7),\\\"e\\\",IF(OR(AND(ISNUMBER(A2),A2>=7),AND(ISNUMBER(B2),B2>=7)),\\\"e\\\",\\\"-\\\"))\"}],\"formulas\":{}},\"sheet-37615\":{\"fills\":[{\"range\":\"F7:F37\",\"formula\":\"=IF(D7*24>4,57.2,28.6)\"}],\"formulas\":{}},\"sheet-38462\":{\"formulas\":{\"C1\":\"=ROUNDUP(B1,0)\",\"C2\":\"=ROUNDUP(B2,0)\"}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 20096,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 644,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-37554\":{\"formulas\":{\"F2\":\"=SUMPRODUCT(--EXACT(D2,$A$2:$A$17),$B$2:$B$17)\",\"F3\":\"=SUMPRODUCT(--EXACT(D3,$A$2:$A$17),$B$2:$B$17)\",\"F4\":\"=SUMPRODUCT(--EXACT(D4,$A$2:$A$17),$B$2:$B$17)\",\"F5\":\"=SUMPRODUCT(--EXACT(D5,$A$2:$A$17),$B$2:$B$17)\",\"F6\":\"=SUMPRODUCT(--EXACT(D6,$A$2:$A$17),$B$2:$B$17)\",\"F7\":\"=SUMPRODUCT(--EXACT(D7,$A$2:$A$17),$B$2:$B$17)\",\"F8\":\"=SUMPRODUCT(--EXACT(D8,$A$2:$A$17),$B$2:$B$17)\",\"F9\":\"=SUMPRODUCT(--EXACT(D9,$A$2:$A$17),$B$2:$B$17)\",\"F10\":\"=SUMPRODUCT(--EXACT(D10,$A$2:$A$17),$B$2:$B$17)\",\"F11\":\"=SUMPRODUCT(--EXACT(D11,$A$2:$A$17),$B$2:$B$17)\",\"F12\":\"=SUMPRODUCT(--EXACT(D12,$A$2:$A$17),$B$2:$B$17)\",\"F13\":\"=SUMPRODUCT(--EXACT(D13,$A$2:$A$17),$B$2:$B$17)\",\"F14\":\"=SUMPRODUCT(--EXACT(D14,$A$2:$A$17),$B$2:$B$17)\",\"F15\":\"=SUMPRODUCT(--EXACT(D15,$A$2:$A$17),$B$2:$B$17)\",\"F16\":\"=SUMPRODUCT(--EXACT(D16,$A$2:$A$17),$B$2:$B$17)\",\"F17\":\"=SUMPRODUCT(--EXACT(D17,$A$2:$A$17),$B$2:$B$17)\"}},\"sheet-37609\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(AND(N(A2)>=7,N(B2)>=7),\\\"e\\\",IF(OR(AND(ISNUMBER(A2),A2>=7),AND(ISNUMBER(B2),B2>=7)),\\\"e\\\",\\\"-\\\"))\"}],\"formulas\":{}},\"sheet-37615\":{\"fills\":[{\"range\":\"F7:F37\",\"formula\":\"=IF(D7*24>4,57.2,28.6)\"}],\"formulas\":{}},\"sheet-38462\":{\"formulas\":{\"C1\":\"=ROUNDUP(B1,0)\",\"C2\":\"=ROUNDUP(B2,0)\"}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122a-f0d4-7282-843f-4a620c5c9a6b",
+    "raw": "{\"sheet-37554\":{\"formulas\":{\"F2\":\"=SUMPRODUCT(--EXACT(D2,$A$2:$A$17),$B$2:$B$17)\",\"F3\":\"=SUMPRODUCT(--EXACT(D3,$A$2:$A$17),$B$2:$B$17)\",\"F4\":\"=SUMPRODUCT(--EXACT(D4,$A$2:$A$17),$B$2:$B$17)\",\"F5\":\"=SUMPRODUCT(--EXACT(D5,$A$2:$A$17),$B$2:$B$17)\",\"F6\":\"=SUMPRODUCT(--EXACT(D6,$A$2:$A$17),$B$2:$B$17)\",\"F7\":\"=SUMPRODUCT(--EXACT(D7,$A$2:$A$17),$B$2:$B$17)\",\"F8\":\"=SUMPRODUCT(--EXACT(D8,$A$2:$A$17),$B$2:$B$17)\",\"F9\":\"=SUMPRODUCT(--EXACT(D9,$A$2:$A$17),$B$2:$B$17)\",\"F10\":\"=SUMPRODUCT(--EXACT(D10,$A$2:$A$17),$B$2:$B$17)\",\"F11\":\"=SUMPRODUCT(--EXACT(D11,$A$2:$A$17),$B$2:$B$17)\",\"F12\":\"=SUMPRODUCT(--EXACT(D12,$A$2:$A$17),$B$2:$B$17)\",\"F13\":\"=SUMPRODUCT(--EXACT(D13,$A$2:$A$17),$B$2:$B$17)\",\"F14\":\"=SUMPRODUCT(--EXACT(D14,$A$2:$A$17),$B$2:$B$17)\",\"F15\":\"=SUMPRODUCT(--EXACT(D15,$A$2:$A$17),$B$2:$B$17)\",\"F16\":\"=SUMPRODUCT(--EXACT(D16,$A$2:$A$17),$B$2:$B$17)\",\"F17\":\"=SUMPRODUCT(--EXACT(D17,$A$2:$A$17),$B$2:$B$17)\"}},\"sheet-37609\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(AND(N(A2)>=7,N(B2)>=7),\\\"e\\\",IF(OR(AND(ISNUMBER(A2),A2>=7),AND(ISNUMBER(B2),B2>=7)),\\\"e\\\",\\\"-\\\"))\"}],\"formulas\":{}},\"sheet-37615\":{\"fills\":[{\"range\":\"F7:F37\",\"formula\":\"=IF(D7*24>4,57.2,28.6)\"}],\"formulas\":{}},\"sheet-38462\":{\"formulas\":{\"C1\":\"=ROUNDUP(B1,0)\",\"C2\":\"=ROUNDUP(B2,0)\"}}}",
+    "usage": {
+      "input_tokens": 20096,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 644,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

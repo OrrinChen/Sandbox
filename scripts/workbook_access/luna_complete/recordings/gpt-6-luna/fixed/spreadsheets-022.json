@@ -1,0 +1,1053 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "8254e9dc7a316f91ecb236a313c446771545a748910f2fe942041a67689b94d4",
+    "6661ee87cbc409b44f04f9cf55bb9e0de8a771c13ef7fe8ff06dadc80e2e2e87",
+    "55d718fe9ec7e32df3c8baf86b624cd45f9823617212b0570e4df613018c731f"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-57354",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "D3": "=SUMIF($B$2:$U$2,D$2,$B3:$U3)",
+          "E3": "=SUMIF($B$2:$U$2,E$2,$B3:$U3)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:U10"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:U10",
+            "range_size": 180,
+            "cells": [
+              [
+                "B2",
+                "SPEND"
+              ],
+              [
+                "C2",
+                "SALES"
+              ],
+              [
+                "D2",
+                "REVENUE"
+              ],
+              [
+                "E2",
+                "GP"
+              ],
+              [
+                "F2",
+                "SPEND"
+              ],
+              [
+                "G2",
+                "SALES"
+              ],
+              [
+                "H2",
+                "REVENUE"
+              ],
+              [
+                "I2",
+                "GP"
+              ],
+              [
+                "J2",
+                "SPEND"
+              ],
+              [
+                "K2",
+                "SALES"
+              ],
+              [
+                "L2",
+                "REVENUE"
+              ],
+              [
+                "M2",
+                "GP"
+              ],
+              [
+                "N2",
+                "SPEND"
+              ],
+              [
+                "O2",
+                "SALES"
+              ],
+              [
+                "P2",
+                "REVENUE"
+              ],
+              [
+                "Q2",
+                "GP"
+              ],
+              [
+                "R2",
+                "SPEND"
+              ],
+              [
+                "S2",
+                "SALES"
+              ],
+              [
+                "T2",
+                "REVENUE"
+              ],
+              [
+                "U2",
+                "GP"
+              ],
+              [
+                "B3",
+                "90816.43"
+              ],
+              [
+                "C3",
+                "2145"
+              ],
+              [
+                "F3",
+                "17505.51"
+              ],
+              [
+                "G3",
+                "500"
+              ],
+              [
+                "H3",
+                "28568"
+              ],
+              [
+                "I3",
+                "11062.49"
+              ],
+              [
+                "J3",
+                "23225.96"
+              ],
+              [
+                "K3",
+                "528"
+              ],
+              [
+                "L3",
+                "29868"
+              ],
+              [
+                "M3",
+                "6642.04"
+              ],
+              [
+                "N3",
+                "26859"
+              ],
+              [
+                "O3",
+                "589"
+              ],
+              [
+                "P3",
+                "33265"
+              ],
+              [
+                "Q3",
+                "6406"
+              ],
+              [
+                "R3",
+                "23225.96"
+              ],
+              [
+                "S3",
+                "528"
+              ],
+              [
+                "T3",
+                "29868"
+              ],
+              [
+                "U3",
+                "6642.040000000001"
+              ]
+            ],
+            "total": 38,
+            "truncated": false,
+            "blank_count": 142
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 74946,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 937,
+        "reasoning_output_tokens": 458
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58047",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:H30",
+            "formula": "=IF(G2=\"\",0,G2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "A1:H30"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "A1:H30",
+            "range_size": 240,
+            "cells": [
+              [
+                "A1",
+                "Name"
+              ],
+              [
+                "B1",
+                "Financial Status"
+              ],
+              [
+                "C1",
+                "Subtotal"
+              ],
+              [
+                "D1",
+                "Shipping"
+              ],
+              [
+                "E1",
+                "Taxes"
+              ],
+              [
+                "F1",
+                "Total"
+              ],
+              [
+                "G1",
+                "Discount Code"
+              ],
+              [
+                "H1",
+                "Discount Code"
+              ],
+              [
+                "A2",
+                "1873"
+              ],
+              [
+                "B2",
+                "paid"
+              ],
+              [
+                "C2",
+                "320"
+              ],
+              [
+                "D2",
+                "0"
+              ],
+              [
+                "E2",
+                "0"
+              ],
+              [
+                "F2",
+                "320"
+              ],
+              [
+                "H2",
+                "0"
+              ],
+              [
+                "A3",
+                "1873"
+              ],
+              [
+                "H3",
+                "0"
+              ],
+              [
+                "A4",
+                "1873"
+              ],
+              [
+                "H4",
+                "0"
+              ],
+              [
+                "A5",
+                "1873"
+              ],
+              [
+                "H5",
+                "0"
+              ],
+              [
+                "A6",
+                "1874"
+              ],
+              [
+                "B6",
+                "paid"
+              ],
+              [
+                "C6",
+                "270"
+              ],
+              [
+                "D6",
+                "0"
+              ],
+              [
+                "E6",
+                "0"
+              ],
+              [
+                "F6",
+                "270"
+              ],
+              [
+                "G6",
+                "OOJHK"
+              ],
+              [
+                "H6",
+                "OOJHK"
+              ],
+              [
+                "A7",
+                "1874"
+              ],
+              [
+                "H7",
+                "OOJHK"
+              ],
+              [
+                "A8",
+                "1874"
+              ],
+              [
+                "H8",
+                "OOJHK"
+              ],
+              [
+                "A9",
+                "1874"
+              ],
+              [
+                "H9",
+                "OOJHK"
+              ],
+              [
+                "A10",
+                "1875"
+              ],
+              [
+                "B10",
+                "paid"
+              ],
+              [
+                "C10",
+                "6206"
+              ],
+              [
+                "D10",
+                "0"
+              ],
+              [
+                "E10",
+                "0"
+              ],
+              [
+                "F10",
+                "6206"
+              ],
+              [
+                "H10",
+                "0"
+              ],
+              [
+                "A11",
+                "1875"
+              ],
+              [
+                "H11",
+                "0"
+              ],
+              [
+                "A12",
+                "1875"
+              ],
+              [
+                "H12",
+                "0"
+              ],
+              [
+                "A13",
+                "1875"
+              ],
+              [
+                "H13",
+                "0"
+              ],
+              [
+                "A14",
+                "1875"
+              ],
+              [
+                "H14",
+                "0"
+              ],
+              [
+                "A15",
+                "1875"
+              ],
+              [
+                "H15",
+                "0"
+              ],
+              [
+                "A16",
+                "1875"
+              ],
+              [
+                "A17",
+                "1875"
+              ],
+              [
+                "A18",
+                "1875"
+              ],
+              [
+                "A19",
+                "1875"
+              ],
+              [
+                "A20",
+                "1875"
+              ],
+              [
+                "A21",
+                "1875"
+              ],
+              [
+                "A22",
+                "1876"
+              ],
+              [
+                "B22",
+                "paid"
+              ],
+              [
+                "C22",
+                "353"
+              ],
+              [
+                "D22",
+                "0"
+              ],
+              [
+                "E22",
+                "0"
+              ],
+              [
+                "F22",
+                "353"
+              ],
+              [
+                "G22",
+                "OOJHK"
+              ],
+              [
+                "A23",
+                "1876"
+              ],
+              [
+                "A24",
+                "1876"
+              ],
+              [
+                "A25",
+                "1876"
+              ],
+              [
+                "A26",
+                "1876"
+              ],
+              [
+                "A27",
+                "1876"
+              ],
+              [
+                "A28",
+                "1876"
+              ],
+              [
+                "A29",
+                "1876"
+              ],
+              [
+                "A30",
+                "1876"
+              ]
+            ],
+            "total": 73,
+            "truncated": false,
+            "blank_count": 167
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I17"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:I17",
+            "range_size": 153,
+            "cells": [
+              [
+                "A1",
+                "Jew"
+              ],
+              [
+                "B1",
+                "2-scrap-AW"
+              ],
+              [
+                "C1",
+                "No"
+              ],
+              [
+                "D1",
+                "OOJHK"
+              ],
+              [
+                "E1",
+                "450"
+              ],
+              [
+                "F1",
+                "27"
+              ],
+              [
+                "G1",
+                "0.1"
+              ],
+              [
+                "I1",
+                "True"
+              ],
+              [
+                "A2",
+                "Jew"
+              ],
+              [
+                "B2",
+                "R&K-AW"
+              ],
+              [
+                "C2",
+                "No"
+              ],
+              [
+                "D2",
+                "OOJHK"
+              ],
+              [
+                "E2",
+                "450"
+              ],
+              [
+                "F2",
+                "30"
+              ],
+              [
+                "G2",
+                "0.1"
+              ],
+              [
+                "I2",
+                "True"
+              ],
+              [
+                "A3",
+                "Jew"
+              ],
+              [
+                "B3",
+                "R&K-AW"
+              ],
+              [
+                "C3",
+                "No"
+              ],
+              [
+                "D3",
+                "OOJHK"
+              ],
+              [
+                "E3",
+                "1750"
+              ],
+              [
+                "F3",
+                "160"
+              ],
+              [
+                "G3",
+                "0.1"
+              ],
+              [
+                "I3",
+                "True"
+              ],
+              [
+                "A4",
+                "Jew"
+              ],
+              [
+                "B4",
+                "R&K-AW"
+              ],
+              [
+                "C4",
+                "No"
+              ],
+              [
+                "D4",
+                "OOJHK"
+              ],
+              [
+                "E4",
+                "2550"
+              ],
+              [
+                "F4",
+                "80"
+              ],
+              [
+                "G4",
+                "0.1"
+              ],
+              [
+                "I4",
+                "True"
+              ],
+              [
+                "A5",
+                "Leather"
+              ],
+              [
+                "B5",
+                "R&K-AW"
+              ],
+              [
+                "C5",
+                "Yes"
+              ],
+              [
+                "E5",
+                "600"
+              ],
+              [
+                "F5",
+                "120"
+              ],
+              [
+                "I5",
+                "False"
+              ],
+              [
+                "A6",
+                "Jew"
+              ],
+              [
+                "B6",
+                "R&K-AW"
+              ],
+              [
+                "C6",
+                "No"
+              ],
+              [
+                "E6",
+                "2550"
+              ],
+              [
+                "F6",
+                "80"
+              ],
+              [
+                "I6",
+                "False"
+              ],
+              [
+                "A7",
+                "Watch"
+              ],
+              [
+                "B7",
+                "R&K-AW"
+              ],
+              [
+                "C7",
+                "Yes"
+              ],
+              [
+                "E7",
+                "1950"
+              ],
+              [
+                "F7",
+                "390"
+              ],
+              [
+                "I7",
+                "False"
+              ],
+              [
+                "A8",
+                "Sunglasses"
+              ],
+              [
+                "B8",
+                "R&K-AW"
+              ],
+              [
+                "C8",
+                "Yes"
+              ],
+              [
+                "E8",
+                "880"
+              ],
+              [
+                "F8",
+                "176"
+              ],
+              [
+                "I8",
+                "False"
+              ],
+              [
+                "A9",
+                "Jew"
+              ],
+              [
+                "B9",
+                "2-scrap-AW"
+              ],
+              [
+                "A16",
+                "Watch"
+              ],
+              [
+                "B16",
+                "R&K-AW"
+              ],
+              [
+                "C16",
+                "Yes"
+              ],
+              [
+                "E16",
+                "1500"
+              ],
+              [
+                "F16",
+                "300"
+              ],
+              [
+                "I16",
+                "False"
+              ],
+              [
+                "A17",
+                "Jew"
+              ],
+              [
+                "B17",
+                "R&K-AW"
+              ],
+              [
+                "C17",
+                "No"
+              ],
+              [
+                "E17",
+                "2300"
+              ],
+              [
+                "F17",
+                "80"
+              ],
+              [
+                "I17",
+                "False"
+              ]
+            ],
+            "total": 70,
+            "truncated": false,
+            "blank_count": 83
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 74946,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 937,
+        "reasoning_output_tokens": 458
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58701",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "fills": [
+          {
+            "range": "E2:E3",
+            "formula": "=IFERROR(VLOOKUP(B2,'Table Tab'!$A$2:$B$3,2,FALSE),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 74946,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 937,
+        "reasoning_output_tokens": 458
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59160",
+      "model": "gpt-6-luna",
+      "arm": "fixed",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "D3": "=COUNTIFS($A$2:$A$11,D$1,$B$2:$B$11,D$2)",
+          "E3": "=COUNTIFS($A$2:$A$11,D$1,$B$2:$B$11,E$2)",
+          "F3": "=COUNTIFS($A$2:$A$11,F$1,$B$2:$B$11,F$2)",
+          "G3": "=COUNTIFS($A$2:$A$11,F$1,$B$2:$B$11,G$2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:G11"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A1:G11",
+            "range_size": 77,
+            "cells": [
+              [
+                "A1",
+                "Data"
+              ],
+              [
+                "D1",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "F1",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "A2",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "B2",
+                "Yes"
+              ],
+              [
+                "D2",
+                "Yes"
+              ],
+              [
+                "E2",
+                "No"
+              ],
+              [
+                "F2",
+                "Yes"
+              ],
+              [
+                "G2",
+                "No"
+              ],
+              [
+                "A3",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "B3",
+                "Yes"
+              ],
+              [
+                "D3",
+                "3"
+              ],
+              [
+                "E3",
+                "2"
+              ],
+              [
+                "A4",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "B4",
+                "Yes"
+              ],
+              [
+                "A5",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "B5",
+                "No"
+              ],
+              [
+                "A6",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "B6",
+                "No"
+              ],
+              [
+                "A7",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "B7",
+                "Yes"
+              ],
+              [
+                "A8",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "B8",
+                "No"
+              ],
+              [
+                "A9",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "B9",
+                "No"
+              ],
+              [
+                "A10",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "B10",
+                "Yes"
+              ],
+              [
+                "A11",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "B11",
+                "No"
+              ]
+            ],
+            "total": 29,
+            "truncated": false,
+            "blank_count": 48
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 74946,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 937,
+        "reasoning_output_tokens": 458
+      },
+      "model_calls": 3
+    }
+  ]
+}

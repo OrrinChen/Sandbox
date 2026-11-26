@@ -1,0 +1,124 @@
+{
+  "origin": "2022Q3",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": [
+        {
+          "cik": "0000878726",
+          "reason": "Tuesday Morning says higher fuel prices had already reduced store traffic and sales (D). Fiscal-year net sales rose 8.5%, but average ticket rose 8.8% while transactions rose only 1.9% (A, B). If traffic losses persist as ticket growth slows, quarterly net sales could fall 5% year over year within two quarters. The latest quarter’s rate is unknown."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": [
+        {
+          "cik": "0001124796",
+          "reason": "nLIGHT’s six-month revenue fell about 4.0% as lower development revenue and China product sales outweighed gains elsewhere (A). Customers were delaying capital spending (B), which could push sales out of either of the next two quarters and deepen the decline to 5% or more. The latest quarter’s rate is unknown."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001005286",
+          "reason": "Reported sales YoY 18.76% then 6.04%; linear projections -6.68% and -19.41%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000880266",
+          "reason": "Reported sales YoY 12.91% then 2.29%; linear projections -8.33% and -18.95%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0001158463",
+          "reason": "Reported sales YoY 136.83% then 63.11%; linear projections -10.62% and -84.34%."
+        },
+        {
+          "cik": "0001498710",
+          "reason": "Reported sales YoY 109.70% then 59.04%; linear projections 8.38% and -42.29%."
+        }
+      ]
+    }
+  ]
+}

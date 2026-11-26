@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-016",
+    "stage": "submit",
+    "prompt_sha256": "698aaaec0fdf50ec34c86b1f894ae9c47d8a771dbb0d7f970aeed33c342cff20",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f1-7043-72f2-b374-1c617b46d375",
+    "raw": "{\"sheet-50952\":{\"fills\":[{\"range\":\"G2:G5\",\"formula\":\"=IF(OR(E2=\\\"\\\",F2=\\\"\\\"),\\\"\\\",IFERROR(INDEX($A$2:$A$10000,MATCH(1,INDEX(ISNUMBER(SEARCH(E2,$B$2:$B$10000))*ISNUMBER(SEARCH(F2,$B$2:$B$10000))*($A$2:$A$10000<>\\\"\\\"),0),0)),\\\"\\\"))\"}],\"formulas\":{}},\"sheet-51249\":{\"formulas\":{\"D1\":\"=IF(B2<>\\\"\\\",\\\"Multiple\\\",IF(B1=\\\"Description A\\\",\\\"Single A\\\",IF(B1=\\\"Description B\\\",\\\"Single B\\\",\\\"\\\")))\",\"D5\":\"=IF(B6<>\\\"\\\",\\\"Multiple\\\",IF(B5=\\\"Description A\\\",\\\"Single A\\\",IF(B5=\\\"Description B\\\",\\\"Single B\\\",\\\"\\\")))\",\"D9\":\"=IF(B10<>\\\"\\\",\\\"Multiple\\\",IF(B9=\\\"Description A\\\",\\\"Single A\\\",IF(B9=\\\"Description B\\\",\\\"Single B\\\",\\\"\\\")))\"}},\"sheet-51262\":{\"fills\":[{\"range\":\"F6:H6\",\"formula\":\"=SUMPRODUCT(($B$6:$B$13>=DATE(YEAR(F5),MONTH(F5),1))*($B$6:$B$13<EDATE(DATE(YEAR(F5),MONTH(F5),1),1))*($C$6:$C$13<>\\\"\\\")*(COUNTIF($F$10:$F$14,$C$6:$C$13)>0)*$D$6:$D$13)\"}],\"formulas\":{}},\"sheet-51807\":{\"fills\":[{\"range\":\"D1:D3\",\"formula\":\"=IF(A1=\\\"\\\",\\\"\\\",\\\"Carton \\\"&QUOTIENT(A1,12)&IF(MOD(A1,12)=0,\\\"\\\",\\\" Boxes \\\"&MOD(A1,12)))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 18537,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 542,
+      "reasoning_output_tokens": 129
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

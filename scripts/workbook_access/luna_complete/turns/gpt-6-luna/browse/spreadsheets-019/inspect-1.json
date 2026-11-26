@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-019",
+    "stage": "inspect-1",
+    "prompt_sha256": "e9de9d7342787bbf5e8cfe6c1cf1b078ebeffca6dcb8f7c12f0d7d51da5348e9",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122f-eec2-7e01-a8b8-3badb6020a28"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to resolve the formula patterns and the missing source cells, especially for the year based IDs and runner transposition."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-55260\":[],\"sheet-55535\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B17\"}],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D2:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D11:M17\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"A2:C28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"G2:G28\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 35802,
+          "cached_input_tokens": 23808,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1542,
+          "reasoning_output_tokens": 1340
+        }
+      ],
+      "cli_final": "{\"sheet-55260\":[],\"sheet-55535\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B17\"}],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D2:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D11:M17\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"A2:C28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"G2:G28\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122f-eec2-7e01-a8b8-3badb6020a28",
+    "raw": "{\"sheet-55260\":[],\"sheet-55535\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"A1:B17\"}],\"sheet-55609\":[{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D2:M8\"},{\"op\":\"range\",\"sheet\":\"Φύλλο1\",\"range\":\"D11:M17\"}],\"sheet-56427\":[{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"A2:C28\"},{\"op\":\"range\",\"sheet\":\"Taul1\",\"range\":\"G2:G28\"}]}",
+    "usage": {
+      "input_tokens": 35802,
+      "cached_input_tokens": 23808,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1542,
+      "reasoning_output_tokens": 1340
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

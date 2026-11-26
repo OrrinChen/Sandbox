@@ -1,0 +1,343 @@
+{
+  "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681",
+  "turns_sha256": [
+    "fe5f74f00ac51497f87abc1fb72b4bb756c29687a1cc75eefb53d4763b1d75b2",
+    "ee3cf7822e4249adcf1746e655a16b21a3718a8b7adaad5ac2ed76793fa74324",
+    "c1d15096f83878254d8c63e6eea34f45a4972fd7b815694b2b9dd2b9915211bb"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-45063",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B6",
+            "formula": "=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 104863,
+        "cached_input_tokens": 86656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 987,
+        "reasoning_output_tokens": 522
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-45300",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "fills": [
+          {
+            "range": "B1:B4",
+            "formula": "=LEFT(A1,FIND(\"FT\",A1)-1)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 104863,
+        "cached_input_tokens": 86656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 987,
+        "reasoning_output_tokens": 522
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-45937",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "fills": [
+          {
+            "range": "E7:E9",
+            "formula": "=INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Current",
+            "range": "C6:E9"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Current",
+            "range": "C6:E9",
+            "range_size": 12,
+            "cells": [
+              [
+                "C6",
+                "kms"
+              ],
+              [
+                "D6",
+                "Category"
+              ],
+              [
+                "E6",
+                "%"
+              ],
+              [
+                "C7",
+                "25000"
+              ],
+              [
+                "D7",
+                "A"
+              ],
+              [
+                "E7",
+                "22.5"
+              ],
+              [
+                "C8",
+                "25000"
+              ],
+              [
+                "D8",
+                "B"
+              ],
+              [
+                "C9",
+                "26002"
+              ],
+              [
+                "D9",
+                "C"
+              ]
+            ],
+            "total": 10,
+            "truncated": false,
+            "blank_count": 2
+          }
+        },
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Current",
+            "range": "H17:N22"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Current",
+            "range": "H17:N22",
+            "range_size": 42,
+            "cells": [
+              [
+                "H17",
+                "kms"
+              ],
+              [
+                "J17",
+                "Categories"
+              ],
+              [
+                "J18",
+                "A"
+              ],
+              [
+                "K18",
+                "B"
+              ],
+              [
+                "L18",
+                "C"
+              ],
+              [
+                "M18",
+                "D"
+              ],
+              [
+                "N18",
+                "E"
+              ],
+              [
+                "J19",
+                "%"
+              ],
+              [
+                "K19",
+                "%"
+              ],
+              [
+                "L19",
+                "%"
+              ],
+              [
+                "M19",
+                "%"
+              ],
+              [
+                "N19",
+                "%"
+              ],
+              [
+                "H20",
+                "0"
+              ],
+              [
+                "I20",
+                "26000"
+              ],
+              [
+                "J20",
+                "22.5"
+              ],
+              [
+                "K20",
+                "26.25"
+              ],
+              [
+                "L20",
+                "30"
+              ],
+              [
+                "M20",
+                "30"
+              ],
+              [
+                "N20",
+                "37.5"
+              ],
+              [
+                "H21",
+                "26001"
+              ],
+              [
+                "I21",
+                "39000"
+              ],
+              [
+                "J21",
+                "18"
+              ],
+              [
+                "K21",
+                "21"
+              ],
+              [
+                "L21",
+                "24"
+              ],
+              [
+                "M21",
+                "24"
+              ],
+              [
+                "N21",
+                "30"
+              ],
+              [
+                "H22",
+                "39001"
+              ],
+              [
+                "I22",
+                "52000"
+              ],
+              [
+                "J22",
+                "13.5"
+              ],
+              [
+                "K22",
+                "15.75"
+              ],
+              [
+                "L22",
+                "18"
+              ],
+              [
+                "M22",
+                "18"
+              ],
+              [
+                "N22",
+                "22.5"
+              ]
+            ],
+            "total": 33,
+            "truncated": false,
+            "blank_count": 9
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 2,
+      "usage": {
+        "input_tokens": 104863,
+        "cached_input_tokens": 86656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 987,
+        "reasoning_output_tokens": 522
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-46167",
+      "model": "gpt-6-luna",
+      "arm": "browse",
+      "batch": "spreadsheets-011",
+      "submission": {
+        "formulas": {
+          "D2": "=SUMIF(A:A,111111,B:B)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 104863,
+        "cached_input_tokens": 86656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 987,
+        "reasoning_output_tokens": 522
+      },
+      "model_calls": 3
+    }
+  ]
+}

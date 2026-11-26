@@ -1,0 +1,75 @@
+{
+  "text": [
+    {
+      "sector": "2022Q4/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2022Q4/food_manufacturing-2",
+      "alerts": [
+        {
+          "cik": "0000100493",
+          "reason": "Tyson’s reported sales growth slowed from 16.08% to 8.15% year over year. If that 7.93-point slowdown repeats each quarter, growth would be about 0.2% in the intervening quarter and −7.7% in the target quarter. Lower volume reduced sales by $223 million, partly because higher prices weighed on demand (A). Continued price increases are the main uncertainty in that projection (D)."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2022Q4/food_manufacturing-2",
+      "alerts": [
+        {
+          "cik": "0000100493",
+          "reason": "Reported sales YoY 16.08% then 8.15%. Target is step 2; preceding 0.22% versus target -7.71%."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q4/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/industrial_machinery-3",
+      "alerts": [
+        {
+          "cik": "0000886346",
+          "reason": "Reported sales YoY 31.32% then 13.20%. Target is step 2; preceding -4.93% versus target -23.06%."
+        }
+      ]
+    },
+    {
+      "sector": "2022Q4/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q4/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

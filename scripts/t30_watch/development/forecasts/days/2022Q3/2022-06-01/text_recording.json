@@ -1,0 +1,64 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 32739,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 619,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7c-dff3-75a0-a2a3-84dfb687f98d",
+  "packet_sha256": "e523ce81d96f0818fba65d899e406157c69802f97e69ae5cf97863c90242328f",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/food_manufacturing-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001140215\",\n          \"reason\": \"Reed’s March-quarter net sales grew just 0.3% (A). Reed’s brand volume rose 5%, but Virgil’s volume fell 11% (B). I forecast that Reed’s brand growth keeps the June-quarter net sales change above -5% year over year, then becomes insufficient to offset Virgil’s weakness, taking consolidated net sales to -5% or worse in July–September.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/industrial_machinery-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000878726\",\n          \"reason\": \"Tuesday Morning’s quarterly net sales grew 4.1%, but comparable-store sales grew just 0.6% against 18.1% growth over nine months (A, B). Inventory rose about 29% year over year while gross margin fell from 31.4% to 24.4% (C, D). With stock building faster than sales and comparable-store growth slowing, I forecast a net sales change above -5% in the preceding quarter and a decline of at least 5% year over year in July–September.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001124796\",\n          \"reason\": \"nLIGHT’s March-quarter revenue grew 5.2%. Higher industrial unit sales outside China outweighed lower China unit sales and lower average selling prices (A, D). That volume growth supports a June-quarter revenue change above -5%. Customers were delaying capital spending (B), which I expect to weaken subsequent sales enough for July–September revenue to fall at least 5% year over year.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/transportation-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000799233\",\n          \"reason\": \"Heartland’s March-quarter operating revenue fell 0.7%, leaving it 4.3 percentage points above the threshold (A). Freight rates rose and fleet utilization improved during 2021 (B), raising the year-earlier comparison as 2022 progresses. I forecast a revenue change above -5% in April–June and a decline of at least 5% year over year against the stronger July–September comparison.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/food_manufacturing-1",
+        "alerts": [
+          {
+            "cik": "0001140215",
+            "reason": "Reed’s March-quarter net sales grew just 0.3% (A). Reed’s brand volume rose 5%, but Virgil’s volume fell 11% (B). I forecast that Reed’s brand growth keeps the June-quarter net sales change above -5% year over year, then becomes insufficient to offset Virgil’s weakness, taking consolidated net sales to -5% or worse in July–September."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0000878726",
+            "reason": "Tuesday Morning’s quarterly net sales grew 4.1%, but comparable-store sales grew just 0.6% against 18.1% growth over nine months (A, B). Inventory rose about 29% year over year while gross margin fell from 31.4% to 24.4% (C, D). With stock building faster than sales and comparable-store growth slowing, I forecast a net sales change above -5% in the preceding quarter and a decline of at least 5% year over year in July–September."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0001124796",
+            "reason": "nLIGHT’s March-quarter revenue grew 5.2%. Higher industrial unit sales outside China outweighed lower China unit sales and lower average selling prices (A, D). That volume growth supports a June-quarter revenue change above -5%. Customers were delaying capital spending (B), which I expect to weaken subsequent sales enough for July–September revenue to fall at least 5% year over year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/transportation-1",
+        "alerts": [
+          {
+            "cik": "0000799233",
+            "reason": "Heartland’s March-quarter operating revenue fell 0.7%, leaving it 4.3 percentage points above the threshold (A). Freight rates rose and fleet utilization improved during 2021 (B), raising the year-earlier comparison as 2022 progresses. I forecast a revenue change above -5% in April–June and a decline of at least 5% year over year against the stronger July–September comparison."
+          }
+        ]
+      }
+    ]
+  }
+}

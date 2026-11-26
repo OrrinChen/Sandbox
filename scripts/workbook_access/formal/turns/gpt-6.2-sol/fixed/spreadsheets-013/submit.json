@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "fixed",
+    "batch": "spreadsheets-013",
+    "stage": "submit",
+    "prompt_sha256": "aa2e4a0492f4f2564fe15b39a6666bb815793c38f81317a5dcabc89bd9832ecd",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211d8-2790-7360-be1b-9f2d46787099",
+    "raw": "{\n  \"sheet-48588\": {\n    \"formulas\": {\n      \"B2\": \"=IF(A2=\\\"\\\",\\\"\\\",1)\"\n    },\n    \"fills\": [\n      {\n        \"range\": \"B3:B43\",\n        \"formula\": \"=IF(A3=\\\"\\\",\\\"\\\",XLOOKUP(A3,$A$2:A2,$B$2:B2,MAX($B$2:B2)+1))\"\n      }\n    ]\n  },\n  \"sheet-48608\": {\n    \"formulas\": {},\n    \"fills\": [\n      {\n        \"range\": \"F2:F5\",\n        \"formula\": \"=IF(G2=\\\"\\\",\\\"\\\",XLOOKUP(1,(($B$2:$B$8&\\\"\\\")=(G2&\\\"\\\"))*($C$2:$C$8=\\\"Pass\\\"),$A$2:$A$8,\\\"\\\"))\"\n      }\n    ]\n  },\n  \"sheet-48643\": {\n    \"formulas\": {},\n    \"fills\": [\n      {\n        \"range\": \"H2:H40\",\n        \"formula\": \"=(N(H1)+B2)*(1+C2)\"\n      }\n    ]\n  },\n  \"sheet-48969\": {\n    \"formulas\": {},\n    \"fills\": [\n      {\n        \"range\": \"J3:N5\",\n        \"formula\": \"=IFERROR(INDEX($C$3:$G$5,MATCH($I3,$B$3:$B$5,0),MATCH(J$2,$C$2:$G$2,0))=INDEX($C$8:$G$10,MATCH($I3,$B$8:$B$10,0),MATCH(J$2,$C$7:$G$7,0)),FALSE)\"\n      }\n    ]\n  }\n}",
+    "usage": {
+      "input_tokens": 21599,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 782,
+      "reasoning_output_tokens": 403
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,277 @@
+[
+  {
+    "task_id": "decision-match-unlabeled-copy-removals",
+    "tool": "csv.export",
+    "instruction": "Construct outstanding_copies.csv for a print archive. Each request line calls for deletion of one physical copy of an edition at a particular depot. The tally file records completed removals in batches and identifies only the depot and edition. Within each exact depot-edition pair, apply the total completed copy count to request lines in ascending integer line_no order, one copy per line. Excess completions stay with their pair. A pair absent from the tally has zero completions. A NULL edition_code identifies the unlabeled edition and matches another NULL at the same depot. An empty text edition_code identifies a distinct edition. All other fields are non-null, line_no is globally unique, and batch counts are nonnegative whole copies. Return the unfulfilled original lines in ascending line_no order with columns line_no, depot_code, edition_code. For CSV serialization render SQL NULL as the literal NULL and empty text as an empty field. The result arrays retain the native values. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "copy_requests": {
+        "columns": [
+          "line_no INTEGER",
+          "depot_code TEXT",
+          "edition_code TEXT"
+        ],
+        "rows": [
+          [
+            8,
+            "N",
+            null
+          ],
+          [
+            2,
+            "N",
+            null
+          ],
+          [
+            5,
+            "N",
+            ""
+          ],
+          [
+            9,
+            "S",
+            null
+          ],
+          [
+            3,
+            "N",
+            "red"
+          ],
+          [
+            6,
+            "N",
+            "red"
+          ],
+          [
+            11,
+            "N",
+            "red"
+          ]
+        ]
+      },
+      "removal_tally": {
+        "columns": [
+          "depot_code TEXT",
+          "edition_code TEXT",
+          "copy_qty INTEGER"
+        ],
+        "rows": [
+          [
+            "N",
+            null,
+            1
+          ],
+          [
+            "N",
+            "red",
+            1
+          ],
+          [
+            "N",
+            "red",
+            1
+          ],
+          [
+            "S",
+            null,
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "line_no",
+      "depot_code",
+      "edition_code"
+    ]
+  },
+  {
+    "task_id": "decision-matched-store-lift-with-balanced-pairs",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the trial's change in units sold per store-week across matched store pairs. Each pair has one trial store and one control store. Each row describes one store's two equal-length observation periods. Units are total units sold in the period, and weeks_n is the number of weeks in each period for that store. A null units value means the entire period total is unknown. Exclude the whole pair if either store lacks either total. Within each complete pair, compute the trial store's post-minus-pre change in units per week minus the control store's corresponding change. Give every complete pair equal weight, regardless of duration. Return one row with columns complete_pairs and mean_lift_hundredths, the mean pair effect multiplied by 100 and rounded to the nearest integer, with exact halves rounded away from zero. No ordering ties arise. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "store_period": {
+        "columns": [
+          "pair_code TEXT",
+          "arm_code TEXT",
+          "pre_units INTEGER",
+          "post_units INTEGER",
+          "weeks_n INTEGER"
+        ],
+        "rows": [
+          [
+            "a",
+            "trial",
+            40,
+            60,
+            2
+          ],
+          [
+            "a",
+            "control",
+            30,
+            38,
+            2
+          ],
+          [
+            "b",
+            "trial",
+            80,
+            84,
+            4
+          ],
+          [
+            "b",
+            "control",
+            72,
+            84,
+            4
+          ],
+          [
+            "c",
+            "trial",
+            15,
+            45,
+            1
+          ],
+          [
+            "c",
+            "control",
+            null,
+            20,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "complete_pairs",
+      "mean_lift_hundredths"
+    ]
+  },
+  {
+    "task_id": "decision-maximize-packed-production-mix",
+    "tool": "sqlite.query",
+    "instruction": "Plan one shift producing whole units of products A and B. Each product may be made independently in any quantity from zero through four inclusive. Each finished unit consumes the packing slots and staff minutes listed for its product. Sum both resource usages across the mix. The single shift row gives the available packing slots and staff minutes, and usage may equal capacity. There are no recipe, ratio, or material-balance requirements. Maximize the total number of finished units. If mixes tie, choose the one with more A units. Return one row with a_units, b_units, total_units, slots_used, and staff_minutes_used in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "product": {
+        "columns": [
+          "product_code TEXT",
+          "slots_per_unit INTEGER",
+          "staff_minutes_per_unit INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            3,
+            1
+          ],
+          [
+            "B",
+            1,
+            3
+          ]
+        ]
+      },
+      "shift": {
+        "columns": [
+          "packing_slots INTEGER",
+          "staff_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            8,
+            8
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "a_units",
+      "b_units",
+      "total_units",
+      "slots_used",
+      "staff_minutes_used"
+    ]
+  },
+  {
+    "task_id": "decision-measure-margin-after-graded-returns",
+    "tool": "sqlite.query",
+    "instruction": "Report realized gross margin by SKU for the supplied sales cohort through the end of inspection. Each sale_lot has a unique lot_code, a quantity sold, a selling price per unit, and an inventory cost per unit. Each return_check records one nonoverlapping batch from its referenced lot. Every returned unit received a full refund at its own lot's selling price. Only the units counted in shelf_units passed inspection and went back into inventory at that lot's original unit cost. The remaining returned units have zero recovery. Quantities are integer units, monetary values are integer cents, and there are no taxes, fees or NULLs. A missing return batch means zero returns. A lot may have multiple batches and a SKU may have multiple lots. Include every sold SKU, even if fully refunded. Return columns sku_code, net_sales_cents, net_cost_cents, gross_margin_cents, where net cost is the positive cost charge after recoveries and gross margin is net sales less net cost. Sort by sku_code ascending in binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "return_check": {
+        "columns": [
+          "lot_code TEXT",
+          "refund_units INTEGER",
+          "shelf_units INTEGER"
+        ],
+        "rows": [
+          [
+            "L1",
+            1,
+            1
+          ],
+          [
+            "L1",
+            2,
+            0
+          ],
+          [
+            "L2",
+            1,
+            1
+          ],
+          [
+            "L4",
+            1,
+            0
+          ]
+        ]
+      },
+      "sale_lot": {
+        "columns": [
+          "lot_code TEXT",
+          "sku_code TEXT",
+          "sold_units INTEGER",
+          "unit_price INTEGER",
+          "unit_cost INTEGER"
+        ],
+        "rows": [
+          [
+            "L1",
+            "MAT",
+            5,
+            300,
+            120
+          ],
+          [
+            "L2",
+            "MAT",
+            2,
+            250,
+            100
+          ],
+          [
+            "L3",
+            "PEG",
+            3,
+            90,
+            40
+          ],
+          [
+            "L4",
+            "BOX",
+            1,
+            500,
+            200
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "sku_code",
+      "net_sales_cents",
+      "net_cost_cents",
+      "gross_margin_cents"
+    ]
+  }
+]

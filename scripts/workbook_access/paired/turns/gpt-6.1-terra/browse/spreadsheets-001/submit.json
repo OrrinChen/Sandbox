@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "browse",
+    "batch": "spreadsheets-001",
+    "stage": "submit",
+    "prompt_sha256": "039430ccaca841719e5b81b284184d9b515660c36c48563979f952090a4fc462",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211e5-38e8-7781-a32e-0612835a74af",
+    "raw": "{\"sheet-18935\":{\"fills\":[{\"range\":\"D17:D22\",\"formula\":\"=SUMPRODUCT(($A$5:$A$10=A17)*($B$5:$B$10=C17)*INDEX($C$5:$E$10,0,MATCH(B17,$C$4:$E$4,0)))\"}],\"formulas\":{}},\"sheet-2212\":{\"fills\":[{\"range\":\"E2:E13\",\"formula\":\"=COUNTIF($B$2:$B$273,\\\">=\\\"&D2)\"}],\"formulas\":{}},\"sheet-31915\":{\"fills\":[{\"range\":\"C2:C11\",\"formula\":\"=IF(A2=\\\"\\\",\\\"\\\",IF(COUNTIF($A$2:A2,A2)=1,SUMIF($A$2:$A$11,A2,$B$2:$B$11),\\\"\\\"))\"}],\"formulas\":{}},\"sheet-32255\":{\"fills\":[{\"range\":\"D2:D13\",\"formula\":\"=IF(A2=\\\"\\\",\\\"\\\",IF(A2=0,1,0))\"}],\"formulas\":{}}}",
+    "usage": {
+      "input_tokens": 22077,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 304,
+      "reasoning_output_tokens": 65
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 1,
+    "cli_429_retry_notices": 1,
+    "transport_attempts": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "864458228f3cec6bbb6141bb95252d0c8a7f03dc93031ca148b1228bed16cd96",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-original-dispatch-index-ties\": \"def solve(data):\\n    ready = [\\n        slip for slip in data['slips']\\n        if slip['state'] == 'ready' and data['start'] <= slip['due'] <= data['end']\\n    ]\\n    ready.sort(key=lambda slip: slip['due'])\\n    offset = data['offset']\\n    return [slip['label'] for slip in ready[offset:offset + data['limit']]]\\n\",\n  \"repair-original-dispatch-record-date\": \"def solve(data):\\n    if data['state'] == 'cancelled':\\n        return ''\\n    if data['version'] == 1:\\n        return data['dispatch_on']\\n    schedule = data['schedule']\\n    revised = schedule.get('revised_on')\\n    return schedule['planned_on'] if revised is None else revised\\n\",\n  \"repair-original-expand-month-end-close\": \"from datetime import date, timedelta\\n\\n\\ndef solve(data):\\n    start = date.fromisoformat(data['start'])\\n    end = date.fromisoformat(data['end'])\\n    holidays = {date.fromisoformat(value) for value in data['holidays']}\\n    day = timedelta(days=1)\\n    month = start.replace(day=1)\\n    result = []\\n    while month <= end:\\n        following = (month + timedelta(days=31)).replace(day=1)\\n        close = following - day\\n        while close >= month and (close.weekday() >= 5 or close in holidays):\\n            close -= day\\n        if close >= month and start <= close <= end:\\n            result.append(close.isoformat())\\n        month = following\\n    return result\\n\",\n  \"repair-original-expire-event-id-suppression\": \"def solve(data):\\n    events = data['events']\\n    last = {}\\n    kept = []\\n    for index in sorted(range(len(events)), key=lambda i: events[i]['at']):\\n        row = events[index]\\n        if row['state'] != 'live':\\n            continue\\n        key, at = row['id'], row['at']\\n        if key not in last or at - last[key] >= data['horizon']:\\n            kept.append(index)\\n            last[key] = at\\n    return kept\\n\"\n}",
+  "submissions": {
+    "repair-original-dispatch-index-ties": "def solve(data):\n    ready = [\n        slip for slip in data['slips']\n        if slip['state'] == 'ready' and data['start'] <= slip['due'] <= data['end']\n    ]\n    ready.sort(key=lambda slip: slip['due'])\n    offset = data['offset']\n    return [slip['label'] for slip in ready[offset:offset + data['limit']]]\n",
+    "repair-original-dispatch-record-date": "def solve(data):\n    if data['state'] == 'cancelled':\n        return ''\n    if data['version'] == 1:\n        return data['dispatch_on']\n    schedule = data['schedule']\n    revised = schedule.get('revised_on')\n    return schedule['planned_on'] if revised is None else revised\n",
+    "repair-original-expand-month-end-close": "from datetime import date, timedelta\n\n\ndef solve(data):\n    start = date.fromisoformat(data['start'])\n    end = date.fromisoformat(data['end'])\n    holidays = {date.fromisoformat(value) for value in data['holidays']}\n    day = timedelta(days=1)\n    month = start.replace(day=1)\n    result = []\n    while month <= end:\n        following = (month + timedelta(days=31)).replace(day=1)\n        close = following - day\n        while close >= month and (close.weekday() >= 5 or close in holidays):\n            close -= day\n        if close >= month and start <= close <= end:\n            result.append(close.isoformat())\n        month = following\n    return result\n",
+    "repair-original-expire-event-id-suppression": "def solve(data):\n    events = data['events']\n    last = {}\n    kept = []\n    for index in sorted(range(len(events)), key=lambda i: events[i]['at']):\n        row = events[index]\n        if row['state'] != 'live':\n            continue\n        key, at = row['id'], row['at']\n        if key not in last or at - last[key] >= data['horizon']:\n            kept.append(index)\n            last[key] = at\n    return kept\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-0fcb-7e80-a45a-7f9f65a8a6a0",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22255,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 528,
+    "reasoning_output_tokens": 0
+  }
+}

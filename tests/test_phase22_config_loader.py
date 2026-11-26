@@ -76,8 +76,8 @@ def test_validate_config_cli_reports_success(capsys):
     captured = capsys.readouterr()
     assert exit_code == 0
     assert "config_validation=passed" in captured.out
-    assert "tools=12" in captured.out
-    assert "validators=15" in captured.out
+    assert "tools=13" in captured.out
+    assert "validators=18" in captured.out
     assert "task_suites=3" in captured.out
 
 

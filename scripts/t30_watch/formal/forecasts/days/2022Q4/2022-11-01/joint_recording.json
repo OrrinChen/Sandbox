@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23668,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 219,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8e-78cd-7c61-bcfa-30667296268f",
+  "packet_sha256": "270a8158fe7f90e968b0bd53289e3fa8e1ecb0494278d751128deeb2fe81c10a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/food_manufacturing-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/transportation-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001048911\",\n          \"reason\": \"FedEx’s consolidated revenue growth slowed from 8.11% year over year in May to 5.63% in August. Higher yields, including fuel surcharges, cushioned volume declines across all transportation segments (A, E). The volume weakness accelerated in August’s final weeks (B). I forecast that pricing support will keep November-quarter revenue growth above -5.00%, but that sustained volume losses will push it to -5.00% or below in the quarter beginning December 1.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/transportation-3",
+        "alerts": [
+          {
+            "cik": "0001048911",
+            "reason": "FedEx’s consolidated revenue growth slowed from 8.11% year over year in May to 5.63% in August. Higher yields, including fuel surcharges, cushioned volume declines across all transportation segments (A, E). The volume weakness accelerated in August’s final weeks (B). I forecast that pricing support will keep November-quarter revenue growth above -5.00%, but that sustained volume losses will push it to -5.00% or below in the quarter beginning December 1."
+          }
+        ]
+      }
+    ]
+  }
+}

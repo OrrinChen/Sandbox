@@ -1,0 +1,29 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21618,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 138,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d7d-91a9-7461-9c40-273ddc814a28",
+  "packet_sha256": "98dfdd71efcbb44da8c811e0b801870b6db3a2fad00e181f121b99254397ac6b",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q1/retail-1\",\"alerts\":[{\"cik\":\"0000018255\",\"reason\":\"I forecast year-over-year net sales growth above −5.00% in the quarter ending January 2022 as recovering traffic continues to support sales (A, B). In the target quarter starting January 30, Cato begins comparing against the 2021 rebound. Stimulus and customers buying clothes to return to work and social events boosted that rebound (B). I expect those purchases to repeat less often, pushing net sales growth to −5.00% or below.\"}]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/retail-1",
+        "alerts": [
+          {
+            "cik": "0000018255",
+            "reason": "I forecast year-over-year net sales growth above −5.00% in the quarter ending January 2022 as recovering traffic continues to support sales (A, B). In the target quarter starting January 30, Cato begins comparing against the 2021 rebound. Stimulus and customers buying clothes to return to work and social events boosted that rebound (B). I expect those purchases to repeat less often, pushing net sales growth to −5.00% or below."
+          }
+        ]
+      }
+    ]
+  }
+}

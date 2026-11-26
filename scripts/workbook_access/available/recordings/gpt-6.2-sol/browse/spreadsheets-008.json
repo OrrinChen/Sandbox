@@ -1,0 +1,347 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "e0019c8749a33c3a9c1bfa8614b99716778a9d5efb008c7d3feb1dc61ef5d2d8",
+    "9d8df938fcb35d2d632c4f3f6889a312092c4a5ef28fa859e1db9c26794b2525",
+    "949965553e7c2070b735bf7275400e7fa7e01d064f84e5ff5f06c7e4f52ec08a"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-41680",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "F2:F18",
+            "formula": "=TRIM(E2)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59752,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 476,
+        "reasoning_output_tokens": 128
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-41969",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "A6:C6",
+            "formula": "=COUNTBLANK(OFFSET($A$3,0,3*(COLUMN()-COLUMN($A$6)),1,3))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59752,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 476,
+        "reasoning_output_tokens": 128
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42515",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "F5:F19",
+            "formula": "=B5/SUMIFS($B$5:$B$19,$A$5:$A$19,\"GBP-EUR\",$C$5:$C$19,G5)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E4:G19"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "E4:G19",
+            "range_size": 48,
+            "cells": [
+              [
+                "E4",
+                "CROSS-PARITY IN EUR"
+              ],
+              [
+                "F4",
+                "EUR-XXX CROSS-RATE"
+              ],
+              [
+                "G4",
+                "RATE IN EUR"
+              ],
+              [
+                "E5",
+                "EUR-AUD"
+              ],
+              [
+                "F5",
+                "1.49283288889117"
+              ],
+              [
+                "G5",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E6",
+                "EUR-CHF"
+              ],
+              [
+                "F6",
+                "1.002083188964488"
+              ],
+              [
+                "G6",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E7",
+                "EUR-USD"
+              ],
+              [
+                "F7",
+                "0.8822703080980869"
+              ],
+              [
+                "G7",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E8",
+                "EUR-EUR"
+              ],
+              [
+                "F8",
+                "1"
+              ],
+              [
+                "G8",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E9",
+                "EUR-ZAR"
+              ],
+              [
+                "F9",
+                "17.34850767528944"
+              ],
+              [
+                "G9",
+                "2022-07-01 00:00:00"
+              ],
+              [
+                "E10",
+                "EUR-AUD"
+              ],
+              [
+                "F10",
+                "1.487942741818885"
+              ],
+              [
+                "G10",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E11",
+                "EUR-CHF"
+              ],
+              [
+                "F11",
+                "1.14424222825078"
+              ],
+              [
+                "G11",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E12",
+                "EUR-USD"
+              ],
+              [
+                "F12",
+                "1.048238443434362"
+              ],
+              [
+                "G12",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E13",
+                "EUR-EUR"
+              ],
+              [
+                "F13",
+                "0.9999828896183612"
+              ],
+              [
+                "G13",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E14",
+                "EUR-ZAR"
+              ],
+              [
+                "F14",
+                "16.48016350680694"
+              ],
+              [
+                "G14",
+                "2022-07-04 00:00:00"
+              ],
+              [
+                "E15",
+                "EUR-AUD"
+              ],
+              [
+                "F15",
+                "1.62921033022181"
+              ],
+              [
+                "G15",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E16",
+                "EUR-CHF"
+              ],
+              [
+                "F16",
+                "1.050539789764741"
+              ],
+              [
+                "G16",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E17",
+                "EUR-USD"
+              ],
+              [
+                "F17",
+                "0.9441482922555846"
+              ],
+              [
+                "G17",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E18",
+                "EUR-EUR"
+              ],
+              [
+                "F18",
+                "1.116753544629436"
+              ],
+              [
+                "G18",
+                "2022-07-05 00:00:00"
+              ],
+              [
+                "E19",
+                "EUR-ZAR"
+              ],
+              [
+                "F19",
+                "17.87944452857048"
+              ],
+              [
+                "G19",
+                "2022-07-05 00:00:00"
+              ]
+            ],
+            "total": 48,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 59752,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 476,
+        "reasoning_output_tokens": 128
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-42526",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-008",
+      "submission": {
+        "fills": [
+          {
+            "range": "B2:B16",
+            "formula": "=IF(A2=0,0,5*A2/IF(A2>0,MAX($A$2:$A$16),-MIN($A$2:$A$16)))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 59752,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 476,
+        "reasoning_output_tokens": 128
+      },
+      "model_calls": 3
+    }
+  ]
+}

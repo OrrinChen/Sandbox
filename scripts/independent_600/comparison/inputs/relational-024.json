@@ -1,0 +1,308 @@
+[
+  {
+    "task_id": "decision-dryer-probe-swap-evidence",
+    "tool": "sqlite.query",
+    "instruction": "For each dryer with a completed swap documented in swap_notes, compare the paired readings at the exact before_tick and after_tick cited by that note. Ticks are whole minutes on the dryer clock. Temperatures are whole degrees Celsius at the fixed inlet and outlet sockets. The completed swap exchanges the two physical probes between sockets. A null after_tick means the swap was only planned. Omit a note if either cited pair is absent, any temperature is null, or either absolute inlet–outlet difference is below 4 degrees. If the hotter reading changes sockets, classify the pattern as 'follows_probe'. If it stays at the same socket, classify it as 'stays_at_socket'. Report the observed pattern only. Return columns dryer_code, pattern, source_id in ascending binary dryer_code and then source_id order, citing the actual note used. Each source_id is unique and each dryer has at most one reading pair per tick. Uncited readings may have been taken under different operating conditions. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "socket_checks": {
+        "columns": [
+          "dryer_code TEXT",
+          "tick_min INTEGER",
+          "inlet_c INTEGER",
+          "outlet_c INTEGER"
+        ],
+        "rows": [
+          [
+            "Fern",
+            2,
+            72,
+            66
+          ],
+          [
+            "Fern",
+            8,
+            65,
+            71
+          ],
+          [
+            "Fern",
+            10,
+            73,
+            65
+          ],
+          [
+            "Moss",
+            1,
+            56,
+            60
+          ],
+          [
+            "Moss",
+            6,
+            58,
+            64
+          ],
+          [
+            "Reed",
+            3,
+            49,
+            59
+          ]
+        ]
+      },
+      "swap_notes": {
+        "columns": [
+          "source_id TEXT",
+          "dryer_code TEXT",
+          "before_tick INTEGER",
+          "after_tick INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "N7",
+            "Fern",
+            2,
+            8,
+            "Exchanged inlet and outlet probes after minute 2. Both settled at minute 8."
+          ],
+          [
+            "N3",
+            "Moss",
+            1,
+            6,
+            "Probes exchanged between the minute 1 and minute 6 checks at fixed heat."
+          ],
+          [
+            "N9",
+            "Reed",
+            3,
+            null,
+            "Exchange pencilled in after minute 3. Waiting for a pause."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "dryer_code",
+      "pattern",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-earliest-journey-with-transfer",
+    "tool": "sqlite.query",
+    "instruction": "Use exactly two scheduled legs to travel from Grove to Quay via one intermediate stop distinct from both endpoints. Times are integer minutes after midnight on the same day. The first leg may depart at minute 480 or later. The second must depart from the first leg's destination at least eight minutes after the first leg arrives. Exactly eight minutes qualifies. Return the single journey with the earliest final arrival. Break ties by ascending first-leg ID, then ascending second-leg ID, using binary text order. Return first_leg, second_leg, then arrival_min (minutes after midnight). Each leg ID is unique. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "legs": {
+        "columns": [
+          "leg_id TEXT",
+          "origin TEXT",
+          "destination TEXT",
+          "depart_min INTEGER",
+          "arrive_min INTEGER"
+        ],
+        "rows": [
+          [
+            "G1",
+            "Grove",
+            "Mill",
+            480,
+            492
+          ],
+          [
+            "G2",
+            "Grove",
+            "Fern",
+            484,
+            494
+          ],
+          [
+            "M1",
+            "Mill",
+            "Quay",
+            499,
+            510
+          ],
+          [
+            "M2",
+            "Mill",
+            "Quay",
+            500,
+            519
+          ],
+          [
+            "F1",
+            "Fern",
+            "Quay",
+            502,
+            519
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_leg",
+      "second_leg",
+      "arrival_min"
+    ]
+  },
+  {
+    "task_id": "decision-early-payout-funding-selection",
+    "tool": "sqlite.query",
+    "instruction": "Select today's early payouts for a single settlement desk. cash_limits has one row giving available cash in cents. Each payout_offers row represents one indivisible merchant payout. Funding it consumes draw_cents and earns fee_cents. Only offers with ready_flag equal to 1 are eligible. The desk can fund at most two offers, with combined draw no greater than available cash. Maximize combined fees, breaking ties by smaller combined draw, then by the lexicographically smallest comma-separated string of selected codes. Build that string in ascending binary text order. Codes are unique single uppercase ASCII letters. The empty selection uses the empty string and earns and draws zero. All fields are nonnull, draws are positive, and fees and cash are nonnegative. Return exactly one row with selected_codes, funded_cents, earned_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cash_limits": {
+        "columns": [
+          "available_cents INTEGER"
+        ],
+        "rows": [
+          [
+            1000
+          ]
+        ]
+      },
+      "payout_offers": {
+        "columns": [
+          "offer_code TEXT",
+          "draw_cents INTEGER",
+          "fee_cents INTEGER",
+          "ready_flag INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            700,
+            90,
+            1
+          ],
+          [
+            "B",
+            500,
+            65,
+            1
+          ],
+          [
+            "C",
+            500,
+            65,
+            1
+          ],
+          [
+            "D",
+            300,
+            20,
+            1
+          ],
+          [
+            "E",
+            200,
+            95,
+            0
+          ],
+          [
+            "F",
+            500,
+            65,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "selected_codes",
+      "funded_cents",
+      "earned_cents"
+    ]
+  },
+  {
+    "task_id": "decision-effective-reserve-true-up",
+    "tool": "sqlite.query",
+    "instruction": "For every row in reserve_closes, calculate the signed posting needed to bring that merchant's reserve from held_cents to its required closing balance. Cite the source_id of the controlling notice. Each reserve_notices row transcribes a primary notice, with its rate in basis points and its ceiling in cents. A notice replaces the merchant's previous notice beginning on starts_on, inclusive. Use the latest applicable start date, breaking a same-date tie by larger revision_no. That pair is unique per merchant, and every close has an applicable notice. Dates are ISO calendar dates. Apply the rate to exposure_cents, round down to whole cents, then apply the ceiling. A null ceiling means unlimited. All other fields are nonnull, and all input amounts are nonnegative. Positive postings withhold money and negative postings release it. Include zero postings. Return merchant_code, close_day, source_id, posting_cents in merchant_code and close_day ascending order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "reserve_closes": {
+        "columns": [
+          "merchant_code TEXT",
+          "close_day TEXT",
+          "exposure_cents INTEGER",
+          "held_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "2026-03-09",
+            25009,
+            1900
+          ],
+          [
+            "A",
+            "2026-03-10",
+            25009,
+            1900
+          ],
+          [
+            "B",
+            "2026-03-10",
+            12345,
+            617
+          ]
+        ]
+      },
+      "reserve_notices": {
+        "columns": [
+          "source_id TEXT",
+          "merchant_code TEXT",
+          "starts_on TEXT",
+          "revision_no INTEGER",
+          "rate_bps INTEGER",
+          "ceiling_cents INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "A",
+            "2026-03-01",
+            1,
+            800,
+            null,
+            "Hold eight percent of closing exposure."
+          ],
+          [
+            "N2",
+            "A",
+            "2026-03-10",
+            1,
+            1000,
+            2200,
+            "Raise the rate to ten percent with a 2200-cent ceiling."
+          ],
+          [
+            "N3",
+            "A",
+            "2026-03-10",
+            2,
+            1000,
+            1800,
+            "Correction for this close and onward: retain ten percent, capped at 1800 cents."
+          ],
+          [
+            "N4",
+            "B",
+            "2026-03-01",
+            1,
+            500,
+            null,
+            "Hold five percent without a ceiling."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "merchant_code",
+      "close_day",
+      "source_id",
+      "posting_cents"
+    ]
+  }
+]

@@ -1,0 +1,298 @@
+[
+  {
+    "task_id": "decision-month-end-earned-premium-rollforward",
+    "tool": "sqlite.query",
+    "instruction": "For each pool with at least one posting booked by 2025-11-30, report November earned premium and the signed unearned balance at November close, in cents. Each posting is a separate premium tranche. A negative tranche reduces premium. Coverage starts on first_day and excludes stop_day. At each close, include only postings booked by that close. For each included tranche, count covered calendar days through the close inclusively, divide by its full coverage duration, and multiply by signed premium. Truncate each tranche's cumulative earned cents toward zero before summing. November earned premium is the change in cumulative earned premium from October 31 to November 30, so a late booking can produce catch-up earnings. Closing unearned premium equals cumulative booked premium less cumulative earned premium. All dates are ISO calendar dates, all durations are positive, and there are no nulls. Include zero balances. Return pool_code, november_earned_cents, closing_unearned_cents in ascending binary pool_code order, one row per pool. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "premium_tranche": {
+        "columns": [
+          "pool_code TEXT",
+          "book_day TEXT",
+          "first_day TEXT",
+          "stop_day TEXT",
+          "signed_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "DOCK",
+            "2025-10-01",
+            "2025-10-22",
+            "2025-11-11",
+            1001
+          ],
+          [
+            "DOCK",
+            "2025-11-12",
+            "2025-10-22",
+            "2025-11-11",
+            -203
+          ],
+          [
+            "DOCK",
+            "2025-11-25",
+            "2025-12-01",
+            "2025-12-11",
+            700
+          ],
+          [
+            "MILL",
+            "2025-11-20",
+            "2025-11-21",
+            "2025-12-11",
+            555
+          ],
+          [
+            "MILL",
+            "2025-12-01",
+            "2025-11-01",
+            "2025-11-11",
+            900
+          ],
+          [
+            "YARD",
+            "2025-10-01",
+            "2025-10-01",
+            "2025-10-11",
+            400
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "pool_code",
+      "november_earned_cents",
+      "closing_unearned_cents"
+    ]
+  },
+  {
+    "task_id": "decision-mural-progress-payment",
+    "tool": "sqlite.query",
+    "instruction": "For each mural, cite the latest progress review and calculate the installment still payable as of that review. Review numbers are unique within a mural and larger numbers are later. The approved amount is cumulative earned value in cents. Withhold one tenth of that cumulative value, rounding the withheld amount down to whole cents. From the remainder subtract all cash already posted for that mural through the selected review number inclusive. Each posting is a separate cash movement even when amounts match. A negative posting reverses a prior payment. An absent posting history totals zero. Floor the installment at zero and include murals with zero due. Source IDs are unique and no input fields are null. Return mural_code, review_source, held_cents, installment_cents in mural_code BINARY order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "cash_posting": {
+        "columns": [
+          "mural_code TEXT",
+          "posted_review INTEGER",
+          "cash_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Arc",
+            1,
+            2500
+          ],
+          [
+            "Arc",
+            2,
+            2500
+          ],
+          [
+            "Arc",
+            3,
+            -300
+          ],
+          [
+            "Arc",
+            4,
+            900
+          ],
+          [
+            "Bay",
+            2,
+            3700
+          ]
+        ]
+      },
+      "mural_review": {
+        "columns": [
+          "mural_code TEXT",
+          "review_no INTEGER",
+          "source_id TEXT",
+          "minute_text TEXT",
+          "earned_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "Arc",
+            1,
+            "A1",
+            "The panel accepted the base coat at 5000 cents to date.",
+            5000
+          ],
+          [
+            "Arc",
+            3,
+            "A3",
+            "The panel accepted 10009 cents of work through lettering.",
+            10009
+          ],
+          [
+            "Bay",
+            2,
+            "B2",
+            "The panel accepted the border at 4000 cents to date.",
+            4000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "mural_code",
+      "review_source",
+      "held_cents",
+      "installment_cents"
+    ]
+  },
+  {
+    "task_id": "decision-net-currency-pocket-conversion",
+    "tool": "sqlite.query",
+    "instruction": "Compute the signed payout in settlement cents for each run_code present in pocket_entries. Within a run, each pocket_code denotes a distinct source currency. Entries are signed source minor units, with refunds already negative. All entries are final, and equal amounts may be separate events. Sum the entries within each run and pocket before conversion. The unique matching pocket_quotes row gives the exact positive fraction cent_num/unit_den of a settlement cent per source minor unit. Convert each pocket net and round to the nearest whole settlement cent, breaking exact halves away from zero. Then add the converted pockets within the run. An unused quote contributes nothing. All fields are nonnull. Include zero and negative run totals. Return run_code, payout_cents ordered by run_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pocket_entries": {
+        "columns": [
+          "run_code TEXT",
+          "pocket_code TEXT",
+          "source_units INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            "amber",
+            1
+          ],
+          [
+            "R1",
+            "amber",
+            1
+          ],
+          [
+            "R1",
+            "blue",
+            -3
+          ],
+          [
+            "R2",
+            "amber",
+            -1
+          ],
+          [
+            "R2",
+            "amber",
+            -1
+          ],
+          [
+            "R2",
+            "blue",
+            4
+          ]
+        ]
+      },
+      "pocket_quotes": {
+        "columns": [
+          "run_code TEXT",
+          "pocket_code TEXT",
+          "cent_num INTEGER",
+          "unit_den INTEGER"
+        ],
+        "rows": [
+          [
+            "R1",
+            "amber",
+            1,
+            2
+          ],
+          [
+            "R1",
+            "blue",
+            1,
+            2
+          ],
+          [
+            "R2",
+            "amber",
+            2,
+            3
+          ],
+          [
+            "R2",
+            "blue",
+            3,
+            4
+          ],
+          [
+            "R2",
+            "gray",
+            8,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "run_code",
+      "payout_cents"
+    ]
+  },
+  {
+    "task_id": "decision-net-interbranch-premium-settlement-csv",
+    "tool": "csv.export",
+    "instruction": "Construct the complete settlement CSV for the supplied batch. Each row records a signed premium allocation in cents that beneficiary owes funding_branch. A negative allocation reverses that direction for its absolute amount. Ignore same-branch entries. Net all entries bilaterally within each currency, omit zero net balances, and emit a positive payable from the resulting debtor to the creditor. Branch and currency codes contain only uppercase ASCII letters, so fields require no quoting. There are no nulls. Return one row and one TEXT column named csv_contents. Use the exact header debtor,creditor,currency,cents and sort detail lines by debtor, creditor, then currency, all in ascending binary text order. These keys uniquely identify output lines. Use plain base-ten integer cents, commas without spaces, and LF after every line including the last. An empty settlement has only the header line. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "funding_entry": {
+        "columns": [
+          "beneficiary TEXT",
+          "funding_branch TEXT",
+          "ccy TEXT",
+          "allocation_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "ASH",
+            "BAY",
+            "USD",
+            850
+          ],
+          [
+            "BAY",
+            "ASH",
+            "USD",
+            300
+          ],
+          [
+            "ASH",
+            "BAY",
+            "USD",
+            -50
+          ],
+          [
+            "BAY",
+            "ASH",
+            "EUR",
+            100
+          ],
+          [
+            "ASH",
+            "COVE",
+            "USD",
+            400
+          ],
+          [
+            "COVE",
+            "ASH",
+            "USD",
+            400
+          ],
+          [
+            "BAY",
+            "BAY",
+            "USD",
+            900
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_contents"
+    ]
+  }
+]

@@ -1,0 +1,2018 @@
+{
+  "origin": "2023Q1",
+  "cutoff": "2023-03-31",
+  "companies": [
+    {
+      "cik": "0000018255",
+      "issuer": "CATO CORP",
+      "sector": "retail",
+      "period_end": "2023-01-28",
+      "filing_date": "2023-03-23",
+      "accession": "0001562762-23-000126",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm",
+      "title": "FORM 10K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Retail sales decreased by 1.2% to $752.4 million in fiscal 2022 compared to $761.4 million in fiscal 2021.",
+          "locator": "/html/body/div[3]/div[28]/div/div[49] through /html/body/div[3]/div[28]/div/div[63]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10K",
+          "date": "2023-03-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm"
+        },
+        {
+          "id": "B",
+          "text": "The decrease in retail sales in fiscal 2022 was primarily due to a 1% decrease in same-store sales and sales from closed stores in 2021, partially offset by stores opened in 2022.",
+          "locator": "/html/body/div[3]/div[28]/div/div[49] through /html/body/div[3]/div[28]/div/div[63]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10K",
+          "date": "2023-03-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm"
+        },
+        {
+          "id": "C",
+          "text": "The decrease of $46.4 million for fiscal 2022 compared to fiscal 2021 is primarily due to lower net operating income and a decrease in accounts payable and accrued bonus and benefits, partially offset by lower accounts receivable and merchandise inventories.",
+          "locator": "/html/body/div[3]/div[31]/div/div[34] through /html/body/div[3]/div[31]/div/div[39]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10K",
+          "date": "2023-03-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm"
+        },
+        {
+          "id": "D",
+          "text": "The current high inflationary environment continues to impact the Company through higher operating costs, including costs to ship our products to stores and customers, operating supplies, wages, and fuel.",
+          "locator": "/html/body/div[3]/div[27]/div/div[21] through /html/body/div[3]/div[27]/div/div[25]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10K",
+          "date": "2023-03-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash provided by operating activities during fiscal 2022 was $13.4 million as compared to $59.8 million provided in fiscal 2021 and $30.7 million used in fiscal 2020.",
+          "locator": "/html/body/div[3]/div[31]/div/div[34] through /html/body/div[3]/div[31]/div/div[39]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10K",
+          "date": "2023-03-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/18255/000156276223000126/cato2023012810K.htm"
+        }
+      ],
+      "document_sha256": "0f2943428388287b64ec3748772a7d70d093c4631914d746ea9ab65a9e538a7d",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001701758",
+      "issuer": "LOVESAC CO",
+      "sector": "retail",
+      "period_end": "2023-01-29",
+      "filing_date": "2023-03-29",
+      "accession": "0001628280-23-009725",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net sales are historically higher in the fourth fiscal quarter due primarily to the impact of the holiday selling season.",
+          "locator": "/html/body/div[542]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm"
+        },
+        {
+          "id": "B",
+          "text": "Showroom net sales increased $$99.5 million, or 33.3%, to $398.5 million in fiscal 2023 as compared to $299.0 million in fiscal 2022, principally related to higher point of sales transactions in all showrooms with slightly higher promotional discounting.",
+          "locator": "/html/body/div[584]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm"
+        },
+        {
+          "id": "C",
+          "text": "Other sales, which include pop-up-shop sales, barter inventory transactions and shop-in-shop sales, increased $27.9 million, or 57.4%, to $76.5 million in fiscal 2023 as compared to $48.6 million in fiscal 2022.",
+          "locator": "/html/body/div[587]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm"
+        },
+        {
+          "id": "D",
+          "text": "Our recent revenue growth has been accompanied by increased selling, general and administrative expenses.",
+          "locator": "/html/body/div[570]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm"
+        },
+        {
+          "id": "E",
+          "text": "In fiscal 2023, net cash used in operating activities was $21.4 million and consisted of changes in operating assets and liabilities of $90.8 million, net income of $28.2 million, and non-cash items of $41.2 million.",
+          "locator": "/html/body/div[619]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828023009725/love-20230129.htm"
+        }
+      ],
+      "document_sha256": "bbd562351c3807098b533564684cbe1fb6c631e3bc1ebd81aba63d46ad620661",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001402057",
+      "issuer": "CDW CORP",
+      "sector": "retail",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-24",
+      "accession": "0001402057-23-000052",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Total Net sales for the year ended December 31, 2022 increased $2,928 million, or 14.1%, to $23,749 million compared to the prior year.",
+          "locator": "/html/body/div[435]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "All operating segments contributed to the Net sales growth.",
+          "locator": "/html/body/div[435]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "This decrease was partially offset by the absence of share repurchases and increased volume in our inventory financing arrangements.",
+          "locator": "/html/body/div[564]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The increase in Gross profit margin was primarily driven by more favorable product mix and rate and higher mix of netted down revenue, as well as increased Net sales and margins on services as a result of the recent business acquisitions.",
+          "locator": "/html/body/div[438]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income was $1,735 million for the year ended December 31, 2022, an increase of $316 million, or 22.3%, compared to $1,419 million for the year ended December 31, 2021.",
+          "locator": "/html/body/div[444]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1402057/000140205723000052/cdw-20221231.htm"
+        }
+      ],
+      "document_sha256": "cdc06dc1f56b2dd1abfff809b2a0fca949fdc3425c5e518a3cb717fa08061098",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000098246",
+      "issuer": "TIFFANY & CO",
+      "sector": "retail",
+      "period_end": "2020-10-31",
+      "filing_date": "2020-11-24",
+      "accession": "0000098246-20-000118",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/98246/000009824620000118/tif-20201031.htm",
+      "title": "10-Q",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0000829224",
+      "issuer": "STARBUCKS CORP",
+      "sector": "retail",
+      "period_end": "2023-01-01",
+      "filing_date": "2023-02-02",
+      "accession": "0000829224-23-000017",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated net revenues increased 8% to $8.7 billion in the first quarter of fiscal 2023 compared to $8.1 billion in the first quarter of fiscal 2022, primarily driven by strength in our U.S. business and growth in our International segment excluding China, partially offset by COVID-19 pandemic related disruptions in China and unfavorable foreign currency translation.",
+          "locator": "/html/body/div[206]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm"
+        },
+        {
+          "id": "B",
+          "text": "grew 5%, primarily driven by 10% growth in the U.S. market, partially offset by COVID-19 pandemic-related business conditions in China, leading to a 29% decrease in China comparable store sales.",
+          "locator": "/html/body/div[198]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm"
+        },
+        {
+          "id": "C",
+          "text": "Stores that are temporarily closed or operating at reduced hours due to the COVID-19 pandemic remain in comparable store sales while stores identified for permanent closure have been removed.",
+          "locator": "/html/body/div[204]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm"
+        },
+        {
+          "id": "D",
+          "text": "Consolidated operating margin decreased 20 basis points from the prior year to 14.4%, primarily driven by previously committed investments in labor including enhanced store partner wages and benefits, inflationary pressures and sales deleverage in China, partially offset by strategic pricing in North America and sales leverage across markets outside of China.",
+          "locator": "/html/body/div[206]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm"
+        },
+        {
+          "id": "E",
+          "text": "North America operating income for the first quarter of fiscal 2023 increased 12% to $1.2 billion, compared to $1.1 billion in the first quarter of fiscal 2022.",
+          "locator": "/html/body/div[255]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922423000017/sbux-20230101.htm"
+        }
+      ],
+      "document_sha256": "5110037dd06cc42ba6566232df5515695071f22afe1a6e5887c72482c49606cc",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000878726",
+      "issuer": "TUESDAY MORNING CORP/DE",
+      "sector": "retail",
+      "period_end": "2022-10-01",
+      "filing_date": "2022-11-22",
+      "accession": "0000950170-22-025574",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net sales for the three months ended October 1, 2022 were $157.1 million, a decrease of $19.8 million or 11.2%, compared to $176.9 million for the three months ended September 30, 2021.",
+          "locator": "/html/body/div[25]/div",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2022-11-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm"
+        },
+        {
+          "id": "B",
+          "text": "Comparable store sales for the three months ended October 1, 2022, decreased 10.4% due to 13.1% decrease in customer transactions offset by a 3.9% increase in average ticket primarily due to incremental inflationary pressures.",
+          "locator": "/html/body/p[129]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2022-11-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm"
+        },
+        {
+          "id": "C",
+          "text": "Inventory levels decreased by $16.0 million at October 1, 2022 to $132.5 million from $148.5 million at July 2, 2022.",
+          "locator": "/html/body/div[34]/div",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2022-11-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm"
+        },
+        {
+          "id": "D",
+          "text": "Since the Company’s emergence from bankruptcy in December 2020, the Company’s results of operations have been negatively impacted by a variety of factors, including pandemic-related disruptions to supply chains and higher supply chain costs resulting from higher freight costs and other supply chain conditions, and reduced store traffic and sales as a result of increased fuel prices.",
+          "locator": "/html/body/div[18]/div",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2022-11-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm"
+        },
+        {
+          "id": "E",
+          "text": "The COVID-19 pandemic has had an adverse effect on our business operations, store traffic, employee availability, financial conditions, results of operations, liquidity and cash flow.",
+          "locator": "/html/body/p[108]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2022-11-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878726/000095017022025574/tuem-20221001.htm"
+        }
+      ],
+      "document_sha256": "bf254c4b92bce0f9545ef7cf48691891baa7f2e37e84e0cf2b89d95cfe873391",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001140215",
+      "issuer": "REED'S, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2022-09-30",
+      "filing_date": "2022-11-14",
+      "accession": "0001493152-22-032238",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1140215/000149315222032238/form10-q.htm",
+      "title": "10-Q",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0000057515",
+      "issuer": "LANCASTER COLONY CORP",
+      "sector": "food_manufacturing",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-02",
+      "accession": "0000057515-23-000005",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated net sales for the three months ended December 31, 2022 increased 11% to a second quarter record $477.4 million versus $428.4 million last year, reflecting higher net sales for both the Retail and Foodservice segments driven by pricing to offset inflationary costs.",
+          "locator": "/html/body/div[170]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Over the course of the following two years, while this shift in demand was inconsistent and volatile, on balance it positively impacted our Retail segment sales volumes and negatively impacted our Foodservice segment sales volumes.",
+          "locator": "/html/body/div[165]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Inventories primarily reflect the favorable comparison against a large prior-year increase in inventories, which resulted from higher commodity costs and overall elevated quantities on-hand to help service a less predictable demand environment.",
+          "locator": "/html/body/div[228]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The inflationary cost environment we experienced during 2022 resulted in significantly higher input costs for our business.",
+          "locator": "/html/body/div[166]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income increased $6.0 million to $51.3 million for the three months ended December 31, 2022 driven by the increase in gross profit as our pricing actions served to offset the significant inflationary costs we have experienced for commodities, packaging, labor, freight and warehousing.",
+          "locator": "/html/body/div[191]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-02",
+          "url": "https://www.sec.gov/Archives/edgar/data/57515/000005751523000005/lanc-20221231.htm"
+        }
+      ],
+      "document_sha256": "1561a66b0468a9c3ed7ac7fe2f63064f66a745feffbb5fb19f3ca7237aafeab9",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000892222",
+      "issuer": "CRAFT BREW ALLIANCE, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2020-06-30",
+      "filing_date": "2020-08-05",
+      "accession": "0000892222-20-000046",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/892222/000089222220000046/brew-20200630.htm",
+      "title": "10-Q",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0001103982",
+      "issuer": "MONDELEZ INTERNATIONAL, INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-03",
+      "accession": "0001103982-23-000006",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Prior to the onset of the war, Ukraine generated 0.5% and Russia generated 2.9% of 2021 consolidated net revenues and in 2022, Ukraine generated 0.3% and Russia generated 4.0% of consolidated net revenue.",
+          "locator": "/html/body/div[650]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The combination of pricing, volume growth, suspension of advertising and ruble strength has resulted in a significant increase in the profitability of the Russian business and contributed to the growth of our consolidated performance.",
+          "locator": "/html/body/div[650]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "These favorable items were partially offset by higher raw material costs, higher other selling, general and administrative expenses, higher advertising and consumer promotion costs, higher remeasurement loss on net monetary position, acquisition integration costs incurred in 2022, the impact of divestitures, inventory step-up charges incurred in 2022 and lapping a prior-year favorable impact from the resolution of a tax matter.",
+          "locator": "/html/body/div[898]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Additionally, global supply chain, transportation and labor issues escalated and we experienced significantly higher operating costs, including higher overall raw material, transportation, labor and energy costs that have continued to rise.",
+          "locator": "/html/body/div[636]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Unfavorable currency changes decreased operating income by $319 million primarily due to the strength of the U.S. dollar relative to most currencies, including the euro, British pound sterling, Turkish lira, Australian dollar, Indian rupee, Polish zloty, Egyptian pound and Chinese yuan, partially offset by the strength of a few currencies relative to the U.S. dollar, including the Russian ruble and Brazilian real.",
+          "locator": "/html/body/div[780]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1103982/000110398223000006/mdlz-20221231.htm"
+        }
+      ],
+      "document_sha256": "bfd159c607a73f4c3adfe3e1426bcb992d211d95e98dcebe17e8fec074f91dec",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001005286",
+      "issuer": "LANDEC CORP CA",
+      "sector": "food_manufacturing",
+      "period_end": "2022-11-27",
+      "filing_date": "2023-03-16",
+      "accession": "0001005286-23-000057",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "As of November 27, 2022, the Company incurred net losses of $23.8 million, and the Company’s ability to generate cash in the future is subject to general economic, financial, competitive, legislative, regulatory, and other factors that are beyond the Company’s control.",
+          "locator": "/html/body/div[190]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm"
+        },
+        {
+          "id": "B",
+          "text": "The decrease in gross profit for the Lifecore business for the three and six months ended November 27, 2022, compared to the same period last year, was due primarily to decreased revenue, as well as an unfavorable sales mix.",
+          "locator": "/html/body/div[265]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm"
+        },
+        {
+          "id": "C",
+          "text": "The decrease in Lifecore’s revenues for the three months ended November 27, 2022, compared to the same period last year, was due to a $5.3 million decrease in CDMO sales primarily due to the timing of shipments and the timing of development activities within the fiscal year, partially offset by a $2.1 million increase in fermentation revenues primarily due to the timing of shipments, which was influenced by excess channel inventory as a result of the global pandemic’s negative impact on elective procedures.",
+          "locator": "/html/body/div[255]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm"
+        },
+        {
+          "id": "D",
+          "text": "The purchase price for each Share was $7.97.",
+          "locator": "/html/body/div[202]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm"
+        },
+        {
+          "id": "E",
+          "text": "Net cash used in operating activities during the six months ended November 27, 2022 was $4.5 million, compared to $4.3 million of net cash used in operating activities for the same period last year.",
+          "locator": "/html/body/div[313]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-16",
+          "url": "https://www.sec.gov/Archives/edgar/data/1005286/000100528623000057/lndc-20221127.htm"
+        }
+      ],
+      "document_sha256": "38f6f8db78304a5c495e2d44bf03f627f36b6a6394315f9c592c69787d87b93b",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000023217",
+      "issuer": "CONAGRA BRANDS INC.",
+      "sector": "food_manufacturing",
+      "period_end": "2022-11-27",
+      "filing_date": "2023-01-05",
+      "accession": "0001437749-23-000496",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm",
+      "title": "FORM 10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "In the second quarter of fiscal 2023, results reflected an increase in net sales, with organic (excludes the impact of foreign exchange) increases in all of our segments, in each case compared to the second quarter of fiscal 2022.",
+          "locator": "/html/body/p[60]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-Q",
+          "date": "2023-01-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm"
+        },
+        {
+          "id": "B",
+          "text": "During the second quarter of fiscal 2023, we continued to experience elevated demand for our products in the retail segments versus pre-pandemic levels, but volumes were lower compared to the second quarter of fiscal 2022 primarily due to the elasticity impact from our inflation-driven pricing actions.",
+          "locator": "/html/body/p[68]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-Q",
+          "date": "2023-01-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm"
+        },
+        {
+          "id": "C",
+          "text": "This was partially offset by higher inventory balances, largely due to input cost inflation and some inventory rebuild from previous supply chain constraints, and timing of payments of accounts payable.",
+          "locator": "/html/body/p[297]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-Q",
+          "date": "2023-01-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm"
+        },
+        {
+          "id": "D",
+          "text": "Overall gross profit increased primarily as a result of higher net sales, productivity, and lower transportation costs, which were offset by input cost inflation, unfavorable operating leverage, and elevated supply chain operating costs.",
+          "locator": "/html/body/p[60]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-Q",
+          "date": "2023-01-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm"
+        },
+        {
+          "id": "E",
+          "text": "Overall segment operating profit increased in our Refrigerated & Frozen, Grocery & Snacks, and Foodservice segments, which was partially offset by a slight decrease in our International segment.",
+          "locator": "/html/body/p[60]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-Q",
+          "date": "2023-01-05",
+          "url": "https://www.sec.gov/Archives/edgar/data/23217/000143774923000496/cag20221011b_10q.htm"
+        }
+      ],
+      "document_sha256": "ee5990970b0258f6efb73df765b45a3e56a71bb9946e752ce49895a806a3f412",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000003197",
+      "issuer": "CECO ENVIRONMENTAL CORP",
+      "sector": "industrial_machinery",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-03-06",
+      "accession": "0000950170-23-006169",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated net sales in 2022 were $422.6 million compared with $324.1 million in 2021, an increase of $98.5 million.",
+          "locator": "/html/body/p[397]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Orders booked were $526.6 million in 2022 compared with $360.8 million in 2021.",
+          "locator": "/html/body/p[399]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Within our segments we have monthly business reviews to ensure we are serving customers, achieving our operating plan, and executing on strategic growth initiatives.",
+          "locator": "/html/body/p[370]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "To compare operating performance between the years ended December 31, 2022, 2021 and 2020, the Company has adjusted GAAP operating income to exclude (1) amortization of intangible assets, earnout and retention expenses, (2) restructuring expenses primarily relating to severance, facility exits, and associated legal expenses, (3) acquisition and integration expenses, which include legal, accounting, and other expenses, (4) executive transition expenses, including severance for the Company's former executives, fees and expenses incurred in the search, for and hiring, of new executives and (5) intangible asset impairment.",
+          "locator": "/html/body/p[390]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income as reported in accordance with GAAP $ 22.2 $ 9.9 $ 13.3",
+          "locator": "/html/body/table[9]/tr[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/3197/000095017023006169/ceco-20221231.htm"
+        }
+      ],
+      "document_sha256": "119561d87f7816a868d08698a4db0e4c1176b8fb5ab157c45c7f0999156f4eca",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000880266",
+      "issuer": "AGCO CORP /DE",
+      "sector": "industrial_machinery",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-03-01",
+      "accession": "0000880266-23-000010",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net sales for 2022 were approximately $12,651.4 million, or 13.6% higher than 2021, primarily due to robust high horsepower tractor end-market demand and favorable pricing, which helped to offset the negative impacts of currency translation, supply chain constraints and inflationary pressures.",
+          "locator": "/html/body/div[657]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Net income attributable to AGCO Corporation and subsidiaries 7.0 % 8.1 % 4.7 %",
+          "locator": "/html/body/div[649]/table/tr[22]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Industry retail tractors sales were restricted by supply chain challenges during 2022.",
+          "locator": "/html/body/div[670]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The increase in income from operations during 2022 was primarily the result of higher net sales and production volumes along with significant pricing to offset inflationary cost increases.",
+          "locator": "/html/body/div[657]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Income from operations was approximately $1,265.4 million in 2022 compared to approximately $1,001.4 million in 2021.",
+          "locator": "/html/body/div[657]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/880266/000088026623000010/agco-20221231.htm"
+        }
+      ],
+      "document_sha256": "f6e55b00298933c1965f64231ebb281d7da28b6f9e781b3cb344bdb5458b7e9f",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000832101",
+      "issuer": "IDEX CORP /DE/",
+      "sector": "industrial_machinery",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-23",
+      "accession": "0000832101-23-000013",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "•Sales of $3.2 billion increased 15%; organic sales were up 13%.",
+          "locator": "/html/body/div[544]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "•The change in organic sales was attributed to increases in the Fire & Safety reporting unit due to acceptance of targeted growth initiatives, price realization and backlog execution, in the BAND-IT reporting unit due to strength in the energy market driven by increases in oil prices and in the automotive market driven by share gain as well as continued favorable industrial performance and in the Dispensing reporting unit due to continued favorable paint market, North American project volume and strong performance in India.",
+          "locator": "/html/body/div[654]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Excluding those items, Receivables - net increased $63.1 million as a result of higher volume; Inventories increased $79.0 million to support production amid supply chain challenges; and Trade accounts payable increased $17.2 million due to higher inventory purchases.",
+          "locator": "/html/body/div[732]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Net income of $586.7 million increased 31%; Net income margin of 18.4% increased 210 basis points.",
+          "locator": "/html/body/div[545]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "•Cash flows provided by operating activities of $557.4 million were down as higher earnings were more than offset by an increased investment in working capital.",
+          "locator": "/html/body/div[548]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/832101/000083210123000013/iex-20221231.htm"
+        }
+      ],
+      "document_sha256": "6e0d7d21869562e4522a6977676e876702be32cc5fae40302a449f1d5a11d181",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001121484",
+      "issuer": "OIL STATES INTERNATIONAL, INC",
+      "sector": "industrial_machinery",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-17",
+      "accession": "0001121484-23-000008",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Consolidated total revenues in 2022 increased $164.5 million, or 29%, from 2021.",
+          "locator": "/html/body/div[544]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Backlog reported by our Offshore/Manufactured Products segment increased to $308 million as of December 31, 2022 from $260 million as of December 31, 2021.",
+          "locator": "/html/body/div[502]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Backlog in our Offshore/Manufactured Products segment totaled $308 million as of December 31, 2022 compared to $260 million as of December 31, 2021.",
+          "locator": "/html/body/div[568]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Demand for oil and natural gas has increased steadily from the lows experienced in 2020 as the impact of the global response to the COVID-19 pandemic continues to wane, with commodity prices also driven by declines in crude oil supplies, concerns over sanctions resulting from the Russian invasion of Ukraine and slower crude oil production growth due to reduced investments by operators globally in recent years.",
+          "locator": "/html/body/div[482]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Capital investment by our customers temporarily declined due to these factors and the desire to generate sustainable cash flows.",
+          "locator": "/html/body/div[498]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-17",
+          "url": "https://www.sec.gov/Archives/edgar/data/1121484/000112148423000008/ois-20221231.htm"
+        }
+      ],
+      "document_sha256": "9b3929e6a803859c67fde514d47d7102e741a54ab5d41417176fc100db7a7906",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000026324",
+      "issuer": "CURTISS WRIGHT CORP",
+      "sector": "industrial_machinery",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-22",
+      "accession": "0000026324-23-000005",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Sales increased $50 million, or 6%, to $836 million, from the comparable prior year period primarily due to higher sales in the general industrial and commercial aerospace markets.",
+          "locator": "/html/body/div[602]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "New orders increased $352 million, or 14%, from the prior year period to $2,943 million, primarily due to the timing of naval defense orders and the incremental impact from our arresting systems acquisition in the Naval & Power segment, as well as an increase in new orders for ground defense and aerospace defense equipment in the Defense Electronics segment.",
+          "locator": "/html/body/div[583]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Though the impact of COVID-19 variants continues to cause supply-chain disruptions to global economies, including our business, as well as our customers and suppliers, U.S. economic activity has rebounded since 2021, due in part to the availability of vaccines, increased government support to rebuild the country’s infrastructure, and increased U.S. consumer spending.",
+          "locator": "/html/body/div[496]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Historically, we have not been significantly impacted by inflation, with increases in raw material costs or payroll costs generally offset through lean manufacturing activities or price increases.",
+          "locator": "/html/body/div[490]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income for the year increased $41 million, or 11%, to $423 million, and operating margin increased 130 basis points compared with 2021.",
+          "locator": "/html/body/div[570]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/26324/000002632423000005/cw-20221231.htm"
+        }
+      ],
+      "document_sha256": "b669f9669d084cd70f48d24d9030fd627545adbbcb3081929107ec3afc5be4dc",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001641991",
+      "issuer": "SPX FLOW, INC.",
+      "sector": "industrial_machinery",
+      "period_end": "2021-12-31",
+      "filing_date": "2022-02-16",
+      "accession": "0001641991-22-000015",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1641991/000164199122000015/spxf-20211231.htm",
+      "title": "10-K",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0001124796",
+      "issuer": "NLIGHT, INC.",
+      "sector": "semiconductors",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-27",
+      "accession": "0001124796-23-000018",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenues decreased to $242.1 million in the year ended December 31, 2022 compared to $270.1 million in the same period of 2021 due primarily to decreases in product sales to customers in China and development revenue, partially offset by an increase in product sales to customers outside of China.",
+          "locator": "/html/body/div[615]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The COVID-19 pandemic and related global liquidity concerns and macro-economic volatility adversely impacted our end-markets, including reduced economic activity and demand for our products, and delays in new capital expenditure decisions and implementations.",
+          "locator": "/html/body/div[640]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "In addition, Laser Products gross margin in 2022 was negatively impacted by inventory charges related to business restructuring and the discontinuation of certain product lines in the fourth quarter of 2022.",
+          "locator": "/html/body/div[703]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The increase in Industrial market revenue for 2021 compared to 2020 was driven by increases in unit sales outside of China, partially offset by a decrease in unit sales in China and lower average selling prices due to changes in product mix.",
+          "locator": "/html/body/div[664]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "During the year ended December 31, 2022, net cash used in operating activities was $14.5 million, which was the result of a $54.6 million net loss and use of cash for working capital of $8.2 million, offset partially by non‑cash expenses totaling $48.3 million related primarily to depreciation, amortization, and stock-based compensation.",
+          "locator": "/html/body/div[785]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1124796/000112479623000018/lasr-20221231.htm"
+        }
+      ],
+      "document_sha256": "f51cbab296075c36e9dcf85b29010b9ad4deef22ed444d7b669266e61241daea",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000743316",
+      "issuer": "MAXIM INTEGRATED PRODUCTS INC",
+      "sector": "semiconductors",
+      "period_end": "2021-06-26",
+      "filing_date": "2021-08-20",
+      "accession": "0000743316-21-000025",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/743316/000074331621000025/mxim-20210626.htm",
+      "title": "10-K",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0001038074",
+      "issuer": "SILICON LABORATORIES INC.",
+      "sector": "semiconductors",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-01",
+      "accession": "0001104659-23-009254",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm",
+      "title": "FORM 10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Revenues increased $303.2 million in fiscal 2022 compared to fiscal 2021 due to increased revenues from both our Industrial & Commercial products and Home & Life products.",
+          "locator": "/html/body/div[65]/div[2]/p[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2023-02-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "Increased product demand and production capacity constraints have increased the selling price and costs of our products, and has resulted in period-to-period fluctuations in our gross margin.",
+          "locator": "/html/body/div[69]/div[2]/p[9]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2023-02-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "Testing performed by such third parties facilitates faster delivery of products to our customers (particularly those located in Asia), shorter production cycle times, lower inventory requirements, lower costs and increased flexibility of test capacity.",
+          "locator": "/html/body/div[63]/div[2]/p[7]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2023-02-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "Gross margin increased to 62.7% in fiscal 2022 compared to 59.0% in fiscal 2021 primarily due to increases in the price of our products and variations in product mix.",
+          "locator": "/html/body/div[65]/div[2]/p[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2023-02-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "Operating income (loss) in fiscal 2022 was $119.3 million compared to $(32.8) million in fiscal 2021.",
+          "locator": "/html/body/div[65]/div[2]/p[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K",
+          "date": "2023-02-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/1038074/000110465923009254/slab-20221231x10k.htm"
+        }
+      ],
+      "document_sha256": "eddd1e3c6aa5f1a8956415da95a1c3fdb90c6f89606c76c50e18079326f3046c",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001579910",
+      "issuer": "RESONANT INC",
+      "sector": "semiconductors",
+      "period_end": "2021-12-31",
+      "filing_date": "2022-03-14",
+      "accession": "0001579910-22-000005",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1579910/000157991022000005/resn-20211231.htm",
+      "title": "10-K",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0001463101",
+      "issuer": "ENPHASE ENERGY, INC.",
+      "sector": "semiconductors",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-13",
+      "accession": "0001463101-23-000025",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm",
+      "title": "FORM 10-K FY 2022",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Net revenues increased by 69%, or $948.8 million, for the year ended December 31, 2022, as compared to the same period in 2021, driven primarily by a 47% increase in microinverter units volume shipped and a 103% increase in Enphase IQ Battery Megawatt-hour (“MWh”) shipped.",
+          "locator": "/html/body/div[791]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K FY 2022",
+          "date": "2023-02-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Due to increased demand across a range of industries, the global supply chain and the semiconductor industry experienced significant disruptions in second half of 2021 and during 2022.",
+          "locator": "/html/body/div[746]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K FY 2022",
+          "date": "2023-02-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "We have seen supply chain challenges, including component shortages, which have, in certain cases, caused delays in critical components and inventory, longer lead times, and have resulted in increased costs.",
+          "locator": "/html/body/div[746]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K FY 2022",
+          "date": "2023-02-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "In addition, the impact of inflation on the price of components, raw materials and labor has increased, although in the near term we have not seen our gross margin impacted by inflation as we increased prices for our product offerings in the second half of 2021 and in 2022 as well.",
+          "locator": "/html/body/div[747]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K FY 2022",
+          "date": "2023-02-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Our cash, cash equivalents and marketable securities increased by $596.2 million for the year ended December 31, 2022, as compared to the same period in 2021, primarily due to cash generated from operations, partially offset by cash used to fund acquisitions, make investments in private companies, and make payments of withholding taxes related to net share settlement of equity awards.",
+          "locator": "/html/body/div[836]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "FORM 10-K FY 2022",
+          "date": "2023-02-13",
+          "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310123000025/enph-20221231.htm"
+        }
+      ],
+      "document_sha256": "d5e50679e6186be3a98c0929f74805eec6c214fc76715561ae1385bbfc974e69",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000723125",
+      "issuer": "MICRON TECHNOLOGY INC",
+      "sector": "semiconductors",
+      "period_end": "2023-03-02",
+      "filing_date": "2023-03-29",
+      "accession": "0000723125-23-000022",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Total Revenue: Total revenue for the second quarter and first six months of 2023 decreased significantly relative to the comparative periods described below as a result of the factors described in the “Industry Conditions” section above.",
+          "locator": "/html/body/div[305]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm"
+        },
+        {
+          "id": "B",
+          "text": "The memory and storage industry environment deteriorated sharply in the fourth quarter of 2022 through the first six months of 2023 due to reduced demand resulting from customer adjustments to lower elevated inventory levels and weak demand in many end markets combined with global and macroeconomic challenges.",
+          "locator": "/html/body/div[290]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm"
+        },
+        {
+          "id": "C",
+          "text": "As a result of these conditions and increases in our inventory levels, we have reduced wafer starts and capital expenditures.",
+          "locator": "/html/body/div[292]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Sales of DRAM products decreased 4% primarily due to an approximate 20 percent decline in average selling prices partially offset by a mid-teens percent range increase in bit shipments.",
+          "locator": "/html/body/div[309]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm"
+        },
+        {
+          "id": "E",
+          "text": "•CNBU operating income (loss) declined primarily due to declines in average selling prices and lower bit shipments.",
+          "locator": "/html/body/div[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-03-29",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312523000022/mu-20230302.htm"
+        }
+      ],
+      "document_sha256": "d28a02dbe3147e1ad46a8b0911adbaff168779b2cd6e5a463e92b4ad0a287e75",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000857005",
+      "issuer": "PTC INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-09",
+      "accession": "0000950170-23-002335",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Professional services revenue decreased in Q1’23 from Q1’22 as we continue to execute on our strategy of leveraging partners to deliver services rather than contracting to deliver services ourselves, including the Q3'22 sale of a portion of our PLM services business to ITC Infotech.",
+          "locator": "/html/body/p[210]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "For both Windchill and IIoT, the average duration of on-premises subscriptions starting in the period decreased from Q1'22 to Q1'23, resulting in a reduction of on-premises subscription revenue recognized in Q1’23.",
+          "locator": "/html/body/p[229]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Software revenue growth in Q1’23 was negatively impacted by the value of foreign currencies compared to the U.S. Dollar.",
+          "locator": "/html/body/p[209]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "License gross margin increased in Q1’23 compared to Q1’22 due to a $3.6 million increase in license revenue, partially offset by a $3.0 million increase in cost of license revenue, which was driven by higher royalty expenses.",
+          "locator": "/html/body/p[239]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Free cash flow of $172 million in Q1'23 increased from $134 million in Q1'22, which includes capital expenditures of $9 million in Q1'23 and $3 million in Q1'22.",
+          "locator": "/html/body/p[190]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-09",
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023002335/ptc-20221231.htm"
+        }
+      ],
+      "document_sha256": "4805b4dc9044325521940ab0642baa29b319f5fd0d80c45e9f0f9c4ad9d4ccad",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001660134",
+      "issuer": "OKTA, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2023-01-31",
+      "filing_date": "2023-03-03",
+      "accession": "0001660134-23-000013",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "The aggregate market value of the stock of the Registrant as of July 31, 2022 (based on a closing price of $98.45 per share) held by non-affiliates was approximately $14.9 billion.",
+          "locator": "/html/body/div[40]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm"
+        },
+        {
+          "id": "B",
+          "text": "We had over 7,000 integrations with cloud, mobile and web applications and IT infrastructure providers as of January 31, 2023, which while not directly correlated to revenue, shows the breadth and acceptance of our platform.",
+          "locator": "/html/body/div[99]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm"
+        },
+        {
+          "id": "C",
+          "text": "Organizations are able to streamline user experience and improve security across all their applications, leading to increased customer acquisition, retention and loyalty.",
+          "locator": "/html/body/div[110]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm"
+        },
+        {
+          "id": "D",
+          "text": "As of January 31, 2023, we had more than 17,600 customers, including more than 3,930 customers with an annual contract value greater than $100,000.",
+          "locator": "/html/body/div[173]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm"
+        },
+        {
+          "id": "E",
+          "text": "From fiscal 2021 to fiscal 2022, our revenue grew from $835 million to $1,300 million, an increase of 56%, and from fiscal 2022 to fiscal 2023, our revenue grew from $1,300 million to $1,858 million, an increase of 43%.",
+          "locator": "/html/body/div[300]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000013/okta-20230131.htm"
+        }
+      ],
+      "document_sha256": "7d54d9828ea75fe72e06cd103cd03711214533cd910bdc3f4472aa65560e8fd4",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001348036",
+      "issuer": "AVALARA, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2022-06-30",
+      "filing_date": "2022-08-09",
+      "accession": "0001564590-22-028526",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1348036/000156459022028526/avlr-10q_20220630.htm",
+      "title": "10-Q",
+      "slots": [],
+      "status": "stale",
+      "reason": "Latest available filing exceeds the preregistered age bound."
+    },
+    {
+      "cik": "0000718877",
+      "issuer": "ACTIVISION BLIZZARD, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-23",
+      "accession": "0001628280-23-004842",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "•consolidated net revenues decreased 14% to $7.5 billion and consolidated operating income decreased 49% to $1.7 billion, as compared to consolidated net revenues of $8.8 billion and consolidated operating income of $3.3 billion in 2021;",
+          "locator": "/html/body/div[835]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "•a $205 million increase in King net bookings, driven by higher net bookings from in-game player purchases in the Candy Crush franchise; and",
+          "locator": "/html/body/div[888]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Based on the carrying amount of deferred revenue and deferred cost of revenue as of September 30, 2022, the change resulted in a decrease in net revenues recognized of $103 million, a decrease in cost of revenues recognized of $9 million, and a decrease in earnings per diluted share of $0.10 during the three months ended December 31, 2022.",
+          "locator": "/html/body/div[845]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "(2)Reflects the net effect from recognition (deferral) of deferred net revenues, along with related cost of revenues, on certain of our online-enabled products.",
+          "locator": "/html/body/div[1049]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "•cash flows from operating activities were approximately $2.2 billion, a decrease of 8%, as compared to $2.4 billion in 2021.",
+          "locator": "/html/body/div[839]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-23",
+          "url": "https://www.sec.gov/Archives/edgar/data/718877/000162828023004842/atvi-20221231.htm"
+        }
+      ],
+      "document_sha256": "64d8169172fbefde6023969006b29d457ad23b3264c538b79a96f4ef93b0e1ed",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001448056",
+      "issuer": "NEW RELIC, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-07",
+      "accession": "0001448056-23-000011",
+      "form": "10-Q",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm",
+      "title": "10-Q",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For the nine months ended December 31, 2022 and 2021, our revenue was $683.1 million and $579.8 million, respectively, representing year-over-year growth of 18%.",
+          "locator": "/html/body/div[250]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The decrease in personnel-related costs was due to the impact of higher commission amortization expenses in the same period last year when we first shifted to a consumption-business model from our subscription-business model.",
+          "locator": "/html/body/div[330]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "Our revenue and deferred revenue have been, in part, negatively impacted by the slowdown in activity and uncertainty associated with the COVID-19 pandemic and the current economic conditions impacted by supply chain disruption, market volatility, inflation, rising interest rates, fluctuating currency exchange rates, and labor shortages, but at this point, the extent of any continuing impact to our financial condition or results of operations, including cash flows, is uncertain, particularly as the COVID-19 pandemic and the current economic uncertainty continue to persist for an extended period of time.",
+          "locator": "/html/body/div[254]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "There was no corresponding expense for the nine months ended December 31, 2022.",
+          "locator": "/html/body/div[305]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "During the nine months ended December 31, 2022, cash used in operating activities was $19.3 million as a result of a net loss of $126.4 million, adjusted by non-cash charges of $181.1 million and a change of $74.0 million in our operating assets and liabilities.",
+          "locator": "/html/body/div[391]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-Q",
+          "date": "2023-02-07",
+          "url": "https://www.sec.gov/Archives/edgar/data/1448056/000144805623000011/newr-20221231.htm"
+        }
+      ],
+      "document_sha256": "fe3b3b42e4ba942b5bbf5d6970a8b2ae58ef47eb0c1c1f1778e8371b9f829ed1",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001627014",
+      "issuer": "BLACK KNIGHT, INC.",
+      "sector": "prepackaged_software",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-28",
+      "accession": "0001558370-23-002252",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Our software solutions revenues were 86%, 85% and 84% of our consolidated revenues for the years ended December 31, 2022, 2021 and 2020, respectively.",
+          "locator": "/html/body/div[81]/div[2]/p[7]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "The EBITDA margin decrease was driven by revenue mix along with higher personnel costs, technology-related costs, including cloud costs and other software subscriptions, an increase in client credit loss expense primarily related to a client that is no longer in business, and sales and marketing costs.",
+          "locator": "/html/body/div[95]/div[2]/p[7]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "As a result of the effects of the broad-based response to the COVID-19 pandemic, we have seen lower foreclosure-related transactional revenues due to the mortgage loan foreclosure moratorium and other measures that were in effect from 2020 through 2021.",
+          "locator": "/html/body/div[83]/div[2]/p[3]",
+          "selection": "operating_fallback",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "The aggregate consideration of $1.156 billion and number of shares of DNB common stock paid to Cannae and THL was based on the 20-day volume-weighted average trading price of DNB for the period ended on February 14, 2022.",
+          "locator": "/html/body/div[79]/div[2]/p[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "For the year ended December 31, 2022, Revenues, Earnings before interest, tax, depreciation and amortization (“EBITDA”) and Operating income related to our TitlePoint line of business before intercompany allocated revenue and expenses were approximately $39 million, $24 million and $22 million, respectively.",
+          "locator": "/html/body/div[79]/div[2]/p[9]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/1627014/000155837023002252/bki-20221231x10k.htm"
+        }
+      ],
+      "document_sha256": "23a7a2ad4d0860c2da122074ca2e27f56d2072155b6e548f3f4caf7636fd00f9",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001498710",
+      "issuer": "SPIRIT AIRLINES, INC.",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-06",
+      "accession": "0001498710-23-000080",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Operating revenues increased by $1,837.7 million, or 56.9%, to $5,068.4 million in 2022 compared to 2021, primarily due to an increase in average yield of 26.6% and an increase in traffic of 23.8%, year over year, driven by increased air travel demand as compared to prior year period",
+          "locator": "/html/body/div[997]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The net loss incurred in the period was partially offset by an increase in operating revenues due to a 23.8% increase in our traffic and a 26.6% increase in average yield, year over year.",
+          "locator": "/html/body/div[863]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "In 2022, we increased our capacity by 19.2%, as compared to 2021.",
+          "locator": "/html/body/div[863]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "The increase in pre-tax loss was primarily driven by a 74.3% increase in fuel price per gallon and a 21.2% increase in fuel gallons consumed, period over period.",
+          "locator": "/html/body/div[863]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "In 2022, we generated operating revenues of $5,068.4 million and had an operating loss of $598.9 million resulting in a negative operating margin of 11.8% and a net loss of $554.2 million.",
+          "locator": "/html/body/div[974]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-06",
+          "url": "https://www.sec.gov/Archives/edgar/data/1498710/000149871023000080/save-20221231.htm"
+        }
+      ],
+      "document_sha256": "1ff90dc15659a82209972e287ceea8325c4b4ece5d425418737873e3bbdd7f18",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000799233",
+      "issuer": "HEARTLAND EXPRESS INC",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-03-01",
+      "accession": "0000799233-23-000005",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "We, together with our subsidiaries, historically have been a short-to-medium haul truckload carrier with approximately 99.9% of our operating revenue was derived from shipments within the United States with the remainder being Canada and no operations in Mexico.",
+          "locator": "/html/body/div[710]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "In early 2022, freight demand was initially strong, following an extended period of freight demand at peak levels that began in mid 2020 and continued throughout 2021 and into 2022.",
+          "locator": "/html/body/div[739]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The Smith Transport acquisition added additional dry van truckload capacity to our core operations and this resulted",
+          "locator": "/html/body/div[720]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "in increased revenues and increased operating costs after May 31, 2022.",
+          "locator": "/html/body/div[723]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Because of these limitations, operating revenue excluding fuel surcharge revenue, adjusted operating income, and adjusted operating ratio should not be considered measures of income generated by our business or discretionary cash available to us to invest in the growth of our business.",
+          "locator": "/html/body/div[735]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-03-01",
+          "url": "https://www.sec.gov/Archives/edgar/data/799233/000079923323000005/htld-20221231.htm"
+        }
+      ],
+      "document_sha256": "82e8708daa337f378e75586865e2907fbb2671a3610c4521892b438478ddde94",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000056047",
+      "issuer": "KIRBY CORP",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-21",
+      "accession": "0000950170-23-003306",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "For 2022, 58% of the Company’s revenues were generated by KMT.",
+          "locator": "/html/body/p[379]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Consequently, the Company’s marine transportation business is directly affected by the volumes produced by the Company’s petroleum, petrochemical and refining customer base.",
+          "locator": "/html/body/p[379]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The increases for 2022 were primarily due to improved term and spot pricing and utilization in the inland market when compared to 2021, as well as",
+          "locator": "/html/body/p[380]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "Also, the 2022 first quarter was impacted by the COVID-19 Omicron variant as increased cases of the virus among the Company’s mariners led to crewing challenges, lost revenue and increased operating costs.",
+          "locator": "/html/body/p[383]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash provided by operating activities in 2022 decreased compared to 2021 primarily due to the receipt of a tax refund of $119.5 million, including accrued interest, for the Company’s 2019 federal tax return during the 2021 first quarter, partially offset by higher revenues and operating income in both KMT and KDS in 2022 from improved business activity levels.",
+          "locator": "/html/body/p[373]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-21",
+          "url": "https://www.sec.gov/Archives/edgar/data/56047/000095017023003306/kex-20221231.htm"
+        }
+      ],
+      "document_sha256": "a7ef6b49406db7114f7eacaff046bb0000eda047a5f9649ea91429097a80f3ed",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000878927",
+      "issuer": "OLD DOMINION FREIGHT LINE, INC.",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-22",
+      "accession": "0000950170-23-003783",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Our other operating supplies and expenses as a percent of revenue increased in 2022 as compared to the same periods of 2021, due to increases in equipment repair and maintenance costs.",
+          "locator": "/html/body/p[352]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "Generally, freight is rated by a class system, which is established by the National Motor Freight Traffic Association, Inc. Light, bulky freight typically has a higher class and is priced at higher revenue per hundredweight than dense, heavy freight.",
+          "locator": "/html/body/div[57]/div",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "The increase in revenue and our disciplined control of our operating costs contributed to a 290 basis-point improvement in our operating ratio to 70.6% for 2022 as compared to 73.5% for 2021.",
+          "locator": "/html/body/p[340]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "We regularly upgrade our technological capabilities to improve our customer service and lower our operating costs.",
+          "locator": "/html/body/p[332]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "The increase in our cash flows provided by operating activities during 2022 as compared to 2021 was primarily due to an increase in our income before income taxes of $452.9 million and fluctuations in certain working capital accounts.",
+          "locator": "/html/body/p[358]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-22",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017023003783/odfl-20221231.htm"
+        }
+      ],
+      "document_sha256": "e6ace24cb8bfb6a3f22d002328db94c42f88bf85355f5ec6bb06f86ba21b7494",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0000003453",
+      "issuer": "MATSON, INC.",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-24",
+      "accession": "0001558370-23-001961",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "Ocean Transportation revenue increased $411.8 million, or 13.1 percent, during the year ended December 31, 2022, compared with the year ended December 31, 2021.",
+          "locator": "/html/body/div[69]/div[2]/p[8]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm"
+        },
+        {
+          "id": "B",
+          "text": "Ocean Transportation: The Company’s container volume in the Hawaii service in the fourth quarter 2022 was 13.0 percent lower year-over-year.",
+          "locator": "/html/body/div[65]/div[2]/p[4]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm"
+        },
+        {
+          "id": "C",
+          "text": "As of December 31, 2022, the Company had $642.1 million of unused capacity under the revolving credit facility, with a maturity date of March 31, 2026.",
+          "locator": "/html/body/div[75]/div[2]/p[13]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm"
+        },
+        {
+          "id": "D",
+          "text": "The decrease was primarily driven by lower other terminal revenue, lower lift volume and higher operating costs.",
+          "locator": "/html/body/div[65]/div[2]/p[12]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm"
+        },
+        {
+          "id": "E",
+          "text": "Logistics: In the fourth quarter 2022, operating income for the Company’s Logistics segment was $12.8 million, or $2.0 million lower compared to the level achieved in the fourth quarter 2021.",
+          "locator": "/html/body/div[65]/div[2]/p[14]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-24",
+          "url": "https://www.sec.gov/Archives/edgar/data/3453/000155837023001961/matx-20221231x10k.htm"
+        }
+      ],
+      "document_sha256": "091ef756117326aa755f9c8a3d786f6f0cd6e5729d237b12b4d664716292c459",
+      "status": "complete",
+      "reason": ""
+    },
+    {
+      "cik": "0001158463",
+      "issuer": "JETBLUE AIRWAYS CORP",
+      "sector": "transportation",
+      "period_end": "2022-12-31",
+      "filing_date": "2023-02-27",
+      "accession": "0001158463-23-000002",
+      "form": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm",
+      "title": "10-K",
+      "slots": [
+        {
+          "id": "A",
+          "text": "When compared to 2019, our operating revenue increased by 13.1%, primarily driven by a 12.5% increase in yield, offset by a decrease in revenue passengers of 7.4%.",
+          "locator": "/html/body/div[719]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm"
+        },
+        {
+          "id": "B",
+          "text": "The year-over-year decrease is primarily driven by rate normalization resulting from airport traffic recovery closer to pre-COVID-19 levels.",
+          "locator": "/html/body/div[760]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm"
+        },
+        {
+          "id": "C",
+          "text": "•System capacity increased by 19.1% year-over-year and increased by 1.0% compared to 2019.",
+          "locator": "/html/body/div[718]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm"
+        },
+        {
+          "id": "D",
+          "text": "•Operating expense increased by 54.6% year-over-year to $9.5 billion and increased by 29.6% compared to 2019.",
+          "locator": "/html/body/div[721]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm"
+        },
+        {
+          "id": "E",
+          "text": "Cash provided by operating activities totaled approximately $379 million in 2022.",
+          "locator": "/html/body/div[815]",
+          "selection": "slot_match",
+          "headings": [],
+          "title": "10-K",
+          "date": "2023-02-27",
+          "url": "https://www.sec.gov/Archives/edgar/data/1158463/000115846323000002/jblu-20221231.htm"
+        }
+      ],
+      "document_sha256": "4e37eba479a1c45912f353b774c6f782b10e711e6134f785cad8c24f24546c69",
+      "status": "complete",
+      "reason": ""
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "binding": {
+    "input_sha256": "83a1afeeddb86f5809968ce4f069651739a436eb695a848f13296a4f290fc2f0",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-wayfinding-sign-export-after-walkthrough\": \"WITH replacements AS (SELECT o.site_code, o.required_text, o.order_id, c.check_id FROM sign_order AS o JOIN field_check AS c ON c.site_code = o.site_code WHERE c.seen_text IS NULL OR c.seen_text COLLATE BINARY <> o.required_text ORDER BY o.site_code COLLATE BINARY ASC) SELECT group_concat(order_id, ',') AS order_id_set, group_concat(check_id, ',') AS check_id_set, 'site_code,required_text,order_id,check_id' || char(10) || group_concat('\\\"' || replace(site_code, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(required_text, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(order_id, '\\\"', '\\\"\\\"') || '\\\",\\\"' || replace(check_id, '\\\"', '\\\"\\\"') || '\\\"' || char(10), '') AS csv_content FROM replacements\",\n  \"decision-wheel-state-at-shutter-open\": \"SELECT f.frame_id, w.filter_code, w.source_id FROM frames AS f LEFT JOIN wheel_notes AS w ON (w.event_s, w.seq_no) = (SELECT n.event_s, n.seq_no FROM wheel_notes AS n WHERE n.event_kind = 'seated' AND n.event_s <= f.shutter_s ORDER BY n.event_s DESC, n.seq_no DESC LIMIT 1) ORDER BY f.frame_id ASC\"\n}",
+  "submissions": {
+    "decision-wayfinding-sign-export-after-walkthrough": "WITH replacements AS (SELECT o.site_code, o.required_text, o.order_id, c.check_id FROM sign_order AS o JOIN field_check AS c ON c.site_code = o.site_code WHERE c.seen_text IS NULL OR c.seen_text COLLATE BINARY <> o.required_text ORDER BY o.site_code COLLATE BINARY ASC) SELECT group_concat(order_id, ',') AS order_id_set, group_concat(check_id, ',') AS check_id_set, 'site_code,required_text,order_id,check_id' || char(10) || group_concat('\"' || replace(site_code, '\"', '\"\"') || '\",\"' || replace(required_text, '\"', '\"\"') || '\",\"' || replace(order_id, '\"', '\"\"') || '\",\"' || replace(check_id, '\"', '\"\"') || '\"' || char(10), '') AS csv_content FROM replacements",
+    "decision-wheel-state-at-shutter-open": "SELECT f.frame_id, w.filter_code, w.source_id FROM frames AS f LEFT JOIN wheel_notes AS w ON (w.event_s, w.seq_no) = (SELECT n.event_s, n.seq_no FROM wheel_notes AS n WHERE n.event_kind = 'seated' AND n.event_s <= f.shutter_s ORDER BY n.event_s DESC, n.seq_no DESC LIMIT 1) ORDER BY f.frame_id ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1d-577f-7f80-b815-b032bde7739b",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 21997,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 314,
+    "reasoning_output_tokens": 0
+  }
+}

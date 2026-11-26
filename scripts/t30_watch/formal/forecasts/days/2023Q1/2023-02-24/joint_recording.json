@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23112,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 227,
+    "reasoning_output_tokens": 8
+  },
+  "thread": "01a20d8e-d057-7040-b059-38d87ba91ada",
+  "packet_sha256": "93bb7a975c3c79d0067040aed45b2c38b2381be15d5207029d98b654b3b133ba",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2023Q1/food_manufacturing-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q1/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2023Q1/semiconductors-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000772406\",\n          \"reason\": \"Consolidated net sales growth slowed from 16.03% YoY in September to 7.70% in December (A and historical sales). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and content gains also supported mixed-signal sales as smartphone battery and power product sales fell (D). A slowdown of roughly eight percentage points per quarter would put the intervening quarter near flat and the target quarter beginning March 26 below −5.00% YoY.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2023Q1/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2023Q1/semiconductors-1",
+        "alerts": [
+          {
+            "cik": "0000772406",
+            "reason": "Consolidated net sales growth slowed from 16.03% YoY in September to 7.70% in December (A and historical sales). Higher selling prices supported audio sales as smartphone units fell (B). Higher prices and content gains also supported mixed-signal sales as smartphone battery and power product sales fell (D). A slowdown of roughly eight percentage points per quarter would put the intervening quarter near flat and the target quarter beginning March 26 below −5.00% YoY."
+          }
+        ]
+      }
+    ]
+  }
+}

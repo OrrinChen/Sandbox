@@ -1,0 +1,42 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 24334,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 326,
+    "reasoning_output_tokens": 36
+  },
+  "thread": "01a20d8b-37fb-7c52-9ea8-fa42d31e91de",
+  "packet_sha256": "867ef9df6277a31742ad77922069311029f0e8a6877485044f753181e36d1933",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q3/retail-1\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001326380\",\n          \"reason\": \"Q1 net sales grew 8.0% (A), giving GameStop a 13-point cushion above the threshold. Incremental inventory reserves and supply disruptions (C) suggest some merchandise may need markdowns while other products may be hard to stock. I forecast net sales growth stays above -5.00% in Q2 and falls to -5.00% or below in Q3 as those pressures reach sales.\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q3/retail-2\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q3/retail-3\",\n      \"alerts\": [\n        {\n          \"cik\": \"0001018840\",\n          \"reason\": \"Q1 reported net sales grew 4%, helped by higher prices per unit and fewer markdowns despite a $9 million currency headwind (A, D). I forecast growth stays above -5.00% in Q2 but reaches -5.00% or below in Q3 if the pricing benefit fades and currency pressure persists.\"\n        }\n      ]\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q3/retail-1",
+        "alerts": [
+          {
+            "cik": "0001326380",
+            "reason": "Q1 net sales grew 8.0% (A), giving GameStop a 13-point cushion above the threshold. Incremental inventory reserves and supply disruptions (C) suggest some merchandise may need markdowns while other products may be hard to stock. I forecast net sales growth stays above -5.00% in Q2 and falls to -5.00% or below in Q3 as those pressures reach sales."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q3/retail-3",
+        "alerts": [
+          {
+            "cik": "0001018840",
+            "reason": "Q1 reported net sales grew 4%, helped by higher prices per unit and fewer markdowns despite a $9 million currency headwind (A, D). I forecast growth stays above -5.00% in Q2 but reaches -5.00% or below in Q3 if the pricing benefit fades and currency pressure persists."
+          }
+        ]
+      }
+    ]
+  }
+}

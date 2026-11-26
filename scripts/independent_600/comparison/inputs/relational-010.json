@@ -1,0 +1,278 @@
+[
+  {
+    "task_id": "decision-book-drop-pilot-paired-stops",
+    "tool": "sqlite.query",
+    "instruction": "The library minutes ask which stops saw less mean unloading time per crate during the pilot than before it. Each cited field report covers one stop in one phase and records total unloading seconds and the corresponding crate count. Pool all usable reports within a stop and phase. A report is usable only if seconds and crates are both present and crates are positive. Other fields are non-null, seconds are nonnegative when present, and source IDs are unique. Compare exact phase means before rounding. Include only stops with usable reports in both phases and a strictly lower pilot mean. For each qualifying stop emit one row per usable contributing report in either phase so the comparison can be audited. Return stop_code, phase_name, source_id, pooled_seconds, pooled_crates, repeating that phase's pooled totals on each citation. Sort by stop_code, before ahead of pilot, then source_id, using BINARY text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "stop_report": {
+        "columns": [
+          "stop_code TEXT",
+          "phase_name TEXT",
+          "source_id TEXT",
+          "minute_text TEXT",
+          "unload_seconds INTEGER",
+          "crate_count INTEGER"
+        ],
+        "rows": [
+          [
+            "Dock",
+            "before",
+            "D1",
+            "One crate took 30 seconds at the old hatch.",
+            30,
+            1
+          ],
+          [
+            "Dock",
+            "before",
+            "D2",
+            "Nine crates took 90 seconds at the old hatch.",
+            90,
+            9
+          ],
+          [
+            "Dock",
+            "pilot",
+            "D3",
+            "Four crates took 60 seconds on the trial ramp.",
+            60,
+            4
+          ],
+          [
+            "Hill",
+            "before",
+            "H1",
+            "Five crates took 51 seconds at the counter.",
+            51,
+            5
+          ],
+          [
+            "Hill",
+            "pilot",
+            "H2",
+            "Five crates took 50 seconds on the trial cart.",
+            50,
+            5
+          ],
+          [
+            "Hill",
+            "pilot",
+            "H3",
+            "The timer ran during an empty-cart check.",
+            40,
+            0
+          ],
+          [
+            "Vale",
+            "pilot",
+            "V1",
+            "Two crates took 14 seconds on the trial cart.",
+            14,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "stop_code",
+      "phase_name",
+      "source_id",
+      "pooled_seconds",
+      "pooled_crates"
+    ]
+  },
+  {
+    "task_id": "decision-book-nonoverlapping-shaker-visits",
+    "tool": "sqlite.query",
+    "instruction": "Choose one or two offered visits for the orchard's single tree shaker. Each offer gives a unique block code, a fixed start and finish in minutes after the workday begins, and the number of ready bins the visit would fill. A visit occupies the half-open interval from start_min to finish_min, so the shaker can begin another visit at the exact finish minute. The single dispatch card is the primary record for the daily ready-bin staging ceiling, recorded numerically in bin_limit. Total bins must fit that ceiling. Maximize total bins, then prefer fewer visits, then the lexicographically smallest sequence of block codes in visit order using SQLite BINARY ordering. All input values are non-null, every visit has positive duration, and at least one visit fits. Return exactly one row with columns first_block, second_block, filled_bins, card_id in that order. Use SQL NULL for second_block on a one-visit booking and cite the actual dispatch card. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dispatch_card": {
+        "columns": [
+          "card_id TEXT",
+          "bin_limit INTEGER",
+          "card_text TEXT"
+        ],
+        "rows": [
+          [
+            "Y17",
+            100,
+            "The east pad has marked staging spaces for 100 ready bins today."
+          ]
+        ]
+      },
+      "shaker_offer": {
+        "columns": [
+          "block_code TEXT",
+          "start_min INTEGER",
+          "finish_min INTEGER",
+          "ready_bins INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            0,
+            120,
+            50
+          ],
+          [
+            "B",
+            120,
+            240,
+            45
+          ],
+          [
+            "C",
+            0,
+            180,
+            80
+          ],
+          [
+            "D",
+            180,
+            300,
+            20
+          ],
+          [
+            "E",
+            300,
+            360,
+            103
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_block",
+      "second_block",
+      "filled_bins",
+      "card_id"
+    ]
+  },
+  {
+    "task_id": "decision-book-uninterrupted-tug-charge",
+    "tool": "sqlite.query",
+    "instruction": "Choose the least expensive feasible charging run under the single row in tug_order. Its source_id identifies the dispatch note in note_text, and draw_kw is the tug's constant draw in kW. The tug must run for exactly two consecutive whole hours on the same day. Each unique hour_no in feeder_quote denotes the start of a one-hour slot, with a price in cents per kWh and spare feeder capacity in kW. A missing hour has no booking offer. A NULL spare_kw means capacity is unconfirmed and the hour cannot be booked. All other values are non-NULL. The draw must fit in each hour separately. Break equal total costs by earliest start. Return one row with columns source_id, start_hour, cost_cents, in that order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "feeder_quote": {
+        "columns": [
+          "hour_no INTEGER",
+          "price_cents INTEGER",
+          "spare_kw INTEGER"
+        ],
+        "rows": [
+          [
+            7,
+            1,
+            2
+          ],
+          [
+            8,
+            4,
+            5
+          ],
+          [
+            9,
+            5,
+            3
+          ],
+          [
+            10,
+            4,
+            6
+          ],
+          [
+            12,
+            1,
+            4
+          ],
+          [
+            13,
+            1,
+            null
+          ]
+        ]
+      },
+      "tug_order": {
+        "columns": [
+          "source_id TEXT",
+          "note_text TEXT",
+          "draw_kw INTEGER"
+        ],
+        "rows": [
+          [
+            "T14",
+            "Book two uninterrupted hours at a steady 3 kW.",
+            3
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "source_id",
+      "start_hour",
+      "cost_cents"
+    ]
+  },
+  {
+    "task_id": "decision-bound-cartons-needing-rework",
+    "tool": "sqlite.query",
+    "instruction": "For each shipment, report the smallest and largest possible number of distinct cartons needing rework. Every carton with a crushed corner or a torn label needs rework. Each supplier certificate covers one disjoint pallet, gives its carton count, and counts cartons with each condition. The same carton can appear in both condition counts on its own pallet. A non-NULL both_qty gives the exact overlap on that pallet, including a confirmed zero. NULL means the supplier did not report the overlap. Treat all integer counts as exact and consistent. Use only allocations compatible with each pallet's own certificate. Return columns shipment_code, min_cartons, max_cartons, evidence_ids. Cite every contributing certificate, including zero-damage pallets, as BINARY-sorted source IDs joined by commas without spaces. IDs are unique and contain no commas. Sort shipments by shipment_code in BINARY order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "pallet_cert": {
+        "columns": [
+          "source_id TEXT",
+          "shipment_code TEXT",
+          "carton_qty INTEGER",
+          "corner_qty INTEGER",
+          "label_qty INTEGER",
+          "both_qty INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "C3",
+            "Ember",
+            10,
+            8,
+            5,
+            null,
+            "Ten cartons. Eight have crushed corners and five have torn labels. Overlap uncounted."
+          ],
+          [
+            "C1",
+            "Ember",
+            12,
+            1,
+            6,
+            null,
+            "Twelve cartons. One has a crushed corner and six have torn labels. Overlap uncounted."
+          ],
+          [
+            "C2",
+            "Ember",
+            8,
+            3,
+            4,
+            1,
+            "Of eight cartons, three have corner damage and four have torn labels. One has both."
+          ],
+          [
+            "C4",
+            "Flint",
+            5,
+            2,
+            2,
+            0,
+            "Five cartons. Two have crushed corners and two others have torn labels."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shipment_code",
+      "min_cartons",
+      "max_cartons",
+      "evidence_ids"
+    ]
+  }
+]

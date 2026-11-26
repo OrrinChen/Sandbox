@@ -1,0 +1,485 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "d4df4b9ac5c7b7002d0f025bc19577049d0348aa2c42403710cceea4adbe0990",
+    "989ccdb0a14822d3369bb4054e7c571fca1416a265dceab35dc2d074a5646fa8",
+    "dda7382dc269827a3cab663610a5722d0e4349c3c556d78787c0851514adff14"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-49801",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "C1": "=LEFT(A1,2)&RIGHT(A1,5)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57615,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 154
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49857",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "G4:G10",
+            "formula": "=IF(F4=\"YES\",COUNTIF($F$4:F4,\"YES\"),0)"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 57615,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 154
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49859",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "D12:Q23",
+            "formula": "=IF(D$8<=D$9,--AND($C12>=D$8,$C12<=D$9),--OR($C12>=D$8,$C12<=D$9))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C17:J23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C17:J23",
+            "range_size": 56,
+            "cells": [
+              [
+                "C17",
+                "8"
+              ],
+              [
+                "D17",
+                "0"
+              ],
+              [
+                "E17",
+                "1"
+              ],
+              [
+                "F17",
+                "0"
+              ],
+              [
+                "G17",
+                "0"
+              ],
+              [
+                "H17",
+                "1"
+              ],
+              [
+                "I17",
+                "0"
+              ],
+              [
+                "J17",
+                "0"
+              ],
+              [
+                "C18",
+                "9"
+              ],
+              [
+                "D18",
+                "0"
+              ],
+              [
+                "E18",
+                "1"
+              ],
+              [
+                "F18",
+                "0"
+              ],
+              [
+                "G18",
+                "0"
+              ],
+              [
+                "H18",
+                "1"
+              ],
+              [
+                "I18",
+                "0"
+              ],
+              [
+                "J18",
+                "0"
+              ],
+              [
+                "C19",
+                "10"
+              ],
+              [
+                "D19",
+                "0"
+              ],
+              [
+                "E19",
+                "1"
+              ],
+              [
+                "F19",
+                "0"
+              ],
+              [
+                "G19",
+                "0"
+              ],
+              [
+                "H19",
+                "1"
+              ],
+              [
+                "I19",
+                "0"
+              ],
+              [
+                "J19",
+                "0"
+              ],
+              [
+                "C20",
+                "11"
+              ],
+              [
+                "D20",
+                "0"
+              ],
+              [
+                "E20",
+                "0"
+              ],
+              [
+                "F20",
+                "1"
+              ],
+              [
+                "G20",
+                "0"
+              ],
+              [
+                "H20",
+                "0"
+              ],
+              [
+                "I20",
+                "1"
+              ],
+              [
+                "J20",
+                "0"
+              ],
+              [
+                "C21",
+                "12"
+              ],
+              [
+                "D21",
+                "0"
+              ],
+              [
+                "E21",
+                "0"
+              ],
+              [
+                "F21",
+                "1"
+              ],
+              [
+                "G21",
+                "0"
+              ],
+              [
+                "H21",
+                "0"
+              ],
+              [
+                "I21",
+                "1"
+              ],
+              [
+                "J21",
+                "0"
+              ],
+              [
+                "C22",
+                "1"
+              ],
+              [
+                "D22",
+                "0"
+              ],
+              [
+                "E22",
+                "0"
+              ],
+              [
+                "F22",
+                "1"
+              ],
+              [
+                "G22",
+                "0"
+              ],
+              [
+                "H22",
+                "0"
+              ],
+              [
+                "I22",
+                "1"
+              ],
+              [
+                "J22",
+                "0"
+              ],
+              [
+                "C23",
+                "2"
+              ],
+              [
+                "D23",
+                "0"
+              ],
+              [
+                "E23",
+                "0"
+              ],
+              [
+                "F23",
+                "1"
+              ],
+              [
+                "G23",
+                "0"
+              ],
+              [
+                "H23",
+                "0"
+              ],
+              [
+                "I23",
+                "1"
+              ],
+              [
+                "J23",
+                "0"
+              ]
+            ],
+            "total": 56,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [
+        [
+          "Vat",
+          "C22"
+        ],
+        [
+          "Vat",
+          "D21"
+        ],
+        [
+          "Vat",
+          "D22"
+        ],
+        [
+          "Vat",
+          "E21"
+        ],
+        [
+          "Vat",
+          "E22"
+        ],
+        [
+          "Vat",
+          "F21"
+        ],
+        [
+          "Vat",
+          "F22"
+        ],
+        [
+          "Vat",
+          "G21"
+        ],
+        [
+          "Vat",
+          "G22"
+        ],
+        [
+          "Vat",
+          "H21"
+        ],
+        [
+          "Vat",
+          "H22"
+        ],
+        [
+          "Vat",
+          "I21"
+        ],
+        [
+          "Vat",
+          "I22"
+        ],
+        [
+          "Vat",
+          "J21"
+        ],
+        [
+          "Vat",
+          "J22"
+        ]
+      ],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57615,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 154
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-50630",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "C5:C6",
+            "formula": "=LEFT(A5,SEARCH(\"Added\",A5)-1)"
+          },
+          {
+            "range": "D5:D6",
+            "formula": "=MID(A5,SEARCH(\"Added\",A5)+6,SEARCH(\"Due\",A5)-SEARCH(\"Added\",A5)-6)"
+          },
+          {
+            "range": "E5:E6",
+            "formula": "=DATEVALUE(TRIM(SUBSTITUTE(MID(A5,SEARCH(\"Due\",A5)+3,LEN(A5)),CHAR(160),\" \")))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6",
+            "range_size": 10,
+            "cells": [
+              [
+                "A5",
+                "rafal kucharski Added 8 Sep 2021 Due 15 Nov 2021"
+              ],
+              [
+                "C5",
+                "rafal kucharski "
+              ],
+              [
+                "D5",
+                "8 Sep 2021 "
+              ],
+              [
+                "E5",
+                "2021-11-15 00:00:00"
+              ],
+              [
+                "A6",
+                "Zita Kvitovszka Added 8 Sep 2021 Due 16 Nov 2021"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 5
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 57615,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 154
+      },
+      "model_calls": 3
+    }
+  ]
+}

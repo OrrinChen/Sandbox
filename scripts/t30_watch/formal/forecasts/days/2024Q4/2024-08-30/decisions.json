@@ -1,0 +1,102 @@
+{
+  "text": [
+    {
+      "sector": "2024Q4/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2024Q4/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/semiconductors-2",
+      "alerts": [
+        {
+          "cik": "0000912093",
+          "reason": "VIAVI’s reported quarterly revenue growth slowed from -0.73% year over year in March to -4.40% in June. I forecast the September quarter will stay just above -5.00% and the quarter beginning September 29 will cross to -5.00% or below. Customers were spending conservatively (A), and major North American service providers were largely buying field instruments for maintenance as network upgrades remained absent (B). The timing is uncertain because June was already just 0.60 percentage points above the threshold."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2024Q4/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-1",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-2",
+      "alerts": []
+    },
+    {
+      "sector": "2024Q4/retail-3",
+      "alerts": [
+        {
+          "cik": "0000105418",
+          "reason": "Reported sales YoY 2.90% then 0.23%. Target is step 2; preceding -2.43% versus target -5.10%."
+        }
+      ]
+    },
+    {
+      "sector": "2024Q4/semiconductors-2",
+      "alerts": []
+    }
+  ]
+}

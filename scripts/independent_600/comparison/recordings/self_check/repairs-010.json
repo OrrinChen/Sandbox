@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "5a665ce80c45076c853871b5efd2feaff5428a692b2abe20a626b4918c6a5f60",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-original-fabric-repeat-cuts\": \"def solve(data):\\n    cuts = []\\n    for line in data['lines']:\\n        if line['state'] != 'approved':\\n            continue\\n        repeat = line['repeat_cm']\\n        remaining = (line['need_cm'] + repeat - 1) // repeat\\n        capacity = data['limit_cm'] // repeat\\n        while remaining:\\n            count = min(remaining, capacity)\\n            cuts.append({'fabric': line['fabric'], 'cut_cm': count * repeat})\\n            remaining -= count\\n    return cuts\\n\",\n  \"repair-original-fair-package-promotion\": \"def solve(data):\\n    cost = {'S': 1, 'M': 2, 'L': 3}\\n    count = dict.fromkeys(cost, 0)\\n    left = data['capacity']\\n    waiting = [p for p in data['packages'] if p['state'] == 'waiting']\\n    result = []\\n    while waiting:\\n        fits = [p for p in waiting if cost[p['size']] <= left]\\n        if not fits:\\n            break\\n        pick = min(fits, key=lambda p: (count[p['size']], p['arrival'], p['id']))\\n        waiting.remove(pick)\\n        result.append(pick['id'])\\n        count[pick['size']] += 1\\n        left -= cost[pick['size']]\\n    return result\\n\",\n  \"repair-original-gate-dispatch-sequence-rollover\": \"def solve(data):\\n    last = data['last']\\n    issued = []\\n    for event in data['events']:\\n        if event == 'issue':\\n            last += 1\\n            issued.append(last)\\n        elif event == 'rollover' and last > data['threshold']:\\n            last = 0\\n    return {'issued': issued, 'last': last}\\n\",\n  \"repair-original-incremental-shipment-checksum\": \"def solve(data):\\n    running_sum = (data['state'] + sum(data['chunk'])) % 256\\n    if data['last']:\\n        return {'checksum': (-running_sum) % 256}\\n    return {'state': running_sum}\\n\"\n}",
+  "submissions": {
+    "repair-original-fabric-repeat-cuts": "def solve(data):\n    cuts = []\n    for line in data['lines']:\n        if line['state'] != 'approved':\n            continue\n        repeat = line['repeat_cm']\n        remaining = (line['need_cm'] + repeat - 1) // repeat\n        capacity = data['limit_cm'] // repeat\n        while remaining:\n            count = min(remaining, capacity)\n            cuts.append({'fabric': line['fabric'], 'cut_cm': count * repeat})\n            remaining -= count\n    return cuts\n",
+    "repair-original-fair-package-promotion": "def solve(data):\n    cost = {'S': 1, 'M': 2, 'L': 3}\n    count = dict.fromkeys(cost, 0)\n    left = data['capacity']\n    waiting = [p for p in data['packages'] if p['state'] == 'waiting']\n    result = []\n    while waiting:\n        fits = [p for p in waiting if cost[p['size']] <= left]\n        if not fits:\n            break\n        pick = min(fits, key=lambda p: (count[p['size']], p['arrival'], p['id']))\n        waiting.remove(pick)\n        result.append(pick['id'])\n        count[pick['size']] += 1\n        left -= cost[pick['size']]\n    return result\n",
+    "repair-original-gate-dispatch-sequence-rollover": "def solve(data):\n    last = data['last']\n    issued = []\n    for event in data['events']:\n        if event == 'issue':\n            last += 1\n            issued.append(last)\n        elif event == 'rollover' and last > data['threshold']:\n            last = 0\n    return {'issued': issued, 'last': last}\n",
+    "repair-original-incremental-shipment-checksum": "def solve(data):\n    running_sum = (data['state'] + sum(data['chunk'])) % 256\n    if data['last']:\n        return {'checksum': (-running_sum) % 256}\n    return {'state': running_sum}\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-2731-74e1-8018-80e89bd6adfe",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 20969,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 504,
+    "reasoning_output_tokens": 0
+  }
+}

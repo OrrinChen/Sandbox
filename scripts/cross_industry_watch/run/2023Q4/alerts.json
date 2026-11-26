@@ -1,0 +1,132 @@
+{
+  "origin": "2023Q4",
+  "decisions": [
+    {
+      "arm": "text",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "food_manufacturing",
+      "alerts": [
+        {
+          "cik": "0001140215",
+          "reason": "Reed’s quarterly net sales fell 2% (A). Virgil’s volume fell 22% (B), and tighter supplier credit kept Reed’s from producing enough inventory to meet demand (C). If those pressures persist, the decline could reach 5% within two quarters."
+        },
+        {
+          "cik": "0000023217",
+          "reason": "Conagra’s quarterly net sales were flat (A), but weaker consumption was already reducing volume (B). As fiscal 2023 price increases (D) enter the year-earlier comparison, continued volume weakness could push reported sales down 5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000832101",
+          "reason": "IDEX’s quarterly net sales fell 4% (A), one percentage point short of the threshold. Customers continued reducing inventories (D), and backlog shipments partly cushioned weaker demand in pharma and food markets (C). As that backlog runs down, the decline could reach 5% within two quarters."
+        }
+      ]
+    },
+    {
+      "arm": "text",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "text",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "industrial_machinery",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "prepackaged_software",
+      "alerts": []
+    },
+    {
+      "arm": "metadata",
+      "sector": "transportation",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "retail",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "food_manufacturing",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "industrial_machinery",
+      "alerts": [
+        {
+          "cik": "0000880266",
+          "reason": "Reported sales YoY 29.79% then 10.70%; linear projections -8.40% and -27.50%."
+        },
+        {
+          "cik": "0000832101",
+          "reason": "Reported sales YoY 6.29% then -3.71%; linear projections -13.72% and -23.73%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "semiconductors",
+      "alerts": []
+    },
+    {
+      "arm": "trend",
+      "sector": "prepackaged_software",
+      "alerts": [
+        {
+          "cik": "0000857005",
+          "reason": "Reported sales YoY 17.27% then 7.62%; linear projections -2.03% and -11.68%."
+        }
+      ]
+    },
+    {
+      "arm": "trend",
+      "sector": "transportation",
+      "alerts": [
+        {
+          "cik": "0000799233",
+          "reason": "Reported sales YoY 63.01% then 7.68%; linear projections -47.64% and -102.97%."
+        },
+        {
+          "cik": "0000056047",
+          "reason": "Reported sales YoY 11.36% then 2.54%; linear projections -6.28% and -15.10%."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "a1a12e9df5e42b3a935ed00dfe0574dacbc884e01f5af7e8c557292bc30bcb80",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"repair-original-ordered-cdn-key-split\": \"def solve(data):\\n    rows = []\\n    names = data['vary']\\n    for entry in data['entries']:\\n        if entry['state'] != 'live':\\n            continue\\n        route, *values = entry['key'].split('|', len(names))\\n        rows.append({'route': route, 'headers': dict(zip(names, values))})\\n    return rows\\n\",\n  \"repair-original-orient-joined-consist\": \"def solve(data):\\n    first = data['first']\\n    second = data['second']\\n    if data['first_end'] == 'front':\\n        first = first[::-1]\\n    if data['second_end'] == 'rear':\\n        second = second[::-1]\\n    return first + second\\n\",\n  \"repair-original-orphaned-bookings\": \"def solve(data):\\n    active = {}\\n    parents = []\\n    events = sorted(data['events'], key=lambda event: (event['minute'], event['seq']))\\n    for event in events:\\n        name = event['id']\\n        if event['kind'] == 'cancel':\\n            del active[name]\\n        else:\\n            parent = event['parent']\\n            parents.append(active.get(parent))\\n            active[name] = len(parents) - 1\\n\\n    active_versions = set(active.values())\\n    supported = set()\\n    for version, parent in enumerate(parents):\\n        if version in active_versions and (parent is None or parent in supported):\\n            supported.add(version)\\n    return sorted(name for name, version in active.items() if version not in supported)\\n\",\n  \"repair-original-parse-multiline-dispatch-csv\": \"import csv\\nimport io\\n\\n\\ndef solve(data):\\n    with io.StringIO(data['text'], newline='') as stream:\\n        return list(csv.reader(stream))\\n\"\n}",
+  "submissions": {
+    "repair-original-ordered-cdn-key-split": "def solve(data):\n    rows = []\n    names = data['vary']\n    for entry in data['entries']:\n        if entry['state'] != 'live':\n            continue\n        route, *values = entry['key'].split('|', len(names))\n        rows.append({'route': route, 'headers': dict(zip(names, values))})\n    return rows\n",
+    "repair-original-orient-joined-consist": "def solve(data):\n    first = data['first']\n    second = data['second']\n    if data['first_end'] == 'front':\n        first = first[::-1]\n    if data['second_end'] == 'rear':\n        second = second[::-1]\n    return first + second\n",
+    "repair-original-orphaned-bookings": "def solve(data):\n    active = {}\n    parents = []\n    events = sorted(data['events'], key=lambda event: (event['minute'], event['seq']))\n    for event in events:\n        name = event['id']\n        if event['kind'] == 'cancel':\n            del active[name]\n        else:\n            parent = event['parent']\n            parents.append(active.get(parent))\n            active[name] = len(parents) - 1\n\n    active_versions = set(active.values())\n    supported = set()\n    for version, parent in enumerate(parents):\n        if version in active_versions and (parent is None or parent in supported):\n            supported.add(version)\n    return sorted(name for name, version in active.items() if version not in supported)\n",
+    "repair-original-parse-multiline-dispatch-csv": "import csv\nimport io\n\n\ndef solve(data):\n    with io.StringIO(data['text'], newline='') as stream:\n        return list(csv.reader(stream))\n"
+  },
+  "attempt": 1,
+  "thread": "01a20e1e-3559-79e1-8195-02f8a3a22244",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22280,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 441,
+    "reasoning_output_tokens": 0
+  }
+}

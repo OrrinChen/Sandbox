@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000815556",
+  "issuer": "FASTENAL CO",
+  "cutoff": "2021-12-02",
+  "projected_target_start": "2022-01-01",
+  "status": "complete",
+  "period_end": "2021-09-30",
+  "filing_date": "2021-10-15",
+  "text": {
+    "sector": "retail",
+    "cik": "0000815556",
+    "issuer": "FASTENAL CO",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-10-15",
+        "text": "Net sales increased $140.9, or 10.0%, in the third quarter of 2021 when compared to the third quarter of 2020."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-10-15",
+        "text": "This increase is due to improved unit sales across most products to our traditional manufacturing and construction customers, resulting from continued improvement in business activity."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-10-15",
+        "text": "This made it difficult to engage with customers directly in a way that most effectively allows us to promote growth drivers such as FMI (Fastenal Managed Inventory) and Onsites (defined as dedicated sales and service provided from within, or in close proximity to, the customer's facility), or implement agreements that have been signed."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-10-15",
+        "text": "The overall impact of product pricing on net sales was 120 to 150 basis points during the first nine months of 2021 and 230 to 260 basis points during the third quarter of 2021."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-10-15",
+        "text": "The decline in our operating cash flow generated is primarily due to an increased need for working capital to support our customer's growth as business activity improves."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-06-30",
+        "filed": "2021-07-16",
+        "reported_sales_usd": 1507700000,
+        "year_ago_reported_sales_usd": 1509000000,
+        "yoy_percent": "-0.0861"
+      },
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-10-15",
+        "reported_sales_usd": 1554200000,
+        "year_ago_reported_sales_usd": 1413300000,
+        "yoy_percent": "9.9696"
+      }
+    ],
+    "status": "complete"
+  }
+}

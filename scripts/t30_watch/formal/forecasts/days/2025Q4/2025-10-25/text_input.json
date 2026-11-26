@@ -1,0 +1,49 @@
+{
+  "cutoff": "2025-10-25",
+  "sectors": {
+    "2025Q4/retail-3": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000909832",
+          "issuer": "COSTCO WHOLESALE CORP /NEW",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2025-11-24",
+          "latest_filed_period_end": "2025-08-31",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2025-10-08",
+              "text": "The material seasonal impact in our operations is increased net sales and earnings during the winter holiday season."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2025-10-08",
+              "text": "When combined with the operating efficiencies achieved by volume purchasing, efficient distribution and reduced handling of merchandise in no-frills, self-service warehouse facilities, these volumes and turnover enable us to operate profitably at significantly lower gross margins (net sales less merchandise costs) than most other retailers."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2025-10-08",
+              "text": "Our gasoline business represented approximately 10% of total net sales in 2025."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2025-10-08",
+              "text": "Net sales for e-commerce represented approximately 7% of total net sales in 2025."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2025-10-08",
+              "text": "which represents sales delivered to members that are initiated through a digital device, whether fulfilled through a warehouse or distribution center, as well as Costco Travel, represented approximately 10% of total net sales in 2025."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "fixed",
+    "batch": "spreadsheets-021",
+    "stage": "inspect-1",
+    "prompt_sha256": "bcbb495f0f387bd982ddd883c51a64b5293168f75afbf383fbc681f535554539",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a21230-aefe-7e40-9f97-c9df6b79a52d"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "I’ll use the first inspection round to resolve the uncertain layout and data conventions across the four workbooks, then return only the requested JSON."
+        },
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-57029\":[],\"sheet-57105\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B4:C15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"L7:M15\"}],\"sheet-57137\":[],\"sheet-57262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E6:K15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"X13:Y19\"}]}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 57063,
+          "cached_input_tokens": 36864,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1246,
+          "reasoning_output_tokens": 951
+        }
+      ],
+      "cli_final": "{\"sheet-57029\":[],\"sheet-57105\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B4:C15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"L7:M15\"}],\"sheet-57137\":[],\"sheet-57262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E6:K15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"X13:Y19\"}]}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a21230-aefe-7e40-9f97-c9df6b79a52d",
+    "raw": "{\"sheet-57029\":[],\"sheet-57105\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"B4:C15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"L7:M15\"}],\"sheet-57137\":[],\"sheet-57262\":[{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"E6:K15\"},{\"op\":\"range\",\"sheet\":\"Sheet1\",\"range\":\"X13:Y19\"}]}",
+    "usage": {
+      "input_tokens": 57063,
+      "cached_input_tokens": 36864,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1246,
+      "reasoning_output_tokens": 951
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

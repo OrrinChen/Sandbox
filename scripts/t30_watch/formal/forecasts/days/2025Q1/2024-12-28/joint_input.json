@@ -1,0 +1,129 @@
+{
+  "cutoff": "2024-12-28",
+  "sectors": {
+    "2025Q1/semiconductors-1": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000006951",
+          "issuer": "APPLIED MATERIALS INC /DE",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2025-01-27",
+          "latest_filed_period_end": "2024-10-27",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2024-12-13",
+              "text": "Net revenue in fiscal 2024 increased as compared to the prior year."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2024-12-13",
+              "text": "The timing of customer investment in manufacturing equipment is also affected by the timing of next-generation process development and of capacity expansion to meet end-market demand."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2024-12-13",
+              "text": "The segment is focused on expanding its presence through technologically-differentiated equipment and products that provide customers with improved performance and yields."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2024-12-13",
+              "text": "Gross margin increased primarily driven by lower material, freight, logistics, and manufacturing costs, favorable changes in customer and product mix and lower depreciation expense as a result of changes in certain assets’ useful lives effective as of the beginning of fiscal 2024, partially offset by an increase in labor costs."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2024-12-13",
+              "text": "Cash provided by operating activities in fiscal 2024 remained relatively flat primarily due to lower collections of customer receivable balances, partially offset by lower payments to vendors and higher net income."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-07-28",
+                "filed": "2024-08-22",
+                "reported_sales_usd": 6778000000,
+                "year_ago_reported_sales_usd": 6425000000,
+                "yoy_percent": "5.4942"
+              },
+              {
+                "quarter_end": "2024-10-27",
+                "filed": "2024-12-13",
+                "reported_sales_usd": 7045000000,
+                "year_ago_reported_sales_usd": 6723000000,
+                "yoy_percent": "4.7895"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2025Q1/semiconductors-3": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0001045810",
+          "issuer": "NVIDIA CORP",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2025-01-27",
+          "latest_filed_period_end": "2024-10-27",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2024-11-20",
+              "text": "Revenue was $35.1 billion, up 94% from a year ago and up 17% sequentially."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2024-11-20",
+              "text": "Fueled by the sustained demand for exceptional 3D graphics and the scale of the gaming market, NVIDIA has leveraged its GPU architecture to create platforms for scientific computing, AI, data science, autonomous vehicles, robotics, and 3D internet applications."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2024-11-20",
+              "text": "Provisions for inventory and excess inventory purchase obligations totaled $865 million and $2.2 billion for the third quarter and first nine months of fiscal year 2025, respectively."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2024-11-20",
+              "text": "Gross margin increased from a year ago due to a higher mix of Data Center revenue."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2024-11-20",
+              "text": "Reportable segment operating income – The year over year increase in Compute & Networking segment operating income in the third quarter and first nine months of fiscal year 2025 was primarily driven by growth in data center revenue."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-07-28",
+                "filed": "2024-08-28",
+                "reported_sales_usd": 30040000000,
+                "year_ago_reported_sales_usd": 13507000000,
+                "yoy_percent": "122.4032"
+              },
+              {
+                "quarter_end": "2024-10-27",
+                "filed": "2024-11-20",
+                "reported_sales_usd": 35082000000,
+                "year_ago_reported_sales_usd": 18120000000,
+                "yoy_percent": "93.6093"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

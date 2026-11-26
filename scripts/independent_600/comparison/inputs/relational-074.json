@@ -1,0 +1,340 @@
+[
+  {
+    "task_id": "decision-step-acquisition-goodwill-bridge-csv",
+    "tool": "csv.export",
+    "instruction": "Construct the contents of goodwill_bridge.csv for one acquisition using the full-goodwill method. The deal ledger records positive amounts in integer cents by component type. Sum cash and shares transferred to the seller, acquisition-date fair value of contingent consideration (earnout_fv), fair value of the previously held interest (prior_fv), and fair value of the noncontrolling interest (nci_fv). Exclude the old interest's carrying amount (prior_book) and deal fees (fee). The acquired_balance table contains the acquiree's full identifiable assets and liabilities at fair value, each recorded as a positive magnitude. Subtract liabilities from assets to obtain identifiable net assets. Goodwill equals the included deal components less these net assets. Repeated types represent separate components, absent types contribute zero, and all fields are nonnull. Return exactly one row and one TEXT column named csv_content containing the complete file. Use the header line item,cents followed by three data lines labeled deemed_total, identifiable_net_assets, and goodwill in that order. Separate fields with a comma and end every line including the last with a single LF. Format amounts as signed decimal integers with no grouping, no leading plus, and no quotes. There are no ordering ties. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "acquired_balance": {
+        "columns": [
+          "balance_code TEXT",
+          "balance_side TEXT",
+          "fv_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "plant",
+            "asset",
+            85000
+          ],
+          [
+            "brand",
+            "asset",
+            30000
+          ],
+          [
+            "stock",
+            "asset",
+            9000
+          ],
+          [
+            "payables",
+            "liability",
+            12000
+          ]
+        ]
+      },
+      "deal_ledger": {
+        "columns": [
+          "component_type TEXT",
+          "amount_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "cash",
+            72000
+          ],
+          [
+            "shares",
+            18000
+          ],
+          [
+            "earnout_fv",
+            4000
+          ],
+          [
+            "prior_fv",
+            23000
+          ],
+          [
+            "prior_book",
+            16000
+          ],
+          [
+            "nci_fv",
+            12000
+          ],
+          [
+            "fee",
+            3000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_content"
+    ]
+  },
+  {
+    "task_id": "decision-stitch-overlapping-pick-list-pages",
+    "tool": "csv.export",
+    "instruction": "Construct pick_list.csv for one frozen warehouse export. Each page's base_pos is the one-based position of its first record in the complete pick list. Each captured row's slot_no is its one-based position within that page. Fetches can overlap, and distinct pick positions can legitimately have identical contents. Emit each captured global position once. If several pages cover a position, use the capture from the lowest page_no, which was fetched first. Do not fill gaps. Page numbers are unique in page_map, and slots are unique within each page. Units are whole items. Only bin_tag can be null, meaning the bin was unassigned; preserve it as a null CSV field. Output columns in order: pick_pos, item_code, units, bin_tag. Sort by pick_pos ascending. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "page_map": {
+        "columns": [
+          "page_no INTEGER",
+          "base_pos INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "pick_capture": {
+        "columns": [
+          "page_no INTEGER",
+          "slot_no INTEGER",
+          "item_code TEXT",
+          "units INTEGER",
+          "bin_tag TEXT"
+        ],
+        "rows": [
+          [
+            2,
+            2,
+            "RIM",
+            2,
+            "B"
+          ],
+          [
+            1,
+            3,
+            "PEG",
+            1,
+            null
+          ],
+          [
+            1,
+            1,
+            "CAP",
+            4,
+            "A"
+          ],
+          [
+            3,
+            2,
+            "CAP",
+            4,
+            "A"
+          ],
+          [
+            2,
+            1,
+            "PEG",
+            1,
+            null
+          ],
+          [
+            1,
+            2,
+            "PEG",
+            1,
+            null
+          ],
+          [
+            3,
+            1,
+            "RIM",
+            2,
+            "B"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "pick_pos",
+      "item_code",
+      "units",
+      "bin_tag"
+    ]
+  },
+  {
+    "task_id": "decision-supplier-rebate-close-file",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of rebate_close.csv as one text cell named csv_content. The movement ledger covers one contract month through close. Positive quantities are purchases and negative quantities are returns. Sum signed units by item, including items whose net quantity is zero. Each ledger item has one settlement row giving the rebate receivable already booked in cents, and one or more rate notices. For each item choose the notice with the greatest floor_units at or below its closing net units. Floors are unique within an item, each schedule starts at zero, and closing net units are nonnegative. The selected rate applies to every net unit. The adjustment is closing earned rebate minus the booked receivable, so a reversal is negative. Export only nonzero adjustments. Use the exact header item_code,net_units,adjustment_cents,source_id and sort data lines by ascending binary item_code. Use comma separators, unquoted decimal integers, LF after every line including the last, and no spaces or byte-order mark. Item codes and notice IDs contain only ASCII letters, digits and hyphens and need no CSV escaping. Return the header alone with its LF if all adjustments are zero. All inputs are nonnull. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "rate_notice": {
+        "columns": [
+          "item_code TEXT",
+          "floor_units INTEGER",
+          "rate_cents INTEGER",
+          "source_id TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "BOX",
+            0,
+            2,
+            "B0",
+            "Base credit is two cents per net box."
+          ],
+          [
+            "BOX",
+            100,
+            5,
+            "B1",
+            "At 100 net boxes, reprice the whole month to five cents per box."
+          ],
+          [
+            "PAD",
+            0,
+            2,
+            "P0",
+            "Credit two cents per net pad below the first break."
+          ],
+          [
+            "PAD",
+            100,
+            6,
+            "P1",
+            "At 100 net pads, credit six cents on every net pad."
+          ],
+          [
+            "TIE",
+            0,
+            2,
+            "T0",
+            "Each net tie earns two cents."
+          ]
+        ]
+      },
+      "settlement_balance": {
+        "columns": [
+          "item_code TEXT",
+          "booked_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "PAD",
+            200
+          ],
+          [
+            "TIE",
+            30
+          ],
+          [
+            "BOX",
+            525
+          ]
+        ]
+      },
+      "unit_moves": {
+        "columns": [
+          "item_code TEXT",
+          "signed_units INTEGER"
+        ],
+        "rows": [
+          [
+            "BOX",
+            50
+          ],
+          [
+            "BOX",
+            55
+          ],
+          [
+            "BOX",
+            -9
+          ],
+          [
+            "PAD",
+            40
+          ],
+          [
+            "PAD",
+            60
+          ],
+          [
+            "TIE",
+            15
+          ],
+          [
+            "TIE",
+            -15
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_content"
+    ]
+  },
+  {
+    "task_id": "decision-term-deposit-liquidation-for-payout",
+    "tool": "sqlite.query",
+    "instruction": "Treasury must raise at least 1000 cents of spendable cash today. It may redeem one or two distinct term deposits in full. Only deposits with available_flag equal to 1 can settle today. Each redemption delivers face_cents less fee_cents in cash and incurs fee_cents as an expense. Evaluate all permitted plans meeting the cash requirement. Minimize total expense, then minimize excess cash over 1000 cents, then choose the lexicographically smallest plan_code under SQLite's binary ordering. A single deposit's plan_code is its code. For a pair, join the two codes in ascending order with a plus sign. Codes are unique single uppercase ASCII letters. All fields are nonnull, amounts are integer cents, each fee is below face value, and at least one feasible plan exists. Return exactly the winning row with columns plan_code, cash_cents (net proceeds), and expense_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "term_lots": {
+        "columns": [
+          "lot_code TEXT",
+          "face_cents INTEGER",
+          "fee_cents INTEGER",
+          "available_flag INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            600,
+            10,
+            1
+          ],
+          [
+            "B",
+            400,
+            5,
+            1
+          ],
+          [
+            "C",
+            430,
+            12,
+            1
+          ],
+          [
+            "D",
+            1100,
+            30,
+            1
+          ],
+          [
+            "E",
+            1020,
+            1,
+            0
+          ],
+          [
+            "F",
+            450,
+            12,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "plan_code",
+      "cash_cents",
+      "expense_cents"
+    ]
+  }
+]

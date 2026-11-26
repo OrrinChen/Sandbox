@@ -1,0 +1,68 @@
+{
+  "wave": "2024Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0000897429",
+  "issuer": "CHICO'S FAS, INC.",
+  "cutoff": "2023-12-29",
+  "projected_target_start": "2024-01-28",
+  "status": "complete",
+  "period_end": "2023-10-28",
+  "filing_date": "2023-11-30",
+  "text": {
+    "sector": "retail",
+    "cik": "0000897429",
+    "issuer": "CHICO'S FAS, INC.",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2023-11-30",
+        "text": "For the third quarter, net sales were $505.1 million compared to $518.3 million in last year’s third quarter."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2023-11-30",
+        "text": "This decrease of 2.5% primarily reflects a comparable sales decrease of 2.7% since last year’s third quarter."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2023-11-30",
+        "text": "At the end of the third quarter, inventories totaled $342.7 million compared to $304.1 million at the end of last year’s third quarter."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2023-11-30",
+        "text": "This 110-basis-point decrease in gross margin primarily reflects higher occupancy costs, as well as deleverage on lower net sales."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2023-11-30",
+        "text": "Net cash provided by operating activities for the year-to-date period of fiscal 2023 was $35.5 million compared to $83.6 million in last year’s the year-to-date period."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2023-07-29",
+        "filed": "2023-08-30",
+        "reported_sales_usd": 545126000,
+        "year_ago_reported_sales_usd": 558720000,
+        "yoy_percent": "-2.4331"
+      },
+      {
+        "quarter_end": "2023-10-28",
+        "filed": "2023-11-30",
+        "reported_sales_usd": 505126000,
+        "year_ago_reported_sales_usd": 518332000,
+        "yoy_percent": "-2.5478"
+      }
+    ],
+    "status": "complete"
+  }
+}

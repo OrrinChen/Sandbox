@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 23031,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 65,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8c-44c8-7f90-a724-6e2ddc98592b",
+  "packet_sha256": "d48219aa3a2963973ff3aa0db255f601b1d446df82ec4e97c30c908a2a8b0fc0",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q1/food_manufacturing-1\",\"alerts\":[]},{\"sector\":\"2022Q1/industrial_machinery-3\",\"alerts\":[]},{\"sector\":\"2022Q1/transportation-3\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/transportation-3",
+        "alerts": []
+      }
+    ]
+  }
+}

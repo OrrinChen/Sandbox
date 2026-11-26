@@ -1,0 +1,57 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 26542,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 285,
+    "reasoning_output_tokens": 19
+  },
+  "thread": "01a20d8d-3e43-71d2-81c4-50e13b94527b",
+  "packet_sha256": "8cbb7510dd81a46aee9d2b9413868b8af073cab6356dbe077470588c586ca13a",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q1/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q1/retail-3\",\"alerts\":[{\"cik\":\"0000105418\",\"reason\":\"Reported net sales growth slowed by 2.98 percentage points, from 3.83% to 0.85% year over year. Comparable-store sales grew just 0.8% in the latest quarter (E). If the same slowdown repeats each quarter, reported sales growth would reach −2.13% in the intervening quarter and −5.11% in the target quarter, narrowly crossing the threshold.\"}]},\n    {\"sector\":\"2024Q1/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q1/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q1/retail-3",
+        "alerts": [
+          {
+            "cik": "0000105418",
+            "reason": "Reported net sales growth slowed by 2.98 percentage points, from 3.83% to 0.85% year over year. Comparable-store sales grew just 0.8% in the latest quarter (E). If the same slowdown repeats each quarter, reported sales growth would reach −2.13% in the intervening quarter and −5.11% in the target quarter, narrowly crossing the threshold."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q1/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

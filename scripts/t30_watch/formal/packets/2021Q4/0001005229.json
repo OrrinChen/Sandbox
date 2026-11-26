@@ -1,0 +1,68 @@
+{
+  "wave": "2021Q4",
+  "cohort": "industrial_machinery-1",
+  "sector": "industrial_machinery",
+  "cik": "0001005229",
+  "issuer": "COLUMBUS MCKINNON CORP",
+  "cutoff": "2021-09-01",
+  "projected_target_start": "2021-10-01",
+  "status": "complete",
+  "period_end": "2021-06-30",
+  "filing_date": "2021-07-29",
+  "text": {
+    "sector": "industrial_machinery",
+    "cik": "0001005229",
+    "issuer": "COLUMBUS MCKINNON CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-07-29",
+        "text": "Net sales in the fiscal 2022 first quarter were $213,464,000, up $74,394,000 or 53.5% from the fiscal 2021 first quarter net sales of $139,070,000."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-07-29",
+        "text": "Net sales were positively impacted by the acquisition of Dorner which contributed $34,179,000, $31,318,000 due to increased sales volume, and $1,957,000 due to price increases."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-07-29",
+        "text": "Foreign currency translation favorably impacted sales by $6,940,000 for the three months ended June 30, 2021."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-07-29",
+        "text": "Our principal raw materials and components purchases were approximately $255 million in fiscal 2021 (or 59% of Cost of product sold) and include steel, consisting of rod, wire, bar, structural, and other forms of steel; electric motors; bearings; gear reducers; castings; steel and aluminum enclosures and wire harnesses; electro-mechanical components and standard variable drives."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-07-29",
+        "text": "Net cash used by operating activities was $7,396,000 for the three months ended June 30, 2021 compared with net cash provided by operating activities of $9,516,000 for the three months ended June 30, 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-03-31",
+        "filed": "2021-05-26",
+        "reported_sales_usd": 186235000,
+        "year_ago_reported_sales_usd": 189486000,
+        "yoy_percent": "-1.7157"
+      },
+      {
+        "quarter_end": "2021-06-30",
+        "filed": "2021-07-29",
+        "reported_sales_usd": 213464000,
+        "year_ago_reported_sales_usd": 139070000,
+        "yoy_percent": "53.4939"
+      }
+    ],
+    "status": "complete"
+  }
+}

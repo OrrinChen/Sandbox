@@ -1,0 +1,57 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25214,
+    "cached_input_tokens": 18688,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 295,
+    "reasoning_output_tokens": 8
+  },
+  "thread": "01a20d91-7a1f-7473-86d9-1b9b3dc67250",
+  "packet_sha256": "0418e198081c7426debc43838062eb9851daa699d1617c995720d6683e0ad193",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2026Q1/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/food_manufacturing-3\",\"alerts\":[{\"cik\":\"0000785956\",\"reason\":\"Year-over-year net sales growth fell from +3.26% in June to −3.87% in September, just 1.13 percentage points above the threshold. Foodservice growth partly cushioned retail supermarket weakness (A), while lost limited-time churro volume added pressure (B). I forecast growth stays above −5.00% in the intervening quarter and falls to −5.00% or lower in the quarter beginning December 28. The timing is uncertain because neither record quantifies the target-quarter volume impact.\"}]},\n    {\"sector\":\"2026Q1/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2026Q1/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2026Q1/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/food_manufacturing-3",
+        "alerts": [
+          {
+            "cik": "0000785956",
+            "reason": "Year-over-year net sales growth fell from +3.26% in June to −3.87% in September, just 1.13 percentage points above the threshold. Foodservice growth partly cushioned retail supermarket weakness (A), while lost limited-time churro volume added pressure (B). I forecast growth stays above −5.00% in the intervening quarter and falls to −5.00% or lower in the quarter beginning December 28. The timing is uncertain because neither record quantifies the target-quarter volume impact."
+          }
+        ]
+      },
+      {
+        "sector": "2026Q1/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2026Q1/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

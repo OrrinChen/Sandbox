@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "26cf85c135bdef43e44258246ce2e52a6d1ddf9952a6ab8cecf3c2289a794767",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-fit-transfer-evidence-on-a-display-card\": \"SELECT a.slip_id AS first_slip, b.slip_id AS second_slip, a.points + b.points AS detail_points, a.chars + b.chars AS print_chars FROM transfer_slip AS a JOIN transfer_slip AS b ON a.slip_id COLLATE BINARY < b.slip_id WHERE a.chars + b.chars <= 100 AND (a.capture_flag OR b.capture_flag) AND (a.copy_flag OR b.copy_flag) AND (a.master_flag OR b.master_flag) ORDER BY detail_points DESC, print_chars ASC, first_slip COLLATE BINARY ASC, second_slip COLLATE BINARY ASC LIMIT 1\",\n  \"decision-flag-impossible-gallery-transfers\": \"WITH visits AS (SELECT object_code, visit_no, note_id AS to_note, gallery_code, late_day, LAG(note_id) OVER w AS from_note, LAG(gallery_code) OVER w AS from_gallery, LAG(early_day) OVER w AS from_early_day FROM gallery_note WINDOW w AS (PARTITION BY object_code ORDER BY visit_no)) SELECT v.object_code, v.from_note, v.to_note, m.min_days - (v.late_day - v.from_early_day) AS shortfall_days FROM visits AS v JOIN transfer_minimum AS m ON m.origin_code = v.from_gallery AND m.dest_code = v.gallery_code WHERE v.from_gallery <> v.gallery_code AND v.late_day - v.from_early_day < m.min_days ORDER BY v.object_code COLLATE BINARY, v.visit_no\",\n  \"decision-four-day-closing-balance-interest\": \"WITH totals AS (SELECT o.account_code, 4 * o.opening_cents + COALESCE(SUM((5 - m.posting_day) * m.delta_cents), 0) AS balance_day_cents FROM deposit_openings AS o LEFT JOIN deposit_movements AS m ON m.account_code = o.account_code AND m.posting_day BETWEEN 1 AND 4 GROUP BY o.account_code, o.opening_cents) SELECT account_code, balance_day_cents, (3 * balance_day_cents + 5000) / 10000 AS interest_cents FROM totals ORDER BY account_code ASC\",\n  \"decision-frozen-archive-location-manifest\": \"WITH ranked AS (SELECT segment_id, shelf_code, event_no, ROW_NUMBER() OVER (PARTITION BY segment_id ORDER BY minute_no DESC, event_no DESC) AS position FROM catalog_event WHERE minute_no <= 30) SELECT segment_id, shelf_code, event_no AS placement_event FROM ranked WHERE position = 1 AND shelf_code IS NOT NULL ORDER BY shelf_code COLLATE BINARY ASC, segment_id COLLATE BINARY ASC\"\n}",
+  "submissions": {
+    "decision-fit-transfer-evidence-on-a-display-card": "SELECT a.slip_id AS first_slip, b.slip_id AS second_slip, a.points + b.points AS detail_points, a.chars + b.chars AS print_chars FROM transfer_slip AS a JOIN transfer_slip AS b ON a.slip_id COLLATE BINARY < b.slip_id WHERE a.chars + b.chars <= 100 AND (a.capture_flag OR b.capture_flag) AND (a.copy_flag OR b.copy_flag) AND (a.master_flag OR b.master_flag) ORDER BY detail_points DESC, print_chars ASC, first_slip COLLATE BINARY ASC, second_slip COLLATE BINARY ASC LIMIT 1",
+    "decision-flag-impossible-gallery-transfers": "WITH visits AS (SELECT object_code, visit_no, note_id AS to_note, gallery_code, late_day, LAG(note_id) OVER w AS from_note, LAG(gallery_code) OVER w AS from_gallery, LAG(early_day) OVER w AS from_early_day FROM gallery_note WINDOW w AS (PARTITION BY object_code ORDER BY visit_no)) SELECT v.object_code, v.from_note, v.to_note, m.min_days - (v.late_day - v.from_early_day) AS shortfall_days FROM visits AS v JOIN transfer_minimum AS m ON m.origin_code = v.from_gallery AND m.dest_code = v.gallery_code WHERE v.from_gallery <> v.gallery_code AND v.late_day - v.from_early_day < m.min_days ORDER BY v.object_code COLLATE BINARY, v.visit_no",
+    "decision-four-day-closing-balance-interest": "WITH totals AS (SELECT o.account_code, 4 * o.opening_cents + COALESCE(SUM((5 - m.posting_day) * m.delta_cents), 0) AS balance_day_cents FROM deposit_openings AS o LEFT JOIN deposit_movements AS m ON m.account_code = o.account_code AND m.posting_day BETWEEN 1 AND 4 GROUP BY o.account_code, o.opening_cents) SELECT account_code, balance_day_cents, (3 * balance_day_cents + 5000) / 10000 AS interest_cents FROM totals ORDER BY account_code ASC",
+    "decision-frozen-archive-location-manifest": "WITH ranked AS (SELECT segment_id, shelf_code, event_no, ROW_NUMBER() OVER (PARTITION BY segment_id ORDER BY minute_no DESC, event_no DESC) AS position FROM catalog_event WHERE minute_no <= 30) SELECT segment_id, shelf_code, event_no AS placement_event FROM ranked WHERE position = 1 AND shelf_code IS NOT NULL ORDER BY shelf_code COLLATE BINARY ASC, segment_id COLLATE BINARY ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1a-5a14-7062-8c09-69888ddd0a45",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 22692,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 578,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "workbook-access-v1",
+  "models": [
+    "gpt-6.2-sol",
+    "gpt-6.2-astra"
+  ],
+  "selection": "The signed-in catalog describes Sol as its fast general coding model and Astra as its most capable model for complex coding and professional work. This study does not assign dollar prices.",
+  "effort": "medium",
+  "arms": [
+    "fixed",
+    "browse"
+  ],
+  "population": "All 100 frozen workbook tasks in the original 25 four-workbook batches, regardless of previous scores. Developer smoke uses separate development workbooks.",
+  "observation": "Both arms start with the same archived public excerpt, question, target and allowed formula list. Fixed searches only the supplied excerpt. Browse searches the entire same public input workbook. Both can search by literal text or select a rectangular range; neither can run a formula, access variants, edit a file, or receive scoring feedback.",
+  "budget": {
+    "inspection_rounds": 2,
+    "read_requests_per_task_per_round": 2,
+    "max_range_results": 80,
+    "max_find_results": 12,
+    "max_characters_per_cell": 350,
+    "final_submissions_per_task": 1,
+    "model_calls_per_batch": 3
+  },
+  "coupling": "Arms run in separate contexts with identical wording, batch membership, initial observations, per-task and per-round ceilings. Second queries can depend on the first results. Unused reads expire. Actual token use is recorded per batch. Fixed and browse outcomes include sampling variation.",
+  "malformed": "A malformed query consumes its issued read slot. Ignore requests above the declared ceiling. A missing or unparseable final answer is a failed submission. Preserve verbatim records and per-task format status. No content-based retries.",
+  "scoring": "Seal all 400 final submissions and trace hashes before opening grading. Use the archived wheel with its original Calc and two-input scorer. Compare each model's browse with its fresh fixed arm, both models under each condition, and each against the original direct and self-check outcomes. Report per-task rescue, persistent failure and new loss; tabulate the 30 previously shared failures. Re-execute all new failures.",
+  "transport": "Both models have a 600-second wall timeout per transport attempt, with equal concurrency. A verified transport failure before any completed answer may be retried. No scoring feedback or format-based retries. Model requests and tool calls are budgeted per completed turn; actual usage is recorded."
+}

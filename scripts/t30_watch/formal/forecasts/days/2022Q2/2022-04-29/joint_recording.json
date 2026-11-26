@@ -1,0 +1,24 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 21675,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 41,
+    "reasoning_output_tokens": 8
+  },
+  "thread": "01a20d8b-fb90-7202-baeb-e707bb2a9ae8",
+  "packet_sha256": "e9cd5041c608df5ed98a84836045a074cc57e6a7e12ed46b637c8226b8d4413d",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\"sectors\":[{\"sector\":\"2022Q2/retail-2\",\"alerts\":[]}]}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q2/retail-2",
+        "alerts": []
+      }
+    ]
+  }
+}

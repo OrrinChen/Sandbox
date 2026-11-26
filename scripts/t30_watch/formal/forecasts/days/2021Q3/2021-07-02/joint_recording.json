@@ -1,0 +1,49 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 28191,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 233,
+    "reasoning_output_tokens": 0
+  },
+  "thread": "01a20d8b-4539-7652-8b62-14578042361c",
+  "packet_sha256": "8a01b8c58c3a225cbbf13db91553805ba7738e5df2cfdbc5f9027d268182e924",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2021Q3/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/prepackaged_software-1\",\"alerts\":[{\"cik\":\"0001528396\",\"reason\":\"Guidewire’s total revenue growth fell from +3.81% year over year in January to −2.50% in April despite a $14.5 million increase in quarterly subscription revenue (A). I forecast July stays above −5% as fiscal fourth-quarter orders support license revenue (B). For August–October, I forecast growth at or below −5% if the services revenue weakness reported in E persists and subscription gains again fail to offset declines elsewhere.\"}]},\n    {\"sector\":\"2021Q3/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2021Q3/retail-3\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2021Q3/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0001528396",
+            "reason": "Guidewire’s total revenue growth fell from +3.81% year over year in January to −2.50% in April despite a $14.5 million increase in quarterly subscription revenue (A). I forecast July stays above −5% as fiscal fourth-quarter orders support license revenue (B). For August–October, I forecast growth at or below −5% if the services revenue weakness reported in E persists and subscription gains again fail to offset declines elsewhere."
+          }
+        ]
+      },
+      {
+        "sector": "2021Q3/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2021Q3/retail-3",
+        "alerts": []
+      }
+    ]
+  }
+}

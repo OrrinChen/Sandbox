@@ -1,0 +1,440 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "f333cd0de078e09aefa119ead3c0888fe24d095745b781174f5bf040d808042e",
+    "72652d30d65d6708d3f64108ca317af61002ee3951f3288c2d7723bea50afa6b",
+    "4a203df2e5ccaad8599f3cc761e014a0dfa66f8a6daa6f93c2494d3280fa617b"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-57354",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "B3": "=SUMIF($F$2:$XFD$2,B$2,$F3:$XFD3)",
+          "C3": "=SUMIF($F$2:$XFD$2,C$2,$F3:$XFD3)",
+          "D3": "=SUMIF($F$2:$XFD$2,D$2,$F3:$XFD3)",
+          "E3": "=SUMIF($F$2:$XFD$2,E$2,$F3:$XFD3)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:U3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "B2:U3",
+            "range_size": 40,
+            "cells": [
+              [
+                "B2",
+                "SPEND"
+              ],
+              [
+                "C2",
+                "SALES"
+              ],
+              [
+                "D2",
+                "REVENUE"
+              ],
+              [
+                "E2",
+                "GP"
+              ],
+              [
+                "F2",
+                "SPEND"
+              ],
+              [
+                "G2",
+                "SALES"
+              ],
+              [
+                "H2",
+                "REVENUE"
+              ],
+              [
+                "I2",
+                "GP"
+              ],
+              [
+                "J2",
+                "SPEND"
+              ],
+              [
+                "K2",
+                "SALES"
+              ],
+              [
+                "L2",
+                "REVENUE"
+              ],
+              [
+                "M2",
+                "GP"
+              ],
+              [
+                "N2",
+                "SPEND"
+              ],
+              [
+                "O2",
+                "SALES"
+              ],
+              [
+                "P2",
+                "REVENUE"
+              ],
+              [
+                "Q2",
+                "GP"
+              ],
+              [
+                "R2",
+                "SPEND"
+              ],
+              [
+                "S2",
+                "SALES"
+              ],
+              [
+                "T2",
+                "REVENUE"
+              ],
+              [
+                "U2",
+                "GP"
+              ],
+              [
+                "B3",
+                "90816.43"
+              ],
+              [
+                "C3",
+                "2145"
+              ],
+              [
+                "F3",
+                "17505.51"
+              ],
+              [
+                "G3",
+                "500"
+              ],
+              [
+                "H3",
+                "28568"
+              ],
+              [
+                "I3",
+                "11062.49"
+              ],
+              [
+                "J3",
+                "23225.96"
+              ],
+              [
+                "K3",
+                "528"
+              ],
+              [
+                "L3",
+                "29868"
+              ],
+              [
+                "M3",
+                "6642.04"
+              ],
+              [
+                "N3",
+                "26859"
+              ],
+              [
+                "O3",
+                "589"
+              ],
+              [
+                "P3",
+                "33265"
+              ],
+              [
+                "Q3",
+                "6406"
+              ],
+              [
+                "R3",
+                "23225.96"
+              ],
+              [
+                "S3",
+                "528"
+              ],
+              [
+                "T3",
+                "29868"
+              ],
+              [
+                "U3",
+                "6642.040000000001"
+              ]
+            ],
+            "total": 38,
+            "truncated": false,
+            "blank_count": 2
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60881,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 836,
+        "reasoning_output_tokens": 188
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58047",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "fills": [
+          {
+            "range": "H2:H30",
+            "formula": "=IF(A2=\"\",0,IF(INDEX($G$2:$G2,MATCH(A2,$A$2:$A2,0))=\"\",0,INDEX($G$2:$G2,MATCH(A2,$A$2:$A2,0))))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "G2:H30"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "orders_export",
+            "range": "G2:H30",
+            "range_size": 58,
+            "cells": [
+              [
+                "H2",
+                "0"
+              ],
+              [
+                "H3",
+                "0"
+              ],
+              [
+                "H4",
+                "0"
+              ],
+              [
+                "H5",
+                "0"
+              ],
+              [
+                "G6",
+                "OOJHK"
+              ],
+              [
+                "H6",
+                "OOJHK"
+              ],
+              [
+                "H7",
+                "OOJHK"
+              ],
+              [
+                "H8",
+                "OOJHK"
+              ],
+              [
+                "H9",
+                "OOJHK"
+              ],
+              [
+                "H10",
+                "0"
+              ],
+              [
+                "H11",
+                "0"
+              ],
+              [
+                "H12",
+                "0"
+              ],
+              [
+                "H13",
+                "0"
+              ],
+              [
+                "H14",
+                "0"
+              ],
+              [
+                "H15",
+                "0"
+              ],
+              [
+                "G22",
+                "OOJHK"
+              ]
+            ],
+            "total": 16,
+            "truncated": false,
+            "blank_count": 42
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60881,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 836,
+        "reasoning_output_tokens": 188
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-58701",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "E2": "=IF(B2=\"\",\"\",IFNA(VLOOKUP(B2,'Table Tab'!$A:$B,2,FALSE),\"\"))",
+          "E3": "=IF(B3=\"\",\"\",IFNA(VLOOKUP(B3,'Table Tab'!$A:$B,2,FALSE),\"\"))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 60881,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 836,
+        "reasoning_output_tokens": 188
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59160",
+      "model": "gpt-6.2-sol",
+      "arm": "browse",
+      "batch": "spreadsheets-022",
+      "submission": {
+        "formulas": {
+          "D3": "=COUNTIFS($A:$A,\">=\"&$D$1,$A:$A,\"<\"&($D$1+1),$B:$B,D$2)",
+          "E3": "=COUNTIFS($A:$A,\">=\"&$D$1,$A:$A,\"<\"&($D$1+1),$B:$B,E$2)",
+          "F3": "=COUNTIFS($A:$A,\">=\"&$F$1,$A:$A,\"<\"&($F$1+1),$B:$B,F$2)",
+          "G3": "=COUNTIFS($A:$A,\">=\"&$F$1,$A:$A,\"<\"&($F$1+1),$B:$B,G$2)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "D1:G3"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "D1:G3",
+            "range_size": 12,
+            "cells": [
+              [
+                "D1",
+                "2020-10-10 00:00:00"
+              ],
+              [
+                "F1",
+                "2020-10-15 00:00:00"
+              ],
+              [
+                "D2",
+                "Yes"
+              ],
+              [
+                "E2",
+                "No"
+              ],
+              [
+                "F2",
+                "Yes"
+              ],
+              [
+                "G2",
+                "No"
+              ],
+              [
+                "D3",
+                "3"
+              ],
+              [
+                "E3",
+                "2"
+              ]
+            ],
+            "total": 8,
+            "truncated": false,
+            "blank_count": 4
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 60881,
+        "cached_input_tokens": 41856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 836,
+        "reasoning_output_tokens": 188
+      },
+      "model_calls": 3
+    }
+  ]
+}

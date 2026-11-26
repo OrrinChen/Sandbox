@@ -1,0 +1,254 @@
+[
+  {
+    "task_id": "decision-capacity-constrained-rebate-elections",
+    "tool": "sqlite.query",
+    "instruction": "Choose a portfolio for one purchasing cycle. Each evidence row is a distinct, indivisible supplier offer that can be elected once. Election commits the listed number of pallets and earns the listed lump-sum rebate in cents. The warehouse has ten pallet spaces and can administer at most two offers. Offers with the same supplier_code are mutually exclusive. Evaluate every feasible single offer and pair and maximize total rebate cents. Break ties by fewer committed pallets, then by lexicographically smallest election_ids using SQLite binary ordering. election_ids is the selected source ID or the two selected source IDs sorted ascending and joined with a comma without spaces. All fields are non-null, IDs are distinct single uppercase letters, quantities and rebates are positive integers, and at least one single offer fits. Return one row with election_ids, pallets_used, rebate_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "offer_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "supplier_code TEXT",
+          "pallets INTEGER",
+          "rebate_cents INTEGER",
+          "source_text TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "Oak",
+            6,
+            8800,
+            "Oak standard election pays 8800 cents for six pallets."
+          ],
+          [
+            "B",
+            "Oak",
+            4,
+            7200,
+            "Oak compact election pays 7200 cents for four pallets."
+          ],
+          [
+            "C",
+            "Reed",
+            4,
+            6300,
+            "Reed pays 6300 cents for four pallets."
+          ],
+          [
+            "D",
+            "Ash",
+            5,
+            7900,
+            "Ash pays 7900 cents for five pallets."
+          ],
+          [
+            "E",
+            "Pine",
+            11,
+            19500,
+            "Pine pays 19500 cents for eleven pallets."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "election_ids",
+      "pallets_used",
+      "rebate_cents"
+    ]
+  },
+  {
+    "task_id": "decision-capped-vendor-credit",
+    "tool": "sqlite.query",
+    "instruction": "Calculate vendor credits under a fictional supply contract using only the stated contract terms. All money amounts are nonnegative integer cents. Each item is one distinct order line. Its requested credit equals its affected unit count times its credit per unit. Cap that amount at the item's cap, which applies once to the entire line. Sum the capped line amounts for each order, then cap that sum at the order cap. Caps are inclusive, with equality payable in full. Apply no taxes, statutory adjustments, or rounding. Return one row per order, including orders with no items at zero credit, with columns order_id and payable_cents. Sort by unique order_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "credit_items": {
+        "columns": [
+          "order_id TEXT",
+          "item_id TEXT",
+          "affected_units INTEGER",
+          "unit_credit_cents INTEGER",
+          "item_cap_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "O1",
+            "a",
+            4,
+            100,
+            250
+          ],
+          [
+            "O1",
+            "b",
+            2,
+            90,
+            200
+          ],
+          [
+            "O2",
+            "a",
+            3,
+            100,
+            220
+          ],
+          [
+            "O2",
+            "b",
+            2,
+            80,
+            160
+          ]
+        ]
+      },
+      "orders": {
+        "columns": [
+          "order_id TEXT",
+          "order_cap_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "O1",
+            600
+          ],
+          [
+            "O2",
+            300
+          ],
+          [
+            "O3",
+            900
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "order_id",
+      "payable_cents"
+    ]
+  },
+  {
+    "task_id": "decision-catalogue-freeze-correction-trail",
+    "tool": "sqlite.query",
+    "instruction": "For each catalogue freeze, identify the adoption date for its indexing standard as the editors could have reported it at the close of freeze_day. Every notice independently states a date. A correction replaces exactly the notice named in replaces_id as soon as the correction is issued, even if the new adoption date is in the future. A null replaces_id starts a notice chain. Within each standard, notices form one unbranched chain with strictly increasing issue days, and source IDs are unique. Use only notices issued on or before the freeze. Omit freezes with no notice yet. Dates are ISO calendar days and all other fields are nonnull. Return edition_code, adoption_day, source_id ordered by edition_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "edition_freeze": {
+        "columns": [
+          "edition_code TEXT",
+          "standard_code TEXT",
+          "freeze_day TEXT"
+        ],
+        "rows": [
+          [
+            "Amber",
+            "Index",
+            "2033-02-10"
+          ],
+          [
+            "Blue",
+            "Index",
+            "2033-02-15"
+          ],
+          [
+            "Clay",
+            "Index",
+            "2033-02-01"
+          ],
+          [
+            "Dune",
+            "Spine",
+            "2033-02-15"
+          ]
+        ]
+      },
+      "editorial_notice": {
+        "columns": [
+          "source_id TEXT",
+          "standard_code TEXT",
+          "issue_day TEXT",
+          "adoption_day TEXT",
+          "replaces_id TEXT",
+          "excerpt TEXT"
+        ],
+        "rows": [
+          [
+            "N6",
+            "Index",
+            "2033-02-03",
+            "2033-03-01",
+            null,
+            "The subject index enters use on 1 March."
+          ],
+          [
+            "N2",
+            "Index",
+            "2033-02-15",
+            "2033-03-08",
+            "N6",
+            "The index switchover moves to 8 March."
+          ],
+          [
+            "N8",
+            "Index",
+            "2033-02-18",
+            "2033-03-05",
+            "N2",
+            "The revised index date is now 5 March."
+          ],
+          [
+            "S1",
+            "Spine",
+            "2033-02-12",
+            "2033-02-12",
+            null,
+            "The spine index entered use today."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "edition_code",
+      "adoption_day",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-chance-adjusted-transcription-agreement",
+    "tool": "sqlite.query",
+    "instruction": "Two annotators independently transcribed the same etched glyphs. Each row pairs their readings of one unique glyph. Both readings are present and each is either A or B. Compute unweighted Cohen's kappa across all glyphs. Observed agreement is the fraction of pairs with identical readings. For each letter, multiply the fraction of left readings using that letter by the fraction of right readings using it, then sum the products to obtain chance agreement. Kappa equals (observed agreement minus chance agreement) divided by (1 minus chance agreement). The input contains at least one pair and chance agreement is below one. Return one row and one integer column, kappa_ppm, equal to kappa times 1000000 rounded to the nearest integer, with exact halves rounded away from zero. Preserve the sign. There are no ordering ties. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "transcriptions": {
+        "columns": [
+          "glyph_id INTEGER",
+          "left_reading TEXT",
+          "right_reading TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "A",
+            "A"
+          ],
+          [
+            2,
+            "A",
+            "A"
+          ],
+          [
+            3,
+            "A",
+            "B"
+          ],
+          [
+            4,
+            "B",
+            "B"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "kappa_ppm"
+    ]
+  }
+]

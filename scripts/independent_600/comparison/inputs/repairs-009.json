@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "repair-original-dispatch-index-ties",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a dispatch index. Each entry in slips has a string label, a state of ready or void, and a nonnegative integer due giving minutes after midnight on the dispatch day (0 through 1439 inclusive). Index every ready slip whose due is between start and end inclusive. Both endpoints use the same units and satisfy 0 <= start <= end <= 1439. Order by increasing due, preserving original list order for equal minutes. Identical slips represent separate physical copies. After ordering, skip offset entries and return up to limit labels as a list, preserving repetitions. offset and limit are nonnegative integers.",
+    "observation": "def solve(data):\n    index = {}\n    for position, slip in enumerate(data['slips']):\n        due = slip['due']\n        if slip['state'] == 'ready' and data['start'] <= due <= data['end']:\n            index[due] = slip['label']\n    keys = sorted(index)\n    offset = data['offset']\n    return [index[key] for key in keys[offset:offset + data['limit']]]"
+  },
+  {
+    "task_id": "repair-original-dispatch-record-date",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a dispatch record. version is the integer 1 or 2 and state is 'scheduled', 'released', or 'cancelled'. Return an empty string for cancelled records. For either eligible state, version 1 stores the dispatch date in dispatch_on. Version 2 stores it in schedule, an object with required planned_on and optional revised_on. A non-null revised_on takes precedence, even if earlier than planned_on. When revised_on is absent or null, use planned_on. Migration records may also carry fields from the other version. Use only the declared version's fields. All supplied non-null dates are valid YYYY-MM-DD calendar-date strings. Return the selected string unchanged.",
+    "observation": "def solve(data):\n    if data['state'] == 'cancelled':\n        return ''\n    if data['version'] == 1:\n        return data['dispatch_on']\n    schedule = data['schedule']\n    return max(schedule['planned_on'], schedule.get('revised_on') or schedule['planned_on'])"
+  },
+  {
+    "task_id": "repair-original-expand-month-end-close",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a monthly close schedule. The start and end fields are valid Gregorian dates in YYYY-MM-DD format, with start at or before end and years from 1900 through 2099. The holidays field lists dates in the same format and may include duplicates or dates outside the window. For each calendar month touched by the inclusive window, find that month's last Monday through Friday that is absent from holidays. Use the whole calendar month to determine its close date, then include the date only if it falls within the window. Skip a month with no business day. Return the qualifying dates as YYYY-MM-DD strings in ascending order, one per month.",
+    "observation": "from datetime import date, timedelta\n\n\ndef solve(data):\n    start = date.fromisoformat(data['start'])\n    end = date.fromisoformat(data['end'])\n    holidays = {date.fromisoformat(value) for value in data['holidays']}\n    day = timedelta(days=1)\n    month = start.replace(day=1)\n    result = []\n    while month <= end:\n        following = (month + timedelta(days=31)).replace(day=1)\n        close = min(following - day, end)\n        while close >= month and (close.weekday() >= 5 or close in holidays):\n            close -= day\n        if close >= month and start <= close <= end:\n            result.append(close.isoformat())\n        month = following\n    return result"
+  },
+  {
+    "task_id": "repair-original-expire-event-id-suppression",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Repair solve(data) for a scanner event feed. horizon is a nonnegative integer duration in seconds. Each row in events has a case-sensitive string id, an integer timestamp at in seconds, and state equal to live or test. Ignore test rows. Process live rows by ascending timestamp, breaking ties by original list position. Keep the first occurrence of each ID. For a later row with the same ID, keep it if its timestamp is at least horizon seconds after the most recently kept row for that ID. Suppressed rows do not extend the window. With a zero horizon, keep even simultaneous repeats. Return the original zero-based indices of kept rows in processing order.",
+    "observation": "def solve(data):\n    events = data['events']\n    last = {}\n    kept = []\n    for index in sorted(range(len(events)), key=lambda i: events[i]['at']):\n        row = events[index]\n        if row['state'] != 'live':\n            continue\n        key, at = row['id'], row['at']\n        if key not in last or at - last[key] >= data['horizon']:\n            kept.append(index)\n        last[key] = at\n    return kept"
+  }
+]

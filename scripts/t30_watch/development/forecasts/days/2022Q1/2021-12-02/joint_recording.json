@@ -1,0 +1,54 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 35810,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 403,
+    "reasoning_output_tokens": 70
+  },
+  "thread": "01a20d7d-105e-7203-97d1-2816e7f0fc84",
+  "packet_sha256": "2ca6108d40c85cd8dbb30b84f96788df3169189c5e2920b0997d2584fb8c4e76",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q1/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q1/industrial_machinery-1\",\"alerts\":[{\"cik\":\"0000880266\",\"reason\":\"AGCO’s reported net sales growth slowed from 43.48% in June to 9.11% in September. Key component shortages had recently forced AGCO to cut production and unit shipments even as inventory rose (A). I forecast December sales growth stays above -5%, but persistent shipment cuts push March-quarter sales at least 5% below the prior year.\"}]},\n    {\"sector\":\"2022Q1/prepackaged_software-1\",\"alerts\":[{\"cik\":\"0000718877\",\"reason\":\"Activision’s reported revenue growth slowed from 18.84% in June to 5.94% in September (A). The $116 million increase in King bookings supports a December forecast above -5% (B). The nine-month total (E) less June and September revenue implies roughly $2.23 billion for March 2021. As stay-at-home demand fades (C), I forecast March 2022 revenue at least 5% below that base, around $2.12 billion or less.\"}]},\n    {\"sector\":\"2022Q1/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q1/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q1/transportation-1\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q1/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0000880266",
+            "reason": "AGCO’s reported net sales growth slowed from 43.48% in June to 9.11% in September. Key component shortages had recently forced AGCO to cut production and unit shipments even as inventory rose (A). I forecast December sales growth stays above -5%, but persistent shipment cuts push March-quarter sales at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q1/prepackaged_software-1",
+        "alerts": [
+          {
+            "cik": "0000718877",
+            "reason": "Activision’s reported revenue growth slowed from 18.84% in June to 5.94% in September (A). The $116 million increase in King bookings supports a December forecast above -5% (B). The nine-month total (E) less June and September revenue implies roughly $2.23 billion for March 2021. As stay-at-home demand fades (C), I forecast March 2022 revenue at least 5% below that base, around $2.12 billion or less."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q1/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q1/transportation-1",
+        "alerts": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07",
+  "turns_sha256": [
+    "93aea2733bf8d1cfad8dc386d1562141c5c3f6ba0b288d4a4568d6422343c113",
+    "118e227d12d5c388e316d1b436a7e26ab51a55ce5c9bb8bdf5f777e6e2c022bc",
+    "6ad747e969517cad17b932f3b1698b17af46374fcdd68ebc20235e8608ce9b56"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-59196",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "H3:H5",
+            "formula": "=INDEX($D$2:$G$2,1,MATCH(MAX(D3:G3),D3:G3,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58544,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 559,
+        "reasoning_output_tokens": 168
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59224",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "E4:E14",
+            "formula": "=IF(COUNTIFS(C4:$C$14,\"<=\"&$B$2,D4:$D$14,\">=\"&$B$2)>0,\"Select Period\",\"Do Not Select\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C4:E14"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "C4:E14",
+            "range_size": 33,
+            "cells": [
+              [
+                "C4",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "D4",
+                "2020-12-31 00:00:00"
+              ],
+              [
+                "E4",
+                "Do Not Select"
+              ],
+              [
+                "C5",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "D5",
+                "2020-09-30 00:00:00"
+              ],
+              [
+                "E5",
+                "Do Not Select"
+              ],
+              [
+                "C6",
+                "2020-04-01 00:00:00"
+              ],
+              [
+                "D6",
+                "2020-06-30 00:00:00"
+              ],
+              [
+                "E6",
+                "Do Not Select"
+              ],
+              [
+                "C7",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "D7",
+                "2020-03-31 00:00:00"
+              ],
+              [
+                "E7",
+                "Do Not Select"
+              ],
+              [
+                "C8",
+                "2019-10-01 00:00:00"
+              ],
+              [
+                "D8",
+                "2019-12-31 00:00:00"
+              ],
+              [
+                "E8",
+                "Do Not Select"
+              ],
+              [
+                "C9",
+                "2019-07-01 00:00:00"
+              ],
+              [
+                "D9",
+                "2019-09-30 00:00:00"
+              ],
+              [
+                "E9",
+                "Select Period"
+              ],
+              [
+                "C10",
+                "2019-04-01 00:00:00"
+              ],
+              [
+                "D10",
+                "2019-06-30 00:00:00"
+              ],
+              [
+                "E10",
+                "Do Not Select"
+              ],
+              [
+                "C11",
+                "2019-01-01 00:00:00"
+              ],
+              [
+                "D11",
+                "2019-03-31 00:00:00"
+              ],
+              [
+                "E11",
+                "Do Not Select"
+              ],
+              [
+                "C12",
+                "2018-10-01 00:00:00"
+              ],
+              [
+                "D12",
+                "2018-12-31 00:00:00"
+              ],
+              [
+                "E12",
+                "Do Not Select"
+              ],
+              [
+                "C13",
+                "2018-07-01 00:00:00"
+              ],
+              [
+                "D13",
+                "2018-09-30 00:00:00"
+              ],
+              [
+                "E13",
+                "Do Not Select"
+              ],
+              [
+                "C14",
+                "2018-04-01 00:00:00"
+              ],
+              [
+                "D14",
+                "2018-06-30 00:00:00"
+              ],
+              [
+                "E14",
+                "Do Not Select"
+              ]
+            ],
+            "total": 33,
+            "truncated": false,
+            "blank_count": 0
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 58544,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 559,
+        "reasoning_output_tokens": 168
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59259",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "J5:L16",
+            "formula": "=SUMIFS($E$5:$E$1000,$C$5:$C$1000,J$4,$F$5:$F$1000,\">=\"&DATE(YEAR($I5),1,1),$F$5:$F$1000,\"<\"&EDATE($I5,1))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I4:L16"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "I4:L16",
+            "range_size": 52,
+            "cells": [
+              [
+                "I4",
+                "Reporting Month"
+              ],
+              [
+                "J4",
+                "Furniture"
+              ],
+              [
+                "K4",
+                "Computer"
+              ],
+              [
+                "L4",
+                "Machinery"
+              ],
+              [
+                "I5",
+                "2020-01-01 00:00:00"
+              ],
+              [
+                "J5",
+                "0"
+              ],
+              [
+                "K5",
+                "0"
+              ],
+              [
+                "L5",
+                "100"
+              ],
+              [
+                "I6",
+                "2020-02-01 00:00:00"
+              ],
+              [
+                "J6",
+                "0"
+              ],
+              [
+                "K6",
+                "0"
+              ],
+              [
+                "L6",
+                "100"
+              ],
+              [
+                "I7",
+                "2020-03-01 00:00:00"
+              ],
+              [
+                "J7",
+                "0"
+              ],
+              [
+                "K7",
+                "0"
+              ],
+              [
+                "L7",
+                "100"
+              ],
+              [
+                "I8",
+                "2020-04-01 00:00:00"
+              ],
+              [
+                "J8",
+                "0"
+              ],
+              [
+                "K8",
+                "0"
+              ],
+              [
+                "L8",
+                "100"
+              ],
+              [
+                "I9",
+                "2020-05-01 00:00:00"
+              ],
+              [
+                "J9",
+                "0"
+              ],
+              [
+                "K9",
+                "0"
+              ],
+              [
+                "L9",
+                "100"
+              ],
+              [
+                "I10",
+                "2020-06-01 00:00:00"
+              ],
+              [
+                "J10",
+                "250"
+              ],
+              [
+                "K10",
+                "0"
+              ],
+              [
+                "L10",
+                "100"
+              ],
+              [
+                "I11",
+                "2020-07-01 00:00:00"
+              ],
+              [
+                "I12",
+                "2020-08-01 00:00:00"
+              ],
+              [
+                "I13",
+                "2020-09-01 00:00:00"
+              ],
+              [
+                "I14",
+                "2020-10-01 00:00:00"
+              ],
+              [
+                "I15",
+                "2020-11-01 00:00:00"
+              ],
+              [
+                "I16",
+                "2020-12-01 00:00:00"
+              ]
+            ],
+            "total": 34,
+            "truncated": false,
+            "blank_count": 18
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 58544,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 559,
+        "reasoning_output_tokens": 168
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-59358",
+      "model": "gpt-6.1-terra",
+      "arm": "browse",
+      "batch": "spreadsheets-023",
+      "submission": {
+        "fills": [
+          {
+            "range": "L7:L9",
+            "formula": "=IFERROR(INDEX($F$2:$F$23,MATCH(1,INDEX(($B$2:$B$23=K7)*($D$2:$D$23=J7),0),0)),\"\")"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 58544,
+        "cached_input_tokens": 37632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 559,
+        "reasoning_output_tokens": 168
+      },
+      "model_calls": 3
+    }
+  ]
+}

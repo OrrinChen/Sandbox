@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.2-sol",
+    "arm": "browse",
+    "batch": "spreadsheets-020",
+    "stage": "submit",
+    "prompt_sha256": "4b650c8f616588037eba3bfce42ac6f39184ee7083343989de6a0e6fe3ca3564",
+    "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6"
+  },
+  "response": {
+    "model": "gpt-6.2-sol",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211da-5db9-75f0-a382-0ad4d536c3d5",
+    "raw": "{\n  \"sheet-56451\": {\n    \"fills\": [\n      {\n        \"range\": \"B2:F7\",\n        \"formula\": \"=INDEX('Sheet 2'!$B$2:$F$7,MATCH($A2,'Sheet 2'!$A$2:$A$7,0),MATCH(B$1,'Sheet 2'!$B$1:$F$1,0))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56599\": {\n    \"formulas\": {\n      \"B2\": \"=IFERROR(IF(OR(M5=\\\"\\\",MOD(M5,1)<>0),\\\"not found - please re-enter\\\",INDEX($J$6:$J$30,MATCH(1,INDEX((--$G$6:$G$30<=--M5)*(--$H$6:$H$30>=--M5),0),0))),\\\"not found - please re-enter\\\")\"\n    }\n  },\n  \"sheet-56915\": {\n    \"fills\": [\n      {\n        \"range\": \"B18:B23\",\n        \"formula\": \"=IF(ISBLANK(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(B$13,DATA!$B$13:$E$13,0)-1)),\\\"\\\",ROUND(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(B$13,DATA!$B$13:$E$13,0)-1),2))\"\n      },\n      {\n        \"range\": \"C18:C23\",\n        \"formula\": \"=IF(ISBLANK(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(B$13,DATA!$B$13:$E$13,0))),\\\"\\\",TEXT(ABS(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(B$13,DATA!$B$13:$E$13,0))),IF(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(B$13,DATA!$B$13:$E$13,0))<0,\\\"(0.00)\\\",\\\"0.00\\\")))\"\n      },\n      {\n        \"range\": \"D18:D23\",\n        \"formula\": \"=IF(ISBLANK(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(D$13,DATA!$B$13:$E$13,0)-1)),\\\"\\\",ROUND(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(D$13,DATA!$B$13:$E$13,0)-1),2))\"\n      },\n      {\n        \"range\": \"E18:E23\",\n        \"formula\": \"=IF(ISBLANK(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(D$13,DATA!$B$13:$E$13,0))),\\\"\\\",TEXT(ABS(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(D$13,DATA!$B$13:$E$13,0))),IF(INDEX(DATA!$B$18:$AC$24,MATCH($A18,DATA!$A$18:$A$24,0),MATCH($B$12,DATA!$B$12:$AC$12,0)+MATCH(D$13,DATA!$B$13:$E$13,0))<0,\\\"(0.00)\\\",\\\"0.00\\\")))\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-56995\": {\n    \"fills\": [\n      {\n        \"range\": \"D2:D5\",\n        \"formula\": \"=IF(B2=\\\"\\\",\\\"Not Attempt\\\",(B2-C2)/B2)\"\n      }\n    ],\n    \"formulas\": {}\n  }\n}",
+    "usage": {
+      "input_tokens": 22434,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2283,
+      "reasoning_output_tokens": 1149
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

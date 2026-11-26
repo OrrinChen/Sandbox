@@ -1,0 +1,70 @@
+{
+  "date": null,
+  "url": "https://www.sec.gov/Archives/edgar/data/932696/000162828023014760/nsit-20230502xerx8kex991.htm",
+  "basis": "Insight’s May 2, 2023 release establishes that consolidated GAAP net sales for Q1 2023 were 2323947000 USD, down 12.33% from 2650850000 USD in Q1 2022 and below the 2518307500 USD threshold. I recovered Insight’s full March 7 conference deck. It gives no numeric Q1 sales ceiling. I could not verify the accompanying management remarks from audio or a transcript, so the earliest qualifying date remains unresolved. The upper_bound is the verified May 2 actual.",
+  "coverage": [
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/932696/000162828022026297/ex-991.htm",
+      "detail": "The October 2022 investor-day deck furnished October 12 presents 2027 targets, including five-year growth rates. It gives no Q1 2023 consolidated net sales ceiling."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/932696/000162828022027994/nsit-20221103xerx8kex991.htm",
+      "detail": "The November 3 Q3 earnings release forecasts low-double-digit net sales growth for full-year 2022. That forecast period ends before Q1 2023."
+    },
+    {
+      "url": "https://www.roic.ai/quote/NSIT/transcripts/2022-year/3-quarter",
+      "detail": "The third-party transcript of the Q3 call records management declining to give specific 2023 guidance when asked about the outlook."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/932696/000162828023002873/nsit-20230209xerx8kex991.htm",
+      "detail": "The February 9 Q4 release forecasts high-single-digit gross profit growth and adjusted diluted EPS of $9.90–$10.10 for full-year 2023. Neither gives a quarterly sales bound."
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/932696/000162828023002873/q42022-earningspresentat.htm",
+      "detail": "Slide 15 compares sales in the two halves of 2022. Slide 23 gives the full-year 2023 gross profit and EPS outlook. The deck supplies no Q1 2023 net sales range."
+    },
+    {
+      "url": "https://www.roic.ai/quote/NSIT/transcripts/2022-year/4-quarter",
+      "detail": "On the February 9 call, CEO Joyce Mullen expected device sales to decline in the first half of 2023. The remark covers one product category over six months and gives no numeric endpoint."
+    },
+    {
+      "url": "https://investor.insight.com/news-releases/news-release-details/2023/Insight-to-Present-at-Raymond-James-44th-Annual-Institutional-Investors-Conference/default.aspx",
+      "detail": "Insight’s February 28 notice identifies CEO Joyce Mullen and CFO Glynis Bryan as speakers for a public webcast on March 7 at 8:05 a.m. ET. It directs listeners to investor relations and gives no financial update."
+    },
+    {
+      "url": "https://s24.q4cdn.com/371576454/files/doc_events/2023/Mar/07/insight_raymond-james-conference.pdf",
+      "detail": "Recovered Insight’s complete 19-slide Raymond James presentation. Slide 8 shows historical performance through 2022. Slide 9 compares 2022 with 2027 targets. Slide 10 describes above-market sales growth as a strategy. Pages 12–19 contain the appendix, historical reconciliations, a client example and the closing slide. No slide gives a numeric Q1 2023 consolidated sales forecast."
+    },
+    {
+      "url": "https://investor.insight.com/events/default.aspx",
+      "detail": "Insight’s archive displayed a year selector, but the accessible page did not expose a March 2023 replay. The year-specific request at https://investor.insight.com/events/default.aspx?Year=2023 was inaccessible."
+    },
+    {
+      "url": "https://www.raymondjames.com/-/media/rj/dotcom/files/our-company/investor-relations/presentations-and-webcasts/2023-03-rj-ii-conference.pdf",
+      "detail": "The conference host’s accessible 26-page presentation is Raymond James Financial’s own March 6 presentation. It contains no record of Insight’s March 7 remarks."
+    },
+    {
+      "url": "https://ir.wexinc.com/news/news-details/2023/WEX-to-Present-at-the-Raymond-James-44th-Annual-Institutional-Investors-Conference/default.aspx",
+      "detail": "A fellow presenter’s official notice confirms that Wall Street Webcasting used conference identifier rj127. The conference root https://wsw.com/webcast/rj127/ and the inferred Insight paths https://wsw.com/webcast/rj127/nsit/ and https://wsw.com/webcast/rj127/register.aspx?conf=rj127&page=nsit were inaccessible. I could not authenticate an Insight-specific replay URL."
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=wsw.com/webcast/rj127/nsit/*&output=json",
+      "detail": "The archive lookup for captures under the inferred Insight webcast path was inaccessible. Whether a recording was archived remains unknown."
+    },
+    {
+      "url": "https://www.bamsec.com/companies/932696/insight-enterprises-inc/transcripts",
+      "detail": "The transcript index lists the February 9 and May 2 earnings calls consecutively and supplies no transcript for March 7. The supplied SEC filing inventory likewise identifies no intervening 8-K exhibit containing the spoken remarks."
+    },
+    {
+      "url": "https://investor.insight.com/news-releases/news-release-details/2023/Insight-Enterprises-Inc.-to-Report-First-Quarter-2023-Financial-Results-on-May-2-2023/default.aspx",
+      "detail": "The April 18 notice scheduled the Q1 release for May 2 before market open. It gave no preliminary sales figure or range."
+    },
+    {
+      "url": "https://investor.insight.com/news-releases/news-release-details/2023/Insight-Enterprises-Inc.-Reports-First-Quarter-Results-and-Confirms-Full-Year-Guidance/default.aspx",
+      "detail": "The May 2 consolidated statements report total net sales of 2,323,947 and 2,650,850, in thousands of USD, for the three months ended March 31, 2023 and 2022 respectively. Both figures are company-wide reported totals from the same comparative table."
+    }
+  ],
+  "comparison_type": "usd",
+  "upper_bound": "2323947000",
+  "publication_date_evidence": "Insight’s IR release is dated May 2, 2023. SEC Exhibit 99.1 carries the same dateline, is marked “FOR IMMEDIATE RELEASE,” and identifies the quarter ended March 31, 2023. This verifies when Insight published the actual sales figure. The February 28 notice and March 7 deck establish the earlier webcast’s timing and written content, but the spoken disclosure remains unverified."
+}

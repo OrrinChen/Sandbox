@@ -1,0 +1,41 @@
+{
+  "text": [
+    {
+      "sector": "2023Q3/semiconductors-2",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/semiconductors-3",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2023Q3/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2023Q3/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2023Q3/semiconductors-2",
+      "alerts": [
+        {
+          "cik": "0001730168",
+          "reason": "Reported sales YoY 15.69% then 7.77%. Target is step 2; preceding -0.14% versus target -8.05%."
+        }
+      ]
+    },
+    {
+      "sector": "2023Q3/semiconductors-3",
+      "alerts": []
+    }
+  ]
+}

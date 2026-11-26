@@ -1,0 +1,49 @@
+{
+  "cutoff": "2022-10-22",
+  "sectors": {
+    "2022Q4/retail-3": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000909832",
+          "issuer": "COSTCO WHOLESALE CORP /NEW",
+          "sector": "retail",
+          "target_fiscal_quarter_projected_start": "2022-11-21",
+          "latest_filed_period_end": "2022-08-28",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-K",
+              "date": "2022-10-05",
+              "text": "The material seasonal impact in our operations is increased net sales and earnings during the winter holiday season."
+            },
+            {
+              "id": "B",
+              "title": "10-K",
+              "date": "2022-10-05",
+              "text": "When combined with the operating efficiencies achieved by volume purchasing, efficient distribution and reduced handling of merchandise in no-frills, self-service warehouse facilities, these volumes and turnover enable us to operate profitably at significantly lower gross margins (net sales less merchandise costs) than most other retailers."
+            },
+            {
+              "id": "C",
+              "title": "10-K",
+              "date": "2022-10-05",
+              "text": "Because the hours of operation are shorter than many other retailers, and due to other efficiencies inherent in a warehouse-type operation, labor costs are lower relative to the volume of sales."
+            },
+            {
+              "id": "D",
+              "title": "10-K",
+              "date": "2022-10-05",
+              "text": "Net sales for our gasoline business increased to approximately 14% of total net sales in 2022."
+            },
+            {
+              "id": "E",
+              "title": "10-K",
+              "date": "2022-10-05",
+              "text": "Net sales for e-commerce represented approximately 7% of total net sales in 2022."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

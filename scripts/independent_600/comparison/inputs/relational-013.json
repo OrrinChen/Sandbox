@@ -1,0 +1,196 @@
+[
+  {
+    "task_id": "decision-bundle-conveyor-repairs-into-two-line-stops",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly two authorized conveyor stops on the same production day. Each permit specifies a stop start in integer hours from opening. The two starts must be at least four hours apart. A repair request can be completed at either stop whose start falls within its inclusive range of acceptable starts. Independent crews can complete any number of eligible requests during one stop. Each distinct request earns its stated priority points once across the day. Maximize total points and break ties by earlier first start, then earlier second start. Return one row with columns first_permit, second_permit, covered_points, citing the actual permits in chronological order. Permit IDs, permit start hours and request IDs are each unique within their tables. No fields are null, priority points are positive and a feasible pair exists. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "repair_request": {
+        "columns": [
+          "request_id TEXT",
+          "earliest_hour INTEGER",
+          "latest_hour INTEGER",
+          "priority_points INTEGER"
+        ],
+        "rows": [
+          [
+            "idler",
+            2,
+            8,
+            6
+          ],
+          [
+            "guard",
+            2,
+            2,
+            4
+          ],
+          [
+            "roller",
+            8,
+            8,
+            3
+          ],
+          [
+            "skirt",
+            10,
+            10,
+            5
+          ],
+          [
+            "guide",
+            5,
+            5,
+            4
+          ]
+        ]
+      },
+      "stop_permit": {
+        "columns": [
+          "permit_id TEXT",
+          "start_hour INTEGER",
+          "permit_text TEXT"
+        ],
+        "rows": [
+          [
+            "S2",
+            2,
+            "Stop authorized after the opening pallet run."
+          ],
+          [
+            "S5",
+            5,
+            "Stop authorized at the first carton change."
+          ],
+          [
+            "S8",
+            8,
+            "Stop authorized after the bulk dispatch."
+          ],
+          [
+            "S10",
+            10,
+            "Stop authorized before the closing sweep."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_permit",
+      "second_permit",
+      "covered_points"
+    ]
+  },
+  {
+    "task_id": "decision-buy-stock-limited-patch-cord-packs",
+    "tool": "sqlite.query",
+    "instruction": "Fill the single installation ticket by purchasing sealed packs. The offer sheet contains exactly one row for each pack code M, S and L. The two contents fields give the numbers of short and long cords in one pack. Each size must independently meet its ticket quantity, and surplus is allowed. Packs cost the listed integer cents, with no other charges. Buy a nonnegative whole number of each pack up to its stock limit, which is between zero and three inclusive. Minimize total purchase cost, then total packs purchased, then the tuple of M, S and L quantities in ascending numeric lexicographic order. All fields are non-null and a feasible purchase exists. Return one row with ordered columns mixed_packs, short_packs, long_packs, total_cents, ticket_id. Cite the installation ticket whose quantities the order fills. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "install_ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "need_short INTEGER",
+          "need_long INTEGER",
+          "ticket_text TEXT"
+        ],
+        "rows": [
+          [
+            "FIT-8",
+            5,
+            4,
+            "Fit five short patch cords inside the cabinet and four long cords to the bench."
+          ]
+        ]
+      },
+      "pack_offer": {
+        "columns": [
+          "pack_code TEXT",
+          "short_qty INTEGER",
+          "long_qty INTEGER",
+          "price_cents INTEGER",
+          "stock_limit INTEGER"
+        ],
+        "rows": [
+          [
+            "M",
+            2,
+            2,
+            300,
+            1
+          ],
+          [
+            "S",
+            3,
+            0,
+            250,
+            2
+          ],
+          [
+            "L",
+            0,
+            4,
+            460,
+            1
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "mixed_packs",
+      "short_packs",
+      "long_packs",
+      "total_cents",
+      "ticket_id"
+    ]
+  },
+  {
+    "task_id": "decision-calibrate-clock-from-paired-punches",
+    "tool": "sqlite.query",
+    "instruction": "Use SQLite to calibrate a bench clock from exactly two simultaneous pairs of punch readings. reference_s is the reference clock's elapsed time in seconds. bench_ms is the bench clock's reading in milliseconds on the same nominal time scale. Define offset as bench time minus reference time, in milliseconds. Assume offset changes at a constant rate. Return one row with initial_offset_ms at reference time zero, followed by drift_ppm, the signed number of extra bench microseconds accumulated per reference second. A fast bench clock has positive drift. The reference times are distinct and both answers are exact integers for the supplied data. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "paired_punches": {
+        "columns": [
+          "reference_s INTEGER",
+          "bench_ms INTEGER"
+        ],
+        "rows": [
+          [
+            30,
+            30035
+          ],
+          [
+            10,
+            10025
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "initial_offset_ms",
+      "drift_ppm"
+    ]
+  },
+  {
+    "task_id": "decision-canonical-circular-etch",
+    "tool": "sqlite.query",
+    "instruction": "Each piece has a unique piece_id and a clockwise transcription of a circular etching containing 1 to 12 uppercase ASCII letters. Any letter may be the start. Read exactly one full turn clockwise from each possible start and choose the lexicographically smallest complete reading under binary text order. If several starts give that reading, choose the smallest offset. Offsets count letters clockwise from the supplied transcription's first letter, starting at zero. Return piece_id, canonical_mark, and start_offset in that order, one row per piece, sorted by piece_id in ascending binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "etchings": {
+        "columns": [
+          "piece_id TEXT",
+          "mark TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "BACA"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "piece_id",
+      "canonical_mark",
+      "start_offset"
+    ]
+  }
+]

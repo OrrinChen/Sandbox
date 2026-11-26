@@ -1,0 +1,330 @@
+[
+  {
+    "task_id": "decision-cost-project-issues-from-fifo-layers",
+    "tool": "sqlite.query",
+    "instruction": "Reconstruct the material cost charged to each project from a shared store of one interchangeable component. All receipt lots were on hand before the first issue. Consume lots in ascending lot_seq and process issues in ascending issue_seq, across all projects together. A partially consumed lot stays available to the next issue. Both sequence columns are unique within their tables, so no ties occur. Quantities are positive whole components, unit_cents is the receipt cost per component in cents, and no fields are NULL. Total stock covers all issues. Exclude unused inventory. Return project_code, issued_units, material_cents, aggregating all issues for each project and ordering by project_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "project_issue": {
+        "columns": [
+          "issue_seq INTEGER",
+          "project_code TEXT",
+          "issue_units INTEGER"
+        ],
+        "rows": [
+          [
+            2,
+            "Pier",
+            4
+          ],
+          [
+            1,
+            "Dock",
+            3
+          ],
+          [
+            3,
+            "Dock",
+            4
+          ]
+        ]
+      },
+      "store_lot": {
+        "columns": [
+          "lot_seq INTEGER",
+          "lot_units INTEGER",
+          "unit_cents INTEGER"
+        ],
+        "rows": [
+          [
+            20,
+            5,
+            140
+          ],
+          [
+            10,
+            4,
+            100
+          ],
+          [
+            30,
+            4,
+            90
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "project_code",
+      "issued_units",
+      "material_cents"
+    ]
+  },
+  {
+    "task_id": "decision-count-menu-options-with-complete-labels",
+    "tool": "sqlite.query",
+    "instruction": "For every course appearing on the printed menu, count distinct dish codes that qualify for the menu's allergen-free search filter. The filter covers every tag listed in filter_tag. A dish qualifies only when the label register explicitly marks every required tag 'free'. A missing row or a NULL mark means unknown. A 'contains' mark fails that tag. Ignore tags outside the filter. Each dish/tag pair has at most one register entry, the required tag list is nonempty, and only mark can be NULL. Menu slots may repeat a dish within a course or offer it in several courses. Count it once per course where it appears. Retain courses with zero qualifying dishes. Counts are numbers of dish codes. Return course_code, listed_dishes, qualifying_dishes in ascending course_code order. Equal counts have no effect on order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dish_label": {
+        "columns": [
+          "dish_code TEXT",
+          "tag_code TEXT",
+          "mark TEXT"
+        ],
+        "rows": [
+          [
+            "pilaf",
+            "milk",
+            "free"
+          ],
+          [
+            "pilaf",
+            "sesame",
+            "free"
+          ],
+          [
+            "pilaf",
+            "wheat",
+            "contains"
+          ],
+          [
+            "stew",
+            "milk",
+            "free"
+          ],
+          [
+            "slaw",
+            "milk",
+            "free"
+          ],
+          [
+            "slaw",
+            "sesame",
+            null
+          ],
+          [
+            "pear",
+            "milk",
+            "contains"
+          ]
+        ]
+      },
+      "filter_tag": {
+        "columns": [
+          "tag_code TEXT"
+        ],
+        "rows": [
+          [
+            "milk"
+          ],
+          [
+            "sesame"
+          ]
+        ]
+      },
+      "menu_slot": {
+        "columns": [
+          "slot_id INTEGER",
+          "course_code TEXT",
+          "dish_code TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            "main",
+            "pilaf"
+          ],
+          [
+            2,
+            "main",
+            "pilaf"
+          ],
+          [
+            3,
+            "main",
+            "stew"
+          ],
+          [
+            4,
+            "side",
+            "pilaf"
+          ],
+          [
+            5,
+            "side",
+            "slaw"
+          ],
+          [
+            6,
+            "sweet",
+            "pear"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "course_code",
+      "listed_dishes",
+      "qualifying_dishes"
+    ]
+  },
+  {
+    "task_id": "decision-cover-two-strip-orders-with-opening-fees",
+    "tool": "sqlite.query",
+    "instruction": "Plan one shift using the two approved roll-slitting patterns P and Q. One run consumes one roll. The pattern yields give accepted narrow and wide strips per roll, after trim. Choose an integer count from zero through three for each pattern. Meet or exceed both strip requirements and respect the total roll limit on the single shift ticket. A used pattern incurs its opening fee once plus its run charge for every roll. Surplus has no credit. Minimize total cents, then total rolls, then P rolls. All inputs are non-null and a feasible plan exists. Return one row with columns ticket_id, p_rolls, q_rolls, total_cents, citing the actual shift ticket. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "shift_ticket": {
+        "columns": [
+          "ticket_id TEXT",
+          "ticket_text TEXT",
+          "narrow_need INTEGER",
+          "wide_need INTEGER",
+          "roll_limit INTEGER"
+        ],
+        "rows": [
+          [
+            "ST-8",
+            "Release at least six narrow and six wide strips from at most four rolls.",
+            6,
+            6,
+            4
+          ]
+        ]
+      },
+      "slit_pattern": {
+        "columns": [
+          "pattern_id TEXT",
+          "narrow_yield INTEGER",
+          "wide_yield INTEGER",
+          "open_cents INTEGER",
+          "run_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "P",
+            4,
+            1,
+            90,
+            20
+          ],
+          [
+            "Q",
+            1,
+            3,
+            15,
+            35
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "ticket_id",
+      "p_rolls",
+      "q_rolls",
+      "total_cents"
+    ]
+  },
+  {
+    "task_id": "decision-crate-destination-receipt-audit",
+    "tool": "sqlite.query",
+    "instruction": "Produce disputed_arrivals.csv for crates whose routing slips name at least two distinct destination bays. Repeated slips for the same bay count as one proposed destination. Consult the dock evidence, where each row is an original note with its source_id and a structured transcription of the crate, bay, event kind and minute since the shift began. A receipt records physical acceptance. A sighting records location only. For each disputed crate, consider receipts at proposed bays only, and cite the earliest such receipt, breaking a minute tie by smallest source_id in SQLite BINARY order. If none qualifies, include the crate with NULL for both the accepted bay and the citation. All input fields are non-NULL and source_id is unique. Return crate_code, accepted_bay, source_id ordered by crate_code. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "dock_evidence": {
+        "columns": [
+          "source_id TEXT",
+          "crate_code TEXT",
+          "bay_code TEXT",
+          "event_kind TEXT",
+          "shift_min INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "Lime",
+            "West",
+            "sighting",
+            2,
+            "Lime rolled past West on the transfer cart."
+          ],
+          [
+            "N2",
+            "Lime",
+            "Spur",
+            "receipt",
+            3,
+            "Spur accepted Lime for temporary storage."
+          ],
+          [
+            "N4",
+            "Lime",
+            "East",
+            "receipt",
+            7,
+            "East signed Lime into its receiving cage."
+          ],
+          [
+            "N3",
+            "Lime",
+            "West",
+            "receipt",
+            7,
+            "West recorded acceptance of Lime at intake."
+          ],
+          [
+            "N5",
+            "Mica",
+            "North",
+            "sighting",
+            1,
+            "Mica was visible outside North."
+          ],
+          [
+            "N6",
+            "Opal",
+            "East",
+            "receipt",
+            8,
+            "East accepted Opal at the counter."
+          ]
+        ]
+      },
+      "routing_slip": {
+        "columns": [
+          "crate_code TEXT",
+          "bay_code TEXT"
+        ],
+        "rows": [
+          [
+            "Lime",
+            "East"
+          ],
+          [
+            "Lime",
+            "West"
+          ],
+          [
+            "Mica",
+            "South"
+          ],
+          [
+            "Mica",
+            "North"
+          ],
+          [
+            "Opal",
+            "East"
+          ],
+          [
+            "Opal",
+            "East"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "crate_code",
+      "accepted_bay",
+      "source_id"
+    ]
+  }
+]

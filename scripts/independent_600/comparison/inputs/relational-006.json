@@ -1,0 +1,316 @@
+[
+  {
+    "task_id": "decision-assign-survey-heads-before-simultaneous-readings",
+    "tool": "sqlite.query",
+    "instruction": "Pads L and R must observe their monuments simultaneously. Assign exactly one instrument head to each pad, using different heads. Each fit_trial row gives the signed residual in millimetres for one unique pad/head combination and the technician minutes needed to fit that head there. Missing combinations are unavailable. A NULL residual means the combination failed calibration and cannot be used. All other fields are non-NULL. One technician must complete both fittings within the single prep_window allowance, inclusive. Among feasible assignments minimize, in order, the larger absolute residual, the sum of the two absolute residuals, and total fitting minutes. Break any remaining tie by the L head ID and then the R head ID, both in binary ascending order. Return the winning row as left_head, right_head, worst_mm, combined_mm, prep_min, or no rows if infeasible. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "fit_trial": {
+        "columns": [
+          "pad_id TEXT",
+          "head_id TEXT",
+          "residual_mm INTEGER",
+          "fit_min INTEGER"
+        ],
+        "rows": [
+          [
+            "L",
+            "A",
+            -1,
+            5
+          ],
+          [
+            "L",
+            "B",
+            3,
+            2
+          ],
+          [
+            "L",
+            "C",
+            4,
+            1
+          ],
+          [
+            "R",
+            "A",
+            1,
+            2
+          ],
+          [
+            "R",
+            "B",
+            -4,
+            2
+          ],
+          [
+            "R",
+            "C",
+            2,
+            5
+          ],
+          [
+            "R",
+            "D",
+            null,
+            1
+          ]
+        ]
+      },
+      "prep_window": {
+        "columns": [
+          "allowed_min INTEGER"
+        ],
+        "rows": [
+          [
+            7
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "left_head",
+      "right_head",
+      "worst_mm",
+      "combined_mm",
+      "prep_min"
+    ]
+  },
+  {
+    "task_id": "decision-attribute-signal-with-time-uncertainty",
+    "tool": "sqlite.query",
+    "instruction": "Use SQLite to attribute each detected signal to a source interval. All times use milliseconds on the same clock. A signal may have occurred at any time from center_ms minus error_ms through center_ms plus error_ms, inclusive. Each source was active from start_ms through end_ms, inclusive. A source interval is compatible if it contains at least one possible signal time, including contact at a single endpoint. Return one row per signal with signal_id followed by interval_id. Use the interval ID only when exactly one interval is compatible. Return SQL NULL for either zero or multiple compatible intervals, even if the center time falls in one of them. Signal IDs and interval IDs are unique within their tables. Order rows by signal_id ascending using binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "signals": {
+        "columns": [
+          "signal_id TEXT",
+          "center_ms INTEGER",
+          "error_ms INTEGER"
+        ],
+        "rows": [
+          [
+            "z",
+            18,
+            1
+          ],
+          [
+            "x",
+            14,
+            2
+          ],
+          [
+            "y",
+            8,
+            2
+          ]
+        ]
+      },
+      "source_intervals": {
+        "columns": [
+          "interval_id TEXT",
+          "start_ms INTEGER",
+          "end_ms INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            10,
+            14
+          ],
+          [
+            "B",
+            16,
+            20
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "signal_id",
+      "interval_id"
+    ]
+  },
+  {
+    "task_id": "decision-audit-abandons-across-a-bulletin-change",
+    "tool": "sqlite.query",
+    "instruction": "Produce the delay-audit list for the single queue represented here. For each call, the governing bulletin is the one with the greatest effective_sec at or before queue entry. Effective seconds are unique. Omit calls predating all bulletins. The bulletin's primary text specifies the start of the audit clock, and threshold_sec gives the inclusive minimum elapsed time. Only calls with outcome 'abandoned' qualify. All times are integer seconds on the same clock. A null greeting_end_sec means there is no recorded greeting completion and excludes the call only when that timestamp is required. A null exit_sec means elapsed time cannot be established. Return call_key, elapsed_sec, source_id for qualifying calls, citing the governing bulletin's actual source_id. Order by call_key ascending. Call keys are unique. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "call_outcomes": {
+        "columns": [
+          "call_key TEXT",
+          "enter_sec INTEGER",
+          "greeting_end_sec INTEGER",
+          "exit_sec INTEGER",
+          "outcome TEXT"
+        ],
+        "rows": [
+          [
+            "a",
+            90,
+            95,
+            110,
+            "abandoned"
+          ],
+          [
+            "b",
+            100,
+            105,
+            116,
+            "abandoned"
+          ],
+          [
+            "c",
+            101,
+            103,
+            115,
+            "abandoned"
+          ],
+          [
+            "d",
+            102,
+            null,
+            140,
+            "abandoned"
+          ],
+          [
+            "e",
+            80,
+            null,
+            110,
+            "answered"
+          ],
+          [
+            "f",
+            40,
+            45,
+            85,
+            "abandoned"
+          ],
+          [
+            "g",
+            112,
+            115,
+            null,
+            "abandoned"
+          ]
+        ]
+      },
+      "queue_bulletins": {
+        "columns": [
+          "source_id TEXT",
+          "effective_sec INTEGER",
+          "primary_text TEXT",
+          "threshold_sec INTEGER"
+        ],
+        "rows": [
+          [
+            "desk-4",
+            50,
+            "Measure delay from queue entry.",
+            20
+          ],
+          [
+            "desk-7",
+            100,
+            "Measure delay from greeting completion.",
+            12
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "call_key",
+      "elapsed_sec",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-audit-disputed-save-credits",
+    "tool": "sqlite.query",
+    "instruction": "Audit the provisional goalkeeper log, where each unique play_code represents one credited save for the listed keeper. Review notes are signed observations from the same match. Their complete finding_text uses one of three phrases. 'Shot was wide.' and 'Defender stopped the shot.' each invalidate the credit, while 'Keeper stopped the shot.' confirms it. For each logged play use the highest revision_no among final notes only. Revisions are unique within a play, and a larger revision number is newer. A play without a final note keeps its provisional credit. Return only credits to remove, one row per play, citing the actual note that controls the decision. Notes for unlogged plays are outside scope. All fields are non-null, and final_flag is 1 for final or 0 for draft. Output keeper_code, play_code, source_id, finding_text ordered by keeper_code and play_code in ascending BINARY order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "review_notes": {
+        "columns": [
+          "source_id TEXT",
+          "play_code TEXT",
+          "revision_no INTEGER",
+          "final_flag INTEGER",
+          "finding_text TEXT"
+        ],
+        "rows": [
+          [
+            "N8",
+            "P1",
+            1,
+            1,
+            "Shot was wide."
+          ],
+          [
+            "N2",
+            "P1",
+            2,
+            1,
+            "Keeper stopped the shot."
+          ],
+          [
+            "N3",
+            "P2",
+            1,
+            1,
+            "Defender stopped the shot."
+          ],
+          [
+            "N4",
+            "P2",
+            2,
+            0,
+            "Keeper stopped the shot."
+          ],
+          [
+            "N5",
+            "P3",
+            1,
+            0,
+            "Shot was wide."
+          ],
+          [
+            "N6",
+            "P9",
+            1,
+            1,
+            "Shot was wide."
+          ]
+        ]
+      },
+      "save_log": {
+        "columns": [
+          "play_code TEXT",
+          "keeper_code TEXT"
+        ],
+        "rows": [
+          [
+            "P1",
+            "K2"
+          ],
+          [
+            "P2",
+            "K1"
+          ],
+          [
+            "P3",
+            "K2"
+          ],
+          [
+            "P4",
+            "K1"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "keeper_code",
+      "play_code",
+      "source_id",
+      "finding_text"
+    ]
+  }
+]

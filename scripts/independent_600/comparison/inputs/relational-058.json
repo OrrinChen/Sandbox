@@ -1,0 +1,319 @@
+[
+  {
+    "task_id": "decision-recover-playtime-from-blank-reprises",
+    "tool": "sqlite.query",
+    "instruction": "Reconstruct score usage across all reels. Within a reel, seq_no gives unique playback order. A play row establishes its non-null score_id as the active score. A reprise has a blank score_id stored as null and uses the active score. A clear row erases the active score. Every reel starts with no active score. Exclude reprises with no active score and exclude clear rows. Each play or resolved reprise contributes its own span_sec in whole seconds, including zero. Clear rows have null span_sec. Return one row per score with at least one included occurrence, giving score_id, performed_sec, cue_count. Sort by performed_sec descending, then score_id ascending using binary text order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "reel_mark": {
+        "columns": [
+          "reel_id TEXT",
+          "seq_no INTEGER",
+          "mark_kind TEXT",
+          "score_id TEXT",
+          "span_sec INTEGER"
+        ],
+        "rows": [
+          [
+            "R",
+            1,
+            "play",
+            "Fern",
+            8
+          ],
+          [
+            "R",
+            2,
+            "reprise",
+            null,
+            3
+          ],
+          [
+            "R",
+            3,
+            "clear",
+            null,
+            null
+          ],
+          [
+            "R",
+            4,
+            "reprise",
+            null,
+            20
+          ],
+          [
+            "S",
+            1,
+            "reprise",
+            null,
+            7
+          ],
+          [
+            "S",
+            2,
+            "play",
+            "Glass",
+            11
+          ],
+          [
+            "S",
+            3,
+            "reprise",
+            null,
+            0
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "score_id",
+      "performed_sec",
+      "cue_count"
+    ]
+  },
+  {
+    "task_id": "decision-recover-signatures-from-conjugate-leaves",
+    "tool": "sqlite.query",
+    "instruction": "For each rubbed leaf in rubbed_leaf, recover its gathering signature from an inspection of its attached conjugate leaf. Positions count physical leaves from 1 within a gathering. The two halves of an intact sheet occupy positions whose sum is leaf_count + 1. Use only slips for the same copy and gathering, at the conjugate position, that record an intact attachment and a non-NULL signature. A NULL signature means the inspector could not read it. If multiple slips qualify, use the greatest inspection_no, then the lexicographically smallest source_id. Report every target, including those without qualifying evidence, with ordered columns target_id, signature, source_id. For unsupported targets return NULL in both evidence-derived columns. Sort by target_id ascending. The source_id must cite the actual inspection slip used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "inspection_slip": {
+        "columns": [
+          "source_id TEXT",
+          "copy_code TEXT",
+          "gathering_no INTEGER",
+          "leaf_pos INTEGER",
+          "intact INTEGER",
+          "signature TEXT",
+          "inspection_no INTEGER",
+          "slip_text TEXT"
+        ],
+        "rows": [
+          [
+            "s1",
+            "ash",
+            3,
+            7,
+            1,
+            "C",
+            1,
+            "Attached half shows C in the gutter."
+          ],
+          [
+            "s2",
+            "ash",
+            3,
+            7,
+            1,
+            "G",
+            2,
+            "Under the lifted guard the attached half reads G."
+          ],
+          [
+            "s3",
+            "ash",
+            3,
+            7,
+            0,
+            "P",
+            3,
+            "Loose insert reads P along its edge."
+          ],
+          [
+            "s4",
+            "ash",
+            3,
+            6,
+            1,
+            "B",
+            4,
+            "Attached sixth leaf shows B."
+          ],
+          [
+            "s5",
+            "ash",
+            4,
+            4,
+            1,
+            null,
+            2,
+            "Fold continuous, ink rubbed away."
+          ],
+          [
+            "s6",
+            "elm",
+            3,
+            7,
+            1,
+            "K",
+            2,
+            "Joined half carries K below the rule."
+          ]
+        ]
+      },
+      "rubbed_leaf": {
+        "columns": [
+          "target_id TEXT",
+          "copy_code TEXT",
+          "gathering_no INTEGER",
+          "leaf_count INTEGER",
+          "leaf_pos INTEGER"
+        ],
+        "rows": [
+          [
+            "t1",
+            "ash",
+            3,
+            8,
+            2
+          ],
+          [
+            "t2",
+            "ash",
+            4,
+            6,
+            3
+          ],
+          [
+            "t3",
+            "elm",
+            3,
+            8,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "target_id",
+      "signature",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-refill-meter-csv",
+    "tool": "csv.export",
+    "instruction": "Construct the complete contents of refill.csv from a single dispenser's scheduled meter readings. Tick numbers are consecutive integers. The meter displays cumulative litres modulo 100. Between adjacent scheduled ticks the actual increase is from 0 through 99 litres, so a decrease in the display indicates one wrap. A null display means a missed reading. Export an interval only when both its ending tick and the immediately preceding tick have readings. Include zero-volume intervals. The first tick has no preceding interval. Label each interval with its ending tick's product_tag, which is non-null and can contain commas or double quotes. Return exactly one row with one column named csv_body. Start with the literal header end_tick,product_tag,litres and LF. Append data records in ascending ending tick order, with unquoted decimal integers, comma separators, the tag always double-quoted with each internal double quote doubled, and LF after every record. If no intervals qualify, return the header with its LF. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "refill_tick": {
+        "columns": [
+          "tick_no INTEGER",
+          "dial_litres INTEGER",
+          "product_tag TEXT"
+        ],
+        "rows": [
+          [
+            1,
+            95,
+            "base"
+          ],
+          [
+            2,
+            3,
+            "lime, dry"
+          ],
+          [
+            3,
+            3,
+            "mix \"B\""
+          ],
+          [
+            4,
+            null,
+            "plain"
+          ],
+          [
+            5,
+            40,
+            "plain"
+          ],
+          [
+            6,
+            51,
+            "plain"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-regional-capacity-commitment-under-cash-cap",
+    "tool": "sqlite.query",
+    "instruction": "For one billing period, choose exactly one offer for East and one for West. Forecast demand and the per-unit overage price are specific to each region. An offer's upfront fee covers up to its included units in that region only. Unused units expire. Additional units cost the region's overage price. Both chosen upfront fees together must fit a 100-cent cash cap. Overage is paid later and does not consume that cap. Minimize total period expense, including both fees and all overage. Break ties by smaller combined upfront fee, then by east offer code and west offer code ascending. Offer codes are unique within region, each region has one forecast, at least one pair is feasible, and all fields are non-null. Return the single winning row with east_offer, west_offer, upfront_cents, total_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "capacity_offer": {
+        "columns": [
+          "region_code TEXT",
+          "offer_code TEXT",
+          "fee_cents INTEGER",
+          "included_units INTEGER"
+        ],
+        "rows": [
+          [
+            "East",
+            "Flex",
+            0,
+            0
+          ],
+          [
+            "East",
+            "Mid",
+            40,
+            18
+          ],
+          [
+            "East",
+            "Full",
+            75,
+            30
+          ],
+          [
+            "West",
+            "Flex",
+            0,
+            0
+          ],
+          [
+            "West",
+            "Mid",
+            60,
+            25
+          ],
+          [
+            "West",
+            "Small",
+            25,
+            9
+          ]
+        ]
+      },
+      "region_forecast": {
+        "columns": [
+          "region_code TEXT",
+          "demand_units INTEGER",
+          "overage_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "East",
+            30,
+            5
+          ],
+          [
+            "West",
+            25,
+            4
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_offer",
+      "west_offer",
+      "upfront_cents",
+      "total_cents"
+    ]
+  }
+]

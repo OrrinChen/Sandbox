@@ -1,0 +1,274 @@
+[
+  {
+    "task_id": "decision-allocate-refurbishment-kits-to-warranty-lots",
+    "tool": "sqlite.query",
+    "instruction": "Every returned lot must be settled this month. For each whole lot either replace it at replace_cents or refurbish it at refurb_cents using kits_needed kits. Costs are totals in cents for the entire lot. The single shop_limit row gives available kits. The shop can open at most two refurbishment jobs, one per selected lot. Replacement uses no kits or job slots. Choose a feasible plan minimizing total settlement cost across all lots and book that cost as the provision. Break ties by fewer refurbished lots, then by the lexicographically smallest plan_code under SQLite binary ordering. A plan_code is the selected single-letter lot codes in ascending order joined by a comma, or the empty string for no refurbishment. Lot codes are unique, kit demands are positive, and no fields are null. Return one row with plan_code, kits_used, provision_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "return_lot": {
+        "columns": [
+          "lot_code TEXT",
+          "kits_needed INTEGER",
+          "replace_cents INTEGER",
+          "refurb_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            5,
+            15000,
+            6000
+          ],
+          [
+            "B",
+            3,
+            11000,
+            5000
+          ],
+          [
+            "C",
+            3,
+            10000,
+            4500
+          ],
+          [
+            "D",
+            1,
+            4000,
+            3000
+          ],
+          [
+            "E",
+            7,
+            20000,
+            1000
+          ]
+        ]
+      },
+      "shop_limit": {
+        "columns": [
+          "kit_stock INTEGER"
+        ],
+        "rows": [
+          [
+            6
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "plan_code",
+      "kits_used",
+      "provision_cents"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-renewal-deposit-budget",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly one renewal quote for each of the EAST and WEST insurance pools. Each quote funds its own pool only. The pair's combined deposit must fit the treasury cash limit, and its combined retained exposure must fit the risk limit. Both limits are inclusive. Minimize combined annual premium, then combined deposit, then the EAST quote ID and WEST quote ID in ascending binary text order. Deposits are recoverable collateral, so exclude them from annual premium. All monetary values are integer cents. Quote IDs are unique, the limits table has one row, all fields are non-null, and a feasible pair exists. Return one row with east_quote, west_quote, east_premium_cents, west_premium_cents, total_deposit_cents, total_retained_cents. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "renewal_quote": {
+        "columns": [
+          "quote_id TEXT",
+          "pool_code TEXT",
+          "annual_cents INTEGER",
+          "deposit_cents INTEGER",
+          "retained_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "E1",
+            "EAST",
+            7000,
+            6000,
+            1000
+          ],
+          [
+            "E2",
+            "EAST",
+            7700,
+            3000,
+            4000
+          ],
+          [
+            "E3",
+            "EAST",
+            8300,
+            1000,
+            5000
+          ],
+          [
+            "W1",
+            "WEST",
+            5000,
+            5000,
+            2000
+          ],
+          [
+            "W2",
+            "WEST",
+            5400,
+            3000,
+            5000
+          ],
+          [
+            "W3",
+            "WEST",
+            6100,
+            2000,
+            1000
+          ]
+        ]
+      },
+      "treasury_limit": {
+        "columns": [
+          "cash_cap INTEGER",
+          "risk_cap INTEGER"
+        ],
+        "rows": [
+          [
+            8000,
+            6000
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "east_quote",
+      "west_quote",
+      "east_premium_cents",
+      "west_premium_cents",
+      "total_deposit_cents",
+      "total_retained_cents"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-two-relay-legs",
+    "tool": "sqlite.query",
+    "instruction": "Choose one runner for each of the opening and closing legs of a two-leg relay. Each row is an available runner-leg assignment with its projected time in whole seconds and its use of the squad's preparation budget in drill slots. An absent assignment is unavailable. The two runners must differ and their combined preparation must use at most 6 slots. Minimize total projected seconds, then minimize slots used, then choose the lexicographically smallest opening runner and then closing runner under SQLite BINARY ordering. Runner-leg pairs are unique, all fields are non-null, and a feasible pair exists. Return one row with columns opening_runner, closing_runner, total_seconds, slots_used. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "leg_trials": {
+        "columns": [
+          "runner_code TEXT",
+          "leg_code TEXT",
+          "trial_seconds INTEGER",
+          "drill_slots INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "open",
+            40,
+            4
+          ],
+          [
+            "B",
+            "open",
+            42,
+            2
+          ],
+          [
+            "C",
+            "open",
+            43,
+            1
+          ],
+          [
+            "A",
+            "close",
+            39,
+            2
+          ],
+          [
+            "D",
+            "close",
+            38,
+            4
+          ],
+          [
+            "E",
+            "close",
+            41,
+            2
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "opening_runner",
+      "closing_runner",
+      "total_seconds",
+      "slots_used"
+    ]
+  },
+  {
+    "task_id": "decision-allocate-two-reminder-slots",
+    "tool": "sqlite.query",
+    "instruction": "Choose exactly two different reminder sessions for a survey of market stalls. Each session can run once and consumes the listed whole crew minutes. The pair has at most 10 crew minutes. Each reach row identifies a batch of outstanding questionnaires a session would recover in full. The return_count is a positive count of questionnaires, consistent wherever a batch appears. Different batches are disjoint. A batch reached twice yields its questionnaires only once. Sessions may have no reach rows. Session codes are unique, session-batch pairs are unique, and there are no NULLs. At least one pair fits. Maximize distinct questionnaires recovered, then minimize crew minutes, then choose the lexicographically smallest pair of session codes under SQLite binary order after putting the smaller code first. Output one row with first_code, second_code, recovered_count, crew_minutes. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "batch_reach": {
+        "columns": [
+          "session_code TEXT",
+          "batch_code TEXT",
+          "return_count INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            "north",
+            8
+          ],
+          [
+            "A",
+            "east",
+            2
+          ],
+          [
+            "B",
+            "north",
+            8
+          ],
+          [
+            "C",
+            "west",
+            7
+          ],
+          [
+            "D",
+            "pier",
+            9
+          ]
+        ]
+      },
+      "sessions": {
+        "columns": [
+          "session_code TEXT",
+          "crew_minutes INTEGER"
+        ],
+        "rows": [
+          [
+            "A",
+            6
+          ],
+          [
+            "B",
+            4
+          ],
+          [
+            "C",
+            4
+          ],
+          [
+            "D",
+            5
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_code",
+      "second_code",
+      "recovered_count",
+      "crew_minutes"
+    ]
+  }
+]

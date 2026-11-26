@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "model": "gpt-6-luna",
+    "arm": "browse",
+    "batch": "spreadsheets-011",
+    "stage": "submit",
+    "prompt_sha256": "cf250b92c8219259d06155dcbcee1588a7da9a5890e5e167f38d3e125c5e65ee",
+    "registration_sha256": "db460b2ef198122f600246ead7df2833d59388dcea6b05a2ed44be91392eb681"
+  },
+  "status": "accepted",
+  "cli_events": [
+    {
+      "exit_code": 0,
+      "thread_ids": [
+        "01a2122d-4aaf-7833-87c0-eeb667e086c1"
+      ],
+      "items": [
+        {
+          "type": "agent_message",
+          "phase": null,
+          "text": "{\"sheet-45063\":{\"fills\":[{\"range\":\"B2:B6\",\"formula\":\"=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\\\"\\\")\"}],\"formulas\":{}},\"sheet-45300\":{\"fills\":[{\"range\":\"B1:B4\",\"formula\":\"=LEFT(A1,FIND(\\\"FT\\\",A1)-1)\"}],\"formulas\":{}},\"sheet-45937\":{\"fills\":[{\"range\":\"E7:E9\",\"formula\":\"=INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0))\"}],\"formulas\":{}},\"sheet-46167\":{\"formulas\":{\"D2\":\"=SUMIF(A:A,111111,B:B)\"}}}"
+        }
+      ],
+      "completed_usage": [
+        {
+          "input_tokens": 17383,
+          "cached_input_tokens": 11904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 180,
+          "reasoning_output_tokens": 0
+        }
+      ],
+      "cli_final": "{\"sheet-45063\":{\"fills\":[{\"range\":\"B2:B6\",\"formula\":\"=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\\\"\\\")\"}],\"formulas\":{}},\"sheet-45300\":{\"fills\":[{\"range\":\"B1:B4\",\"formula\":\"=LEFT(A1,FIND(\\\"FT\\\",A1)-1)\"}],\"formulas\":{}},\"sheet-45937\":{\"fills\":[{\"range\":\"E7:E9\",\"formula\":\"=INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0))\"}],\"formulas\":{}},\"sheet-46167\":{\"formulas\":{\"D2\":\"=SUMIF(A:A,111111,B:B)\"}}}",
+      "external_tool_events": [],
+      "error_events": 0
+    }
+  ],
+  "response": {
+    "model": "gpt-6-luna",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a2122d-4aaf-7833-87c0-eeb667e086c1",
+    "raw": "{\"sheet-45063\":{\"fills\":[{\"range\":\"B2:B6\",\"formula\":\"=IFERROR(VLOOKUP(A2,Sheet2!$A:$B,2,FALSE),\\\"\\\")\"}],\"formulas\":{}},\"sheet-45300\":{\"fills\":[{\"range\":\"B1:B4\",\"formula\":\"=LEFT(A1,FIND(\\\"FT\\\",A1)-1)\"}],\"formulas\":{}},\"sheet-45937\":{\"fills\":[{\"range\":\"E7:E9\",\"formula\":\"=INDEX($J$20:$N$22,MATCH(C7,$H$20:$H$22,1),MATCH(D7,$J$18:$N$18,0))\"}],\"formulas\":{}},\"sheet-46167\":{\"formulas\":{\"D2\":\"=SUMIF(A:A,111111,B:B)\"}}}",
+    "usage": {
+      "input_tokens": 17383,
+      "cached_input_tokens": 11904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 180,
+      "reasoning_output_tokens": 0
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

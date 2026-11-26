@@ -1,0 +1,90 @@
+{
+  "text": [
+    {
+      "sector": "2022Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-2",
+      "alerts": []
+    }
+  ],
+  "joint": [
+    {
+      "sector": "2022Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-2",
+      "alerts": [
+        {
+          "cik": "0000912093",
+          "reason": "VIAVI’s reported revenue growth slowed from 14.79% to 4.97% YoY (A), and NSE reported some impact on customer demand (B). If growth slows by another 5 to 9 percentage points in each of the next two quarters, the intervening quarter stays above −5.00% and the quarter starting April 3 crosses below it."
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "sector": "2022Q2/food_manufacturing-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-2",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/industrial_machinery-3",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/prepackaged_software-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-1",
+      "alerts": []
+    },
+    {
+      "sector": "2022Q2/semiconductors-2",
+      "alerts": [
+        {
+          "cik": "0000912093",
+          "reason": "Reported sales YoY 14.79% then 4.97%. Target is step 2; preceding -4.85% versus target -14.67%."
+        }
+      ]
+    }
+  ]
+}

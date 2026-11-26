@@ -1,0 +1,25 @@
+{
+  "binding": {
+    "input_sha256": "405cf791aaf23bdd14c4b792068da8504982af4cf7ee7cca7343c60e4b159114",
+    "prompt_sha256": "81b6cffa00b8272eebaa8881c94bc777579603968693984d499594d5627f70a2",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"decision-select-noncompeting-replication-sites\": \"SELECT a.shop_code AS first_shop, b.shop_code AS second_shop, a.basket_gain + b.basket_gain AS forecast_baskets, a.spend_cents + b.spend_cents AS setup_cents\\nFROM shop_bid AS a\\nJOIN shop_bid AS b ON a.shop_code COLLATE BINARY < b.shop_code AND a.zone_code <> b.zone_code\\nWHERE a.spend_cents + b.spend_cents <= 10000\\nORDER BY forecast_baskets DESC, setup_cents ASC, first_shop COLLATE BINARY ASC, second_shop COLLATE BINARY ASC\\nLIMIT 1\",\n  \"decision-select-outage-resilient-charging-layout\": \"SELECT m.source_id, b.layout_code, COALESCE(SUM(f.feed_kw) - MAX(f.feed_kw), 0) AS guaranteed_kw, b.fee_cents\\nFROM site_memo AS m\\nJOIN layout_bid AS b ON b.fee_cents <= m.ceiling_cents\\nLEFT JOIN circuit_feed AS f ON f.layout_code = b.layout_code\\nGROUP BY m.source_id, b.layout_code, b.fee_cents\\nORDER BY guaranteed_kw DESC, b.fee_cents ASC, b.layout_code COLLATE BINARY ASC\\nLIMIT 1\",\n  \"decision-select-overlap-aware-purge-runs\": \"SELECT a.run_code AS first_run, b.run_code AS second_run, (SELECT COUNT(DISTINCT t.entry_code) FROM run_targets AS t WHERE t.run_code IN (a.run_code, b.run_code)) AS entries_cleared, a.run_minutes + b.run_minutes AS total_minutes\\nFROM purge_runs AS a\\nJOIN purge_runs AS b ON a.run_code COLLATE BINARY < b.run_code\\nWHERE a.run_minutes + b.run_minutes <= 8\\nORDER BY entries_cleared DESC, total_minutes ASC, first_run COLLATE BINARY ASC, second_run COLLATE BINARY ASC\\nLIMIT 1\",\n  \"decision-separate-monument-drift-from-datum-reset\": \"WITH corrected AS (\\n  SELECT m.sector, m.point_id, m.visit_no, m.east_mm - c.east_mm AS corrected_east_mm\\n  FROM monument_reading AS m\\n  JOIN control_reading AS c ON c.sector = m.sector AND c.visit_no = m.visit_no\\n  WHERE m.visit_no IN (1, 2) AND m.east_mm IS NOT NULL AND c.east_mm IS NOT NULL\\n)\\nSELECT a.sector, COUNT(*) AS paired_count, SUM(b.corrected_east_mm - a.corrected_east_mm) AS net_east_mm\\nFROM corrected AS a\\nJOIN corrected AS b ON b.sector = a.sector AND b.point_id = a.point_id\\nWHERE a.visit_no = 1 AND b.visit_no = 2\\nGROUP BY a.sector\\nORDER BY a.sector COLLATE BINARY ASC\"\n}",
+  "submissions": {
+    "decision-select-noncompeting-replication-sites": "SELECT a.shop_code AS first_shop, b.shop_code AS second_shop, a.basket_gain + b.basket_gain AS forecast_baskets, a.spend_cents + b.spend_cents AS setup_cents\nFROM shop_bid AS a\nJOIN shop_bid AS b ON a.shop_code COLLATE BINARY < b.shop_code AND a.zone_code <> b.zone_code\nWHERE a.spend_cents + b.spend_cents <= 10000\nORDER BY forecast_baskets DESC, setup_cents ASC, first_shop COLLATE BINARY ASC, second_shop COLLATE BINARY ASC\nLIMIT 1",
+    "decision-select-outage-resilient-charging-layout": "SELECT m.source_id, b.layout_code, COALESCE(SUM(f.feed_kw) - MAX(f.feed_kw), 0) AS guaranteed_kw, b.fee_cents\nFROM site_memo AS m\nJOIN layout_bid AS b ON b.fee_cents <= m.ceiling_cents\nLEFT JOIN circuit_feed AS f ON f.layout_code = b.layout_code\nGROUP BY m.source_id, b.layout_code, b.fee_cents\nORDER BY guaranteed_kw DESC, b.fee_cents ASC, b.layout_code COLLATE BINARY ASC\nLIMIT 1",
+    "decision-select-overlap-aware-purge-runs": "SELECT a.run_code AS first_run, b.run_code AS second_run, (SELECT COUNT(DISTINCT t.entry_code) FROM run_targets AS t WHERE t.run_code IN (a.run_code, b.run_code)) AS entries_cleared, a.run_minutes + b.run_minutes AS total_minutes\nFROM purge_runs AS a\nJOIN purge_runs AS b ON a.run_code COLLATE BINARY < b.run_code\nWHERE a.run_minutes + b.run_minutes <= 8\nORDER BY entries_cleared DESC, total_minutes ASC, first_run COLLATE BINARY ASC, second_run COLLATE BINARY ASC\nLIMIT 1",
+    "decision-separate-monument-drift-from-datum-reset": "WITH corrected AS (\n  SELECT m.sector, m.point_id, m.visit_no, m.east_mm - c.east_mm AS corrected_east_mm\n  FROM monument_reading AS m\n  JOIN control_reading AS c ON c.sector = m.sector AND c.visit_no = m.visit_no\n  WHERE m.visit_no IN (1, 2) AND m.east_mm IS NOT NULL AND c.east_mm IS NOT NULL\n)\nSELECT a.sector, COUNT(*) AS paired_count, SUM(b.corrected_east_mm - a.corrected_east_mm) AS net_east_mm\nFROM corrected AS a\nJOIN corrected AS b ON b.sector = a.sector AND b.point_id = a.point_id\nWHERE a.visit_no = 1 AND b.visit_no = 2\nGROUP BY a.sector\nORDER BY a.sector COLLATE BINARY ASC"
+  },
+  "attempt": 1,
+  "thread": "01a20e1c-9ed1-7943-a87a-9913a060491e",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 21220,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 623,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "task_id": "repair-original-cache-eviction-pinned-bytes",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for a cache that must fit within capacity bytes. Input has a nonnegative integer capacity and a list of entries. Each entry has a unique ASCII string id, a positive integer size in bytes, a nonnegative integer last_used tick, and a boolean pinned. All entries occupy space. While total size exceeds capacity, evict the unpinned entry with the smallest last_used tick, breaking ties by lexicographically smallest id. Stop when the cache fits exactly or has spare space, or when no eligible entry remains. Return an object with evicted (ids in eviction order) and remaining_bytes (total size still resident, which can exceed capacity).",
+    "observation": "def solve(data):\n    entries = data['entries']\n    remaining = sum(entry['size'] for entry in entries)\n    eligible = [entry for entry in entries if not entry['pinned']]\n    eligible.sort(key=lambda entry: (entry['last_used'], entry['id']))\n    pinned_bytes = sum(entry['size'] for entry in entries if entry['pinned'])\n    evicted = []\n    for entry in eligible:\n        if remaining - pinned_bytes <= data['capacity']:\n            break\n        evicted.append(entry['id'])\n        remaining -= entry['size']\n    return {'evicted': evicted, 'remaining_bytes': remaining}"
+  },
+  {
+    "task_id": "repair-original-cap-net-cancellation-refund",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). Implement solve(data) for one booking. All monetary fields are nonnegative integer cents in the same currency. booking_state must be 'cancelled' to qualify, otherwise return 0. Each item in charges and concessions has a state and cents. Use each 'posted' row once, including identical rows, and ignore all other states. The cancellation policy refunds 100% of posted charges when hours_notice is at least 48, 50% from 24 inclusive to 48 exclusive, and zero below 24. hours_notice is a nonnegative integer. Apply the percentage to the total posted charges, rounding down to whole cents. Subtract the total posted concessions from this allowance, floor the result at zero, then limit the payout to cap_cents. Return the payout as an integer.",
+    "observation": "def solve(data):\n    if data['booking_state'] != 'cancelled':\n        return 0\n    charges = sum(row['cents'] for row in data['charges'] if row['state'] == 'posted')\n    concessions = sum(row['cents'] for row in data['concessions'] if row['state'] == 'posted')\n    hours = data['hours_notice']\n    allowance = charges if hours >= 48 else charges // 2 if hours >= 24 else 0\n    return max(0, min(data['cap_cents'], allowance) - concessions)"
+  },
+  {
+    "task_id": "repair-original-compact-print-color-runs",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). The `runs` list describes a print strip from left to right. Each run has a nonempty string `color`, a positive integer `pixels`, and a `state` of `keep` or `deleted`. Remove deleted runs and close the gaps. Return the surviving strip as a list of {\"color\": string, \"pixels\": integer} objects in strip order, summing pixel counts within each maximal group of adjacent surviving runs of exactly the same color. Colors are case-sensitive. A surviving different color ends a group. An empty or fully deleted strip yields [].",
+    "observation": "def solve(data):\n    result = []\n    previous = None\n    for run in data['runs']:\n        if run['state'] == 'deleted':\n            previous = None\n            continue\n        color = run['color']\n        if color == previous:\n            result[-1]['pixels'] += run['pixels']\n        else:\n            result.append({'color': color, 'pixels': run['pixels']})\n        previous = color\n    return result\n"
+  },
+  {
+    "task_id": "repair-original-deduplicate-upload-names",
+    "tool": "python.repair",
+    "instruction": "Repair the supplied Python implementation of solve(data). An upload manifest contains `names`, a list of nonempty Unicode file-name strings in submission order. Return a list containing the first submitted spelling of each distinct name, preserving submission order and the exact original text. Two names are duplicates when their Unicode NFC forms are equal across the entire string, including the extension. Matching is case-sensitive and preserves compatibility distinctions such as fullwidth characters. The earliest occurrence wins every tie. An empty manifest yields [].",
+    "observation": "import unicodedata\n\n\ndef solve(data):\n    seen = set()\n    kept = []\n    for name in data['names']:\n        key = unicodedata.normalize('NFKC', name)\n        if key not in seen:\n            seen.add(key)\n            kept.append(name)\n    return kept\n"
+  }
+]

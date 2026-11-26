@@ -1,0 +1,53 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 25712,
+    "cached_input_tokens": 19968,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 275,
+    "reasoning_output_tokens": 18
+  },
+  "thread": "01a20d8f-42f0-7ee3-a84e-a4b9f1086023",
+  "packet_sha256": "aab79c8ea0db662abe3f251295152eb6d9aad3104f0661ab41bc75276cc9ab02",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2024Q2/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-1\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/industrial_machinery-3\",\"alerts\":[{\"cik\":\"0000886346\",\"reason\":\"Kadant’s reported quarterly revenue growth slowed from 8.76% to 2.83% year over year. If that 5.93-point slowdown repeats each quarter, growth would reach about -3.10% in the intervening quarter and -9.03% in the target quarter. A 4% decline in annual bookings from a capital-equipment-driven peak supports further slowing (C), though record parts and consumables bookings temper that forecast (B).\"}]},\n    {\"sector\":\"2024Q2/retail-2\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2024Q2/semiconductors-2\",\"alerts\":[]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2024Q2/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-1",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/industrial_machinery-3",
+        "alerts": [
+          {
+            "cik": "0000886346",
+            "reason": "Kadant’s reported quarterly revenue growth slowed from 8.76% to 2.83% year over year. If that 5.93-point slowdown repeats each quarter, growth would reach about -3.10% in the intervening quarter and -9.03% in the target quarter. A 4% decline in annual bookings from a capital-equipment-driven peak supports further slowing (C), though record parts and consumables bookings temper that forecast (B)."
+          }
+        ]
+      },
+      {
+        "sector": "2024Q2/retail-2",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2024Q2/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

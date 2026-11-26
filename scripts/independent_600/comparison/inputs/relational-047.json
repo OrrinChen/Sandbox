@@ -1,0 +1,312 @@
+[
+  {
+    "task_id": "decision-paired-lot-award-with-bay-cap",
+    "tool": "sqlite.query",
+    "instruction": "For each independently priced unloading window in bay_addendum, award exactly one whole offer for the frame lot and one for the panel lot. Every offer is available in every window, and any frame offer can pair with any panel offer. Their pallet counts add even when carriers match and must fit within the window's inclusive pallet cap. Minimize the combined delivered price in integer cents. Add the quoted lot prices and one callout fee per distinct carrier used in that window, using the fee specified by its addendum. Each window has a feasible pair. Break cost ties by ascending frame source ID, then ascending panel source ID, using SQLite BINARY order. IDs are unique within each table and no fields are null. Return window_id, rule_source, frame_source, panel_source, delivered_cents in ascending window_id order, citing both winning offer sheets and the governing addendum. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "bay_addendum": {
+        "columns": [
+          "window_id TEXT",
+          "rule_source TEXT",
+          "pallet_cap INTEGER",
+          "fee_cents INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "AM",
+            "B1",
+            4,
+            80,
+            "Morning bay takes four pallets; charge 80 cents per carrier callout."
+          ],
+          [
+            "PM",
+            "B2",
+            6,
+            80,
+            "Afternoon bay takes six pallets; charge 80 cents per carrier callout."
+          ]
+        ]
+      },
+      "lot_offer": {
+        "columns": [
+          "offer_source TEXT",
+          "lot_code TEXT",
+          "carrier_code TEXT",
+          "pallet_qty INTEGER",
+          "price_cents INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "F1",
+            "frame",
+            "Oak",
+            3,
+            400,
+            "Frames via Oak: three pallets for 400 cents."
+          ],
+          [
+            "F2",
+            "frame",
+            "Elm",
+            1,
+            460,
+            "Frames via Elm: one pallet for 460 cents."
+          ],
+          [
+            "P1",
+            "panel",
+            "Oak",
+            3,
+            350,
+            "Panels via Oak: three pallets for 350 cents."
+          ],
+          [
+            "P2",
+            "panel",
+            "Elm",
+            2,
+            370,
+            "Panels via Elm: two pallets for 370 cents."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "window_id",
+      "rule_source",
+      "frame_source",
+      "panel_source",
+      "delivered_cents"
+    ]
+  },
+  {
+    "task_id": "decision-paired-map-packet-acquisition",
+    "tool": "sqlite.query",
+    "instruction": "Select exactly two different offered packets for the cabinet. Each unique quote_id identifies one primary offer slip. Each packet_sheet row identifies one sheet design included in that packet, with no duplicate design within a packet. All designs are absent from current holdings. The two packets together may cost at most 1000 cents and occupy at most 6 cabinet slots, including the limits. Maximize the number of distinct new designs acquired. Break ties by lower combined price and then lexicographically by the pair of quote IDs written in ascending order. All fields are non-null and at least one pair fits. Return one row with first_quote, second_quote, new_designs, total_cents, citing the two selected offers. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "packet_quote": {
+        "columns": [
+          "quote_id TEXT",
+          "price_cents INTEGER",
+          "slot_count INTEGER",
+          "quote_text TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            450,
+            3,
+            "Canal packet supplies Lock, Basin and Towpath for 450 cents in three slots."
+          ],
+          [
+            "B",
+            400,
+            3,
+            "Harbor packet supplies Lock and Basin for 400 cents in three slots."
+          ],
+          [
+            "C",
+            550,
+            3,
+            "Ridge packet supplies Crest and Pass for 550 cents in three slots."
+          ],
+          [
+            "D",
+            300,
+            4,
+            "Oversize sampler supplies Bluff for 300 cents in four slots."
+          ]
+        ]
+      },
+      "packet_sheet": {
+        "columns": [
+          "quote_id TEXT",
+          "design_code TEXT"
+        ],
+        "rows": [
+          [
+            "A",
+            "Lock"
+          ],
+          [
+            "A",
+            "Basin"
+          ],
+          [
+            "A",
+            "Towpath"
+          ],
+          [
+            "B",
+            "Lock"
+          ],
+          [
+            "B",
+            "Basin"
+          ],
+          [
+            "C",
+            "Crest"
+          ],
+          [
+            "C",
+            "Pass"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_quote",
+      "second_quote",
+      "new_designs",
+      "total_cents"
+    ]
+  },
+  {
+    "task_id": "decision-paired-relief-shuttle-allocation",
+    "tool": "sqlite.query",
+    "instruction": "Issue one allocation for the single closure described in closure_order. Select exactly two distinct complete shuttle offers from different vehicle pools. Each offer can run once and serves only its stated stop, A or B. Combined cost in cents must be at most cap_cents. For each stop count the lesser of its waiting passenger count and the total seats assigned there, counting zero when no shuttle serves it. Maximize total passengers carried, then minimize combined cost, then choose the lexicographically first pair of offer IDs with the smaller ID first. All values are present, IDs are unique within their tables, and a feasible pair exists. Return the single winning row with columns order_id, first_offer, second_offer, carried, cost_cents. The three IDs cite the closure order and the two offers supporting the allocation. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "closure_order": {
+        "columns": [
+          "order_id TEXT",
+          "cap_cents INTEGER",
+          "waiting_a INTEGER",
+          "waiting_b INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "C1",
+            9000,
+            50,
+            24,
+            "Book two shuttles within 9000 cents for 50 passengers at A and 24 at B."
+          ]
+        ]
+      },
+      "shuttle_offer": {
+        "columns": [
+          "offer_id TEXT",
+          "pool_code TEXT",
+          "stop_code TEXT",
+          "seats INTEGER",
+          "fee_cents INTEGER",
+          "offer_text TEXT"
+        ],
+        "rows": [
+          [
+            "H1",
+            "X",
+            "A",
+            46,
+            5100,
+            "Pool X offers 46 seats to A for 5100 cents."
+          ],
+          [
+            "H2",
+            "Y",
+            "A",
+            42,
+            3800,
+            "Pool Y offers 42 seats to A for 3800 cents."
+          ],
+          [
+            "H3",
+            "X",
+            "B",
+            24,
+            3500,
+            "Pool X offers 24 seats to B for 3500 cents."
+          ],
+          [
+            "H4",
+            "Z",
+            "B",
+            22,
+            4000,
+            "Pool Z offers 22 seats to B for 4000 cents."
+          ],
+          [
+            "H5",
+            "W",
+            "B",
+            24,
+            3500,
+            "Pool W offers 24 seats to B for 3500 cents."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "order_id",
+      "first_offer",
+      "second_offer",
+      "carried",
+      "cost_cents"
+    ]
+  },
+  {
+    "task_id": "decision-park-trail-opening-portfolio",
+    "tool": "sqlite.query",
+    "instruction": "A park has 12 crew-days available before opening day. Choose a nonempty subset of the three proposed trails to maximize the sum of their visitor capacity gains, measured in visitors per day. Each trail needs one preparation site completed before its own finishing work. Pay the site's crew-days once if any selected trail needs it, plus every selected trail's finish_days. Crew-days are pooled and the work may be sequenced freely with preparation first. Among feasible portfolios with equal capacity gain, prefer fewer crew-days, then the smaller selection mask. The distinct trail_bit values 1, 2 and 4 identify the trails; their sum encodes the selected subset. Site IDs are unique in prep_site and every trail references an existing site. All values are non-null. Return one row with columns selection_mask, capacity_gain, crew_days. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "prep_site": {
+        "columns": [
+          "site_id TEXT",
+          "prep_days INTEGER"
+        ],
+        "rows": [
+          [
+            "ridge",
+            5
+          ],
+          [
+            "pond",
+            4
+          ],
+          [
+            "unused",
+            1
+          ]
+        ]
+      },
+      "trail_option": {
+        "columns": [
+          "trail_bit INTEGER",
+          "site_id TEXT",
+          "finish_days INTEGER",
+          "gain INTEGER"
+        ],
+        "rows": [
+          [
+            1,
+            "ridge",
+            3,
+            14
+          ],
+          [
+            2,
+            "ridge",
+            4,
+            17
+          ],
+          [
+            4,
+            "pond",
+            2,
+            20
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "selection_mask",
+      "capacity_gain",
+      "crew_days"
+    ]
+  }
+]

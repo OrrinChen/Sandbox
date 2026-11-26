@@ -1,0 +1,66 @@
+[
+  {
+    "cik": "0000026324",
+    "issuer": "CURTISS WRIGHT CORP",
+    "sector": "industrial_machinery",
+    "start": "2022-01-01",
+    "end": "2022-03-31",
+    "sales": 559461000,
+    "year_ago_sales": 597059000,
+    "source_accessions": [
+      "0000026324-22-000012"
+    ],
+    "latest_filed": "2022-05-05",
+    "tag": "Revenues",
+    "calculation": "reported_quarter"
+  },
+  {
+    "cik": "0000799233",
+    "issuer": "HEARTLAND EXPRESS INC",
+    "sector": "transportation",
+    "start": "2023-10-01",
+    "end": "2023-12-31",
+    "sales": 275347000,
+    "year_ago_sales": 354923000,
+    "source_accessions": [
+      "0000799233-24-000005",
+      "0000799233-23-000049"
+    ],
+    "latest_filed": "2024-02-28",
+    "tag": "Revenues",
+    "calculation": "fiscal_year_less_first_nine_months",
+    "first_nine_months_tag": "Revenues"
+  },
+  {
+    "cik": "0000878927",
+    "issuer": "OLD DOMINION FREIGHT LINE, INC.",
+    "sector": "transportation",
+    "start": "2023-04-01",
+    "end": "2023-06-30",
+    "sales": 1413189000,
+    "year_ago_sales": 1667448000,
+    "source_accessions": [
+      "0000950170-23-038553"
+    ],
+    "latest_filed": "2023-08-04",
+    "tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "calculation": "reported_quarter"
+  },
+  {
+    "cik": "0001140215",
+    "issuer": "REED'S, INC.",
+    "sector": "food_manufacturing",
+    "start": "2023-10-01",
+    "end": "2023-12-31",
+    "sales": 11693000,
+    "year_ago_sales": 15040000,
+    "source_accessions": [
+      "0001493152-24-012505",
+      "0001493152-23-040116"
+    ],
+    "latest_filed": "2024-04-01",
+    "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "calculation": "fiscal_year_less_first_nine_months",
+    "first_nine_months_tag": "RevenueFromContractWithCustomerExcludingAssessedTax"
+  }
+]

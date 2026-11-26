@@ -1,0 +1,261 @@
+[
+  {
+    "task_id": "decision-pack-caption-review-shift",
+    "tool": "sqlite.query",
+    "instruction": "Construct shift_manifest.csv for the next caption merge. Each unique bundle_code denotes an indivisible translated file. Its review_minutes are whole minutes and its ready_cues are the number of cues it would release. All fields are present and all quantities are positive integers. Select one or two files using at most 10 minutes total. Files sharing a reel_code are competing translations of the same reel and cannot both ship. At least one file fits. Maximize total ready_cues, then minimize total review_minutes. For any remaining tie, sort the selected codes in binary ascending order and choose the lexicographically first list, with a proper prefix first. Emit one row per selected file with columns bundle_code, review_minutes, ready_cues, ordered by bundle_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "caption_bundles": {
+        "columns": [
+          "bundle_code TEXT",
+          "reel_code TEXT",
+          "review_minutes INTEGER",
+          "ready_cues INTEGER"
+        ],
+        "rows": [
+          [
+            "a",
+            "dock",
+            5,
+            14
+          ],
+          [
+            "b",
+            "dock",
+            5,
+            13
+          ],
+          [
+            "c",
+            "hill",
+            4,
+            11
+          ],
+          [
+            "d",
+            "fern",
+            6,
+            12
+          ],
+          [
+            "e",
+            "lake",
+            10,
+            24
+          ],
+          [
+            "f",
+            "arch",
+            4,
+            11
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "bundle_code",
+      "review_minutes",
+      "ready_cues"
+    ]
+  },
+  {
+    "task_id": "decision-packing-label-correction-file",
+    "tool": "csv.export",
+    "instruction": "Construct the contents of the procurement label printer's correction file. Each print_line is one distinct packing line with a current label. Each label_slip is a primary addendum directing a replacement label for every line of one item code. There is at most one slip per item and line numbers are unique integers. Emit a record only for a matched line whose current label differs byte-for-byte from its replacement. A null current label means no label has been set and differs from every replacement, including an empty replacement. All other fields are non-null. Output exactly one row and one TEXT column named csv_body. Start with the literal header line_no,label,source_id. Order data records by numeric line number ascending. Write the line number in decimal without quotes and always double-quote the replacement and slip source ID, doubling each embedded double quote. Use comma separators and a single LF after every record, including the header and final record. Preserve field contents exactly. No fields contain line breaks. Quantities and prices are outside the scope of this file. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "label_slip": {
+        "columns": [
+          "source_id TEXT",
+          "item_code TEXT",
+          "replacement TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "L5",
+            "MAT",
+            "Mat, \"wide\"",
+            "Print Mat, followed by a space and the quoted word \"wide\" on each mat line."
+          ],
+          [
+            "L6",
+            "BIN",
+            "Blue bin",
+            "Use Blue bin as the bin label."
+          ],
+          [
+            "L7",
+            "PEG",
+            "Peg",
+            "Relabel all peg lines Peg."
+          ]
+        ]
+      },
+      "print_line": {
+        "columns": [
+          "line_no INTEGER",
+          "item_code TEXT",
+          "current_label TEXT"
+        ],
+        "rows": [
+          [
+            12,
+            "MAT",
+            "Mat"
+          ],
+          [
+            2,
+            "MAT",
+            null
+          ],
+          [
+            7,
+            "BIN",
+            "Blue bin"
+          ],
+          [
+            8,
+            "TUB",
+            "Small tub"
+          ],
+          [
+            4,
+            "MAT",
+            "Mat, \"wide\""
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-packing-labor-rate-and-efficiency",
+    "tool": "sqlite.query",
+    "instruction": "Prepare one row per packing lane for the full reporting period. Each work_log row is a separate shift, including shifts that produced zero cartons. The lane standard gives allowed minutes per completed carton and budgeted cents per labor minute. Value actual minutes at the standard rate to separate the wage-rate effect from the efficiency effect. Report actual wages less the flexible budget as the total variance, with positive amounts unfavorable throughout. Include only lanes with recorded shifts. All fields are nonnull, each lane has one standard, and wages are in cents. Return lane, rate_var_cents, efficiency_var_cents, total_var_cents in ascending lane order. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "lane_standard": {
+        "columns": [
+          "lane TEXT",
+          "mins_per_carton INTEGER",
+          "cents_per_min INTEGER"
+        ],
+        "rows": [
+          [
+            "East",
+            3,
+            20
+          ],
+          [
+            "West",
+            2,
+            25
+          ],
+          [
+            "Annex",
+            4,
+            22
+          ]
+        ]
+      },
+      "work_log": {
+        "columns": [
+          "lane TEXT",
+          "cartons INTEGER",
+          "paid_mins INTEGER",
+          "wages_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "East",
+            10,
+            28,
+            616
+          ],
+          [
+            "East",
+            0,
+            5,
+            100
+          ],
+          [
+            "West",
+            20,
+            38,
+            912
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "lane",
+      "rate_var_cents",
+      "efficiency_var_cents",
+      "total_var_cents"
+    ]
+  },
+  {
+    "task_id": "decision-packing-pilot-paired-savings",
+    "tool": "sqlite.query",
+    "instruction": "Create packing_pilot.csv for a trial comparing two wrap patterns. Each run contains one parcel design packed once per observed pattern. Each reading gives grams of wrap used. Uploads for the same run and pattern are duplicate reports of one measurement. NULL denotes a missing reading. Accept a measurement when its non-NULL reports have exactly one distinct value, including zero. Exclude a run unless both its 'old' and 'new' measurements are accepted. Each run belongs to one product family. Within each family with at least one eligible run, report the number of eligible runs and the median of the paired savings (old grams minus new grams). Give the median in half-gram units as an integer: for an odd sample double the middle saving, and for an even sample add the two middle savings. Negative savings are valid. Return family_code, paired_runs, median_saving_half_grams ordered by family_code. All identifiers are non-NULL. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "wrap_upload": {
+        "columns": [
+          "family_code TEXT",
+          "run_code TEXT",
+          "pattern_code TEXT",
+          "wrap_grams INTEGER"
+        ],
+        "rows": [
+          [
+            "Box",
+            "a",
+            "old",
+            20
+          ],
+          [
+            "Box",
+            "a",
+            "new",
+            8
+          ],
+          [
+            "Box",
+            "b",
+            "old",
+            13
+          ],
+          [
+            "Box",
+            "b",
+            "new",
+            15
+          ],
+          [
+            "Box",
+            "c",
+            "old",
+            90
+          ],
+          [
+            "Box",
+            "c",
+            "old",
+            91
+          ],
+          [
+            "Box",
+            "c",
+            "new",
+            10
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "family_code",
+      "paired_runs",
+      "median_saving_half_grams"
+    ]
+  }
+]

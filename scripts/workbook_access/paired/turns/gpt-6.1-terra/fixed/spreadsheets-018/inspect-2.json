@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "model": "gpt-6.1-terra",
+    "arm": "fixed",
+    "batch": "spreadsheets-018",
+    "stage": "inspect-2",
+    "prompt_sha256": "525ff4c49842fb3cb7d8fd2e566a4d21e1acc3bb419c06289012936ba10879e9",
+    "registration_sha256": "f4cbe1cdf18fa0496c8064bc5cd6f8f563c4899d1a9d418ca1bbd2039a344c07"
+  },
+  "response": {
+    "model": "gpt-6.1-terra",
+    "model_provenance": "explicit Codex CLI --model selection",
+    "thread_id": "01a211f3-2d32-7240-93c7-37840a2629f4",
+    "raw": "{\"sheet-53167\":[],\"sheet-53383\":[],\"sheet-54274\":[],\"sheet-55085\":[{\"op\":\"find\",\"sheet\":\"Master-RM\",\"text\":\"Mango\",\"exact\":false},{\"op\":\"range\",\"sheet\":\"Master-RM\",\"range\":\"A13:K18\"}]}",
+    "usage": {
+      "input_tokens": 18375,
+      "cached_input_tokens": 12544,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 92,
+      "reasoning_output_tokens": 23
+    },
+    "external_tool_calls": 0,
+    "cli_retry_notices": 0,
+    "cli_429_retry_notices": 0,
+    "transport_attempts": 1
+  }
+}

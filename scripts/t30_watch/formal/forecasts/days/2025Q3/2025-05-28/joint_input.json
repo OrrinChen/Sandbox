@@ -1,0 +1,67 @@
+{
+  "cutoff": "2025-05-28",
+  "sectors": {
+    "2025Q3/food_manufacturing-2": {
+      "remaining_alerts": 2,
+      "companies": [
+        {
+          "cik": "0000880117",
+          "issuer": "SANFILIPPO JOHN B & SON INC",
+          "sector": "food_manufacturing",
+          "target_fiscal_quarter_projected_start": "2025-06-27",
+          "latest_filed_period_end": "2025-03-27",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2025-04-30",
+              "text": "Our net sales of $260.9 million for the third quarter of fiscal 2025 decreased $11.0 million, or 4.0%, from our net sales of $271.9 million for the third quarter of fiscal 2024."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2025-04-30",
+              "text": "Sales volume, measured as pounds sold to customers, decreased 7.9% compared to the third quarter of fiscal 2024."
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2025-04-30",
+              "text": "We have remained agile by proactively identifying risks, modifying inventory plans and diversifying our supplier base to mitigate risk of customer order shortages and maintain our supply chain."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2025-04-30",
+              "text": "We face a number of challenges in the future, which include the impacts of higher prices in food, in part due to increasing underlying commodity acquisition costs and tariffs (actual, pending implementation or threatened) by the U.S. government or other governments."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2025-04-30",
+              "text": "Due to the factors discussed above, income from operations was $28.2 million, or 10.8% of net sales, for the third quarter of fiscal 2025 compared to $18.4 million, or 6.7% of net sales, for the third quarter of fiscal 2024."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2024-12-26",
+                "filed": "2025-01-29",
+                "reported_sales_usd": 301067000,
+                "year_ago_reported_sales_usd": 291222000,
+                "yoy_percent": "3.3806"
+              },
+              {
+                "quarter_end": "2025-03-27",
+                "filed": "2025-04-30",
+                "reported_sales_usd": 260907000,
+                "year_ago_reported_sales_usd": 271884000,
+                "yoy_percent": "-4.0374"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

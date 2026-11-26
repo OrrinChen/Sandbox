@@ -1,0 +1,334 @@
+[
+  {
+    "task_id": "decision-prism-changes-within-a-traverse",
+    "tool": "sqlite.query",
+    "instruction": "Produce the corrected distance ledger for run R only. The integer tick is the field book's event clock. Each prism note takes effect at its tick, before any shot at that tick, and stays in force within its run until the next note. Note ticks are unique within a run. Add the active note's signed delta_mm to the raw distance in millimetres. A NULL delta_mm means the crew explicitly lost track of the prism setting. Keep that note's citation and leave the corrected distance NULL until another note takes effect. A shot before the run's first note has both corrected distance and citation NULL. All other inputs are non-NULL. Return shot_id, corrected_mm, source_id in ascending shot tick order, breaking ties by shot_id. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "prism_notes": {
+        "columns": [
+          "source_id TEXT",
+          "run_id TEXT",
+          "tick INTEGER",
+          "delta_mm INTEGER",
+          "note_text TEXT"
+        ],
+        "rows": [
+          [
+            "N4",
+            "R",
+            4,
+            -3,
+            "Short prism mounted. Subtract 3 mm from subsequent shots."
+          ],
+          [
+            "N8",
+            "R",
+            8,
+            null,
+            "Crew swapped poles at the ditch. Prism setting unrecorded."
+          ],
+          [
+            "N11",
+            "R",
+            11,
+            2,
+            "Checked replacement prism. Add 2 mm from here."
+          ],
+          [
+            "M9",
+            "M",
+            9,
+            7,
+            "Run M uses the spare prism. Add 7 mm."
+          ]
+        ]
+      },
+      "range_shots": {
+        "columns": [
+          "shot_id TEXT",
+          "run_id TEXT",
+          "tick INTEGER",
+          "raw_mm INTEGER"
+        ],
+        "rows": [
+          [
+            "S5",
+            "R",
+            11,
+            6600
+          ],
+          [
+            "S1",
+            "R",
+            2,
+            4900
+          ],
+          [
+            "S3",
+            "R",
+            8,
+            5000
+          ],
+          [
+            "S2",
+            "R",
+            6,
+            7100
+          ],
+          [
+            "S4",
+            "R",
+            10,
+            8100
+          ],
+          [
+            "Q1",
+            "M",
+            10,
+            3200
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "shot_id",
+      "corrected_mm",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-project-unsampled-breakage",
+    "tool": "sqlite.query",
+    "instruction": "Estimate the cost of breakage in the unopened stock of each packing grade. unopened_units counts individual units outside the audit sample. Each carton_audits row describes a separate inspected carton, with inspected_units positive and broken_units a subset of inspected_units. A null broken_units means inspection was incomplete, so omit that entire carton from estimation. A completed zero is informative. All other fields are nonnull. Within each grade, estimate the probability that an individual unit is broken by pooling units across completed cartons. Apply that probability to unopened_units and value the estimated breakage at unit_cost_cents. Round the final monetary estimate once to the nearest cent, with half cents rounded up. Report only grades with at least one completed carton, including grades with zero estimated breakage. Return grade, sampled_units, broken_sample_units, reserve_cents in that order, sorted by grade ascending. Each grade occurs once in unopened_stock. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "carton_audits": {
+        "columns": [
+          "grade TEXT",
+          "inspected_units INTEGER",
+          "broken_units INTEGER"
+        ],
+        "rows": [
+          [
+            "clay",
+            2,
+            1
+          ],
+          [
+            "clay",
+            8,
+            0
+          ],
+          [
+            "clay",
+            20,
+            null
+          ],
+          [
+            "glass",
+            3,
+            1
+          ],
+          [
+            "glass",
+            3,
+            0
+          ],
+          [
+            "stone",
+            6,
+            null
+          ]
+        ]
+      },
+      "unopened_stock": {
+        "columns": [
+          "grade TEXT",
+          "unopened_units INTEGER",
+          "unit_cost_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "clay",
+            25,
+            41
+          ],
+          [
+            "glass",
+            18,
+            50
+          ],
+          [
+            "stone",
+            90,
+            30
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "grade",
+      "sampled_units",
+      "broken_sample_units",
+      "reserve_cents"
+    ]
+  },
+  {
+    "task_id": "decision-publish-certified-relay-patch",
+    "tool": "csv.export",
+    "instruction": "Construct the complete CSV file consumed by the fictional Reed Relay scoreboard importer. The board lists one current points total per club. Signed cards replace the whole total, and the highest integer revision for a club is authoritative even when it lowers the score. Revisions are unique within a club. A NULL points value on the newest card suspends certification, so omit that club. Also omit clubs absent from the board, clubs without cards, and clubs whose authoritative total already matches the board. Other fields are present. Return one row with one column named csv_body containing the literal header club,points,source followed by the patch records in binary ascending club name order. End every line, including the header and final record, with LF. Always double-quote the club field and double any embedded quote. Render points as a decimal integer and source as the actual unquoted alphanumeric card ID. Club names contain no line breaks. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "relay_board": {
+        "columns": [
+          "club_name TEXT",
+          "board_pts INTEGER"
+        ],
+        "rows": [
+          [
+            "Ash, East",
+            8
+          ],
+          [
+            "Bay \"B\"",
+            5
+          ],
+          [
+            "Cove",
+            6
+          ],
+          [
+            "Dale",
+            4
+          ]
+        ]
+      },
+      "relay_cards": {
+        "columns": [
+          "club_name TEXT",
+          "revision_no INTEGER",
+          "card_pts INTEGER",
+          "card_ref TEXT",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "Ash, East",
+            1,
+            11,
+            "C1",
+            "First certified total is eleven."
+          ],
+          [
+            "Ash, East",
+            2,
+            7,
+            "C2",
+            "Duplicate exchange removed. Replacement total seven."
+          ],
+          [
+            "Bay \"B\"",
+            1,
+            6,
+            "C3",
+            "Finish credit raises total to six."
+          ],
+          [
+            "Cove",
+            1,
+            9,
+            "C4",
+            "Provisional replacement certified at nine."
+          ],
+          [
+            "Cove",
+            2,
+            null,
+            "C5",
+            "Certification suspended pending exchange check."
+          ],
+          [
+            "Dale",
+            1,
+            4,
+            "C6",
+            "Recount confirms four."
+          ],
+          [
+            "Outer",
+            1,
+            2,
+            "C7",
+            "Guest relay certified at two."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "csv_body"
+    ]
+  },
+  {
+    "task_id": "decision-quarterly-tier-close-with-usage-corrections",
+    "tool": "sqlite.query",
+    "instruction": "Calculate the April usage revenue adjustment for every account with at least one posted April entry. The billing quarter starts March 1. Within each account, the first 100 net units in the quarter cost 8 cents each and all further units cost 3 cents each. Signed units are changes to metered volume. A negative entry can reverse units across the tier boundary. Recognize the change in cumulative quarter charges between the March 31 and April 30 closes, using posting day and including both closing days. Exclude pending entries from both closes. Missing March activity means zero opening units. Cumulative quantities at the two closes are nonnegative. Posting days are ISO dates in 2026, fields are non-null, and postings on the same day are additive. Return account_code, opening_units, closing_units, april_revenue_cents ordered by account_code ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "meter_posting": {
+        "columns": [
+          "account_code TEXT",
+          "posting_day TEXT",
+          "posting_state TEXT",
+          "signed_units INTEGER"
+        ],
+        "rows": [
+          [
+            "Birch",
+            "2026-03-31",
+            "posted",
+            120
+          ],
+          [
+            "Birch",
+            "2026-04-07",
+            "posted",
+            -35
+          ],
+          [
+            "Cove",
+            "2026-03-12",
+            "posted",
+            90
+          ],
+          [
+            "Cove",
+            "2026-04-30",
+            "posted",
+            25
+          ],
+          [
+            "Cove",
+            "2026-04-30",
+            "pending",
+            40
+          ],
+          [
+            "Dune",
+            "2026-02-28",
+            "posted",
+            90
+          ],
+          [
+            "Dune",
+            "2026-04-01",
+            "posted",
+            12
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "account_code",
+      "opening_units",
+      "closing_units",
+      "april_revenue_cents"
+    ]
+  }
+]

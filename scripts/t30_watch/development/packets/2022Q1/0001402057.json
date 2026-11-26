@@ -1,0 +1,68 @@
+{
+  "wave": "2022Q1",
+  "cohort": "retail-1",
+  "sector": "retail",
+  "cik": "0001402057",
+  "issuer": "CDW CORP",
+  "cutoff": "2021-12-02",
+  "projected_target_start": "2022-01-01",
+  "status": "complete",
+  "period_end": "2021-09-30",
+  "filing_date": "2021-11-03",
+  "text": {
+    "sector": "retail",
+    "cik": "0001402057",
+    "issuer": "CDW CORP",
+    "records": [
+      {
+        "id": "A",
+        "title": "10-Q",
+        "date": "2021-11-03",
+        "text": "Total Net sales for the three months ended September 30, 2021 increased $544 million, or 11.4%, to $5,300 million, compared to the three months ended September 30, 2020."
+      },
+      {
+        "id": "B",
+        "title": "10-Q",
+        "date": "2021-11-03",
+        "text": "In 2021, customer top priorities have been digital transformation, security, hybrid and cloud solutions, client devices, and preparing for workers to return to the office and enhancing remote enablement capabilities as hybrid environments become the future work model."
+      },
+      {
+        "id": "C",
+        "title": "10-Q",
+        "date": "2021-11-03",
+        "text": "(3)The change is primarily due to increased sales and timing of payments, partially offset by the impact of inventory purchases at the end of 2020."
+      },
+      {
+        "id": "D",
+        "title": "10-Q",
+        "date": "2021-11-03",
+        "text": "The decrease in Gross profit margin was primarily driven by lower product margin, partially offset by an increase in the mix of net service contract revenue, primarily Software as a Service, and increased Net sales and margins on professional services."
+      },
+      {
+        "id": "E",
+        "title": "10-Q",
+        "date": "2021-11-03",
+        "text": "Operating income was $386 million for the three months ended September 30, 2021, an increase of $68 million, or 21.6%, compared to $318 million for the three months ended September 30, 2020."
+      }
+    ]
+  },
+  "historical_sales": {
+    "quarters": [
+      {
+        "quarter_end": "2021-06-30",
+        "filed": "2021-08-04",
+        "reported_sales_usd": 5146400000,
+        "year_ago_reported_sales_usd": 4365700000,
+        "yoy_percent": "17.8826"
+      },
+      {
+        "quarter_end": "2021-09-30",
+        "filed": "2021-11-03",
+        "reported_sales_usd": 5300000000,
+        "year_ago_reported_sales_usd": 4756400000,
+        "yoy_percent": "11.4288"
+      }
+    ],
+    "status": "complete"
+  }
+}

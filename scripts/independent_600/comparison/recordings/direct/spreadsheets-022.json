@@ -1,0 +1,52 @@
+{
+  "binding": {
+    "input_sha256": "f5eb04e6e9f2881ead34fae7065583c8d849fe73203a50d91eaeab5fcf32a61f",
+    "prompt_sha256": "44fe684d944dc04477ddde94b5708fe8b5df005541e3cc91e762675b7e4c0861",
+    "model": "gpt-6.2-astra",
+    "effort": "medium"
+  },
+  "verbatim": "{\n  \"sheet-57354\": {\n    \"formulas\": {\n      \"B3\": \"=SUMIF($F$2:$XFD$2,B$2,$F3:$XFD3)\",\n      \"C3\": \"=SUMIF($F$2:$XFD$2,C$2,$F3:$XFD3)\",\n      \"D3\": \"=SUMIF($F$2:$XFD$2,D$2,$F3:$XFD3)\",\n      \"E3\": \"=SUMIF($F$2:$XFD$2,E$2,$F3:$XFD3)\"\n    }\n  },\n  \"sheet-58047\": {\n    \"fills\": [\n      {\n        \"range\": \"H2:H30\",\n        \"formula\": \"=VLOOKUP(A2,$A$2:$G$30,7,FALSE)\"\n      }\n    ],\n    \"formulas\": {}\n  },\n  \"sheet-58701\": {\n    \"formulas\": {\n      \"E2\": \"=IF(B2=\\\"\\\",\\\"\\\",IFNA(VLOOKUP(B2,'Table Tab'!$A:$B,2,FALSE),\\\"\\\"))\",\n      \"E3\": \"=IF(B3=\\\"\\\",\\\"\\\",IFNA(VLOOKUP(B3,'Table Tab'!$A:$B,2,FALSE),\\\"\\\"))\"\n    }\n  },\n  \"sheet-59160\": {\n    \"formulas\": {\n      \"D3\": \"=COUNTIFS($A:$A,$D$1,$B:$B,D$2)\",\n      \"E3\": \"=COUNTIFS($A:$A,$D$1,$B:$B,E$2)\",\n      \"F3\": \"=COUNTIFS($A:$A,$F$1,$B:$B,F$2)\",\n      \"G3\": \"=COUNTIFS($A:$A,$F$1,$B:$B,G$2)\"\n    }\n  }\n}",
+  "submissions": {
+    "sheet-57354": {
+      "formulas": {
+        "B3": "=SUMIF($F$2:$XFD$2,B$2,$F3:$XFD3)",
+        "C3": "=SUMIF($F$2:$XFD$2,C$2,$F3:$XFD3)",
+        "D3": "=SUMIF($F$2:$XFD$2,D$2,$F3:$XFD3)",
+        "E3": "=SUMIF($F$2:$XFD$2,E$2,$F3:$XFD3)"
+      }
+    },
+    "sheet-58047": {
+      "fills": [
+        {
+          "range": "H2:H30",
+          "formula": "=VLOOKUP(A2,$A$2:$G$30,7,FALSE)"
+        }
+      ],
+      "formulas": {}
+    },
+    "sheet-58701": {
+      "formulas": {
+        "E2": "=IF(B2=\"\",\"\",IFNA(VLOOKUP(B2,'Table Tab'!$A:$B,2,FALSE),\"\"))",
+        "E3": "=IF(B3=\"\",\"\",IFNA(VLOOKUP(B3,'Table Tab'!$A:$B,2,FALSE),\"\"))"
+      }
+    },
+    "sheet-59160": {
+      "formulas": {
+        "D3": "=COUNTIFS($A:$A,$D$1,$B:$B,D$2)",
+        "E3": "=COUNTIFS($A:$A,$D$1,$B:$B,E$2)",
+        "F3": "=COUNTIFS($A:$A,$F$1,$B:$B,F$2)",
+        "G3": "=COUNTIFS($A:$A,$F$1,$B:$B,G$2)"
+      }
+    }
+  },
+  "attempt": 1,
+  "thread": "01a20e1f-b244-7262-87ce-c3191eb576f2",
+  "tools_used_outside_protocol": 0,
+  "usage": {
+    "input_tokens": 26677,
+    "cached_input_tokens": 20096,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 402,
+    "reasoning_output_tokens": 0
+  }
+}

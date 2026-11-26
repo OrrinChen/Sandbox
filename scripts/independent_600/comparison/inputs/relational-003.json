@@ -1,0 +1,308 @@
+[
+  {
+    "task_id": "decision-allocate-two-review-desks",
+    "tool": "sqlite.query",
+    "instruction": "Before the fictional Drift League closes its scorebook, fill exactly two hearing slots from the signed discrepancy notices. Each notice compares posted points with a witness tally for one bout. A NULL witness tally means the notice is incomplete and ineligible. No other field is NULL. Both slots share a budget of ten whole minutes in total, and the two notices must concern different bouts so the same discrepancy is never heard twice. A feasible pair always exists. Maximize the sum of absolute point discrepancies, then minimize total minutes, then choose the lexicographically smallest ordered pair of source IDs using SQLite binary text order. Return one row with first_ref, second_ref, points_at_issue, total_minutes, placing the smaller citation first. The figures quantify points to examine, regardless of the eventual rulings. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "discrepancy_notices": {
+        "columns": [
+          "notice_ref TEXT",
+          "bout_id TEXT",
+          "posted_pts INTEGER",
+          "witness_pts INTEGER",
+          "desk_minutes INTEGER",
+          "primary_text TEXT"
+        ],
+        "rows": [
+          [
+            "D1",
+            "Amber",
+            12,
+            3,
+            8,
+            "Amber strip shows three against twelve posted. Eight minutes of film."
+          ],
+          [
+            "D2",
+            "Blue",
+            2,
+            8,
+            5,
+            "Blue counter reads eight against two posted. Five-minute check."
+          ],
+          [
+            "D3",
+            "Clay",
+            9,
+            4,
+            5,
+            "Clay strip totals four against nine posted. Five-minute check."
+          ],
+          [
+            "D4",
+            "Blue",
+            3,
+            10,
+            5,
+            "Second Blue counter gives ten against three. Five-minute check."
+          ],
+          [
+            "D5",
+            "Dune",
+            1,
+            2,
+            2,
+            "Dune strip reads two against one. Two-minute check."
+          ],
+          [
+            "D6",
+            "Elm",
+            20,
+            null,
+            1,
+            "Witness tally illegible. One minute of film."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "first_ref",
+      "second_ref",
+      "points_at_issue",
+      "total_minutes"
+    ]
+  },
+  {
+    "task_id": "decision-apply-meal-tip-policy-at-service-date",
+    "tool": "sqlite.query",
+    "instruction": "For each meal where the submitted tip exceeds the reimbursable tip, report the reduction in cents and cite the governing policy notice. Each notice is primary evidence. Its structured fields encode its text. A notice takes effect at the start of effective_day and governs until the next notice for the same program. Use the service day, including when it equals the effective day. Dates are ISO YYYY-MM-DD. Each meal represents one receipt, and food_cents excludes tax and tip. Compute the maximum tip using the notice's base_kind and cap_bp (basis points, with 10000 equal to 100 percent). Round the maximum down to whole cents per receipt. All fields are non-null, amounts are nonnegative, IDs are unique within their tables, and each meal has a governing notice. Effective days are unique within each program. Return meal_id, reduction_cents, source_id in that order, sorted by meal_id ascending. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "meal_claim": {
+        "columns": [
+          "meal_id TEXT",
+          "program_code TEXT",
+          "service_day TEXT",
+          "food_cents INTEGER",
+          "tax_cents INTEGER",
+          "tip_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "M1",
+            "FIELD",
+            "2026-02-28",
+            1000,
+            90,
+            225
+          ],
+          [
+            "M2",
+            "FIELD",
+            "2026-03-01",
+            1005,
+            90,
+            190
+          ],
+          [
+            "M3",
+            "DESK",
+            "2026-03-04",
+            800,
+            80,
+            120
+          ],
+          [
+            "M4",
+            "FIELD",
+            "2026-03-04",
+            2000,
+            160,
+            350
+          ]
+        ]
+      },
+      "policy_notice": {
+        "columns": [
+          "source_id TEXT",
+          "program_code TEXT",
+          "effective_day TEXT",
+          "base_kind TEXT",
+          "cap_bp INTEGER",
+          "notice_text TEXT"
+        ],
+        "rows": [
+          [
+            "N1",
+            "FIELD",
+            "2026-01-01",
+            "gross",
+            2000,
+            "Field meals allow tips up to 20% of food plus tax."
+          ],
+          [
+            "N2",
+            "FIELD",
+            "2026-03-01",
+            "food",
+            1800,
+            "Field meals now allow tips up to 18% of food before tax."
+          ],
+          [
+            "N3",
+            "DESK",
+            "2026-01-01",
+            "food",
+            1500,
+            "Desk meals allow tips up to 15% of food before tax."
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "meal_id",
+      "reduction_cents",
+      "source_id"
+    ]
+  },
+  {
+    "task_id": "decision-apply-one-pass-folder-moves",
+    "tool": "csv.export",
+    "instruction": "Construct the data rows of exhibit_manifest.csv, with columns in the order final_path, asset_tag. Each asset_file row is one file at its path immediately before a single round of folder moves. Each folder_move row maps one original directory to its destination. Apply the most specific matching move to the original path exactly once, preserving the slash and everything after the matched directory name. A directory matches only at a complete path-component boundary. Keep files outside all moved directories at their original paths. Paths are case-sensitive relative paths using /, with no empty or special components. All fields are non-null text, original directory names are unique, and final file paths have no collisions. There are no numeric units. Include every file, sorted by final_path in SQLite BINARY order. Submit a SQLite SELECT that writes the requested CSV report via the CSV export tool.",
+    "observation": {
+      "asset_file": {
+        "columns": [
+          "prior_path TEXT",
+          "asset_tag TEXT"
+        ],
+        "rows": [
+          [
+            "hall/card.txt",
+            "card"
+          ],
+          [
+            "hall/blue/map.svg",
+            "map"
+          ],
+          [
+            "hallway/info.txt",
+            "info"
+          ],
+          [
+            "east/index.txt",
+            "index"
+          ],
+          [
+            "hall/bluebird/tone.wav",
+            "tone"
+          ]
+        ]
+      },
+      "folder_move": {
+        "columns": [
+          "prior_dir TEXT",
+          "next_dir TEXT"
+        ],
+        "rows": [
+          [
+            "hall",
+            "east"
+          ],
+          [
+            "hall/blue",
+            "annex"
+          ],
+          [
+            "east",
+            "loft"
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "final_path",
+      "asset_tag"
+    ]
+  },
+  {
+    "task_id": "decision-apply-remittance-to-open-invoices",
+    "tool": "sqlite.query",
+    "instruction": "Construct cash_application_ack.csv for the accounts in remittance_batch. Each account has one incoming payment in whole cents. Apply it to that account's eligible open invoices in ascending due_day order, where due_day is an integer day on a shared calendar. Break equal-day ties by invoice_code in ascending binary text order. Invoice codes are unique within an account. A null hold_note means eligible and any non-null note places the invoice on hold. Each invoice can receive at most its positive open_cents, and a payment can be split across invoices. Output only invoices receiving cash. Omit any leftover unapplied payment. Use columns account_code, invoice_code, applied_cents, remaining_open_cents, where the last field is the invoice balance after this application. Sort by account_code in ascending binary text order and then by application order. All fields other than hold_note are populated. Submit a SQLite SELECT that produces the requested output using the supplied tables.",
+    "observation": {
+      "open_invoice": {
+        "columns": [
+          "account_code TEXT",
+          "invoice_code TEXT",
+          "due_day INTEGER",
+          "open_cents INTEGER",
+          "hold_note TEXT"
+        ],
+        "rows": [
+          [
+            "K",
+            "I0",
+            1,
+            400,
+            "quantity review"
+          ],
+          [
+            "K",
+            "I2",
+            3,
+            500,
+            null
+          ],
+          [
+            "K",
+            "I1",
+            3,
+            600,
+            null
+          ],
+          [
+            "K",
+            "I3",
+            5,
+            100,
+            null
+          ],
+          [
+            "M",
+            "I1",
+            2,
+            220,
+            null
+          ],
+          [
+            "N",
+            "I1",
+            1,
+            80,
+            null
+          ]
+        ]
+      },
+      "remittance_batch": {
+        "columns": [
+          "account_code TEXT",
+          "payment_cents INTEGER"
+        ],
+        "rows": [
+          [
+            "K",
+            850
+          ],
+          [
+            "M",
+            300
+          ]
+        ]
+      }
+    },
+    "required_columns": [
+      "account_code",
+      "invoice_code",
+      "applied_cents",
+      "remaining_open_cents"
+    ]
+  }
+]

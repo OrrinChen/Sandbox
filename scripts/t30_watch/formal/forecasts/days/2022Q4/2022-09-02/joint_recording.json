@@ -1,0 +1,41 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 22586,
+    "cached_input_tokens": 13824,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 328,
+    "reasoning_output_tokens": 88
+  },
+  "thread": "01a20d8d-1143-70e1-8944-1e459d78dbbf",
+  "packet_sha256": "c1ed609e35ca37301a86f41758c78bafe51008878361386f9265e74c613333cf",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\n      \"sector\": \"2022Q4/food_manufacturing-2\",\n      \"alerts\": [\n        {\n          \"cik\": \"0000100493\",\n          \"reason\": \"Tyson’s reported sales growth slowed from 16.08% to 8.15% year over year. If that 7.93-point slowdown repeats each quarter, growth would be about 0.2% in the intervening quarter and −7.7% in the target quarter. Lower volume reduced sales by $223 million, partly because higher prices weighed on demand (A). Continued price increases are the main uncertainty in that projection (D).\"\n        }\n      ]\n    },\n    {\n      \"sector\": \"2022Q4/industrial_machinery-3\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/prepackaged_software-1\",\n      \"alerts\": []\n    },\n    {\n      \"sector\": \"2022Q4/semiconductors-2\",\n      \"alerts\": []\n    }\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-2",
+        "alerts": [
+          {
+            "cik": "0000100493",
+            "reason": "Tyson’s reported sales growth slowed from 16.08% to 8.15% year over year. If that 7.93-point slowdown repeats each quarter, growth would be about 0.2% in the intervening quarter and −7.7% in the target quarter. Lower volume reduced sales by $223 million, partly because higher prices weighed on demand (A). Continued price increases are the main uncertainty in that projection (D)."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-2",
+        "alerts": []
+      }
+    ]
+  }
+}

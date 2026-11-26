@@ -1,0 +1,121 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning_effort": "medium",
+  "tools_used": 0,
+  "usage": {
+    "input_tokens": 51022,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 864,
+    "reasoning_output_tokens": 37
+  },
+  "thread": "01a20d8c-a402-7912-9cbc-dbe9133b5522",
+  "packet_sha256": "9bf899ac201a4db5df5a77f2cc36174d75577e183090c9a9c12877edd8bbada6",
+  "prompt_sha256": "4a2170f471a9953424385d3db6a936428083064b09d0ebbbefd77b50745e5e24",
+  "verbatim": "{\n  \"sectors\": [\n    {\"sector\":\"2022Q4/food_manufacturing-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/food_manufacturing-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/food_manufacturing-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/industrial_machinery-1\",\"alerts\":[{\"cik\":\"0001005229\",\"reason\":\"June net sales grew only 3.2% despite price increases. Component shortages delayed shipments and contributed to a $21.5 million inventory build (A–C). I expect pricing to keep September sales growth above -5%, but continued difficulty completing shipments could push December sales at least 5% below the prior year.\"}]},\n    {\"sector\":\"2022Q4/industrial_machinery-2\",\"alerts\":[{\"cik\":\"0000933974\",\"reason\":\"Services growth of 6% offset a 3% Products decline, leaving total revenue up 3%. Restrictions in Suzhou had already reduced genomic services orders and production (A, B). I expect Services to keep September consolidated growth above -5%, with fewer orders feeding into December revenue and pushing growth to -5% or lower.\"},{\"cik\":\"0000918541\",\"reason\":\"June sales volume fell, and weaker Mobile Solutions demand partly offset gains elsewhere. Customer pricing recovered some inflation, but ordering was uneven (A, C, E). I expect pricing to keep September reported sales growth above -5%, then further volume losses to push December growth to -5% or lower.\"}]},\n    {\"sector\":\"2022Q4/industrial_machinery-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/prepackaged_software-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/retail-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/retail-2\",\"alerts\":[{\"cik\":\"0001701114\",\"reason\":\"Blue Apron tied revenue growth and further advertising increases to $70 million of pending financing or alternative funds (A, B). The prior year's marketing increase began late in Q4 (D), making December a tougher comparison than September. I forecast September growth above -5% and a December decline of at least 5% if funding limits customer acquisition.\"}]},\n    {\"sector\":\"2022Q4/retail-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/semiconductors-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/semiconductors-2\",\"alerts\":[{\"cik\":\"0001274494\",\"reason\":\"June net sales fell about 1%. Higher module volume partly offset a lower selling price per watt (A, D). I expect volume to keep September growth above -5%, but forecast a December decline of at least 5% if selling prices continue falling faster than unit sales grow.\"}]},\n    {\"sector\":\"2022Q4/semiconductors-3\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/transportation-1\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/transportation-2\",\"alerts\":[]},\n    {\"sector\":\"2022Q4/transportation-3\",\"alerts\":[{\"cik\":\"0000923571\",\"reason\":\"June revenue rose $78.7 million as revenue per mile increased 14.4%, but revenue miles per tractor per week fell 6.7%. Softer volumes persisted through June, and the spot market had weakened sequentially since March (A, B, D). I expect rate gains to keep September growth above -5%, then fading rate support and lower utilization to push December revenue down at least 5% year over year.\"}]}\n  ]\n}",
+  "response": {
+    "sectors": [
+      {
+        "sector": "2022Q4/food_manufacturing-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/food_manufacturing-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/food_manufacturing-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-1",
+        "alerts": [
+          {
+            "cik": "0001005229",
+            "reason": "June net sales grew only 3.2% despite price increases. Component shortages delayed shipments and contributed to a $21.5 million inventory build (A–C). I expect pricing to keep September sales growth above -5%, but continued difficulty completing shipments could push December sales at least 5% below the prior year."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-2",
+        "alerts": [
+          {
+            "cik": "0000933974",
+            "reason": "Services growth of 6% offset a 3% Products decline, leaving total revenue up 3%. Restrictions in Suzhou had already reduced genomic services orders and production (A, B). I expect Services to keep September consolidated growth above -5%, with fewer orders feeding into December revenue and pushing growth to -5% or lower."
+          },
+          {
+            "cik": "0000918541",
+            "reason": "June sales volume fell, and weaker Mobile Solutions demand partly offset gains elsewhere. Customer pricing recovered some inflation, but ordering was uneven (A, C, E). I expect pricing to keep September reported sales growth above -5%, then further volume losses to push December growth to -5% or lower."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/industrial_machinery-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/prepackaged_software-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/retail-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/retail-2",
+        "alerts": [
+          {
+            "cik": "0001701114",
+            "reason": "Blue Apron tied revenue growth and further advertising increases to $70 million of pending financing or alternative funds (A, B). The prior year's marketing increase began late in Q4 (D), making December a tougher comparison than September. I forecast September growth above -5% and a December decline of at least 5% if funding limits customer acquisition."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/retail-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/semiconductors-2",
+        "alerts": [
+          {
+            "cik": "0001274494",
+            "reason": "June net sales fell about 1%. Higher module volume partly offset a lower selling price per watt (A, D). I expect volume to keep September growth above -5%, but forecast a December decline of at least 5% if selling prices continue falling faster than unit sales grow."
+          }
+        ]
+      },
+      {
+        "sector": "2022Q4/semiconductors-3",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/transportation-1",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/transportation-2",
+        "alerts": []
+      },
+      {
+        "sector": "2022Q4/transportation-3",
+        "alerts": [
+          {
+            "cik": "0000923571",
+            "reason": "June revenue rose $78.7 million as revenue per mile increased 14.4%, but revenue miles per tractor per week fell 6.7%. Softer volumes persisted through June, and the spot market had weakened sequentially since March (A, B, D). I expect rate gains to keep September growth above -5%, then fading rate support and lower utilization to push December revenue down at least 5% year over year."
+          }
+        ]
+      }
+    ]
+  }
+}

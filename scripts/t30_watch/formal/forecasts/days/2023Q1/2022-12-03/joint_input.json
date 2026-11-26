@@ -1,0 +1,67 @@
+{
+  "cutoff": "2022-12-03",
+  "sectors": {
+    "2023Q1/semiconductors-3": {
+      "remaining_alerts": 1,
+      "companies": [
+        {
+          "cik": "0000867773",
+          "issuer": "SUNPOWER CORP",
+          "sector": "semiconductors",
+          "target_fiscal_quarter_projected_start": "2023-01-02",
+          "latest_filed_period_end": "2022-10-02",
+          "records": [
+            {
+              "id": "A",
+              "title": "10-Q",
+              "date": "2022-11-08",
+              "text": "Our total revenues during the three and nine months ended October 2, 2022 increased by 68% and 59%, as compared to the three and nine months ended October 3, 2021, respectively, largely due to higher volume in organic residential business across all channels, primarily from our dealer network, increase in pricing during the second and third quarters of fiscal 2022, and the acquisition of Blue Raven in the fourth quarter of fiscal 2021."
+            },
+            {
+              "id": "B",
+              "title": "10-Q",
+              "date": "2022-11-08",
+              "text": "Net income (loss) from continuing operations attributable to stockholders $ 139,407 29 $ (72,707) (26)"
+            },
+            {
+              "id": "C",
+              "title": "10-Q",
+              "date": "2022-11-08",
+              "text": "In addition, cash used in operations increased year over year due to higher accounts receivable, prepaid expenses and other current assets from on-balance sheet retail installment contracts, and higher inventories, partially offset by lower net payment for accounts payable and other accrued liabilities."
+            },
+            {
+              "id": "D",
+              "title": "10-Q",
+              "date": "2022-11-08",
+              "text": "Our total cost of revenues increased by 68% and 60% during the three and nine months ended October 2, 2022, as compared to the three and nine months ended October 3, 2021, respectively, as a result of revenue growth from the Blue Raven acquisition and our other sales channels, as well as increasing material and labor costs, during fiscal 2022."
+            },
+            {
+              "id": "E",
+              "title": "10-Q",
+              "date": "2022-11-08",
+              "text": "The $127.8 million increase in cash used in operations in the nine months ended October 2, 2022 compared to the corresponding the nine months ended October 3, 2021, was primarily due to a higher net loss during the nine months ended October 2, 2022 compared to the corresponding the nine months ended October 3, 2021, after excluding non-cash items, most significantly, earnings from mark-to-market adjustment on Enphase shares."
+            }
+          ],
+          "historical_sales": {
+            "quarters": [
+              {
+                "quarter_end": "2022-07-03",
+                "filed": "2022-08-03",
+                "reported_sales_usd": 417772000,
+                "year_ago_reported_sales_usd": 260751000,
+                "yoy_percent": "60.2188"
+              },
+              {
+                "quarter_end": "2022-10-02",
+                "filed": "2022-11-08",
+                "reported_sales_usd": 475711000,
+                "year_ago_reported_sales_usd": 283312000,
+                "yoy_percent": "67.9106"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

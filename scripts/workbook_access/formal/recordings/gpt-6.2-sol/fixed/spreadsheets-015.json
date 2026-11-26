@@ -1,0 +1,359 @@
+{
+  "registration_sha256": "9adcb92d3aaa3d58777742927c817f6cf8aa6fa05106f6b73cf9a9c4a07ac1f6",
+  "turns_sha256": [
+    "81c195edd4a1a205ed4feaf47d9ace34042c6fd505b46315f60a700b8802e18c",
+    "9b65bccf2d2fd733a11358e659cb5df8ec9859a60cda57474ad6ec5d2ed89543",
+    "dd833558c861be70899b37557d2a07b20aa1a69ed3977e0de3249791de6e32fc"
+  ],
+  "cases": [
+    {
+      "task_id": "sheet-49801",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "C1": "=LEFT(A1,2)&RIGHT(A1,5)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61682,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 990,
+        "reasoning_output_tokens": 324
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49857",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "G4": "=IF(F4=\"YES\",COUNTIF($F$4:F4,\"YES\"),0)",
+          "G5": "=IF(F5=\"YES\",COUNTIF($F$4:F5,\"YES\"),0)",
+          "G6": "=IF(F6=\"YES\",COUNTIF($F$4:F6,\"YES\"),0)",
+          "G7": "=IF(F7=\"YES\",COUNTIF($F$4:F7,\"YES\"),0)",
+          "G8": "=IF(F8=\"YES\",COUNTIF($F$4:F8,\"YES\"),0)",
+          "G9": "=IF(F9=\"YES\",COUNTIF($F$4:F9,\"YES\"),0)",
+          "G10": "=IF(F10=\"YES\",COUNTIF($F$4:F10,\"YES\"),0)"
+        }
+      },
+      "submission_status": "present",
+      "trace": [],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 0,
+      "usage": {
+        "input_tokens": 61682,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 990,
+        "reasoning_output_tokens": 324
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-49859",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "fills": [
+          {
+            "range": "D12:Q23",
+            "formula": "=IF($C12=\"\",0,IF(MOD($C12-D$8,12)<=MOD(D$9-D$8,12),1,0))"
+          }
+        ],
+        "formulas": {}
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C17:Q23"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Vat",
+            "range": "C17:Q23",
+            "range_size": 105,
+            "cells": [
+              [
+                "C17",
+                "8"
+              ],
+              [
+                "D17",
+                "0"
+              ],
+              [
+                "E17",
+                "1"
+              ],
+              [
+                "F17",
+                "0"
+              ],
+              [
+                "G17",
+                "0"
+              ],
+              [
+                "H17",
+                "1"
+              ],
+              [
+                "I17",
+                "0"
+              ],
+              [
+                "J17",
+                "0"
+              ],
+              [
+                "C18",
+                "9"
+              ],
+              [
+                "D18",
+                "0"
+              ],
+              [
+                "E18",
+                "1"
+              ],
+              [
+                "F18",
+                "0"
+              ],
+              [
+                "G18",
+                "0"
+              ],
+              [
+                "H18",
+                "1"
+              ],
+              [
+                "I18",
+                "0"
+              ],
+              [
+                "J18",
+                "0"
+              ],
+              [
+                "C19",
+                "10"
+              ],
+              [
+                "D19",
+                "0"
+              ],
+              [
+                "E19",
+                "1"
+              ],
+              [
+                "F19",
+                "0"
+              ],
+              [
+                "G19",
+                "0"
+              ],
+              [
+                "H19",
+                "1"
+              ],
+              [
+                "I19",
+                "0"
+              ],
+              [
+                "J19",
+                "0"
+              ],
+              [
+                "C20",
+                "11"
+              ],
+              [
+                "D20",
+                "0"
+              ],
+              [
+                "E20",
+                "0"
+              ],
+              [
+                "F20",
+                "1"
+              ],
+              [
+                "G20",
+                "0"
+              ],
+              [
+                "H20",
+                "0"
+              ],
+              [
+                "I20",
+                "1"
+              ],
+              [
+                "J20",
+                "0"
+              ],
+              [
+                "C21",
+                "12"
+              ],
+              [
+                "C23",
+                "2"
+              ],
+              [
+                "D23",
+                "0"
+              ],
+              [
+                "E23",
+                "0"
+              ],
+              [
+                "F23",
+                "1"
+              ],
+              [
+                "G23",
+                "0"
+              ],
+              [
+                "H23",
+                "0"
+              ],
+              [
+                "I23",
+                "1"
+              ],
+              [
+                "J23",
+                "0"
+              ]
+            ],
+            "total": 41,
+            "truncated": false,
+            "blank_count": 64
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61682,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 990,
+        "reasoning_output_tokens": 324
+      },
+      "model_calls": 3
+    },
+    {
+      "task_id": "sheet-50630",
+      "model": "gpt-6.2-sol",
+      "arm": "fixed",
+      "batch": "spreadsheets-015",
+      "submission": {
+        "formulas": {
+          "C5": "=LEFT(A5,SEARCH(\"Added \",A5)-1)",
+          "D5": "=MID(A5,SEARCH(\"Added \",A5)+6,SEARCH(\"Due \",A5,SEARCH(\"Added \",A5)+6)-SEARCH(\"Added \",A5)-6)",
+          "E5": "=DATEVALUE(TRIM(MID(A5,SEARCH(\"Due \",A5,SEARCH(\"Added \",A5)+6)+4,LEN(A5))))",
+          "C6": "=LEFT(A6,SEARCH(\"Added \",A6)-1)",
+          "D6": "=MID(A6,SEARCH(\"Added \",A6)+6,SEARCH(\"Due \",A6,SEARCH(\"Added \",A6)+6)-SEARCH(\"Added \",A6)-6)",
+          "E6": "=DATEVALUE(TRIM(MID(A6,SEARCH(\"Due \",A6,SEARCH(\"Added \",A6)+6)+4,LEN(A6))))"
+        }
+      },
+      "submission_status": "present",
+      "trace": [
+        {
+          "round": 1,
+          "request": {
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6"
+          },
+          "result": {
+            "ok": true,
+            "op": "range",
+            "sheet": "Sheet1",
+            "range": "A5:E6",
+            "range_size": 10,
+            "cells": [
+              [
+                "A5",
+                "rafal kucharski Added 8 Sep 2021 Due 15 Nov 2021"
+              ],
+              [
+                "C5",
+                "rafal kucharski "
+              ],
+              [
+                "D5",
+                "8 Sep 2021 "
+              ],
+              [
+                "E5",
+                "2021-11-15 00:00:00"
+              ],
+              [
+                "A6",
+                "Zita Kvitovszka Added 8 Sep 2021 Due 16 Nov 2021"
+              ]
+            ],
+            "total": 5,
+            "truncated": false,
+            "blank_count": 5
+          }
+        }
+      ],
+      "plan_status": [
+        "ok",
+        "ok"
+      ],
+      "novel_cells": [],
+      "calls": 1,
+      "usage": {
+        "input_tokens": 61682,
+        "cached_input_tokens": 42624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 990,
+        "reasoning_output_tokens": 324
+      },
+      "model_calls": 3
+    }
+  ]
+}
